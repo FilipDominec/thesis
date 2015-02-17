@@ -1,0 +1,1114 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc} \usepackage[top=2.cm, bottom=2cm, left=2cm, right=2cm]{geometry} 
+\usepackage{mathrsfs} 
+\usepackage{palatino} 
+\usepackage[font=it]{caption}
+\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,url}	\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  
+\usepackage{upgreek}
+\usepackage[style=/home/filip/d/biblatex-phys/phys, articletitle=true, biblabel=enumerate, chaptertitle=true, pageranges=true, 
+			sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits   = true]{biblatex}
+\addbibresource{fdphd.bib}
+
+
+\input{defs.tex}
+
+
+%\makeatletter
+%\newcommand{\bfgreek}[1]{\bm{\@nameuse{up#1}}}
+%\makeatother
+%\parindent=0pt
+%\newcommand{\um}{\mbox{$\bfgreek{mu}$m}}
+
+% TODO we refer to tunability - complete it in the rest of the document!!
+%% TODO unify impedance as `Z', not `z'
+
+% TODO check if the wavenumber K~/ (2pi/a) is correct
+% unify the terminology "band diagram" - "dispersion curves"
+% TODO incorporate the text of our 2014 OpEx paper into the rest
+%
+
+
+%% MŠindler: Contents
+%%		Preface
+%%		Introduction (general diel properties, props of SCs)
+%%		Experimental setup (..
+%%		Yeh formalism
+%%		Transmission in zero magnetic field
+%%		Transmission in non-zero mag f
+%%		Conclusions
+%%		List of tables, symbols; Bibliography; Selected publications (p. 89)
+
+\newcommand{\um}{\mbox{$\upmu$m}}
+
+\newcommand\WorkTitle{Metamaterials for the terahertz spectral range}
+\newcommand\FirstandFamilyName{Filip Dominec}
+\usepackage[unicode=true,pdftitle={\WorkTitle}, pdfauthor={\FirstandFamilyName}, bookmarks=true, colorlinks=true, breaklinks=true, urlcolor=black, citecolor=black, linkcolor=black, breaklinks=true, plainpages=false,pdfpagelabels=true] {hyperref}
+
+\begin{document}
+\input{title.tex}
+
+
+\chapter{Introduction}
+The behaviour of electromagnetic waves in periodic media has attracted the human attention for ages, long before anybody perceived that light is an \textit{electromagnetic wave} or that it is the \textit{periodicity} that is responsible for the brilliant and irreproducible colours of opal gemstones and many living creatures, such as various beetles, butterflies, peacocks etc. %{{{
+The scientific community started to study the underlying phenomena in the late 19th century when the X-ray scattering was observed on (periodic) crystal lattices and also when the high optical reflection from periodic layers of entirely transparent materials was predicted. % TODO ref
+%The technological and scientific boom of the 20th century contributed with many new theoretical approaches, numerical methods and types of periodic structures to the newly born field of \textit{photonics}. With the advent of the 21th century, great progress was also made in the research of \textit{metamaterials}, a specific subset of periodic structures which will be discussed in greater detail in this work. 
+% TODO motivation - finish
+The key concept in photonic crystal or metamaterial studies is that the electromagnetic properties are defined predominantly by the shape of the structure, while the actual materials that are used to build it can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
+While it is unlikely that a radically new material will be invented for construction of optical elements, several new phenomena can be obtained by periodic structuring of ordinary materials. The rapid development of this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers able to predict the structure behaviour.
+
+
+% TODO introduction ??
+% TODO THz science ??
+This work focuses on the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used from microwave to optical frequencies, the selected frequency range defined the properties of materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, some materials commonly found in the microwave or optical applications must be avoided, as they exhibit excessively high losses in the terahertz range (such as glass, water, most plastics etc.)
+
+The THz range is located in the spectrum at the boundary of the regions where people use "electronic" or "optical" approaches. At THz frequencies, devices from both paradigms are often seamlessly used together: waves from waveguides can be collimated by lenses, pulses emitted from lumped antenna emitters are detected by electrooptical crystals etc. Yet none of these approaches is optimal for the THz applications; from the electronic point of view, we are for instance still lacking transistors with fast enough response and the microstrip circuits become too lossy at high frequencies. The optical approach is often complicated by the strong wave-optics phenomena such as diffraction, while some light-matter interactions are weaker, limiting the possibilities for e.g. amplitude modulation by Pockels effect. These deficiencies give additional reasons to search for the new possibilities of the photonic crystals and metamaterials operating in the terahertz range.
+
+% TODO THz MM review 
+
+
+% TODO -> cíle studie a disertace
+Many different designs of metamaterials  % and photonic crystals
+were proposed in the last decades, part of them being aimed to the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
+% lacks:
+%		not covering the area of possible structures
+%		too much technology?
+%		too specific, no comparison with similar structures, different frequency-spatial scalings of the same
+%		often missing  cricital discussion of excessive losses, slow response etc.
+%		missing proper electrodynamics
+One of the aims of the dissertation are to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
+The second aim is to investigate the tunability of their properties depending on external parameters, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
+Last but not least, the dissertation project involves the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. Thorough the thesis, the results from these simulations will be verified against experimental data and analytic models.
+% Based on a firm theory of electrodynamics of periodic structures
+
+%% TODO update 
+%In the following section we present a brief overview of the relevant physical theory. We review the propagation of electromagnetic waves in the free space and in simple periodic structures. We  outline the boundary which usually divides the fields of \textit{photonic crystals} and \textit{metamaterials}, trying to support the hypothesis that the theoretical approaches used for each field can be unified and used for the other field as well.
+%The next section focuses on the numerical methods we employed to predict experimental results and, most importantly, to understand the physical nature of the predicted phenomena. We provide a comparison of the finite-difference time-domain simulation (FDTD), the plane-wave expansion (PWE) and the transfer matrix method (TMM). We point out the capabilities of each of them and we also show how the results from these different methods can be processed to give comparable quantities.
+%The fourth section gives an overview of the experimental techniques that were used to fabricate the samples and measure their response to a broadband terahertz impulse.
+%The longest section follows, in which a systematic list of the most important periodic structures is provided along with their electromagnetic behaviour. Through this work we focused on the terahertz spectral range. 
+% TODO Where appropriate, we also investigated how this behaviour depends on some external parameter (such as electric field, temperature or illumination) -- in other words, how the \textit{tunability} of the structure can be achieved.
+%In the last section, some general conclusions and prospects are drawn.
+%}}}
+
+
+
+\chapter{Theory}
+\input{theory.tex}
+% TODO: 
+% Electrodynamics of continuous media
+% -> Electromagnetic wave in vacuum
+% -> Lorentz-Drude model
+% -> Dispersion relation in Lorentz-Drude media
+% -> Drude model, conductivity and superconductivity
+% Spatial-dispersive model for continuous media
+% -> General formulation of spatial dispersion
+% -> Magnetic effects included in spatial-dispersive permittivity
+% -> Comparison of eps-mu and spatial-dispersive models (electric quadrupoles..., [Merlin])
+% -> Why magnetic resonances do not contribute to static permeability?
+% Electrodynamics of periodic structures
+% -> Bloch theorem (and its proof)
+% -> K-space and isofrequency contours
+% -> Group velocity, phase velocity and their signs [Mikki]
+% -> Homogenisation by NRW algorithm, automatic branch selection
+% -> Antiresonances -- problems with epsilon-mu approach
+% -> EDB model for periodic structures
+% Homogenisation algorithms 
+% -> PWEM
+% -> Reflection-transmission, or NRW, method
+% -> Current-driven homogenisation
+
+% Numerical methods used
+% -> 
+
+
+\section{Electrodynamics of continuous media} % TODO
+\subsection{Electromagnetic wave in vacuum} % TODO
+\paragraph{Maxwell equations} In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form: %{{{
+%We assume here that there are no free charges and no currents in the structure: 
+\begin{equation} \nabla \cdot  \D = 0, \label{eq_me1}\end{equation}  
+\begin{equation} \nabla \cdot  \B = 0, \label{eq_me2}\end{equation}  
+\begin{equation} \nabla \times \E = -\frac{\partial \B} {\partial t}, \label{eq_me3}\end{equation}  
+\begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \label{eq_me4}\end{equation}  
+where the $\mathbf{E}$ and $\mathbf{H}$ are the electric and magnetic vector field, and $\mathbf{D}$ and $\mathbf{B}$ are the electric and magnetic induction %% FIXME
+, respectively. These two pairs of field and induction are related in a similar way as a force is related to the strain. These \textit{constitutive relations} describe the medium the wave propagates in, and in vacuum they take the simplest possible form:
+\begin{equation} 
+\mathbf{D} = \varepsilon_0	\E, \quad\quad\quad 
+\mathbf{B} = \mu_0			\HH,
+\label{eq_ce}\end{equation}
+the $\varepsilon_0 = 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 1.25\cdot10^{-6}$ H/m being the \textit{vacuum permeability}. 
+Pages \pageref{starttext}--\pageref{endtext} of this thesis will be concerned with computation, interpretation, and experimental verification of the Eq. (\ref{eq_me1}--\ref{eq_me4}) solutions for some particular choice of constitutive equations.
+\label{starttext}
+%}}}
+\paragraph{Wave equation} The pair of first-order differential equations (\ref{eq_me3}, \ref{eq_me4}) can be converted to a single second-order differential equation. To this end, we apply an extra curl operator $\nabla\times$ from left, and substituting from one equation into the another, we accumulate two curl operators on the left hand side and two derivatives on the right hand side: %{{{
+\begin{equation} \nabla\times (\nabla\times \E) = \nabla\times \left(- \frac{\partial \B} {\partial t}\right) = -\mu_0 \frac{\partial}{\partial t} \left(\nabla\times \HH\right) 
+= -\mu_0 \frac{\partial^{2} \D}{\partial t^{2}} = -\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}}.  \label{eq_elim}\end{equation}
+Using the vector calculus identity
+\begin{equation} \nabla\times (\nabla\times \E) \equiv \nabla (\nabla \cdot \E) - \nabla^2 \E, \label{eq_rotrot}\end{equation}
+we obtain the \textit{wave equation} for the electric field: 
+\begin{equation}  \nabla (\nabla \cdot \E) - \nabla^2 \E = -\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}}.  \label{eq_wave}\end{equation}
+%Note this holds for each component of electric field independently. -- NOT: the divergence is not independent of other components
+Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), the same result and further discussion can also be easily obtained for the magnetic field.
+%}}}
+\paragraph{Plane wave dispersion relation in vacuum} The solutions of the wave equation (\ref{eq_wave}) are known to take the form of a plane harmonic wave in the simplest case, and in any other case the fields can be decomposed as a linear superposition of more such waves and treated separately. Using the complex notation, the field of the plane wave is defined as a function of time $t$ and position in space $\rr$:%{{{
+\begin{equation} \E(t, \rr) := \E_0 e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
+The plane wave is fully characterised by its amplitude vector $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. 
+However, only some combinations of these parameters provide a physical solution of the wave equation (\ref{eq_wave}). The allowed pairs of ($\omega, \kk$) can be expressed by first substituting the differential operators by their equivalents for a particular plane wave: %TODO explain
+\begin{equation} \nabla \rightarrow -\ii\kk, \quad\quad\quad 
+\frac{\partial} {\partial t} \rightarrow \ii\omega, \label{eq_difftok}\end{equation}
+so the wave equation (\ref{eq_wave}) for a plane wave can be modified the following way:
+$$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
+$$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
+\begin{equation}   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E.  \label{eq_wavek}\end{equation}
+In vacuum, the electric field and wave vector are perpendicular %% todo? PROOF?
+, i.e. $(\kk \cdot \E) = 0$. Therefore, the \textit{dispersion relation} for a plane wave in vacuum is trivial:
+\begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
+where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$.
+%}}}
+\paragraph{Lorentz-Drude model}
+The Drude model of lossy metals assumes the relative permittivity in the form
+\begin{equation} \epsr(\omega) = 1 - \frac{\omega_p^{2}}{\omega^{2} + \ii\gamma\omega}, \label{eq_}\end{equation}
+where $\omega_p$ and $\gamma$ are two independent constants that describe the metal.  The former is the \textit{plasma frequency} -- the frequency of collective charge density oscillation, above which the metal allows the electromagnetic wave to propagate through. The latter is the \textit{scattering frequency} which describes how often the charge carriers are scattered from their otherwise free motion, in the simplification of the Drude model. Both have the dimension of $\mathrm{rad\; s^{-1}}$. 
+
+If $\gamma$ is nonzero, the permittivity is generally a complex function and it can be separated into its real and imaginary part $\varepsilon_r = \varepsilon_r'+\ii\varepsilon_r''$ by expanding the above fraction by its complex conjugate
+\begin{equation} \varepsilon_r = 1 - \omega_p^{2} \cdot \frac{\omega^{2} - \ii \gamma \omega}{\omega^{4} + \gamma^{2} \omega^{2}} = 
+		\underbrace{\left(1 - \frac{\omega_p^2}{\omega^2+\gamma^2}\right) }_{\text{real part } \varepsilon_r'}
++ \ii	\underbrace{\left(\frac{\omega_p^2\gamma}{\omega^3 + \gamma^2\omega}\right) }_{\text{imaginary part } \varepsilon_r''}.
+\label{eq_}\end{equation}
+%The real part $\varepsilon_r'$ indicates capacitive or inductive behaviour of the metal. The imaginary part $\varepsilon_r''$ describes losses which may arise either from 
+% \underbrace{ }_{\text{}}
+The low- and high-frequency limits of permittivity given by the Drude model are:
+\begin{equation} \lim_{\omega \to 0} \varepsilon_r' = -\frac{\omega_p^2}{\gamma^2}, \quad \quad  
+				 \lim_{\omega \to 0} (\varepsilon_r'' \cdot \omega) = \frac{\omega_p^2}{\gamma},\label{eq_}\end{equation}
+\begin{equation} \lim_{\omega \to +\infty} \varepsilon_r' = 1, \quad \quad  
+				 \lim_{\omega \to +\infty} (\varepsilon_r'' \cdot \omega^3) = 1. \label{eq_}\end{equation}
+We can see that in the low frequency limit, the imaginary part of permittivity diverges (while its real part has a finite value). In the high frequency limit, the metal permittivity approaches that of vacuum, i.e. $1+0\ii$.
+
+\subsection{Dispersion relation in Lorentz-Drude media} 
+\paragraph{Local response of a dielectric} Assume a plane wave propagates through a medium containing (bound or free) charges. When an electric field $\E$ is applied, the response of the medium manifests in the electric induction $\D(t)$ in a way that is characteristic for the medium need to be accounted for in the constitutive equation. The response generally depends on the history of $\E(\tau)$ in previous time $\tau < t$, and is described by a convolution:
+\begin{equation} \D(t) = \varepsilon_0 \E(t) + \int_{-\infty}^{t} \E(\tau) \chi_e(t-\tau) \mbox{d}\tau. \label{eq_chi_convol}\end{equation}
+We expect the medium to be time-invariant, linear (independent, 
+Using the Fourier transform
+
+
+\paragraph{Kramers-Kronig relations}
+Causality prevents the response from reacting to the future electric field, so the integration in Eq. (\ref{eq_chi_convol}) goes up to the current time only, $\tau \in (-\infty, t)$. The response of the medium to a real-valued field $\E$ must moreover be also real, no matter that the computations are often done even with complex field amplitude [Eq. (\ref{eq_pw})] for the sake of convenience. 
+
+Thus, the basic physical laws impose relatively strict constraints to the time-domain response, which translate into another constraints for the possible shape of the response in frequency domain. The intuitive physical approach is based on that any time-domain response function can be trivially separated into its odd and even parts as $f(t) = f_{odd}(t) + f_{even}(t) \equiv -f_{odd}(-t) + f_{even}(-t) $, as shown in Fig. \ref{fg_kk}. 
+\begin{figure}[h] \caption{} \label{fg_kk} \centering 
+	\includegraphics[width=18cm]{img/Kramers_Kronig_plot/kk.pdf}
+\end{figure}
+
+In the Fourier integral
+\begin{equation} 
+\begin{split} 
+F(\omega)=& \int_{-\infty}^{\infty} e^{-\ii \omega t} f(t) \mbox{d}t = \\
+		 =&  \frac{1}{2} \int_{0}^{\infty} e^{-\ii \omega   t } [ f_{odd}(t) + f_{even}(t)] \mbox{d}t 
+		   + \frac{1}{2} \int_{0}^{\infty} e^{-\ii \omega (-t)} [-f_{odd}(t) + f_{even}(t)] \mbox{d}t  \\
+		 =&  \int_{0}^{\infty} \frac{e^{-\ii \omega t}-e^{+\ii \omega t}}{2} f_{odd}(t) \mbox{d}t 
+		   + \int_{0}^{\infty} \frac{e^{-\ii \omega t}-e^{+\ii \omega t}}{2} f_{odd}(t) \mbox{d}t  = 
+		 =&\int_{-\infty}^{\infty} e^{-\ii \omega t} f(t) \mbox{d}t  = \\
+		 =&\int_{-\infty}^{\infty} e^{-\ii \omega t} f(t) \mbox{d}t  = \\
+		 =&\int_{-\infty}^{\infty} e^{-\ii \omega t} f(t) \mbox{d}t  = \\
+		 =&\int_{-\infty}^{\infty} e^{-\ii \omega t} f(t) \mbox{d}t  = 
+\end{split} 
+\label{eq_}\end{equation}
+
+Another, mathematical, proof can be derived from the integration in complex plane.
+
+
+\paragraph{Conductivity in the Drude model}
+The notion of \textit{conductivity} is widely used to describe metals and doped semiconductors i.e. media whose response to electric field is dominated by free charge carriers. Here we show that conductivity can also be expressed by the local model of permittivity, if a right frequency dependence of $\varepsilon_r(\omega)$ is chosen. For clarity, we avoid using the notion of conductivity in the rest of the thesis.
+
+The relation between permittivity $\varepsilon_r(\omega)$ and conductivity $\sigma(\omega)$, both complex functions of angular frequency $\omega$, can be derived from the formulas for conduction and polarisation the current given as  $\rho v(t)$ excited by a harmonic oscillationg field $E(t) = \mathrm{e}^{-\ii\omega t}$, respectively: %TODO FIXME explain rho.n, use i omega t instead of -i omega t, check again...
+\begin{equation} \vec \rho n(t) = \sigma(\omega) E(t) = \mathrm{e}^{-\ii\omega t}, \label{eq_rho_n1}\end{equation}
+\begin{equation} \vec \rho n(t) = \frac{\partial E(t)}{\partial t} \cdot \varepsilon_r(\omega) \varepsilon_0  =-\ii \omega \mathrm{e}^{-\ii\omega t} \cdot \varepsilon_r(\omega) \varepsilon_0. \label{eq_rho_n2}\end{equation}
+Both above equations describe the same quantity, so
+\begin{equation} \sigma(\omega) = -\ii \omega \varepsilon_r(\omega) \varepsilon_0, \quad  \text{and} \quad  \varepsilon_r(\omega)  = \frac{\ii\sigma(\omega)}{\varepsilon_0 \omega}. \label{eq_}\end{equation}
+Thus, a dielectric with real constant permittivity has imaginary conductivity, whose magnitude grows with frequency (cf. with the impedance of a capacitor). A conductor with real constant conductivity has imaginary permittivity, that diverges in the low-frequency limit. 
+
+Using the above relation to convert metal permittivity $\varepsilon_r$ into conductivity $\sigma$ we obtain
+\begin{equation} \sigma(\omega) = -\ii \omega \varepsilon_r(\omega)\varepsilon_0 = -\ii\omega \varepsilon_r'(\omega) \varepsilon_0  +  \omega \varepsilon_r'' \varepsilon_0 = 
+	\ii \underbrace{\varepsilon_0 \left(-\omega + \frac{\omega_p^2\omega}{\omega^2+\gamma^2}\right)}_{\text{imaginary part } \sigma''} + 
+		\underbrace{\varepsilon_0\frac{\omega_p^2\gamma}{\omega^2+\gamma^2}}_{\text{real part } \sigma'}. \label{eq_}\end{equation}
+We may now express the low- and high-frequency limits also for conductivity:
+\begin{equation} \lim_{\omega \to 0} \sigma' = \frac{\omega_p^2\varepsilon_0}{\gamma}, \quad \quad  
+				 \lim_{\omega \to 0} (\sigma'' / \omega) = -\varepsilon_0 + \frac{\omega_p^2 \varepsilon_0}{\gamma^2} , \label{eq_}\end{equation}
+\begin{equation} \lim_{\omega \to +\infty} (\sigma' \cdot \omega^2) = \varepsilon_0\omega_p^2\gamma, \quad \quad  
+				 \lim_{\omega \to +\infty} (\sigma'' / \omega) = -\varepsilon_0, \label{eq_}\end{equation}
+\section{The spatial-dispersive model for continuous media} % TODO
+\paragraph{General formulation of spatial dispersion}
+\paragraph{Magnetic effects included in spatial-dispersive permittivity}
+\paragraph{Comparison of eps-mu and spatial-dispersive models}
+ %(electric quadrupoles..., [Merlin])
+\paragraph{Why magnetic resonances do not contribute to static permeability?}
+
+\section{Electromagnetic waves in periodic structures}
+The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by%{{{
+\begin{equation} \mathbf{E}(z, t) := \mathbf{E}_0 \cdot e^{ikz- 2i\pi f t}, \label{eq_pw}\end{equation}
+where $\mathbf{E}_0$ is the field amplitude.  This expression gives a complex function, whose imaginary part has no physical meaning and accordingly is not plot either. The following mathematical expressions however turn out to be simpler when using complex exponents instead of the purely real fields.
+In a homogeneous medium, there is a simple \textit{dispersion} relation between the frequency  $f$ and the wavenumber $k$, given as
+\begin{equation} f = \frac{ck}{2\pi \cdot n} = \frac{ck}{2\pi \cdot \sqrt{\varepsilon \mu}}. \label{eq_dispersion}\end{equation}
+The constant $n = \sqrt{\varepsilon \mu}$ connecting the frequency and wavenumber is the index of refraction.
+
+Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
+\begin{equation} \mathbf{E}(\mathbf{r}, t) = \mathrm{e}^{\mathrm{i} Kz - 2\pi \mathrm{i} f t} \cdot \mathbf{u}(\mathbf{r}), \text{ where } \mathbf{u}(\mathbf{r}) = \mathbf{u}(\mathbf{r}+a\mathbf{z}) = \mathbf{u}(\mathbf{r}+2a\mathbf{z}) = \ldots, \label{eq_bloch}\end{equation} 
+i.e. $\mathbf{u}(\mathbf{r})$ shares the periodicity with the structure and it is generally a complex vector function so it not only alters the direction and magnitude of $\mathbf E$ (or  $\mathbf H$), but also introduces \textit{phase modulation} of the wave in each cell. Note that the capital $K$ is used to distinguish the wavenumber of the Bloch wave envelope from the wavenumber $k$ in free space.
+
+\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\mathbf{r})$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
+	\includegraphics[width=17cm]{img/PhC_folding_illustration.pdf} 
+\end{figure}
+When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude.\footnote{The equilibrium forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.} We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
+\begin{enumerate}
+ \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\mathrm{e}^{\mathrm{i}Kz}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\mathbf{r})}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\mathbf{r})}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
+
+In vacuum, the mode function takes the simplest form, being constant $\mathbf{u(\mathbf{r})} = 1$ at all frequencies. The dispersion relation of vacuum forms a direct line as plot in Fig. \ref{fg_phc}a.} 
+ \item{The \textit{folded} plot requires $K/\left(\frac{2\pi}{a}\right) \in (-\frac{1}{2}, \frac{1}{2})$ and the remaining phase is mostly expressed by the mode function. 
+Further savings of space in the plot can be made using the symmetry of the forward and backward waves, so only the positive half for $K/\left(\frac{2\pi}{a}\right) \in (0, \frac{1}{2})$ has to be plot to describe the mode structure.} 
+ \end{enumerate}
+Although maybe less instructive, usually the \textit{folded} bands are plot in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phc}b and \ref{fg_phc}d.
+
+%, but in the following we will plot the unfolded bands instead as it seems to give clearer physical interpretation of data.
+%% TODO doplnit "PhC book": dispersní křivky atd.
+%}}}
+\section{What are metamaterials and photonic crystals?} 
+%% TODO%{{{
+%% This is after the theory of eldn in periodic media.
+%% Nonresonant metamaterials (ie. in the 1st Brillouin zone, see [Kadlec2008 / Vol. 33, No. 19 / OPTICS LETTERS] and Juraj]
+%% resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
+%% Think over, note the paper Dominec2014
+%}}}
+
+\section{Lorentz-Drude model}
+
+% TODO Two questions: why omega_p had to be normalized by sqrt 2pi and why limit of hi-freq sigma'' had to be divided by 2pi?
+
+\subsection{Conditions of stability in FDTD}
+%TODO 
+The finite-difference time-domain simulation can become unstable if 
+
+
+\section{Numerical methods used}
+\subsection{Finite-difference time-domain simulation}
+Of the three discussed numerical methods, finite-difference time-domain simulation (FDTD) is the most versatile, but also the less efficient. It requires discretisation of the simulation volume into a one-, two- or three-dimensional grid, where each grid element holds the vectors of $\mathbf E, \mathbf H$ along with the properties of the structure ($\varepsilon, \mu$). The actual computation is based on updating the fields according to the Maxwell and constitutive equations (\ref{eq_me}, \ref{eq_ce}). The computation for each grid element is therefore a simple arithmetic operation that is easy to parallelise in multiprocessing environment. FDTD can account for realistic models of material dispersion (including losses), nonlinearity and whole range of other physical phenomena.
+
+One downside of FDTD is in that mapping the structure into the grid introduces artifacts at edges. This may be greatly alleviated by expressing the permittivity as a tensor\cite{oskooi2009subpixel}, which effectively replaces the jagged interfaces by nearly exact polyhedra, only leaving significant error on highly \textit{curved} structures.\footnote{We used the \textit{MEEP}\cite{oskooi2010meep} program from the \textit{Ab-initio group} at MIT. It implements this feature, but in our case it mostly turned out to be better just to slightly increase resolution.}
+Another issue of FDTD is hidden in the need to run the full-resolution computation in the whole volume whose largest part often consists of nothing but free space. A solution to this is called \textit{subgridding}\cite{zivanovic1991subgridding}, which defines regions with different resolution, keeping it low in the non-interesting parts of the volume. 
+Both staircasing and inefficiency issues are targeted by the \textit{finite-element methods} (FEM), which approximate the structure surface with a triangular mesh and fill the volume with tetrahedra, instead of an orthogonal grid. They are particularly suitable for structures with a huge difference in the scales (e.g. where there are fine features with big spacing), at the expense of substantially more complicated computation. This was not the case of our simulations, both because of the simple geometry of the metamaterial cells studied and the technological imprecision during fabrication of the samples. For specific problems, many other methods may turn out to be superior, some of them not even requiring any grid or mesh.
+% TODO? Yee cell
+
+FDTD can also be used to obtain the field shape for a monochromatic wave with some given frequency. An intuitive way is to excite the structure for a timespan long enough with a single frequency source, and take a snapshot after all transients are gone. However, a preferable approach is to run optimisation routine, searching for a field shape\footnote{This may be viewed as eigenvector problem, where the non-hermitian linear operator are the Maxwell equations and the eigenvalue is given by the desired frequency.} for which the time-step based on Maxwell equations matches the multiplication by $e^{i\varphi}$.
+
+From its nature, the FDTD gives the time-domain response of the given structure to a broadband excitation pulse. When we process this time evolution of fields with Fourier transform, we obtain a broad spectrum of reflected and transmitted wave a from single computation. If this is desired, FDTD is highly efficient; however if we were focused on one frequency only, the \textit{frequency-domain} methods would be preferable. 
+
+
+
+\subsection{Plane-wave expansion}
+Another numerical method used is the plane-wave expansion method (PWEM). This method works in frequency-domain and, being based on eigenmode problem, is fundamentally different from FDTD. It is encouraging that both give similar results. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved; the resulting eigenvalues are the frequencies of different modes in the folded dispersion curves. 
+
+For a given wavevector, PWEM gives also the shape of the fields for each mode. This approach turned out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get insight into how the modes look like. 
+As a convenient implementation of PWEM, we used  the freely available program \textit{MPB}\cite{johnson2001mpb}, again from the \textit{ab-initio} group at MIT.
+% Todo comments on MPB
+
+
+\subsection{Transfer-matrix method}
+The \textit{transfer-matrix method} (or \textit{Abelès formalism}) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, enabling to compute e.g. the reflection and transmission of structures discretized in a grid in frequency-domain. For simplicity, we describe the one-dimensional method.
+
+The key concept is in dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared, that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has wave impedance $z_m$, refractive index $n_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
+\begin{equation} \mathbb M^{(m)} := \begin{pmatrix} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{pmatrix},\quad\text{ where }\gamma:=1/z_m\text{ and }\delta := kn_m d_m.\label{eq_tmm1}\end{equation}
+Multiplication of such matrices gives the total transfer matrix of the layered structure, 
+\begin{equation} \mathbb M^{(tot)} \equiv \begin{pmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{pmatrix} = \ldots \cdot \mathbb M^{(2)} \cdot \mathbb M^{(1)}. \label{eq_tmm2}\end{equation}
+The total reflection $r^{(tot)}$ and transmission $t^{(tot)}$ are then 
+\begin{equation} r^{(tot)} = \frac{m_{11} + m_{12} - m_{21} - m_{22}}{m_{11} + m_{12} + m_{21} + m_{22}}, \quad\quad t^{(tot)}= \frac{2}{m_{11} + m_{12} + m_{21} + m_{22}}, \label{eq_rt_tmm}\end{equation}
+if perpendicular only incidence is assumed and if the surrounding medium consists of air.
+
+The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
+
+
+
+
+\chapter{Experimental and numerical methods}
+\section{Geometry for the FDTD simulation of metamaterials}
+We used FDTD mostly for three-dimensional simulations. In the following we restrict ourselves to perpendicular incidence.  We defined the simulation geometry as illustrated in Fig. \ref{fg_simgeom}.
+\begin{figure}[ht] \caption{Simulation geometry for FDTD} \label{fg_simgeom} \centering 
+	\includegraphics[width=10cm]{img/meep_geometry.pdf} 
+\end{figure}
+
+The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes. On both ends at the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
+
+\subsection{Processing the time records into effective parameters}
+We performed the simulation of one unit cell to deduce the behaviour of a periodic structure composed of infinity of the unit cells.
+The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
+
+Without going into details, we required steps are to
+\begin{enumerate}
+ \item{convert all field records to frequency domain using the Fourier transform (FT),} 
+ \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
+ \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
+ \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
+ \end{enumerate}
+While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
+$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
+
+% todo check if symbols known
+The Fresnel coefficients give the reflection and transmission from an interface of two homogeneous media described\footnote{In the literature, the Fresnel coefficients are often expressed using the index of refraction instead of wave impedance; this holds for most media where $\mu = 1$ and therefore $n = 1/z$} by their impedances $z_1, z_2$:
+\begin{equation} r_1 = \frac{z_2 - z_1}{z_2 + z_1}, \quad \quad \quad t_1 = \frac{2 z_2}{z_2 + z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
+The complex reflection $r_{s}$ and transmission $t_{s}$ of a homogeneous slab with given wave impedance $z$, index of refraction $n$ and thickness $d$ can be computed by summing the infinite series of internal reflections.
+% todo expr
+When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination}, yielding its index of refraction:
+\begin{equation} n = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
+and also its wave impedance:
+\begin{equation} z= \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
+The sign and branch of the refraction index, and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips in the spectra, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
+
+\section{Time-domain terahertz spectroscopy}
+
+
+
+\chapter{Results}
+\section{Planar dielectric layers}
+%% TODO co znamená  " {\infty}-P  KP   KP-DM  " ??
+The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, has been investigated thoroughly in the previous decades. We review it mostly for comparison with the structures presented in the following. 
+
+\begin{figure}[ht] \caption{Dispersion curves for an one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
+\textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
+\textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
+\end{figure}
+% TODO draw and append axes+colorbar to the field distribution plots
+% TODO visualise the permittivity, but how?
+
+In Fig. \ref{fg_1dbd}a, we can see the folded dispersion curves for a plane wave propagating in vacuum, as already discussed above. 
+%As predicted by the Bloch-Floquet theorem (\ref{eq_bloch}), the fields are periodic over each cell whenever the wavenumber $k$ touches the Brillouin zone boundary. 
+To save space, we plot the  dispersion curves as \textit{folded}, but one can easily imagine how the curve unfolds into a straight light line. For any frequency $f$, there is a wavenumber $k$ corresponding to a propagating wave. 
+
+
+The situation is different when we introduce periodic dielectric layers as in Fig. \ref{fg_1dbd}b. In the band structure, we observe allowed bands with \textit{band gaps} between them. At the frequencies in a bandgap, the wave can not propagate through the structure. The first photonic band ends when half the wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because it is shifted by half its period so that it maximizes electric energy in air. For a 1-D photonic crystal, we can generally conclude that in order to move up on the frequency axis,
+\begin{enumerate}
+ \item{within each photonic band, one nodal plane per unit cell is added\footnote{In this paper, the mode plots show $2\times 2$ unit cells for clarity.},} 
+ \item{within each photonic band gap, the wave shifts the most of electric field energy into lower-permittivity medium\footnote{Note that the band gaps do not have the same width on the frequency scale. For a certain thickness of the high-dielectric layer that corresponds to the Fabry-Pérot resonance, no frequency difference at all results from shifting the wave. In this case the band gap attains zero thickness, as is illustrated in Fig. \ref{fg_ebar_radiusscan}a for $r\approx20\,\upmu$m and $f\approx1.6$ THz. In other words, there may be a \textit{gap-less} transition between photonic bands.}, while the number of nodal planes remains constant. }
+ \end{enumerate}
+
+Such a shifting between waves at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} gaps that are responsible for the dispersion of the 1-D photonic crystal. 
+
+
+
+\section{Dielectric rods perpendicular to the electric field}
+% todo? analytic Mie resonance frequency? -> OBrien&Pendry2002, szabos etc
+Are there also different, non-Bragg, mechanisms that can create band gaps?
+
+We would not indeed pose this question if its answer were negative. It is closely related to the \textit{internal resonances} based on non-propagating evanescent fields in the structure. The operation of all sorts of left-handed metamaterials  relies on these resonances. We conjecture such resonances may never occur in 1-D dielectric structures, so their study requires a simulation of a 2-D or 3-D structure.
+% Todo elaborate the idea of nonBragg gap <-> nonradiative fields in structure <-> permittivity/permeability resonance
+% Note that in 1-D dielectric PhC, all fields are propagating, none evanesecnt
+% Big question: Can one approximate a metamaterial by ENG/DNG/MNG/DPS 1-D PhC??
+\begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plot as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
+\textbf{(a)}	\includegraphics[width=8cm]{img/HRods_eps012_R12_PWEM.pdf}
+\textbf{(b)}	\includegraphics[width=8cm]{img/HRods_eps100_R12_FDTD.pdf}
+\end{figure}
+
+Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
+The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
+
+% AN OPEN QUESTION: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
+% ANOTHER OPEN QUESTION: can we get an analytical formula for Mie resonances?
+This new type of resonance is known as a \textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}. Unlike the Bragg gaps, it can be observed also in a single rod in free space. Being a function of the frequency of the incident wave, the magnetic dipole moment of the free-standing dielectric rod follows the characteristic Lorentzian shape of its \textit{resonance curve}. Below the resonance the magnetic dipole moment of the resonator goes to strongly positive values, while in a narrow region above the resonance it is strongly negative. How does this behaviour change if we arrange the rods in an infinite periodic array? 
+
+%% TODO? Add the x, y, z, size scans of the ellipsoids%{{{
+%> On 19 Mar 2014, at 15:57, <dominecf@fzu.cz>
+%> wrote:
+%>
+%>> Dear Oleg and all,
+%>> the frequency dependence of the Mie modes in an ellipsoid is
+%>> nontrivial.
+%>> Maybe some skilled mathematician could find the analytic expression,
+%>> but I
+%>> guess its evaluation would require a computer anyway. As an interesting
+%>> numerical experiment with FDTD, I ran three scans over the X-, Y- and
+%>> Z-
+%>> semiaxes of a TiO2 ellipsoid, fixing the remaining semiaxes to 15 um.
+%>> The
+%>> ellipsoid's X-axis was oriented parallel to the electric field, the
+%>> Z-axis
+%>> pointed in the wave propagation direction.
+%>>
+%>> The results attached, best expressed by the dielectric loss spectra in
+%>> bilogarithmic plot, show that the first (magnetic) mode is roughly
+%>> proportional to X**(-0.4) and Z**(-0.4), while the dependence on the
+%>> Y-size is even slower, similar to Y**(-0.2).
+%>>
+%>> The second Mie mode is more sensitive to the Z-size as Z**(-0.7), while
+%>> the other sizes scale very slowly, X**(-0.15), Y**(-0.15).
+%>>
+%>> In all cases, the exponents of X, Y and Z~dependencies should sum up to
+%>> -1, which is the obvious rule for the frequency dependence when all
+%>> axes
+%>> are scaled simultaneously!
+%>>
+%>> Note that these estimated exponents are roughly valid only near the
+%>> spherical shape, ie. when X~Y~Z. As a matter of fact, the tuning curves
+%>> are not straight in the log-log plots. Naturally when one ellipsoid
+%>> dimension is much lower than the other two, its role becomes more
+%>> pronounced.
+%>>
+%>> Now we are coming to the big conclusion: Near the spherical shape, the
+%>> difference of exponential slope between X- and Y- elongation is
+%>> (0.4-0.2)=0.2. Therefore, (15./12.)**(0.4-0.2) gives a reasonable
+%>> factor
+%>> of 1.0456 difference for the resonant frequencies of the magnetic mode.%}}}
+
+The results from a PWEM computation are plot in Fig. \ref{fg_rodh}. To obtain comparable dispersion curves in Fig. \ref{fg_rodh_fdtd}, we employed the FDTD simulation and the effective parameter retrieval described above. The main differences are that in Fig. \ref{fg_rodh_fdtd} we plot the frequency $f$ on the horizontal axis and we also use the effective index of refraction $N_{\text{eff}} := K\cdot \frac{c}{2\pi\,f}$ instead of the wavenumber $K$. One advantage of this representation is that $N_{\text{eff}}$ should be compliant with the Kramers-Kronig relations. This criterion always gives \textit{only one} correct solution on how to unfold $K$ to obtain realistic $N_{\text{eff}}$. 
+In the simulation, the rod spacing (or, lattice constant) $a$ was 100 \um, so the normalised frequency unit is $c/a = 3$ THz. The frequency range from 0 to 1.8 THz was therefore chosen the same as in Fig. \ref{fg_rodh}b. 
+Note the first resonance shows pronounced resonant shape in the plot of permeability, which is typical of magnetic Mie resonances. In a very narrow region 960-970 GHz, the permeability $\mu_{\text{eff}}$ is real and negative. 
+Apart from $N_{\text{eff}}$, the FDTD computation gives also the effective wave impedance $Z_{\text{eff}}$, which is a complementary information we need to compute the effective permittivity $\varepsilon_{\text{eff}}$ and the effective permeability $\mu_{\text{eff}}$:
+
+\begin{equation} \varepsilon_{\text{eff}} = N_{\text{eff}}/Z_{\text{eff}}, \quad\quad\quad\quad \mu_{\text{eff}} = N_{\text{eff}}\cdot Z_{\text{eff}}.
+\label{eq_epsmu}\end{equation}
+
+\begin{figure}[ht]  \caption{Effective parameters of an array of dielectric rods $||\mathbf H$ with same parameters as in Fig. \ref{fg_rodh}b (i.e. radius of  12 \% of the period and permittivity $\varepsilon = 100$). Complex reflection $r$ and transmission $t$ spectra allow to compute the effective index of refraction, impedance (not shown), permittivity and permeability. Thin grey lines indicate the Brillouin zone boundaries.}
+\label{fg_rodh_fdtd} \centering 
+\includegraphics[width=8cm]{img/HRods_eps100_radiusscan.pdf}
+\includegraphics[width=4.5cm]{img/HRods_sketch.pdf}
+\end{figure}
+
+Other Mie resonances are located at higher frequencies. As a general rule for similar structures, the odd-numbered resonances have magnetic dipole moment (along the rod axis), whereas the even-numbered resonances have electric dipole moment (perpendicular to the rod axis). The reason is that electric dipole moments in odd resonances are suppressed due to antisymmetric shape of the mode; naturally the same holds for the magnetic moments in the even resonances.
+
+The frequency of the Mie resonances is not significantly influenced by the photonic bands. Therefore, in order to understand the resulting band structure and its dependence on parameters, one has to disentangle which band gaps are due to Bragg reflection and which correspond to magnetic or electric Mie resonances. This is much easier knowing the spectra of $\varepsilon_{\text{eff}}$ and $\mu_{\text{eff}}$, as provided by FDTD in Fig. \ref{fg_rodh_fdtd}.
+\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities. The wavenumber plot is folded so it ranges from 0 to 0.5, where $K\approx 0$ and $K\approx 0.5$ correspond to band gaps. \textbf{a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_hbar_radiusscan} \centering 
+\textbf{a)}\includegraphics[width=8cm]{img/HRods_eps012_radiusscan.pdf}
+\textbf{b)}\includegraphics[width=8cm]{img/HRods_eps100_radiusscan.pdf}
+\end{figure}
+
+The photonic crystals composed of square lattice of dielectric rods have been examinated thoroughly since early 90s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was rather low, corresponding to the optical or near-infrared frequencies, where the suitable materials usually have permittivity $\varepsilon < 12$. By parametric scans we could prove that for rod permittivity below 60 or even 80, the individual resonance is always located at higher frequency than the Bragg gap. Little, if any, attention was therefore paid to different nature of the higher resonances and most publications focused on properties and applications of the Bragg band gap.
+
+The situation is different in the terahertz range, as the lattice of the crystalline solids often exhibits optical phonons at frequencies between 5 and 20 THz. The permittivity of many materials turns out to be much higher for frequencies below these resonances. This enables to conceive structures composed e.g. of titanium dioxide \cite{baumard1977_epsilon_TiO2} with $\varepsilon^{\text{THz}} \approx 92$ or of ferroelectrics with $\varepsilon^{\text{THz}}$ even orders of magnitude higher \cite{skoromets2011tuning}. The price to be paid for this advantage in the THz range are the relatively high losses caused by the lattice vibrations.
+
+
+\begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.\\
+\textbf{a)} Band diagram and modes from PWEM. 
+\textbf{b)} The effective parameters computed using FDTD confirm the previous results.  } \label{fg_erod_radius11} \centering 
+\textbf{a)}	\includegraphics[width=8.5cm]{img/ERods_eps100_R11_PWEM.pdf}
+\textbf{b)}	\includegraphics[width=8.0cm]{img/ERods_eps100_11um_FDTD.pdf}
+\end{figure}
+
+\section{Dielectric rods parallel to electric field}
+\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
+\textbf{a)}	\includegraphics[width=8cm]{img/ERods_eps012_radiusscan.pdf}
+\textbf{b)}	\includegraphics[width=8cm]{img/ERods_eps100_radiusscan.pdf}
+\end{figure}
+
+
+\begin{figure}[ht] \caption{Experimental and numerical data for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }\label{fg_ebars_exp} \centering 
+\includegraphics[width=11cm]{img/STObar_rt.pdf} 
+\includegraphics[width=4cm]{img/EBars_STO_sketch.pdf}
+\end{figure}
+% XRectWire_resolution=2.00e-06_comment=STO_simtime=1.50e-10_yspacing=9.60e-05_epsilon=6.00e+02_cells=1.00e+00_padding=5.00e-05_width=6.40e-05_monzd=1.00e-04_thick=2.60e-05_Kx=0.00e+00_Ky=0.00e+00
+The dielectric bars parallel to the electric field represent the same structure as previously discussed, except that it is orthogonally rotated. There is however a qualitative difference in that the high-permittivity dielectric is continuous along the direction of the electric field, so the effect of the dielectric is expected to be much stronger. This results in that the first Mie resonance is the \textit{electric} one. Its overlap with the next magnetic resonance can eventually lead to negative index of refraction in such a structure \cite{peng2007, vynck2009}. If the permittivity of the rods is chosen to be $\varepsilon = 100$ and the periodicity of the lattice $a = 100\;\upmu$m, the negative index of refraction occurs in a narrow range of radii from 9 to 12 $\upmu$m. The behaviour of this structure with the desired radius is depicted in Fig. \ref{fg_erod_radius11}a,b.
+
+In order to form a photonic band with a negative index of refraction, both the permittivity and permeability need to be negative. In the structure discussed, this is made possible by the frequencies of the electric and magnetic Mie resonances being close enough to overlap.
+The electric resonance would be surrounded by its broad band gap between the frequencies spanning from $0.13 \cdot\frac{c}{100\;\upmu\text{m}} \approx 400$ GHz to  $0.38 \cdot\frac{c}{100\;\upmu\text{m}} \approx 1140$ GHz. This is also confirmed by Fig. \ref{fg_erod_radius11}a where the mode shapes X1 and $\Gamma$4 perfectly correspond to the electric Mie resonance. 
+
+For the interesting range of radii around 11 $\upmu$m, the magnetic resonance introduces a new, narrow photonic band starting from X2. Now, moving on to the right plot of Fig. \ref{fg_erod_radius11}b, we can clearly identify the resonant frequencies of 815 and 900 GHz. They cause abrupt skips of the refractive index which always shift the index of refraction by one Brillouin zone down.\footnote{The individual resonance appears to be the only mechanism that causes $N'_{\text{eff}}$ to \textit{decrease} in the spectrum. In photonic bands, no matter if $N_{\text{eff}} > 0$  or $N_{\text{eff}} < 0$, the real part of $N_{\text{eff}}$ always grows in accordance with the Foster theorem. This is confirmed by the FDTD results and by their compliance to Kramers-Kronig relations. To illustrate this, the Hilbert transform of the refractive index is plot as the thin pink line and it nearly perfectly follows the green curve over whole spectrum, except for an additive constant. There is  only one acceptable physical solution that is compatible with the Kramers-Kronig relations.}
+The resonance is accompanied by a sharp peak in the imaginary part of refractive index $N''$ and by transmission amplitude touching zero ($|t| = 0$). As both Mie resonances precede the Bragg gap, the index of refraction is pushed into negative values and the following photonic band gap $N' < 0$.
+
+For completeness we add the FDTD results with effective permittivity and permeability, computed for the entire spectrum. These quantities however seem to have a useful physical interpretation only within the photonic bands, or within those parts of the photonic band gaps where $N = 0$. 
+\\
+
+The dispersion curves of the rods with radii different than 11 $\upmu$m are compared in Fig. \ref{fg_ebar_radiusscan}b based on multiple FDTD simulations. The individual resonances are again easy to be distinguished by abrupt changes from white to blue or vice versa (i.e. skips between the Brillouin zones). We can see that for radii below 8 $\upmu$m the magnetic resonance is at too high frequencies, forming its separate band gap. For even thinner rods at the very bottom edge of the plot, no individual resonance intersects with the first Bragg  band gap at all. 
+
+An interesting qualitative change of the structure response occurs when the rods get slightly thicker than discussed above, say $r > 12\;\upmu$m. The electric and magnetic resonance frequencies do never cross over, but instead they  and an ordinary Bragg band gap remains. The transmission curve of single cell (Fig. \ref{fg_erod_radius11}) continuously shifts up and does not touch zero anymore. We may conclude that for rod radius being too high, the structure no more exhibits the negative index of refraction and starts to behave similar to the 1-D photonic crystal discussed above.
+% TODO explanation by nodal planes
+
+%The dependence of the folded wavenumber $\text{Re}(K)$ for high-permittivity rods $||\mathbf E$ is plot in Fig. \ref{fg_ebar_radiusscan}b. Starting from very thin rods ($r=2$ \um) at the very bottom of the plot, we can see the first band gap (1.3 to 1.5 THz) denoted by darkest blue is purely of the Bragg type, followed by a 
+
+Comparing the low-permittivity and high-permittivity cases in Fig. \ref{fg_ebar_radiusscan}a,b, one can see there exists some minimum limit for the permittivity contrast that is necessary for both electric and magnetic resonances to be located in the first gap simultaneously. We determined this scale-invariant value to be roughly 80.
+
+As a little verification that the numerical computations give sound results, we attach experimental transmission measurement of the rod array in Fig. \ref{fg_ebars_exp}.
+The bars used had rectangular cross-section, being 26 $\upmu$m thick, 66 $\upmu$m  wide and their periodicity along the $y$-axis was 96 $\upmu$m.  The experimental data (points) are compared to FDTD simulation data of an identical structure (lines). The material used was strontium titanate, best matched by simulation where the permittivity was set to $\varepsilon^{\text{(1 THz)}} = 365 + 62i$.  While this structure can not provide the negative index of refraction and has very high losses, it can act as a temperature-tunable filter. The transmission peaks can be clearly identified with resonant modes and it was observed that the frequencies of the modes shift with different slope depending on parameters.  
+ 
+
+
+
+\section{Dielectric spheres}
+Dielectric spheres are delimited in all three dimensions, but they have much in common with the dielectric rods. Their behaviour is closer to that of the rods with orientation parallel to the \textit{magnetic field}. The reason is that the lowest-frequency resonance of both structures is generally the magnetic one, whose circulating electric field is localised in the high-permittivity volume of the particle. Higher resonances require a significant part of the electric field to pass through surrounding air.
+
+\begin{figure}[ht]  \caption{Effective parameters of an array of dielectric spheres \textbf{a)} Ti$\,$O$_{2}$ spheres of diameter $r=25\;\upmu$m, \textbf{b)} The same Ti$\,$O$_{2}$ spheres interlaced with thin wire mesh }
+\label{fg_spheres_fdtd} \centering 
+\textbf{a)}\includegraphics[width=8cm]{img/Sphere_eps100_R25_FDTD.pdf}
+\textbf{b)}\includegraphics[width=8cm]{img/SphereWire_eps100_R25_FDTD.pdf}
+\end{figure}
+In contrast with previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=25\;\upmu$m  and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. \ref{fg_spheres_fdtd}a. A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
+For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
+The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
+
+An important property of the periodic sphere array is its \textit{isotropic} electromagnetic behaviour. It trivially follows from symmetry under any orthogonal rotation, and it also holds almost exactly under any other orientation (unless the spheres are not touching or too high frequencies are studied).
+
+The right plot in Fig. \ref{fg_spheres_fdtd}b shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section.
+
+The magnetic resonance introduces narrow regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
+%In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
+
+We performed series of experiments to measure the effective permeability  $\mu_{\text{eff}}$ spectrum in a real sample with mean sphere radius of ca. $42\;\upmu$m. The statistical deviation of the resonators size $\sigma \approx 5\;\upmu$m in the sample was unfortunately relatively broad, as was determined by means of microscopy and digital image processing. In contrast to simulations, we were able to constraint the spheres' positions to a plane only, while arranging them in a square array appeared unrealistic. We could anyway compute the single-cell permeability spectra (i. e. the yellow curve in Fig. \ref{fg_experimentalConv}) for many different resonator sizes and add them up. The resulting weighted average (blue curve) then matches the experimental data (red dots) nearly exactly. It shall be however noted that the averaged real part of $\mu_{\text{eff}}$ remained positive even with the best sieving results obtained so far.
+\begin{figure}[ht]  \caption{Comparison of the effective permeability of ideal monodisperse sphere array (yellow), weighted average according to the size distribution (blue) and experimental data (red dots).}
+\label{fg_experimentalConv} \centering 
+\includegraphics[width=12cm]{img/Spheres_FDTD_experimentalConv.pdf}
+\end{figure}
+
+
+
+\section{Metallic wires along the electric field: plasma-like behaviour}
+A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
+\begin{figure}[ht]  \caption{Effective parameters of wire mesh, wires oriented both along the electric and magnetic field, with radius of $r_w = 12\;\mu$m. A realistic Drude model was used for the metal.\\ Due to high conductivity of the wires, a wrong sign of $N'$ at 0--200 GHz and of $N''$ at 1620--2080 GHz was given by computation.\\As an illustration of the plasma-like behaviour, a grey curve shows the permittivity predicted by Drude model with $f_p = 1110$ GHz.}
+\label{fg_wire_fdtd} \centering 
+\includegraphics[width=11cm]{img/XCylWire_a100r4.pdf}
+\end{figure}
+
+Why does the transmission of a wire array differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
+
+In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
+\begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
+The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on wire radius $r$ and grid spacing of $a>r$, is predicted by the analytic model\cite{maslovski2002wire} as:
+\begin{equation} f_{p}^{2} = \frac{c^{2}}{2\pi \cdot a^{2} \cdot \ln\left(\frac{a^{2}}{4r \cdot (a-r)}\right)} \label{eq_fp_maslovski}\end{equation}
+The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
+Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
+
+We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple verification of both the FDTD algorithm and the mentioned analytic model. In the first series we kept the wire radius constant $r = 16\,\upmu$m  and changed the wire spacing $a$ (red points). For comparison, we plot in Fig. \ref{fg_omegap_a} the plasma frequency predicted by the Maslovski's analytic model\cite{maslovski2002wire} from Eq. (\ref{eq_fp_maslovski}) and by the older Pendry's model \cite{pendry1996extremely} (full and dotted lines, respectively). To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m.
+\begin{figure}[ht] \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium. \textbf{a)} $f_p$ as a function of wire spacing, \textbf{b)} $f_p$ as a function of wire radius. } \label{fg_omegap_a} \centering 
+\textbf{a)}\includegraphics[width=8cm]{img/EWire_plasmaF_spacingscan.pdf}
+\textbf{b)}\includegraphics[width=8cm]{img/EWire_plasmaF_radiusscan.pdf}
+\end{figure}
+
+In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
+
+% == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
+
+
+% \chapter{Metamaterials -- Critique and alternatives}
+% TODO TODO At the end, the author would like to express his concern about the efficiency and practical impact of the metamaterial research in the last years. 
+% 
+% The name of this chapter is borrowed from the same-named book by Ben Munk \cite{Munk2004}. The book presents several objections against MM that seem to be ill-argumented and some of them seem to be also utterly wrong. However, as another point it also touches a really deep problem: the hypertrophic number of publications dissolves the concentration of pertinent ideas in almost a homeopatic way. Perhaps anybody interested in MM will soon notice there are many papers adding just a quantitative difference to what was already published, often without stating this important fact. This may give a superficial feeling of an exponential gathering of knowledge, but in fact it mostly contributes to the information noise. 
+% 
+% It is understandable that such a new (or at least newly recognized) scientific field exerts a great pressure to publish as much and as early as possible, which is exacerbated by the objective way of how the contemporary scientific work is evaluated. 
+% That said, the situation is not as bad as it might seem and the author is also aware of several recent brilliant MM publications that give a deep insight into new physical phenomena.
+%
+% ** Subwl imaging: "if we can make deeply subwl inclusions, we can perhaps make slightly subwl near-field detectors"
+% 
+% Another question is the practical benefit of metamaterials for the humankind. 
+% Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
+% 
+% Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
+% 
+% To conclude this pessimistic, but well meant section, the author
+
+
+%%26. Y. Fu, L. Thyl ́n and H. Agren, “A Lossless Negative Dielectric Constant from Quantum e Dot Exciton Polaritons,” Nano Lett. 8, 1551 (2008).
+%%27. A. Bratkovsky, E. Ponizovskaya, S. Y Wang, P. Holmstr ̈m, L. Thyl ́n, Y. Fu, and o e H.  ̊gren, “A Metal-wire/Quantum-dot Composite Metamaterial with Negative ǫ and A Compensated Optical Loss,” Appl. Phys. Lett. 93, 193106 (2008).
+%%28. Y. Zeng, Q. Wu and D. H. Werner, “Electrostatic Theory for Designing Lossless Negative Permittivity Metamaterials,” Opt. Lett. 35, 1431 (2010).
+
+
+\chapter{Conclusion}
+We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
+The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
+
+
+A versatile numerical environment for simulations was prepared and tested in the last two years. All computation scripts, containing over 2000 lines of Python code, are open-source and they use freely-redistributable libraries only, which may be useful for the broader scientific community in the future. 
+The automated effective parameters retrieval from FDTD is especially suitable for parametric scans. It proves instrumental in optimisation of the structure performance, matching experimental data, as well as studying the tunability.
+
+Broad range of physical phenomena may be included in the simulations. A library of realistic permittivity models is being built that allows to match TDTS experiments with a good accuracy. It is also possible to combine dispersive dielectrics with metals and doped semiconductors. 
+ The FDTD method is applicable also to non-periodic, lossy and time-changing structures, while PWEM enables e. g. studies of the magnetooptic phenomena.
+All referred numerical methods, FDTD, PWEM and TMM, were tested also to give compatible and plausible results under oblique incidence and both TE/TM polarisations. 
+
+Some of the numerical simulations are also planned to be tested on the experimental basis. One of the proposed structures is an array of spheres embedded in a double metallic mesh. This structure is predicted to exhibit negative refraction in a narrow transmission band, and moreover, if the spheres are made of strontium titanate, which is a high-permittivity ferroelectric, the frequency of this band can be tuned by temperature or electric voltage between the metallisation. Other experimental work will focus on extraordinary transmission in metallic fishnets and tunable planar metamaterials. In all cases the experiments will be supported by thorough numerical simulations and possibly also by analytical models.
+
+\chapter{ebars 2014}
+In the studies of electromagnetism of photonic structures with a sub-wavelength
+periodicity, two main concepts have been employed: that of electromagnetic metamaterials
+(MM) and that of photonic crystals (PhC). In both classes of structures, their properties
+are due to resonant behavior of the structure at particular frequencies of the
+electromagnetic field.
+\begin{enumerate}
+\item {
+In MMs, the energy of the resonant field is localized in a small fraction of the unit
+cell volume, which is usually in/near a resonator made of metal or high-permittivity
+dielectric ($\varepsilon_r \gg 10$) \cite{vendik2012tunable}. 
+The coupling of the resonant field between
+neighboring cells is negligible, so the MMs have a small enough spatial dispersion and
+their behavior can be described using frequency-dependent effective parameters: the index
+of refraction $\Neff$, wave impedance $\Zeff$, permittivity $\eeff=\Neff/\Zeff$ and
+permeability $\meff = \Neff\cdot \Zeff$.
+}
+\item{
+By contrast, PhCs are typically made of low-permittivity dielectrics ($\varepsilon_r
+\lesssim 12$) which often fill a larger part of volume than what is usual in MMs. The
+resonances are strongly influenced by the presence of neighboring unit cells as they rely
+on constructive and destructive interferences between scattered (partially reflected)
+waves. As a result, the iso-frequency contours of two-dimensional (or three-dimensional)
+PhCs often deviate from elliptical (or ellipsoidal) shapes.
+
+In such a general case, the angle of refraction at a PhC interface cannot be computed
+using the Snell formula, and it is impossible to use the notion of the
+refractive index $N$ in its general sense. Nevertheless, it is possible to find directions of
+propagation (namely those parallel to the symmetry axes) where the iso-frequency contours
+can be locally approximated by ellipsoidal shape. Close to such directions the
+Snell law holds approximately and one may introduce effective indices of
+refraction of the PhC for these particular directions \cite{yannopapas2005negative}.
+}
+\end{enumerate}
+
+It appears, however, that some kinds of photonic structures represent intermediate cases
+between PhCs and MMs; this fact did not receive much attention so far. One of the
+simplest examples is a square array of cylindrical dielectric rods, oriented parallel to
+the electric field of the incident wave; this geometry was treated as a photonic
+crystal\cite{plihal1991two} and later as a metamaterial\cite{zhao2009mie,Vynck2009, felbacq2009}. The
+effective response of the rod array depends on two parameters only---the ratio of the
+unit-cell size $a$ to the rod radius $\rho$, and the dielectric permittivity of the rods
+$\varepsilon_r$, whose imaginary part is assumed to be negligible in this paper. Our aim is to
+find out which interesting qualitative changes in behavior can be found when these parameters
+are continuously changed.
+
+%% TODO reference!
+From the practical point of view, the requirement of a high permittivity $\varepsilon_r
+\gg 10$ not only restricts the choice of materials but also determines the frequency
+range where such values can be attained. 
+\cite{zhao2008tunable,zhao2008experimental}
+As a rule, the permittivity in dielectrics
+decreases in average with frequency except for narrow intervals around resonances, which
+are always accompanied by an increased absorption. In this paper, we focus on the microwave and terahertz
+range where materials with a high $\varepsilon_r$ exist and the structures can be relatively easily fabricated
+\cite{nemec2012resonant,nemec2009tunable}. We restrict our computations to the normal
+incidence which implies the propagation along the mirror plane inside the photonic
+structure; in this case the notion of the refractive index can be used even when the
+structure is in the PhC regime.
+
+In the paper we discuss numerical results obtained during a systematic variation of the
+structure parameters. Namely, we show that their relatively minor variations can lead to
+a qualitatively changing optical response. We also discuss the somewhat surprising experimental 
+results which were previously published  \cite{peng2007}
+and summarize the implications for building optical MMs from dielectric rods.
+
+\section{Calculation of effective parameters}
+
+Our structure is defined by a square unit cell with the linear dimension $a$ periodically
+distributed in the $yz$ plane; the dielectric rod parallel to $x$-axis with radius $\rho$
+and permittivity $\varepsilon_r$ is positioned in its center. We employed the
+finite-difference time-domain (FDTD) simulation package MEEP \cite{oskooi2010meep} to
+obtain the scattering coefficients (complex reflectance $r$ and transmittance $t$) of a
+structure with variable number of unit cells along the wave vector direction $k\parallel
+z$. The incident wave is polarized $E\parallel x$, periodic boundary conditions were
+applied in the $y$-direction. We found that for this geometry the retrieved effective
+parameters depend only negligibly on the number of unit cells in the $z$-direction.
+Therefore we performed the majority of simulations for a single unit cell only which can
+be considered as a thin film with effective properties remaining valid also for the
+corresponding bulk structure. The effective parameters were retrieved from complex
+transmittance and reflectance spectra \cite{smith2002determination}; in addition, we
+developed an algorithm ensuring that the solution is unambiguous, as described in the Appendix.
+The retrieved value of the complex effective index of refraction $\Neff(f)$ defines the
+magnitude of the wave vector
+\begin{equation}\label{eq_wave_vector}
+k(f) = 2\pi f \Neff(f) /c\,.
+\end{equation}
+Note that the retrieval procedure described in the Appendix implies that the wave vector
+introduced by Eq (\ref{eq_wave_vector}) is defined in an unfolded reciprocal space. 
+
+A Bragg resonance occurs when an integer number of half-wavelengths fit into one unit cell, i. e.  when
+\begin{equation}\label{eq_BZ}
+k(f) = \frac{q \pi}{a}\,,
+\end{equation}
+where $q$ is a non-zero integer. In such a situation the wave vector is located at a
+Brillouin zone boundary. The purely real values of $k$ then describe photonic band edges.
+In a band edge state, a standing wave appears in the structure and it is characterized by
+exactly $q$ nodal planes sectioning each unit cell in the transverse direction to $q+1$
+disconnected parts. The band edges delimit a photonic {\itshape Bragg band gap} where
+only evanescent waves described by $\Neff''>0$ can exist.
+We can write an equation analogous to (\ref{eq_BZ}) for the real part of the refractive
+index:
+\begin{equation}\label{eq_BZN}
+\Neff'(f) = \frac{q c}{2 a f}\,;
+\end{equation}
+its hyperbolic behavior versus frequency reflects the pinning of the wave vector to the
+Brillouin zone boundary inside the Bragg band gap.
+
+Another case of interest where evanescent waves are obtained is that of $\Neff' = 0$
+(center of the first Brillouin zone, $q=0$) and $\Neff''>0$. Here the waves exponentially
+decay in the medium without any phase change. However, this behavior has a different
+origin: it is connected to a plasma-like response of the material ($\varepsilon<0$ or
+$\mu<0$) and in this paper we use the term \textit{plasma band gap} to refer to it.
+
+The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or,
+equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the
+frequency is sufficiently increased. While usually the convention is used that the
+corresponding curves are folded back into the first Brillouin zone, in this paper we plot
+$\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval
+algorithm. This can be clearly observed on the dispersion of the refractive index in
+Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal
+planes intersecting the unit cell, which is important for our discussion.
+
+\section{Results}
+\begin{figure}[h!]
+%\centering\includegraphics[width=16cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf}
+\centering\includegraphics[width=11cm]{img/ERods_eps100_single_a120_FDTD.pdf}
+\centering\includegraphics[width=11cm]{img/ERods_eps100_double_a100a080_FDTD.pdf}
+\caption{Results of the FDTD simulations for a single layer of dielectric rods with $\varepsilon_{\rm r}= 100$,
+$\rho=10$\,$\upmu$m. The spectra of reflection $|r|$ and transmission $|t|$ amplitudes share
+their frequency axes with the retrieved complex effective index of refraction $\Neff$,
+permittivity $\eeff$ and permeability $\meff$, whose imaginary parts are denoted by
+dashed lines. The frequency ranges where $\eeff$ and $\meff$ have no physical
+interpretation (Bragg band gaps or higher order photonic bands) are gray shaded.  } \label{fg_spec}
+\end{figure}
+% NOTE: dispersive permittivity was 100+0.8 (at 1 THz)
+
+%\comm{only $\Neff$, $\eeff$, $\meff$; best layout would be: (a) 120 $\upmu$m up to 2.5 THz (for
+%comparison with Fig. 4) and magnified over the page width on first panel; (b,c) on second
+%panel below with the current scale up to 1.5 THz but magnified nearly over the page
+%width; what imaginary part was used for calculations in reality?} 
+
+In the following we first describe in detail three characteristic cases: we compare the
+effective parameters computed for three slightly different unit-cell sizes while the rod
+radius and the dielectric permittivity are fixed. The comparison of these cases reveals quite
+remarkable changes in the optical behavior of the structure. We then complement this
+comparison by a continuous scan of the unit-cell sizes in order to obtain an overview of
+all possible types of the response for the rod-based geometry.
+
+In Fig.~\ref{fg_spec}, we show the calculated reflectance and transmittance amplitude
+spectra, as well as the effective parameters of three representative structures which
+have the same rod radii $\rho = 10$~$\upmu$m, but they differ by the unit-cell size $a =$ 120, 100 and 80 $\upmu$m. These
+values of $a$ were selected to illustrate three qualitatively different regimes of
+behavior.
+The dielectric was defined by a simple lossy model with one high-frequency oscillator, its  permittivity was $\varepsilon_r = 100.1 + 0.5\mathrm{i}$ at 500 GHz.
+
+
+\paragraph{Sparse array}
+In Fig.~\ref{fg_spec}(a), where the unit-cell size $a=120$~$\upmu$m, we can see two well
+separated Mie resonances: the electric one at 680 GHz and the magnetic one at 1030 GHz.
+The field distribution of the corresponding modes is sketched in
+Fig.~\ref{fg_sketchfield}. The resonance frequencies can be easily identified by an
+abrupt drop in the real part of the effective index of refraction $\Neff'$, accompanied
+by a sharp peak in its imaginary part $\Neff''$. The Mie resonances in periodic media
+without losses must always neighbor a Bragg band gap. For instance, in
+Fig.~\ref{fg_spec}(a) at frequencies below the first Bragg gap, the electric dipoles
+within each rod are directed along the electric field in the rest of the unit
+cell. The rods thus positively contribute to the refractive index $\Neff'$ which
+progressively grows until it reaches the first Brillouin zone boundary. At this point the
+Bragg condition for a photonic band-gap is fulfilled and each unit cell is intersected by
+one nodal plane. This is reflected by the dispersion of $\Neff'(f)$ which follows the
+first Brillouin-zone boundary in the first Bragg band gap between 400 and 680\,GHz [equivalent to $q=1$ in Eq. (\ref{eq_BZN})]:
+$$	\Neff'(f) = \frac{c}{2af}\,. $$
+At 680\,GHz the electric Mie resonance occurs which dramatically changes the near-field
+photonic properties of the structure. The observed drop in $\Neff'(f)$ and the slope change
+in $\Neff''(f)$ mark the plasma-like character of the adjacent part of the band gap which
+extends up to the plasma frequency of the Mie resonance (940\,GHz). In this frequency
+range the electric dipoles in the rods change their direction and induce an electric field
+opposite to the incident one.
+
+For this sparse array of dielectric rods the first magnetic Mie resonance lies at
+1030\,GHz, above the plasma frequency of the electric mode. 
+The second Bragg band-gap opens at 1010 GHz and, due to the Mie resonance, it is transformed to a plasma band gap at 1030 GHz. The next allowed photonic band starts above magnetic plasma frequencies at 1070 GHz.
+Therefore we observe a completely analogous behavior near the magnetic resonance. 
+
+For completeness we note that at 1350 GHz, a third Bragg band gap
+starts which, unlike the lower-frequency ones, does not contain any Mie resonances 
+[see Fig.\ \ref{fg_spec}(a)].
+
+\begin{figure}[h]
+\centering \includegraphics[width=9cm]{img/ERods_1st_and_2nd_Mie_resonance.pdf}
+\caption{Sketch of the unit-cell
+cross-sections with the resonant modes excited by a plane wave with $\mathbf{E}||x,
+\mathbf{H}||y$ and $\mathbf{k}||z$. The first Mie resonance has an electric dipole moment
+only, while the second one has a magnetic dipole moment instead. The red-white-blue color
+corresponds to the $E_x$ component of the electric field, while the magnetic field is
+represented by the arrows. }\label{fg_sketchfield}
+\end{figure}
+
+The resonances in the effective permittivity $\eeff=\Neff/\Zeff$ and permeability $\meff
+= \Neff\cdot \Zeff$ of a periodic array obviously exhibit shapes very different from the
+well-known resonance curves of a damped oscillator\cite{koschny2003resonant}. In the two
+separate plasma band gaps we obtain either $\eeff < 0$ or $\meff<0$, i.e. the usual
+behavior observed in the reststrahlen bands of resonances. However, in the Bragg band
+gaps occurring just below these spectral ranges the behavior of $\eeff$ and $\meff$ does
+not have any useful physical interpretation and it can be understood as a purely formal
+frequency dependence: we shaded these ranges with light gray in Fig.~\ref{fg_spec}.
+
+\paragraph{Medium array}
+When the unit cell size is reduced to $a=100$~$\upmu$m, as depicted in
+Fig.~\ref{fg_spec}(b), the Mie resonances shift slightly. Interestingly, the electric
+resonance frequency increases from 680 to 780 GHz, that of the
+magnetic resonance decreases from 1030 to 980 GHz. This can be explained by the
+inter-cell coupling: the circulating magnetic field of the first resonance is compressed
+when the rods get closer, whereas the magnetic dipoles of the second resonance can couple
+more easily to each other in the same situation (see Fig.~\ref{fg_sketchfield}).
+
+The converging of the resonance frequencies is linked to the most important
+qualitative change in the spectra: the fact that the magnetic resonance occurs at a
+frequency where $\eeff'<0$. The first band gap (lowest continuous frequency region where
+$\Neff''>0$) is thus composed of three adjacent regimes: the first Bragg band gap
+(425--780 GHz), a plasma band gap (780--980 GHz) and the second Bragg band gap (980--1020
+GHz). Every Mie resonance introduces a drop in $\Neff'$, so the following photonic band
+(1020--1070 GHz) features a negative index of refraction ($\Neff'<0; \Neff''\approx 0$),
+i.e. the phase and group velocities are opposite to each other. We conjecture that the presence of two
+Mie resonances in the \textit{first} combined band gap is a necessary and sufficient condition for
+$\Neff'<0$ to occur.
+% TODO: \cite{shi2007effects} this cite should be elsewhere
+
+Note that the transmittance amplitude reaches quite small values in between the Mie
+resonances when they are sufficiently close to each other [Fig. \ref{fg_spec}(b)]. This range forms a
+well-defined band with a reflectance-to-transmittance contrast much better than that
+observed in a planar Fabry-P\'erot resonator. One layer of dielectric rods with proper
+parameters can therefore be applied as a thin, yet very high-contrast filter.
+
+\paragraph{Dense array}
+Perhaps an even more surprising change occurs when the rod spacing is further reduced. The Mie resonances get even closer in the
+spectrum and eventually they vanish for $a=80$~$\upmu$m [see Fig.~\ref{fg_spec}(c)]. The band gap remains at nearly the same spectral
+position as in panel (b) of this figure, but, unlike for the medium array, the value of $\Neff'$ does not drop within
+the Bragg band gap. In contrast, it is shifted up to the second Brillouin zone boundary
+where it meets the second Bragg band gap as clearly seen in panel (c), indicating that
+each unit cell is intersected by two nodal planes in this state.
+
+The reason of this behavior is related to the change of the nodal plane topology caused
+by the inter-cell coupling. When the rods are far from each other ($a\gtrsim
+100$~$\upmu$m), the individual Mie resonances create closed regions delimited by a nodal
+surface where the fields are opposite to the rest of the unit cell. Upon reducing the
+unit-cell size ($a\lesssim 80$~$\upmu$m), the regions of opposite fields start to overlap
+with those from the neighboring cells and the corresponding nodal surfaces interconnect
+and open. This pair of open nodal surfaces dividing the unit cell manifests itself by a
+qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional
+photonic crystals.
+
+% [from ~/p/MEEP_2013/130711_EWires/47bd_Diel100_SpacingScan_EquiLossLong/effparam]
+%\comm{Please remove upper labels from the figure, please make the font slightly larger,
+%units in standard parentheses; why don't we see a negative index value at 100 $\mu$m and
+%slightly below? Can the negative values be colored e.g. in red?}
+\begin{figure}[h]\centering
+    \includegraphics[width=8.5cm]{img/ERods_eps100_spacingscan_Nim.pdf}
+    \includegraphics[width=8.5cm]{img/ERods_eps100_spacingscan_Nre.pdf}
+\caption{Real ($\Neff'$, left panel) and imaginary ($\Neff''$, right panel) parts of
+refractive indices for a dielectric rod array with permittivity $\varepsilon_r =100$,
+radius $\rho = 10$ $\upmu$m and a variable unit cell size $20\:\upmu$m $<a<200\:\upmu$m. 
+The three solid horizontal lines correspond to the values used in Fig.~\ref{fg_spec}.}
+\label{fg_spacingscan100}. 
+
+\end{figure}
+
+\paragraph{Continuous scan of the unit-cell size}
+The behavior described above is confirmed by the plots of the complex index of refraction
+$\Neff',\: \Neff''$ for a continuously varying unit cell size $a$ from 20 to 200~$\upmu$m
+(Fig.~\ref{fg_spacingscan100}). Here, again, the constant values of the dielectric
+permittivity $\varepsilon_r=100$ and the rod radius $\rho=10$ \um are used. In the
+upper-right corner of both plots, for $a>c/f$, an empty area is left where the
+diffraction prevents the determination of effective parameters. 
+
+For an easier interpretation of the results, we draw the most prominent features
+schematically in Fig.~\ref{fg_drawn100}. Some of them are common in ordinary
+one-dimensional photonic crystals, namely, the photonic (Bragg) band gaps which are
+painted in color in Fig.~\ref{fg_drawn100}.
+
+%\comm{Please add zoom, made on the interesting region
+%	between segments 1 and 2 (say from 0.6 THz up to 1.4 THz and from a = 50 um
+%	to 130 um); it can be delimited e.g. by a thin dotted line rectangle in the main
+%	figure;  full color: only Bragg band gaps, hatched brown color:
+%	plasma band gap (there will be only one); put units in standard parentheses; remove mid-gap
+%	frequency line; type: onset of "the" diffraction. We must consider to show a similar figure for
+%	a small permittivity of rods (e.g. 50 or 12)}
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=14cm]{img/ERods_eps100_spacingscan_drawn_bands.pdf}
+    \caption{Scheme of band gaps and Mie resonances under the same conditions as
+    in Fig.~\ref{fg_spacingscan100}.}
+\label{fg_drawn100}
+\end{figure}
+
+The Mie resonances are caused by the field confinement near the high permittivity
+elements. They always manifest themselves as sharp peaks in the imaginary part of the
+index of refraction ($\Neff''$), and in Fig.~\ref{fg_drawn100} they are denoted by thick
+solid curves. Their electric- or magnetic-dipole character is identified by the letters
+"E" or "M" above the plot, respectively.
+
+As it can be seen in both Figs.~\ref{fg_spacingscan100} and \ref{fg_drawn100}, the pairs
+of electric and magnetic Mie resonances form U-shaped curves, at the bottom of which the
+resonances come closer in frequency to each other and eventually they disappear when the
+unit-cell size $a$ is further reduced. The resonances influence the whole spectra of the
+refractive index $\Neff'$, so the position of this U-curve delimits the range of $a$ for
+which a photonic band with $\Neff' < 0$ and $\Neff'' \approx 0$ can be found. This
+negative-index band is painted in black in Fig.~\ref{fg_drawn100}.
+
+% from /home/filip/p/MEEP_2013/130711_EWires/47le_Diel30_SpacingScan_MediLossHR/effparam
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=7.2cm]{img/ERods_eps030_spacingscan_drawn_bands.pdf}
+    \caption{Scheme of band gaps and Mie resonances for dielectric permittivity $\varepsilon_r = 30$. The Mie resonances shift to higher frequencies relative to the band gaps and no $\Neff'<0$ region is formed for any unit cell size (cf. Fig. \ref{fg_drawn100})}
+\label{fg_drawn030}
+\end{figure}
+
+Note that the frequencies of the Mie resonances deviate from their free-space value when
+the rod distance is reduced. In fact, these resonances help to form the photonic band
+gaps (both Bragg and plasma band gaps) due to their dispersion. As a consequence these
+resonances must be always located inside a frequency range with $\Neff''>0$.
+
+\section{Discussion}
+Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity rods, we
+will draw below implications for building a negative-index MM from available dielectrics.
+Another series of simulations implies that reducing the dielectric permittivity has the main effect
+to shift all the Mie resonances to higher frequencies (also compared to the photonic
+bands). As a result, the band with $\Neff'<0$ gets gradually narrower and, for the rod
+permittivity below about 50, we do not find any cell size $a$ that would imply the first
+and second Mie resonances in the first photonic band as illustrated for $\varepsilon_r = 30$ in Fig. \ref{fg_drawn030}. This means that the value of
+$\varepsilon_{r} \approx 50$ is the minimum for obtaining a negative index of refraction
+in any square array of cylindrical rods. Note that one would come to a very similar value
+of minimum permittivity for the case of a square array of bars with a slightly different
+shape, e.g. a square cross-section. 
+
+A sufficiently high permittivity can be found in the microwave and terahertz ranges, 
+in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} 
+or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of
+the high-permittivity dielectrics in the THz range can be restricted by high dielectric
+losses due to low-frequency phonon absorption tails. To our knowledge, there is no
+material providing such a high permittivity in the near-infrared or optical ranges. This
+eliminates the possibility to build an optical MM with $\Neff'<0$ based on dielectric
+rods.
+ %\comm{This is a completely insufficient discussion of the "Felbacq" effect; we must
+%still discuss this and improve the text. Namely, we must identify why Felbacq has found
+%the negative refraction and what are the implications for the phase of the transmitted
+%wave}
+
+Finding a valid negative index of refraction $\Neff'$ for a photonic structure implies
+that the Snell law can be used to predict the negative refraction at an interface, provided
+the isofrequency contours can be well approximated by a circle. This condition is fulfilled
+when the resulting wave vector is oriented close to a symmetry axis of the structure, or when 
+the wave vector is negligible compared to the reciprocal lattice vector (i.e. $k\ll \frac{\pi}{a}$ and 
+thus $|\Neff'| \ll \frac{c}{2af}$). 
+In the latter case the iso-frequency contours of the isotropic structure approach a circular shape
+near the $\Gamma$-point in the Brillouin zone center. 
+%\comm{At the end this paragraph will probably come to section 1 or 2}
+%\comm{FD: let us keep it here, it is important for the follewing discussion.}
+%
+%\comm{This is a completely insufficient discussion of the "Felbacq" effect; we must
+%still discuss this and improve the text. Namely, we must identify why Felbacq has found
+%the negative refraction and what are the implications for the phase of the transmitted
+%wave. }
+%\comm{FD: Perhaps I provided better explanation now? See following 2 paragraphs:}
+% TODO discuss
+By contrast, the opposite implication is not necessarily applicable---a structure with a high
+enough spatial dispersion can still refract under negative angles, 
+yet its refractive index computed along a symmetry axis never reaches negative values and the phase difference across each its 
+unit cell is positive and can be comparable to $\pi$.
+For example, it was suggested earlier  \cite{Vynck2009} that an array of 
+silicon rods ($\varepsilon_r \approx 12$) can constitute a true left handed metamaterial ($\Neff'<0$).
+In agreement with the results presented above, we believe that the negative refraction 
+is not a sufficient proof of $\Neff'<0$, which would require a much higher permittivity contrast than that of silicon. 
+%TODO WTF? We thus believe that the field pattern observed in the simulation is a
+%result of photonic crystal properties of the silicon structure: the negative
+%refraction occurs thanks to the behavior of higher-order photonic dispersion curves.
+
+We demonstrated that for $\Neff'<0$ not only the high permittivity contrast, but also 
+a correct geometry is required. A wedge filled
+with an array of square-shaped high-dielectric bars was previously reported to refract
+under negative angles \cite{peng2007}. The high filling fraction ($0.44^{2}$)
+simultaneously with a permittivity of $\varepsilon_r \approx 600$ clearly qualified this
+structure as \textit{dense}. Using the above described approach, we computed its spectra 
+qualitatively similar to Fig.~\ref{fg_spec}(c) and no band with $\Neff' < 0$ was resulting from our effective index
+retrieval. However, when we reproduced the wedge experiment numerically, our simulations
+confirmed that it does refract the light under negative angles.
+% end of TODO discuss
+
+This structure lies at the boundary between the criteria for MMs and PhCs described in the Introduction.
+While its refraction angle cannot be generally computed from the effective refractive index and
+its iso-frequency contours have to be used instead (like in PhC), it was proven
+\cite{peng2007} to partially retain negative refraction even under randomization of the positions
+of the dielectric bars, implying that most of the resonant energy is concentrated inside
+the dielectric (which is typical for MM).
+%\comm{We must still improve the discussion of the "Peng" effect}
+
+\section{Conclusion}
+We created and implemented a robust algorithm for a retrieval of effective parameters based on
+FDTD simulations. Its main asset consists in an
+unambiguous determination of the branch in the computation of the refractive index
+$\Neff$. Using this approach, we confirmed numerically that the square array of
+dielectric rods with a high permittivity $\varepsilon_r$ exhibits Mie resonances that can
+lead to a negative refractive index $\Neff'<0$.
+
+Based on a parametric scan over the rod density, we demonstrated that there are quite
+strict requirements for the geometry to obtain a true $\Neff'<0$. For rods which are too
+sparse, the electric and magnetic Mie resonances are separated in the spectra
+[Fig.~\ref{fg_spec}(a)], while for the same rods being too dense [Fig.~\ref{fg_spec}(c)],
+the Mie resonances come close to each other and disappear; in such a case an ordinary
+Bragg photonic band gap is formed which does not provide a negative index of refraction.
+
+Apart from the geometric requirements, we found that the existence of the photonic band
+with $\Neff'<0$ requires the permittivity $\varepsilon_r \gtrsim 50$, which limits the
+selection of materials and the operation frequency range. It is well known that a similar
+photonic crystal at optical frequencies can be formed e.g. from silicon ($\varepsilon_r
+\approx 12$), however its bands of negative refraction will have a high spatial
+dispersion and the notion of $\Neff$ cannot be applied for them.
+
+\section{Acknowledgment}
+\noindent This work was supported by the Czech Science Foundation under Grant No. 14-25639S.
+
+\bibliography{fdphd}
+\bibliographystyle{ieeetr} 
+
+
+\section{Appendix: Numerical method}
+We performed finite-difference time-domain simulations \cite{oskooi2010meep} to obtain
+the frequency ($f$)-dependent complex reflection $r(f)$ and transmission coefficients
+$t(f)$ of a sample composed of periodically distributed dielectric rods.
+
+Knowing the complex $r(f)$ and $t(f)$ along with the sample thickness $d$, we may use the
+classical algorithm to retrieve the effective parameters \cite{smith2002determination}:
+\begin{equation}
+N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k
+\cdot d}, \quad Z_{\rm eff}~= \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}} \label{eq_Z}
+\end{equation}
+where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
+
+The well-known complication of this approach is that the arccosine and square root are
+ambiguous functions, yielding multiple solutions with different branches (indexed by an
+integer $m$) and signs. We deal with a passive medium, consequently we impose
+Im$(\Neff)>0$ and Re$(\Zeff)>0$. The correct branch of Re$(\Neff)$ can be in general
+determined at low frequencies where the various branches yielded by the arccos function
+are well separated. To facilitate processing of the results, we implemented a procedure
+that ensures the continuity of effective parameters as a function of frequency: this
+continuity is required by Kramers-Kronig relations for arbitrarily small losses
+introduced in the system. The important point consists in identifying the branch cuts of
+arccosine in the complex plane Fig.\ \ref{fg_arccos}. If, by increasing the frequency,
+the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, 
+%TODO fix the variable name in the plots!
+passes through the right branch cut [i.e.
+for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the
+imaginary part is non-zero and changes its sign. The continuity is restored if, from this
+frequency on, one reverses the sign of the arccos term. The situation is slightly more
+complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the
+imaginary part of arccos$(v)$ experiences again a step-like change of the sign and the
+real part reaches the value of $\pi$. The continuity is then restored upon a sign
+reversal accompanied by a branch index change ($m\rightarrow m\pm 1$). A correct
+reconstruction of the arccosine therefore only requires to compute the integer-valued
+branch $m(f)$ along with the sign, both being functions of frequency. The sign of the
+square root function is again chosen such than $Z$ is a continuous function of frequency.
+
+\begin{figure}[h]
+\centering\includegraphics[width=9cm]{img/continuous_arccos/continuous_arccos_edited.pdf} \caption{Real and imaginary parts
+of the arccosine of complex argument. Branch cuts are denoted with thick line}
+\label{fg_arccos}
+%% TODO 1: empty points at boundary
+%% TODO 2: thicker line
+%% TODO 3: bigger text
+\end{figure}
+
+It is also known that the reflectance phase depends on the surface termination for
+noncontinuous materials. In the cases where the wavelength of the radiation in the
+material is much larger than the unit cell dimensions this ambiguity becomes small. A
+useful control of the effective sample properties can be made by changing the thickness
+of the sample (number of unit cells along the wave vector). We have chosen a symmetric
+geometry where the dielectric rod is positioned in the center of a square unit cell and
+the total thickness of the sample is an integer multiple of the unit cell size. In this
+geometry the retrieved effective parameters of our structure depend only negligibly on
+the number of unit cells that we put in the $z$-direction.
+
+
+
+\chapter{Appendices}
+	\section{Permittivity spectra of selected materials}
+	\section{Example code for FDTD simulation (using MEEP)}
+	\section{Frequency-band source for oblique incidence in FDTD}
+	\section{Example code for PWE simulation (using MPB)}
+	\section{Various short scripts used for calculation and plotting}
+\label{endtext} 
+\bibliography{fdphd}
+\bibliographystyle{plain}
+
+
+\end{document}

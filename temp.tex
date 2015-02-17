@@ -1,0 +1,30 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage[utf8]{inputenc} \usepackage[top=2.cm, bottom=2cm, left=2cm, right=2cm]{geometry} 
+\usepackage{mathrsfs} 
+\usepackage{palatino} 
+\usepackage[font=it]{caption}
+\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,url,color,enumitem}	\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  
+\usepackage{upgreek}
+
+\usepackage[style=/home/filip/d/biblatex-phys/phys, articletitle=true, biblabel=enumerate, chaptertitle=true, pageranges=true, 
+			sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits   = true]{biblatex}
+\addbibresource{fdphd.bib}
+
+\input{defs.tex}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Theory}
+\input{theory.tex}
+\chapter{Experimental and numerical methods}
+\input{expe.tex}
+%\chapter{Results}
+%\input{result.tex}
+\label{endtext} 
+
+
+\chapter{Appendices}
+\input{appendices.tex}
+\printbibliography
+\end{document}
