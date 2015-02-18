@@ -48,6 +48,12 @@ Note that this frequency is defined as different (i.e. $\pi$-times lower) than t
 \paragraph{Definition of materials for the FDTD method} %{{{
 \label{def_of_mat}
 
+\begin{figure}[t] \caption{Permittivity plot for titanium dioxide (rutile), for an ordinary ray. The above plot has linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-1<\varepsilon_r<1$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach is more suitable for plotting permittivity in the following discussion.} \label{fg_tio2eps} \centering 
+	\includegraphics[width=12cm]{img/epsilon_TiO2_linear.pdf}
+	\includegraphics[width=12cm]{img/epsilon_TiO2_symlog.pdf}
+\end{figure}
+
+
 As described in Chapter \ref{chap_lorentzmedia}, the (local) response of usual media to an electromagnetic wave can be well approximated by a set of Lorentz oscillators, each of which is defined by three positive real numbers: its resonance angular frequency $\omega_{0m}$, damping rate $\gamma_m$ and oscillator strength $F_m$: % todo cite 
 $$\hspace{3cm} \epsrl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + \ii\omega\gamma_m} \hspace{3cm}\text{(\ref{eq_lorentz_eps} again)}$$
 FDTD, being a time-domain method, requires the media to be described in a similar way with the difference that the nondispersive part of relative permittivity $\varepsilon_{r\infty}$ can be chosen as a real number. 
@@ -83,7 +89,7 @@ independent of what the strength $F_m$ or damping rate $\gamma_m$ of the oscilla
 A geometrical interpretation of this rule is that the instability is introduced when any wave, of frequency above the critical frequency, can travel more than $1/\sqrt{3}$ of one FDTD cell size within one time step. 
 Note that in a nonmagnetic medium, the traveled distance is $$\frac{c\Delta t}{\sqrt{\varepsilon_r'}}.$$
 \end{enumerate}
-The FDTD simulation can become unstable if one or both of these rules are broken. The error from instability initially arises from inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the field snapshot. Later the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
+The FDTD simulation will become unstable if one or both of these rules are broken. The error from the instability initially arises from inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the field snapshot. Later the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
 
 \paragraph{Choice of the Courant factor}%{{{
 Provided that a part of the simulation volume is empty vacuum with $\varepsilon_r'=1$, Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of Courant factor} 
@@ -99,9 +105,19 @@ i.e.
 $$c \Delta t / n_{min} < \Delta x / \sqrt{dim} $$
 which can be reformulated that  
 }
+%  /* Return true if the discretized Lorentzian ODE is intrinsically unstable,
+%     i.e. if it corresponds to a filter with a pole z~outside the unit circle.
+%     Note that the pole satisfies the quadratic equation:
+%  			(z + 1/z - 2)/dt^2 + g*(z - 1/z)/(2*dt) + w^2 = 0
+%     where w = 2*pi*omega_0 and g = 2*pi*gamma.   It is just a little
+%     algebra from this to get the condition for a root with |z| > 1. */
+%  static bool lorentzian_unstable(double omega_0, double gamma, double dt) {
+%    double w = 2*pi*omega_0, g = 2*pi*gamma;
+%    double g2 = g*dt/2, w2 = (w*dt)*(w*dt);
+%    double b = (1 - w2/2) / (1 + g2), c = (1 - g2) / (1 + g2);
+%    return b*b > c && 2*b*b - c + 2*fabs(b)*sqrt(b*b - c) > 1;
+%  }
 %}}}
-
-%TODO 
 
 
 %The first rule of $\omega_0/2\pi < f_c$ was observed to be very strict
@@ -109,28 +125,43 @@ which can be reformulated that
 \paragraph{Practical aspects of material definition} %{{{
 In all realistic media, the frequencies of different oscillators span over many orders of magnitude, and an accurate medium model would need to determine tens or hundreds of oscillators. Not all oscillators should be defined for a given FDTD simulation, however. 
 
+\begin{figure}[t] \caption{Permittivity plot for titanium dioxide, similar to Fig. \ref{fg_tio2eps}. 
+%Compared to the exact model of permittivity (green line), the model with reduced number of Lorentz oscillators was plotted (black line). 
+The region forbidden by the stability rule is yellow shaded (above $f_c = 95$ THz and below $\varepsilon_r < 0.75$). The exact model for TiO$_{2}$ (green line) would be definitely unstable due to violating both stability conditions. The numerically stable model for frequency range of interest up to ca. 10 THz (black line) has all high-frequency oscillators substituted by increasing the value of $\varepsilon_{r\infty}$. Solid and dashed lines are real and imaginary parts, respectively. } \label{fg_tio2eps_stripped} \centering 
+	\includegraphics[width=12cm]{img/epsilon_TiO2stripped_symlog.pdf}
+% full:
+      % self.eps = 1
+      % self.pol = [
+      %         {'omega':5.67e12, 'gamma':1.05e12, 'sigma':50+90*extraordinary},      
+      %         {'omega':11.43e12, 'gamma':.495e12, 'sigma':0.9*extraordinary},            
+      %         {'omega':15.24e12, 'gamma':.72e12, 'sigma':2.6*extraordinary},            
+      %         {'omega':1.0e15, 'gamma':.15e15, 'sigma':2.8 + .5*extraordinary},     ## imprecise two-Lorentzian approximation in UV
+      %         {'omega':1.08e15, 'gamma':.15e15, 'sigma':2 + .4*extraordinary}            
+% reduced: self.eps = 12.  self.pol = [ {'omega':5.67e12, 'gamma':1.05e12, 'sigma':50+30.} ]
+\end{figure}
+
 First of all, high-frequency oscillators would make the simulation unstable.
 Aside from this, adding overly many oscillators is also inefficient, because each oscillator defined increases computing difficulty in FDTD. 
-It is therefore advisable to weed the oscillators to a minimum acceptable number necessary, and to describe the material within some frequency range of interest % TODO  define range of interest
+It is therefore advisable to weed the oscillators to a minimum acceptable number necessary, and to describe the material within some frequency range of interest (FRoI) % TODO  define range of interest
 only:
 \begin{enumerate}
  \item{
 %Often the first step in processing FDTD results lies in converting them to frequency domain via Fourier transform. 
-The upper bound for the range of interesting frequencies is limited by numerical stability as stated above. Even more often, a more strict limit is given by the spatial resolution of the simulation: In a high-permittivity material, high frequencies correspond to wavelengths similar to the voxel size (or even smaller than it), leading to significant inaccuracy. 
+The upper bound for FRoI is limited by numerical stability as stated above. Mostly, a more strict limit is given by the spatial resolution of the simulation: In a high-permittivity material, high frequencies correspond to wavelengths similar to the voxel size (or even smaller than it), leading to significant inaccuracy. 
 
 Each oscillator far above the frequency of interest shall be expressed only as a constant added to the nondispersive part of permittivity $\varepsilon_{r\infty}$. This contribution is given by Eq. (\ref{eq_delta_eps}) as 
 $$\Delta \varepsilon_r = \frac{F}{\omega_0^2}.$$ 
-If some of the high-frequency oscillators introduces significant dispersion or losses to the frequency range of interest, it it should not be eliminated this way. This concerns oscillators that are close enough to the frequency range of interest, so they usually can be kept without causing instability.
+If some of the high-frequency oscillators introduces significant dispersion or losses in the FRoI, it it should not be eliminated this way. This usually concerns the oscillator that is the closest above FRoI, and it usually can be maintained without causing instability.
 } 
  \item{
-Very low frequencies, corresponding to wavelengths much greater than the whole simulation volume, are theoretically accessible with a long-enough FDTD simulation, but the frequency range of interest usually does not reach zero frequency, mostly for practical reasons. If needed, the low-frequency phenomena can often be computed more efficiently in a separate simulation with a lower resolution or even with different numerical methods.
+Very low frequencies, corresponding to wavelengths much greater than the whole simulation volume, are theoretically accessible with a long-enough FDTD simulation, but the FRoI usually does not reach zero frequency, mostly for practical reasons. If needed, the low-frequency phenomena can often be computed more efficiently in a separate simulation with a lower resolution or even with different numerical methods.
 
-The oscillators at frequencies too low can therefore be omitted without any change to the behaviour within the frequency range of interest. One important exception is the low-frequency oscillator that defines conductive behaviour, as described below.
+The oscillators at frequencies too low can therefore be omitted without any change to the behaviour within the FRoI. One important exception is the low-frequency oscillator that defines conductive behaviour, as described below.
 } 
  \end{enumerate}
 %}}}
 
-\paragraph{Drude model for conductive media}%{{{
+\paragraph{Drude model for conductive media} %{{{
 The Drude model assumes the relative permittivity in the form
 \begin{equation} \epsr(\omega) = 1 + \frac{\omega_p^{2}}{0 - \omega^{2} + \ii\gamma\omega} = 1 - \frac{\omega_p^{2}}{\omega^{2} - \ii\gamma\omega}, \label{eq_drude_eps}\end{equation}
 where $\omega_p$ and $\gamma$ are two independent parameters that describe the metal: 
