@@ -94,16 +94,16 @@ The FDTD simulation will become unstable if one or both of these rules are broke
 \paragraph{Choice of the Courant factor}%{{{
 Provided that a part of the simulation volume is empty vacuum with $\varepsilon_r'=1$, Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of Courant factor} 
 $$S_{max} = 3^{-1/2}\approx0.577.$$
-In practice, a slightly more conservative choice is made that provides safe margin for numerical imprecision: 
+In practice, a slightly more conservative choice is made that provides a safe margin for the numerical imprecision: 
 \begin{equation} S:= 0.500 \quad \rightarrow \quad \varepsilon_r'(2\pi\,f)> 0.75, \quad \forall f \geq f_c. \label{eq_courant_choice}\end{equation}
-For any material with problematic high-frequency permittivity, $\varepsilon_r'(2\pi\,f_c) \in (0, 1)$, some low value of $S$ can be found that makes the simulation stable against the second rule. Simultaneously, the critical frequency shifts up, so also potential problems with the first rule may be alleviated. This is however at the price of scaling up the number of required FDTD steps, so usually a reasonable change of the material definition is made instead of reducing $S$.
+For any material with problematic high-frequency permittivity, $\varepsilon_r'(2\pi\,f_c) \in (0, 1)$, some low value of $S$ can be found that makes the simulation stable against the second rule. Simultaneously, the critical frequency shifts up, so potential problems with the first rule may be alleviated, too. This is however at the price of scaling up the number of required FDTD steps, so usually a reasonable change of the material definition is made instead of reducing $S$.
 
 \add{
 This is related to the \textit{Courant criterion} \cite{taflove2005book} that states for a nondispersive medium of permittivity $\varepsilon_r$ that 
 $$\Delta t = S\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $S < n_{min}/\sqrt{dim}$ % TODO
 i.e.
 $$c \Delta t / n_{min} < \Delta x / \sqrt{dim} $$
-which can be reformulated that  
+which can be reformulated that   %TODO
 }
 %  /* Return true if the discretized Lorentzian ODE is intrinsically unstable,
 %     i.e. if it corresponds to a filter with a pole z~outside the unit circle.
@@ -206,6 +206,13 @@ Both above equations describe the same quantity, so
 \begin{equation} \sigma(\omega) = \ii \omega \varepsilon_0 \varepsilon_r(\omega), \quad  \text{and} \quad  \varepsilon_r(\omega)  = \frac{\sigma(\omega)}{\ii \omega \varepsilon_0}. \label{eq_drude_sigma}\end{equation}
 Thus, a dielectric medium with real constant permittivity has \textit{imaginary} conductivity, magnitude of which grows with frequency (cf. the admittance of a capacitor). A conductor with real constant conductivity has complex permittivity, and its imaginary part diverges in the low-frequency limit. 
 
+\begin{figure}[ht] \caption{Permittivity and conductivity plot for gold; vertical scale and the yellow region forbidden by the stability rules are the same as in Fig. \ref{fg_tio2eps_stripped}. The exact model of gold % TODO \cite{palik} 
+(red) is compared to the lossy Drude model with Lorentz oscillators substituted by $\varepsilon_r$ (blue), and by the Drude model with zero scattering frequency (black). The bottom plot shows the conductivity of these three models as given by Eq. (\ref{eq_drude_sigma}).}
+\label{fg_Au_models} \centering 
+	\includegraphics[width=12cm]{img/epsilon_Au_models.pdf}
+\end{figure}
+
+
 Using the above relation (\ref{eq_drude_sigma}) to convert metal permittivity $\varepsilon_r(\omega)$ into conductivity $\sigma(\omega)$, and substituting the Drude-model permittivity (\ref{eq_drude_eps_loss}), we obtain
 \begin{equation} \sigma(\omega) = \ii \omega \varepsilon_0 \varepsilon_r(\omega)= \ii\omega \varepsilon_0 \varepsilon_r'(\omega)  -  \omega \varepsilon_0 \varepsilon_r''(\omega) = 
 	\ii \underbrace{\varepsilon_0 \left(\omega - \frac{\omega_p^2\omega}{\omega^2+\gamma^2}\right)}_{\text{imaginary part } \sigma''}  + 
@@ -217,18 +224,19 @@ We may now express the low- and high-frequency limits also for conductivity:
 				 \lim_{\omega \to +\infty} (\sigma'' / \omega) = \varepsilon_0. \label{eq_drude_sigma_limup}\end{equation}
 Let us note again that in the literature that uses the negative phase convention $e^{-\ii \omega t}$, the resulting $\varepsilon_r(\omega)$ and $\sigma(\omega)$ are complex conjugated to the results above. 
 %}}}
-\paragraph{Defining metals for high-resolution simulations} %{{{
+
+%\paragraph{Defining metals for high-resolution simulations} %{{{
 % TODO 
 % as a high-resolution simulation we denote ... one that makes f_c above plasma ferquency 
 %  
 %  
 %}}}
 \paragraph{Defining resistive metals for stable low-resolution simulations} %{{{
-Simulations in the optical range are relatively safe in terms of numerical stability. As illustrated above, a reasonable resolution of $\Delta x = 50$ nm ensures the critical frequency $f_c$ is far above the plasma frequency of metals or other conductors, and no changes are usually needed to be made to the Drude model. 
+Simulations in the optical range are relatively safe in terms of numerical stability. As illustrated above, a reasonable resolution of $\Delta x = 50$ nm ensures the critical frequency $f_c$ is far above the plasma frequency of metals or other conductors. , and no changes are usually needed to be made in the Drude model, though the simulation may run faster when one or more Lorentz terms are omitted (cf. red and blue curves in Fig. \ref{fg_Au_models}).
 %If high precision of the metal model is needed, one is also free to add one or more Lorentz oscillators in the optical/UV range to refine the shape of permittivity.
  
-Realistic simulations of metals at lower resolutions however require taking measures to ensure stability, as the critical frequency $f_p$ is reduced below the plasma frequency of most metals when $\Delta x \geq 100$ nm. % TODO check this
-A naive approach is to drastically reduce the Courant factor so that $f_c$ remains high enough as in high-resolution simulations. Although this reliably avoids the instability, it does so at the price of scaling the computational time. As a general rule, lower resolution is typically chosen for larger structures, where also all investigated processes accordingly happen on a longer timescale.
+Realistic simulations of metals at lower resolutions however require taking measures to ensure stability, as the critical frequency $f_c$ is reduced below the plasma frequency of most metals when $\Delta x \gtrsim 100$ nm. % TODO check this
+A trivial approach is to drastically reduce the Courant factor from $S=0.5$ to $0.01$ or even less, so that $f_c$ remains above plasma frequency. Although this reliably avoids the instability, it does so at the expense of scaling the computational time. As a general rule, lower resolution is typically chosen for larger structures, where also all investigated processes accordingly happen on a longer timescale.
 
 %Drude model is known to introduce negative permittivity up to optical range, so 
 %Assuming the critical frequency is far below the optical range, the Lorentz oscillators can be certainly neglected. Nonetheless, negative permittivity above critical frequency still introduces instability, which has to be resolved. 
