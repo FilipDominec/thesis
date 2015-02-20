@@ -40,7 +40,7 @@ In words, the Courant factor $S$ denotes what part of a FDTD cell the light can 
 The reason for introducing this quantity is in that the Maxwell equations [Eq. (\ref{eq_me1}-\ref{eq_me4})] are scale invariant, and so is the field update routine in FDTD when materials with frequency-independent permittivity are used. Therefore, when resolution $\Delta x$ is changed, $S$ can be a well-chosen built-in constant and the time resolution given by Eq. (\ref{eq_courant}) ensures that the simulation does not go unstable.
 
 FDTD obviously ceases to be scale-invariant whenever the properties of the materials depend on the frequency, which is needed for most realistic simulations. Then it appears more convenient to the autor to formally introduce yet another quantity, a \textit{critical frequency} $f_c$:
-\begin{equation} f_c := \frac{1}{\pi \, \Delta t} \equiv \frac{c}{\pi\, S\, \Delta x} \label{eq_}\end{equation}
+\begin{equation} f_c := \frac{1}{\pi \, \Delta t} \equiv \frac{c}{\pi\, S\, \Delta x} \label{eq_fc}\end{equation}
 Note that this frequency is defined as different (i.e. $\pi$-times lower) than the frequency of time-stepping cycles is. It is however the value of $f_c$, and its relation to the model of materials used, that is of key importance for assessing numerical stability of simulation.
 
 %A fundamental rule is the way how materials are defined in FDTD.
@@ -49,8 +49,8 @@ Note that this frequency is defined as different (i.e. $\pi$-times lower) than t
 \label{def_of_mat}
 
 \begin{figure}[t] \caption{Permittivity plot for titanium dioxide (rutile), for an ordinary ray. The above plot has linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-1<\varepsilon_r<1$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach is more suitable for plotting permittivity in the following discussion.} \label{fg_tio2eps} \centering 
-	\includegraphics[width=12cm]{img/epsilon_TiO2_linear.pdf}
-	\includegraphics[width=12cm]{img/epsilon_TiO2_symlog.pdf}
+	\includegraphics[width=14cm]{img/epsilon_TiO2_linear.pdf}
+	\includegraphics[width=14cm]{img/epsilon_TiO2_symlog.pdf}
 \end{figure}
 
 
@@ -128,7 +128,7 @@ In all realistic media, the frequencies of different oscillators span over many 
 \begin{figure}[t] \caption{Permittivity plot for titanium dioxide, similar to Fig. \ref{fg_tio2eps}. 
 %Compared to the exact model of permittivity (green line), the model with reduced number of Lorentz oscillators was plotted (black line). 
 The region forbidden by the stability rule is yellow shaded (above $f_c = 95$ THz and below $\varepsilon_r < 0.75$). The exact model for TiO$_{2}$ (green line) would be definitely unstable due to violating both stability conditions. The numerically stable model for frequency range of interest up to ca. 10 THz (black line) has all high-frequency oscillators substituted by increasing the value of $\varepsilon_{r\infty}$. Solid and dashed lines are real and imaginary parts, respectively. } \label{fg_tio2eps_stripped} \centering 
-	\includegraphics[width=12cm]{img/epsilon_TiO2stripped_symlog.pdf}
+	\includegraphics[width=14cm]{img/epsilon_TiO2stripped_symlog.pdf}
 % full:
       % self.eps = 1
       % self.pol = [
@@ -196,8 +196,6 @@ The notion of \textit{conductivity} is widely used to describe metals and doped 
 Generally, both permittivity $\varepsilon_r(\omega)$ and conductivity $\sigma(\omega)$ are complex functions of the angular frequency $\omega$. As long as the approximation of negligible spatial dispersion is used, each of them is fully determined by the other function. % maybe even if spatial dispersion is nonzero -> check this?
 For clarity, we avoid using the conductivity in the rest of the thesis except this chapter.
 
-%If a right frequency dependence of $\varepsilon_r(\omega)$ is chosen, conductivity can also be expressed by the local model of permittivity, and vice versa. 
-
 The relation between $\varepsilon_r(\omega)$ and $\sigma(\omega)$
  can be derived by realizing that the current in a material is always caused by movement of charges with density $\rho$ and average velocity $\mathbf{v}(t)$. The conduction and polarisation currents are not distinguished here, as their density is given as $\rho \mathbf{v}(t)$ in both cases. When current is excited by a harmonic electric field $E(t) = \mathrm{e}^{\ii\omega t}$: %TODO FIXME explain rho.n, use i omega t instead of -i omega t, check again...
 \begin{equation} \rho \mathbf{v}(t) = \sigma(\omega) E(t) = \sigma(\omega) \mathrm{e}^{\ii\omega t}, \quad\text{ (conduction approach -- Ohm law)} \label{eq_rho_n1}\end{equation}
@@ -206,10 +204,11 @@ Both above equations describe the same quantity, so
 \begin{equation} \sigma(\omega) = \ii \omega \varepsilon_0 \varepsilon_r(\omega), \quad  \text{and} \quad  \varepsilon_r(\omega)  = \frac{\sigma(\omega)}{\ii \omega \varepsilon_0}. \label{eq_drude_sigma}\end{equation}
 Thus, a dielectric medium with real constant permittivity has \textit{imaginary} conductivity, magnitude of which grows with frequency (cf. the admittance of a capacitor). A conductor with real constant conductivity has complex permittivity, and its imaginary part diverges in the low-frequency limit. 
 
-\begin{figure}[ht] \caption{Permittivity and conductivity plot for gold; vertical scale and the yellow region forbidden by the stability rules are the same as in Fig. \ref{fg_tio2eps_stripped}. The exact model of gold % TODO \cite{palik} 
-(red) is compared to the lossy Drude model with Lorentz oscillators substituted by $\varepsilon_r$ (blue), and by the Drude model with zero scattering frequency (black). The bottom plot shows the conductivity of these three models as given by Eq. (\ref{eq_drude_sigma}).}
+\begin{figure}[t] \caption{Permittivity and conductivity plot for gold; vertical scale and the yellow region forbidden by the stability rules are the same as in Fig. \ref{fg_tio2eps_stripped}. The exact model of gold % TODO \cite{palik} 
+(red) is compared to the lossy Drude model with Lorentz oscillators substituted by $\varepsilon_r$ (blue), and for illustration, also to the lossless Drude model with scattering frequency set to zero (grey). Obviously, none of these models is numerically stable if $f_c = 95$ THz.
+\\The bottom plot shows the conductivity of these three models as given by Eq. (\ref{eq_drude_sigma}).}
 \label{fg_Au_models} \centering 
-	\includegraphics[width=12cm]{img/epsilon_Au_models.pdf}
+	\includegraphics[width=14cm]{img/epsilon_Au_models_llgrey.pdf} % Scattering freq of gold = 12.8 THz
 \end{figure}
 
 
@@ -225,21 +224,15 @@ We may now express the low- and high-frequency limits also for conductivity:
 Let us note again that in the literature that uses the negative phase convention $e^{-\ii \omega t}$, the resulting $\varepsilon_r(\omega)$ and $\sigma(\omega)$ are complex conjugated to the results above. 
 %}}}
 
-%\paragraph{Defining metals for high-resolution simulations} %{{{
-% TODO 
-% as a high-resolution simulation we denote ... one that makes f_c above plasma ferquency 
-%  
-%  
-%}}}
 \paragraph{Defining resistive metals for stable low-resolution simulations} %{{{
-Simulations in the optical range are relatively safe in terms of numerical stability. As illustrated above, a reasonable resolution of $\Delta x = 50$ nm ensures the critical frequency $f_c$ is far above the plasma frequency of metals or other conductors. , and no changes are usually needed to be made in the Drude model, though the simulation may run faster when one or more Lorentz terms are omitted (cf. red and blue curves in Fig. \ref{fg_Au_models}).
+Simulations in the optical range are relatively safe in terms of numerical stability. From Eq. (\ref{eq_fc}) it follows that the resolution of $\Delta x = 50$ nm, suitable for NIR/visible spectrum, yields the critical frequency $f_c = 3.82\cdot 10^{15}$ Hz ($\lambda = c/f_c \approx 78$ nm), which is far above the plasma frequency of metals or other conductors. Accordingly, no changes are usually needed to be made in the Drude model, although the simulation may run faster if one or more Lorentz terms outside FRoI can be omitted.
 %If high precision of the metal model is needed, one is also free to add one or more Lorentz oscillators in the optical/UV range to refine the shape of permittivity.
  
-Realistic simulations of metals at lower resolutions however require taking measures to ensure stability, as the critical frequency $f_c$ is reduced below the plasma frequency of most metals when $\Delta x \gtrsim 100$ nm. % TODO check this
-A trivial approach is to drastically reduce the Courant factor from $S=0.5$ to $0.01$ or even less, so that $f_c$ remains above plasma frequency. Although this reliably avoids the instability, it does so at the expense of scaling the computational time. As a general rule, lower resolution is typically chosen for larger structures, where also all investigated processes accordingly happen on a longer timescale.
-
+Realistic simulations of metals at lower resolutions however require taking measures to ensure stability, as the critical frequency $f_c$ is reduced below the plasma frequency of most metals when $\Delta x \gtrsim 200$ nm. % TODO check this
+A trivial approach is to drastically reduce the Courant factor $S$ so that $f_c$ remains above plasma frequency. Although this should reliably avoid the instability, it would be so at the expense of scaling the computational time. As a general rule, lower resolution is typically chosen for larger structures, where also all investigated processes accordingly happen on a longer timescale.
 %Drude model is known to introduce negative permittivity up to optical range, so 
 %Assuming the critical frequency is far below the optical range, the Lorentz oscillators can be certainly neglected. Nonetheless, negative permittivity above critical frequency still introduces instability, which has to be resolved. 
+
 For simulations with lower resolution, it is much more efficient to replace the exact Drude model with its approximation that maintains the same low-frequency limit of conductivity $\sigma_{LF}$, but has positive permittivity around the critical frequency and above it. 
 This formally inverts the relations that describe the material:
 \begin{itemize}
