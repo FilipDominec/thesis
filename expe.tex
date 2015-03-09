@@ -203,6 +203,9 @@ The relation between $\varepsilon_r(\omega)$ and $\sigma(\omega)$
 Both above equations describe the same quantity, so
 \begin{equation} \sigma(\omega) = \ii \omega \varepsilon_0 \varepsilon_r(\omega), \quad  \text{and} \quad  \varepsilon_r(\omega)  = \frac{\sigma(\omega)}{\ii \omega \varepsilon_0}. \label{eq_drude_sigma}\end{equation}
 Thus, a dielectric medium with real constant permittivity has \textit{imaginary} conductivity, magnitude of which grows with frequency (cf. the admittance of a capacitor). A conductor with real constant conductivity has complex permittivity, and its imaginary part diverges in the low-frequency limit. 
+% NOTE: eps_r = eps_r' + i eps_r'',   
+% sigma = sigma' + i sigma'' == i omega eps0 eps_r == i omega eps0 eps_r' - omega eps0 eps_r''
+% therefore a material can be described also using real epsilon = eps_r', and real conductivity sigma' = -omega eps0 eps_r''
 
 \begin{figure}[t] \caption{Permittivity and conductivity plot for gold; vertical scale and the yellow region forbidden by the stability rules are the same as in Fig. \ref{fg_tio2eps_stripped}. The exact model of gold % TODO \cite{palik} 
 (red) is compared to the lossy Drude model with Lorentz oscillators substituted by $\varepsilon_r$ (blue), and for illustration, also to the lossless Drude model with scattering frequency set to zero (grey). Obviously, none of these models is numerically stable if $f_c = 95$ THz.
