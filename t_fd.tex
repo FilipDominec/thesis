@@ -302,25 +302,9 @@ From its nature, the FDTD gives the time-domain response of the given structure 
 
 
 \subsection{Plane-wave expansion}
-Another numerical method used is the plane-wave expansion method (PWEM). This method works in frequency-domain and, being based on eigenmode problem, is fundamentally different from FDTD. It is encouraging that both give similar results. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved; the resulting eigenvalues are the frequencies of different modes in the folded dispersion curves. 
-
-For a given wavevector, PWEM gives also the shape of the fields for each mode. This approach turned out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get insight into how the modes look like. 
-As a convenient implementation of PWEM, we used  the freely available program \textit{MPB}\cite{johnson2001mpb}, again from the \textit{ab-initio} group at MIT.
-% Todo comments on MPB
 
 
 \subsection{Transfer-matrix method}
-The \textit{transfer-matrix method} (or \textit{Abelès formalism}) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, enabling to compute e.g. the reflection and transmission of structures discretized in a grid in frequency-domain. For simplicity, we describe the one-dimensional method.
-
-The key concept is in dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared, that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has wave impedance $z_m$, refractive index $n_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
-\begin{equation} \mathbb M^{(m)} := \begin{pmatrix} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{pmatrix},\quad\text{ where }\gamma:=1/z_m\text{ and }\delta := kn_m d_m.\label{eq_tmm1}\end{equation}
-Multiplication of such matrices gives the total transfer matrix of the layered structure, 
-\begin{equation} \mathbb M^{(tot)} \equiv \begin{pmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{pmatrix} = \ldots \cdot \mathbb M^{(2)} \cdot \mathbb M^{(1)}. \label{eq_tmm2}\end{equation}
-The total reflection $r^{(tot)}$ and transmission $t^{(tot)}$ are then 
-\begin{equation} r^{(tot)} = \frac{m_{11} + m_{12} - m_{21} - m_{22}}{m_{11} + m_{12} + m_{21} + m_{22}}, \quad\quad t^{(tot)}= \frac{2}{m_{11} + m_{12} + m_{21} + m_{22}}, \label{eq_rt_tmm}\end{equation}
-if perpendicular only incidence is assumed and if the surrounding medium consists of air.
-
-The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
 
 
 
@@ -335,29 +319,6 @@ We used FDTD mostly for three-dimensional simulations. In the following we restr
 The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes. On both ends at the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
 
 \subsection{Processing the time records into effective parameters}
-We performed the simulation of one unit cell to deduce the behaviour of a periodic structure composed of infinity of the unit cells.
-The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
-
-Without going into details, we required steps are to
-\begin{enumerate}
- \item{convert all field records to frequency domain using the Fourier transform (FT),} 
- \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
- \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
- \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
- \end{enumerate}
-While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
-$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
-
-% todo check if symbols known
-The Fresnel coefficients give the reflection and transmission from an interface of two homogeneous media described\footnote{In the literature, the Fresnel coefficients are often expressed using the index of refraction instead of wave impedance; this holds for most media where $\mu = 1$ and therefore $n = 1/z$} by their impedances $z_1, z_2$:
-\begin{equation} r_1 = \frac{z_2 - z_1}{z_2 + z_1}, \quad \quad \quad t_1 = \frac{2 z_2}{z_2 + z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
-The complex reflection $r_{s}$ and transmission $t_{s}$ of a homogeneous slab with given wave impedance $z$, index of refraction $n$ and thickness $d$ can be computed by summing the infinite series of internal reflections.
-% todo expr
-When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination}, yielding its index of refraction:
-\begin{equation} n = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
-and also its wave impedance:
-\begin{equation} z= \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
-The sign and branch of the refraction index, and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips in the spectra, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
 
 \section{Time-domain terahertz spectroscopy}
 

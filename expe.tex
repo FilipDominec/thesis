@@ -302,38 +302,149 @@ Unbounded	& Negligible				& Resistive medium						& \shortstack{doped semiconduc
 
 
 %}}}
-\paragraph{Selection of FDTD implementations} %{{{
-MEEP, OpenEMS, B-Calm, EMTL, 
+% todo? \paragraph{Selection of FDTD implementations} %{{{
+%MEEP, OpenEMS, B-Calm, EMTL, 
 %}}}
-\paragraph{} %{{{
-%}}}
-\paragraph{} %{{{
-%}}}
+\subsection{Finite-difference frequency-domain} % TODO
+
+
 \subsection{Plane-wave expansion method} % TODO
+\paragraph{Principles of PWEM} %{{{
+\add{
+
+Another numerical method used is the plane-wave expansion method (PWEM). This method works in frequency-domain and, being based on eigenmode problem, is fundamentally different from FDTD. It is encouraging that both give similar results. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved; the resulting eigenvalues are the frequencies of different modes in the folded dispersion curves. 
+
+For a given wavevector, PWEM gives also the shape of the fields for each mode. This approach turned out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get insight into how the modes look like. 
+As a convenient implementation of PWEM, we used  the freely available program \textit{MPB}\cite{johnson2001mpb}, again from the \textit{ab-initio} group at MIT.
+% Todo comments on MPB
+}
+%}}}
+\paragraph{Comparison of PWEM to FDTD} %{{{
+While the time-domain methods are very general, allowing to compute both periodic and non-periodic structures with losses or nonlinearity, some tasks may be better solved by more specialized methods. An example is the \textit{plane-wave expansion method} (PWEM), which is superior for efficient search of dispersion curves in periodic structures, and for the mode shapes at the band edges.
+%}}}
+
 \subsection{Transfer-matrix method} % TODO
+\paragraph{} %{{{
+\add{
+The \textit{transfer-matrix method} (or \textit{Abelès formalism}) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, enabling to compute e.g. the reflection and transmission of structures discretized in a grid in frequency-domain. For simplicity, we describe the one-dimensional method.
+
+The key concept is in dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared, that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has wave impedance $z_m$, refractive index $n_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
+\begin{equation} \mathbb M^{(m)} := \begin{pmatrix} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{pmatrix},\quad\text{ where }\gamma:=1/z_m\text{ and }\delta := kn_m d_m.\label{eq_tmm1}\end{equation}
+Multiplication of such matrices gives the total transfer matrix of the layered structure, 
+\begin{equation} \mathbb M^{(tot)} \equiv \begin{pmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{pmatrix} = \ldots \cdot \mathbb M^{(2)} \cdot \mathbb M^{(1)}. \label{eq_tmm2}\end{equation}
+The total reflection $r^{(tot)}$ and transmission $t^{(tot)}$ are then 
+\begin{equation} r^{(tot)} = \frac{m_{11} + m_{12} - m_{21} - m_{22}}{m_{11} + m_{12} + m_{21} + m_{22}}, \quad\quad t^{(tot)}= \frac{2}{m_{11} + m_{12} + m_{21} + m_{22}}, \label{eq_rt_tmm}\end{equation}
+if perpendicular only incidence is assumed and if the surrounding medium consists of air.
+
+The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
+}
+%}}}
+\paragraph{} %{{{
+%}}}
 %illustrates the band-gap formation \cite{laktionov2008}
 
-\subsection{Filter-diagonalisation method} % TODO
+\subsection{Summary} % TODO
+This section described four fundamentally different numerical methods for electromagnetic simulations. 
+\begin{enumerate}
+\item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve whole spectrum at once. The actual setup and data processing can vary according to the problem being solved. Two fundamentally different setups are described in the following chapter.} 
+\item{Finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is favorable e.g. for mode analysis in complicated structures.  } 
+\item{Plane-wave expansion method (PWEM) reformulates the problem of a wave propagating in a periodic structure by means of linear algebra. At a given wave vector, it allows to find eigenmodes and eigenfrequencies in the structure. This can be in turn employed to efficiently retrieve the dispersion curves.  } 
+\item{Transfer-matrix method (TMM), also allows to find dispersion curves. Although it can be extended to two or three dimensions, most popular is its one-dimensional implementation, as it is so simple to implement that it can even give an analytical insight into the behaviour of planar structures.  } 
+\end{enumerate}
+
+% \begin{verbatim}
+% 										FDTD				FDFD				PWEM				TMM
+% nonperiodic structures					yes					yes					no					yes
+% dispersive and lossy media				yes					yes					no					yes
+% nonlinear media							yes					no					no					no
+% computation of dispersion curves		yes*				yes*				yes+				(yes)
+% mode analysis							(yes)				yes					yes					yes
+% \end{verbatim}
 
 \section{Simulation setups for metamaterial homogenization} % TODO
+%While PWEM method is exclusively used to compute dispersion curves  and 1D TMM, are exclusively used to 
+ %mostly specialized for a specific computation, the finite-difference methods 
+The finite difference methods, FDTD and FDFD, can be employed to wide variety of electromagnetic problems. Different ways exist to study the behaviour of a periodic structures. 
 \subsection{Scattering parameters} % TODO
+\paragraph{Principle} %{{{
+The scattering parameter retrieval, also known as \textit{s-parameter} or \textit{Nichols-Ross-Weir} method, is probably the most common way to study periodic structures. It is based on the fact that one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its index of refraction $N$ and wave impedance $Z$ are given, along with the slab thickness $d$. The formulas can be inverted, so that one finds such (effective) parameters $\Neff$ and $\Zeff$ that give expected $r,t$ for a known layer thickness. 
+
+Mathematically, this can always be done. The problem is opposite: the solutions have infinitely many branches. Aside from this, the physical interpretation of the data can get even more tricky when effective parameters are assigned to an inhomogeneous slab. Different problems of this method are resolved and discussed in the following. Even though, this method has the great advantage of being easy to realize experimentally.
+
+% employ Fresnel formulas    The actual computation is therefore sometimes denoted also as \textit{Fresnel inversion}.
+%}}}
 \paragraph{Simulation geometry} %{{{
+
+\add{
+The required steps are to
+\begin{enumerate}
+ \item{convert all field records to frequency domain using the Fourier transform (FT),} 
+ \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
+ \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
+ \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
+ \end{enumerate}
+While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
+$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
+}
+
 \begin{figure} \caption{geometry}  \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \end{figure} \clearpage
 %% (in fact, this is independent of FDTD, only to the time-marching methods)
 %% \cite{terao2011}
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
+With the obvious exception of an one-dimensional structure of layers perpendicular, any other structure will change the orientation of the electric and magnetic fields. Such a perturbation of the field will be mostly bound to the structure, and exponentially decaying with the distance in the form of an \textit{evanescent wave}.
+
+An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it. As a result, the energy can be exchanged to another structure if it approaches the zone of the evanescent wave. Even if no energy is transferred by the evanescent wave, the electromagnetic behaviour of a structure is generally dependent, which may for example manifest as resonances shifting up or down in frequency.
+
+The impact for the s-parameters method of the near-field reaching out of a structure is twofold:
+\begin{enumerate}
+ \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the s-parameter method, the near-field spreads into free vacuum at the front and rear sides. 
+
+This issue seems to be inherent to the method, but its impact can be assessed by simulations of more than one unit cell. Generally, the retrieved $\Neff$ and $\Zeff$ values will depend on the number of layers being simulated. A single-cell simulation feels the absence of adjacent layers the most, whereas in a two-cell simulation the effect should be halved. Simulation of three (or more) cells results in different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can confuse the retrieval method.
+ } 
+ \item{Second, the monitor planes can not distinguish between the near-field or radiated wave, but only the latter is desired for the s-parameter computation. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
+
+The second one can be resolved by adding a sufficient \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually less than half of the unit cell size is sufficient to suppress all artifacts from near-field detection. The wave propagating in air only gets an additional phase offset, that can be easily compensated after the simulation. } 
+ \end{enumerate}
+
 %}}}
 \paragraph{} %{{{
 %}}}
-\paragraph{Effective-parameter retrieval by smith2002} %{{{
+\paragraph{Effective-parameter retrieval} %{{{
+\add{
+We performed the simulation of one unit cell to deduce the behaviour of a periodic structure composed of infinity of the unit cells.
+The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
+}
 
-\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
-               \caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
-               \caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
-               \caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
-               \caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
+\rm{
+It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
+
+\texttt{TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
+}
+
+
+\add{
+
+% todo check if symbols known
+The Fresnel coefficients give the reflection and transmission from an interface of two homogeneous media described\footnote{In the literature, the Fresnel coefficients are often expressed using the index of refraction instead of wave impedance; this holds for most media where $\mu = 1$ and therefore $n = 1/z$} by their impedances $z_1, z_2$:
+\begin{equation} r_1 = \frac{z_2 - z_1}{z_2 + z_1}, \quad \quad \quad t_1 = \frac{2 z_2}{z_2 + z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
+The complex reflection $r_{s}$ and transmission $t_{s}$ of a homogeneous slab with given wave impedance $z$, index of refraction $n$ and thickness $d$ can be computed by summing the infinite series of internal reflections.
+% todo expr
+When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination}, yielding its index of refraction:
+\begin{equation} n = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
+and also its wave impedance:
+\begin{equation} z= \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
+The sign and branch of the refraction index, and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips in the spectra, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
+}
+
+% TODO cite smith2002 and nrw sources
+
+%\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
+               %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
+               %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
+               %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
+               %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 %}}}
 \paragraph{Unambiguous arccosine} %{{{
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
@@ -343,6 +454,9 @@ MEEP, OpenEMS, B-Calm, EMTL,
 \begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwire_structure.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwirethick.pdf} \end{figure} \clearpage
 \subsection{Simulation of refraction on a wedge} % TODO
+
+
+
 
 \section{Terahertz experiments} % TODO
 \begin{figure} \caption{img/exp\_THz\_sampling.pdf}  \centering \includegraphics[width=10cm]{img/exp_THz_sampling.pdf} \end{figure} \clearpage
