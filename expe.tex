@@ -305,7 +305,24 @@ Unbounded	& Negligible				& Resistive medium						& \shortstack{doped semiconduc
 % todo? \paragraph{Selection of FDTD implementations} %{{{
 %MEEP, OpenEMS, B-Calm, EMTL, 
 %}}}
-\subsection{Finite-difference frequency-domain} % TODO
+
+
+\subsection{Finite-difference frequency-domain} % TODO%{{{
+
+\mdf{
+One may regard the task of
+frequency-domain solution as eigenvector problem, where the
+% time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
+% eigenvalue. The fields $\EE, \HH$ may be optimized so that:
+% \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
+% and so for $\HH$ 
+Cons: inefficient, convergence not guaranteed
+Pros: very convenient once time-domain simulation is prepared
+In the latest meep version (1.2.1), nondispersive $\varepsilon_r, \sigma$ must be
+provided. This is facilitated by meep utils.py.
+
+The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+}%}}}
 
 
 \subsection{Plane-wave expansion method} % TODO
@@ -346,11 +363,14 @@ The TMM is instrumental not only for its obvious simplicity, but also for provid
 \subsection{Summary} % TODO
 This section described four fundamentally different numerical methods for electromagnetic simulations. 
 \begin{enumerate}
-\item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve whole spectrum at once. The actual setup and data processing can vary according to the problem being solved. Two fundamentally different setups are described in the following chapter.} 
-\item{Finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is favorable e.g. for mode analysis in complicated structures.  } 
-\item{Plane-wave expansion method (PWEM) reformulates the problem of a wave propagating in a periodic structure by means of linear algebra. At a given wave vector, it allows to find eigenmodes and eigenfrequencies in the structure. This can be in turn employed to efficiently retrieve the dispersion curves.  } 
-\item{Transfer-matrix method (TMM), also allows to find dispersion curves. Although it can be extended to two or three dimensions, most popular is its one-dimensional implementation, as it is so simple to implement that it can even give an analytical insight into the behaviour of planar structures.  } 
+\item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve whole spectrum at once by Fourier transform. Two fundamentally different setups for FDTD are described in the following chapter that provide similar information on the metamaterial.} 
+\item{Finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching and Fourier transforming the result, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is favorable e.g. for mode analysis in complicated structures.} 
+\item{Plane-wave expansion method (PWEM) reformulates the problem of a wave propagating in a periodic structure by means of linear algebra. At a given wave vector, it allows to find eigenmodes and eigenfrequencies in the structure. This can be in turn employed to efficiently retrieve the dispersion curves.} 
+\item{Transfer-matrix method (TMM) also allows to find dispersion curves and field shape. Although it can be extended to two or three dimensions, most popular is its one-dimensional implementation, which, thanks to its simplicity, can even give an analytical insight into the behaviour of planar structures.} 
 \end{enumerate}
+Other numerical methods are used, too. Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage is in describing the structure smoothly with relatively low number of elements of variable density; the downside is in that the mesh introduces additional entropy and the computation on the element is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
+
+\add{TODO make an overview of other methods}
 
 % \begin{verbatim}
 % 										FDTD				FDFD				PWEM				TMM
@@ -364,12 +384,16 @@ This section described four fundamentally different numerical methods for electr
 \section{Simulation setups for metamaterial homogenization} % TODO
 %While PWEM method is exclusively used to compute dispersion curves  and 1D TMM, are exclusively used to 
  %mostly specialized for a specific computation, the finite-difference methods 
-The finite difference methods, FDTD and FDFD, can be employed to wide variety of electromagnetic problems. Different ways exist to study the behaviour of a periodic structures. 
+The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
 \subsection{Scattering parameters} % TODO
 \paragraph{Principle} %{{{
-The scattering parameter retrieval, also known as \textit{s-parameter} or \textit{Nichols-Ross-Weir} method, is probably the most common way to study periodic structures. It is based on the fact that one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its index of refraction $N$ and wave impedance $Z$ are given, along with the slab thickness $d$. The formulas can be inverted, so that one finds such (effective) parameters $\Neff$ and $\Zeff$ that give expected $r,t$ for a known layer thickness. 
+The scattering parameter retrieval, also known as \textit{s-parameter} or \textit{Nichols-Ross-Weir} method, is probably the most common way to study periodic structures. It is based on the fact that one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its index of refraction $N$ and wave impedance $Z$ are known, along with the slab thickness $d$. These formulas can be inverted, so that one finds such (effective) parameters $\Neff$ and $\Zeff$ that give expected $r,t$. 
 
-Mathematically, this can always be done. The problem is opposite: the solutions have infinitely many branches. Aside from this, the physical interpretation of the data can get even more tricky when effective parameters are assigned to an inhomogeneous slab. Different problems of this method are resolved and discussed in the following. Even though, this method has the great advantage of being easy to realize experimentally.
+Mathematically, this can always be done, and therefore this method assigns some $\Neff$ and $\Zeff$ even to an inhomogeneous structure. The problem is opposite: the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. 
+Even though, this method has the great advantage of being easy to realize experimentally.
+%% (in fact, this is independent of FDTD, only to the time-marching methods)
+%% \cite{terao2011}
+%Different problems of this method are resolved and discussed in the following. 
 
 % employ Fresnel formulas    The actual computation is therefore sometimes denoted also as \textit{Fresnel inversion}.
 %}}}
@@ -388,8 +412,6 @@ $\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})
 }
 
 \begin{figure} \caption{geometry}  \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \end{figure} \clearpage
-%% (in fact, this is independent of FDTD, only to the time-marching methods)
-%% \cite{terao2011}
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
@@ -397,7 +419,8 @@ With the obvious exception of an one-dimensional structure of layers perpendicul
 
 An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it. As a result, the energy can be exchanged to another structure if it approaches the zone of the evanescent wave. Even if no energy is transferred by the evanescent wave, the electromagnetic behaviour of a structure is generally dependent, which may for example manifest as resonances shifting up or down in frequency.
 
-The impact for the s-parameters method of the near-field reaching out of a structure is twofold:
+\mdf{TODO figure here a-b-c}
+The impact of the near-field reaching out of a structure to the s-parameters method is twofold:
 \begin{enumerate}
  \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the s-parameter method, the near-field spreads into free vacuum at the front and rear sides. 
 
@@ -405,24 +428,55 @@ This issue seems to be inherent to the method, but its impact can be assessed by
  } 
  \item{Second, the monitor planes can not distinguish between the near-field or radiated wave, but only the latter is desired for the s-parameter computation. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
 
-The second one can be resolved by adding a sufficient \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually less than half of the unit cell size is sufficient to suppress all artifacts from near-field detection. The wave propagating in air only gets an additional phase offset, that can be easily compensated after the simulation. } 
+This can be resolved by adding a sufficient \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually padding less than half of the unit cell size is sufficient to suppress all artifacts from near-field detection. In contrast, the propagating wave only gets an additional phase offset that can be easily compensated after the simulation. } 
  \end{enumerate}
 
 %}}}
-\paragraph{} %{{{
-%}}}
+
 \paragraph{Effective-parameter retrieval} %{{{
-\add{
+Recording electric and magnetic field at monitor planes $\rightarrow E_{x}^{(1)}(t), H_{y}^{(1)}(t), E_{x}^{(2)}(t), H_{y}^{(2)}(t)$
+
+Fourier transform of the fields $\rightarrow \tilde E_{x}^{(1)}(f), \tilde H_{y}^{(1)}(f), \tilde E_{x}^{(2)}(f), \tilde H_{y}^{(2)}(f)$ 
+
+Separation of forward/backward wave amplitudes: \\
+$$\tilde A^{(in 1)}(f)  := \tilde E_{x}^{(1)}(f) + \eta \tilde H_{y}^{(1)}(f), \quad \tilde A^{(out 1)}(f) := \tilde E_{x}^{(1)}(f) - \eta \tilde H_{y}^{(1)}(f),$$
+$$\tilde A^{(out 2)}(f) := \tilde E_{x}^{(2)}(f) + \eta \tilde H_{y}^{(2)}(f), \quad \tilde A^{(in 2)}(f)  := \tilde E_{x}^{(2)}(f) - \eta \tilde H_{y}^{(2)}(f)$$. 
+\begin{figure}[h] \caption{img/sim\_separating\_wave.pdf}  \centering \includegraphics[width=10cm]{img/sim_separating_wave.pdf} \label{fg_}\end{figure}
+
+
+Scattering parameters computation:\\
+$$s_{11}(\omega) \equiv r(f) := \tilde A^{(out 1)}(f) / \tilde A^{(in 1)}(f)$$
+$$s_{12}(\omega) \equiv t(f) := \tilde A^{(out 2)}(f) / \tilde A^{(in 1)}(f)$$
+
+\begin{figure}[h] \caption{timedomain} \centering \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_} \end{figure}
+
+\begin{figure}[h] \caption{img/sim\_ampli\_debug\_band.pdf}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_} \end{figure} 
+
+\begin{figure}[h] \caption{img/sim\_screen.pdf}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
+
+
 We performed the simulation of one unit cell to deduce the behaviour of a periodic structure composed of infinity of the unit cells.
+\add{
 The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
 }
 
-\rm{
+\mdf{
 It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
 
 \texttt{TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
 }
 
+\add{
+Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? I think the explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
+}
+
+\begin{figure}[h] \label{fg_} \centering 
+	\includegraphics[width=9cm]{img/STObar_rt.pdf}
+\end{figure}
+
+\begin{figure}[h] \label{fg_} \centering 
+	\includegraphics[width=11cm]{img/STOBarC_modes2.pdf}
+\end{figure}
 
 \add{
 
@@ -450,10 +504,24 @@ The sign and branch of the refraction index, and the sign of wave impedance are 
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
 \begin{figure} \caption{new}  \centering \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf}  \end{figure}\clearpage
 %}}}
+\paragraph{Layers without translation and mirror symmetry} %{{{
+%}}}
+\paragraph{} %{{{
+%}}}
+
 \subsection{Current-driven homogenisation} % TODO
 \begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwire_structure.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwirethick.pdf} \end{figure} \clearpage
+
 \subsection{Simulation of refraction on a wedge} % TODO
+%}}}
+\subsection{Other effective parameter retrieval methods} % TODO
+\mdf{
+"Wave Propagation Retrieval Method" [Andryieuski2010], etc.
+/home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
+}
+%}}}
+
 
 
 

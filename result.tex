@@ -8,6 +8,21 @@ It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) 
 %}}}
 \section{Wire medium} % references to ->
 %{{{
+\add{
+We assume the medium is inductive $\quad \Rightarrow \quad  \varepsilon(f) = 1 - \frac{f_p^2}{f^2}$. 
+
+\begin{itemize} \item{What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)?} \end{itemize}
+
+Pendry \textit{et al.} 1996: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log(\frac{a}{r})}}$
+
+Maslovski \textit{et al.} 2003: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac{a^2}{4r (a-r)}\right)}}$
+
+\begin{itemize} \item{How these models compare to the simulation?} \end{itemize}
+
+\tiny{J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  }\\
+\tiny{Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512}
+}
+
 \begin{figure} \caption{img/XCylWire\_a100r4.pdf}  \centering \includegraphics[width=10cm]{img/XCylWire_a100r4.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/EWire\_plasmaF\_radiusscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_radiusscan.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/EWire\_plasmaF\_spacingscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_spacingscan.pdf} \end{figure} \clearpage
@@ -26,6 +41,7 @@ It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) 
 \section{SRRs and spheres in wire grid} % references to ->
 %{{{
 \begin{figure} \caption{img/SphereWire\_eps100\_R25\_FDTD.pdf}  \centering  \includegraphics[width=10cm]{img/SphereWire_eps100_R25_FDTD.pdf} \end{figure} \clearpage
+\begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} \clearpage
 %}}}
 \section{Dielectric rods parallel to magnetic field} % references to ->
 %{{{
@@ -36,7 +52,6 @@ It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) 
 %}}}
 \section{STO bar TODO} % references to ->
 %{{{
-\begin{figure} \caption{img/STOBarC\_modes3.pdf}  \centering \includegraphics[width=10cm]{img/STOBarC_modes3.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/STOBar\_photo\_narrow.pdf}  \centering \includegraphics[width=10cm]{img/STOBar_photo_narrow.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/STOBar\_photo.pdf}  \centering \includegraphics[width=10cm]{img/STOBar_photo.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/STObar\_rt.pdf}  \centering \includegraphics[width=10cm]{img/STObar_rt.pdf} \end{figure} \clearpage
@@ -50,10 +65,6 @@ It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) 
 
 \begin{figure} \caption{img/ERods\_eps100\_double\_a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_double_a100a080_FDTD.pdf} \end{figure} \clearpage
 
-\begin{figure} \caption{img/sim\_ampli\_debug\_band.pdf}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/sim\_screen.pdf}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/sim\_separating\_wave.pdf}  \centering \includegraphics[width=10cm]{img/sim_separating_wave.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/sim\_timedomain\_debug.pdf}  \centering \includegraphics[width=10cm]{img/sim_timedomain_debug.pdf} \end{figure} \clearpage
 
 \begin{figure} \caption{img/ERods\_sketch\_of\_separate\_spectra\_to\_continuous\_scan.pdf}  \centering \includegraphics[width=10cm]{img/ERods_sketch_of_separate_spectra_to_continuous_scan.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/ERods\_eps100\_spacingscan\_Nim.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_spacingscan_Nim.pdf} \end{figure} \clearpage
