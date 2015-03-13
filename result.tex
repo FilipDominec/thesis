@@ -286,7 +286,9 @@ The bars used had rectangular cross-section, being 26 $\upmu$m thick, 66 $\upmu$
 } 
 %}}}
 
-\add{ %{{{ FROM OPEX
+
+
+
 \begin{figure}
 \centering \includegraphics[width=14cm]{img/ERods_1st_and_2nd_Mie_resonance.pdf}
 \caption{(a) Perspective view of the unit cell\add{; (b) its}
@@ -297,87 +299,29 @@ shows positive and negative values of the $E_x$ component of the electric field,
 represented by the arrows. }\label{fg_sketchfield}
 \end{figure}
 
-Our structure \add{(see Fig.\ref{fg_sketchfield}a)} is defined by a square unit 
-cell with the linear dimension $a$ periodically
-distributed in the $yz$ plane; the dielectric rod parallel to $x$-axis with 
-radius $\rho$
-and permittivity $\varepsilon_r$ is positioned in its center. We employed the
-finite-difference time-domain (FDTD) simulation package MEEP 
-\cite{oskooi2010meep} to
-obtain the scattering coefficients (complex reflectance $r$ and transmittance 
-$t$) of a
-structure with variable number of unit cells along the wave vector direction 
-$k\parallel
-z$. The incident wave is polarized $E\parallel x$, periodic boundary conditions 
-were
-applied in the $y$-direction. We performed the 
-simulations for a single layer ($y$-periodic boundary conditions 
-only). Its effective properties are almost identical to those of the
-corresponding multilayer structure. We checked that for this geometry, 
-the retrieved effective
-parameters depend only negligibly on the number of unit cells in the 
-$z$-direction. The relevance of the calculations with a single layer was 
-further confirmed by current-driven homogenization simulations \cite{Markel13} in several particular cases (same geometries as in 
-Fig.~\ref{fg_spec}) which yielded a response in a very good agreement 
-with the FDTD results.
-The effective parameters were \add{then} retrieved from complex
-transmittance and reflectance spectra \cite{smith2002determination}. 
-\add{Alternative means of obtaining the effective parameters are discussed in 
-	Ref. \cite{Simovski09}. When 
-	inverting the Fresnel-Airy formulas, the correct solutions have to be chosen 
-	in the different parts of the $\Neff(\omega)$, $\Zeff(\omega)$ spectra
-\cite{Simovski09}; to this aim, Kramers-Kronig relations as well as the 
-conditions of a passive medium Im$(\Neff)>0$ and Re$(\Zeff)>0$ were used.} 
+Our structure \add{(see Fig.\ref{fg_sketchfield}a)} is defined by a square unit cell with the linear dimension $a$ periodically distributed in the $yz$ plane; the dielectric rod parallel to $x$-axis with radius $\rho$ and permittivity $\varepsilon_r$ is positioned in its center. We employed the finite-difference time-domain (FDTD) simulation package MEEP \cite{oskooi2010meep} to obtain the scattering coefficients (complex reflectance $r$ and transmittance $t$) of a structure with variable number of unit cells along the wave vector direction $k\parallel z$. The incident wave is polarized $E\parallel x$, periodic boundary conditions were applied in the $y$-direction. We performed the simulations for a single layer ($y$-periodic boundary conditions only). Its effective properties are almost identical to those of the corresponding multilayer structure. We checked that for this geometry, the retrieved effective parameters depend only negligibly on the number of unit cells in the $z$-direction. The relevance of the calculations with a single layer was further confirmed by current-driven homogenization simulations \cite{Markel13} in several particular cases (same geometries as in Fig.~\ref{fg_spec}) which yielded a response in a very good agreement with the FDTD results.
 
-The retrieved value of the complex effective index of refraction $\Neff(f)$ 
-defines the
-magnitude of the wave vector
-\begin{equation}\label{eq_wave_vector}
-k(f) = 2\pi f \Neff(f) /c\,.
-\end{equation}
-Note that the retrieval procedure  implies that 
-the wave vector
-introduced by Eq. (\ref{eq_wave_vector}) is defined in an unfolded reciprocal 
-space. 
+The effective parameters were \add{then} retrieved from complex transmittance and reflectance spectra \cite{smith2002determination}.  \add{Alternative means of obtaining the effective parameters are discussed in Ref. \cite{Simovski09}. When inverting the Fresnel-Airy formulas, the correct solutions have to be chosen in the different parts of the $\Neff(\omega)$, $\Zeff(\omega)$ spectra \cite{Simovski09}; to this aim, Kramers-Kronig relations as well as the conditions of a passive medium Im$(\Neff)>0$ and Re$(\Zeff)>0$ were used.} 
 
-A Bragg resonance occurs when an integer number of half-wavelengths fit into one 
-unit cell, i.e.,  when
-\begin{equation}\label{eq_BZ}
-k(f) = \frac{q \pi}{a}\,,
-\end{equation}
-where $q$ is a non-zero integer. In such a situation, the wave vector is located at a
-Brillouin zone boundary. The purely real values of $k$ then describe photonic band edges.
-In a band edge state, a standing wave appears in the structure and it is characterized by
-exactly $q$ nodal planes dividing each unit cell in the transverse direction to $q+1$
-disconnected parts. The band edges delimit a photonic {\itshape Bragg band gap} where
-only evanescent waves described by $\Neff''>0$ can exist.
-We can write an equation analogous to (\ref{eq_BZ}) for the real part of the refractive
-index:
-\begin{equation}\label{eq_BZN}
-\Neff'(f) = \frac{q c}{2 a f}\,;
-\end{equation}
-its hyperbolic behavior versus frequency reflects the pinning of the wave vector to the
-Brillouin zone boundary inside the Bragg band gap.
+The retrieved value of the complex effective index of refraction $\Neff(f)$ defines the magnitude of the wave vector
+\begin{equation}\label{eq_wave_vector} k(f) = 2\pi f \Neff(f) /c\,.  \end{equation}
+Note that the retrieval procedure  implies that the wave vector introduced by Eq. (\ref{eq_wave_vector}) is defined in an unfolded reciprocal space. 
 
-Another case of interest where evanescent waves are obtained is that of $\Neff' = 0$
-(center of the first Brillouin zone, $q=0$) and $\Neff''>0$. Here the waves exponentially
-decay in the medium without any phase change. However, this behavior has a different
-origin: it is connected to a plasma-like response of the material ($\varepsilon<0$ or
-$\mu<0$) and in this paper we use the term \textit{plasma band gap} to refer to it.
+A Bragg resonance occurs when an integer number of half-wavelengths fit into one unit cell, i.e.,  when
+\begin{equation}\label{eq_BZ} k(f) = \frac{q \pi}{a}\,, \end{equation}
+where $q$ is a non-zero integer. In such a situation, the wave vector is located at a Brillouin zone boundary. The purely real values of $k$ then describe photonic band edges.  In a band edge state, a standing wave appears in the structure and it is characterized by exactly $q$ nodal planes dividing each unit cell in the transverse direction to $q+1$ disconnected parts. The band edges delimit a photonic {\itshape Bragg band gap} where only evanescent waves described by $\Neff''>0$ can exist.  We can write an equation analogous to (\ref{eq_BZ}) for the real part of the refractive index:
+\begin{equation}\label{eq_BZN} \Neff'(f) = \frac{q c}{2 a f}\,; \end{equation}
+its hyperbolic behavior versus frequency reflects the pinning of the wave vector to the Brillouin zone boundary inside the Bragg band gap.
 
-The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or,
-equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the
-frequency is sufficiently increased. While usually the convention is used that the
-corresponding curves are folded back into the first Brillouin zone, in this paper we plot
-$\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval
-algorithm. This can be clearly observed on the dispersion of the refractive index in
-Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal
-planes intersecting the unit cell, which is important for our discussion.
+Another case of interest where evanescent waves are obtained is that of $\Neff' = 0$ (center of the first Brillouin zone, $q=0$) and $\Neff''>0$. Here the waves exponentially decay in the medium without any phase change. However, this behavior has a different origin: it is connected to a plasma-like response of the material ($\varepsilon<0$ or $\mu<0$) and in this paper we use the term \textit{plasma band gap} to refer to it.
+
+The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 
 \section{Results}
+
 \begin{figure} \centering
-\includegraphics[angle=270,width=105mm]{img/ERods_eps100_double_a100a080_FDTD.pdf}
-\includegraphics[angle=270,width=105mm]{img/ERods_eps100_single_a120_FDTD.pdf}
+\includegraphics[width=115mm]{img/ERods_eps100_double_a100a080_FDTD.pdf}
+\includegraphics[width=115mm]{img/ERods_eps100_single_a120_FDTD.pdf}
 \caption{Results of the FDTD simulations for a single layer of dielectric rods with $\varepsilon_{\rm r}= 100$,
 $\rho=10$\,$\upmu$m. The spectra of reflection $|r|$ and transmission $|t|$ amplitudes share
 their frequency axes with the retrieved complex effective index of refraction $\Neff$,
@@ -386,154 +330,99 @@ dashed lines. The frequency ranges where $\eeff$ and $\meff$ have no physical
 interpretation (Bragg band gaps or higher order photonic bands) are gray shaded.  } \label{fg_spec}
 \end{figure}
 
-In the following, we first describe in detail three characteristic cases: we compare the
-effective parameters computed for three slightly different unit-cell sizes while the rod
-radius and the dielectric permittivity are fixed. The comparison of these cases reveals quite
-remarkable changes in the optical behavior of the structure. We then complement this
-comparison by a continuous scan of the unit-cell sizes in order to obtain an overview of
-all possible types of the response for the rod-based geometry.
+In the following, we first describe in detail three characteristic cases: we compare the effective parameters computed for three slightly different unit-cell sizes while the rod radius and the dielectric permittivity are fixed. The comparison of these cases reveals quite remarkable changes in the optical behavior of the structure. We then complement this comparison by a continuous scan of the unit-cell sizes in order to obtain an overview of all possible types of the response for the rod-based geometry.  
 
-In Fig.~\ref{fg_spec}, we show the calculated reflectance and transmittance amplitude
-spectra, as well as the effective parameters of three representative structures which
-have the same rod radii $\rho = 10$~$\upmu$m, but they differ by the unit-cell size $a =$ 120, 100 and 80 $\upmu$m. These
-values of $a$ were selected to illustrate three qualitatively different regimes of
-behavior.
-The dielectric was defined by a simple lossy model with one high-frequency oscillator, its  permittivity was $\varepsilon_r = 100.1 + 0.5\mathrm{i}$ at 500 GHz.
+In Fig.~\ref{fg_spec}, we show the calculated reflectance and transmittance amplitude spectra, as well as the effective parameters of three representative structures which have the same rod radii $\rho = 10$~$\upmu$m, but they differ by the unit-cell size $a =$ 120, 100 and 80 $\upmu$m. These values of $a$ were selected to illustrate three qualitatively different regimes of behavior.  The dielectric was defined by a simple lossy model with one high-frequency oscillator, its  permittivity was $\varepsilon_r = 100.1 + 0.5\mathrm{i}$ at 500 GHz.
 
 \paragraph{Sparse array}
-In Fig.~\ref{fg_spec}(a), where the unit-cell size $a=120$~$\upmu$m, we can see 
-two well separated Mie resonances: the electric one at 680 GHz and the magnetic 
-one at 1030 GHz.  The field distribution of the corresponding modes is sketched 
-in Fig.~\ref{fg_sketchfield}. The resonance frequencies can be easily identified 
-by an abrupt drop in the real part of the effective index of refraction 
-$\Neff'$, accompanied by a sharp peak in its imaginary part $\Neff''$. The Mie 
-resonances in periodic media without losses must always be adjacent to a Bragg 
-band gap. For instance, in Fig.~\ref{fg_spec}(a) at frequencies below the first 
-Bragg gap, the electric dipoles within each rod are directed along the electric 
-field in the rest of the unit cell. The rods thus positively contribute to the 
-refractive index $\Neff'$ which progressively grows until it reaches the first 
-Brillouin zone boundary. At this point, the Bragg condition for a photonic 
-band-gap is fulfilled and each unit cell is intersected by one nodal plane. This 
-is reflected by the dispersion of $\Neff'(f)$ which follows the first 
-Brillouin-zone boundary in the first Bragg band gap between 400 and 680\,GHz 
-[equivalent to $q=1$ in Eq. (\ref{eq_BZN})]: $$	\Neff'(f) = \frac{c}{2af}\,. $$ 
-At 680\,GHz, the electric Mie resonance occurs which dramatically changes the 
-near-field photonic properties of the structure. The observed drop in 
-$\Neff'(f)$ and the slope change in $\Neff''(f)$ mark the plasma-like character 
-of the adjacent part of the band gap which extends up to the plasma frequency of 
-the Mie resonance (940\,GHz). In this frequency range the electric dipoles in 
-the rods change their direction and induce an electric field opposite to the 
-incident one.
+In Fig.~\ref{fg_spec}(a), where the unit-cell size $a=120$~$\upmu$m, we can see two well separated Mie resonances: the electric one at 680 GHz and the magnetic one at 1030 GHz.  The field distribution of the corresponding modes is sketched in Fig.~\ref{fg_sketchfield}. The resonance frequencies can be easily identified by an abrupt drop in the real part of the effective index of refraction $\Neff'$, accompanied by a sharp peak in its imaginary part $\Neff''$. The Mie resonances in periodic media without losses must always be adjacent to a Bragg band gap. For instance, in Fig.~\ref{fg_spec}(a) at frequencies below the first Bragg gap, the electric dipoles within each rod are directed along the electric field in the rest of the unit cell. The rods thus positively contribute to the refractive index $\Neff'$ which progressively grows until it reaches the first Brillouin zone boundary. At this point, the Bragg condition for a photonic band-gap is fulfilled and each unit cell is intersected by one nodal plane. This is reflected by the dispersion of $\Neff'(f)$ which follows the first Brillouin-zone boundary in the first Bragg band gap between 400 and 680\,GHz [equivalent to $q=1$ in Eq. (\ref{eq_BZN})]: $$	\Neff'(f) = \frac{c}{2af}\,. $$ At 680\,GHz, the electric Mie resonance occurs which dramatically changes the near-field photonic properties of the structure. The observed drop in $\Neff'(f)$ and the slope change in $\Neff''(f)$ mark the plasma-like character of the adjacent part of the band gap which extends up to the plasma frequency of the Mie resonance (940\,GHz). In this frequency range the electric dipoles in the rods change their direction and induce an electric field opposite to the incident one.
 
-For this sparse array of dielectric rods, the first magnetic Mie resonance lies 
-at 1030\,GHz, above the plasma frequency of the electric mode.  The second Bragg 
-band-gap opens at 1010 GHz and, due to the Mie resonance, it is transformed to a 
-plasma band gap at 1030 GHz. The next allowed photonic band starts above 
-magnetic plasma frequencies at 1070 GHz. Therefore we observe a very analogous 
-behavior near the magnetic resonance. 
+For this sparse array of dielectric rods, the first magnetic Mie resonance lies at 1030\,GHz, above the plasma frequency of the electric mode.  The second Bragg band-gap opens at 1010 GHz and, due to the Mie resonance, it is transformed to a plasma band gap at 1030 GHz. The next allowed photonic band starts above magnetic plasma frequencies at 1070 GHz. Therefore we observe a very analogous behavior near the magnetic resonance. 
 
-For completeness we note that at 1350 GHz, a third Bragg band gap
-starts which, unlike the lower-frequency ones, does not contain any Mie resonances 
-[see Fig.\ \ref{fg_spec}(a)].
+For completeness we note that at 1350 GHz, a third Bragg band gap starts which, unlike the lower-frequency ones, does not contain any Mie resonances [see Fig.\ \ref{fg_spec}(a)].
 
-The resonances in the effective permittivity $\eeff=\Neff/\Zeff$ and permeability $\meff
-= \Neff\cdot \Zeff$ of a periodic array obviously exhibit shapes very different from the
-well-known resonance curves of a damped oscillator\cite{koschny2003resonant}. In the two
-separate plasma band gaps we obtain either $\eeff < 0$ or $\meff<0$, i.e. the usual
-behavior observed in the reststrahlen bands of resonances. However, in the Bragg band
-gaps occurring just below these spectral ranges the behavior of $\eeff$ and $\meff$ does
-not have any useful physical interpretation and it can be understood as a purely formal
-frequency dependence: we shaded these ranges with light gray in Fig.~\ref{fg_spec}.
+The resonances in the effective permittivity $\eeff=\Neff/\Zeff$ and permeability $\meff = \Neff\cdot \Zeff$ of a periodic array obviously exhibit shapes very different from the well-known resonance curves of a damped oscillator\cite{koschny2003resonant}. In the two separate plasma band gaps we obtain either $\eeff < 0$ or $\meff<0$, i.e. the usual behavior observed in the reststrahlen bands of resonances. However, in the Bragg band gaps occurring just below these spectral ranges the behavior of $\eeff$ and $\meff$ does not have any useful physical interpretation and it can be understood as a purely formal frequency dependence: we shaded these ranges with light gray in Fig.~\ref{fg_spec}.
 
 \paragraph{Medium array}
-When the unit cell size is reduced to $a=100$~$\upmu$m, as depicted in
-Fig.~\ref{fg_spec}(b), the Mie resonances shift slightly. Interestingly, in comparison with the sparse array, the electric
-resonance frequency increases from 680 to 780 GHz, and that of the
-magnetic resonance decreases from 1030 to 980 GHz. This can be explained by the
-inter-cell coupling: the circulating magnetic field of the first resonance is compressed
-when the rods get closer, whereas the magnetic dipoles of the second resonance can couple
-more easily to each other in the same situation (see Fig.~\ref{fg_sketchfield}).
+When the unit cell size is reduced to $a=100$~$\upmu$m, as depicted in Fig.~\ref{fg_spec}(b), the Mie resonances shift slightly. Interestingly, in comparison with the sparse array, the electric resonance frequency increases from 680 to 780 GHz, and that of the magnetic resonance decreases from 1030 to 980 GHz. This can be explained by the inter-cell coupling: the circulating magnetic field of the first resonance is compressed when the rods get closer, whereas the magnetic dipoles of the second resonance can couple more easily to each other in the same situation (see Fig.~\ref{fg_sketchfield}).
 
-The converging of the resonance frequencies is linked to the most important
-qualitative change in the spectra: the fact that the magnetic resonance occurs at a
-frequency where $\eeff'<0$. The first band gap (the lowest continuous frequency region where
-$\Neff''>0$) is thus composed of three adjacent regimes: the first Bragg band gap
-(425--780 GHz), a plasma band gap (780--980 GHz) and the second Bragg band gap (980--1020
-GHz). Every Mie resonance introduces a drop in $\Neff'$, so the following photonic band
-(1020--1070 GHz) features a negative index of refraction ($\Neff'<0; \Neff''\approx 0$),
-i.e., the phase and group velocities are opposite to each other. We conjecture that the presence of two
-Mie resonances in the \textit{first} combined band gap is a necessary and sufficient condition for
-$\Neff'<0$ to occur.
+The converging of the resonance frequencies is linked to the most important qualitative change in the spectra: the fact that the magnetic resonance occurs at a frequency where $\eeff'<0$. The first band gap (the lowest continuous frequency region where $\Neff''>0$) is thus composed of three adjacent regimes: the first Bragg band gap (425--780 GHz), a plasma band gap (780--980 GHz) and the second Bragg band gap (980--1020 GHz). Every Mie resonance introduces a drop in $\Neff'$, so the following photonic band (1020--1070 GHz) features a negative index of refraction ($\Neff'<0; \Neff''\approx 0$), i.e., the phase and group velocities are opposite to each other. We conjecture that the presence of two Mie resonances in the \textit{first} combined band gap is a necessary and sufficient condition for $\Neff'<0$ to occur.
 
-Note that the transmittance amplitude reaches quite small values between the Mie
-resonances when they are sufficiently close to each other [Fig. \ref{fg_spec}(b)]. This range forms a
-well-defined band with a reflectance-to-transmittance contrast much better than that
-observed in a planar Fabry-Perot resonator. One layer of dielectric rods with proper
-parameters can therefore be applied as a thin, yet very effective filter.
+Note that the transmittance amplitude reaches quite small values between the Mie resonances when they are sufficiently close to each other [Fig. \ref{fg_spec}(b)]. This range forms a well-defined band with a reflectance-to-transmittance contrast much better than that observed in a planar Fabry-Perot resonator. One layer of dielectric rods with proper parameters can therefore be applied as a thin, yet very effective filter.
 
+\paragraph{Dense array}
+Perhaps an even more surprising change occurs when the rod spacing is further reduced. The Mie resonances get even closer in the spectrum and eventually they vanish for $a=80$~$\upmu$m [see Fig.~\ref{fg_spec}(c)]. The band gap remains at nearly the same spectral position as in panel (b) of this figure, but, unlike for the medium array, the value of $\Neff'$ does not drop within the Bragg band gap. In contrast, it is shifted up to the second Brillouin zone boundary where it meets the second Bragg band gap as clearly seen in panel (c), indicating that each unit cell is intersected by two nodal planes in this state.
+
+The reason of this behavior is related to the change of the nodal plane topology caused by the inter-cell coupling. When the rods are far from each other ($a\gtrsim 100$~$\upmu$m), the individual Mie resonances create closed regions delimited by a nodal surface where the fields are opposite to the rest of the unit cell. Upon reducing the unit-cell size ($a\lesssim 80$~$\upmu$m), the regions of opposite fields start to overlap with those from the neighboring cells and the corresponding nodal surfaces interconnect and open. This pair of open nodal surfaces dividing the unit cell manifests itself by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
+
+\begin{figure}\centering 
+\includegraphics[width=0.5\textwidth]{img/ERods_sketch_of_separate_spectra_to_continuous_scan.pdf}
+\caption{} \label{fg_spacingscan100formation}. 
+\end{figure}
+
+
+
+\begin{figure}\centering  %% TODO rename Re<--->Im
+\includegraphics[width=0.5\textwidth]{img/ERods_eps100_spacingscan_Nim.pdf}\includegraphics[width=0.5\textwidth]{img/ERods_eps100_spacingscan_Nre.pdf}
+\caption{Real ($\Neff'$, left panel) and imaginary ($\Neff''$, right panel) parts of the refractive index for a dielectric rod array with permittivity $\varepsilon_r =100$, radius $\rho = 10$ $\upmu$m and a variable unit cell size $20\:\upmu$m $<a<200\:\upmu$m.  The three solid horizontal lines correspond to the values used in Fig.~\ref{fg_spec}.}
+\label{fg_spacingscan100}. 
+\end{figure}
+
+
+\paragraph{Continuous scan of the unit-cell size}
+The behavior described above is confirmed by the plots of the complex index of refraction $\Neff',\: \Neff''$ for a continuously varying unit cell size $a$ from 20 to 200~$\upmu$m (Fig.~\ref{fg_spacingscan100}). Here, again, the constant values of the dielectric permittivity $\varepsilon_r=100$ and the rod radius $\rho=10$ $\upmu$m are used. In the upper-right corner of both plots, for $a>c/f$, an empty area is left where the diffraction prevents the determination of effective parameters. 
+
+For an easier interpretation of the results, we draw the most prominent features schematically in Fig.~\ref{fg_drawn100}. Some of them are common in ordinary one-dimensional photonic crystals, namely, the photonic (Bragg) band gaps which are painted in color in Fig.~\ref{fg_drawn100}.
+
+\begin{figure}
+    \includegraphics[width=15cm]{img/ERods_eps100_spacingscan_drawn_bands.pdf}
+    \caption{Scheme of band gaps and Mie resonances under the same conditions as
+    in Fig.~\ref{fg_spacingscan100}.}
+\label{fg_drawn100}
+\end{figure}
+
+
+
+
+The Mie resonances are caused by the field confinement near the high permittivity elements. They always manifest themselves as sharp peaks in the imaginary part of the index of refraction ($\Neff''$), and in Fig.~\ref{fg_drawn100} they are denoted by thick solid curves. Their electric- or magnetic-dipole character is identified by the letters "E" or "M" above the plot, respectively.
+
+As it can be seen in Figs.~\ref{fg_spacingscan100} and \ref{fg_drawn100}, the pairs of electric and magnetic Mie resonances form U-shaped curves, at the bottom of which the resonances come closer in frequency to each other and eventually they disappear when the unit-cell size $a$ is further reduced. The resonances influence the whole spectra of the refractive index $\Neff'$, so the position of this U-curve delimits the range of $a$ for which a photonic band with $\Neff' < 0$ and $\Neff'' \approx 0$ can be found. This negative-index band is shown in black in Fig.~\ref{fg_drawn100}.
+
+\begin{figure}
+	\centering
+    \includegraphics[width=7cm]{img/ERods_eps030_spacingscan_drawn_bands.pdf}
+    \caption{Scheme of band gaps and Mie resonances for dielectric permittivity $\varepsilon_r = 30$. The Mie resonances shift to higher frequencies relative to the band gaps and no $\Neff'<0$ region is formed for any unit cell size (cf. Fig. \ref{fg_drawn100})}
+\label{fg_drawn030}
+\end{figure}
+
+Note that the frequencies of the Mie resonances deviate from their free-space values when the rod distance is reduced. In fact, these resonances help to form the photonic band gaps (both Bragg and plasma band gaps) due to their dispersion. As a consequence, these resonances must be always located inside a frequency range with $\Neff''>0$.
 
 \section{Discussion}
-Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity rods, we
-will draw below implications for building a negative-index MM from available dielectrics.
-Another series of simulations implies that reducing the dielectric permittivity has the main effect
-to shift all the Mie resonances to higher frequencies (also with respect to the photonic
-bands). As a result, the band with $\Neff'<0$ gets gradually narrower and, for the rod
-permittivity below about 50, we do not find any cell size $a$ that would imply the first
-and second Mie resonances in the first photonic band as illustrated for $\varepsilon_r = 30$ in Fig. \ref{fg_drawn030}. This means that the value of
-$\varepsilon_{r} \approx 50$ is the minimum for obtaining a negative index of refraction
-in any square array of cylindrical rods. Note that one would come to a very similar value
-of minimum permittivity for the case of a square array of bars with a slightly different
-shape, e.g. a square cross-section. 
+Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity rods, we will draw below implications for building a negative-index MM from available dielectrics.  Another series of simulations implies that reducing the dielectric permittivity has the main effect to shift all the Mie resonances to higher frequencies (also with respect to the photonic bands). As a result, the band with $\Neff'<0$ gets gradually narrower and, for the rod permittivity below about 50, we do not find any cell size $a$ that would imply the first and second Mie resonances in the first photonic band as illustrated for $\varepsilon_r = 30$ in Fig. \ref{fg_drawn030}. This means that the value of $\varepsilon_{r} \approx 50$ is the minimum for obtaining a negative index of refraction in any square array of cylindrical rods. Note that one would come to a very similar value of minimum permittivity for the case of a square array of bars with a slightly different shape, e.g. a square cross-section. 
 
-A sufficiently high permittivity can be found in the microwave and terahertz ranges, 
-in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} 
-or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of
-the high-permittivity dielectrics in the THz range can be restricted by high dielectric
-losses due to low-frequency phonon absorption tails. To our knowledge, there is no
-material providing such a high permittivity in the near-infrared or optical ranges. This
-eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric
-rods.
+A sufficiently high permittivity can be found in the microwave and terahertz ranges, in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.
 
-Finding a valid negative index of refraction $\Neff'$ for a photonic structure implies
-that the Snell law can be used to predict the negative refraction at an interface, provided
-the iso-frequency contours can be well approximated by a circle. This condition is fulfilled
-when the resulting wave vector is oriented close to a symmetry axis of the structure, or when 
-the wave vector is negligible compared to the reciprocal lattice vector (i.e. $k\ll \frac{\pi}{a}$ and 
-thus $|\Neff'| \ll \frac{c}{2af}$). 
-In the latter case the iso-frequency contours of the isotropic structure approach a circular shape
-near the $\Gamma$-point in the Brillouin zone center. 
-By contrast, the opposite implication is not necessarily applicable---a structure with a high
-enough spatial dispersion can still refract under negative angles, 
-yet its refractive index computed along a symmetry axis never reaches negative values and the phase difference across each its 
-unit cell is positive and can be comparable to $\pi$.
-For example, it was suggested earlier  \cite{Vynck2009} that an array of 
-silicon rods ($\varepsilon_r \approx 12$) can constitute a true left-handed metamaterial ($\Neff'<0$).
-In agreement with the results presented above, we believe that the negative refraction 
-is not a sufficient proof of $\Neff'<0$, which would require a much higher permittivity contrast than that of silicon. 
-We conclude that the electromagnetic behavior observed previously \cite{Vynck2009} has to be 
-described by means of the PhC dispersion curves. 
+Finding a valid negative index of refraction $\Neff'$ for a photonic structure implies that the Snell law can be used to predict the negative refraction at an interface, provided the iso-frequency contours can be well approximated by a circle. This condition is fulfilled when the resulting wave vector is oriented close to a symmetry axis of the structure, or when the wave vector is negligible compared to the reciprocal lattice vector (i.e. $k\ll \frac{\pi}{a}$ and thus $|\Neff'| \ll \frac{c}{2af}$).  In the latter case the iso-frequency contours of the isotropic structure approach a circular shape near the $\Gamma$-point in the Brillouin zone center.  By contrast, the opposite implication is not necessarily applicable---a structure with a high enough spatial dispersion can still refract under negative angles, yet its refractive index computed along a symmetry axis never reaches negative values and the phase difference across each its unit cell is positive and can be comparable to $\pi$.  For example, it was suggested earlier  \cite{Vynck2009} that an array of silicon rods ($\varepsilon_r \approx 12$) can constitute a true left-handed metamaterial ($\Neff'<0$).  In agreement with the results presented above, we believe that the negative refraction is not a sufficient proof of $\Neff'<0$, which would require a much higher permittivity contrast than that of silicon.  We conclude that the electromagnetic behavior observed previously \cite{Vynck2009} has to be described by means of the PhC dispersion curves. 
 
-We demonstrated that for $\Neff'<0$, not only the high permittivity contrast, but also 
-a correct geometry is required. A wedge filled
-with an array of square-shaped high-dielectric bars was previously reported 
-refracting under negative angles \cite{peng2007}. The high filling fraction ($0.44^{2}$)
-simultaneously with a permittivity of $\varepsilon_r \approx 600$ clearly qualified this
-structure as \textit{dense}. Using the above described approach, we computed its spectra 
-qualitatively similar to Fig.~\ref{fg_spec}(c) and no band with $\Neff' < 0$ was resulting from our effective index
-retrieval. However, when we reproduced the wedge experiment numerically, our simulations
-confirmed that it does refract the light under negative angles.
+We demonstrated that for $\Neff'<0$, not only the high permittivity contrast, but also a correct geometry is required. A wedge filled with an array of square-shaped high-dielectric bars was previously reported refracting under negative angles \cite{peng2007}. The high filling fraction ($0.44^{2}$) simultaneously with a permittivity of $\varepsilon_r \approx 600$ clearly qualified this structure as \textit{dense}. Using the above described approach, we computed its spectra qualitatively similar to Fig.~\ref{fg_spec}(c) and no band with $\Neff' < 0$ was resulting from our effective index retrieval. However, when we reproduced the wedge experiment numerically, our simulations confirmed that it does refract the light under negative angles.
 
-This structure lies at the boundary between the criteria for MMs and PhCs described in the Introduction.
-To determine its refraction angle, in general, it is not possible to use the 
-concept of 
- the effective refractive index and
-its iso-frequency contours have to be used instead (like in PhCs). At the same 
-time, this structure was proved
-to partially retain negative refraction even under randomization of the positions
-of the dielectric bars \cite{peng2007}, implying that most of the resonant energy is concentrated inside
-the dielectric (which is characteristic of MMs).
-}
-%}}}
+This structure lies at the boundary between the criteria for MMs and PhCs described in the Introduction.  To determine its refraction angle, in general, it is not possible to use the concept of the effective refractive index and its iso-frequency contours have to be used instead (like in PhCs). At the same time, this structure was proved to partially retain negative refraction even under randomization of the positions of the dielectric bars \cite{peng2007}, implying that most of the resonant energy is concentrated inside the dielectric (which is characteristic of MMs).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{figure} \caption{img/ERods\_eps100\_R11\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R11_PWEM.pdf} \end{figure} \clearpage
 %  \begin{figure} \caption{img/ERods\_eps100\_single\_a120\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_single_a120_FDTD.pdf} \end{figure} \clearpage
