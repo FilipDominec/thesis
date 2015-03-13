@@ -1,4 +1,5 @@
 
+\chapter{Conclusion}
 
 %% CONCLUSION =
 %% * overall analysis and integration of the research and conclusions of the thesis in
@@ -11,3 +12,42 @@
 %% * an analysis of possible future research directions in the field drawing on the work
 %%   of the thesis
 %     --> hyperbolic Metamaterial theory implications in other fields of physics: eldyn in ultra-high magnetic field: Smolyaninov2011 
+
+We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
+The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
+
+
+A versatile numerical environment for simulations was prepared and tested in the last two years. All computation scripts, containing over 2000 lines of Python code, are open-source and they use freely-redistributable libraries only, which may be useful for the broader scientific community in the future. 
+The automated effective parameters retrieval from FDTD is especially suitable for parametric scans. It proves instrumental in optimisation of the structure performance, matching experimental data, as well as studying the tunability.
+
+Broad range of physical phenomena may be included in the simulations. A library of realistic permittivity models is being built that allows to match TDTS experiments with a good accuracy. It is also possible to combine dispersive dielectrics with metals and doped semiconductors. 
+ The FDTD method is applicable also to non-periodic, lossy and time-changing structures, while PWEM enables e. g. studies of the magnetooptic phenomena.
+All referred numerical methods, FDTD, PWEM and TMM, were tested also to give compatible and plausible results under oblique incidence and both TE/TM polarisations. 
+
+Some of the numerical simulations are also planned to be tested on the experimental basis. One of the proposed structures is an array of spheres embedded in a double metallic mesh. This structure is predicted to exhibit negative refraction in a narrow transmission band, and moreover, if the spheres are made of strontium titanate, which is a high-permittivity ferroelectric, the frequency of this band can be tuned by temperature or electric voltage between the metallisation. Other experimental work will focus on extraordinary transmission in metallic fishnets and tunable planar metamaterials. In all cases the experiments will be supported by thorough numerical simulations and possibly also by analytical models.
+
+
+% == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
+
+
+% \chapter{Metamaterials -- Critique and alternatives}
+% TODO TODO At the end, the author would like to express his concern about the efficiency and practical impact of the metamaterial research in the last years. 
+% 
+% The name of this chapter is borrowed from the same-named book by Ben Munk \cite{Munk2004}. The book presents several objections against MM that seem to be ill-argumented and some of them seem to be also utterly wrong. However, as another point it also touches a really deep problem: the hypertrophic number of publications dissolves the concentration of pertinent ideas in almost a homeopatic way. Perhaps anybody interested in MM will soon notice there are many papers adding just a quantitative difference to what was already published, often without stating this important fact. This may give a superficial feeling of an exponential gathering of knowledge, but in fact it mostly contributes to the information noise. 
+% 
+% It is understandable that such a new (or at least newly recognized) scientific field exerts a great pressure to publish as much and as early as possible, which is exacerbated by the objective way of how the contemporary scientific work is evaluated. 
+% That said, the situation is not as bad as it might seem and the author is also aware of several recent brilliant MM publications that give a deep insight into new physical phenomena.
+%
+% ** Subwl imaging: "if we can make deeply subwl inclusions, we can perhaps make slightly subwl near-field detectors"
+% 
+% Another question is the practical benefit of metamaterials for the humankind. 
+% Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
+% 
+% Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
+% 
+% To conclude this pessimistic, but well meant section, the author
+
+
+%%26. Y. Fu, L. Thyl ́n and H. Agren, “A Lossless Negative Dielectric Constant from Quantum e Dot Exciton Polaritons,” Nano Lett. 8, 1551 (2008).
+%%27. A. Bratkovsky, E. Ponizovskaya, S. Y Wang, P. Holmstr ̈m, L. Thyl ́n, Y. Fu, and o e H.  ̊gren, “A Metal-wire/Quantum-dot Composite Metamaterial with Negative ǫ and A Compensated Optical Loss,” Appl. Phys. Lett. 93, 193106 (2008).
+%%28. Y. Zeng, Q. Wu and D. H. Werner, “Electrostatic Theory for Designing Lossless Negative Permittivity Metamaterials,” Opt. Lett. 35, 1431 (2010).
