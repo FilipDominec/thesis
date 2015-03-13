@@ -514,6 +514,61 @@ The sign and branch of the refraction index, and the sign of wave impedance are 
 \paragraph{Unambiguous arccosine} %{{{
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
 \begin{figure} \caption{new}  \centering \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf}  \end{figure}\clearpage
+
+We performed finite-difference time-domain simulations \cite{oskooi2010meep} to obtain
+the frequency ($f$)-dependent complex reflection $r(f)$ and transmission coefficients
+$t(f)$ of a sample composed of periodically distributed dielectric rods.
+
+Knowing the complex $r(f)$ and $t(f)$ along with the sample thickness $d$, we may use the
+classical algorithm to retrieve the effective parameters \cite{smith2002determination}:
+\begin{equation}
+	N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k
+	\cdot d}
+\end{equation}
+\begin{equation}
+	Z_{\rm eff}~= \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}} \label{eq_Z}
+\end{equation}
+where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
+
+The well-known complication of this approach is that the arccosine and square root are
+ambiguous functions \cite{Simovski09}, yielding multiple solutions with different branches (indexed by an
+integer $m$) and signs. We deal with a passive medium, consequently we impose
+Im$(\Neff)>0$ and Re$(\Zeff)>0$. To facilitate processing of the results, we 
+adopted an approach different from earlier published works \cite{Smith02,Chen04} %% Chen04 = http://journals.aps.org/pre/abstract/10.1103/PhysRevE.70.016608
+that ensures the continuity of effective parameters as a function of frequency \add{on pure mathematical basis}. This
+continuity is required by Kramers-Kronig relations for arbitrarily small losses
+introduced in the system. The important point consists in identifying the branch cuts of
+arccosine in the complex plane (Fig.\ \ref{fg_arccos}\add{a,b}). If, by increasing the frequency,
+the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, 
+passes through the right branch cut [i.e.
+for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the
+imaginary part is non-zero and changes its sign. The continuity is restored if, from this
+frequency on, one reverses the sign of the arccos term \add{(point "R" in Fig. \ref{fg_arccos}c}). The situation is slightly more
+complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the
+imaginary part of \mdf{$\arccos(v)$} experiences again a step-like change of the sign and the
+real part reaches the value of $\pi$. The continuity is then restored upon a sign
+reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. A correct
+reconstruction of the arccosine therefore only requires to compute the integer-valued
+branch rlong with the sign, both being functions of frequency. The sign of the
+square root function is again chosen such than $Z$ is a continuous function of frequency.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{Fig6.eps} \caption{\add{\textbf{a,b)}} Real and imaginary parts
+	of the arccosine of complex argument. Branch cuts are denoted with thick lines. \textit{}}
+	\label{fg_arccos}
+\end{figure}
+
+It is also known that the phase of the reflectance depends on the surface termination for
+noncontinuous materials. In the cases where the wavelength of the radiation in the
+material is much larger than the unit cell dimensions this ambiguity becomes small. A
+useful control of the effective sample properties can be made by changing the thickness
+of the sample (number of unit cells along the wave vector). We have chosen a symmetric
+geometry where the dielectric rod is positioned in the center of a square unit cell and
+the total thickness of the sample is an integer multiple of the unit cell size. In this
+geometry the retrieved effective parameters of our structure depend only negligibly on
+the number of unit cells that we put in the $z$-direction.
+
 %}}}
 \paragraph{Layers without translation and mirror symmetry} %{{{
 %}}}
