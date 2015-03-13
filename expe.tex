@@ -512,8 +512,6 @@ The sign and branch of the refraction index, and the sign of wave impedance are 
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 %}}}
 \paragraph{Unambiguous arccosine} %{{{
-%See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
-\begin{figure} \caption{new}  \centering \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf}  \end{figure}\clearpage
 
 We performed finite-difference time-domain simulations \cite{oskooi2010meep} to obtain
 the frequency ($f$)-dependent complex reflection $r(f)$ and transmission coefficients
@@ -552,10 +550,14 @@ reconstruction of the arccosine therefore only requires to compute the integer-v
 branch rlong with the sign, both being functions of frequency. The sign of the
 square root function is again chosen such than $Z$ is a continuous function of frequency.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=8cm]{Fig6.eps} \caption{\add{\textbf{a,b)}} Real and imaginary parts
-	of the arccosine of complex argument. Branch cuts are denoted with thick lines. \textit{}}
+%See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
+\begin{figure} \caption{new}  \centering \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf} 
+\caption{\add{\textbf{a,b)}} Real and imaginary parts
+	of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick
+curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the
+branch cuts in points marked as R, L. (c) From top to bottom: example function  $\upsilon(f)$, its or-
+dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine
+function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.}
 	\label{fg_arccos}
 \end{figure}
 
@@ -608,7 +610,7 @@ The crucial component of the terahertz generation and detection setup is a sourc
 \begin{itemize}
  \item{The probe branch passed through a mechanical chopper, which is needed for synchronous detection, and impinged a terahertz emitter. The emitter, a biased interdigitated antenna on a fast-switching semiconductor, responds to an optical pulse by fast discharging and emitting of a broadband electromagnetic pulse with spectral components from 100 GHz to 3 THz. This pulse, denoted by red area to indicate its diffractive nature, passes through the sample under study followed by a pellicle beamsplitter (PBS) and finally impinges a ZnTe nonlinear crystal. } 
  \item{The \textit{sampling} branch reflects from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the first branch. Then it is properly attenuated at filter (F1) and its polarisation is converted from linear to a circular one on a quarter-wave plate (QWP). The pellicle beamsplitter directs the optical beam along the axis of the terahertz beam.} 
- \end{itemize}
+\end{itemize}
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
 %}}}
 \subsection{Scheme for simultaneous measurement of reflection and transmission}%{{{
