@@ -301,56 +301,6 @@ From its nature, the FDTD gives the time-domain response of the given structure 
 
 
 
-\subsection{Plane-wave expansion}
-
-
-\subsection{Transfer-matrix method}
-
-
-
-
-\chapter{Experimental and numerical methods}
-\section{Geometry for the FDTD simulation of metamaterials}
-We used FDTD mostly for three-dimensional simulations. In the following we restrict ourselves to perpendicular incidence.  We defined the simulation geometry as illustrated in Fig. \ref{fg_simgeom}.
-\begin{figure}[ht] \caption{Simulation geometry for FDTD} \label{fg_simgeom} \centering 
-	\includegraphics[width=10cm]{img/meep_geometry.pdf} 
-\end{figure}
-
-The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes. On both ends at the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
-
-\subsection{Processing the time records into effective parameters}
-
-\section{Time-domain terahertz spectroscopy}
-
-
-
-\chapter{Results}
-\section{Planar dielectric layers}
-%% TODO co znamená  " {\infty}-P  KP   KP-DM  " ??
-The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, has been investigated thoroughly in the previous decades. We review it mostly for comparison with the structures presented in the following. 
-
-\begin{figure}[ht] \caption{Dispersion curves for an one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
-\textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
-\textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
-\end{figure}
-% TODO draw and append axes+colorbar to the field distribution plots
-% TODO visualise the permittivity, but how?
-
-In Fig. \ref{fg_1dbd}a, we can see the folded dispersion curves for a plane wave propagating in vacuum, as already discussed above. 
-%As predicted by the Bloch-Floquet theorem (\ref{eq_bloch}), the fields are periodic over each cell whenever the wavenumber $k$ touches the Brillouin zone boundary. 
-To save space, we plot the  dispersion curves as \textit{folded}, but one can easily imagine how the curve unfolds into a straight light line. For any frequency $f$, there is a wavenumber $k$ corresponding to a propagating wave. 
-
-
-The situation is different when we introduce periodic dielectric layers as in Fig. \ref{fg_1dbd}b. In the band structure, we observe allowed bands with \textit{band gaps} between them. At the frequencies in a bandgap, the wave can not propagate through the structure. The first photonic band ends when half the wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because it is shifted by half its period so that it maximizes electric energy in air. For a 1-D photonic crystal, we can generally conclude that in order to move up on the frequency axis,
-\begin{enumerate}
- \item{within each photonic band, one nodal plane per unit cell is added\footnote{In this paper, the mode plots show $2\times 2$ unit cells for clarity.},} 
- \item{within each photonic band gap, the wave shifts the most of electric field energy into lower-permittivity medium\footnote{Note that the band gaps do not have the same width on the frequency scale. For a certain thickness of the high-dielectric layer that corresponds to the Fabry-Pérot resonance, no frequency difference at all results from shifting the wave. In this case the band gap attains zero thickness, as is illustrated in Fig. \ref{fg_ebar_radiusscan}a for $r\approx20\,\upmu$m and $f\approx1.6$ THz. In other words, there may be a \textit{gap-less} transition between photonic bands.}, while the number of nodal planes remains constant. }
- \end{enumerate}
-
-Such a shifting between waves at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} gaps that are responsible for the dispersion of the 1-D photonic crystal. 
-
-
-
 \section{Dielectric rods perpendicular to the electric field}
 % todo? analytic Mie resonance frequency? -> OBrien&Pendry2002, szabos etc
 Are there also different, non-Bragg, mechanisms that can create band gaps?
@@ -367,8 +317,7 @@ We would not indeed pose this question if its answer were negative. It is closel
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
 The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
 
-% AN OPEN QUESTION: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
-% ANOTHER OPEN QUESTION: can we get an analytical formula for Mie resonances?
+% discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
 This new type of resonance is known as a \textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}. Unlike the Bragg gaps, it can be observed also in a single rod in free space. Being a function of the frequency of the incident wave, the magnetic dipole moment of the free-standing dielectric rod follows the characteristic Lorentzian shape of its \textit{resonance curve}. Below the resonance the magnetic dipole moment of the resonator goes to strongly positive values, while in a narrow region above the resonance it is strongly negative. How does this behaviour change if we arrange the rods in an infinite periodic array? 
 
 %% TODO? Add the x, y, z, size scans of the ellipsoids%{{{

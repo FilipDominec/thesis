@@ -411,6 +411,17 @@ While the points 1--3 are rather straightforward, the Fresnel inversion deserves
 $\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
 }
 
+\mdf{
+We used FDTD mostly for three-dimensional simulations. In the following we restrict ourselves to perpendicular incidence.  We defined the simulation geometry as illustrated in Fig. \ref{fg_simgeom}.
+\begin{figure}[ht] \caption{Simulation geometry for FDTD} \label{fg_simgeom} \centering 
+	\includegraphics[width=10cm]{img/meep_geometry.pdf} 
+\end{figure}
+
+The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes. On both ends at the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
+}
+
+
+
 \begin{figure} \caption{geometry}  \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \end{figure} \clearpage
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
