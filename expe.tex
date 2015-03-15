@@ -433,21 +433,7 @@ This can be resolved by adding a sufficient \textit{padding} between the metamat
 To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the second issue, and it does so at an acceptable expense of moderately extending the simulation volume.
 \mdf{TODO figure here a-b-c}
 %}}}
-\paragraph{Effective-parameter retrieval} %{{{
-
-
-\add{
-The required steps are to
-\begin{enumerate}
- \item{convert all field records to frequency domain using the Fourier transform (FT),} 
- \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
- \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
- \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
- \end{enumerate}
- %While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
- %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
-}
-
+\paragraph{Scattering-parameter retrieval procedure} %{{{
 The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those of the second monitor plane will be $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The typical time records are depicted in Fig. \ref{fg_sparam_timedomain}. The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source, the stronger resonance reduces its intensity under that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope.
 \begin{figure}[h] \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \centering \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
@@ -462,7 +448,7 @@ The averaged electric and magnetic field recorded at the first monitor plane wil
 \label{eq_}\end{equation}
 which ensured that after 80 \% of the total simulation time $t_{max}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing.
 
-Fourier transform of the fields $\rightarrow \tilde E_{x}^{(1)}(f), \tilde H_{y}^{(1)}(f), \tilde E_{x}^{(2)}(f), \tilde H_{y}^{(2)}(f)$ 
+By means of Fourier transform, the fields can be converted to frequency domain, as $\tilde E_{x}^{(1)}(t) \rightarrow \tilde E_{x}^{(1)}(f)$, and so on. The results are shown 
 \begin{figure}[h] \caption{img/sim\_ampli\_debug\_band.pdf}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_} \end{figure} 
 
 Separation of forward/backward wave amplitudes: \\
@@ -476,22 +462,30 @@ $$s_{11}(\omega) \equiv r(f) := \tilde A^{(out 1)}(f) / \tilde A^{(in 1)}(f)$$
 $$s_{12}(\omega) \equiv t(f) := \tilde A^{(out 2)}(f) / \tilde A^{(in 1)}(f)$$
 
 
+
+\add{
+The required steps are to
+\begin{enumerate}
+ \item{convert all field records to frequency domain using the Fourier transform (FT),} 
+ \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
+ \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
+ \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
+ \end{enumerate}
+ %While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
+ %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
+}
+
+
+
+
 \begin{figure}[h] \caption{img/sim\_screen.pdf}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
 
 
 We performed the simulation of one unit cell to deduce the behaviour of a periodic structure composed of infinity of the unit cells.
 \add{
-The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
-}
-
-\mdf{
 It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
-
+The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
 \texttt{TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
-}
-
-\add{
-Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? I think the explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
 
 \begin{figure}[h] \label{fg_} \centering 
