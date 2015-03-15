@@ -382,22 +382,35 @@ Other numerical methods are used, too. Finite-element methods (FEM) approximate 
 % \end{verbatim}
 
 \section{Simulation setups for metamaterial homogenization} % TODO
-%While PWEM method is exclusively used to compute dispersion curves  and 1D TMM, are exclusively used to 
- %mostly specialized for a specific computation, the finite-difference methods 
+% TODO theoretically shown in works [12,13,14,15] and experimentally confirmed in [16] this techniqueis not applicable when the sample material experiences the resonance
+%		[12] C.R. Simovski, S.A. Tretyakov, Phys. Rev. B 75 (2007)195111
+%		[13] C.R. Simovski, Metamaterials 1 (2007)62
+%		[14] C.R. Simovski, Metamaterials 2 (2008)169
+%		[15] C.R. Simovski, Optics and Spectroscopy 107 (2008)726
+%		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
+
 The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
-\subsection{Scattering parameters} % TODO
+\subsection{Scattering parameters}
 \paragraph{Principle} %{{{
-The scattering parameter retrieval, also known as \textit{s-parameter} or \textit{Nichols-Ross-Weir} method, is probably the most common way to study periodic structures. It is based on the fact that one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its index of refraction $N$ and wave impedance $Z$ are known, along with the slab thickness $d$. These formulas can be inverted, so that one finds such (effective) parameters $\Neff$ and $\Zeff$ that give expected $r,t$. 
+The scattering parameter retrieval, also known as \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method, has been employed for years % TODO
+to retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample. It is based on the fact that, using Fresnel-Airy formulas, % TODO as shown in the appendix
+one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the slab. The actual computation is thus denoted also as \textit{Fresnel inversion}.
 
-Mathematically, this can always be done, and therefore this method assigns some $\Neff$ and $\Zeff$ even to an inhomogeneous structure. The problem is opposite: the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. 
-Even though, this method has the great advantage of being easy to realize experimentally.
-%% (in fact, this is independent of FDTD, only to the time-marching methods)
-%% \cite{terao2011}
-%Different problems of this method are resolved and discussed in the following. 
 
-% employ Fresnel formulas    The actual computation is therefore sometimes denoted also as \textit{Fresnel inversion}.
+Mathematically, this can always be done, and this method assigns some \textit{effective} parameters, $\Neff$ and $\Zeff$, even when the homogeneous sample is replaced with an inhomogeneous structure, such as a layer of a metamaterial. 
+This method has the advantage of not requiring to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of $r,t$. Thanks to being easy to realize both experimentally and numerically, with FDTD or other algorithms, %% (in fact, this is independent of FDTD, only to the time-marching methods) \cite{terao2011}
+it has become apparently the most popular way to retrieve metamaterial parameters. 
+
+The most often mentioned issue of this method is that the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this chapter we describe that this can in fact be relatively easily resolved, and in the Section \ref{sect_results} it is shown that the outcomes may be quite surprising.
+
+Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
-\paragraph{Simulation geometry} %{{{
+\paragraph{Simulation setup} %{{{
+\begin{figure} \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \caption{The setup of the FDTD simulation for the scattering parameter method} \label{fg_fdtd_sparam} \end{figure} 
+The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}.
+
+The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively, an infinite metamaterial slab is simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
+
 
 \add{
 The required steps are to
@@ -417,12 +430,10 @@ We used FDTD mostly for three-dimensional simulations. In the following we restr
 	\includegraphics[width=10cm]{img/meep_geometry.pdf} 
 \end{figure}
 
-The wave is emitted from the source plane (green rectangle) along the $z$-axis. The periodic boundary conditions were set on the $x$- and $y$-axes. On both ends at the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) each simulation step. The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated.
 }
 
 
 
-\begin{figure} \caption{geometry}  \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \end{figure} \clearpage
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
@@ -530,7 +541,8 @@ where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
 
 The well-known complication of this approach is that the arccosine and square root are
 ambiguous functions \cite{Simovski09}, yielding multiple solutions with different branches (indexed by an
-integer $m$) and signs. We deal with a passive medium, consequently we impose
+integer $m$) and signs. 
+We deal with a passive medium, consequently we impose
 Im$(\Neff)>0$ and Re$(\Zeff)>0$. To facilitate processing of the results, we 
 adopted an approach different from earlier published works \cite{Smith02,Chen04} %% Chen04 = http://journals.aps.org/pre/abstract/10.1103/PhysRevE.70.016608
 that ensures the continuity of effective parameters as a function of frequency \add{on pure mathematical basis}. This
@@ -574,8 +586,16 @@ the number of unit cells that we put in the $z$-direction.
 %}}}
 \paragraph{Layers without translation and mirror symmetry} %{{{
 %}}}
-\paragraph{} %{{{
+\paragraph{Summary of the scattering parameters retrieval method} %{{{
+% TODO In many works cited here, the multiplicity of the branches is mentioned as a major obstacle, however we devised a 
+% relatively simple and mathematically straightforward method to find the correct solution, that works reliably for 
+% structures with nonzero losses.
+% As a much more important issue we should mention this method can never exactly simulate the metamaterial cell in its infinitely periodic lattice, and that   %% as is discussed above.
+
+
+% Numerous modifications of this method have been made \cite{Hasar2009, Arslanagic2012}
 %}}}
+
 
 \subsection{Current-driven homogenisation} % TODO
 \begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwire_structure.pdf} \end{figure} \clearpage
