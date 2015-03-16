@@ -406,77 +406,74 @@ The most often mentioned issue of this method is that the solutions have infinit
 Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
 \paragraph{Simulation setup} %{{{
-\begin{figure}[h] \centering \includegraphics[width=10cm]{img/meep_geometry.pdf} \caption{The setup of the FDTD simulation for the scattering parameter method} \label{fg_fdtd_sparam} \end{figure} 
-The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with the $z$-axis. The source temporal shape was not critical for the simulation; a very short pulse, with spectrum spanning from the GHz range to ca. 5 THz was used. 
+\begin{figure}[h] \centering \caption{The setup of the FDTD simulation for the scattering parameter method} \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} 
+The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with direction parallel to the $z$-axis. The source temporal shape was not critical for the simulation; a very short pulse, with spectrum spanning from the GHz range to ca. 5 THz was used. 
 
-The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab is simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the first monitor plane (blue rectangle) in each simulation step. 
+The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab is simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the monitor planes (blue rectangles) in each simulation step. 
 
-The wave then enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t$ as functions of frequency. Before this procedure is described, a modification important for the accuracy of this setup has to be made.
+Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t$ as functions of frequency. Before this procedure is described, a modification important for the accuracy of this setup has to be made.
 %}}}
 
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
-With the obvious exception of an effectively one-dimensional structure of layers perpendicular to the wave propagation, any other structure will change the orientation of the electric and magnetic fields. Such a perturbation of the field will be mostly bound to the structure, and exponentially decaying with the distance in the form of an \textit{evanescent wave}.
+With the obvious exception of an effectively one-dimensional structure of layers perpendicular to the wave propagation, any other structure will change the orientation of the electric and magnetic fields. Such a perturbation of the field will be localized around the structure, and exponentially decaying with the distance in the form of an \textit{evanescent wave}.
 
-An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it. As a result, the energy can be exchanged to another structure if it approaches the zone of the evanescent wave. Even if no energy is transferred by the evanescent wave, the electromagnetic behaviour of a structure is generally dependent, which may for example manifest as resonances shifting up or down in frequency.
+An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it. As a result, the energy can be exchanged to another structure if it approaches the zone of the evanescent wave, or, even if no energy is transferred by this means, the electromagnetic behaviour of a structure generally can be altered by its surroundings. Commonly this manifests e.g. as resonances shifting up or down in frequency.
 
 The impact of the near-field reaching out of a structure to the s-parameters method is twofold:
 \begin{enumerate}
  \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the s-parameter method, the near-field spreads into free vacuum at the front and rear sides. 
 
-This issue seems to be inherent to the method, but its impact can be assessed by simulations of more than one unit cell. Generally, the retrieved $\Neff$ and $\Zeff$ values will depend on the number of layers being simulated. A single-cell simulation feels the absence of adjacent layers the most, whereas in a two-cell simulation the effect should be halved. Simulation of three (or more) cells results in different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can confuse the retrieval method.
+This issue seems to be inherent to the method, but its impact can be assessed by simulations of more than one unit cell. Generally, the retrieved $\Neff$ and $\Zeff$ values will change slightly with the number of layers being simulated: A single-cell simulation feels the absence of adjacent layers the most, whereas in a two-cell simulation the effect should be halved. Simulation of three (or more) cells results in different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can confuse the retrieval method.
  } 
- \item{Second, the monitor planes can not distinguish between the near-field or radiated wave, but only the latter is desired for the s-parameter computation. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
+ \item{Second, the monitor planes can not distinguish between the evanescent or radiated wave, but only the latter is desired for the s-parameter computation. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
 
-This can be resolved by adding a sufficient \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually padding less than half of the unit cell size is sufficient to suppress all artifacts from near-field detection. In contrast, the propagating wave only gets an additional phase offset that can be easily compensated after the simulation. } 
+This can be resolved by adding \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually padding less than half of the unit cell size is sufficient to suppress all artifacts from near-field detection. In contrast, the propagating wave only gets an additional phase offset that can be easily compensated after the simulation. } 
  \end{enumerate}
 To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the second issue, and it does so at an acceptable expense of moderately extending the simulation volume.
 \mdf{TODO figure here a-b-c}
 %}}}
 \paragraph{Scattering-parameter retrieval procedure} %{{{
-The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those of the second monitor plane will be $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The typical time records are depicted in Fig. \ref{fg_sparam_timedomain}. The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source, the stronger resonance reduces its intensity under that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope.
-\begin{figure}[h] \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \centering \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
+The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those of the second monitor plane will be $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are depicted with logarithmic scale in Fig. \ref{fg_sparam_timedomain}. 
 
-	The spectral resolution is determined by the length of the time record. As a general rule, the higher quality a resonance has, the sharper spectral features correspond to it. The case of short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, that can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem it follows that the energy stored in the resonance that is clipped has to disappear from the frequency domain, too. As a result, characteristic ringing in the spectra occurs. Using the convolution theorem [see Sect. \ref{subsection_local_resp}], it can be deduced that applying rectangular window in timedomain results in convolution with the sinc function in the spectrum. 
+The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source terminated, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope.
+\begin{figure}[h] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
-	Using a time window that has smooth shape does not improve spectral resolution, but it generally suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
+The spectral resolution is determined by the length of the time record. As a general rule, the higher quality a resonance has, the sharper spectral features correspond to it. The case of short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, that can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem it follows that the energy stored in the resonance that is clipped has to disappear from the frequency domain, too. As a result, characteristic ringing in the spectra occurs. Using the convolution theorem [see Sect. \ref{subsection_local_resp}], it can be deduced that applying rectangular window in timedomain results in convolution with the sinc function in the spectrum. 
+
+Using a time window that has smooth shape does not improve spectral resolution, but it generally suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
 		     & = \frac{1 + \cos\left(\pi \frac{t/t_{sim}-0.8}{1-0.8}\right)}{2}  \text{ for } t > 0.8 t_{sim},
 \end{split}
-\label{eq_}\end{equation}
+\label{eq_envelope}\end{equation}
 which ensured that after 80 \% of the total simulation time $t_{max}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing.
 
 By means of Fourier transform, the fields can be converted to frequency domain, as $\tilde E_{x}^{(1)}(t) \rightarrow \tilde E_{x}^{(1)}(f)$, and so on. The results are shown 
-\begin{figure}[h] \caption{img/sim\_ampli\_debug\_band.pdf}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_} \end{figure} 
 
-Separation of forward/backward wave amplitudes: \\
-$$\tilde A^{(in 1)}(f)  := \tilde E_{x}^{(1)}(f) + \eta \tilde H_{y}^{(1)}(f), \quad \tilde A^{(out 1)}(f) := \tilde E_{x}^{(1)}(f) - \eta \tilde H_{y}^{(1)}(f),$$
-$$\tilde A^{(out 2)}(f) := \tilde E_{x}^{(2)}(f) + \eta \tilde H_{y}^{(2)}(f), \quad \tilde A^{(in 2)}(f)  := \tilde E_{x}^{(2)}(f) - \eta \tilde H_{y}^{(2)}(f)$$. 
-\begin{figure}[h] \caption{img/sim\_separating\_wave.pdf}  \centering \includegraphics[width=10cm]{img/sim_separating_wave.pdf} \label{fg_}\end{figure}
+\begin{figure}[h] \caption{img/sim\_separating\_wave.pdf}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
+The monitor planes are assumed to be located in vacuum, and in distance sufficient to eliminate the evanescent wave of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must form the right-handed triplet. % todo?
+At both monitor planes, the forward and backward wave are linearly superposed as ilustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by the following relation, with $\eta = \sqrt{\mu_0/\varepsilon_0}$ being the vacuum impedance:
+\begin{equation} 
+\begin{split}
+A^{(in 1)}(f)  := E_{x}^{(1)}(f) + \eta H_{y}^{(1)}(f), \quad \quad \quad & A^{(out 1)}(f) := E_{x}^{(1)}(f) - \eta H_{y}^{(1)}(f)\\
+A^{(out 2)}(f) := E_{x}^{(2)}(f) + \eta H_{y}^{(2)}(f), \quad \quad \quad & A^{(in 2)}(f)  := E_{x}^{(2)}(f) - \eta H_{y}^{(2)}(f). 
+\end{split}
+\label{eq_}\end{equation}
+The separation result is plotted in Fig. \ref{fg_ampli}, and it allows for crude verification of the computation validity: The incident wave $A^{(in 1)}(f)$ should have smooth spectrum, as it is directly generated by the broadband source. The reflected $A^{(out 1)}(f)$ and transmitted $A^{(out 2)}(f)$ waves should be somewhat complementary, with squares of their amplitude summing up to the square of the incident wave (or less in case of losses). The fourth wave $A^{(in 2)}(f)$ should be negligible, as all wave energy is expected to be absorbed by the PML at the $z$-faces of the simulation volume. In practice it is nonzero due to numerical imprecision and remaining near-field of the structure. In Fig. \ref{fg_separating_wave}, this error 
+\begin{figure}[h] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
+Finally one can easily compute the complex scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected wave amplitude and transmitted wave to the incident wave, respectively:
+\begin{equation} 
+\begin{split}
+s_{11}(\omega) \equiv r(f) := \tilde A^{(out 1)}(f) / \tilde A^{(in 1)}(f),\\
+s_{12}(\omega) \equiv t(f) := \tilde A^{(out 2)}(f) / \tilde A^{(in 1)}(f).
+\end{split}
+\label{eq_}\end{equation}
 
-Scattering parameters computation:\\
-$$s_{11}(\omega) \equiv r(f) := \tilde A^{(out 1)}(f) / \tilde A^{(in 1)}(f)$$
-$$s_{12}(\omega) \equiv t(f) := \tilde A^{(out 2)}(f) / \tilde A^{(in 1)}(f)$$
-
-
-
-\add{
-The required steps are to
-\begin{enumerate}
- \item{convert all field records to frequency domain using the Fourier transform (FT),} 
- \item{employ the linearity of FT to decouple the electric and magnetic field amplitudes into the amplitudes of the forward  and backward propagating waves, } 
- \item{obtain the ratios of the reflected wave $E^{(B1)}$ (backward at first monitor) and transmitted wave $E^{(F2)}$ (forward at rear monitor) to the incident wave $E^{(F1)}$ (forward at first monitor), to obtain the reflection coefficient $r(f) = E^{(B1)} / E^{(F1)}$ and transmission coefficient $t(f) = E^{(F2)} / E^{(F1)}$, respectively, }
- \item{employ the Fresnel inversion to resolve the dispersion curves for the structure.} 
- \end{enumerate}
- %While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
+%While the points 1--3 are rather straightforward, the Fresnel inversion deserves further discussion. As noted above, in a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
  %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
-}
-
-
-
 
 \begin{figure}[h] \caption{img/sim\_screen.pdf}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
 
