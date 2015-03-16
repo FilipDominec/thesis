@@ -6,8 +6,10 @@
 \usepackage{graphicx,amsmath,amssymb,rotating,booktabs,url,color,enumitem}	\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  
 \usepackage{upgreek}
 
-\usepackage[style=/home/filip/d/biblatex-phys/phys, articletitle=true, biblabel=enumerate, chaptertitle=true, pageranges=true, 
-			sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits   = true]{biblatex}
+\usepackage{biblatex}
+%\usepackage[style=/home/filip/d/biblatex-phys/phys, articletitle=true, biblabel=enumerate, chaptertitle=true,  
+%  pageranges=true, sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits=true]{biblatex}
+%\usepackage[unicode=true,pdftitle={\WorkTitle}, pdfauthor={\FirstandFamilyName}, bookmarks=true, colorlinks=true, breaklinks=true, urlcolor=black, citecolor=black, linkcolor=black, breaklinks=true, plainpages=false,pdfpagelabels=true]{hyperref}
 \addbibresource{fdphd.bib}
 
 \input{defs.tex}
@@ -15,14 +17,17 @@
 
 \begin{document}
 \input{title.tex}
-%\tableofcontents
+\tableofcontents
+
 \chapter{Theory}
-%\input{theory.tex}
+\input{theory.tex}
+
 \chapter{Experimental and numerical methods}
 \input{expe.tex}
+
 \chapter{Results}
 \input{result.tex}
-%\label{endtext} 
+\label{endtext} 
 
 \chapter{Appendices}
 

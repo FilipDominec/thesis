@@ -1,7 +1,7 @@
 \section{Numerical simulation algorithms} % TODO
 \subsection{Finite-difference time-domain} % TODO
 \paragraph{Algorithm desciption} %{{{
-Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations (PDE). The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in the orthogonal grid. When FDTD is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar array describes the permittivity of the structure and additional arrays may correspond other physical quantities, such as material conductivity, material polarizabilities and polarizations etc. Two-dimensional computations can reduce the number of arrays thanks to symmetry.
+Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in the orthogonal grid. When FDTD is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar array describes the permittivity of the structure and additional arrays may correspond other physical quantities, such as material conductivity, material polarizabilities and polarizations etc. Two-dimensional computations can reduce the number of arrays thanks to symmetry.
 
 The actual computation is realized in consecutive time steps as an explicit arithmetic operation on each voxel, taking into account only the field values in the neighboring voxels and in the previous time step. This corresponds to iterating equations (\ref{eq_me3}), (\ref{eq_me4}) and (\ref{eq_ce}). % unclear - specify the field update routine exactly
 Most of the computation time is thus occupied by a simple and unconditional loop repeatedly updating all voxels, which allows to fully employ the processor cache and facilitates multi-processor parallelisation. FDTD is applicable to (possibly non-linear) problems where either the temporal evolution of the fields is searched for, or for linear systems where a frequency-domain response function can be found by Fourier-transforming the time-domain response. 
@@ -100,10 +100,10 @@ For any material with problematic high-frequency permittivity, $\varepsilon_r'(2
 
 \add{
 This is related to the \textit{Courant criterion} \cite{taflove2005book} that states for a nondispersive medium of permittivity $\varepsilon_r$ that 
-$$\Delta t = S\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $S < n_{min}/\sqrt{dim}$ % TODO
+$$\Delta t = S\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $S < n_{min}/\sqrt{\text{dim}}$ % TODO
 i.e.
-$$c \Delta t / n_{min} < \Delta x / \sqrt{dim} $$
-which can be reformulated that   %TODO
+$$c \Delta t / n_{min} < \Delta x / \sqrt{\text{dim}} $$
+which can be reformulated that   %TODO TODO
 }
 %  /* Return true if the discretized Lorentzian ODE is intrinsically unstable,
 %     i.e. if it corresponds to a filter with a pole z~outside the unit circle.
@@ -359,8 +359,7 @@ The TMM is instrumental not only for its obvious simplicity, but also for provid
 \paragraph{} %{{{
 %}}}
 %illustrates the band-gap formation \cite{laktionov2008}
-
-\subsection{Summary} % TODO
+\subsection{Summary} % TODO%{{{
 This section described four fundamentally different numerical methods for electromagnetic simulations. 
 \begin{enumerate}
 \item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve whole spectrum at once by Fourier transform. Two fundamentally different setups for FDTD are described in the following chapter that provide similar information on the metamaterial.} 
@@ -369,8 +368,8 @@ This section described four fundamentally different numerical methods for electr
 \item{Transfer-matrix method (TMM) also allows to find dispersion curves and field shape. Although it can be extended to two or three dimensions, most popular is its one-dimensional implementation, which, thanks to its simplicity, can even give an analytical insight into the behaviour of planar structures.} 
 \end{enumerate}
 Other numerical methods are used, too. Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage is in describing the structure smoothly with relatively low number of elements of variable density; the downside is in that the mesh introduces additional entropy and the computation on the element is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
-
-\add{TODO make an overview of other methods}
+% TODO make an overview of other numerical methods
+%}}}
 
 % \begin{verbatim}
 % 										FDTD				FDFD				PWEM				TMM
@@ -485,10 +484,10 @@ To verify the simulation results against experimental data, we computed $r(f)$ a
 It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser into a 26 $\upmu$m thick strontium titanate (STO) slab. The periodicity was 96 $\upmu$m and the laser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match experimental data on the frequency axis.
 %\begin{figure} \caption{img/STOBar\_photo.pdf}  \centering \includegraphics[width=10cm]{img/STOBar_photo.pdf} \end{figure} \clearpage
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared to numerical reflection $r(f)$ and transmission $t(f)$ for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
-The curves computed from the FDTD simulation are compared to the data obtained from terahertz laboratory in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in high reflectivity ($r > 90$ \%) in most of the spectrum that is caused by great impedance mismatch of the dielectric with regards to the surrounding air.
+The curves computed from the FDTD simulation are compared to the data obtained from the terahertz laboratory in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in high reflectivity ($|r| > 0.9$) in most of the spectrum which is caused by great impedance mismatch of the dielectric with regards to the surrounding air.
 
 \begin{figure}[h] \centering \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
-To briefly illustrate further possibilities of the numerical simulation, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as is shown in Fig. \ref{fg_STO_bar_modes}. The figure can reveal rich information about the underlying physics, most notably that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so that this exponent can be directly estimated from the sloped line the resonance peaks were fitted with. 
+To briefly illustrate further possibilities of the numerical simulation, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as is shown in Fig. \ref{fg_STO_bar_modes}. The figure can reveal rich information about the underlying physics, most notably that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so this exponent can be directly estimated from the sloped line the resonance peaks were fitted with. 
 
 It can also be read from Fig. \ref{fg_STO_bar_modes} that around the bar width of 66 $\upmu$m, as denoted by a horizontal white line, there is actually a frequency cross-over of two modes, a narrow transverse one and a more broader longitudinal one. This explains why in Fig. \ref{fg_STO_bar_rt} the first resonance has an obviously asymmetric shape in the simulated and experimental spectra.  %% This would form a typical Fano resonance if the losses were lower.
 More elaborate discussion of rod-like structures oriented either along the electric or thee magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
@@ -500,7 +499,6 @@ To this end, now employ the Fresnel inversion and show a custom approach how to 
 % TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
 %It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
 %The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
-
 
 \add{
 
