@@ -436,32 +436,34 @@ To the knowledge of the author, such a shift of monitor planes has not been empl
 \paragraph{Scattering-parameter retrieval procedure} %{{{
 The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those of the second monitor plane will be $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are depicted with logarithmic scale in Fig. \ref{fg_sparam_timedomain}. 
 
-The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source terminated, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope.
+The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source terminated, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time $t_{sim} =$ 150 ps.
 \begin{figure}[h] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
-The spectral resolution is determined by the length of the time record. As a general rule, the higher quality a resonance has, the sharper spectral features correspond to it. The case of short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, that can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem it follows that the energy stored in the resonance that is clipped has to disappear from the frequency domain, too. As a result, characteristic ringing in the spectra occurs. Using the convolution theorem [see Sect. \ref{subsection_local_resp}], it can be deduced that applying rectangular window in timedomain results in convolution with the sinc function in the spectrum. 
+The spectral resolution is determined by the length of the time record. As a general rule, the higher quality a resonance has, the sharper spectral features correspond to it. The case of a short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem it follows that the energy part stored in the clipped resonance has to disappear from the frequency domain, too. As a result, characteristic ringing in the spectra occurs. Using the convolution theorem [see Sect. \ref{subsection_local_resp}], it can be deduced that applying rectangular window in timedomain results in convolution with the sinc function in the spectrum. 
 
 Using a time window that has smooth shape does not improve spectral resolution, but it generally suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
-		     & = \frac{1 + \cos\left(\pi \frac{t/t_{sim}-0.8}{1-0.8}\right)}{2}  \text{ for } t > 0.8 t_{sim},
+	g(t)    & = \frac{1 + \cos\left(\pi \frac{t/t_{sim}-0.8}{1-0.8}\right)}{2}  \text{ for } t > 0.8 t_{sim},
 \end{split}
 \label{eq_envelope}\end{equation}
-which ensured that after 80 \% of the total simulation time $t_{max}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing.
+which ensured that after 80 \% of the total simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing.
 
-By means of Fourier transform, the fields can be converted to frequency domain, as $\tilde E_{x}^{(1)}(t) \rightarrow \tilde E_{x}^{(1)}(f)$, and so on. The results are shown in Fig. \ref{fg_sparam_timedomain}. 
+By means of the Fourier transform, the fields can be converted to the frequency domain, which is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. The results are shown in Fig. \ref{fg_sparam_timedomain}. 
+\begin{figure}[h] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
 
-\begin{figure}[h] \caption{img/sim\_separating\_wave.pdf}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
-The monitor planes are assumed to be located in vacuum, and in distance sufficient to eliminate the evanescent wave of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must form the right-handed triplet. % todo?
-At both monitor planes, the forward and backward wave are linearly superposed as ilustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by the following relation, with $\eta = \sqrt{\mu_0/\varepsilon_0}$ being the vacuum impedance:
+The monitor planes are assumed to be located in vacuum, and in the distance sufficient to eliminate the evanescent wave of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must form the right-handed triplet. % todo?
+At both monitor planes, the forward and backward wave are linearly superposed as ilustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by the following relation: 
 \begin{equation} 
 \begin{split}
-A^{(in 1)}(f)  := \frac{E_{x}^{(1)}(f) + \eta H_{y}^{(1)}(f)}{2}, \quad \quad \quad & A^{(out 1)}(f) := \frac{E_{x}^{(1)}(f) - \eta H_{y}^{(1)}(f)}{2}\\
-A^{(out 2)}(f) := \frac{E_{x}^{(2)}(f) + \eta H_{y}^{(2)}(f)}{2}, \quad \quad \quad & A^{(in 2)}(f)  := \frac{E_{x}^{(2)}(f) - \eta H_{y}^{(2)}(f)}{2}. 
+A^{(in 1)}(f)  := \frac{E_{x}^{(1)}(f) + Z_0 H_{y}^{(1)}(f)}{2}, \quad \quad \quad & A^{(out 1)}(f) := \frac{E_{x}^{(1)}(f) - Z_0 H_{y}^{(1)}(f)}{2}\\
+A^{(out 2)}(f) := \frac{E_{x}^{(2)}(f) + Z_0 H_{y}^{(2)}(f)}{2}, \quad \quad \quad & A^{(in 2)}(f)  := \frac{E_{x}^{(2)}(f) - Z_0 H_{y}^{(2)}(f)}{2}. 
 \end{split}
 \label{eq_}\end{equation}
-The separation result is plotted in Fig. \ref{fg_ampli}, and it allows for crude verification of the computation validity: The incident wave $A^{(in 1)}(f)$ should have smooth spectrum, as it is directly generated by the broadband source. The reflected $A^{(out 1)}(f)$ and transmitted $A^{(out 2)}(f)$ waves should be somewhat complementary, with squares of their amplitude summing up to the square of the incident wave (or less in case of losses). The fourth wave $A^{(in 2)}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the PML at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.
+The dimension constant $Z_0$ stands for the \textit{vacuum impedance}, i.e. ratio of the electric and magnetic field of a freely propagating wave. Its physical value is $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 4\pi c 10^{-7} \approx 376.7$ $\Upomega$ (but in the actual FDTD simulations, the built-in convention of $Z_0 = 1$ was maintained).
+
+The wave separation result is plotted in Fig. \ref{fg_ampli}, and it allows for crude verification of the computation validity: The incident wave $A^{(in 1)}(f)$ should have smooth spectrum, as it is directly generated by the broadband source. The reflected wave $A^{(out 1)}(f)$ and the transmitted one $A^{(out 2)}(f)$ should be somewhat complementary to each other, with squares of their amplitude summing up to the square of the incident wave (or less in case of losses). The fourth wave $A^{(in 2)}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the PML at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.
 \begin{figure}[h] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
 Finally one can easily compute the complex scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitude to the incident wave, respectively:
@@ -473,28 +475,27 @@ s_{12}(f) \equiv t(f) := \frac{A^{(out 2)}(f)}{A^{(in 1)}(f)}.
 \label{eq_}\end{equation}
 
 \paragraph{Experimental verification of reflection and transmission} 
-To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that has been measured previously. % TODO when, add cite
-It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser into a 26 $\upmu$m thick strontium titanate (STO) slab. The periodicity was  66 $\upmu$m and thelaser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen for the simulation to match experimental data on the frequency axis.
-%\begin{figure} \caption{img/STOBar\_photo.pdf}  \centering \includegraphics[width=10cm]{img/STOBar_photo.pdf} \end{figure} \clearpage
 \begin{figure} 
-\caption{\textbf{a)}   \textbf{b)}}  \centering 
+\caption{\textbf{a)} Electron microphotograph of the STO array, % TODO from		H. Nˇmec, P. Kuˇel, F. Kadlec, C. Kadlec, R. Yahiaoui, and P. Mounaix, Tunable terahertz metamaterials with e z~negative permeability, Phys. Rev. B 79, 241108(R) (2009) 
+\textbf{b)} dimensions of one unit cell thereof, with the orientation of the $\E$, $\HH$ and $\kk$ vectors}  \centering 
 \textbf{a)} \mbox{\vspace{3cm}\includegraphics[width=5cm]{img/STOBar_photo_narrow.pdf}} 
 \mbox{\textbf{b)} \mbox{\vspace{3cm}\includegraphics[width=5cm]{img/EBars_STO_sketch.pdf}} }
 \label{fg_STO_bar_geom} \end{figure} 
-
-The curves computed from the FDTD simulation are compared to the data obtained from terahertz laboratory in Fig. \ref{fg_STO_bar_rt}. 
+To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that was measured previously. % TODO when, add cite
+It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser into a 26 $\upmu$m thick strontium titanate (STO) slab. The periodicity was 96 $\upmu$m and the laser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match experimental data on the frequency axis.
+%\begin{figure} \caption{img/STOBar\_photo.pdf}  \centering \includegraphics[width=10cm]{img/STOBar_photo.pdf} \end{figure} \clearpage
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared to numerical reflection $r(f)$ and transmission $t(f)$ for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
+The curves computed from the FDTD simulation are compared to the data obtained from terahertz laboratory in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in high reflectivity ($r > 90$ \%) in most of the spectrum that is caused by great impedance mismatch of the dielectric with regards to the surrounding air.
 
-\begin{figure}[h] \label{fg_} \centering \includegraphics[width=12cm]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
-To briefly illustrate the possibilities of the numerical simulations, we scanned the relative width of the STO bar Fig. \ref{fg_STO_bar_modes}. 
-% TODO add mode identification
-% XRectWire_resolution=2.00e-06_comment=STO_simtime=1.50e-10_yspacing=9.60e-05_epsilon=6.00e+02_cells=1.00e+00_padding=5.00e-05_width=6.40e-05_monzd=1.00e-04_thick=2.60e-05_Kx=0.00e+00_Ky=0.00e+00
+\begin{figure}[h] \centering \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
+To briefly illustrate further possibilities of the numerical simulation, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as is shown in Fig. \ref{fg_STO_bar_modes}. The figure can reveal rich information about the underlying physics, most notably that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so that this exponent can be directly estimated from the sloped line the resonance peaks were fitted with. 
 
-
+It can also be read from Fig. \ref{fg_STO_bar_modes} that around the bar width of 66 $\upmu$m, as denoted by a horizontal white line, there is actually a frequency cross-over of two modes, a narrow transverse one and a more broader longitudinal one. This explains why in Fig. \ref{fg_STO_bar_rt} the first resonance has an obviously asymmetric shape in the simulated and experimental spectra.  %% This would form a typical Fano resonance if the losses were lower.
+More elaborate discussion of rod-like structures oriented either along the electric or thee magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 
 \paragraph{Retrieval of effective parameters} 
-So far, we computed the amplitude and phase of frequency-dependent complex reflection $r(f)$ and transmision $t(f)$ for one (or more) layers of a given structure. 
-These data, if supplied with the expected cell thickness, are also sufficient to deduce the behaviour of a periodic structure composed of infinity of such unit cells, i.e., to retrieve the effective parameters of the structure. % ... or at least to get isofrequency contours if effparam do not exist, or if the method is too approximate
+So far, we computed the amplitude and phase of frequency-dependent complex reflection $r(f)$ and transmission $t(f)$ for one (or eventually more) layers of a given structure. 
+These data, if supplied with the expected cell thickness, are also sufficient to deduce the behaviour of a periodic structure composed of infinity of such unit cells, i.e., to retrieve the effective parameters of the structure. % TODO this needs some discussion, if it is possible etc. ... or at least to get isofrequency contours if effparam do not exist, or if the method is too approximate
 To this end, now employ the Fresnel inversion and show a custom approach how to obtain physically sound selection of the correct branch of solution.
 % TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
 %It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
@@ -518,11 +519,6 @@ The sign and branch of the refraction index, and the sign of wave impedance are 
 
 % TODO cite smith2002 and nrw sources
 
-%\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
-               %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
-               %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
-               %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
-               %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 %}}}
 \paragraph{Unambiguous arccosine} %{{{
 

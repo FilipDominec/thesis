@@ -26,6 +26,13 @@ Such a shifting between waves at the lower and upper boundaries of the band gap 
 \begin{figure} \caption{img/Slab\_eps001\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/Slab_eps001_PWEM.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/Slab\_eps012\_d15.pdf}  \centering \includegraphics[width=10cm]{img/Slab_eps012_d15.pdf} \end{figure} \clearpage
 %}}}
+\paragraph{Band-gap formation from different number of unit cells}
+%% cite laktionov? Or put everything in the theory section?
+%\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
+               %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
+               %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
+               %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
+               %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 
 \subsection{Finite planar structure with defect mode} % references to ->
 A defect-mode transmission peak of 1.5\% energy transmission appears in the band gap.
@@ -168,6 +175,7 @@ We performed series of experiments to measure the effective permeability  $\mu_{
 \begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} \clearpage
 %}}}
 \section{Dielectric rods parallel to magnetic field} % references to ->
+\label{sect_diel_rods_mag}
 %{{{
 \begin{figure} \caption{img/HRods\_eps012\_R12\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps012_R12_PWEM.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/HRods\_eps100\_R12\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps100_R12_FDTD.pdf} \end{figure} \clearpage
@@ -233,6 +241,7 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 %}}}
 \section{Dielectric rods parallel to electric field} % references to ->
+\label{sect_diel_rods_el}
 %{{{
 % TODO refereence  also to \cite{valdivia2012} and \cite{shi2007}
 
@@ -392,7 +401,7 @@ Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity r
 
 A sufficiently high permittivity can be found in the microwave and terahertz ranges, in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.
 
-Finding a valid negative index of refraction $\Neff'$ for a photonic structure implies that the Snell law can be used to predict the negative refraction at an interface, provided the iso-frequency contours can be well approximated by a circle. This condition is fulfilled when the resulting wave vector is oriented close to a symmetry axis of the structure, or when the wave vector is negligible compared to the reciprocal lattice vector (i.e. $k\ll \frac{\pi}{a}$ and thus $|\Neff'| \ll \frac{c}{2af}$).  In the latter case the iso-frequency contours of the isotropic structure approach a circular shape near the $\Gamma$-point in the Brillouin zone center.  By contrast, the opposite implication is not necessarily applicable---a structure with a high enough spatial dispersion can still refract under negative angles, yet its refractive index computed along a symmetry axis never reaches negative values and the phase difference across each its unit cell is positive and can be comparable to $\pi$.  For example, it was suggested earlier  \cite{Vynck2009} that an array of silicon rods ($\varepsilon_r \approx 12$) can constitute a true left-handed metamaterial ($\Neff'<0$).  In agreement with the results presented above, we believe that the negative refraction is not a sufficient proof of $\Neff'<0$, which would require a much higher permittivity contrast than that of silicon.  We conclude that the electromagnetic behavior observed previously \cite{Vynck2009} has to be described by means of the PhC dispersion curves. 
+Finding a valid negative index of refraction $\Neff'$ for a photonic structure implies that the Snell law can be used to predict the negative refraction at an interface, provided the iso-frequency contours can be well approximated by a circle. This condition is fulfilled when the resulting wave vector is oriented close to a symmetry axis of the structure, or when the wave vector is negligible compared to the reciprocal lattice vector (i.e. $k\ll \frac{\pi}{a}$ and thus $|\Neff'| \ll \frac{c}{2af}$).  In the latter case the iso-frequency contours of the isotropic structure approach a circular shape near the $\Gamma$-point in the Brillouin zone center.  By contrast, the opposite implication is not necessarily applicable---a structure with a high enough spatial dispersion can still refract under negative angles, yet its refractive index computed along a symmetry axis never reaches negative values and the phase difference across each its unit cell is positive and can be comparable to $\pi$.  For example, it was suggested earlier  \cite{vynck2009} that an array of silicon rods ($\varepsilon_r \approx 12$) can constitute a true left-handed metamaterial ($\Neff'<0$).  In agreement with the results presented above, we believe that the negative refraction is not a sufficient proof of $\Neff'<0$, which would require a much higher permittivity contrast than that of silicon.  We conclude that the electromagnetic behavior observed previously \cite{vynck2009} has to be described by means of the PhC dispersion curves. 
 
 We demonstrated that for $\Neff'<0$, not only the high permittivity contrast, but also a correct geometry is required. A wedge filled with an array of square-shaped high-dielectric bars was previously reported refracting under negative angles \cite{peng2007}. The high filling fraction ($0.44^{2}$) simultaneously with a permittivity of $\varepsilon_r \approx 600$ clearly qualified this structure as \textit{dense}. Using the above described approach, we computed its spectra qualitatively similar to Fig.~\ref{fg_spec}(c) and no band with $\Neff' < 0$ was resulting from our effective index retrieval. However, when we reproduced the wedge experiment numerically, our simulations confirmed that it does refract the light under negative angles.
 
@@ -431,8 +440,6 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 \section{Other structures} % plasmonic spheres (note: resonance width determined by gamma of the metal?)
 \begin{figure} \caption{Modes in sphere-wire structure}  \centering \includegraphics[width=10cm]{img/new/modes_Mag_and_El.pdf} \end{figure} \clearpage
-\subsection{} % references to ->
-\subsection{} % references to ->
-\subsection{} % references to ->
-\subsection{} % references to ->
-\subsection{} % references to ->
+
+
+%\subsection{} % references to ->
