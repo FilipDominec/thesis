@@ -391,13 +391,10 @@ Other numerical methods are used, too. Finite-element methods (FEM) approximate 
 The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
 \subsection{Scattering parameters}
 \paragraph{Principle} %{{{
-The scattering parameter retrieval, also known as \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method, has been employed for years % TODO
-to retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample. It is based on the fact that, using Fresnel-Airy formulas, % TODO as shown in the appendix
+The scattering parameter retrieval, also known as \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been employed since 1970s to retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample, originally in the microwave range. It is based on the fact that, using Fresnel-Airy formulas, % TODO as shown in the appendix
 one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the slab. The actual computation is thus denoted also as \textit{Fresnel inversion}.
 
-
-Mathematically, this can always be done, and this method assigns some \textit{effective} parameters, $\Neff$ and $\Zeff$, even when the homogeneous sample is replaced with an inhomogeneous structure, such as a layer of a metamaterial. 
-This method has the advantage of not requiring to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of $r,t$. Thanks to being easy to realize both experimentally and numerically, with FDTD or other algorithms, %% (in fact, this is independent of FDTD, only to the time-marching methods) \cite{terao2011}
+Mathematically, this can always be done, and this method yields some \textit{effective} parameters, $\Neff$ and $\Zeff$, even when the homogeneous sample is replaced with an inhomogeneous structure, such as a layer of a metamaterial. This method has the advantage of not requiring to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of $r,t$. Thanks to being easy to realize both experimentally and numerically, with FDTD or other algorithms, %% (in fact, this is independent of FDTD, only to the time-marching methods) \cite{terao2011}
 it has become apparently the most popular way to retrieve metamaterial parameters. 
 
 The most often mentioned issue of this method is that the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this chapter we describe that this can in fact be relatively easily resolved, and in the Section \ref{sect_results} it is shown that the outcomes may be quite surprising.
@@ -411,7 +408,7 @@ The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave i
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab is simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the monitor planes (blue rectangles) in each simulation step. 
 
 Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t$ as functions of frequency. Before this procedure is described, a modification important for the accuracy of this setup has to be made.
-\begin{figure}[h] \caption{img/sim\_screen.pdf}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
+\begin{figure}[h] \caption{An example result of a FDTD simulation, visualised using the \textit{Paraview} program. The dielectric sphere, shown in grey, was placed in a less usual, but equivalent position, being split by the periodic boundaries a grid. The electric field amplitude is shown in one quarter of the simulation volume, with clear enhancement near the dielectric surface (pink-red).}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
@@ -493,8 +490,8 @@ It can also be read from Fig. \ref{fg_STO_bar_modes} that around the bar width o
 More elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or thee magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 
 \paragraph{Retrieval of effective parameters} 
-So far, we computed the amplitude and phase of frequency-dependent complex reflection $r(f)$ and transmission $t(f)$ for one (or eventually more) layers of a given structure. 
-These data, if supplied with the expected cell thickness, are also sufficient to deduce the behaviour of a periodic structure composed of infinity of such unit cells, i.e., to retrieve the effective parameters of the structure. % TODO this needs some discussion, if it is possible etc. ... or at least to get isofrequency contours if effparam do not exist, or if the method is too approximate
+So far, we computed the amplitude and phase of frequency-dependent reflection $r(f)$ and transmission $t(f)$ for a finite number of metameterial cell layers. 
+These data, if supplied with the expected cell thickness $d$, are also sufficient to deduce the behaviour of a periodic structure composed of infinity of such unit cells, i.e., to retrieve the effective parameters of the structure. % TODO this needs some discussion, if it is possible etc. ... or at least to get isofrequency contours if effparam do not exist, or if the method is too approximate
 To this end, we employ the Fresnel inversion and show a custom approach how to obtain physically sound selection of the correct branch of solution.
 % TODO develop this somehow, cite Rockstuhs2004, relate to spatial dispersion and nonlocality - the evanescent field can be decomposed into dipoles, quadrupoles etc}
 %It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
@@ -503,18 +500,17 @@ To this end, we employ the Fresnel inversion and show a custom approach how to o
 \add{
 
 % todo check if symbols known
-The Fresnel coefficients give the reflection and transmission from an interface of two homogeneous media described by their impedances $z_1, z_2$:
-\begin{equation} r_1 = \frac{z_2 - z_1}{z_2 + z_1}, \quad \quad \quad t_1 = \frac{2 z_2}{z_2 + z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
-Note that in the literature, the Fresnel coefficients are often expressed in a slightly different form, using the index of refraction instead of wave impedance; this holds only for common nonmagnetic media where $\mu = 1$ and therefore $n = 1/z$ 
+The \textit{Fresnel coefficients} $r_1$, $t_1$ give the reflection and transmission from an interface of two homogeneous media described by their impedances $Z_1, Z_2$:
+\begin{equation} r_1 = \frac{Z_2 - Z_1}{Z_2 + Z_1}, \quad \quad \quad t_1 = \frac{2 Z_2}{Z_2 + Z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
+Note that in the literature, the Fresnel coefficients are often expressed in a slightly different form, using the index of refraction $N$ instead of wave impedance $Z$; this holds only for common nonmagnetic media where $\mu_r = 1$ and therefore $N \equiv \sqrt{\varepsilon_r \mu_r} = \sqrt{\mu_r/\varepsilon_r } \equiv 1/Z$ 
 The complex reflection $r_{s}$ and transmission $t_{s}$ of a homogeneous slab with given wave impedance $z$, index of refraction $n$ and thickness $d$ can be computed by summing the infinite series of internal reflections.
 % todo expr
 When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination}, yielding its index of refraction:
-\begin{equation} n = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
+\begin{equation} \Neff = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
 and also its wave impedance:
-\begin{equation} z= \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
+\begin{equation} \Zeff = \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
 The sign and branch of the refraction index, and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips in the spectra, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
 }
-% TODO cite nrw sources smith2002 and 
 
 Knowing the complex $r(f)$ and $t(f)$ along with the sample thickness $d$, we may use the
 classical algorithm to retrieve the effective parameters \cite{smith2002determination}:
@@ -530,52 +526,22 @@ where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
 
 %}}}
 \paragraph{Unambiguous arccosine} %{{{
-The well-known complication of this approach is that the arccosine and square root are
-ambiguous functions \cite{simovski09}, yielding multiple solutions with different branches (indexed by an
-integer $m$) and signs. 
-We deal with a passive medium, consequently we impose
-Im$(\Neff)>0$ and Re$(\Zeff)>0$. To facilitate processing of the results, we 
-adopted an approach different from earlier published works \cite{smith02,chen04} %% Chen04 = http://journals.aps.org/pre/abstract/10.1103/PhysRevE.70.016608
-that ensures the continuity of effective parameters as a function of frequency \add{on pure mathematical basis}. This
-continuity is required by Kramers-Kronig relations for arbitrarily small losses
-introduced in the system. The important point consists in identifying the branch cuts of
-arccosine in the complex plane (Fig.\ \ref{fg_arccos}\add{a,b}). If, by increasing the frequency,
-the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, 
-passes through the right branch cut [i.e.
-for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the
-imaginary part is non-zero and changes its sign. The continuity is restored if, from this
-frequency on, one reverses the sign of the arccos term \add{(point "R" in Fig. \ref{fg_arccos}c}). The situation is slightly more
-complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the
-imaginary part of \mdf{$\arccos(v)$} experiences again a step-like change of the sign and the
-real part reaches the value of $\pi$. The continuity is then restored upon a sign
-reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. A correct
-reconstruction of the arccosine therefore only requires to compute the integer-valued
-branch rlong with the sign, both being functions of frequency. The sign of the
-square root function is again chosen such than $Z$ is a continuous function of frequency.
+The well-known complication of the described approach is that the arccosine and square root are ambiguous functions \cite{simovski09}, yielding multiple solutions with different branches (indexed by an integer $m$) and signs. 
 
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
-\begin{figure} \caption{new}  \centering \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf} 
-\caption{\add{\textbf{a,b)}} Real and imaginary parts
-	of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick
-curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the
-branch cuts in points marked as R, L. (c) From top to bottom: example function  $\upsilon(f)$, its or-
-dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine
-function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.}
-	\label{fg_arccos}
+\begin{figure} \centering \caption{\add{\textbf{a,b)}} Real and imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L. (c) From top to bottom: example function  $\upsilon(f)$, its or- dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
-
-It is also known that the phase of the reflectance depends on the surface termination for
-noncontinuous materials. In the cases where the wavelength of the radiation in the
-material is much larger than the unit cell dimensions this ambiguity becomes small. A
-useful control of the effective sample properties can be made by changing the thickness
-of the sample (number of unit cells along the wave vector). We have chosen a symmetric
-geometry where the dielectric rod is positioned in the center of a square unit cell and
-the total thickness of the sample is an integer multiple of the unit cell size. In this
-geometry the retrieved effective parameters of our structure depend only negligibly on
-the number of unit cells that we put in the $z$-direction.
+We deal with a passive medium, consequently we impose Im$(\Neff)>0$ and Re$(\Zeff)>0$. %TODO WRONG, sign must be opposite
+To facilitate processing of the results, we adopted an approach different from earlier published works \cite{smith2002determination,chen2004robust}
+that ensures the continuity of effective parameters as a function of frequency \add{on pure mathematical basis}. This continuity is required by Kramers-Kronig relations for arbitrarily small losses introduced in the system. The important point consists in identifying the branch cuts of arccosine in the complex plane (Fig.\ \ref{fg_arccos}\add{a,b}). If, by increasing the frequency, the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut [i.e.  for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the imaginary part is non-zero and changes its sign. The continuity is restored if, from this frequency on, one reverses the sign of the arccos term \add{(point "R" in Fig. \ref{fg_arccos}c}). The situation is slightly more complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the imaginary part of \mdf{$\arccos(v)$} experiences again a step-like change of the sign and the real part reaches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. A correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch rlong with the sign, both being functions of frequency. The sign of the square root function is again chosen such than $Z$ is a continuous function of frequency.  
 
 %}}}
 \paragraph{Layers without translation and mirror symmetry} %{{{
+
+\mdf{
+It is also known that the phase of the reflectance depends on the surface termination for noncontinuous materials. In the cases where the wavelength of the radiation in the material is much larger than the unit cell dimensions this ambiguity becomes small. A useful control of the effective sample properties can be made by changing the thickness of the sample (number of unit cells along the wave vector). We have chosen a symmetric geometry where the dielectric rod is positioned in the center of a square unit cell and the total thickness of the sample is an integer multiple of the unit cell size. In this geometry the retrieved effective parameters of our structure depend only negligibly on the number of unit cells that we put in the $z$-direction.
+}
+
 %}}}
 \paragraph{Summary of the scattering parameters retrieval method} %{{{
 % TODO In many works cited here, the multiplicity of the branches is mentioned as a major obstacle, however we devised a 
@@ -586,6 +552,8 @@ the number of unit cells that we put in the $z$-direction.
 
 % Numerous modifications of this method have been made \cite{Hasar2009, Arslanagic2012}
 %}}}
+\paragraph{Applicability of the method}
+TODO this method makes several assumptions that may not hold always. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice}. \cite{simovski2007bloch, andryieuski2010homogenization} In other cases, usually in dense and metallic structures, significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers. \cite{rockstuhl2008transition}
 
 
 \subsection{Current-driven homogenisation} % TODO
@@ -596,7 +564,13 @@ the number of unit cells that we put in the $z$-direction.
 %}}}
 \subsection{Other effective parameter retrieval methods} % TODO
 \mdf{
-"Wave Propagation Retrieval Method" [Andryieuski2010], etc.
+
+\cite{menzel2008retrieving} s-param methdo extended under oblique incidence
+
+\cite{andryieuski2010homogenization} review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena"), presents the WPRM (Wave Propagation Retrieval Method)
+\cite{yang2010retrieving} also a single-interface problem
+
+
 /home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
 }
 %}}}
