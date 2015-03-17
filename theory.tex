@@ -97,7 +97,7 @@ An important note shall be made on the sign convention. We use the `engineering'
 . In roughly a half of the literature
 (e.g. \cite{jackson1962book} 
 \cite{veselago1968} 
-\cite{born1966book}
+\cite{born1999book}
 \cite[chap. 5, 7, 8]{eleftheriades2005book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. 
 The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions.
 %% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
@@ -283,7 +283,8 @@ The response of the medium to the electric field of any harmonic plane wave can 
 %%	 We must tell apart eps and eps^LL
 %%						... should not the notation be unified for clarity? 
 %%						... and when it happens that eps == eps^(Loc) ?? And when eps^LL== eps^(Loc)
-Converting the problem from spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\varepsilon(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\varepsilon$ may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
+Converting the problem from spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\varepsilon(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\varepsilon$ %% TODO make it \varepsilon_r
+may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 % , and convolution in space is equivalent to multiplication  in the reciprocal space
 }
 
@@ -310,7 +311,7 @@ In a very similar way, the local magnetic permeability $\murl(\omega)$ also cons
  \item{the magnetic response of vacuum,} 
  \item{and, if present, the magnetic response of the matter.} 
 \end{enumerate}
-\begin{table}[ht]   \caption{}  \label{tb_} \centering 
+\begin{table}[ht]   \caption{Physical effects by the quantity they are expressed by}  \label{tb_nonlocaleff} \centering 
 \begin{tabular}{lcr}
  \toprule
 Physical effect & Has corresponding term in \\
@@ -388,25 +389,22 @@ The downsides of the spatial-dispersive model of media is that it is more compli
 
 The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
 \begin{equation} \E(t, \rr) = \mathrm{e}^{\mathrm{i} Kz - 2\pi \mathrm{i} f t} \cdot \mathbf{u}(\rr), \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr+a\mathbf{z}) = \mathbf{u}(\rr+2a\mathbf{z}) = \ldots, \label{eq_bloch}\end{equation} 
-The $\mathbf{u}(\rr)$ function has the same periodicity as the structure. It is generally a complex vector function so it not only alters the direction and magnitude of $\E$ (or  $\HH$), but can also introduce a \textit{phase modulation} of the wave in each unit cell. Note that the capital $K$ is used to distinguish the wavenumber of the Bloch wave envelope from the wavenumber $k$ in free space. Note this theorem does not determine how the shape of $\mathbf{u}(\rr)$ nor the direction and magnitude of $\KK$, it only states they do exist.
+The $\mathbf{u}(\rr)$ function has the same periodicity as the structure. It is generally a complex vector function so it not only alters the direction and magnitude of $\E$ (or  $\HH$), but can also introduce a \textit{phase modulation} of the wave in each unit cell. Note that the capital $\KK$ is used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in free space. Note this theorem does not determine how the shape of $\mathbf{u}(\rr)$ nor the direction and magnitude of $\KK$, it only states they do exist.
 % TODO proof /home/filip/PhD/Sources_MM_theory/Bloch_Theorem_Proof.pdf
 % TODO example illustration of Bloch wave -> plotted in Python
+
 %}}}
 
 \paragraph{Electromagnetic waves in periodic structures}
 \add{
-The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by%{{{
-\begin{equation} \mathbf{E}(z, t) := \mathbf{E}_0 \cdot e^{ikz- 2i\pi f t}, \label{eq_pw}\end{equation}
-where $\mathbf{E}_0$ is the field amplitude.  This expression gives a complex function, whose imaginary part has no physical meaning and accordingly is not plot either. The following mathematical expressions however turn out to be simpler when using complex exponents instead of the purely real fields.
+The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by Eq. (\ref{eq_pw2}).%{{{
+Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
+
 In a homogeneous medium, there is a simple \textit{dispersion} relation between the frequency  $f$ and the wavenumber $k$, given as
 \begin{equation} f = \frac{ck}{2\pi \cdot n} = \frac{ck}{2\pi \cdot \sqrt{\varepsilon \mu}}. \label{eq_dispersion}\end{equation}
 The constant $n = \sqrt{\varepsilon \mu}$ connecting the frequency and wavenumber is the index of refraction.
 
-Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
-\begin{equation} \mathbf{E}(\mathbf{r}, t) = \mathrm{e}^{\mathrm{i} Kz - 2\pi \mathrm{i} f t} \cdot \mathbf{u}(\mathbf{r}), \text{ where } \mathbf{u}(\mathbf{r}) = \mathbf{u}(\mathbf{r}+a\mathbf{z}) = \mathbf{u}(\mathbf{r}+2a\mathbf{z}) = \ldots, \label{eq_bloch}\end{equation} 
-i.e. $\mathbf{u}(\mathbf{r})$ shares the periodicity with the structure and it is generally a complex vector function so it not only alters the direction and magnitude of $\mathbf E$ (or  $\mathbf H$), but also introduces \textit{phase modulation} of the wave in each cell. Note that the capital $K$ is used to distinguish the wavenumber of the Bloch wave envelope from the wavenumber $k$ in free space.
-
-\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\mathbf{r})$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
+\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
 	\includegraphics[width=17cm]{img/PhC_folding_illustration.pdf} 
 \end{figure}
 When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude.\footnote{The equilibrium forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.} We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
@@ -426,9 +424,6 @@ Although maybe less instructive, usually the \textit{folded} bands are plot in t
 \paragraph{Dispersion curves under virtual periodicity}%{{{
 The vacuum properties are obviously invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which can be considered a \textit{virtual} periodicity. 
 
-\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
-	\includegraphics[width=17cm]{img/PhC_folding_illustration.pdf} 
-\end{figure}
 When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude.\footnote{The equilibrium forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.} We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
 \begin{enumerate}
  \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\mathrm{e}^{\mathrm{i}Kz}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\rr)}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\rr)}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)

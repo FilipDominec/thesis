@@ -1,4 +1,4 @@
-
+\label{section_result}
 \section{Dielectric slab} % references to ->%{{{
 %% TODO co znamená  " {\infty}-P  KP   KP-DM  " ??
 The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, has been investigated thoroughly in the previous decades. We review it mostly for comparison with the structures presented in the following. 
@@ -95,9 +95,11 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %{{{
 \add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? I think the explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
-\begin{figure} \caption{img/Sphere\_eps100\_R25\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/Sphere_eps100_R25_FDTD.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/sphere\_Mie\_mode\_electric.pdf}  \centering \includegraphics[width=10cm]{img/sphere_Mie_mode_electric.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/sphere\_Mie\_mode\_magnetic.pdf}  \centering \includegraphics[width=10cm]{img/sphere_Mie_mode_magnetic.pdf} \end{figure} \clearpage
+\begin{figure} \caption{img/Sphere\_eps100\_R25\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/Sphere_eps100_R25_FDTD.pdf} \end{figure} 
+
+\begin{figure} \caption{\textbf{a)} The electric and \textbf{b)} magnetic Mie resonance in a dielectric sphere}  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_electric.pdf} 
+ \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_magnetic.pdf} \end{figure}
+
 \begin{figure} \caption{img/Spheres\_FDTD\_experimentalConv.pdf}  \centering \includegraphics[width=10cm]{img/Spheres_FDTD_experimentalConv.pdf} \end{figure} \clearpage
 
 \add{
@@ -280,8 +282,7 @@ An interesting qualitative change of the structure response occurs when the rods
 
 Comparing the low-permittivity and high-permittivity cases in Fig. \ref{fg_ebar_radiusscan}a,b, one can see there exists some minimum limit for the permittivity contrast that is necessary for both electric and magnetic resonances to be located in the first gap simultaneously. We determined this scale-invariant value to be roughly 80.
 
-As a little verification that the numerical computations give sound results, we attach experimental transmission measurement of the rod array in Fig. \ref{fg_ebars_exp}.
-The bars used had rectangular cross-section, being 26 $\upmu$m thick, 66 $\upmu$m  wide and their periodicity along the $y$-axis was 96 $\upmu$m.  The experimental data (points) are compared to FDTD simulation data of an identical structure (lines). The material used was strontium titanate, best matched by simulation where the permittivity was set to $\varepsilon^{\text{(1 THz)}} = 365 + 62i$.  While this structure can not provide the negative index of refraction and has very high losses, it can act as a temperature-tunable filter. The transmission peaks can be clearly identified with resonant modes and it was observed that the frequencies of the modes shift with different slope depending on parameters.  
+The transmission peaks can be clearly identified with resonant modes and it was observed that the frequencies of the modes shift with different slope depending on parameters.  
 } 
 %}}}
 
@@ -291,9 +292,9 @@ The bars used had rectangular cross-section, being 26 $\upmu$m thick, 66 $\upmu$
 \begin{figure} \centering \includegraphics[width=14cm]{img/ERods_1st_and_2nd_Mie_resonance.pdf}%{{{
 \caption{(a) Perspective view of the unit cell\add{; (b) its} cross-sections with the resonant modes excited by a plane wave with $\mathbf{E}||x, \mathbf{H}||y$ and $\mathbf{k}||z$. The first Mie resonance has an electric dipole moment only, while the second one has a magnetic dipole moment instead. The red and blue color shows positive and negative values of the $E_x$ component of the electric field, while the magnetic field is represented by the arrows. } \label{fg_sketchfield} \end{figure}
 
-Our structure \add{(see Fig.\ref{fg_sketchfield}a)} is defined by a square unit cell with the linear dimension $a$ periodically distributed in the $yz$ plane; the dielectric rod parallel to $x$-axis with radius $\rho$ and permittivity $\varepsilon_r$ is positioned in its center. We employed the finite-difference time-domain (FDTD) simulation package MEEP \cite{oskooi2010meep} to obtain the scattering coefficients (complex reflectance $r$ and transmittance $t$) of a structure with variable number of unit cells along the wave vector direction $k\parallel z$. The incident wave is polarized $E\parallel x$, periodic boundary conditions were applied in the $y$-direction. We performed the simulations for a single layer ($y$-periodic boundary conditions only). Its effective properties are almost identical to those of the corresponding multilayer structure. We checked that for this geometry, the retrieved effective parameters depend only negligibly on the number of unit cells in the $z$-direction. The relevance of the calculations with a single layer was further confirmed by current-driven homogenization simulations \cite{Markel13} in several particular cases (same geometries as in Fig.~\ref{fg_spec}) which yielded a response in a very good agreement with the FDTD results.
+Our structure \add{(see Fig.\ref{fg_sketchfield}a)} is defined by a square unit cell with the linear dimension $a$ periodically distributed in the $yz$ plane; the dielectric rod parallel to $x$-axis with radius $\rho$ and permittivity $\varepsilon_r$ is positioned in its center. We employed the finite-difference time-domain (FDTD) simulation package MEEP \cite{oskooi2010meep} to obtain the scattering coefficients (complex reflectance $r$ and transmittance $t$) of a structure with variable number of unit cells along the wave vector direction $k\parallel z$. The incident wave is polarized $E\parallel x$, periodic boundary conditions were applied in the $y$-direction. We performed the simulations for a single layer ($y$-periodic boundary conditions only). Its effective properties are almost identical to those of the corresponding multilayer structure. We checked that for this geometry, the retrieved effective parameters depend only negligibly on the number of unit cells in the $z$-direction. The relevance of the calculations with a single layer was further confirmed by current-driven homogenization simulations \cite{markel2013current} in several particular cases (same geometries as in Fig.~\ref{fg_spec}) which yielded a response in a very good agreement with the FDTD results.
 
-The effective parameters were \add{then} retrieved from complex transmittance and reflectance spectra \cite{smith2002determination}.  \add{Alternative means of obtaining the effective parameters are discussed in Ref. \cite{Simovski09}. When inverting the Fresnel-Airy formulas, the correct solutions have to be chosen in the different parts of the $\Neff(\omega)$, $\Zeff(\omega)$ spectra \cite{Simovski09}; to this aim, Kramers-Kronig relations as well as the conditions of a passive medium Im$(\Neff)>0$ and Re$(\Zeff)>0$ were used.} 
+The effective parameters were \add{then} retrieved from complex transmittance and reflectance spectra \cite{smith2002determination}.  \add{Alternative means of obtaining the effective parameters are discussed in Ref. \cite{simovski2009material}. When inverting the Fresnel-Airy formulas, the correct solutions have to be chosen in the different parts of the $\Neff(\omega)$, $\Zeff(\omega)$ spectra \cite{simovski2009material}; to this aim, Kramers-Kronig relations as well as the conditions of a passive medium Im$(\Neff)>0$ and Re$(\Zeff)>0$ were used.} 
 
 The retrieved value of the complex effective index of refraction $\Neff(f)$ defines the magnitude of the wave vector
 \begin{equation}\label{eq_wave_vector} k(f) = 2\pi f \Neff(f) /c\,.  \end{equation}
