@@ -4,24 +4,52 @@
 \subsection{Short review of the terahertz technology}
 The electromagnetic waves in the terahertz range, roughly between 100 GHz and 10 THz, have found relatively small application in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their small efficiency and sensitivity, respectively. 
 
-\paragraph{Thermal emission in THz range}
+The following paragraphs show why thermal sources are not applicable to the THz range, and briefly list the most prominent sources of THz radiation that are used in research or technology. A brief overview of THz technology follows. There is a great number of literature that covers this topic in depth \cite[pp. 155-158]{lee2008book}, % TODO add
+and it is also covered by theses from our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
+
+\paragraph{Thermal emission in the THz range}
 The blackbody radiation is governed by the Planck law % TODO cite
 %$$ ,$$ TODO
-from which follows that the luminosity in the terahertz range is always very small, about 300 W sr$^{-1}$ m$^{-2}$ at the room temperature.
-Furthermore, all Planck oscillators in the THz range are fully saturated already at the room temperature:
+from which follows that the luminosity in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature.  Furthermore, all Planck oscillators in the THz range are already fully saturated:
 %  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
-$$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8$ meV $\gg h f \approx 4.13$  meV),$$
-and therefore the power radiated in the THz range can not be significantly improved by increasing temperature. Particularly, it can be shown that in this part of spectrum it scales only linearly with the temperature $T$; whereas the total power scales as $T^{4}$ (Stefan-Bolzmann law). Sources other than thermal have to be used.
+$$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \gg h f \approx 4.13 \text{ meV}), $$
+and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; whereas the total power scales as $T^{4}$ (Stefan-Bolzmann law). Sources other than thermal have to be used.
 
+
+\add{
 \paragraph{Coherent continuous THz sources}
+Whenever a beam of electrons (or possibly other charged particles) is subject to fast-enough acceleration at the picosecond scale, electromagnetic waves in the terahertz band are radiated. This is the case of magnetic deflection in particle accelerators, or the periodically-poled magnet, \textit{wiggler}, in the free electron laser. 
+Typically, such approach finds practical application in rather large-scale facilities. 
 
+Backward wave oscillators
+Free electron lasers and synchrotrons
 
-\paragraph{Pulsed THz sources}
+THz lasers
+p-Ge laser
+Quantum cascade lasers
 
+Tunable THz-wave parametric generation
+Optical rectification
+pulsed/cont
+
+Biased and unbiased photoconductive switches
+pulsed/cont
+
+Coherent THz Radiation from Superconductors
+Cerenkov-like emission of THz radiation
+
+Terahertz radiation from shocked materials
 
 \paragraph{Terahertz detectors}
+1.3.1 Photoconductive receiving antennas . . . . . . .
+1.3.2 Electrooptic sampling . . . . . . . . . . . . . . .
+1.3.3 Magnetooptic sampling . . . . . . . . . . . . . .
+1.3.4 Terahertz-induced lensing . . . . . . . . . . . .
+1.3.5 Bolometers
 
-\subsection{Terahertz detectors and time-domain spectroscopy}
+}
+
+\subsection{Terahertz time-domain spectroscopy}
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
 The approach is similar to that used in the FDTD simulations. A short, broadband pulse impinges the sample, one part of its energy is transmitted, another reflected and the rest is absorbed in the sample. The transmitted pulse is then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse.
 % TODO 
