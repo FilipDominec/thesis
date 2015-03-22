@@ -2,14 +2,24 @@
 % TODO describe what follows in this section
 
 \subsection{Short review of the terahertz technology}
-The electromagnetic waves in the terahertz range, roughly between 100 GHz and 10 THz, have found relatively small application in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their small efficiency and sensitivity, respectively. 
+The terahertz range in the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has found relatively small application in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. 
 
-The following paragraphs show why thermal sources are not applicable to the THz range, and briefly list the most prominent sources of THz radiation that are used in research or technology. A brief overview of THz technology follows. There is a great number of literature that covers this topic in depth \cite[pp. 155-158]{lee2008book}, % TODO add
-and it is also covered by theses from our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
+Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale. The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  % There are numerous ways to generate  
 
+There is a great number of literature that describes different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}, % TODO add
+and many of them are also, with more or less detail, discussed in previous doctoral theses written in our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
+In the following paragraphs try to briefly review the terahertz technology in a systematic manner.
 
 \add{
-Electromagnetic waves in the terahertz range are radiated when charged particles are subject to fast-enough acceleration at the picosecond scale. The processes may be sorted with regards to the medium in which this occurs and the origin of the force causing the acceleration.  % There are numerous ways to generate  
+
+\paragraph{Thermal emission in the THz range}
+Firstly, let us show why thermal sources are not used in the THz range. The blackbody radiation is governed by the Planck law % TODO cite
+\begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
+%$$ ,$$ TODO
+from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=300$ K).  Furthermore, all Planck oscillators at the frequency $f$ of e.g. 1 THz are already fully saturated:
+%  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
+$$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
+and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Sources other than thermal have to be used.
 
 \paragraph{Kinetic energy of electron beam}
 One class of devices uses the kinetic energy of an electron beam propagating in vacuum; the acceleration of the electrons is caused by transverse magnetic field. The simplest example is the cyclotron, where coherent THz radiation is emitted when a short bunch of electrons is passing through the bends in the particle path. Another example is the free electron laser with the electron bunches passing through a periodically-poled magnet called \textit{wiggler}. 
@@ -52,14 +62,6 @@ Cerenkov-like emission of THz radiation
 
 Terahertz radiation from shocked materials
 
-\paragraph{Thermal emission in the THz range}
-The blackbody radiation is governed by the Planck law % TODO cite
-\begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{\h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
-%$$ ,$$ TODO
-from which follows that the luminosity in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature.  Furthermore, all Planck oscillators in the THz range are already fully saturated:
-%  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
-$$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \gg h f \approx 4.13 \text{ meV}), $$
-and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; whereas the total power scales as $T^{4}$ (Stefan-Bolzmann law). Sources other than thermal have to be used.
 
 
 
@@ -112,10 +114,10 @@ The propagation delay through $2\times 3$ mm of sapphire is roughly 70 ps, which
 In the experiment, we observed substantial deviation  % TODO add some experimental data and  and reference them here
 from the numerically predicted results, which were moreover sensitive to subtle changes in the parameters. We propose  several explanations for the experimental errors:
 \begin{enumerate}
-\item{The geometrical beam divergence can not be fully compensated by the transfer functions [$A(f)$, $B(f)$] of separate sapphire slabs. The deconvolution algorithm can amplify or attenuate different frequency components to compensate for the  longitudinal focus displacement of the first echo compared the focus of the first pulse. However, due to the hyperbolic shape of the gaussian beam with Rayleigh length $z_{R}$ similar to the sapphire thickness\footnote{As an approximate example, for the main frequency component $f = 1.5$ THz with wavelength $\lambda = c / f \approx 200$ $\upmu$m, for $\vartheta \lesssim 0.15$ rad as an estimated divergence of the beam from its axis, the Rayleigh half-length of a gaussian beam would be $z_{R} = \frac{\lambda}{\pi \vartheta^{2}} \gtrsim 2.8$ mm, i.e. roughly the thickness of the thinner sapphire.}, the overall effect of two sapphires can not be linearly predicted from two separate measurements of each of them.} 
+\item{The geometrical beam divergence can not be fully compensated by the transfer functions [$A(f)$, $B(f)$] of separate sapphire slabs. The deconvolution algorithm can amplify or attenuate different frequency components to compensate for the  longitudinal focus displacement that the first echo has compared to the focus of the first pulse. However, due to the hyperbolic shape of the gaussian beam with Rayleigh length $z_{R}$ similar to the sapphire thickness\footnote{As an approximate example, for the main frequency component $f = 1.5$ THz with wavelength $\lambda = c / f \approx 200$ $\upmu$m, for $\vartheta \lesssim 0.15$ rad as an estimated divergence of the beam from its axis, the Rayleigh half-length of a gaussian beam would be $z_{R} = \frac{\lambda}{\pi \vartheta^{2}} \gtrsim 2.8$ mm, i.e. roughly the thickness of the thinner sapphire.}, the overall effect of two sapphires can not be linearly predicted from two separate measurements of each of them.} 
  \item{The possible asymmetry of the sample with regards to the beam axis can substantially bias the measured reflectivity. This happened during the characterisation of the dielectric spheres, when the sapphire distance was defined by a $\approx$60$\upmu$m teflon spacer. The nonuniform size of the resonators required to attach them to one of the sapphire windows, which resulted in that their average and sub-average size fraction had strongly asymmetric position. } 
  \item{The sapphire slabs can influence the near field of resonances in some samples. This error should not manifest in transversally homogeneous samples (i.e. slabs), nor in samples that are made of dielectrics with much higher permittivity than that of sapphire. However for some samples such as metamaterial fishnets or other metallic resonators, the simulations confirm that resonant frequencies can be substantially altered by the vicinity of a dielectric. }
- \item{Finally, it follows from Eq. (\ref{}) % TODO reference the slab-index-retrieval procedure
+ \item{Finally, it follows from Eq. (\ref{eq_slab_index_retrieval}) % TODO reference the slab-index-retrieval procedure
  that the reliable reflection data can only be retrieved at frequencies where also the transmission amplitude is strong enough for the signal not to be dominated by noise. }
  \end{enumerate}
 %}}}
@@ -127,7 +129,7 @@ Dielectric or metallic structures can be made by micromachining a thin polished 
 One thus faces a technologically challenging task of writing a structure with 10--30 $\upmu$m resolution into a slab of a similar thickness. If the slab is made of a dielectric, it is usually very brittle and sensitive to breaking due to thermal stresses. Metallic slab is  
 % In the following section, the properties of periodic dielectric rods are discussed. 
 
-A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_ebars_exp}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
+A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
 % TODO
 \subsection{Fabrication and sieving of dielectric sphere samples}
 Compared to the dielectric bars, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying process}. In contrast with the expensive and time-consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. The following technique in a collaborating laboratory in France %% Todo reference to Patrick's group somehow
