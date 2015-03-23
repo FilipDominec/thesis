@@ -1,11 +1,14 @@
 \section{Terahertz time-domain spectroscopy}
-\subsection{Overview of the method}
+\subsection{Overview of the method}%{{{
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
-The basic principle is similar to that used in the FDTD simulations. A short, broadband pulse impinges the sample, one part of its energy is transmitted, another reflected and the rest is absorbed in the sample. The transmitted pulse is then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse to obtain transmission.
 
-The reflection could not be directly measured in the setup described, but it can be retrieved from the subsequent echoes introduced by surrounding the studied structure by thick transparent slabs of sapphire. The principle and limitations of this method are discussed.
+% Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
+
+The basic principle is similar to that used in the FDTD simulations. A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse to obtain transmission.
+
+The reflection could not be directly measured in the setup described, but it could be retrieved from the subsequent echoes introduced by surrounding the studied structure by thick transparent slabs of sapphire. The principle and limitations of this method are discussed.
 % TODO 
-
+%}}}
 \subsection{Terahertz pulse generation}%{{{
 \begin{figure} \caption{img/exp\_THz\_sampling.pdf}  \centering \includegraphics[width=10cm]{img/exp_THz_sampling.pdf} \end{figure} \clearpage
 
@@ -26,7 +29,7 @@ The emission efficiency can be improved when the leading edge is followed by sim
 
 As the pulsed laser we used \textit{Coherent Mira} femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs.  %% TODO verify
 The repetition rate was 70 MHz, giving the pulse energy of roughly 7 nJ, sufficient to induce transient photoconductivity.
-
+%}}}
 \subsection{Vacuum chamber and sample holder}%{{{
 Propagation of terahertz waves in air is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In time domain, the absorption manifested as a damped ringdown (with opposite polarity at the position of the main THz excitation pulse). 
 % TODO figure from my web
@@ -39,8 +42,7 @@ To allow enough clearance for bigger devices surrounding the sample, such as a l
 
 It is well known that a beam passing through a focus acquires additional phase due to  the Gouy shift, but as every transmission measurement was normalized against the free-space propagation anyway, this phase difference always cancelled out. 
 %}}}
-
-\subsection{Terahertz detection setup}%{{{b
+\subsection{Terahertz detection setup}%{{{
 Before the laser pulse entered the vacuum chamber to induce THz emitter photoexcitation, a small part of its energy was separated by a microscope glass into the \textit{sampling} branch  (see \texttt{BS1} in Fig. \ref{fg_exp}). 
 
 
@@ -52,10 +54,8 @@ which is needed for synchronous detection, and impinged a terahertz emitter. The
 \end{itemize}
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
 %}}}
-
-\subsection{Signal processing and acquisition}%{{{b
+\subsection{Signal processing and acquisition}%{{{
 %}}}
-
 \subsection{Scheme for simultaneous measurement of reflection and transmission}%{{{
 It is theoretically possible to measure the \textit{reflection spectrum} using TDTS in a similar way the transmission spectrum was measured. However, due to the complexity of such a setup and sensitivity to sample displacement, we did not use a second sampling branch for reflected signal. Instead of using two sampling schemes, it is possible to recover the amplitude and phase reflectivity of a sample by stacking it between a pair of thick (3 and 6 mm) sapphire slabs. Thanks to the relatively high refractive index of sapphire ($N \approx 3.4$), these slabs introduce several distinct  echoes into the transmission signal.
 
@@ -81,22 +81,7 @@ from the numerically predicted results, which were moreover sensitive to subtle 
 %}}}
 \section{Sample preparation} 
 Several types of structures studied in this thesis were experimentally measured to compare the results with the simulations. The samples were manufactured by our group or by one of the collaborating groups by different techniques which are discussed here. 
-\subsection{Cutting of dielectric bars}
-Dielectric or metallic structures can be made by micromachining a thin polished slab of the given material. Metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
-
-One thus faces a technologically challenging task of writing a structure with 10--30 $\upmu$m resolution into a slab of a similar thickness. If the slab is made of a dielectric, it is usually very brittle and sensitive to breaking due to thermal stresses. Metallic slab is  
-% In the following section, the properties of periodic dielectric rods are discussed. 
-
-A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
-% TODO
-\subsection{Fabrication and sieving of dielectric sphere samples}
-Compared to the dielectric bars, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying process}. In contrast with the expensive and time-consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. The following technique in a collaborating laboratory in France %% Todo reference to Patrick's group somehow
-provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 100 $\upmu$m. 
-
-\begin{figure}[ht] \caption{Microphotograph of the TiO$_{2}$ spheres after preliminary sieving} \label{fg_microphoto} \centering 
-\includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
-\end{figure}
-
+\subsection{Optical determination of microparticle statistics}
 \paragraph{Spray-dry process}%{{{
 Rutile (TiO$_{2}$) was ground to a powder of sub-microscopic particles. 
 A suspension of these nanoparticles in ethanol was sprayed into flame. The average size of particles was determined by the solid concentration in the suspension, by feed rate and by gas flow.It immediately formed spherical droplets, which dried up and sintered in the hot air.  
@@ -165,17 +150,36 @@ With the acoustic power and frequency correctly adjusted, the particles formed a
 The amount of particles in one batch was limited to ca. 10--20 mm$^{3}$, otherwise the sieve would be covered with a layer too thick, which could not be efficiently lifted by the acoustic pressure.
 It could however be remedied by tilting the apparatus. With a tilt of 5--10 degrees, the bulk of particles then accumulated near one side, leaving most of the sieve surface free for sieving the moving fraction of particles. According to the small amount of particles required for the terahertz spectroscopy measurements, it is however advisable to sort a batch in order of 1--3 mm$^{3}$.
 %}}}
-\subsection{Automatic determination of microparticle statistics}
+\subsection{Optical determination of microparticle statistics}
+%\paragraph{}%{{{
 \begin{figure}[ht] \caption{\textbf{a)} A section of a microphotograph of sample before sieving, \textbf{b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
 \textbf{a)}\includegraphics[height=5cm]{img/technology/imagej_photo.pdf}
 \textbf{b)}\includegraphics[height=5cm]{img/technology/imagej_found.pdf}
 \end{figure}
 
-We developed a numerical method to measure the histogram of size distribution of the particles based on a calibrated microphotograph of the sample such as in Fig. \ref{fg_sievingstats}a. This enabled to assess the sieving precision and also to predict the realistic signal by simulation.
+We developed a numerical method to measure the histogram of the particle size distribution, based on a calibrated microphotograph of the sample such as in Fig. \ref{fg_sievingstats}a. This enabled to assess the sieving precision and also to predict the realistic signal by simulation.
+% TODO add link to http://f.dominec.eu/granulo/index.html
 \add{ TODO}
 % TODO  add the 4-fold png figure from web
+%}}}
 
-\subsection{Laser micro-machining of sieves and fish-net metamaterial layers}
+\subsection{Cutting of dielectric bars}%{{{ ===========================TODO
+Dielectric or metallic structures can be made by micromachining a thin polished slab of the given material. Metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
+
+One thus faces a technologically challenging task of writing a structure with 10--30 $\upmu$m resolution into a slab of a similar thickness. If the slab is made of a dielectric, it is usually very brittle and sensitive to breaking due to thermal stresses. Metallic slab is  
+% In the following section, the properties of periodic dielectric rods are discussed. 
+
+A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
+% TODO
+\subsection{Fabrication and sieving of dielectric sphere samples}
+Compared to the dielectric bars, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying process}. In contrast with the expensive and time-consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. The following technique in a collaborating laboratory in France %% Todo reference to Patrick's group somehow
+provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 100 $\upmu$m. 
+
+\begin{figure}[ht] \caption{Microphotograph of the TiO$_{2}$ spheres after preliminary sieving} \label{fg_microphoto} \centering 
+\includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
+\end{figure}
+%}}}
+\subsection{Laser micro-machining of sieves and fish-net metamaterial layers}%{{{
 \begin{figure}[ht] \caption{\textbf{a)} Laser micromachining the steel sieve, and \textbf{b)} the resulting sieves} \label{fg_microfab} \centering 
 \textbf{a)}\includegraphics[height=5cm]{img/technology/sieve2_drilling_m.pdf}
 \textbf{b)}\includegraphics[height=5cm]{img/technology/steel_sieve_on_paper.pdf}
@@ -184,5 +188,5 @@ We developed a numerical method to measure the histogram of size distribution of
 To achieve the required precision of sieving, we fabricated the sieves by femtosecond laser drilling of 20 $\upmu$m thick stainless steel sheets (Fig. \ref{fg_microfab}). 
 %These sieves then were employed in a device that subjected the microsphere sample to acoustic vibrations, improving the speed of the demanding sieving process to acceptable level (Fig. \ref{fg_microfab}b,c).
 \add{ TODO}
-
+%}}}
 
