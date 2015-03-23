@@ -1,87 +1,12 @@
-\section{Terahertz measurement} % TODO
-% TODO describe what follows in this section
-
-\subsection{Short review of the terahertz technology}
-The terahertz range in the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has found relatively small application in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. 
-
-Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale. The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  % There are numerous ways to generate  
-
-There is a great number of literature that describes different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}, % TODO add
-and many of them are also, with more or less detail, discussed in previous doctoral theses written in our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
-In the following paragraphs try to briefly review the terahertz technology in a systematic manner.
-
-\add{
-
-\paragraph{Thermal emission in the THz range}
-Firstly, let us show why thermal sources are not used in the THz range. The blackbody radiation is governed by the Planck law % TODO cite
-\begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
-%$$ ,$$ TODO
-from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=300$ K).  Furthermore, all Planck oscillators at the frequency $f$ of e.g. 1 THz are already fully saturated:
-%  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
-$$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
-and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Sources other than thermal have to be used.
-
-\paragraph{Kinetic energy of electron beam}
-One class of devices uses the kinetic energy of an electron beam propagating in vacuum; the acceleration of the electrons is caused by transverse magnetic field. The simplest example is the cyclotron, where coherent THz radiation is emitted when a short bunch of electrons is passing through the bends in the particle path. Another example is the free electron laser with the electron bunches passing through a periodically-poled magnet called \textit{wiggler}. 
-Both types of devices provide excellent brightness and tunability, but they are rather large-scale facilities. 
-%In both devices, the electrons have to propagate in bunches. 
-
-Smaller sources of radiation up to the THz range are the microwave vacuum tubes: \textit{gyrotron}, backward wave oscillators (BWO, also known as \textit{carcinotrons}), and \textit{klystron}.
-
-of the O- and M-type, 
-		M-type, the most powerful, (M-BWO) and the O-type (O-BWO). The O-type delivers typically power in the range of 1 mW at 1000 GHz to 50 mW at 200 GHz. 
-
-\paragraph{Conversion of electromagnetic wave}
-Another broad group of THz sources uses nonlinear response of matter to convert between the frequencies of radiation. In such a case, the energy is provided by incoming radiation. The nonlinearity may be introduced by a P-N transition of a microwave diode, or by intrinsic properties of the material.
-
-%The frequency range of diode operation is limited
-
-%Tunable THz-wave parametric generation
-%Optical rectification CW
-%Quasi-Phase- Matching Crystals (Fanned-out PPLN)
-
-\paragraph{Macroscopic electric charge}
-Biased and unbiased photoconductive switches
-pulsed/cont
-
-\paragraph{Transition between quantum states}
-%THz lasers
-%p-Ge laser
-%Quantum cascade lasers
-
-\paragraph{Specifics of pulsed THz sources}
-
-
-Tilted Optical Pulses in Lithium
-Niobate
-
-\paragraph{Other THz sources}
-
-Coherent THz Radiation from Superconductors
-Cerenkov-like emission of THz radiation
-
-Terahertz radiation from shocked materials
-
-
-
-
-
-\paragraph{Terahertz detectors}
-The detectors of radiation 
-1.3.1 Photoconductive receiving antennas . . . . . . .
-1.3.2 Electrooptic sampling . . . . . . . . . . . . . . .
-1.3.3 Magnetooptic sampling . . . . . . . . . . . . . .
-1.3.4 Terahertz-induced lensing . . . . . . . . . . . .
-1.3.5 Bolometers
-
-}
-
-\subsection{Terahertz time-domain spectroscopy}
+\section{Terahertz time-domain spectroscopy}
+\subsection{Overview of the method}
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
-The approach is similar to that used in the FDTD simulations. A short, broadband pulse impinges the sample, one part of its energy is transmitted, another reflected and the rest is absorbed in the sample. The transmitted pulse is then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse.
+The basic principle is similar to that used in the FDTD simulations. A short, broadband pulse impinges the sample, one part of its energy is transmitted, another reflected and the rest is absorbed in the sample. The transmitted pulse is then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse to obtain transmission.
+
+The reflection could not be directly measured in the setup described, but it can be retrieved from the subsequent echoes introduced by surrounding the studied structure by thick transparent slabs of sapphire. The principle and limitations of this method are discussed.
 % TODO 
 
-\subsection{Terahertz generation and detection setup}%{{{
+\subsection{Terahertz pulse generation}%{{{
 \begin{figure} \caption{img/exp\_THz\_sampling.pdf}  \centering \includegraphics[width=10cm]{img/exp_THz_sampling.pdf} \end{figure} \clearpage
 
 %The experimental geometry is somewhat similar to that used for FDTD simulations above. Also the results are similar: we get the complex amplitude transmission spectrum,  
@@ -90,14 +15,47 @@ The approach is similar to that used in the FDTD simulations. A short, broadband
 \end{figure}
 
 % TODO laser equipment
-The crucial component of the TDTS generation and detection setup is the source of ultrashort optical pulses. We used \textit{Coherent Mira} femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs. The optical pulses were split at beamsplitter (BS1) into the \textit{probe} branch and the \textit{sampling} branch. 
+The crucial component of the TDTS setup is the source of ultrashort optical pulses. We used an \textit{interdigitated} emitter, which consisted of a GaAs slab % thickness?, material?
+with metallisation on one side forming a dense array of thin metallic wires. Odd and even wires are connected to opposite terminals of a 15-20 V~power supply. 
+
+An impinging optical pulse with femtosecond duration excites charge carriers in GaAs, and the charge stored in the interdigitated electrodes discharges. Odd gaps between the wires are covered with nonconductive paint, so the photocurrent flows only in the even gaps (without the paint) and it has nonzero macroscopic component. 
+
+The leading edge of the photocurrent emits radiation typically in the form of a subpicosecond, half-cycle peak of electric field, polarized perpendicular to the wires. 
+The emission efficiency can be improved when the leading edge is followed by similarly sharp falling edge of the current, again in the order of one picosecond. For this purpose one needs to select a material with a very short lifetime of carriers, but a relatively high mobility thereof. Specially treated gallium arsenide slabs with lattice disordered either by ionizing radiation, or by growing at low temperature, was used. The resulting THz waveform then resembled a full-cycle with a sharp maximum and slightly dilated minimum. Spectral amplitude of the emitted pulse was sufficient for measurement roughly between 100 GHz and 3 THz.
+% TODO figure of the pulse and the spectrum
+
+As the pulsed laser we used \textit{Coherent Mira} femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs.  %% TODO verify
+The repetition rate was 70 MHz, giving the pulse energy of roughly 7 nJ, sufficient to induce transient photoconductivity.
+
+\subsection{Vacuum chamber and sample holder}%{{{
+Propagation of terahertz waves in air is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In time domain, the absorption manifested as a damped ringdown (with opposite polarity at the position of the main THz excitation pulse). 
+% TODO figure from my web
+
+The whole terahertz wave path has to be confined in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
+
+The THz emitting region was of comparable diameter as the wavelength of the radiation used, so beam diffraction led to a broad angle of the output beam in the order of 1 radian. The nearly spherical wave was reflected from an ellipsoidal mirror and focused again at a sample. Upon passing through the sample, it was collected by an identical ellipsoidal mirror and focused at the detector. 
+
+To allow enough clearance for bigger devices surrounding the sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
+
+It is well known that a beam passing through a focus acquires additional phase due to  the Gouy shift, but as every transmission measurement was normalized against the free-space propagation anyway, this phase difference always cancelled out. 
+%}}}
+
+\subsection{Terahertz detection setup}%{{{b
+Before the laser pulse entered the vacuum chamber to induce THz emitter photoexcitation, a small part of its energy was separated by a microscope glass into the \textit{sampling} branch  (see \texttt{BS1} in Fig. \ref{fg_exp}). 
+
+
+The optical pulses were split at beamsplitter (BS1) into the \textit{probe} branch and the . 
 \begin{itemize}
  \item{The probe branch passed through a mechanical chopper, % TODO WRONG
-which is needed for synchronous detection, and impinged a terahertz emitter. The emitter, a biased interdigitated antenna on a fast-switching semiconductor, responds to an optical pulse by fast discharging and emitting of a broadband electromagnetic pulse with spectral components from 100 GHz to 3 THz. This pulse, denoted by red area to indicate its diffractive nature, passes through the sample under study followed by a pellicle beamsplitter (PBS) and finally impinges a ZnTe nonlinear crystal. } 
+which is needed for synchronous detection, and impinged a terahertz emitter. The emitter, a biased interdigitated antenna on a fast-switching semiconductor, responds to an optical pulse by fast discharging and emitting of a broadband electromagnetic pulse with spectral components from . This pulse, denoted by red area to indicate its diffractive nature, passes through the sample under study followed by a pellicle beamsplitter (PBS) and finally impinges a ZnTe nonlinear crystal. } 
  \item{The \textit{sampling} branch reflects from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the first branch. Then it is properly attenuated at filter (F1) and its polarisation is converted from linear to a circular one on a quarter-wave plate (QWP). The pellicle beamsplitter directs the optical beam along the axis of the terahertz beam.} 
 \end{itemize}
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
 %}}}
+
+\subsection{Signal processing and acquisition}%{{{b
+%}}}
+
 \subsection{Scheme for simultaneous measurement of reflection and transmission}%{{{
 It is theoretically possible to measure the \textit{reflection spectrum} using TDTS in a similar way the transmission spectrum was measured. However, due to the complexity of such a setup and sensitivity to sample displacement, we did not use a second sampling branch for reflected signal. Instead of using two sampling schemes, it is possible to recover the amplitude and phase reflectivity of a sample by stacking it between a pair of thick (3 and 6 mm) sapphire slabs. Thanks to the relatively high refractive index of sapphire ($N \approx 3.4$), these slabs introduce several distinct  echoes into the transmission signal.
 
@@ -163,7 +121,7 @@ Triple sieving on commercial sieves in Bordeaux, weaved from stainless steel wir
 \end{figure}
 In the following, we approximated the dielectric particles by ellipsoids with three (generally different) half-axes $$r_a \leq r_b \leq r_c.$$ For the purpose of sieving, only the values of the shortest two axes, $r_a$ and $r_b$, decide whether the particle can pass through the sieve. The longest ellipsoid axis $r_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each 3-D particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2r_a$, and by its \textit{major axis} $\equiv 2r_b$. For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and major axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
 
-The resonance frequency of a dielectric resonator depends on all three half-axes, $r_a \leq r_b \leq r_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $r_a \leq r_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves of square/lozenge holes with the effect of a couple of sieves of micromachined square/elliptic holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
+The resonance frequency of a dielectric resonator depends on all three half-axes, $r_a \leq r_b \leq r_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $r_a \leq r_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves of square/lozenge holes with the effect of a couple of sieves of micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
 \begin{figure}[ht] \caption{\textbf{a)} \textbf{b)} } \label{fg_double_sieving} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_double_sieving_fractions.pdf}
 \end{figure}
