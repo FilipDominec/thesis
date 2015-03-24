@@ -1,34 +1,30 @@
 \section{Terahertz time-domain spectroscopy}
 \subsection{Overview of the method}%{{{
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
-
 % Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
 
-The basic principle is similar to that used in the FDTD simulations. A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup. The resulting transmission is computed by means of Fourier transform as a complex spectrum, which is to be normalized by the spectrum of the incident pulse to obtain transmission.
+The basic principle of the measurement was shared with the scattering-parameter retrieval in FDTD simulations. % TODO add ref
+ A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup, and processed to obtain the transmission amplitude and phase as functions of frequency.
 
-The reflection could not be directly measured in the setup described, but it could be retrieved from the subsequent echoes introduced by surrounding the studied structure by thick transparent slabs of sapphire. The principle and limitations of this method are discussed.
+The reflection could not be directly measured in the setup described, but at the end of this section an indirect method is discribed that allows to compute the equivalent sample properties from the subsequent echoes, that are introduced when the sample is surrounded by thick transparent slabs of sapphire. 
 % TODO 
 %}}}
 \subsection{Terahertz pulse generation}%{{{
-\begin{figure} \caption{img/exp\_THz\_sampling.pdf}  \centering \includegraphics[width=10cm]{img/exp_THz_sampling.pdf} \end{figure} \clearpage
-
-%The experimental geometry is somewhat similar to that used for FDTD simulations above. Also the results are similar: we get the complex amplitude transmission spectrum,  
-\begin{figure}[ht] \caption{\textit{Experimental setup for terahertz time-domain spectroscopy}} \label{fg_exp} \centering 
-	\includegraphics[width=12cm]{img/exp_THz_sampling.pdf}
-\end{figure}
-
 % TODO laser equipment
-The crucial component of the TDTS setup is the source of ultrashort optical pulses. We used an \textit{interdigitated} emitter, which consisted of a GaAs slab % thickness?, material?
-with metallisation on one side forming a dense array of thin metallic wires. Odd and even wires are connected to opposite terminals of a 15-20 V~power supply. 
+A vital component of the TDTS setup is a source of ultrashort optical pulses. 
+We used \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs.  %% TODO verify
+The repetition rate was 70 MHz, giving the pulse energy of roughly 7 nJ, sufficient to induce transient photoconductivity.
 
-An impinging optical pulse with femtosecond duration excites charge carriers in GaAs, and the charge stored in the interdigitated electrodes discharges. Odd gaps between the wires are covered with nonconductive paint, so the photocurrent flows only in the even gaps (without the paint) and it has nonzero macroscopic component. 
+The optical pulses were converted to the THz range by \textit{interdigitated} emitter, which consisted of a gallium arsenide slab % thickness?, material?
+with metallisation on one side forming a dense array of thin metallic wires. The voltage between the odd and even wires was 15-20 V, and was modulated in time to increase the noise-resistance of the detection system as described below.
+
+An impinging optical pulse with femtosecond duration excites charge carriers, and the charge stored in the interdigitated electrodes discharges through the illuminated surface % radius of optical focus?
+of the GaAs slab. To ensure the photocurrent flows only in the even gaps has only one direction, every second gap between the wires was covered with nonconductive opaque paint.
 
 The leading edge of the photocurrent emits radiation typically in the form of a subpicosecond, half-cycle peak of electric field, polarized perpendicular to the wires. 
 The emission efficiency can be improved when the leading edge is followed by similarly sharp falling edge of the current, again in the order of one picosecond. For this purpose one needs to select a material with a very short lifetime of carriers, but a relatively high mobility thereof. Specially treated gallium arsenide slabs with lattice disordered either by ionizing radiation, or by growing at low temperature, was used. The resulting THz waveform then resembled a full-cycle with a sharp maximum and slightly dilated minimum. Spectral amplitude of the emitted pulse was sufficient for measurement roughly between 100 GHz and 3 THz.
 % TODO figure of the pulse and the spectrum
 
-As the pulsed laser we used \textit{Coherent Mira} femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs.  %% TODO verify
-The repetition rate was 70 MHz, giving the pulse energy of roughly 7 nJ, sufficient to induce transient photoconductivity.
 %}}}
 \subsection{Vacuum chamber and sample holder}%{{{
 Propagation of terahertz waves in air is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In time domain, the absorption manifested as a damped ringdown (with opposite polarity at the position of the main THz excitation pulse). 
@@ -36,25 +32,34 @@ Propagation of terahertz waves in air is impeded by absorption of water vapour, 
 
 The whole terahertz wave path has to be confined in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
 
-The THz emitting region was of comparable diameter as the wavelength of the radiation used, so beam diffraction led to a broad angle of the output beam in the order of 1 radian. The nearly spherical wave was reflected from an ellipsoidal mirror and focused again at a sample. Upon passing through the sample, it was collected by an identical ellipsoidal mirror and focused at the detector. 
+The THz emitting region was of comparable diameter as the wavelength of the radiation used, so beam diffraction led to a broad angle of the output beam in the order of 1 radian. The nearly spherical wave was reflected from an ellipsoidal % TODO check if it was not paraboloidal
+ mirror and focused again at a sample. Upon passing through the sample, it was collected by an identical ellipsoidal mirror and focused at the detector. 
+To allow enough clearance for a bigger instrumentation surrounding the sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
 
-To allow enough clearance for bigger devices surrounding the sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
 
-It is well known that a beam passing through a focus acquires additional phase due to  the Gouy shift, but as every transmission measurement was normalized against the free-space propagation anyway, this phase difference always cancelled out. 
 %}}}
 \subsection{Terahertz detection setup}%{{{
-Before the laser pulse entered the vacuum chamber to induce THz emitter photoexcitation, a small part of its energy was separated by a microscope glass into the \textit{sampling} branch  (see \texttt{BS1} in Fig. \ref{fg_exp}). 
 
+%The experimental geometry is somewhat similar to that used for FDTD simulations above. Also the results are similar: we get the complex amplitude transmission spectrum,  
+\begin{figure}[ht] \caption{\textit{Experimental setup for terahertz time-domain spectroscopy}} \label{fg_exp} \centering 
+	\includegraphics[width=13cm]{img/exp_THz_sampling.pdf}
+\end{figure}
 
-The optical pulses were split at beamsplitter (BS1) into the \textit{probe} branch and the . 
-\begin{itemize}
- \item{The probe branch passed through a mechanical chopper, % TODO WRONG
-which is needed for synchronous detection, and impinged a terahertz emitter. The emitter, a biased interdigitated antenna on a fast-switching semiconductor, responds to an optical pulse by fast discharging and emitting of a broadband electromagnetic pulse with spectral components from . This pulse, denoted by red area to indicate its diffractive nature, passes through the sample under study followed by a pellicle beamsplitter (PBS) and finally impinges a ZnTe nonlinear crystal. } 
- \item{The \textit{sampling} branch reflects from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the first branch. Then it is properly attenuated at filter (F1) and its polarisation is converted from linear to a circular one on a quarter-wave plate (QWP). The pellicle beamsplitter directs the optical beam along the axis of the terahertz beam.} 
-\end{itemize}
+Before the laser pulse entered the vacuum chamber to induce THz emitter photoexcitation, a small part of its energy was separated by a reflection from a microscope glass (\texttt{BS1} in Fig. \ref{fg_exp}) into the \textit{sampling} branch. 
+
+The pulse in the \textit{sampling} branch reflected from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the terahertz pulse. Then it was attenuated at a filter (\texttt{F1}) and its polarisation was converted from linear to a circular one on a quarter-wave plate (\texttt{QWP}). The pellicle beamsplitter (\texttt{PBS}) directed the optical beam along the axis of the terahertz beam. 
+
+The electric field of the terahertz pulse induced a slight transient change in the permittivity tensor of the zinc telluride crystal (ZnTe). The much weaker and shorter optical pulse was modified by this change, acquiring diagonal ellipticity. A Wollaston prism can be used to separate the two diagonal components of the resulting elliptic-polarized light. The difference between these two signals, if small modulation is assumed, proportional to the amplitude of the electric field. This allows to sample electric field with a theoretical temporal resolution given by the duration of the optical pulse, but using a standard intensity detection using a pair of silicon diodes.   
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
+
+
+
+
+
 %}}}
 \subsection{Signal processing and acquisition}%{{{
+
+It is well known that a beam passing through a focus acquires additional phase due to  the Gouy shift, but as every transmission measurement was normalized against the free-space propagation anyway, this phase difference always cancelled out. 
 %}}}
 \subsection{Scheme for simultaneous measurement of reflection and transmission}%{{{
 It is theoretically possible to measure the \textit{reflection spectrum} using TDTS in a similar way the transmission spectrum was measured. However, due to the complexity of such a setup and sensitivity to sample displacement, we did not use a second sampling branch for reflected signal. Instead of using two sampling schemes, it is possible to recover the amplitude and phase reflectivity of a sample by stacking it between a pair of thick (3 and 6 mm) sapphire slabs. Thanks to the relatively high refractive index of sapphire ($N \approx 3.4$), these slabs introduce several distinct  echoes into the transmission signal.
@@ -79,8 +84,8 @@ from the numerically predicted results, which were moreover sensitive to subtle 
  that the reliable reflection data can only be retrieved at frequencies where also the transmission amplitude is strong enough for the signal not to be dominated by noise. }
  \end{enumerate}
 %}}}
-\section{Sample preparation} 
-Several types of structures studied in this thesis were experimentally measured to compare the results with the simulations. The samples were manufactured by our group or by one of the collaborating groups by different techniques which are discussed here. 
+
+The samples were manufactured by our group or by one of the collaborating groups, by different techniques which are discussed here. 
 \subsection{Optical determination of microparticle statistics}
 \paragraph{Spray-dry process}%{{{
 Rutile (TiO$_{2}$) was ground to a powder of sub-microscopic particles. 
