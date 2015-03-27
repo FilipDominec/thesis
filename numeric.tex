@@ -5,7 +5,7 @@ Finite-difference time-domain (FDTD) is one of the simplest methods for solving 
 
 The actual computation is realized in consecutive time steps as an explicit arithmetic operation on each voxel, taking into account only the field values in the neighboring voxels and in the previous time step. This corresponds to iterating equations (\ref{eq_me3}), (\ref{eq_me4}) and (\ref{eq_ce}). % unclear - specify the field update routine exactly
 Most of the computation time is thus occupied by a simple and unconditional loop repeatedly updating all voxels, which allows to fully employ the processor cache and facilitates multi-processor parallelisation. FDTD is applicable to (possibly non-linear) problems where either the temporal evolution of the fields is searched for, or for linear systems where a frequency-domain response function can be found by Fourier-transforming the time-domain response. 
-\begin{figure}[h] \caption{A warning} \label{fg_parental} \centering 
+\begin{figure}[ht] \caption{A warning} \label{fg_parental} \centering 
 	\includegraphics[width=5cm]{img/Parental_Advisory_label.pdf}
 \end{figure}
 
@@ -17,7 +17,7 @@ simulations of a wave propagating in any periodic structure can make use of the 
 %}}}
 \paragraph{Spatial discretisation} %{{{
 The discretisation of the grid and of the time stepping introduces an error that obviously manifests in imprecise description of the structure being simulated (\textit{staircasing}) and also in the \textit{numerical dispersion} \cite{taflove2005book}, that is, in deviation of the light speed from the correct one at higher frequencies.  % todo is something missing?
-\begin{figure}[h] \caption{\textbf{a)}, \textbf{b)} Different two-dimensional grids are used for different polarizations of the fields. \textbf{c)} The three-dimensional Yee grid. The electric field components are expressed in the centers of the cube edges which they are parallel to, whereas the magnetic components are expressed in the centers of the cube which they are perpendicular to. Note the electric and magnetic fields are completely equal in this scheme; the description in terms of edges and faces could be interchanged if the brown cube was taken as the elementary one.} \label{fg_fdtd_yee} \centering 
+\begin{figure}[ht] \caption{\textbf{a)}, \textbf{b)} Different two-dimensional grids are used for different polarizations of the fields. \textbf{c)} The three-dimensional Yee grid. The electric field components are expressed in the centers of the cube edges which they are parallel to, whereas the magnetic components are expressed in the centers of the cube which they are perpendicular to. Note the electric and magnetic fields are completely equal in this scheme; the description in terms of edges and faces could be interchanged if the brown cube was taken as the elementary one.} \label{fg_fdtd_yee} \centering 
 	\includegraphics[width=10cm]{img/FDTD_Yee_grid_2d-3d.pdf}
 \end{figure}
 
@@ -116,13 +116,13 @@ In practice, a slightly more conservative choice is made that provides a safe ma
 \begin{equation} S:= 0.500 \quad \rightarrow \quad \varepsilon_r'(2\pi\,f)> 0.75, \quad \forall f \geq f_c. \label{eq_courant_choice}\end{equation}
 For any material with problematic high-frequency permittivity, $\varepsilon_r'(2\pi\,f_c) \in (0, 1)$, some low value of $S$ can be found that makes the simulation stable against the second rule. Simultaneously, the critical frequency shifts up, so potential problems with the first rule may be alleviated, too. This is however at the price of scaling up the number of required FDTD steps, so usually a reasonable change of the material definition is made instead of reducing $S$.
 
-\add{
-This is related to the \textit{Courant criterion} \cite{taflove2005book} that states for a nondispersive medium of permittivity $\varepsilon_r$ that 
-$$\Delta t = S\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $S < n_{min}/\sqrt{\text{dim}}$ % TODO
-i.e.
-$$c \Delta t / n_{min} < \Delta x / \sqrt{\text{dim}} $$
-which can be reformulated that   %TODO TODO
-}
+%%% TODO 
+%%% This is related to the \textit{Courant criterion} \cite{taflove2005book} that states for a nondispersive medium of permittivity $\varepsilon_r$ that 
+%%% $$\Delta t = S\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $S < n_{min}/\sqrt{\text{dim}}$ % TODO
+%%% i.e.
+%%% $$c \Delta t / n_{min} < \Delta x / \sqrt{\text{dim}} $$
+%%% which can be reformulated that   %TODO TODO
+
 %  /* Return true if the discretized Lorentzian ODE is intrinsically unstable,
 %     i.e. if it corresponds to a filter with a pole z~outside the unit circle.
 %     Note that the pole satisfies the quadratic equation:
@@ -265,24 +265,22 @@ For \textit{low-resolution simulations}, the situation is opposite: $\sigma_{LF}
 whereas $\varepsilon_{r\infty}$ and $\omega_p$ are to be determined from the previous two input parameters.
 } 
 \end{itemize}
-In this section we develop the strategy to determine the correct combinations of  $\gamma < 2\pi f_c$, $\varepsilon_{r\infty}$ and $\omega_p$.
 
-\add{
-
-%The value of $\gamma$ is also limited to be lower than $2\pi f_c$, so its value is fixed to be as close to $2\pi f_c$ as possible. % TODO ...is it? verify and add to the rules for stability written above
-The values of the plasma frequency $\omega_p$ as well as the  $\varepsilon_{r\infty}$ remain to be freely manipulated.
-
-        $$ \gamma = 2\pi f_c \cdot gammafactor $$
-        % test when unstable -> reduce self.gamma by 100 -> test again -> finally write automatic selection of value
-
-        % Knowing the scattering frequency gamma, the virtual plasma frequency is now determined by lfconductivity
-        $$ \omega_p = \sqrt{\frac{\gamma \sigma_{LF}}{\varepsilon_0}} $$
-
-        % The following step is required for FDTD stability: 
-        % Add such an high-frequency-epsilon value that shifts the permittivity to be positive at f_c
-        % If self.eps>1, the frequency where permittivity goes positive will generally be less than f_p
-        $$\varepsilon_{r\infty} = (\omega_p/(2\pi f_c))^2 \text{ or 1 if it would be lower} $$
-}
+%%% TODO
+%%% 	% In this section we develop the strategy to determine the correct combinations of  $\gamma < 2\pi f_c$, $\varepsilon_{r\infty}$ and $\omega_p$.
+%%% 	% The value of $\gamma$ is also limited to be lower than $2\pi f_c$, so its value is fixed to be as close to $2\pi f_c$ as possible. % TODO ...is it? verify and add to the rules for stability written above
+%%% 	 The values of the plasma frequency $\omega_p$ as well as the  $\varepsilon_{r\infty}$ remain to be freely manipulated.
+%%% 
+%%%     $$ \gamma = 2\pi f_c \cdot gammafactor $$
+%%%     % test when unstable -> reduce self.gamma by 100 -> test again -> finally write automatic selection of value
+%%% 
+%%%     % Knowing the scattering frequency gamma, the virtual plasma frequency is now determined by lfconductivity
+%%%     $$ \omega_p = \sqrt{\frac{\gamma \sigma_{LF}}{\varepsilon_0}} $$
+%%% 
+%%%     % The following step is required for FDTD stability: 
+%%%     % Add such an high-frequency-epsilon value that shifts the permittivity to be positive at f_c
+%%%     % If self.eps>1, the frequency where permittivity goes positive will generally be less than f_p
+%%%     $$\varepsilon_{r\infty} = (\omega_p/(2\pi f_c))^2 \text{ or 1 if it would be lower} $$
 
 %}}}
 \paragraph{Conductive media in FDTD} %{{{
@@ -325,21 +323,21 @@ Unbounded	& Negligible				& Resistive medium						& \shortstack{doped semiconduc
 %}}}
 
 
-\subsection{Finite-difference frequency-domain} % TODO%{{{
-
+\subsection{Finite-difference frequency-domain} % %{{{
 \mdf{
-One may regard the task of
-frequency-domain solution as eigenvector problem, where the
-% time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
-% eigenvalue. The fields $\EE, \HH$ may be optimized so that:
-% \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
-% and so for $\HH$ 
-Cons: inefficient, convergence not guaranteed
-Pros: very convenient once time-domain simulation is prepared
-In the latest meep version (1.2.1), nondispersive $\varepsilon_r, \sigma$ must be
-provided. This is facilitated by meep utils.py.
-
-The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+TODO
+%%% One may regard the task of
+%%% frequency-domain solution as eigenvector problem, where the
+%%% % time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
+%%% % eigenvalue. The fields $\EE, \HH$ may be optimized so that:
+%%% % \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
+%%% % and so for $\HH$ 
+%%% Cons: inefficient, convergence not guaranteed
+%%% Pros: very convenient once time-domain simulation is prepared
+%%% In the latest meep version (1.2.1), nondispersive $\varepsilon_r, \sigma$ must be
+%%% provided. This is facilitated by meep utils.py.
+%%% 
+%%% The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
 }%}}}
 
 
@@ -419,13 +417,13 @@ The most often mentioned issue of this method is that the solutions have infinit
 Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
 \paragraph{Simulation setup} %{{{
-\begin{figure}[h] \centering \caption{The setup of the FDTD simulation for the scattering parameter method} \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} 
+\begin{figure}[ht] \centering \caption{The setup of the FDTD simulation for the scattering parameter method} \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} 
 The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with direction parallel to the $z$-axis. The source temporal shape was not critical for the simulation; a very short pulse, with spectrum spanning from the GHz range to ca. 5 THz was used. 
 
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab is simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers (PML) to absorb all radiation (pink blocks).  The electric and magnetic fields are averaged and recorded by the monitor planes (blue rectangles) in each simulation step. 
 
 Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. Part of its energy is reflected back, part is passed through and part may be dissipated if the structure is lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to small enough level, the FDTD simulation is terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t$ as functions of frequency. Before this procedure is described, a modification important for the accuracy of this setup has to be made.
-\begin{figure}[h] \caption{An example result of a FDTD simulation, visualised using the \textit{Paraview} program. The dielectric sphere, shown in grey, was placed in a less usual, but equivalent position, being split by the periodic boundaries a grid. The electric field amplitude is shown in one quarter of the simulation volume, with clear enhancement near the dielectric surface (pink-red).}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
+\begin{figure}[ht] \caption{An example result of a FDTD simulation, visualised using the \textit{Paraview} program. The dielectric sphere, shown in grey, was placed in a less usual, but equivalent position, being split by the periodic boundaries a grid. The electric field amplitude is shown in one quarter of the simulation volume, with clear enhancement near the dielectric surface (pink-red).}  \centering \includegraphics[width=10cm]{img/sim_screen.pdf} \label{fg_} \end{figure} 
 %}}}
 \paragraph{Avoiding detection of near-field in monitor planes} %{{{
 %% Hynek's trick
@@ -450,7 +448,7 @@ To the knowledge of the author, such a shift of monitor planes has not been empl
 The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those of the second monitor plane will be $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are depicted with logarithmic scale in Fig. \ref{fg_sparam_timedomain}. 
 
 The excitation pulse operated for ca. 2 ps, and excited two distinct resonances in the structure that both decayed exponentially in time, but with different rate, as is outlined by thin line segments. About 35 ps after the source terminated, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time $t_{sim} =$ 150 ps.
-\begin{figure}[h] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
+\begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
 The spectral resolution is determined by the length of the time record. As a general rule, the higher quality a resonance has, the sharper spectral features correspond to it. The case of a short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem it follows that the energy part stored in the clipped resonance has to disappear from the frequency domain, too. As a result, characteristic ringing in the spectra occurs. Using the convolution theorem [see Sect. \ref{subsection_local_resp}], it can be deduced that applying rectangular window in timedomain results in convolution with the sinc function in the spectrum. 
 
@@ -464,7 +462,7 @@ Using a time window that has smooth shape does not improve spectral resolution, 
 which ensured that after 80 \% of the total simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing.
 
 By means of the Fourier transform, the fields can be converted to the frequency domain, which is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. The results are shown in Fig. \ref{fg_sparam_timedomain}. 
-\begin{figure}[h] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
+\begin{figure}[ht] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
 
 The monitor planes are assumed to be located in vacuum, and in the distance sufficient to eliminate the evanescent wave of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must form the right-handed triplet. % todo?
 At both monitor planes, the forward and backward wave are linearly superposed as ilustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by the following relation: 
@@ -477,7 +475,7 @@ At both monitor planes, the forward and backward wave are linearly superposed as
 The dimension constant $Z_0$ stands for the \textit{vacuum impedance}, i.e. ratio of the electric and magnetic field of a freely propagating wave. Its physical value is $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 4\pi c 10^{-7} \approx 376.7$ $\Upomega$ (but in the actual FDTD simulations, the built-in convention of $Z_0 = 1$ was maintained).
 
 The wave separation result is plotted in Fig. \ref{fg_ampli}, and it allows for crude verification of the computation validity: The incident wave $A^{(in 1)}(f)$ should have smooth spectrum, as it is directly generated by the broadband source. The reflected wave $A^{(out 1)}(f)$ and the transmitted one $A^{(out 2)}(f)$ should be somewhat complementary to each other, with squares of their amplitude summing up to the square of the incident wave (or less in case of losses). The fourth wave $A^{(in 2)}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the PML at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.
-\begin{figure}[h] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
+\begin{figure}[ht] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
 Finally one can easily compute the complex scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitude to the incident wave, respectively:
 \begin{equation} 
@@ -496,11 +494,12 @@ Finally one can easily compute the complex scattering parameters $r(f)$ and $t(f
 \mbox{\textbf{b)} \mbox{\vspace{3cm}\includegraphics[width=5cm]{img/EBars_STO_sketch.pdf}} }
 \label{fg_STO_bar_geom} \end{figure} 
 To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that was measured previously in our terahertz laboratory. % TODO when, add cite
-It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser into a 26 $\upmu$m thick strontium titanate (STO) slab. The periodicity was 96 $\upmu$m and the laser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match experimental data on the frequency axis.
+It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser % TODO what laser power and other parameters?
+into a 26 $\upmu$m thick strontium titanate (STO) slab. The periodicity was 96 $\upmu$m and the laser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match experimental data on the frequency axis.
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared to numerical reflection $r(f)$ and transmission $t(f)$ for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
 The curves computed using the FDTD simulation are compared to the experimental one in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in the high reflectivity ($|r| > 0.9$) in most of the spectrum which is caused by great impedance mismatch of the dielectric with regards to the surrounding air.
 
-\begin{figure}[h] \centering \caption{Parametric scan through the strontium titanate bar width, loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by thin white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
+\begin{figure}[ht] \centering \caption{Parametric scan through the strontium titanate bar width, loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by thin white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
 To briefly illustrate further possibilities of the numerical simulation, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as is shown in Fig. \ref{fg_STO_bar_modes}. The two-dimensional scan can reveal rich information about the underlying physics, most importantly that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so this exponent can be directly estimated from the sloped line the resonance peaks were fitted with. Only modes with mirror symmetry in the transverse direction ($y$-axis) couple to the wave.
 
 It can also be read from Fig. \ref{fg_STO_bar_modes} that around the bar width of 66 $\upmu$m, as denoted by a horizontal white line, there is actually a frequency cross-over of two modes, a narrow transverse one and a more broader longitudinal one. This explains why in Fig. \ref{fg_STO_bar_rt} the first resonance has an obviously asymmetric shape in the simulated and experimental spectra.  %% This would form a typical Fano resonance if the losses were lower.
@@ -514,27 +513,27 @@ To this end, we employ the Fresnel inversion and show a custom approach how to o
 %It shall be noted that although the structure consists of a single layer, transmission and reflection is measured in the form of radiated waves to compute effective parameters for an infinite structure. The energy transferred by near field (evanescent wave) is neglected here. 
 %The field components at the first monitor plane ($E_x^{(1)}, H_y^{(1)}$) and at the second one ($H_y^{(2)}, E_x^{(2)}$) give sufficient information for this, for instance at which frequencies are the photonic bands and which $K$-vector the wave will have. 
 
-\add{
-
 % todo check if symbols known
-The \textit{Fresnel coefficients} $r_1$, $t_1$ give the reflection and transmission from an interface of two homogeneous media described by their impedances $Z_1, Z_2$:
+\textit{Fresnel coefficients} $r_1$, $t_1$ give the reflection and transmission from an interface of two homogeneous media described by their impedances $Z_1, Z_2$:
 \begin{equation} r_1 = \frac{Z_2 - Z_1}{Z_2 + Z_1}, \quad \quad \quad t_1 = \frac{2 Z_2}{Z_2 + Z_1}, \quad \text{for perpendicular incidence}. \label{eq_fresnel}\end{equation}
 Note that in the literature, the Fresnel coefficients are often expressed in a slightly different form, using the index of refraction $N$ instead of wave impedance $Z$; this holds only for common nonmagnetic media where $\mu_r = 1$ and therefore $N \equiv \sqrt{\varepsilon_r \mu_r} = \sqrt{\mu_r/\varepsilon_r } \equiv 1/Z$ 
 The complex reflection $r_{s}$ and transmission $t_{s}$ of a homogeneous slab with given wave impedance $z$, index of refraction $n$ and thickness $d$ can be computed by summing the infinite series of internal reflections.
-% todo expr
-When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination}, yielding its index of refraction:
+
+\mdf{TODO add infinite sums for Fabry-Pérot resonances in a slab}
+
+% todo expressions -> develop from Fresnel to effparam -> Put into appendix?
+When the thickness of the slab $d$ and the frequency $f$ are known, the obtained formulae can be analytically inverted\cite{smith2002determination} %% TODO other earlier sources for NRW?
+, yielding its:
 \begin{equation} \Neff = \frac{\arccos\left(\frac{1 - r^2+t^2}{2 t}\right) \cdot sign + 2\pi \cdot branch}{2\pi f d / c}, \label{eq_fresinvn}\end{equation}
 and also its wave impedance:
 \begin{equation} \Zeff = \pm \sqrt{\frac{\left[(1+r)^2 - t^2\right]}{(1-r)^2 - t^2}}. \label{eq_fresinvz}\end{equation}
-The sign and branch of the refraction index, and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips in the spectra, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
-}
 
 Knowing the complex $r(f)$ and $t(f)$ along with the sample thickness $d$, we may use the
-classical algorithm to retrieve the effective parameters \cite{smith2002determination}:
+classical algorithm \cite{smith2002determination} to retrieve the effective index of refraction:
 \begin{equation}
-	N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k
-	\cdot d}
+	N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k d},
 \end{equation}
+and the effective impedance:
 \begin{equation}
 	Z_{\rm eff}~= \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}} \label{eq_Z}
 \end{equation}
@@ -543,14 +542,29 @@ where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
 
 %}}}
 \paragraph{Unambiguous arccosine} %{{{
-The well-known complication of the described approach is that the arccosine and square root are ambiguous functions \cite{simovski2009material}, yielding multiple solutions with different branches (indexed by an integer $m$) and signs. 
+The well-known complication of the described approach is that the arccosine and square root are ambiguous functions \cite{simovski2009material}.
+%, yielding multiple solutions with different branches (indexed by an integer $m$) and signs. 
+The sign and branch of the refraction index (indexed by an integer $m$), and the sign of wave impedance are not known a priori.  These three discrete-valued functions have to be selected during computation. The absence of abrupt skips within the allowed photonic bands, passivity requirements (Im$(N) \geq 0$, Re$(Z) \geq 0$) %% TODO check for the e+iomegat sign convention
+and the Kramers-Kronig relations are a good verification of a correct solution. We have written routines that perform this task automatically after each FDTD simulation is run. Not knowing the index of refraction is equivalent to expressing the folded dispersion curves, so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
 
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
-\begin{figure} \centering \caption{\add{\textbf{a,b)}} Real and imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L. (c) From top to bottom: example function  $\upsilon(f)$, its or- dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=\textwidth]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
+\begin{figure} \centering \caption{\textbf{a,b)} Real and imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L. \textbf{c)} From top to bottom: example function  $\upsilon(f)$, its or- dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
-We deal with a passive medium, consequently we impose Im$(\Neff)>0$ and Re$(\Zeff)>0$. %TODO WRONG, sign must be opposite
+We deal with a passive medium, consequently we impose Im$(\Neff)>0$ %TODO WRONG, sign must be opposite
+ and Re$(\Zeff)>0$. 
 To facilitate processing of the results, we adopted an approach different from earlier published works \cite{smith2002determination,chen2004robust}
-that ensures the continuity of effective parameters as a function of frequency \add{on pure mathematical basis}. This continuity is required by Kramers-Kronig relations for arbitrarily small losses introduced in the system. The important point consists in identifying the branch cuts of arccosine in the complex plane (Fig.\ \ref{fg_arccos}\add{a,b}). If, by increasing the frequency, the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut [i.e.  for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the imaginary part is non-zero and changes its sign. The continuity is restored if, from this frequency on, one reverses the sign of the arccos term \add{(point "R" in Fig. \ref{fg_arccos}c}). The situation is slightly more complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the imaginary part of \mdf{$\arccos(v)$} experiences again a step-like change of the sign and the real part reaches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. A correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch rlong with the sign, both being functions of frequency. The sign of the square root function is again chosen such than $Z$ is a continuous function of frequency.  
+that ensures the continuity of effective parameters as a function of frequency on pure mathematical basis. This continuity is required by Kramers-Kronig relations if nonzero (but otherwise arbitrarily small) losses are introduced to the system. 
+The important point consists in identifying the branch cuts of arccosine in the complex plane (Fig.\ \ref{fg_arccos}a,b). 
+\begin{enumerate}
+\item{
+If, by increasing the frequency, the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut [i.e.  for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the imaginary part is non-zero and changes its sign. The continuity is restored if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
+} 
+\item{
+The situation is slightly more complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the imaginary part of $\arccos(v)$ experiences again a step-like change of the sign and the real part reaches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
+} 
+ \end{enumerate}
+The correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch along with the sign, both being functions of frequency. The sign of the square root function is again chosen such than $Z$ is a continuous function of frequency.  
+
 
 %}}}
 \paragraph{Applicability of the method}%{{{
@@ -558,14 +572,14 @@ that ensures the continuity of effective parameters as a function of frequency \
 this method makes several assumptions that may not hold always. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice}. \cite{simovski2007bloch, andryieuski2012bloch} In other cases, usually in dense and metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers. \cite{rockstuhl2008transition}
 }
 
-\mdf{
-It is also known that the phase of the reflectance depends on the surface termination for noncontinuous materials. In the cases where the wavelength of the radiation in the material is much larger than the unit cell dimensions this ambiguity becomes small. A useful control of the effective sample properties can be made by changing the thickness of the sample (number of unit cells along the wave vector). We have chosen a symmetric geometry where the dielectric rod is positioned in the center of a square unit cell and the total thickness of the sample is an integer multiple of the unit cell size. In this geometry the retrieved effective parameters of our structure depend only negligibly on the number of unit cells that we put in the $z$-direction.
+% TODO add when the parameter $v$ passes too close to the ends of branch cuts ... 
 
-\cite{menzel2008retrieving} s-param methdo extended under oblique incidence
+
+%%% It is also known that the phase of the reflectance depends on the surface termination for noncontinuous materials. In the cases where the wavelength of the radiation in the material is much larger than the unit cell dimensions this ambiguity becomes small. A useful control of the effective sample properties can be made by changing the thickness of the sample (number of unit cells along the wave vector). We have chosen a symmetric geometry where the dielectric rod is positioned in the center of a square unit cell and the total thickness of the sample is an integer multiple of the unit cell size. In this geometry the retrieved effective parameters of our structure depend only negligibly on the number of unit cells that we put in the $z$-direction.
+%%% 
+%%% \cite{menzel2008retrieving} s-param methdo extended under oblique incidence
 
 % TODO add    A review of the scattering parameter extraction method with clarification of ambiguity issues in relation to metamaterial homogenization
-
-}
 
 %}}}
 \paragraph{Summary of the scattering parameters retrieval method} %{{{
@@ -579,25 +593,36 @@ It is also known that the phase of the reflectance depends on the surface termin
 %}}}
 
 \subsection{Current-driven homogenisation} % TODO
+\mdf{TODO
+
+\paragraph{Simulation setup}
+\paragraph{Retrieving the structure response}
+\paragraph{Identification of dispersion curves}
+\paragraph{Retrieval of effective permittivity out of dispersion curves}
+\paragraph{Comparison with the scattering-parameters method}
 % TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
-\begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwire_structure.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=10cm]{img/cdh_srrwirethick.pdf} \end{figure} \clearpage
+%\begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=8cm]{img/cdh_srrwire_structure.pdf} \end{figure} 
+%\begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=6cm]{img/cdh_srrwirethick.pdf} \end{figure} 
+}
 
 \subsection{Simulation of refraction on a wedge} % TODO
+\mdf{TODO
+\paragraph{Simulation setup}
+\paragraph{Derivation of the beam deflection angle}
+\paragraph{Why the beam deflection angle depends on beam direction}
+\paragraph{Analysis of spatio-temporal spectrum}
+\paragraph{Limitations of this method}
 %}}}
-
+}
 
 \subsection{Other effective parameter retrieval methods} % TODO
-\mdf{
+\mdf{TODO
+WPRM (Wave Propagation Retrieval Method), \cite{andryieuski2010homogenization}: review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena")
 
+only reflection (single-interface) problem, \cite{yang2010retrieving} 
 
-\cite{andryieuski2010homogenization} review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena"), presents the WPRM (Wave Propagation Retrieval Method)
-
-\cite{yang2010retrieving} also a single-interface problem
-
-\cite{2009new} - only transmission? examine
-
-/home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
+only transmission? \cite{hasar2009new} 
+%%% /home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
 }
 %}}}
 
