@@ -69,7 +69,8 @@
 \begin{equation} \nabla \times \E = -\frac{\partial \B} {\partial t}, \label{eq_me3}\end{equation}  
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \label{eq_me4}\end{equation}  
 where the $\E$ and $\HH$ are the electric and magnetic vector fields, and $\D$ and $\B$ are the electric and magnetic displacements,
- respectively. These two pairs of field and displacement are related in a similar way as a force is related to the deformation. The \textit{constitutive relations} depend on the properties of the medium the wave propagates in, and in vacuum they take the simplest possible form:
+ respectively. These two pairs of field and displacement are related in a similar way as a force is related to the deformation. %% TODO Simovski2007 regards the current J as force, and E as the deformation!
+ The \textit{constitutive relations} depend on the properties of the medium the wave propagates in, and in vacuum they take the simplest possible form:
 \begin{equation}		\D = \varepsilon_0	\E, \quad\quad\quad						\B = \mu_0			\HH,				 \label{eq_ce}\end{equation}
 the $\varepsilon_0 = 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 1.25\cdot10^{-6}$ H/m being the \textit{vacuum permeability}. 
 Pages \pageref{starttext}--\pageref{endtext} of this thesis will be concerned with computation, interpretation, and experimental verification of the Eq. (\ref{eq_me1}--\ref{eq_me4}) solutions for specific choices of constitutive equations.
@@ -85,34 +86,40 @@ we obtain the \textit{wave equation} for the electric field in vacuum:
 %Note this holds for each component of electric field independently. -- NOT: the divergence is not independent of other components
 Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), the same result could also be easily obtained for the magnetic field $\HH$.
 %}}}
-\paragraph{Plane wave and its dispersion relations in vacuum} %{{{
-The solutions of the wave equation (\ref{eq_wave}) take the form of a plane harmonic wave in the simplest case, and in any other case the fields can be decomposed as a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
+\paragraph{Plane wave} %{{{
+The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed as a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(t)$). As a \textit{plane wave} we denote such a spatial shape of the fields, that is a function of a single  scalar parameter $\kk\cdot\rr$. Assuming the wave propagates with nonzero velocity, also the spatial dependence on  $\kk\cdot\rr$ must be harmonic, and therefore 
 
-Linear electrodynamics is often treated with the electromagnetic field described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent (divided by $1/\ii$). In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
+Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
-An important note shall be made on the sign convention. We use the `engineering' convention $e^{\ii \omega t}$ with wave phase \textit{growing in time}, but this is only due to the author's feeling that it is more intuitive in the literature 
-(e.g. \cite[p. 9]{engheta2006book}
-\cite[pp. 21, 99]{krowne2007book}
-\cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book})
-. In roughly a half of the literature
-(e.g. \cite{jackson1962book} 
-\cite{veselago1968} 
-\cite{born1999book}
-\cite[chap. 5, 7, 8]{eleftheriades2005book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. 
-The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions.
+%Linear electrodynamics is often treated with the 
+The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent (divided by $1/\ii$). 
+
 %% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
 %% https://www.comsol.com/support/knowledgebase/1009/    
 %% http://www.tpdsci.com/tpc/RISignDv.php
 %% Panofsky & Phillips 1962, p 200 ??
 %% ---- "OPTICS" in favor of -iwt, then using the simpler eps = (eps' + i eps'')
-%% [noginov2011tutorials, p. 5] has little theory, but uses eps = (eps' + i eps'')
-%% ---- 
-%% Fourier transform is never subject to the sign change, cf. \ref{eq_kkF}
+ 
 
 %% TODO add figure: plane wave
 Without loss of generality, we define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
 The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. 
+
+An important note shall be made on the sign convention for the complex wave. We use the `engineering' convention of time dependence: $e^{\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. It is used roughly in half of the literature 
+(e.g. \cite[p. 9]{engheta2006book}
+\cite[pp. 21, 99]{krowne2007book}
+\cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book})
+. In the remaining half,
+(e.g. \cite{jackson1962book}, 
+\cite{veselago1968},
+\cite{born1999book}, \cite[p. 5]{noginov2011book},
+\cite[chap. 5, 7, 8]{eleftheriades2005book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. 
+The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions.
+In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
+%}}}
+
+\paragraph{Dispersion relations in vacuum} %{{{
 Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of the wave equation (\ref{eq_wave}). In vacuum, the allowed solutions can be obtained by first substituting the differential operators by their equivalents for a particular plane wave: %TODO explain
 \begin{equation} \nabla \rightarrow -\ii\kk, \quad\quad\quad 
 \frac{\partial} {\partial t} \rightarrow \ii\omega, \label{eq_difftok}\end{equation}
@@ -149,6 +156,7 @@ Assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) 
 Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integrals, and the remaining part that turns the convolution into a temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e^{\rm(Loc)}(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e^{\rm(Loc)}(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
+%% NOTE that the Fourier transform is never subject to the sign change, cf. \ref{eq_kkF}
 This is nothing but an application of the convolution theorem: convolution in time domain is equivalent to multiplication in frequency domain.  %% FIXME normalisation by 2pi?
 Consequently we may introduce the local \textit{relative permittivity} $\varepsilon_r^{\rm(Loc)}(\omega)$ as a function of frequency. It is a property of the medium that determines how strong it develops the electric displacement $\D$ in response to a harmonic wave. From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\varepsilon_r^{\rm(Loc)} = 1$.
 \begin{equation}  \varepsilon_r^{\rm(Loc)}(\omega) =   \frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e^{\rm(Loc)}(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
