@@ -16,7 +16,10 @@
 % unify the terminology "band diagram" - "dispersion curves"
 
 
-\add{The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner, avoiding many relevant topics such as TODO, which are not essential for the description of metamaterials.  This serves as a basis for transforming into the so-called Landau-Lifshitz formulation of electrodynamis for spatially-dispersive media, which is elaborated more in detail.}
+\add{The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner.
+%, avoiding many relevant topics such as  TODO, which are not essential for the description of metamaterials.  
+This serves as a basis for transforming into the so-called Landau-Lifshitz formulation of electrodynamics for spatially-dispersive media, which is elaborated more in detail.}
+
 \section{Electrodynamics of continuous media} 
 \subsection{Electromagnetic wave in vacuum} % FIXME
 \paragraph{Maxwell equations} In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form: %{{{
@@ -230,64 +233,89 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 \subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
 \paragraph{Lower and upper polariton branches}  % TODO%{{{
 \mdf{
-in isotropic, local medium the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own
-$$N = sqrt(eps(omega))$$
+in isotropic, local medium the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
+$$N = sqrt(eps(omega))$$\\
 
+figure dispersion curve - scan over resonator strength\\
 
+note that the shape of dispersion curves can be interpreted also as the polariton branch (horizontal) and photon branch (light-line, growing),\\
+which couple and form the anti-crossing shape known e.g. from the theory of coupled oscillators (cite Landau-Lifshitz here)\\
 
-figure dispersion curve - scan over resonator strength
+Resonance in magnetic permeability leads to a similar behaviour\\
 
-Resonance in magnetic permeability
+longitudinal waves - plasma oscillations, have flat dispersion in the approx of local media, which means they would form standing oscillations and not propagate ...
 }
 %}}}
 \paragraph{Isofrequency contours}  % TODO%{{{
-Isofrequency contours (IFC), or also Equifrequency contours (EFC) ...
 \mdf{
+in the presence of resonance, omega is not a simple function of k; as is shown below, conversely, in the presence of nonlocal response, k~is not necessarily a simple function of omega\\
 
+Isofrequency contours (IFC), or also Equifrequency contours (EFC) ...\\
+
+develop the term of index of refraction\\
+
+IFCs will be useful also for nonlocal and periodic media later\\
 }
 %}}}
-\paragraph{Anisotropic }  % TODO%{{{
+\paragraph{Anisotropic local media}  % TODO%{{{
+\mdf{
 Isofrequency contours (IFC), or also Equifrequency contours (EFC)\\
 
-TODO figure: anisotropic media\\
+TODO FIGURE: IFC for anisotropic media (are common in nature)\\
 
-TODO figure: Hyperbolic media\\
-%}}}
+TODO FIGURE: IFC for Hyperbolic media (can also be found in nature, in narrow range like near sapphire LO phonno, cite Agranovich)\\
 
-\paragraph{Negative phase velocity of doubly-negative media}  % TODO%{{{
-\mdf{
 Noether theorem ->\\
 refraction between two isotropic media must keep the phase along boundary   ->  \\
-how Snell's arcsin law simply comes out of IFC shape
+how Snell's arcsin law simply comes out of IFC shape\\
 
-if the surface is smooth, this must hold for any type of media, including anisotropic
+if the surface is smooth, this must hold for any type of media, including anisotropic\\
 }
-
-\paragraph{Phase velocity and group velocity}  % TODO%{{{
+%}}}
+\paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
 \mdf{
 the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
 derivative of vector function yields another vector function -> \\
 show that its magnitude determines the envelope  propagation velocity  \\
-and direction determines the beam propagation
+and direction determines the beam propagation\\
+TODO FIGURE: of this
 
 illustrate the walk-off in a beam \\
+TODO FIGURE: beam refraction
 TODO move later: show that nonlocal/photonic media can lead e.g. to "beam collimation" when ifc goes flat
 
 show that "signal propagation velocity" is a problematic term <- \\
-as a finite-support function spans over infinite spectrum, where group velocity has to change and differ 
--> signal distortion
+as a finite-support function spans over infinite spectrum, where group velocity has to change and differ \\
+-> "group velocity dispersion (GVD)" leads to signal "chirping" distortion\\
+TODO FIGURE: of this
 
-
-}
-
-
-\paragraph{Negative phase velocity of doubly-negative media}  % TODO%{{{
-\mdf{
+show that near a single resonance, the phase velocity can drop -> \\
+group velocity can be negative\\
+this happens only in presence of high absorption \cite{mikki}\\
+TODO FIGURE: a) eps resonant, mu constant     b) N positive, but group velocity dropping
 }
 %}}}
+\paragraph{Negative phase velocity of doubly-resonant media}  % TODO%{{{
+\mdf{
+% TODO 0401 how can one tell apart negative refraction due to eps-mu and "nonlocality"?    or shall "nonlocality" just refer to quadrupoles etc?
 
+(here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\
+
+*singly resonant media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
+*doubly resonant media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
+*nonlocal media -> weird things happen, todo\\
+
+TODO FIGURE: a) eps resonant, mu constant     b) N positive, but group velocity dropping
+
+}
+%}}}
 \paragraph{Energy and Poynting vector}  % TODO%{{{
 \mdf{
+Poynting vector usually coincides with the group velocity\\
+
+phase velocity is often higher than speed of light, this is no problem\\
+
+cite Mikki for that the Poynting vector \\
 }
 %}}}
 
@@ -301,7 +329,7 @@ In this section a more general class of media is discussed, where the polarizati
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
 In a very similar manner as in the local theory above, we expect a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. 
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\brho} \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_harm_nonloc}\end{equation}
-After two  substitutions, $T:=t-\tau$, $\mathbf{R}:=\rr-\brho$, the exponent can again be separated into the original plane wave (that factors out), and a spatio-temporal Fourier transform of the medium response:
+After two  substitutions, $T:=t-\tau$, $\mathbf{R}:=\rr-\brho$, the exponent can again be separated into the original plane wave (which factors out), and a spatio-temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot(\rr - \mathbf{R})} \,\mbox{d}T \,\mbox{d}^3\brho,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\left( \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R})  \, e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}}\,\mbox{d}T \,\mbox{d}^3 \mathbf{R} \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
 The response of the medium to the electric field of any harmonic plane wave can now be expressed as a function of frequency $\omega$ and wave vector $\kk$. It is defined as the ratio between the electric displacement and the electric field:
