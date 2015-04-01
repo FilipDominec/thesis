@@ -223,7 +223,7 @@ where we used the knowledge that the $-2\ii/\omega$ function is the Fourier tran
 
 Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary part of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{odd}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
 
-A related mathematical proof of Kramers-Kronig relations can be derived from the analytic properties of the response function in the complex plane. %% TODO cite
+A related mathematical proof of Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. %% TODO cite
 
 %% TODO: why do K-K relations forbid to choose arbitrary phase difference over an unit cell? 
 %% ie. Why the Neff can be unambiguously extracted from spectra?
@@ -236,7 +236,7 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 in isotropic, local medium the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
 $$N = sqrt(eps(omega))$$\\
 
-figure dispersion curve - scan over resonator strength\\
+FIGURE dispersion curve - scan over resonator strength\\
 
 note that the shape of dispersion curves can be interpreted also as the polariton branch (horizontal) and photon branch (light-line, growing),\\
 which couple and form the anti-crossing shape known e.g. from the theory of coupled oscillators (cite Landau-Lifshitz here)\\
@@ -247,12 +247,14 @@ longitudinal waves - plasma oscillations, have flat dispersion in the approx of 
 }
 %}}}
 \paragraph{Isofrequency contours}  % TODO%{{{
+A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also it is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the frequency $\omega(\kk)$ as the function of the \textit{wave vector} $\kk$. 
+
+Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
+information about the medium interaction with electromagnetic waves, but also allows for geometrical analysis.
+
 \mdf{
-in the presence of resonance, omega is not a simple function of k; as is shown below, conversely, in the presence of nonlocal response, k~is not necessarily a simple function of omega\\
-
-Isofrequency contours (IFC), or also Equifrequency contours (EFC) ...\\
-
 develop the term of index of refraction\\
+when does index of refraction make sense? --- strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
 
 IFCs will be useful also for nonlocal and periodic media later\\
 }
@@ -342,7 +344,7 @@ Converting the problem from spatio-temporal domain into the wavenumber-frequency
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 % , and convolution in space is equivalent to multiplication  in the reciprocal space
 
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space (cf. Eq. (\ref{eq_chi_convol_nonloc}), \textit{spatial dispersion} derives from that the response to a harmonic wave is dependent also on the wave vector $\kk$. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave in infinite medium is considered.
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space (cf. Eq. (\ref{eq_chi_convol_nonloc}), \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave in infinite medium is considered.
 %}}}
 \paragraph{Local response as a limiting case} %{{{
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
