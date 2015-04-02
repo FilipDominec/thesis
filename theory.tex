@@ -81,7 +81,7 @@ the opposite, `optical', convention is used with time dependence of $e^{-\ii \om
 The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 
-In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, thus in their case $\varepsilon''\equiv \text{Im}(\varepsilon)$. Thorough the thesis, we represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon'' $.
+In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. Thorough the thesis, we however represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon'' $.
 %}}}
 \paragraph{Dispersion relations in vacuum} %{{{
 Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of the wave equation (\ref{eq_wave}). In vacuum, the allowed solutions can be obtained by first substituting the differential operators by their equivalents for a particular plane wave: %TODO explain
@@ -231,26 +231,42 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 %}}}
 
 \subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
-\paragraph{Lower and upper polariton branches}  % TODO%{{{
-\mdf{
-in isotropic, local medium the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
+\paragraph{Lower and upper polariton branches of transverse waves}  % TODO%{{{
+Returning to the derivation of dispersion relations, we start with modifying the constitutive relation (\ref{eq_ce}) to a plane wave propagating in a medium:
+\begin{equation}		\D := \varepsilon_0\varepsilon_r(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
+with the relative permittivity $\varepsilon_r(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). This results in the dispersion curve for the transverse electromagnetic wave deviating from the original light line in Fig. \ref{fg_dispersion_vacuum}. 
+In the simplest example of a single resonance with negligible losses, as in Fig. \ref{fg_dispersion_polariton} % TODO red? line
+, the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field.
+%TODO FIGURE dispersion curve - scan over resonator strength\\
+
+Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to the electric field, thus pushing the permittivity below zero. With further increase of the frequency, the permittivity crosses zero at the $\omega_{\text{L}} > \omega_0$, which allows the transverse wave to propagate. Therefore, the \textit{upper polariton branch} starts from $\omega_{\text{L}}$. In case of a Lorentz oscillator unaffected by the presence of others, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation).\cite{klingshirn2007semiconductor}
+The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also for the spectra of periodic structures described later.
+
+Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line).
+
+When losses are present, the lower and upper polariton branches are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO \ref{fg_dispersion_polariton}
+
+\add{
+the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
 $$N = sqrt(eps(omega))$$\\
-
-FIGURE dispersion curve - scan over resonator strength\\
-
-note that the shape of dispersion curves can be interpreted also as the polariton branch (horizontal) and photon branch (light-line, growing),\\
-which couple and form the anti-crossing shape known e.g. from the theory of coupled oscillators (cite Landau-Lifshitz here)\\
-
-Resonance in magnetic permeability leads to a similar behaviour\\
-
-longitudinal waves - plasma oscillations, have flat dispersion in the approx of local media, which means they would form standing oscillations and not propagate ...
 }
 %}}}
-\paragraph{Isofrequency contours}  % TODO%{{{
-A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also it is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the frequency $\omega(\kk)$ as the function of the \textit{wave vector} $\kk$. 
+\paragraph{Longitudinal waves in dispersive media}  % TODO%{{{
+The solution of Maxwell equations for a harmonic wave, 
+$$ \quad\quad\quad\quad\quad\text - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E, \quad\quad\quad\quad\quad\text{(\ref{eq_me4} again)}$$
+also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. If $k>0$, they have nonzero solution only when either $\varepsilon_r(\omega)' = 0$, or $\mu_r(\omega)' = 0$, and therefore in local media their dispersion curve is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$.
 
+
+
+longitudinal waves - plasma oscillations, have flat dispersion in the approx of local media, which means they would form standing oscillations and not propagate ...
+%}}}
+
+\paragraph{Isofrequency contours}  % TODO%{{{
+%A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
+It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the frequency $\omega(\kk)$ as the function of the projection of two components of the \textit{wave vector} $\kk$. 
 Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
-information about the medium interaction with electromagnetic waves, but also allows for geometrical analysis.
+information about the medium interaction with electromagnetic waves, but also allows for geometrical analysis. It is, however, used to plot dispersion in media with low losses only ,  % TODO confusing
+and each branch has to be plotted separately to prevent the contours from overlapping.
 
 \mdf{
 develop the term of index of refraction\\
@@ -274,6 +290,9 @@ how Snell's arcsin law simply comes out of IFC shape\\
 if the surface is smooth, this must hold for any type of media, including anisotropic\\
 }
 %}}}
+\paragraph{Index of refraction, and its applicability}  % TODO%{{{
+%}}}
+
 \paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
 \mdf{
 the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
@@ -349,7 +368,7 @@ The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used in
 \paragraph{Local response as a limiting case} %{{{
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
 \begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e^{\rm(Loc)}(t-\tau), \label{eq_loc_chi}\end{equation}
-which allows to simplify Eq. (\ref{eq_chi_convol}) in the way that in local media only the temporal convolution has to be computed.
+which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed.
 
 % TODO The exact shape of $\varepsilon(\omega, \kk)$ will be discussed later.
 %}}}
