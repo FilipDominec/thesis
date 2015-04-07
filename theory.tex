@@ -267,58 +267,71 @@ In the simplest example of a single resonance with negligible losses, as in Fig.
 , the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field.
 %TODO FIGURE dispersion curve - scan over resonator strength\\
 
-Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to the electric field, thus pushing the permittivity below zero. With further increase of the frequency, the permittivity crosses zero at the $\omega_{\text{L}} > \omega_0$, which allows the transverse wave to propagate. Therefore, the \textit{upper polariton branch} starts from $\omega_{\text{L}}$. In case of a Lorentz oscillator unaffected by the presence of others, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation).\cite{klingshirn2007semiconductor}
-The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also for the spectra of periodic structures described later.
+Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to the electric field, thus pushing the permittivity below zero. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$. %, > \omega_0 which allows the transverse wave to propagate. 
+where the \textit{upper polariton branch} starts. In case of a Lorentz oscillator unaffected by the presence of others, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation).\cite{klingshirn2007semiconductor}
+
+The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also for the spectra of resonances of macroscopic structures described later.
 
 Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line).
 
 When losses are present, the lower and upper polariton branches are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO \ref{fg_dispersion_polariton}
+%}}}
+\paragraph{Longitudinal waves in dispersive media} %{{{
+The solution of Maxwell equations for a harmonic wave, 
+$$ \quad\quad\quad\quad\quad - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E, \quad\quad\quad\quad\quad\text{(\ref{eq_me4} again)}$$
+also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. If $k>0$, such waves can have nonzero solution only when either $\varepsilon_r(\omega)' = 0$, or $\mu_r(\omega)' = 0$, and therefore in local media their dispersion curve would be a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that keeps the amplitude envelope that was originally excited. 
+
+Different mechanisms can lead to $\varepsilon_r(\omega)' = 0$, some of which introduce relatively low losses at the corresponding $\omega_{\text{L}}$; namely lattice vibrations in nonconductive crystals or electrons in inductive media (like metals and dilute plasma). At the interface of such media with vacuum or air, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface.
+Depending on the mechanism, they are known as \textit{surface phonon-polaritons} or \textit{surface plasmons}, respectively. 
+% Are there any metamaterials designed for longitudinal waves?
+%}}}
+
+\paragraph{Isofrequency contours}  % TODO%{{{
+%A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
+It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
+frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
+Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
+information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
+
+The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  % TODO confusing
+Each branch also has to be plotted separately, to prevent the contours from overlapping.
+
+\mdf{
+TODO FIGURE circular dispersion contours
+}
+%}}}
+\paragraph{Anisotropic local media}  % TODO%{{{
 
 \add{
 the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
 $$N = sqrt(eps(omega))$$\\
 }
-%}}}
-\paragraph{Longitudinal waves in dispersive media}  % TODO%{{{
-The solution of Maxwell equations for a harmonic wave, 
-$$ \quad\quad\quad\quad\quad\text - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E, \quad\quad\quad\quad\quad\text{(\ref{eq_me4} again)}$$
-also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. If $k>0$, they have nonzero solution only when either $\varepsilon_r(\omega)' = 0$, or $\mu_r(\omega)' = 0$, and therefore in local media their dispersion curve is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$.
-
-
-
-longitudinal waves - plasma oscillations, have flat dispersion in the approx of local media, which means they would form standing oscillations and not propagate ...
-%}}}
-
-\paragraph{Isofrequency contours}  % TODO%{{{
-%A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
-It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the frequency $\omega(\kk)$ as the function of the projection of two components of the \textit{wave vector} $\kk$. 
-Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
-information about the medium interaction with electromagnetic waves, but also allows for geometrical analysis. It is, however, used to plot dispersion in media with low losses only ,  % TODO confusing
-and each branch has to be plotted separately to prevent the contours from overlapping.
-
 \mdf{
-develop the term of index of refraction\\
-when does index of refraction make sense? --- strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
-
-IFCs will be useful also for nonlocal and periodic media later\\
-}
-%}}}
-\paragraph{Anisotropic local media}  % TODO%{{{
-\mdf{
-Isofrequency contours (IFC), or also Equifrequency contours (EFC)\\
+TODO develop the dispersion contour from the value of permittivity
 
 TODO FIGURE: IFC for anisotropic media (are common in nature)\\
 
 TODO FIGURE: IFC for Hyperbolic media (can also be found in nature, in narrow range like near sapphire LO phonno, cite Agranovich)\\
 
+}
+%}}}
+\paragraph{Index of refraction, and its applicability}  % TODO%{{{
+\mdf{
 Noether theorem ->\\
 refraction between two isotropic media must keep the phase along boundary   ->  \\
 how Snell's arcsin law simply comes out of IFC shape\\
 
+develop the term of index of refraction\\
+when does index of refraction make sense? --- strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
+
+IFCs will be useful also for nonlocal and periodic media later\\
+
+
 if the surface is smooth, this must hold for any type of media, including anisotropic\\
+
+TODO FIGURE refraction of two media, rgb contours with dispersive angle of refraction
 }
-%}}}
-\paragraph{Index of refraction, and its applicability}  % TODO%{{{
+
 %}}}
 
 \paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
@@ -393,15 +406,13 @@ may be either scalar functions, or rank-2 tensor functions; the latter case acco
 
 The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space (cf. Eq. (\ref{eq_chi_convol_nonloc}), \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave in infinite medium is considered.
 %}}}
-\paragraph{Local response as a limiting case} %{{{
+\paragraph{Local response as a limiting case of the nonlocal one} %{{{
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
 \begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e^{\rm(Loc)}(t-\tau), \label{eq_loc_chi}\end{equation}
 which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed.
 
 % TODO The exact shape of $\varepsilon(\omega, \kk)$ will be discussed later.
 %}}}
-
-\subsection{Dispersion relations in homogeneous nonlocal media} % TODO
 \paragraph{Review of local medium parameters}%{{{
 Some phenomena observed in the frequency spectrum are in fact consequences of spatial dispersion, such as Doppler broadening of resonance lines in gases.\cite[p. 359]{landau1984electrodynamics} More precisely, these phenomena are primarily dependent on the wave vector $\kk$, and their expression by means of the temporal spectrum is a mere approximation based on that the dispersion curve usually defines a simple relation between  frequency and wave vector. 
 
@@ -432,7 +443,6 @@ The trivial extension of the local medium description to the nonlocal one could 
 
 % TODO add böhne nägerl reker ulbrich: evidence of spatial dispersion in the dielectric response of continuum states in gaas, 183e WE-Heraeus-Seminar nonlin opt and excit kinetics, noeks, graal-muritz 1997, Germany
 %}}}
-
 \paragraph{Magnetic effects can be described by electric displacement}%{{{
 Instead, we will show here that the magnetic response can be fully expressed by a certain form of $\varepsilon_r(\omega, \kk)$ dependence on $\kk$. In the following theory, the spatial-dispersive function $\varepsilon_r(\omega, \kk)$ will consist of
 \begin{enumerate}
@@ -474,6 +484,8 @@ Continuing in the derivation outlined in \cite{landau1984electrodynamics, krowne
 
 The downsides of the spatial-dispersive model of media is that it is more complicated, leading e.g. to implicit dispersion equation. Its great advantage is however that it provides a correct description of periodic structures discussed below. 
 %}}}
+
+\subsection{Dispersion relations in homogeneous nonlocal media} % TODO
 \paragraph{Comparison of eps-mu and spatial-dispersive models}%{{{
 ... en vacuum ...
 \begin{equation}		\Dsd = \varepsilon_0	\E, \quad\quad\quad						\B = \mu_0			\HHsd,				 \label{eq_ce_dispersive}\end{equation}
@@ -483,6 +495,8 @@ The downsides of the spatial-dispersive model of media is that it is more compli
 %}}}
 \paragraph{Why magnetic resonances do not contribute to static permeability?}%{{{
 \add{and why high-frequency diamagnetism does not break causality? cite [skaar2014]}
+%}}}
+\paragraph{Multiple waves at one frequency and additional boundary conditions}%{{{
 %}}}
 
 \section{Electromagnetic waves in periodic structures}
@@ -609,7 +623,11 @@ Both types of structures exhibit the most interesting behaviour at their frequen
 % -> cloaking (aside from losses)
 % -> superlens (aside from losses and aberration, in a hypothetical case that the MM structure can be made much finer than a detector ...)
 % -> hyperlens 
+%    The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
+%    Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation
+%    for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
 % -> metasurfaces (impedance engineering, tunable properties, thin high-contrast filters)
+% Losses are in \cite[p. 708]{born1999book}
 
 
 \paragraph{Historical regards}
