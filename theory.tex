@@ -22,8 +22,9 @@ This serves as a basis for transforming into the so-called Landau-Lifshitz formu
 
 \section{Electrodynamics of continuous media} 
 \subsection{Electromagnetic wave in vacuum} % FIXME
-\paragraph{Maxwell equations} In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form: %{{{
-%We assume here that there are no free charges and no currents in the structure: 
+\paragraph{Maxwell equations}  %{{{
+In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form.
+We assume here that no free charges and no sources of currents are present: 
 \begin{equation} \nabla \cdot  \D = 0, \label{eq_me1}\end{equation}  
 \begin{equation} \nabla \cdot  \B = 0, \label{eq_me2}\end{equation}  
 \begin{equation} \nabla \times \E = -\frac{\partial \B} {\partial t}, \label{eq_me3}\end{equation}  
@@ -91,7 +92,34 @@ so the wave equation (\ref{eq_wave}) can be modified the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
 \begin{equation}   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E.  \label{eq_wavek}\end{equation}
-Generally, the branches  of solutions of this equation divide into two groups: % todo proof?
+Noticing that the leftmost term is also a linear transformation of the vector $\E$, expressed by the tensor
+$$ - \kk (\kk \cdot \E) \equiv 
+	-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
+	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
+	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right)\right] 
+		\equiv
+	-\left(\begin{array}{ccc} -k_x^2 & -k_x k_y & -k_x k_z \\ -k_y k_x & -k_y^2 & -k_y k_z \\ -k_z k_x & -k_z k_y & -k_z^2 \end{array} \right) \cdot  
+	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
+	$$
+%$$ k^2 \E \equiv 
+%	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot 
+%	\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right)\right] \cdot 
+%	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
+%	$$
+%$$ \mu_0 \varepsilon_0 \omega^{2} \E \equiv 
+%	\left(\begin{array}{ccc} k_x^2+k_y^2+k_z^2 & 0 & 0 \\ 0 & k_x^2+k_y^2+k_z^2 & 0 \\ 0 & 0 & k_x^2+k_y^2+k_z^2 \end{array} \right) \cdot  
+%	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
+%	$$
+the dispersion relation can be reformulated\cite{born1999book} as a requirement for the following determinant to be zero:
+\begin{equation} 
+	\left|\begin{array}{ccc} 
+	k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
+	-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
+	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
+	\end{array} \right| = 0,
+\label{eq_dispdet}\end{equation}
+which ensures a solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$.
+The branches of solutions of this equation divide into two groups:
 \begin{enumerate}
  \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
