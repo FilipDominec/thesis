@@ -5,9 +5,7 @@
 %% TODO remaining topics to be added: 
 %%			* PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
 
-
 %% TODO time convention
-
 
 % TODO we refer to tunability - complete it in the rest of the document!!
 %% TODO unify impedance as `Z', not `z'
@@ -264,11 +262,11 @@ Returning to the derivation of dispersion relations, we start with modifying the
 \begin{equation}		\D := \varepsilon_0\varepsilon_r(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\varepsilon_r(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). This results in the dispersion curve for the transverse electromagnetic wave 
  \begin{equation} k = \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-deviating from the original light line in Fig. \ref{fg_dispersion_vacuum}. 
+with the added frequency-dispersive term responsible for the deviation from the original light line in Fig. \ref{fg_dispersion_vacuum}. 
+
+%TODO FIGURE dispersion curve - scan over resonator strength\\
 In the simplest example of a single electric resonance with negligible losses, as in Fig. \ref{fg_dispersion_polariton} % TODO red? line
 , the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field.
-%TODO FIGURE dispersion curve - scan over resonator strength\\
-
 Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to it, thus the response of the medium is negative. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$. %, > \omega_0 which allows the transverse wave to propagate. 
 where the \textit{upper polariton branch} starts. In case of a Lorentz oscillator unaffected by the presence of others, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation).\cite{klingshirn2007semiconductor}
 
@@ -288,7 +286,6 @@ Depending on the mechanism, they are known as \textit{surface phonon-polaritons}
 % Are there surface magnons?
 % Are there any metamaterials designed for longitudinal waves?
 %}}}
-
 \paragraph{Isofrequency contours}  % TODO%{{{
 %A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
 It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
@@ -336,7 +333,6 @@ TODO FIGURE refraction of two media, rgb contours with dispersive angle of refra
 }
 
 %}}}
-
 \paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
 \mdf{
 the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
@@ -383,8 +379,6 @@ phase velocity is often higher than speed of light, this is no problem\\
 cite Mikki for that the Poynting vector \\
 }
 %}}}
-
-
 
 \subsection{Nonlocal response} % TODO
 \paragraph{Definition of nonlocal media}%{{{
