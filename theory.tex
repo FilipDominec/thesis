@@ -112,31 +112,6 @@ Consequently we may introduce the local \textit{relative permittivity} $\epsrl(\
 \begin{equation}  \epsrl(\omega) =   \frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e^{\rm(Loc)}(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
 %% TODO note that this is a complex-valued function, unlike chi_e(loc); and explain why it is so: that it allows to easily pack in also the information about the phase
 %}}}
-\paragraph{Anisotropy of permittivity} \label{par_anisotropy} %{{{
-It shall be noted here that permittivity $\epsrl$ was introduced as a scalar, assuming that the vector of electric field $\E$ and electric induction $\D$ are always of the same orientation:
-\begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
-	\left(\begin{array}{ccc} 
-			\epsrl(\omega) & 0 & 0  \\
-			0 & \epsrl(\omega) & 0  \\
-			0 & 0 &\epsrl(\omega)  
-	\end{array} \right) \cdot \E
-	\label{eq_}
-\end{equation}
-In some media of lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric field direction. At the beginning of the chapter, however, we imposed the requirement of \textit{linearity} of the medium. Whatever the linear relation of 
-$$\D := \mathcal{L}(\E)$$
-is, it must obey the rule
-$$\D_1 + \D_2 = \mathcal{L}(\E_1) + \mathcal{L}(\E_2) = \mathcal{L}(\E_1 + \E_2)$$
-for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \textit{tensor of permittivity} % TODO cite 
-\begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
-	\left(\begin{array}{ccc} 
-	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
-	{\epsrl}_{12}(\omega) & {\epsrl}_{22}(\omega) & {\epsrl}_{32}(\omega)  \\
-	{\epsrl}_{13}(\omega) & {\epsrl}_{23}(\omega) & {\epsrl}_{33}(\omega)  
-	\end{array} \right) \cdot \E.
-	\label{eq_}
-\end{equation}
-Elaborate discussion on the restrictions on this tensor and its physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is much less commonly needed.
-%}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
 \begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e^{\rm(Loc)}(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
 	\includegraphics[width=17cm]{img/oscillator_spectrum.pdf}
@@ -243,11 +218,10 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 Returning to the derivation of dispersion relations, we start with modifying the constitutive relation (\ref{eq_ce}) to a plane wave propagating in a medium:
 \begin{equation}		\D := \varepsilon_0\varepsilon_r(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\varepsilon_r(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
-The wave equation then changes to
-$$\quad\quad\quad\quad\quad - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E,
-\quad\quad\quad\quad\quad\text{(\ref{eq_wavek} again)}$$
-which results in the dispersion curve for the transverse electromagnetic wave 
- \begin{equation} k = \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
+The wave equation (\ref{eq_wavek}) then changes to
+\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \label{eq_wavek_disp} \end{equation}
+which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
+\begin{equation} k = \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
 with the added frequency-dispersive term responsible for the deviation from the original light line in Fig. \ref{fg_dispersion_vacuum}. 
 
 %TODO FIGURE dispersion curve - scan over resonator strength\\
@@ -263,33 +237,46 @@ Note that the formation of upper and lower polariton branches can be reinterpret
 When losses are present, the lower and upper polariton branches are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO \ref{fg_dispersion_polariton}
 %}}}
 \paragraph{Longitudinal waves in dispersive media} %{{{
-The solution of Maxwell equations for a harmonic wave, 
-\begin{equation} - \kk (\kk \cdot \E)      +          k^2 \E            = +\varepsilon_0 \mu_0 \varepsilon_r(\omega) \mu_r(\omega)\; \omega^{2} \E, \label{eq_disp_loc}\end{equation}
-also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. If $k>0$, such waves can have nonzero solution only when either $\varepsilon_r(\omega)' = 0$, or $\mu_r(\omega)' = 0$, and therefore in local media their dispersion curve would be a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that keeps the amplitude envelope that was originally excited. 
+The wave equation in dispersive media, 
+\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
+also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for static homogeneous field.
+
+If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can have a solution with nonzero $\E$ when either $\varepsilon_r(\omega)' = 0$, or $\mu_r(\omega)' = 0$. Therefore, the corresponding dispersion curve for a longitudinal wave is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that maintains the spatial amplitude envelope that was originally excited. 
 
 Different physical phenomena can lead to $\varepsilon_r(\omega)' = 0$, some of which introduce relatively low losses at the corresponding $\omega_{\text{L}}$; namely lattice vibrations in nonconductive crystals or electrons in inductive media (like metals and dilute plasma). At the interface of such media with vacuum or air, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface.
 Depending on the mechanism, they are known as \textit{surface phonon-polaritons} or \textit{surface plasmons}, respectively. 
 % Are there surface magnons?
 % Are there any metamaterials designed for longitudinal waves?
 %}}}
-\paragraph{Isofrequency contours}  % TODO%{{{
-%A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
-It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
-frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
-Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
-information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
-
-The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  % TODO confusing
-Each branch also has to be plotted separately, to prevent the contours from overlapping.
-
-\mdf{
-TODO FIGURE circular dispersion contours
-}
+\paragraph{Anisotropy of permittivity} \label{par_anisotropy} %{{{
+It shall be noted here that permittivity $\epsrl$ was introduced as a scalar, assuming that the vector of electric field $\E$ and electric induction $\D$ are always of the same orientation:
+\begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
+	\left(\begin{array}{ccc} 
+			\epsrl(\omega) & 0 & 0  \\
+			0 & \epsrl(\omega) & 0  \\
+			0 & 0 &\epsrl(\omega)  
+	\end{array} \right) \cdot \E
+	\label{eq_}
+\end{equation}
+In some media of lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric field direction. At the beginning of the chapter, however, we imposed the requirement of \textit{linearity} of the medium. Whatever the linear relation of 
+$$\D := \mathcal{L}(\E)$$
+is, it must obey the rule
+$$\D_1 + \D_2 = \mathcal{L}(\E_1) + \mathcal{L}(\E_2) = \mathcal{L}(\E_1 + \E_2)$$
+for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \textit{tensor of permittivity} % TODO cite 
+\begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
+	\left(\begin{array}{ccc} 
+	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
+	{\epsrl}_{12}(\omega) & {\epsrl}_{22}(\omega) & {\epsrl}_{32}(\omega)  \\
+	{\epsrl}_{13}(\omega) & {\epsrl}_{23}(\omega) & {\epsrl}_{33}(\omega)  
+	\end{array} \right) \cdot \E.
+	\label{eq_}
+\end{equation}
+Elaborate discussion on the restrictions on this tensor and its physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is much less commonly needed.
 %}}}
 \paragraph{Anisotropic local media}  % TODO%{{{
-Noticing that the leftmost term in 
-$$ \quad\quad\quad\quad\quad$$
-is also a linear transformation of the vector $\E$, expressed by the tensor
+If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. It can, however, be solved as a set of three linear equations, usually by means of numerical algebra software. Noticing that also the leftmost term in 
+\begin{equation} - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E  \tag{\ref{eq_wavek} \again} \end{equation}
+is a linear transformation of the vector $\E$, expressed by the tensor
 $$ - \kk (\kk \cdot \E) \equiv 
 	-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
 	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
@@ -329,6 +316,20 @@ TODO FIGURE: IFC for anisotropic media (are common in nature)\\
 
 TODO FIGURE: IFC for Hyperbolic media (can also be found in nature, in narrow range like near sapphire LO phonno, cite Agranovich)\\
 
+}
+%}}}
+\paragraph{Isofrequency contours}  % TODO%{{{
+%A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
+It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
+frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
+Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
+information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
+
+The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  % TODO confusing
+Each branch also has to be plotted separately, to prevent the contours from overlapping.
+
+\mdf{
+TODO FIGURE circular dispersion contours
 }
 %}}}
 \paragraph{Index of refraction, and its applicability}  % TODO%{{{
@@ -473,7 +474,7 @@ Additionally, the spatial dispersion allows to describe
  \item{other phenomena that can not be described by the local theory.} 
 \end{enumerate}
 Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
-$$ \quad\quad\quad\quad\quad \nabla \times \HH =  \frac{\partial \D} {\partial t},\quad\quad\quad\quad\quad\text{(\ref{eq_me4} again)}$$
+\begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
 it is clear that if one defines new pair of vector fields
 \begin{equation} \HHsd = \HH + \frac{\partial\mathbf{X}}{\partial t}, \label{eq_HHsd}\end{equation}
 \begin{equation} \Dsd  = \D  + \nabla\times \mathbf{X}, \label{eq_Dsd}\end{equation}
