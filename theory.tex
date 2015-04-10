@@ -329,7 +329,8 @@ The limitation is, however, that IFC plots do not show the imaginary part and th
 Each branch also has to be plotted separately, to prevent the contours from overlapping.
 
 \mdf{
-TODO FIGURE circular dispersion contours
+TODO FIGURE circular/elliptical/hyperbolic dispersion contours
+%% note this is shown in \cite[p. 118]{shalaev2010book}
 }
 %}}}
 \paragraph{Index of refraction, and its applicability}  % TODO%{{{
@@ -491,7 +492,7 @@ Without loss of generality, we again restrict the discussion to a plane wave (\r
 \begin{equation} \mathbf{X} = \frac{1}{\ii\omega}\left(\frac{\murl-1}{\mu_0\murl}\right)\B = \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl}\right)\B. \label{eq_Xsd}\end{equation}
 The new electric displacement $\Dsd$ that also accounts for magnetic phenomena is obtained by substitution of Eq. (\ref{eq_Xsd}) into Eq. (\ref{eq_Dsd}):
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
-By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains only the electric quantities.
+By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl}\right) \kk\times(\kk\times \E)  \label{eq_Dsd3}\end{equation}
 %}}}
 \paragraph{Tensor form of the spatial-dispersive permittivity}%{{{
