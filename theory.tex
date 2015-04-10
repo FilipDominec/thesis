@@ -274,8 +274,9 @@ for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \texti
 Elaborate discussion on the restrictions on this tensor and its physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is much less commonly needed.
 %}}}
 \paragraph{Anisotropic local media}  % TODO%{{{
-If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. It can, however, be solved as a set of three linear equations, usually by means of numerical algebra software. Noticing that also the leftmost term in 
-\begin{equation} - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E  \tag{\ref{eq_wavek} \again} \end{equation}
+If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. 
+It is important to notice that also the leftmost term in 
+\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
 is a linear transformation of the vector $\E$, expressed by the tensor
 $$ - \kk (\kk \cdot \E) \equiv 
 	-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
@@ -294,28 +295,31 @@ $$ - \kk (\kk \cdot \E) \equiv
 %	\left(\begin{array}{ccc} k_x^2+k_y^2+k_z^2 & 0 & 0 \\ 0 & k_x^2+k_y^2+k_z^2 & 0 \\ 0 & 0 & k_x^2+k_y^2+k_z^2 \end{array} \right) \cdot  
 %	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
 %	$$
-the dispersion relation can be reformulated \cite[pp. 667]{born1999book} as a requirement for the following determinant to be zero:
-\begin{equation} 
-	\left|\begin{array}{ccc} 
-	k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
-	-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
-	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
-	\end{array} \right| = 0,
-\label{eq_dispdet}\end{equation}
-which ensures a solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$.
-
-
-\add{
-the wave propagation velocity depends on permittivity and permeability, which is a function of frequency on its own\\
-$$N = sqrt(eps(omega))$$\\
-}
+The dispersion relation can be reformulated \cite[pp. 667]{born1999book} as a set of linear algebraic equations. 
+For simplicity, let us assume the relative permeability $\murl = 1$; then it can be expressed as 
+\begin{equation} \det\left[\left(\begin{array}{ccc} 
+	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
+	-k_y k_x 		& k_x^2+k_z^2	& -k_y k_z \\ 
+	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2
+	\end{array} \right)
+-
+	\mu_0 \varepsilon_0 \omega^2
+	\left(\begin{array}{ccc} 
+	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
+	{\epsrl}_{12}(\omega) & {\epsrl}_{22}(\omega) & {\epsrl}_{32}(\omega)  \\
+	{\epsrl}_{13}(\omega) & {\epsrl}_{23}(\omega) & {\epsrl}_{33}(\omega)  
+	\end{array} \right) \right] = 0, \label{eq_dispdet}\end{equation}
+%\begin{equation} \left|\begin{array}{ccc} 
+	%k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
+	%-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
+	%-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
+	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
+A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero.
+In the most general case, it can be solved by means of numerical algebra software. 
 \mdf{
-TODO develop the dispersion contour from the value of permittivity
-
 TODO FIGURE: IFC for anisotropic media (are common in nature)\\
 
 TODO FIGURE: IFC for Hyperbolic media (can also be found in nature, in narrow range like near sapphire LO phonno, cite Agranovich)\\
-
 }
 %}}}
 \paragraph{Isofrequency contours}  % TODO%{{{
