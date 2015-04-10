@@ -1,66 +1,74 @@
 \section{Numerical simulation algorithms} % TODO
-\subsection{Finite-difference time-domain} % TODO
-\paragraph{Algorithm desciption} %{{{
-Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in the orthogonal grid. When FDTD is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar array describes the permittivity of the structure and additional arrays may correspond other physical quantities, such as material conductivity, material polarizabilities and polarizations etc. Two-dimensional computations can reduce the number of arrays thanks to symmetry.
+\subsection{Finite-difference time-domain calculations}
+\paragraph{Algorithm desciption} %{{{ %% TODO add references
+Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
+%Two-dimensional computations can reduce the number of arrays thanks to symmetry.??
 
 The actual computation is realized in consecutive time steps as an explicit arithmetic operation on each voxel, taking into account only the field values in the neighboring voxels and in the previous time step. This corresponds to iterating equations (\ref{eq_me3}), (\ref{eq_me4}) and (\ref{eq_ce}). % unclear - specify the field update routine exactly
-Most of the computation time is thus occupied by a simple and unconditional loop repeatedly updating all voxels, which allows to fully employ the processor cache and facilitates multi-processor parallelisation. FDTD is applicable to (possibly non-linear) problems where either the temporal evolution of the fields is searched for, or for linear systems where a frequency-domain response function can be found by Fourier-transforming the time-domain response. 
+Most of the computational time is thus occupied by a simple and unconditional loop repeatedly updating all voxels, which allows to fully employ the processor cache and facilitates multi-processor parallelisation. FDTD is applicable to (possibly non-linear) problems where either the temporal evolution of the fields is searched for, or for linear systems where a frequency-domain response function can be found by Fourier-transforming the time-domain response. 
 \begin{figure}[ht] \caption{A warning} \label{fg_parental} \centering 
 	\includegraphics[width=5cm]{img/Parental_Advisory_label.pdf}
 \end{figure}
 
-The time-stepping routine has the same computing cost in empty vacuum as inside a complex structure. Grid-based methods such as FDTD are therefore most efficient to problems where a structure has relatively complex shape, but its smallest features are no more than two or three orders of magnitude smaller than the simulation size. In contrast, an accurate-enough simulation of a structure that has some few very fine features surrounded by big empty space would require excessively high resolution, often resulting in the great majority of the voxels being inefficiently used in space where the high resolution is not needed. Other methods, % TODO discussed below
+The time-stepping routine needs the same computing power in empty vacuum as inside a complex structure. Grid-based methods such as FDTD are therefore the most efficient approach to problems where a structure has relatively complex shape, but its smallest features are no more than two or three orders of magnitude smaller than the simulation size. In contrast, an accurate-enough simulation of a structure that has some few very fine features surrounded by big empty space would require an excessively high resolution, often resulting in the great majority of the voxels being inefficiently used in space where the high resolution is not needed. Other methods, % TODO discussed below
 such as Finite-element method or Boundary-element method, would be preferable for such cases.
 
-As is widely used in the later chapters,  %% TODO illustrate it below!
+As widely used in the later chapters,  %% TODO illustrate it below!
 simulations of a wave propagating in any periodic structure can make use of the periodic boundaries of the simulated volume, so that only one unit cell has to be computed to get result of an infinite structure. The unit cells of periodic structures discussed in this thesis have smallest features not less than two orders of magnitude smaller than the unit cell size, and besides one is often interested in obtaining the whole spectrum information, so FDTD was an optimal tool for this task.
 %}}}
-\paragraph{Spatial discretisation} %{{{
-The discretisation of the grid and of the time stepping introduces an error that obviously manifests in imprecise description of the structure being simulated (\textit{staircasing}) and also in the \textit{numerical dispersion} \cite{taflove2005book}, that is, in deviation of the light speed from the correct one at higher frequencies.  % todo is something missing?
+\paragraph{Spatial discretisation} %{{{ %% TODO add references
+The discretisation of the grid and of the time stepping introduces an error that obviously manifests itself in an imprecise description of the structure being simulated (\textit{staircasing}) and also in the \textit{numerical dispersion} \cite{taflove2005book}, that is, in appreciable deviation of the light speed from the correct one at higher frequencies.  % todo is something missing?
 \begin{figure}[ht] \caption{\textbf{a)}, \textbf{b)} Different two-dimensional grids are used for different polarizations of the fields. \textbf{c)} The three-dimensional Yee grid. The electric field components are expressed in the centers of the cube edges which they are parallel to, whereas the magnetic components are expressed in the centers of the cube which they are perpendicular to. Note the electric and magnetic fields are completely equal in this scheme; the description in terms of edges and faces could be interchanged if the brown cube was taken as the elementary one.} \label{fg_fdtd_yee} \centering 
-	\includegraphics[width=10cm]{img/FDTD_Yee_grid_2d-3d.pdf}
+	\includegraphics[width=12cm]{img/FDTD_Yee_grid_2d-3d.pdf}
 \end{figure}
 
-The error due to the numerical dispersion is in most FDTD implementations reduced from first to second order ($\propto \Delta x^{-2}$ with regards to the voxel size $\Delta x$) by using a \textit{staggered grid}, which in three dimensions is also known as Yee grid \cite{yee1966numerical}. All six field components are expressed in different points within the voxel, as is illustrated in Fig. \ref{fg_fdtd_yee}c with the upper left (green) cube denoting the elementary one. 
+The error due to the numerical dispersion is in most FDTD implementations reduced from first to second order ($\propto \Delta x^{-2}$ with regards to the voxel size $\Delta x$) by using a \textit{staggered grid}, which, in three dimensions, is also known as Yee grid \cite{yee1966numerical}. All six field components are expressed in different points within the voxel, as is illustrated in Fig. \ref{fg_fdtd_yee}c with the upper left (green) cube denoting the elementary one. 
 %This is similar to the advantage of trapezoid integration instead of direct summation. % TODO figure
 Likewise, the update of electric and magnetic fields have to be interlaced also in time (as a so-called \textit{leapfrog} process). When accessing the field values at a given position and time, each field component has to be properly averaged between nearest points in the grid, and between nearest update times.
+% NOTE FK: This can lead to errors especially at the boundaries with vacuum.
 
+By adequate averaging of permittivity on the boundaries of materials, this error can likewise be reduced to the quadratic order with regards to $\Delta x$. Various averaging approaches have been studied in the literature \cite{oskooi2010meep}. Arithmetic averaging of permittivity with a weight proportional to the voxel volume occupied by the material is perhaps the most intuitive one, but it often gives wrong results, and  sometimes it is even worse than no averaging at all \cite{farjadpour2006improving,deinega2007subpixel}. 
 
-By adequate averaging of permittivity on the boundaries of materials, this error can likewise be reduced to the quadratic order with regards to $\Delta x$. Various averaging approaches have been studied in the literature \cite{oskooi2010meep}. Arithmetic averaging of permittivity with weight proportional to the voxel volume occupied by the material is perhaps the most intuitive one, but it often gives wrong results, and  sometimes it is even worse than no averaging at all \cite{farjadpour2006improving,deinega2007subpixel}. In case of a single planar interface of two different materials under general orientation, the arithmetic average of the permittivities $\varepsilon_r$ is correct only for electric field component \textit{parallel} with the interface, whereas the component \textit{perpendicular} to the interface requires instead to apply this weighted averaging to the reciprocal value of permittivity, $\varepsilon_r^{-1}$. Such an approach is extremely accurate for all interfaces with low curvature, but requires the FDTD simulation to define the permittivity as a $3\times 3$ tensor array (even in the simple case of isotropic materials being used). The situation gets even more  complicated if the materials have dispersive permittivity, where also the weighting coefficients of both media need to be frequency-dependent, and another sophisticated approach has to be employed \cite{deinega2007subpixel,hamm2013dispersive}. Such a level of elaboration easily leads to computation costs that may outweight the benefit of averaging, and accordingly no averaging was used for the simulations presented in this thesis. 
+In case of a single planar interface between two different materials under general orientation, the arithmetic average of the permittivities $\varepsilon_r$ is correct only for the electric field component \textit{parallel} with the interface, whereas the component \textit{perpendicular} to the interface requires to apply this weighted averaging to the reciprocal value of permittivity, $\varepsilon_r^{-1}$, instead. Such an approach is extremely accurate for all interfaces with low curvature, but it requires the FDTD simulation to define the permittivity as a $3\times 3$ tensor array (even in the simple case of isotropic materials being used). 
 
-Generally, the effect of discretization in FDTD can be easily identified by comparing results from two simulations that only differ by the grid resolution. It is a good practice to verify that such an error is negligible whenever a new simulation is tested.
+The situation gets even more  complicated if the materials have dispersive permittivity, where also the weighting coefficients of both media need to be frequency-dependent, and another sophisticated approach has to be employed \cite{deinega2007subpixel,hamm2013dispersive}. Such a level of elaboration easily leads to computation requirements that may outweight the benefit of averaging, and accordingly no averaging was used for the simulations presented in this thesis. 
+
+In general, the effect of discretization in FDTD simulations can be easily identified by comparing results from two simulations that only differ by the grid resolution. It is a good practice to verify that such an error is negligible whenever a new simulation is tested.
 %}}}
 
 \paragraph{Temporal discretisation} %{{{
 While the spatial resolution $\Delta x$ can be relatively freely set depending on the accuracy expected by the user, the \textit{temporal resolution} $\Delta t$ is related to $\Delta x$ by rules that will be discussed below. Generally, if $\Delta t$ is set too high, the simulation will get numerically unstable, yielding unrealistic or even infinite values.  %  slowing down the computation and
 
-In the literature, one often encounters that instead of description in terms of $\Delta t$, the \textit{Courant factor} $S$ is used:
+In the literature, one often encounters that the \textit{Courant factor} $S$ is used instead of the description in terms of $\Delta t$,
 \begin{equation} S~= \frac{c \Delta t}{\Delta x}, \label{eq_courant}\end{equation}
 In words, the Courant factor $S$ denotes what part of a FDTD cell the light can travel within one time step. 
-The reason for introducing this quantity is in that the Maxwell equations [Eq. (\ref{eq_me1}-\ref{eq_me4})] are scale invariant, and so is the field update routine in FDTD when materials with frequency-independent permittivity are used. Therefore, when resolution $\Delta x$ is changed, $S$ can be a well-chosen built-in constant and the time resolution given by Eq. (\ref{eq_courant}) ensures that the simulation does not go unstable.
+The reason for introducing this quantity consists in the Maxwell equations [Eq. (\ref{eq_me1}-\ref{eq_me4})] being scale invariant, which holds also for the field update routine in FDTD when materials with frequency-independent permittivity are used. Therefore, when the resolution $\Delta x$ is changed, $S$ can be a well-chosen built-in constant and the time resolution given by Eq. (\ref{eq_courant}) ensures that the simulation does not go unstable.
 
-FDTD obviously ceases to be scale-invariant whenever the properties of the materials depend on the frequency, which is needed for most realistic simulations. Then it appears more convenient to the autor to formally introduce yet another quantity, a \textit{critical frequency} $f_c$:
+FDTD obviously ceases to be scale-invariant whenever the properties of the materials depend on the frequency, which is needed for many realistic simulations. Then it appears more convenient to the autor to formally introduce yet another quantity, a \textit{critical frequency} $f_c$:
 \begin{equation} f_c := \frac{1}{\pi \, \Delta t} \equiv \frac{c}{\pi\, S\, \Delta x} \label{eq_fc}\end{equation}
-Note that this frequency is defined as different (i.e. $\pi$-times lower) than the frequency of time-stepping cycles is. It is however the value of $f_c$, and its relation to the model of materials used, that is of key importance for assessing numerical stability of simulation.
+Note that this frequency is different %(i.e. $\pi$-times lower) 
+than the frequency of time-stepping cycles is. It is however the value of $f_c$, and its relation to the model of materials used, that are of key importance for assessing the numerical stability of simulation. %% TODO-FK: cite
 
 %A fundamental rule is the way how materials are defined in FDTD.
 %}}}
 \paragraph{Definition of materials for the FDTD method} %{{{
 \label{def_of_mat}
 
-\begin{figure}[t] \caption{Permittivity plot for titanium dioxide (rutile), for an ordinary ray. The above plot has linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-1<\varepsilon_r<1$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach is more suitable for plotting permittivity in the following discussion.} \label{fg_tio2eps} \centering 
+\begin{figure}[t] \caption{Plots of complex permittivity ${\epsrl}_o(\omega)$ of titanium dioxide (rutile), for an ordinary ray. The above plot has a linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-10<\varepsilon_r<10$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach is more suitable for plotting permittivity in the following discussion.} \label{fg_tio2eps} \centering 
 	\includegraphics[width=14cm]{img/epsilon_TiO2_linear.pdf}
 	\includegraphics[width=14cm]{img/epsilon_TiO2_symlog.pdf}
 \end{figure}
 
 
-As described in Chapter \ref{chap_lorentzmedia}, the (local) response of usual media to an electromagnetic wave can be well approximated by a set of Lorentz oscillators, each of which is defined by three positive real numbers: its resonance angular frequency $\omega_{0m}$, damping rate $\gamma_m$ and oscillator strength $F_m$: % todo cite 
-$$\hspace{3cm} \epsrl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + \ii\omega\gamma_m} \hspace{3cm}\text{(\ref{eq_lorentz_eps} again)}$$
-FDTD, being a time-domain method, requires the media to be described in a similar way with the difference that the nondispersive part of relative permittivity $\varepsilon_{r\infty}$ can be chosen as a real number. 
-\begin{equation} \epsrl(\omega) = \varepsilon_{r\infty} + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + \ii\omega\gamma_m} \label{eq_lorentz_eps_fdtd} \end{equation}
+As described in Chapter \ref{chap_lorentzmedia}, Eqs. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}), the (local) response of usual media to an electromagnetic wave can be well approximated by a set of Lorentz oscillators, each of which is defined by three positive real numbers: its resonance angular frequency $\omega_{0}$, damping rate $\gamma$ and oscillator strength $F$. % todo cite 
+
 %It is not possible to directly supply the permittivity as an arbitrary function of frequency from fundamental reasons. 
 %We thus return to the local Drude-Lorentz theory, with a due emphasis on the definition of materials in FDTD.
 % we focus on this topic because in literature, either general theory is discussed, or just single working model  is used. We try to develop reliable rules for employing the FDTD to simulate realistic structures under as general circumstances as possible.
+FDTD, being a time-domain method, uses %% TODO-FK why?
+a computationally efficient description of the media in a similar  form, with the difference that the nondispersive part of relative permittivity $\varepsilon_{r\infty}$ can be chosen as a real number. 
+\begin{equation} \epsrl(\omega) = \varepsilon_{r\infty} + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + \ii\omega\gamma_m} \label{eq_lorentz_eps_fdtd} \end{equation}
+An illustration of a complex permittivity spectrum for titanium dioxide in its rutile allotrope is shown in Fig. \ref{fg_tio2eps}. As its crystal is birefringent, only one permittivity component, denoted as the \textit{ordinary}, from the tensor in Eq. (\ref{eq_epstensor}) was selected. 
 
 
 % TODO add a spectrum + table for SiO2?
@@ -95,16 +103,19 @@ FDTD, being a time-domain method, requires the media to be described in a simila
 % where the \textit{Courant factor} $C$ is usually set to $C:=0.5$ and $c \approx 2.998 \cdot 10^8$ m/s is the speed of light. The voxel size thus determines the critical frequency; in a simulation typical for this thesis, $\Delta x := 2$ $\upmu$m and the critical frequency $f_c \approx 95$ THz lies in the mid-infrared. For simulations in visible range with $\Delta x := 50$ nm, and $f_c \approx 3800$ THz, that is, in the regime of hard UV radiation.
 
 %The critical frequency may be viewed as the upper limit where an FDTD simulation gives plausible data. 
-Author observed that $f_c$ determines the constraints for the simulation stability in two ways simultaneously:
+
+% TODO write that this holds only for a nonmagnetic medium
+The author observed that $f_c$ determines the constraints for the simulation stability simultaneously in two ways:
 \begin{enumerate}
- \item{The resonance frequencies must be below the critical frequency,  %% TODO get a proof, or some citation, or cite MEEP sources where S.G.Johnson wrote a routine about this
-\begin{equation} \frac{\omega_{0m}}{2\pi} < f_c, \text{ for all oscillators, } \forall m \in \{1,2 \ldots M\}, \label{eq_fdtd_stability}\end{equation}
+ \item{The resonance frequencies must be lower than the the critical frequency,  %% TODO get a proof, or some citation, or cite MEEP sources where S.G.Johnson wrote a routine about this
+\begin{equation} \frac{\omega_{0m}}{2\pi} < f_c, \text{ for all oscillators, } % \forall m \in \{1,2 \ldots M\}, \label{eq_fdtd_stability}
+\end{equation}
 independent of what the strength $F_m$ or damping rate $\gamma_m$ of the oscillator is. 
 %This relates to the above note about expressing all high-frequency oscillators in the form of the high-frequency (static) permittivity. . 
 } 
- \item{The real part of the permittivity, as given in Eq. (\ref{eq_lorentz_eps_fdtd}), must be above a minimum value given by the Courant factor $S$ for all frequencies higher than the critical frequency $f_c$:
+ \item{For all frequencies higher than the critical frequency $f_c$, the real part of the permittivity, as given by Eq. (\ref{eq_lorentz_eps_fdtd}), must exceed a minimum value given by the Courant factor $S$,
 \begin{equation} \varepsilon_r'(2\pi\,f) > 3 S^{2} \equiv 3 \left( \frac{c \Delta t}{\Delta x} \right)^{2} \text{ for } \forall f \geq f_c. \label{eq_fdtd_stability_realp}\end{equation}  } % TODO verify whether the limit is eps>0 or e.g. eps>0.5 or whatever 
-A geometrical interpretation of this rule is that the instability is introduced when any wave, of frequency above the critical frequency, can travel more than $1/\sqrt{3}$ of one FDTD cell size within one time step. 
+A geometrical interpretation of this rule is that an instability is introduced when any wave with a frequency above $f_c$, can travel more than $1/\sqrt{3}$ of one FDTD cell size within one time step. 
 Note that in a nonmagnetic medium, the traveled distance is $$\frac{c\Delta t}{\sqrt{\varepsilon_r'}}.$$
 \end{enumerate}
 The FDTD simulation will become unstable if one or both of these rules are broken. The error from the instability initially arises from inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the field snapshot. Later the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
@@ -115,6 +126,7 @@ $$S_{max} = 3^{-1/2}\approx0.577.$$
 In practice, a slightly more conservative choice is made that provides a safe margin for the numerical imprecision: 
 \begin{equation} S:= 0.500 \quad \rightarrow \quad \varepsilon_r'(2\pi\,f)> 0.75, \quad \forall f \geq f_c. \label{eq_courant_choice}\end{equation}
 For any material with problematic high-frequency permittivity, $\varepsilon_r'(2\pi\,f_c) \in (0, 1)$, some low value of $S$ can be found that makes the simulation stable against the second rule. Simultaneously, the critical frequency shifts up, so potential problems with the first rule may be alleviated, too. This is however at the price of scaling up the number of required FDTD steps, so usually a reasonable change of the material definition is made instead of reducing $S$.
+%% TODO note that the same would apply to permeability mu, but it usually does not have problematic oscillator parameters
 
 %%% TODO 
 %%% This is related to the \textit{Courant criterion} \cite{taflove2005book} that states for a nondispersive medium of permittivity $\varepsilon_r$ that 
