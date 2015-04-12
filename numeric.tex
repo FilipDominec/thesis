@@ -564,7 +564,7 @@ and the Kramers-Kronig relations are a good verification of a correct solution. 
 so the postprocesing of FDTD data corresponds to unambiguous \textit{unfolding} of the dispersion curves.
 
 %See ~/p/MEEP_2013/130711_EWires/19_TiO2_cellscan_thick_HR/
-\begin{figure} \centering \caption{\textbf{a,b)} Real and imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L. \textbf{c)} From top to bottom: example function  $\upsilon(f)$, its or- dinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
+\begin{figure} \centering \caption{\textbf{a,b)} Real and imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L. \textbf{c)} From top to bottom: example function  $\upsilon(f)$, its ordinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
 We deal with a passive medium, consequently we impose Im$(\Neff)>0$ %TODO WRONG, sign must be opposite
  and Re$(\Zeff)>0$. 
@@ -611,6 +611,7 @@ this method makes several assumptions that may not hold always. One of them is t
 
 \subsection{Current-driven homogenisation} % TODO
 \mdf{TODO
+%% Markel2013: Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally intro- duced for a Bloch wave.
 
 \paragraph{Simulation setup}
 \paragraph{Retrieving the structure response}
