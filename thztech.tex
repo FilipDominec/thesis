@@ -16,33 +16,34 @@ and therefore the power radiated in the THz range can not be significantly impro
 
 %% TODO? add something about downscaling the optical sources
 
-\paragraph{Up-scaling conventional microwave sources}
-Another straightforward approach is based on reducing the size of the active regions of well-established microwave devices such as microwave diodes, transistors and vacuum tubes, with the aim to scale the wavelength of the emitted radiation proportionally with the dimensions. 
-This concept is, in fact, applicable to all % TODO is this truly 'all'?
- devices where the wavelength is not determined by quantum phenomena, or by physical quantity other than dimension (such as the magnetic field strength in a magnetron tube).
-
-The fundamental issue lies in that the power drops very fast when the device is miniaturized. If the total emitted power is limited by cooling, i.e. by the surface of the active region, it drops with the second power of the device size. If the volume power density is the determining factor, the power drops even faster. 
-% TODO EXAMPLES			 As a result, 
-
-As a solution, either substantial changes in the device geometry, or even new physical principles have been introduced for efficient THz sources. 
-% TODO IMPROVE HERE
 Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale. 
 The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  % There are numerous ways to generate  
 In the following paragraphs, try to briefly review the terahertz technology in a systematic manner.
 
+
+
+
 \subsection{Terahertz sources}
-\paragraph{Kinetic energy of an electron beam}
+\paragraph{Kinetic energy of an electron beam} %{{{ ================================================================================
 One class of devices uses the kinetic energy of an electron beam propagating in the vacuum. In devices accelerating a circular electron beam, such as cyclotrons or synchrotrons, radiation is emitted when electrons are passing through the bends in the particle path, the deflection of the electrons being caused by a static transverse magnetic field. If the electrons are packed in a short bunch, it results in an efficient emission of a coherent broadband pulse. %% with an improved efficiency in THz if they are packed
 Another example is the free electron laser with the electron bunches %% TODO ... forming upon ...
 passing through a periodically-poled magnet called \textit{wiggler}. 
 Both types of devices provide an excellent brightness and tunability, but they are rather large-scale facilities often with a dedicated building. 
 %In both devices, the electrons have to propagate in bunches. 
 
-Tabletop sources of radiation covering a part of the THz range are the microwave vacuum tubes: \textit{gyrotron}, backward wave oscillators (BWO, also known as \textit{carcinotrons}, of the O- and M-types), and \textit{klystron}. The unifying principle of these devices is that an electron beam speed, position or density can be modulated the electric field, and the modulation in turn radiates amplified electromagnetic wave. Backward-wave oscillators are used for continuous-wave spectroscopy, but the tunability of one device is typically limited to tens of percent and the power drops with the frequency.
+Tabletop sources of radiation covering a part of the THz range are the microwave vacuum tubes: \textit{gyrotron}, backward wave oscillators (BWO, also known as \textit{carcinotrons}, of the O- and M-types), and \textit{klystron}. The unifying principle of these devices is that an electron beam speed, position or density can be modulated the electric field, and the modulation in turn radiates amplified electromagnetic wave. Backward-wave oscillators are % have been ... since xxxties + cite
+ used for continuous-wave spectroscopy, but the tunability of one device is typically limited to tens of percent and the power drops with the frequency.
 % M-type, the most powerful, (M-BWO) and the O-type (O-BWO). The O-type delivers typically power in the range of 1 mW at 1000 GHz to 50 mW at 200 GHz. 
 
-\paragraph{Terahertz solid-state devices}
+%}}}
+\paragraph{Terahertz solid-state devices}%{{{================================================================================
 If a relatively low power is required, principles used in microwave engineering can be extended to the lower part of the terahertz spectrum. 
+Reducing the size of the active regions of well-established microwave devices, such as microwave diodes, transistors and vacuum tubes, usually enables scaling down the wavelength of the emitted radiation proportionally with the dimensions. 
+The fundamental issue lies in that the power drops very fast when the device is miniaturized. If the total emitted power is limited by cooling, i.e. by the surface of the active region, it drops with the second power of the device size. If the volume power density is the determining factor, the power drops even faster. 
+% TODO EXAMPLES	 of dropping power
+As a solution, either substantial changes in the device geometry, constituent materials, or even new physical principles have been introduced for efficient THz sources.  % TODO is this really true?
+%This concept is, in fact, applicable to all % TODO is this truly 'all'?
+ %devices where the wavelength is not determined by quantum phenomena, or by physical quantity other than dimension (such as the magnetic field strength in a magnetron tube).
 
 High-electron-mobility transistor (HEMT), impact-ionisation avalanche transit-time diode (IMPATT), resonant-tunneling diode (RTD)
 \cite{brown1991oscillations}
@@ -52,13 +53,12 @@ High-electron-mobility transistor (HEMT), impact-ionisation avalanche transit-ti
 % TODO note QCLS 
 
 % All types of tunneling diodes make use of quantum mechanical tunneling?
-
-\paragraph{Nonlinear up-conversion of continuous microwaves}
+%}}}
+\paragraph{Nonlinear up-conversion of continuous microwaves}%{{{ ================================================================================
 \add{
 The key principle of many THz sources is to use nonlinear response of matter to convert the frequency of incoming radiation.
 One possibility is to up-convert a microwave signal to its second or higher harmonic, 
-the radiation usually being supplied by one of the solid-state sources mentioned in the above paragraph. The nonlinearity is usually introduced by a P-N transition of a microwave diode, metal-semiconductor of a Schottky diode, or by changing the capacity in case of \textit{varactor} (or \textit{varicap}) multipliers.
-% TODO add about high-harmonic generation principle, waveguides, some examples
+the radiation usually being supplied by one of the solid-state sources mentioned in the above paragraph. The nonlinearity is usually introduced by a P-N transition of a microwave diode, metal-semiconductor interface of a Schottky diode, or by dynamic change of the capacity in case of \textit{varactor} (or \textit{varicap}) multipliers.
 % TODO the limitation shared with the solid-state sources  is fast drop of available power
 }
 
@@ -68,29 +68,33 @@ the radiation usually being supplied by one of the solid-state sources mentioned
 %???? material, as the wavelength range of semiconductor structures operation is limited from bottom by its size.
 
 The opposite approach generates THz radiation as the difference frequency between two or more detuned optical waves.
-The radiation may come from two lasers, mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
+The radiation may come from two lasers or laser modes [CCap7], mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
 Other possibility is to use the \textit{terahertz parametric generation} where a single wave enters the nonlinear crystal as the \textit{pump} and the second wave, \textit{idler}, is generated during the nonlinear process. The \textit{idler} wave is kept in an optical resonator; the terahertz output can be tuned by changing parameters of the resonator. 
 For nonlinear generation of pulses in the THz range, usually a mode-locked laser is used that emits pulses that intrinsically cover a broad spectrum of frequencies (e.g. typically over 360-390 THz for a titanium-sapphire laser). The difference-frequencies are generated from all optical frequency components simultaneously, which results in a terahertz pulse with a very broad spectrum given by the type of nonlinear medium. 
 
 The classical process of nonlinear optical conversion involves transparent materials, and where some measures are taken to account for the generally different velocity of all interacting waves.
 \begin{itemize}
-\item{For the difference-frequency generation between optical waves of close frequency, the classical condition of \textit{phase synchronization} is equivalent to ensure similar \textit{group} velocity at the optical and terahertz frequency. Of the materials satisfying these requirements, zinc telluride (ZnTe), gallium selenide GaSe, and lithium niobate (LiNbO$_{3}$) have found widest application in the frequency range up to 3--5 THz. } 
+\item{For the difference-frequency generation between optical waves of close frequency, the classical condition of \textit{phase synchronization} is equivalent to ensure similar \textit{group} velocity at the optical and terahertz frequency. Of the materials satisfying these requirements, zinc telluride (ZnTe), gallium selenide (GaSe), and lithium niobate (LiNbO$_{3}$, [CCap19]) have found widest application in the frequency range up to 3--5 THz. } 
 \item{The \textit{quasi-phase-matching} technique allows to compensate the difference of the group velocity of the optical wave and the terahertz wave by periodically altering the nonlinear coefficients of a crystal so that the nonlinear contribution to the resulting wave never reverses its sign. Crystals of \textit{periodically poled lithium niobate} (PPLN) are often used for this, with the possibility of shaping the poled regions as wedges (\textit{fanned-out PPLN}), which allows to change the effective poling pitch. This method is suitable for continuous-wave or narrow-band pulse terahertz generation.  }  % TODO cite 
-\item{A sufficiently strong nonlinear interaction, on a length less than the coherence length, alleviates both requirements of phase matching and low absorption of the waves. Organic crystals, e.g. made of DAST,\footnote{DAST is a shortcut for 4-dimethylamino-N-methylstilbazolium tosylate} have been reported\cite{han2000use} to have two orders of magnitude higher electrooptic coefficients than the materials usual in nonlinear optics, making them suitable for operation up to 20 THz. 
+\item{A sufficiently strong nonlinear interaction, on a length less than the coherence length, alleviates both requirements of phase matching and low absorption of the waves.\cite{leitenstorfer1999detectors} Organic crystals, e.g. made of DAST,\footnote{DAST is a shortcut for 4-dimethylamino-N-methylstilbazolium tosylate}
+%% and derivatives of MNA (2-methyl-4-nitroaniline) [CCap25]
+have been reported\cite{han2000use}[CCap24]
+to have two orders of magnitude higher electrooptic coefficients than the materials usual in nonlinear optics, making them suitable for operation up to 20 THz. 
 
-Nonlinear interaction is semiconductors is enhanced when the incident photon energy is above their band gap. Common crystals used for \textit{resonant THz emission} are GaAs or InP 
-%% + ZnTe ??  ADD ZNTE BANDGAP, 
-(with band-gaps of 1.42 and 1.34 eV, respectively), which can be illuminated by a
+Nonlinear interaction is semiconductors is enhanced when the incident photon energy is above their band gap. Common crystals used for \textit{resonant THz emission} are GaAs[CCap22],
+ InP  or CdTe
+(with band-gaps of 1.42 and 1.34 eV, %%  ADD CDTE BANDGAP, 
+ respectively), which can be illuminated by a
  titanium-sapphire laser (with an average photon energy $hc/\lambda \approx$ 1.5 eV).
  } 
-\item{Finally, plasma generated by high optical intensity of an optical pulse can serve as a nonlinear medium with negligible group velocity dispersion.}
-% TODO  nonlinearity/wakefield?? \cite{tong2012}     [hn15] THz generation in plasma -> 70 THz, detection in ZnTe
+\item{Finally, plasma generated by high optical intensity of an optical pulse can serve as a nonlinear medium, with a very broad bandwith. \cite{tong2012} }
+% TODO  nonlinearity/wakefield??  THz generation in plasma -> 70 THz, detection in ZnTe
  \end{itemize}
+%}}}
 
-
-\paragraph{Acceleration of macroscopic electric current}
+\paragraph{Acceleration of macroscopic electric current}%{{{
 Terahertz waves can be generated by \textit{photoconductivity}, i.e. by transient acceleration of charges upon optical illumination.
-In a non-saturated regime, the change of conductivity is roughly proportional to the light intensity, and thus to the square of the electric field. In this respect, the photoconductivity is similar to the aforementioned mechanism of the second-harmonic nonlinear interaction. In contrast, the major part of the energy is supplied to the photoconductive devices by external quasi-static electric field.
+In a non-saturated regime, the change of conductivity is roughly proportional to the light intensity, and thus to the square of the electric field. In this respect, the photoconductivity is similar to the aforementioned mechanism of the second-harmonic nonlinear interaction. In contrast, the major part of the energy is supplied to the photoconductive devices by external quasi-static electric field. Obviously, this method requires the photon energy to exceed the band-gap of the selected semiconductor.
 
 
 
@@ -98,10 +102,10 @@ In a non-saturated regime, the change of conductivity is roughly proportional to
 %%%   %% XXX
 %%%   Biased and unbiased photoconductive switches
 %%%   % Photomixing -  generate a terahertz beatnote, short charge carrier lifetime results in the modulation of the conductivity
-%%%   % can be made very compact [hn75]
+%%%   % can be made very compact \cite{gu1999generation}
 %%%   
-%%%   Auston’s emitter [hn1] pulsed/cont?
-%%%   large-aperture emitters [hn20], [hn21]
+%%%   Auston’s emitter \cite{auston1984picosecond} was pulsed
+%%%   large-aperture emitters \cite{darrow1990subpicosecond,hu1990optically}
 %%%   
 %%%   The emission efficiency at higher part of the THz spectrum can be improved when the 
 %%%   %% XXX leading edge is followed by similarly sharp falling edge of the current, 
@@ -110,21 +114,25 @@ In a non-saturated regime, the change of conductivity is roughly proportional to
 %%%   
 %%%   % TODO are continuous antennas also fully interdigitated? Or would it introduce DC current component too high?
 %%%   
-%%%   HN: "surface depletion field in semiconductors can serve for carrier acceleration, avoiding the necessity of using an external voltage source" [hn28, hn29]
-%%%   HN: "several mechanisms responsible for the enhancement depending on the excitation intensity" [hn32, hn33]
+%%%   HN: "surface depletion field in semiconductors can serve for carrier acceleration, avoiding the necessity of using an external voltage source" \cite{liu2003terahertz,zhang1992optoelectronic}
+
+%%%   HN: "several mechanisms responsible for the enhancement depending on the excitation intensity" \cite{corchia2001effects, heyman2001terahertz}
+
+
+
 %%%   HN: "other photoconductive materials applicable in TDTS are resumed e.g. in" [hn38]
 %%%   
 %Tilted Optical Pulses in Lithium Niobate
 %surface field, 
 %photo-Dember 
-
+%}}}
 \paragraph{Transition between quantum states}
 \mdf{TODO} THz/FIR lasers, p-Ge laser, THz-QCL
 %THz lasers =  the organic gas far infrared laser ("FIR laser")
 %p-Ge laser
 %Quantum cascade lasers
 
-\paragraph{Other THz sources}
+\paragraph{Other THz sources}%{{{
 \mdf{TODO}
 	%% %Coherent THz Radiation from Superconductors %%%   Josephson junctions on cavities [DOE/Argonne National Laboratory. "New T-ray Source Could Improve Airport Security, Cancer Detection." ScienceDaily. ScienceDaily, 27 November 2007. <www.sciencedaily.com/releases/2007/11/071126121732.htm>.]
 
@@ -135,16 +143,20 @@ In a non-saturated regime, the change of conductivity is roughly proportional to
 	%% %
 	%% %HN: optical rectification at metal surfaces has been demonstrated to generate THz radiation [hn60,hn61,hn62]
 	%% %% TODO XXX ADD: GEME coherent?, MMIC?, Grating-vacuum devices? , 
+%}}}
 
 \subsection{Terahertz detectors}
-\paragraph{Power detection}
+\paragraph{Power detection}%{{{
 Bolometers, Si bolometers (The best sensitivity at liquid-helium temperatures ,  slow response)
 acousto-optical Golay cells
 pyroelectric detectors are used
-
-\paragraph{Amplitude detection}
+%}}}
+\paragraph{Amplitude detection}%{{{
 Photoconductive receiving antennas (similar to generator)
 Electrooptic sampling (similar to generator)
+see 
+Ultrafast electro-optic field sensors
+
 Magnetooptic sampling based on Faraday rotation effect, induced by transient magnetic THz field
 Terahertz-induced lensing 
 frequency downconversion in Schottky harmonic mixers (similar to generator)
@@ -153,8 +165,7 @@ frequency downconversion in Schottky harmonic mixers (similar to generator)
 % HN: In the other configuration the ellipticity is measured near the zero-transmission point (Fig. 1.3b) [hn54]
 % HN: this scheme is important when a single photodetector is required, like in certain imaging applications [hn55] or in single-shot measurements [hn56]
 
-
-
+%}}}
 
 \subsection{Specifics of pulsed THz measurement}
 Pulsed measurement allows for automatic retrieval not only of the amplitude, but also of the phase spectrum. It should be noted that the measurement of the transmittance phase can be accomplished with continous tunable source, too, using a Mach-Zender interferometer.
