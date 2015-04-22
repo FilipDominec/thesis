@@ -49,9 +49,11 @@ In \textit{resonant tunneling} diodes (RTDs)\cite{asada2008resonant,brown1991osc
 Yet another principle is employed in the \textit{impact ionization avalanche transit-time} (IMPATT) diodes, where a non-destructive breakdown of a reverse-biased p-n junction follows the voltage with a delay which again enables oscillations if surrounded by a cavity. 
 In contrast, in the \textit{tunneling transit-time} (TUNNETT) diodes, the NDR is achieved by changing the transit time of carriers through the semiconductor volume.
 %}}}
+\mdf{
 \paragraph{Nonlinear up-conversion of microwaves}%{{{ ================================================================================
-%% TODO
+TODO
 %}}}
+}
 \paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
 The opposite approach, also known as \textit{optical rectification}, generates THz radiation as the difference frequency between two or more detuned optical waves.
 The radiation may come from two lasers or laser modes [CCap7], mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
@@ -121,6 +123,9 @@ Another class of terahertz detectors enable measuring the electric field $E(t)$ 
 
 Most of them are based on coincidence of the terahertz pulse and a \textit{sampling} (or, \textit{gating}) optical pulse. The terahertz waveform can be recovered using an optical delay line, thus scanning through the mutual timing of the pulses. % TODO cite
 Single-shot detection schemes have been also implemented, usually being based on the temporal dilation (chirp) of the sampling optical pulse and subsequent analysis by a spectrometer.
+% TODO check the THz detectors as I proposed
+% HN: In the other configuration the ellipticity is measured near the zero-transmission point (Fig. 1.3b) [hn54]
+% HN: this scheme is important when a single photodetector is required, like in certain imaging applications [hn55] or in single-shot measurements [hn56]
 The physical process of sampling detection is in most cases analogous to one of the above described mechanisms of terahertz pulse generation:
 \begin{enumerate}
  \item{Photoconductive receiving antennas use a short optical pulse to introduce a subpicosecond time window to allow electric field to move a charge across a superconductor gap between two metallic stripes. The voltage difference can then be measured and is proportional to the instantaneous THz field at the time of arrival of the optical pulse.} 
@@ -132,15 +137,11 @@ The physical process of sampling detection is in most cases analogous to one of 
 Similar to all cases of the pulsed terahertz sources, the temporal resolution of sampling terahertz detectors is generally limited by the duration of the sampling optical pulse, and more often, by the limited speed of the photoconductive antenna or by group velocity dispersion of the nonlinear crystal. Similar measures can be taken to improve the bandwidth, such as the use of thin plates of organic crystals (DAST) % CITE
 or terahertz nonlinear detection in plasma.
 
-Terahertz-induced lensing 
+\mdf{Terahertz-induced lensing 
 frequency downconversion in Schottky harmonic mixers (similar to generator)
 heterodyne mixing
 
-% TODO check the THz detectors as I proposed
-% HN: In the other configuration the ellipticity is measured near the zero-transmission point (Fig. 1.3b) [hn54]
-% HN: this scheme is important when a single photodetector is required, like in certain imaging applications [hn55] or in single-shot measurements [hn56]
 
-%}}}
 
 @article{wu1996ultrafast,
   title={Ultrafast electro-optic field sensors},
@@ -153,11 +154,9 @@ heterodyne mixing
   publisher={AIP Publishing}
 }
 
-\subsection{Specifics of pulsed THz measurement}
-Pulsed measurement allows for automatic retrieval not only of the amplitude, but also of the phase spectrum. It should be noted that the measurement of the transmittance phase can be accomplished with continous tunable source, too, using a Mach-Zender interferometer.
-
-Pulsed measurement is is necessary for transient dynamics investigation.
-\mdf{TODO}
+It should be noted that the measurement of the transmittance phase can be accomplished with continous tunable source, too, using a Mach-Zender interferometer.
+Pulsed measurement is however vital for transient dynamics investigation.
+TODO}
 %% 
 %% %TODO about synchronicity - almost always pumped/triggered by a pulsed laser
 %% \mdf{
@@ -172,3 +171,4 @@ Pulsed measurement is is necessary for transient dynamics investigation.
 %% }
 
 
+%}}}
