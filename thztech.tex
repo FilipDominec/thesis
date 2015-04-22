@@ -1,27 +1,24 @@
 \section{Short review of the terahertz technology}
 The terahertz range of the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has met as yet a relatively small application potential in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. 
 
-There is a great number of literature that describes different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}, % TODO add
+There is a great number of literature that describes different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}\cite{sullivan2012field,lewis2014review}
+\cite{lewis2014review}
+
 and many of them are also, with more or less detail, discussed in previous doctoral theses written in our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006phd}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
 
-\subsection{Issues finding suitable terahertz sources}
-\paragraph{Thermal emission in the THz range}
-Firstly, let us remind why thermal sources are not used in the THz range, although they are the primary choice in the infrared and optical spectroscopy. The blackbody radiation is governed by the Planck law % TODO cite
+Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale. 
+The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  
+In the following paragraphs, try to briefly review the terahertz technology in a systematic manner.
+% There are numerous ways to generate  ...
+
+\subsection{Weak thermal emission in the THz range}
+Firstly, let us remind why thermal sources are rarely used in the THz range. The blackbody radiation is governed by the Planck law % TODO cite
 \begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
 %$$ ,$$ TODO
 from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=$ 300~K).  Furthermore, all Planck oscillators at the frequency of e.g. $f =$ 1~THz are already fully saturated:
 %  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
 $$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
 and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast, the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Therefore, sources other than thermal are preferred for measurements in the THz range.
-
-%% TODO? add something about downscaling the optical sources
-
-Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale. 
-The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  % There are numerous ways to generate  
-In the following paragraphs, try to briefly review the terahertz technology in a systematic manner.
-
-
-
 
 \subsection{Terahertz sources}
 \paragraph{Kinetic energy of an electron beam} %{{{ ================================================================================
@@ -36,36 +33,30 @@ Tabletop sources of radiation covering a part of the THz range are the microwave
 % M-type, the most powerful, (M-BWO) and the O-type (O-BWO). The O-type delivers typically power in the range of 1 mW at 1000 GHz to 50 mW at 200 GHz. 
 
 %}}}
-\paragraph{Terahertz solid-state devices}%{{{================================================================================
-If a relatively low power is required, principles used in microwave engineering can be extended to the lower part of the terahertz spectrum. 
+\paragraph{Terahertz solid-state oscillators}%{{{================================================================================
 Reducing the size of the active regions of well-established microwave devices, such as microwave diodes, transistors and vacuum tubes, usually enables scaling down the wavelength of the emitted radiation proportionally with the dimensions. 
-The fundamental issue lies in that the power drops very fast when the device is miniaturized. If the total emitted power is limited by cooling, i.e. by the surface of the active region, it drops with the second power of the device size. If the volume power density is the determining factor, the power drops even faster. 
-% TODO EXAMPLES	 of dropping power
-As a solution, either substantial changes in the device geometry, constituent materials, or even new physical principles have been introduced for efficient THz sources.  % TODO is this really true?
+The fundamental issue lies in that the power drops very fast when the device is miniaturized. If the total emitted power is limited by cooling, i.e. by the surface of the active region, it drops with the second power of the device size. If the volume power density is the determining factor, the power drops even faster.  % TODO examples of dropping power
+As a solution, either substantial changes in the device geometry, constituent materials, or even new physical principles have been introduced for efficient THz sources.\cite[pp. 8-12]{sullivan2012field}  
+
 %This concept is, in fact, applicable to all % TODO is this truly 'all'?
  %devices where the wavelength is not determined by quantum phenomena, or by physical quantity other than dimension (such as the magnetic field strength in a magnetron tube).
 
-High-electron-mobility transistor (HEMT), impact-ionisation avalanche transit-time diode (IMPATT), resonant-tunneling diode (RTD)
-\cite{brown1991oscillations}
- or Gunn diodes.
-\mdf{TODO principles of operation}
+The frequency range of operation of high-electron-mobility transistors (HEMT) has also been extended roughly up to 1 THz.
+If a relatively low power is required, principles used in microwave engineering can be extended to the lower part of the terahertz spectrum.  %% TODO stylistics
 
-% TODO note QCLS 
+An oscillator may be formed by placing an element with negative differential resistance (NDR) into a resonant cavity or circuit. 
+In \textit{Gunn diodes}, widely used in microwave technology, the NDR is due to the electron effective mass abruptly increasing with their velocity in certain direct-gap semiconductors.
+In \textit{resonant tunneling} diodes (RTDs)\cite{asada2008resonant,brown1991oscillations}, NDR is achieved by a heterostructure quantum well, where, upon an increase of the voltage, the electron energy is detuned from the resonance of the quantum well, and the current is reduced.
 
-% All types of tunneling diodes make use of quantum mechanical tunneling?
+Yet another principle is employed in the \textit{impact ionization avalanche transit-time} (IMPATT) diodes, where a non-destructive breakdown of a reverse-biased p-n junction follows the voltage with a delay that again enables oscillations if surrounded by a cavity. 
+In contrast, in the \textit{tunneling transit-time} (TUNNETT) diodes, the NDR is achieved by changing the transit time of carriers through the semiconductor volume.
 %}}}
-\paragraph{Nonlinear up-conversion of continuous microwaves}%{{{ ================================================================================
-\add{
-The key principle of many THz sources is to use nonlinear response of matter to convert the frequency of incoming radiation.
-One possibility is to up-convert a microwave signal to its second or higher harmonic, 
-the radiation usually being supplied by one of the solid-state sources mentioned in the above paragraph. The nonlinearity is usually introduced by a P-N transition of a microwave diode, metal-semiconductor interface of a Schottky diode, or by dynamic change of the capacity in case of \textit{varactor} (or \textit{varicap}) multipliers.
-% TODO the limitation shared with the solid-state sources  is fast drop of available power
-}
-
-\paragraph{Nonlinear down-conversion of optical waves}
+\paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
 %, known also as \textit{continuous-wave optical rectification}. 
 %The nonlinearity needed for the difference-frequency generation usually comes from intrinsic properties of a nonlinear crystal. 
 %???? material, as the wavelength range of semiconductor structures operation is limited from bottom by its size.
+
+%todo Electro-optic crystals 
 
 The opposite approach, also known as \textit{optical rectification}, generates THz radiation as the difference frequency between two or more detuned optical waves.
 The radiation may come from two lasers or laser modes [CCap7], mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
@@ -86,8 +77,7 @@ Nonlinear interaction is semiconductors is enhanced when the incident photon ene
 \item{Finally, plasma generated by high optical intensity of an optical pulse can serve as a nonlinear medium, with a very broad bandwith of tens of THz.\cite{loffler2000generation,chen2007terahertz,tong2012} }
  \end{itemize}
 %}}}
-
-\paragraph{Acceleration of macroscopic electric current}%{{{ ================================================================================
+\paragraph{Photoconductivity sources}%{{{ ================================================================================
 Terahertz waves can be generated by \textit{photoconductivity}, i.e. by transient acceleration of charges upon optical illumination.
 %In a non-saturated regime, the change of conductivity is roughly proportional to the light intensity, and thus to the square of the electric field amplitude. In this respect, the photoconductivity is similar to the aforementioned mechanism of the second-harmonic nonlinear interaction. 
 In the photoconductive devices, the major part of the energy is supplied by the external quasi-static electric field, which limits the maximum emitted power and requires less intense laser illumination. The light sources can be again two detuned lasers or laser modes\cite{gu1999generation}, or a pulse from a mode-locked laser oscillator. Obviously, this method requires the photon energy to exceed the band-gap of the selected semiconductor.
@@ -106,7 +96,7 @@ A weaker THz emission can also be observed from semiconductors even with no DC b
 %%%   HN: "several mechanisms responsible for the enhancement depending on the excitation intensity" 
 
 %}}}
-\paragraph{Transition between quantum states}%{{{  ================================================================================
+\paragraph{Terahertz lasers}%{{{  ================================================================================
 Continuous gas terahertz lasers use stimulated emission from quantum transitions between discrete rotation levels of small organic molecules.\cite{chang1970cw} Although they present high-brightness continuous sources at multiple lines in the terahertz range, they are rather expensive and their quantum efficiency is poor, as they usually have to be pumped by a powerful carbon dioxide laser at 33 THz.
 
 Solid-state terahertz lasers are represented by the p-doped germanium laser, where the quantum transition occurs between light and heavy holes in strong magnetic field and at cryogenic temperatures. The transition frequency can be continuously tuned by the magnetic field.
@@ -116,26 +106,12 @@ Quantum cascade lasers (QCL) are composed of hundreds of semiconductor layers, w
 \paragraph{Other THz sources}%{{{
 Although a complete list of all physical phenomena that lead to possibly useful emission of terahertz waves is beyond the scope of this thesis, we try to point out some most notable examples of these. 
 
-Earlier in our laboratory it was observed that an oblique impact of femtosecond optical pulse on 50-150 nm thick gold layer on glass emits a THz pulse of similar energy (\cite{kadlec2004optical,kadlec2005study}) as those from an interdigitated emitter. Other experiments, e.g. with thin organic layers,\cite{ramakrishnan2012surface} suggest the process may be assisted with surface plasmons.
+Earlier in our laboratory it was observed that an oblique impact of femtosecond optical pulse on 50-150 nm thick gold layer on glass emits a THz pulse of similar energy (\cite{kadlec2004optical,kadlec2005study}) as those from an interdigitated emitter. Other experiments, e.g. with thin organic layers,\cite{ramakrishnan2012surface} suggest the process may be intensified by surface plasmons.
 
+Tunable terahertz continuous-wave emission was observed in multiple stacked Josephson junctions\cite{welp2013superconducting}, where the oscillation frequency is determined by the junction voltage as $f(U) = 2e/h$, thus 2 mV correspond to roughly 1 THz. This method however requires cryogenic temperatures as a superconductor structure is used, and is still subject to primary research.
 
-
-
-
-
-
-
-
-
-
-\mdf{TODO}
-	%% %Coherent THz Radiation from Superconductors %%%   Josephson junctions on cavities [DOE/Argonne National Laboratory. "New T-ray Source Could Improve Airport Security, Cancer Detection." ScienceDaily. ScienceDaily, 27 November 2007. <www.sciencedaily.com/releases/2007/11/071126121732.htm>.]
-
-	%% %Terahertz radiation from shocked materials
-	%% %
-	%% %HN: optical rectification at metal surfaces has been demonstrated to generate THz radiation [hn60,hn61,hn62]
-
-	%% %% TODO XXX ADD: GEME coherent?, MMIC?, Grating-vacuum devices? , 
+The \textit{Smith-Purcell} effect is observed when relativistic electron beam passes close to a corrugated surface, e.g. of an optical grating. The emitted coherent radiation can be obtained also in the THz region\cite{doucas1992first} (as determined by the grating pitch). A similar effect was later observed from a DC current flowing through a graphene monolayer placed over a photonic crystal.\cite{tantiwanichapan2014graphene}
+%% TODO add: GEME coherent?, MMIC?
 %}}}
 
 \subsection{Terahertz detectors}
