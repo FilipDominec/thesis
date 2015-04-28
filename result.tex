@@ -99,49 +99,10 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %}}}
 \section{Metal mesh}%{{{
 The resonance in the metallic mesh has been used as a filter 
-%@article{ulrich1967effective,
-  %title={Effective low-pass filters for far infrared frequencies},
-  %author={Ulrich, R},
-  %journal={Infrared Physics},
-  %volume={7},
-  %number={2},
-  %pages={65--74},
-  %year={1967},
-  %publisher={Elsevier}
-%}
-%@article{ulrich1967far,
-  %title={Far-infrared properties of metallic mesh and its complementary structure},
-  %author={Ulrich, Reinhard},
-  %journal={Infrared Physics},
-  %volume={7},
-  %number={1},
-  %pages={37--55},
-  %year={1967},
-  %publisher={Elsevier}
-%}
+\cite{ulrich1967effective,ulrich1967far}
 ... has been known for half a century\cite{vogel1964transmission}
-%@article{vogel1964transmission,
-  %title={Transmission and reflection of metallic mesh in the far infrared},
-  %author={Vogel, P and Genzel, L},
-  %journal={Infrared Physics},
-  %volume={4},
-  %number={4},
-  %pages={257--262},
-  %year={1964},
-  %publisher={Elsevier}
-%}
 
 Improved cross-shaped pattern for better spectral selectivity \cite{porterfield1994resonant}
-%@article{porterfield1994resonant,
-  %title={Resonant metal-mesh bandpass filters for the far infrared},
-  %author={Porterfield, David W and Hesler, JL and Densing, R and Mueller, ER and Crowe, TW and Weikle II, RM},
-  %journal={Applied Optics},
-  %volume={33},
-  %number={25},
-  %pages={6046--6052},
-  %year={1994},
-  %publisher={Optical Society of America}
-%}
 
 %}}}
 \section{Metallic strips} % references to -> % note about plasmonic particles
@@ -226,7 +187,19 @@ We performed series of experiments to measure the effective permeability  $\mu_{
 %>> (0.4-0.2)=0.2. Therefore, (15./12.)**(0.4-0.2) gives a reasonable
 %>> factor
 %>> of 1.0456 difference for the resonant frequencies of the magnetic mode.%}}}
-
+%TODO Note that the effect of mm-phc transition can be also observed in silicon microcubes (thz operation)%{{{
+%Planar all-silicon metamaterial for terahertz applications
+%@article{prosvirnin2015planar,
+  %title={Planar all-silicon metamaterial for terahertz applications},
+  %author={Prosvirnin, Sergey L and Dmitriev, Victor A and Kuleshov, Yeugenii M and Khardikov, Vyacheslav V},
+  %journal={Applied Optics},
+  %volume={54},
+  %number={13},
+  %pages={3986--3990},
+  %year={2015},
+  %publisher={Optical Society of America}
+%}
+%}}}
 \section{SRRs and spheres in a wire array or grid} % references to ->
 %{{{
 \begin{figure} \caption{img/SphereWire\_eps100\_R25\_FDTD.pdf}  \centering  \includegraphics[width=10cm]{img/SphereWire_eps100_R25_FDTD.pdf} \end{figure} \clearpage
@@ -369,7 +342,7 @@ Another case of interest where evanescent waves are obtained is that of $\Neff' 
 The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 %}}}
 
-\section{Results}
+\paragraph{Results}
 \begin{figure} \centering%{{{
 \includegraphics[width=115mm]{img/ERods_eps100_double_a100a080_FDTD.pdf}
 \includegraphics[width=115mm]{img/ERods_eps100_single_a120_FDTD.pdf}
@@ -443,7 +416,7 @@ As it can be seen in Figs.~\ref{fg_spacingscan100} and \ref{fg_drawn100}, the pa
 
 Note that the frequencies of the Mie resonances deviate from their free-space values when the rod distance is reduced. In fact, these resonances help to form the photonic band gaps (both Bragg and plasma band gaps) due to their dispersion. As a consequence, these resonances must be always located inside a frequency range with $\Neff''>0$.
 %}}}
-\section{Discussion}%{{{
+\paragraph{Discussion}%{{{
 Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity rods, we will draw below implications for building a negative-index MM from available dielectrics.  Another series of simulations implies that reducing the dielectric permittivity has the main effect to shift all the Mie resonances to higher frequencies (also with respect to the photonic bands). As a result, the band with $\Neff'<0$ gets gradually narrower and, for the rod permittivity below about 50, we do not find any cell size $a$ that would imply the first and second Mie resonances in the first photonic band as illustrated for $\varepsilon_r = 30$ in Fig. \ref{fg_drawn030}. This means that the value of $\varepsilon_{r} \approx 50$ is the minimum for obtaining a negative index of refraction in any square array of cylindrical rods. Note that one would come to a very similar value of minimum permittivity for the case of a square array of bars with a slightly different shape, e.g. a square cross-section. 
 
 A sufficiently high permittivity can be found in the microwave and terahertz ranges, in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.

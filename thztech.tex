@@ -51,8 +51,7 @@ Yet another principle is employed in the \textit{impact ionization avalanche tra
 In contrast, in the \textit{tunneling transit-time} (TUNNETT) diodes, the NDR is achieved by changing the transit time of carriers through the semiconductor volume.
 %}}}
 \paragraph{Nonlinear up-conversion of microwaves}%{{{ ================================================================================
-The nonlinear response of semiconductor devices to microwaves can be used for up-conversion in the terahertz range. 
-\mdf{TODO}
+The nonlinear response of semiconductor devices to microwaves can be used for up-conversion in the terahertz range. Starting from a relatively powerful and widely available semiconductor source operating around 100 GHz, frequency multiplying stages are are often cascaded to reach frequencies several times higher (e.g. \cite{thomas2012first}).
 
 %}}}
 \paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
@@ -102,16 +101,16 @@ Continuous gas terahertz lasers use stimulated emission from quantum transitions
 
 Solid-state terahertz lasers are represented by the p-doped germanium laser, where the quantum transition occurs between light and heavy holes in strong magnetic field and at cryogenic temperatures. The transition frequency can be continuously tuned by the magnetic field.
 
-Quantum cascade lasers (QCL) are composed of hundreds of semiconductor layers,\cite{yin2012terahertz} which create multiple closely-spaced quantum levels. Each electron or hole traversing the structure thus undergoes multiple transitions. Such devices are compact sources of efficient, continuous and slightly tunable radiation in the mid-IR region. The extension of their operation under 2 THz always requires cryogenic cooling and is subject to intense research.
+Quantum cascade lasers (QCL) are composed of hundreds of semiconductor layers \cite{yin2012terahertz}, which create multiple closely-spaced quantum levels. Each electron or hole traversing the structure thus undergoes multiple transitions. Such devices are compact and  efficient sources of continuous and slightly tunable radiation in the mid-IR region. The extension of their operation under 2 THz always requires cryogenic cooling and is subject to intense research.
 %}}}
 \paragraph{Other THz sources}%{{{ ================================================================================
 Although a complete list of all physical phenomena that lead to possibly useful emission of terahertz waves is beyond the scope of this thesis, we try to point out some most notable examples of these. 
 
-Earlier in our laboratory it was observed that an oblique impact of femtosecond optical pulse on 50-150 nm thick gold layer on glass emits a THz pulse of similar energy (\cite{kadlec2004optical,kadlec2005study}) as those from an interdigitated emitter. Other experiments, e.g. with thin organic layers,\cite{ramakrishnan2012surface} suggest the process may be intensified by surface plasmons.
+Earlier in our laboratory it was observed that an oblique impact of femtosecond optical pulse on 50-150 nm thick gold layer on glass emits a THz pulse of similar energy as those from an interdigitated emitter  \cite{kadlec2004optical,kadlec2005study}. Other experiments, e.g. with thin organic layers \cite{ramakrishnan2012surface}, suggest the process may be intensified by surface plasmons.
 
-Tunable terahertz continuous-wave emission was observed in multiple stacked Josephson junctions\cite{welp2013superconducting}, where the oscillation frequency is determined by the junction voltage as $f(U) = 2e/h$, thus 2 mV correspond to roughly 1 THz. This method however requires cryogenic temperatures as a superconductor structure is used, and is still subject to primary research.
+Tunable terahertz continuous-wave emission was observed in multiple stacked Josephson junctions \cite{ozyuzer2007emission}, where the oscillation frequency is determined by the junction voltage as $f(U) = 2e/h$, thus 2 mV correspond to roughly 1 THz. This method however requires cryogenic temperatures as a superconductor structure is used, and is still subject to primary research.
 
-The \textit{Smith-Purcell} effect is observed when relativistic electron beam passes close to a corrugated surface, e.g., of an optical grating. The emitted coherent radiation can be obtained also in the THz region\cite{doucas1992first} (as determined by the grating pitch). A similar effect was later observed from a DC current flowing through a graphene monolayer placed over a photonic crystal \cite{tantiwanichapan2014graphene}.
+The \textit{Smith-Purcell} effect is observed when relativistic electron beam passes close to a corrugated surface, e.g., of an optical grating. The emitted coherent radiation can be obtained also in the THz region \cite{doucas1992first} (as determined by the grating pitch). A similar effect was later observed from a DC current flowing through a graphene monolayer placed over a photonic crystal \cite{tantiwanichapan2014graphene}.
 %% TODO add: GEME coherent?, 
 %% TODO add: THz HHG? http://www3.imperial.ac.uk/newsandeventspggrp/imperialcollege/naturalsciences/physics/exssseminars/eventssummary/event_21-10-2014-13-26-55
 %}}}
@@ -126,12 +125,13 @@ The concept of a bolometer can be greatly improved, in terms of sensitivity or s
 
 %}}}
 \paragraph{Heterodyne mixing}%{{{
-Terahertz continuous-wave signal can be mixed with a similar signal, producing a difference frequency in the microwave spectral range which can be easily processed using an oscilloscope or a spectral analyzer. The nonlinear components often used up to 1 THz are Schottky diodes. Fast-enough amplitude detectors, such as hot-electron bolometers based on Nb or NbN superconducting transition, can also be used with a higher sensitivity \cite{lee2008book}.
+Terahertz continuous-wave signal can be mixed with the signal from a local oscillator, producing a difference frequency in the microwave spectral range which can be easily processed using an oscilloscope or a spectral analyzer. The nonlinear components often used up to 1 THz are Schottky diodes or superconducting Josephson junctions \cite{face1986high}.
+Fast enough thermal detectors, such as hot-electron bolometers based on Nb or NbN superconducting transition, can also be used with a higher sensitivity \cite{lee2008book}.
  instead of the time-averaged power density.
 
 %}}}
 \paragraph{Time-resolved field sampling}%{{{
-Another class of terahertz detectors enables measuring the electric field $\E(t)$ (or magnetic field $\HH(t)$) as a function of time. An important advantage of such devices is the possibility to recover the instantaneous amplitude of the field (i.e. both its modulus and phase in the frequency domain). It also allows to synchronize the detection with the pulsed source to record short terahertz transients.
+Another class of terahertz detectors enables measuring the electric field $\E(t)$ [or magnetic field $\HH(t)$] as a function of time. An important advantage of such devices is the possibility to recover the instantaneous amplitude of the field (i.e. both its modulus and phase in the frequency domain). It also allows to synchronize the detection with the pulsed source to record short terahertz transients.
 (It should be noted that the measurement of the transmittance phase can be accomplished with continous tunable source, too, using a Mach-Zender interferometer.
 Pulsed measurement is however vital for transient dynamics investigation.)
 
@@ -144,7 +144,7 @@ The physical process of the optical sampling is in most cases analogous to one o
 \begin{enumerate}
  \item{Photoconductive receiving antennas use a short optical pulse to introduce a subpicosecond time window to short-circuit the antenna segments. The instantaneous THz field at the time of the optical pulse arrival moves a proportional charge across a superconductor gap between two metallic stripes. The voltage difference can then be amplified and measured by relatively slow electronics.} 
  \item{Electrooptic sampling uses the nonlinear interaction between the optical and THz electric field in an electrooptic crystal, typically a thin plate of ZnTe. To discriminate between the sampling optical pulse and the weaker component added to it by the nonlinear interaction, usually a change of optical polarization is detected.}  % todo add that this will be discussed?
- \item{Magnetooptic sampling was also demonstrated,\cite{riordan1997free} based on the Faraday rotation induced by the magnetic component of a transient THz wave.} % TODO CITE
+ \item{Magnetooptic sampling was also demonstrated,\cite{riordan1997free}, based on the Faraday rotation induced by the magnetic component of a transient THz wave.}
  \end{enumerate}
 Similar to all cases of the pulsed terahertz sources, the temporal resolution of sampling terahertz detectors is generally limited by the duration of the sampling optical pulse, and more often, by the limited speed of the photoconductive antenna or by group velocity dispersion of the nonlinear crystal. The detection bandwidth can be improved using the approaches used in the terahertz pulsed sources  such as the use of thin plates of organic crystals (DAST) % CITE
 or nonlinear detection in plasma.
