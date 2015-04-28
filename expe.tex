@@ -107,13 +107,13 @@ The annealed spheres were further processed with the aim to break or eliminate c
 \paragraph{Theory of anisotropic sieves}%{{{
 Triple sieving on commercial sieves, weaved from stainless steel wire, did not provide narrow enough size distribution. We therefore developed a more exact method for sample refinement and characterisation. 
 
-\begin{figure}[ht] \caption{Correspondence between the hole shape (above) and the set of ellipsoids that can pass through the hole (below), determined by their medium-major and minor axes. Somewhat surprisingly, the \textbf{(a)} square and \textbf{(b)} lozenge holes result in circular/elliptic set of passing particles, whereas the \textbf{(c)} circular and \textbf{(b)} elliptic holes result in the square/rectangular shape of such an region.\\
-For clarity, some limiting-case examples of the ellipsoid projection and the equivalent position on the minor-major plot are drawn in blue, violet and red. } \label{fg_sieve_pass_notpass} \centering 
+\begin{figure}[ht] \caption{Correspondence between the hole shape (above) and the set of ellipsoids that can pass through the hole (below), determined by their medium and minor axes. Somewhat surprisingly, the \textbf{(a)} square and \textbf{(b)} lozenge holes result in circular/elliptic set of passing particles, whereas the \textbf{(c)} circular and \textbf{(b)} elliptic holes result in the square/rectangular shape of such an region.\\
+For clarity, some limiting-case examples of the ellipsoid projection and the equivalent position on the minor-medium axis plot are drawn in blue, violet and red. } \label{fg_sieve_pass_notpass} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_pass_notpass.pdf}
 \end{figure}
-In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$r_a \leq r_b \leq r_c.$$ For the purpose of sieving, only the values of the shortest two axes, $r_a$ and $r_b$, decide whether the particle can pass through the sieve. The longest ellipsoid axis $r_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each 3-D particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2r_a$, and by its \textit{major axis} $\equiv 2r_b$. For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and major axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
+In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$\rho_a \leq \rho_b \leq \rho_c.$$ For the purpose of sieving, only the values of the shortest two axes, $\rho_a$ and $\rho_b$, decide whether the particle can pass through the sieve. The longest ellipsoid axis $\rho_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each 3-D particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2\rho_a$, and by its \textit{medium axis} $\equiv 2\rho_b$. For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and medium axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
 
-The resonance frequency of a dielectric resonator depends on all three half-axes, $r_a \leq r_b \leq r_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $r_a \leq r_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves of square/lozenge holes with the effect of a couple of sieves of micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
+The resonance frequency of a dielectric resonator depends on all three half-axes, $\rho_a \leq \rho_b \leq \rho_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $\rho_a \leq r_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves of square/lozenge holes with the effect of a couple of sieves of micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
 \begin{figure}[ht] \caption{Application of the effect from Fig. \ref{fg_sieve_pass_notpass} for separating a narrow fraction of ellipsoids between the sieves. Both combinations of \textbf{(a)} square-rectangular and \textbf{(b)} circular-elliptic sieves can be used, with the latter one promising better selectivity also in terms of the particle aspect ratio.} \label{fg_double_sieving} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_double_sieving_fractions.pdf}
 \end{figure}
@@ -157,17 +157,28 @@ The amount of particles in one batch was limited to ca. 10--20 mm$^{3}$, otherwi
 It could however be remedied by tilting the apparatus. With a tilt of 5--10 degrees, the bulk of particles then accumulated near one side, leaving most of the sieve surface free for sieving the moving fraction of particles. According to the small amount of particles required for the terahertz spectroscopy measurements, it is however advisable to sort a batch in order of 1--3 mm$^{3}$.
 %}}}
 \section{Optical determination of microparticle statistics}
-%\paragraph{}%{{{
-\begin{figure}[ht] \caption{\textbf{a)} A section of a microphotograph of sample before sieving, \textbf{b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
-\textbf{a)}\includegraphics[height=5cm]{img/technology/imagej_photo.pdf}
-\textbf{b)}\includegraphics[height=5cm]{img/technology/imagej_found.pdf}
-\end{figure}
+%\paragraph{}
+%{{{
+Accurate characterisation of the particle statistics was necessary not only to assess the efficacy of sieving, but also to explain possible difference the measured terahertz spectra from the computed ones on a quantitative basis. To obtain reliable statistics, thousands of particles needed to be evaluated, repeatedly for every sample. This, along with the small dimensions of particles, indicated that the optical microphotography with computer image processing automatically resolving each particle would be the most viable way to do so.
 
-We developed a numerical method to measure the histogram of the particle size distribution, based on a calibrated microphotograph of the sample such as in Fig. \ref{fg_sievingstats}a. This enabled to assess the sieving precision and also to predict the realistic signal by simulation.
-% TODO add link to http://f.dominec.eu/granulo/index.html
-\add{ TODO}
-% TODO  add the 4-fold png figure from web
+Computer granulometry
+%, identification and measurement of photographed particles
+is a well-established technique, and is implemented in several advanced image processing programs, of which \textit{ImageJ} was selected \cite{abramoff2004image}. 
+The transmission microphotographs were acquired either with the lowest magnification on a laboratory microscope, or with a portable microscopic digital camera, yielding similar results.
+The first operation on the somewhat blurred photographs [see Fig. \ref{fg_sievingstats}(a)] was to establish the medium value between the image's bright and dark areas, and apply a threshold so that the image was a binary function. Then the \textit{ImageJ}'s \textit{watershed} algorithm was applied to relatively reliably resolve two or more touching particles, and a particle outline was found [cyan lines in \ref{fg_sievingstats}(b)]. Finally, the particle outlines were fitted by an ellipse. 
+\begin{figure}[ht] \caption{\textbf{(a)} A small section of a microphotograph of a sample before sieving with a \textbf{(b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
+\textbf{(a)}\includegraphics[height=5cm]{img/technology/imagej_photo.pdf}
+\textbf{(b)}\includegraphics[height=5cm]{img/technology/imagej_found.pdf}
+\end{figure}
+We accompanied the built-in granulometric algorithm of \textit{ImageJ} with a script enabling to process multiple photographs in a batch, and to plot the resulting histograms of the particle size distribution, which has also been published online \cite{dominec2014_imagej}. Prior to this step, the microphotograph scale was determined from a separate photograph of a ruler.
+
+An intrinsic deficiency of this method results from that it was not possible to resolve the third dimension of particles. 
+It can be however estimated that if % TiO$_{2}$ 
+ellipsoidal particles were randomly sprinkled on the glass, they would lie on their flat side -- i.e. their orientation would enable to measure the \textit{medium} and \textit{major} axes of the ellipsoid. This is in contrast with the process of sieving, as described above, where the particles were discriminated according to their \textit{medium} and \textit{minor} axes. 
+The error is however somewhat reduced by the non-ellipsoidal shape of the particles, which presumably prevented them from free overturning. %% NOTE this again when showing sphere experimental spectra
+\todo{something should be added??}
 %}}}
+
 
 \paragraph{Cutting of dielectric bars}%{{{ ===========================TODO
 Dielectric or metallic structures can be made by micromachining a thin polished slab of the given material. For instance, metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
@@ -182,7 +193,7 @@ A similar sample used in experiment consisted of bars from strontium titanate (S
 \includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
 \end{figure}
 %}}}
-\section{Laser micro-machining of sieves and fish-net metamaterial layers}%{{{
+\section{Laser micro-machining of sieves and fishnet metamaterial layers}%{{{
 \begin{figure}[ht] \caption{\textbf{(a)} Laser micromachining the steel sieve, and \textbf{(b)} the resulting sieves} \label{fg_microfab} \centering 
 \textbf{(a)}\includegraphics[height=5cm]{img/technology/sieve2_drilling_m.pdf}
 \textbf{(b)}\includegraphics[height=5cm]{img/technology/steel_sieve_on_paper.pdf}
