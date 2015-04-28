@@ -1,5 +1,5 @@
 \section{Short review of the terahertz technology}
-The terahertz range of the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has met as yet a relatively small application potential in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. 
+The terahertz range of the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has met as yet a relatively small application potential in science and technology in the 20th century, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. %{{{
 
 There is a great number of books and papers that describes different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}\cite{sullivan2012field,lewis2014review}
 and many of them are also, with more or less detail, discussed in previous doctoral theses written in our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006phd}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
@@ -8,7 +8,7 @@ Electromagnetic waves in the terahertz range are radiated whenever charged parti
 The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  
 In the following paragraphs, try to briefly review the terahertz technology in a systematic manner.
 % There are numerous ways to generate  ...
-
+%}}}
 \subsection{Weak thermal emission in the THz range}%{{{
 Firstly, let us remind why thermal sources are rarely used in the THz range. The blackbody radiation is governed by the Planck law % TODO cite
 \begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
@@ -18,6 +18,7 @@ from which it follows that the luminosity $I$ in the terahertz range is always v
 $$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
 and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast, the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Therefore, sources other than thermal are preferred for measurements in the THz range.
 %}}}
+
 \subsection{Terahertz sources}
 \paragraph{Kinetic energy of an electron beam} %{{{ ================================================================================
 One class of devices uses the kinetic energy of an electron beam propagating in the vacuum. In devices accelerating a circular electron beam, such as cyclotrons or synchrotrons, radiation is emitted when electrons are passing through the bends in the particle path, the deflection of the electrons being caused by a static transverse magnetic field. If the electrons are packed in a short bunch, it results in an efficient emission of a coherent broadband pulse. %% with an improved efficiency in THz if they are packed
@@ -51,6 +52,7 @@ In contrast, in the \textit{tunneling transit-time} (TUNNETT) diodes, the NDR is
 %}}}
 \paragraph{Nonlinear up-conversion of microwaves}%{{{ ================================================================================
 The nonlinear response of semiconductor devices to microwaves can be used for up-conversion in the terahertz range. 
+\mdf{TODO}
 
 %}}}
 \paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
@@ -129,7 +131,7 @@ Terahertz continuous-wave signal can be mixed with a similar signal, producing a
 
 %}}}
 \paragraph{Time-resolved field sampling}%{{{
-Another class of terahertz detectors enables measuring the electric field $\E(t)$ (or magnetic field $\H(t)$) as a function of time. An important advantage of such devices is the possibility to recover the instantaneous amplitude of the field (i.e. both its modulus and phase in the frequency domain). It also allows to synchronize the detection with the pulsed source to record short terahertz transients.
+Another class of terahertz detectors enables measuring the electric field $\E(t)$ (or magnetic field $\HH(t)$) as a function of time. An important advantage of such devices is the possibility to recover the instantaneous amplitude of the field (i.e. both its modulus and phase in the frequency domain). It also allows to synchronize the detection with the pulsed source to record short terahertz transients.
 (It should be noted that the measurement of the transmittance phase can be accomplished with continous tunable source, too, using a Mach-Zender interferometer.
 Pulsed measurement is however vital for transient dynamics investigation.)
 

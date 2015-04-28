@@ -1,22 +1,18 @@
 \input{thztech}
 \section{Terahertz time-domain spectroscopy}
-\subsection{Overview of the method}%{{{
+\paragraph{Overview of the method}%{{{
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
 % Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
 
 The basic principle of the measurement was shared with the scattering-parameter retrieval in FDTD simulations. % TODO add ref
  A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup, and processed to obtain the transmission amplitude and phase as functions of frequency.
 
-The reflection could not be directly measured in the setup described, but at the end of this section an indirect method is discribed that allows to compute the equivalent sample properties from the subsequent echoes, that are introduced when the sample is surrounded by thick transparent slabs of sapphire. 
+The reflection could not be directly measured in the setup described, but at the end of this section an indirect method is described that allows to compute the equivalent sample properties from the subsequent echoes, that are introduced when the sample is surrounded by thick transparent slabs of sapphire. 
+In the following, we give details on the optical/terahertz setup.
 % TODO 
 %}}}
-\subsection{Terahertz pulse generation}%{{{
-As the source of terahertz pulses, we used an interdigitated emitter from TeraSED, whose principle of operation is described in the previous section.
-% TODO laser equipment
-A vital component of the TDTS setup is a source of ultrashort optical pulses. 
-We used \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, and a pulse duration under 70 fs.  
-
-%% TODO verify
+\paragraph{Terahertz pulse generation}%{{{
+As the source of ultrashort optical pulses, we used commercial \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, repetition rate of 76 MHz and a pulse duration under 70 fs.  %TODO cite Pashkin?
 % \cite{pashkin2004phd} In our TDTS measurements femtosecond laser ”Mira Seed” by COHERENT has been used for generation of ultrashort light pulses with following characteristics:
 	%pulse length			50 - 80 fs
 	%spectral bandwidth		15 - 40 nm	
@@ -24,67 +20,55 @@ We used \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mea
 	%energy per pulse		8 nJ      	
 	%average power			650 mW
 	%pulse peak power		140 kW    	
-The repetition rate was 70 MHz, giving the pulse energy of roughly 7 nJ, sufficient to induce transient photoconductivity in the interdigitated emitter, 
 
-The voltage between the odd and even wires was 15-20 V, and was modulated in time to increase the noise-resistance of the detection system as described below.
-
-%% XXX
-	The leading edge of the photocurrent emits radiation typically in the form of a subpicosecond, half-cycle peak of electric field, polarized perpendicular to the wires. 
-	The resulting THz waveform then resembled a full-cycle with a sharp maximum and slightly dilated minimum. Spectral amplitude of the emitted pulse was sufficient for measurement roughly between 100 GHz and 3 THz.
-%% XXX
-
-% TODO figure of the pulse and the spectrum
+The laser output was split into two branches at the beamsplitter (BS1 in Fig. \ref{fg_exp}), one of which was used for the electrooptical sampling setup. The major part the energy passing through BS1 was converted to terahertz pulses using an interdigitated photoconductive emitter from TeraSED, whose principle of operation is described in the previous section. 
+The voltage at the emitter was 15-20 V, and its polarity was modulated at the frequency of 91-92 kHz. This enabled to use synchronous lock-in detection to increase the noise-resistance of the detection system. % as described below.
+% TODO ADD figure of the pulse and the spectrum
 
 %}}}
-\subsection{Vacuum chamber and sample holder}%{{{
-Propagation of terahertz waves in air is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In time domain, the absorption manifested as a damped ringdown (with opposite polarity at the position of the main THz excitation pulse). 
+\paragraph{Vacuum chamber and sample holder}%{{{
+The active region of the TeraSED emitter was of comparable diameter as the longer-wavelength component of of the THz pulse, so the beam diffraction led to a broad angle of the terahertz emission, in the order of 0.5 radian. Therefore, the wave was reflected at an ellipsoidal % TODO check if it was not paraboloidal
+ mirror and refocused at the sample. Upon passing through it, it diffracted again and was collected by an identical ellipsoidal mirror and focused at the detector. 
+To allow enough clearance for a bigger instrumentation surrounding sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
+
+Propagation of terahertz waves in air over such a distance is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra, for instance around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules.\cite{exter1989} In time domain, the absorption manifests as a exponentially decaying ringdown that has polarity opposite to the main THz peak.
 % TODO figure from my web
-
-The whole terahertz wave path has to be confined in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
-
-The THz emitting region was of comparable diameter as the wavelength of the radiation used, so beam diffraction led to a broad angle of the output beam in the order of 1 radian. The nearly spherical wave was reflected from an ellipsoidal % TODO check if it was not paraboloidal
- mirror and focused again at a sample. Upon passing through the sample, it was collected by an identical ellipsoidal mirror and focused at the detector. 
-To allow enough clearance for a bigger instrumentation surrounding the sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
-
+The whole terahertz wave path has to be confined in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, mirrors, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
 
 %}}}
-\subsection{Terahertz detection setup}%{{{
-
-%The experimental geometry is somewhat similar to that used for FDTD simulations above. Also the results are similar: we get the complex amplitude transmission spectrum,  
-\begin{figure}[ht] \caption{\textit{Experimental setup for terahertz time-domain spectroscopy}} \label{fg_exp} \centering 
+\paragraph{Terahertz detection setup}%{{{
+\begin{figure}[ht] \caption{\textit{Experimental setup for the terahertz time-domain spectroscopy}} \label{fg_exp} \centering 
 	\includegraphics[width=\textwidth]{img/exp_THz_sampling.pdf}
 \end{figure}
 
-Before the laser pulse entered the vacuum chamber to induce THz emitter photoexcitation, a small part of its energy was separated by a reflection from a microscope glass (\texttt{BS1} in Fig. \ref{fg_exp}) into the \textit{sampling} branch. 
+Before the laser pulse entered the vacuum chamber to induce the photoexcitation of the THz emitter, a small part of its energy was separated by a reflection from a microscope glass BS1 in Fig. \ref{fg_exp}) into the \textit{sampling} branch. 
 
-The pulse in the \textit{sampling} branch reflected from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the terahertz pulse. Then it was attenuated at a filter (\texttt{F1}) and its polarisation was converted from linear to a circular one on a quarter-wave plate (\texttt{QWP}). The pellicle beamsplitter (\texttt{PBS}) directed the optical beam along the axis of the terahertz beam. 
+The pulse in the \textit{sampling} branch reflected from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the terahertz pulse. Then it was attenuated at a filter (F1) and its polarisation was converted from linear to a circular one on a quarter-wave plate (QWP). The pellicle beamsplitter (PBS) directed the optical beam along the axis of the terahertz beam. 
 
-The electric field of the terahertz pulse induced a slight transient change in the permittivity tensor of the zinc telluride crystal (ZnTe). The much weaker and shorter optical pulse was modified by this change, acquiring diagonal ellipticity. A Wollaston prism can be used to separate the two diagonal components of the resulting elliptic-polarized light. The difference between these two signals, if small modulation is assumed, proportional to the amplitude of the electric field. This allows to sample electric field with a theoretical temporal resolution given by the duration of the optical pulse, but using a standard intensity detection using a pair of silicon diodes.   
+We used the electrooptic sampling mentioned in the previous chapter: The electric field of the terahertz pulse induced a slight transient change in the permittivity tensor of the zinc telluride crystal (ZnTe). The much weaker and shorter optical pulse was modified by this change, acquiring diagonal ellipticity that could be fine tuned for zero signal with the Babinet compensator (). The Wollaston prism (WP) was be used to separate the two diagonal components of the resulting elliptic-polarized light. The difference between these two signals, if small modulation is assumed, proportional to the amplitude of the electric field. This allows to sample electric field with a theoretical temporal resolution given by the duration of the optical pulse, but using a standard intensity detection using a pair of silicon diodes.   
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
 
-
-
-
-
 %}}}
-\subsection{Signal processing and acquisition}%{{{
+\paragraph{Signal processing and acquisition}%{{{
+The spectral response of both the emitter and electrooptic sampling substantially influenced the measured spectra. Moreover, the phase of the recorded waves was modulated too, as a beam passing through a focus acquires additional phase due to the Gouy shift. Every transmission measurement was therefore normalized in frequency domain against a corresponding free-space reference, so that both the amplitude and phase artifacts cancelled out. 
 
-It is well known that a beam passing through a focus acquires additional phase due to  the Gouy shift, but as every transmission measurement was normalized against the free-space propagation anyway, this phase difference always cancelled out. 
+To reduce the noise, synchronous detection with the \textit{Stanford SRS360} lock-in amplifier was used, based on that the polarity of THz waveforms was modulated by the voltage at the TeraSED emitter. The difference signal at the two photodiodes, PD1 and PD2, was first fed to an analogue filter (with center frequency 91.3 kHz and 3 dB drop at $\pm$ 7 kHz), sampled by the lock-in amplifier and digitally normalized against the signal measured by the auxiliary photodiode PD3, as the difference signal is proportional not only to the terahertz field, but also to the laser intensity which may fluctuate over time. 
+
+The time constant of the lock-in acquisition was comparable to the time which was needed by the delay lines to introduce a picosecond delay. As a result, the speed of delay lines movement suppressed the high-frequency components of the detected signal. Precise control of the delay line speed and timing, along with software compensation for this, was needed.
 %}}}
-\subsection{Scheme for simultaneous measurement of reflection and transmission}%{{{
-It is theoretically possible to measure the \textit{reflection spectrum} using TDTS in a similar way the transmission spectrum was measured. However, due to the complexity of such a setup and sensitivity to sample displacement, we did not use a second sampling branch for reflected signal. Instead of using two sampling schemes, it is possible to recover the amplitude and phase reflectivity of a sample by stacking it between a pair of thick (3 and 6 mm) sapphire slabs. Thanks to the relatively high refractive index of sapphire ($N \approx 3.4$), these slabs introduce several distinct  echoes into the transmission signal.
+\paragraph{Scheme for simultaneous measurement of reflection and transmission}%{{{
+With addition or rearrangement of optics, it would be theoretically possible to measure the \textit{reflection spectrum} using TDTS in a similar way the transmission spectrum was measured. However, due to the complexity of such a setup and sensitivity to sample displacement, we did not use a second sampling branch for reflected signal. Instead of using two sampling schemes, it is possible to recover the amplitude and phase reflectivity of a sample by stacking it between a pair of thick (3 and 6 mm) sapphire slabs.\cite{nemec2012resonant} Thanks to the relatively high refractive index of sapphire ($N \approx 3.068$), these slabs introduce several distinct  echoes into the transmission signal.
+%\begin{figure} \caption{A broadband pulse passes through a single layer of microspheres randomly arranged between two sapphire slabs and is sampled by electrooptical detection.}  \centering \includegraphics[width=12cm]{img/expe/sample_sapphires.pdf} \end{figure}			%% TODO no use for this?
 
-\begin{figure} \caption{A broadband pulse passes through a single layer of microspheres randomly arranged between two sapphire slabs and is sampled by electrooptical detection.}  \centering \includegraphics[width=12cm]{img/expe/sample_sapphires.pdf} \end{figure} \clearpage
-
-If the beam divergence is neglected, each optical element can be characterised by its complex transfer function in the resulting spectrum. One needs to define three transmission functions for the beam passing the volume of the thin sapphire $A(f)$, thick sapphire $B(f)$ and of the sample $t(f)$, and two reflection functions for the beam reflected on sapphire-air interface $r_{A}(f)$ and on the sapphire-sample interface $r_S(f)$. 
-
-The recorded overall signal has to be split into its first part  % TODO
+If the beam divergence is neglected, each optical element can be characterised by its complex transfer function in the resulting spectrum. One needs to define three complex transmission functions: for the beam passing through the volume of the thin sapphire $A(f)$, of the thick sapphire $B(f)$ and through the thin sample $t(f)$. Additionally two reflection functions for the beam reflected on sapphire-air interface $r_{A}(f)$ and on the sapphire-sample interface $r_S(f)$
+Measuring references of the thin and thick sapphires separately \cite{nemec2012resonant},$A(f)$,$B(f)$ as well as $r_{A}(f)$ can be established. 
 
 %defines the temporal separation between the main pulse and the first echo.  The reflection and transmission of the sample can be simply reconstructed using numerical deconvolution. The results of this method were, unfortunately, less than ideal. Among the reasons may be the possible asymmetry of the studied layer between the slabs, beam divergence and very low signal of both transmission and particularly reflection in the stop-bands of the sample.
 
-The propagation delay through $2\times 3$ mm of sapphire is roughly 70 ps, which defines the spectral resolution to 14 GHz. All spectral features in the sample transmission must be significantly broader than this value. Otherwise they not only could not be resolved, but most importantly, their ringdown would overlap in the time domain with the following echo, producing spurious results. Using a thicker sapphire could improve spectral resolution of this method, however it conflicts with the requirement for the beam being narrower than the sample \cite{nemec2009tunable} and, independently, of reducing the error caused by beam diffraction as noted in the following paragraph.
+The recorded signal of the sapphire-sample-sapphire structure has to be split into two parts that correspond to the direct pass, and the first echo arising from the pulse reflecting back and forth  in the thin sapphire.
+The propagation delay through $2\times 3$ mm of thin sapphire is roughly 70 ps, which defines the spectral resolution of 14 GHz. All spectral features in the sample transmission must be significantly broader than this value. Otherwise they not only could not be resolved, but most importantly, their temporal ringdown would overlap in the time domain with the following echo, producing spurious results. Using a thicker sapphire could improve spectral resolution of this method, however it conflicts with the requirement for the terahertz beam fitting into the area of the sample\cite{nemec2009tunable} and, independently, of reducing the error caused by beam diffraction as noted in the following paragraph.
 
-In the experiment, we observed substantial deviation  % TODO add some experimental data and  and reference them here
+In the experiment, we observed substantial deviation  % TODO add some experimental data to {results} and  reference them here
 from the numerically predicted results, which were moreover sensitive to subtle changes in the parameters. We propose  several explanations for the experimental errors:
 \begin{enumerate}
 \item{The geometrical beam divergence can not be fully compensated by the transfer functions [$A(f)$, $B(f)$] of separate sapphire slabs. The deconvolution algorithm can amplify or attenuate different frequency components to compensate for the  longitudinal focus displacement that the first echo has compared to the focus of the first pulse. However, due to the hyperbolic shape of the gaussian beam with Rayleigh length $z_{R}$ similar to the sapphire thickness\footnote{As an approximate example, for the main frequency component $f = 1.5$ THz with wavelength $\lambda = c / f \approx 200$ $\upmu$m, for $\vartheta \lesssim 0.15$ rad as an estimated divergence of the beam from its axis, the Rayleigh half-length of a gaussian beam would be $z_{R} = \frac{\lambda}{\pi \vartheta^{2}} \gtrsim 2.8$ mm, i.e. roughly the thickness of the thinner sapphire.}, the overall effect of two sapphires can not be linearly predicted from two separate measurements of each of them.} 
@@ -178,7 +162,7 @@ We developed a numerical method to measure the histogram of the particle size di
 % TODO  add the 4-fold png figure from web
 %}}}
 
-\subsection{Cutting of dielectric bars}%{{{ ===========================TODO
+\paragraph{Cutting of dielectric bars}%{{{ ===========================TODO
 Dielectric or metallic structures can be made by micromachining a thin polished slab of the given material. For instance, metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
 
 One thus faces a technologically challenging task of writing a structure with 10--30 $\upmu$m resolution into a slab of a similar thickness. If the slab is made of a dielectric, it is usually very brittle and sensitive to breaking due to thermal stresses. Metallic slab is  
@@ -186,7 +170,7 @@ One thus faces a technologically challenging task of writing a structure with 10
 
 A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
 % TODO
-\subsection{Fabrication and sieving of dielectric sphere samples}
+\paragraph{Fabrication and sieving of dielectric sphere samples}
 Compared to the dielectric bars, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying process}. In contrast with the expensive and time-consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. The following technique in a collaborating laboratory in France %% Todo reference to Patrick's group somehow
 provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 100 $\upmu$m. 
 
@@ -194,7 +178,7 @@ provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 1
 \includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
 \end{figure}
 %}}}
-\subsection{Laser micro-machining of sieves and fish-net metamaterial layers}%{{{
+\paragraph{Laser micro-machining of sieves and fish-net metamaterial layers}%{{{
 \begin{figure}[ht] \caption{\textbf{a)} Laser micromachining the steel sieve, and \textbf{b)} the resulting sieves} \label{fg_microfab} \centering 
 \textbf{a)}\includegraphics[height=5cm]{img/technology/sieve2_drilling_m.pdf}
 \textbf{b)}\includegraphics[height=5cm]{img/technology/steel_sieve_on_paper.pdf}
