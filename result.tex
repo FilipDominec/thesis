@@ -2,7 +2,7 @@
 \section{Dielectric slab} % references to ->%{{{
 The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, has been investigated thoroughly in the previous decades. We review it mostly for comparison with the structures presented in the following. 
 
-\begin{figure}[ht] \caption{Dispersion curves for an one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
+\begin{figure}[ht] \caption{Dispersion curves for a one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
 \textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
 \textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
 \end{figure}
@@ -67,9 +67,8 @@ CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire me
 }
 
 
-\begin{figure} \caption{img/XCylWire\_a100r4.pdf}  \centering \includegraphics[width=10cm]{img/XCylWire_a100r4.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/EWire\_plasmaF\_radiusscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_radiusscan.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/EWire\_plasmaF\_spacingscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_spacingscan.pdf} \end{figure} \clearpage
+%\begin{figure} \caption{img/EWire\_plasmaF\_radiusscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_radiusscan.pdf} \end{figure} \clearpage
+%\begin{figure} \caption{img/EWire\_plasmaF\_spacingscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_spacingscan.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/EWire\_r03\_FDTDwide.pdf}  \centering \includegraphics[width=10cm]{img/EWire_r03_FDTDwide.pdf} \end{figure} \clearpage
 
 \add{
@@ -89,9 +88,9 @@ The more space is left around each wire and the smaller radius the wire has, the
 Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
 
 We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple verification of both the FDTD algorithm and the mentioned analytic model. In the first series we kept the wire radius constant $r = 16\,\upmu$m  and changed the wire spacing $a$ (red points). For comparison, we plot in Fig. \ref{fg_omegap_a} the plasma frequency predicted by the Maslovski's analytic model\cite{maslovski2002wire} from Eq. (\ref{eq_fp_maslovski}) and by the older Pendry's model \cite{pendry1996extremely} (full and dotted lines, respectively). To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m.
-\begin{figure}[ht] \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium. \textbf{a)} $f_p$ as a function of wire spacing, \textbf{b)} $f_p$ as a function of wire radius. } \label{fg_omegap_a} \centering 
-\textbf{a)}\includegraphics[width=8cm]{img/EWire_plasmaF_spacingscan.pdf}
-\textbf{b)}\includegraphics[width=8cm]{img/EWire_plasmaF_radiusscan.pdf}
+\begin{figure}[ht] \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium. Left: $f_p$ as a function of wire spacing, right: $f_p$ as a function of wire radius. } \label{fg_omegap_a} \centering 
+\includegraphics[width=8.5cm]{img/EWire_plasmaF_spacingscan.pdf}
+\includegraphics[width=8.5cm]{img/EWire_plasmaF_radiusscan.pdf}
 \end{figure}
 
 In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
