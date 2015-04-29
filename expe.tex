@@ -1,5 +1,5 @@
 \input{thztech}
-\section{Terahertz time-domain spectroscopy}
+\section{Terahertz time-domain spectroscopy} \label{sect_tdts} 
 \paragraph{Overview of the method}%{{{
 The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
 % Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
@@ -81,21 +81,22 @@ from the numerically predicted results, which were moreover sensitive to subtle 
 \section{Fabrication of the titanium dioxide microspheres}
 % todo having discussed the measurement, we proceed to the fabrication of samples
 %The samples dielectric microspheres were manufactured by one of the collaborating groups.
-\paragraph{Fabrication and sieving of dielectric sphere samples}
+\paragraph{Preparation of dielectric sphere samples by the spray-dry process}%{{{
 Compared to most metamaterial designs, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying} technique. In contrast with the expensive and time-consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. 
+\begin{figure}[ht] \caption{Microphotograph of the TiO$_{2}$ spheres after preliminary sieving} \label{fg_microphoto} \centering 
+\includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
+\end{figure}
 
 The collaboration with the laboratory of Dr. Patrick Mounaix in France %% Todo reference to Patrick's group somehow, and mention Oleg Mitrofanow (here, or later)
 provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 100 $\upmu$m. 
+Rutile (TiO$_{2}$) was ground to a powder of sub-microscopic particles. 
+A suspension of these nanoparticles in ethanol was sprayed into flame. The average size of particles was determined by the solid concentration in the suspension, by feed rate and by gas flow. It immediately formed spherical droplets, which dried up and sintered in the hot air.  
+
+The resulting particles were annealed in a furnace to further solidify. The degree of recrystallization could be controlled by the temperature of the furnace from microscopic grains (at around 1200  $^{\circ}$C) to a sphere consisting of few crystalline domains, which were apparent in electron microscope (annealed at\footnote{Procedure details are from the personal communication with Dr. Patrick Mounaix and {Dr.} U-Chan Chung} 1300--1400 $^{\circ}$C). Note the temperatures used are still far below the melting temperature of rutile (i.e. 1800 $^{\circ}$C).
+
 Similar TiO$_{2}$ microspheres are also available commercially (e.g. from Brace, GmbH), and to the author's knowledge, they were made with a similar process.
 
-\paragraph{Spray-dry process}%{{{
-Rutile (TiO$_{2}$) was ground to a powder of sub-microscopic particles. 
-A suspension of these nanoparticles in ethanol was sprayed into flame. The average size of particles was determined by the solid concentration in the suspension, by feed rate and by gas flow.It immediately formed spherical droplets, which dried up and sintered in the hot air.  
-
-The resulting particles were annealed in a furnace to further solidify. By the temperature of the furnace, the degree of recrystallization could be controlled: from microscopic grains (at around 1200  $^{\circ}$C) to a sphere consisting of few crystalline domains, which were apparent in electron microscope (annealed at\footnote{Procedure details are from the personal communication with Dr. Patrick Mounaix and {Dr.} U-Chan Chung} 1300--1400 $^{\circ}$C). Note the temperatures used are still far below the melting temperature of rutile (i.e. 1800 $^{\circ}$C).
-
-Only the low-temperature annealed samples were measured by the terahertz spectroscopy in this thesis. The fine-grained rutile was assumed to be well approximated by an isotropic dielectric. The size of the constituent crystalline grains was estimated from the observation of one microsphere ground on a glass of a pollarisation microscope: unlike polycrystalline aggregates, single rutile monocrystals manifest as coloured particles due to their inherent birefringence. Therefore, the size of crystalline grains were determined in the order of few micrometers.
-
+Only the low-temperature annealed samples were measured by the terahertz spectroscopy in this thesis. The fine-grained rutile was assumed to be well approximated by an isotropic dielectric. The size of the constituent crystalline grains was estimated from the observation of one microsphere ground on a glass of a pollarisation microscope: unlike polycrystalline aggregates, small rutile monocrystals appear as coloured particles due to their inherent birefringence. Therefore, the size of crystalline grains were determined in the order of few micrometers.
 
 The annealed spheres were further processed with the aim to break or eliminate clusters, by means of light milling with agathe mortar, which was separated afterwards by ultrasound bath cleaning in ethanol. Pre-sieving was performed on commercial sieves with 100, 53, 50, 40 and 38 $\upmu$m size of the square hole. The milling-cleaning-sieving procedure was repeated 2-3 times.
 %\textit{
@@ -108,24 +109,27 @@ The annealed spheres were further processed with the aim to break or eliminate c
 Triple sieving on commercial sieves, weaved from stainless steel wire, did not provide narrow enough size distribution. We therefore developed a more exact method for sample refinement and characterisation. 
 
 \begin{figure}[ht] \caption{Correspondence between the hole shape (above) and the set of ellipsoids that can pass through the hole (below), determined by their medium and minor axes. Somewhat surprisingly, the \textbf{(a)} square and \textbf{(b)} lozenge holes result in circular/elliptic set of passing particles, whereas the \textbf{(c)} circular and \textbf{(b)} elliptic holes result in the square/rectangular shape of such an region.\\
-For clarity, some limiting-case examples of the ellipsoid projection and the equivalent position on the minor-medium axis plot are drawn in blue, violet and red. } \label{fg_sieve_pass_notpass} \centering 
+For clarity, some limiting-case examples of the ellipsoid projection and the equivalent position on the minor-major ellipse axis plot are drawn in blue, violet and red. } \label{fg_sieve_pass_notpass} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_pass_notpass.pdf}
 \end{figure}
-In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$\rho_a \leq \rho_b \leq \rho_c.$$ For the purpose of sieving, only the values of the shortest two axes, $\rho_a$ and $\rho_b$, decide whether the particle can pass through the sieve. The longest ellipsoid axis $\rho_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each 3-D particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2\rho_a$, and by its \textit{medium axis} $\equiv 2\rho_b$. For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and medium axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
+In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$\rho_a \leq \rho_b \leq \rho_c.$$ For the purpose of sieving, only the values of the shortest two axes, $\rho_a$ and $\rho_b$, decide whether the particle can pass through the sieve. The longest ellipsoid axis $\rho_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each three-dimensional particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2\rho_a$, and by its \textit{major axis} $\equiv 2\rho_b$ (which is, in fact, the \textit{medium} axis of the ellipsoid). For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and major ellipse axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
 
-The resonance frequency of a dielectric resonator depends on all three half-axes, $\rho_a \leq \rho_b \leq \rho_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $\rho_a \leq r_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves of square/lozenge holes with the effect of a couple of sieves of micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
+The resonance frequency of a dielectric resonator depends on all three half-axes, $\rho_a \leq \rho_b \leq \rho_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $\rho_a \leq \rho_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves with square/lozenge holes to the effect of a couple of sieves with micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
+
 \begin{figure}[ht] \caption{Application of the effect from Fig. \ref{fg_sieve_pass_notpass} for separating a narrow fraction of ellipsoids between the sieves. Both combinations of \textbf{(a)} square-rectangular and \textbf{(b)} circular-elliptic sieves can be used, with the latter one promising better selectivity also in terms of the particle aspect ratio.} \label{fg_double_sieving} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_double_sieving_fractions.pdf}
 \end{figure}
 It shall be noted that although we plotted a binary (\textit{pass}/\textit{not pass}) function in Figs. \ref{fg_sieve_pass_notpass} and \ref{fg_double_sieving}, the sieving speed greatly differs for different sizes of particles. This is due to lower probability of a particle passing, if its parameters are near the edge of possible-passing function. 
 %For any finite sieving time, this obviously affects the statistics of particles passing the sieve, favoring the average size to be lower for short sieving times. The particles that are close to 
-However, this particular fraction of particles is exactly what one is interested in during the high-accuracy sieving! The process must therefore run for long enough time, in the order of days, and with as high sieving speed as possible.
+However, this particular fraction of particles is exactly what one is interested in during the high-accuracy sieving. The process must therefore run for long enough time, in the order of days, and with as high sieving speed as possible.
 %}}}
 \paragraph{First sieving apparatus}%{{{
 %Finally, they were carefully sieved in many iterations, to select a size fraction as narrow as possible.
-Employing the idea of anisotropic sieves from Fig. \ref{fg_double_sieving}a, the author assembled the first prototype based on nylon sieves, as depicted in Fig. \ref{fg_sieving1}. Two glass containers were lathed of a 
+Employing the idea of anisotropic sieves from Fig. \ref{fg_double_sieving}a, the author assembled the first prototype based on nylon sieves, as depicted in Fig. \ref{fg_sieving1}. Two glass containers were cut on a lathed from a 
 % diam
-glass tube, and on their bottom, nylon sieves were glued. The side of the sieve holes was 60$\pm$5 $\upmu$m, and while the above sieve was kept isotropic, the bottom one was stretched by ca. 20-25 \% in diagonal direction. The nylon mesh was woven, so the threads easily bent aside, allowing oversized particles either to pass or to get stuck permanently, blocking the sieve within few minutes. To resolve the latter problem, two additional narrow glass rings were cut, with much coarser sieves glued on the bottom, to allow little spherical springs bounce beneath the sieves and to loosen the particles that got stuck in the holes. A cover on top prevented the particles to jump out of the above container. Whole stack was carefully lowered into a test tube with a greater diameter, and vibrated by a tiny electric motor glued on the bottom.
+glass tube, and on their bottom, nylon sieves were glued. The side of the sieve holes was 60$\pm$5 $\upmu$m, and while the above sieve was kept isotropic. 
+The mesh was woven of nylon threads, so the bottom sieve could easily be stretched by ca. 20-25 \% in diagonal direction. 
+This  property however prove to be also detrimental for precise sieving, as upon little force, the threads easily bent aside, allowing oversized particles either to pass or to get stuck permanently and to block the sieve within few minutes. To resolve the latter problem, two additional narrow glass rings were cut, with much coarser sieves  with 150 $\upmu$m pitch glued on the bottom, to allow little spherical springs bounce beneath the sieves and to loosen the particles that got stuck in the holes. A cover on top prevented the particles to jump out of the above container. Whole stack was carefully lowered into a test tube with a greater diameter, and vibrated by a tiny electric motor glued on the bottom.
 \begin{figure} \caption{A photograph \textbf{(a)} and a scheme \textbf{(b)} of the first sieving apparatus based on square-lozenge sieve pair, with a slightly exaggerated illustration of its operation for an input of four different microspheres \textbf{(c)}}  \centering \includegraphics[width=12cm]{img/expe/sieving1.pdf} \label{fg_sieving1} \end{figure} 
 
 %}}}
@@ -134,18 +138,16 @@ glass tube, and on their bottom, nylon sieves were glued. The side of the sieve 
 \textbf{a)}\includegraphics[height=8cm]{img/technology/sieve2_sieving_scheme.pdf}
 \textbf{b)}\includegraphics[height=8cm]{img/technology/sieving_m.pdf}
 \end{figure}
-The partially promising results and, more importantly, obvious deficiencies of the previous apparatus motivated the author to build a second one depicted in Fig. \ref{fg_sieving2}.
+The partially promising results and, more importantly, obvious deficiencies of the previous apparatus motivated the construction a second one depicted in Fig. \ref{fg_sieving2}.
 Different from any other sieving apparatus known to the author, this one made use of intense vertical acoustic wave for the movement of particles. It consisted of two coaxial glass tubes: The inner tube, with outer diameter of 13 mm, had a round metallic sieve glued to its bottom, and on its upper end it was covered by a 20 mm acoustic transducer. The outer tube (90 mm long, outer diameter 26 mm) surrounded the inner one and had a round bottom, where the particles collected. 
-The gaskets ensured that whole apparatus was tightly closed, preventing both sieved particles and sound from escaping. The brass ring with the transducer was fixed to a massive aluminum stand, and the rest of the structure was clamped to it by two M3 screws with nuts that allowed for easy disassembly. 
+The gaskets ensured that whole apparatus was tightly closed, preventing both sieved particles and the sound from escaping. The brass ring with the transducer was fixed to a massive aluminum stand, and the rest of the structure was clamped to it by two small screws with nuts that allowed for easy disassembly. 
 
 The key advantages of this novel approach are the following:
 \begin{enumerate}
- \item{\textbf{The speed of sieving} is expected to grow with the frequency at which the particles hit the sieve. The acoustic frequency of 1 kHz is roughly two orders of magnitude higher than in usual commercially available devices. The spheres are moreover continuously stirred, so it is ensured that a layer of over-sized particles does not occupy the sieve.} 
- \item{The upward air pressure \textbf{pulls out particles that got stuck in the sieve} in every period of acoustic vibration. This resolves the major issue of the previous prototype.} 
- \item{\textbf{Avoiding macroscopic vibrating parts}, except the membrane of a small acoustic transducer, allows the device to operate over multiple days without the risk of mechanical failure of any part.}
+ \item{The speed of sieving is expected to grow with the frequency at which the particles hit the sieve. The acoustic frequency of 1 kHz is roughly two orders of magnitude higher than in usual commercially available devices. The spheres are moreover continuously stirred, so it is ensured that a layer of over-sized particles does not occupy the sieve.} 
+ \item{The upward air pressure pulls out particles that got stuck in the sieve in every period of acoustic vibration. This resolves the major issue of the previous prototype.} 
+ \item{Avoiding macroscopic vibrating parts, except the membrane of a small acoustic transducer, allows the device to operate over multiple days without the risk of mechanical failure of any part.}
  \end{enumerate}
-
-
 The outer tube acted as an acoustic resonator, greatly enhancing the effect of the sound when tuned to resonance around 750-900 Hz. These frequencies obviously correspond to the fundamental acoustic resonance, as the quarter-wavelength is the range from 91 to 110 mm. 
 
 %TODO The power of the sine wave feeding the device was limited by the parameters of the acoustic transducer
@@ -157,50 +159,59 @@ The amount of particles in one batch was limited to ca. 10--20 mm$^{3}$, otherwi
 It could however be remedied by tilting the apparatus. With a tilt of 5--10 degrees, the bulk of particles then accumulated near one side, leaving most of the sieve surface free for sieving the moving fraction of particles. According to the small amount of particles required for the terahertz spectroscopy measurements, it is however advisable to sort a batch in order of 1--3 mm$^{3}$.
 %}}}
 \section{Optical determination of microparticle statistics}
-%\paragraph{}
 %{{{
-Accurate characterisation of the particle statistics was necessary not only to assess the efficacy of sieving, but also to explain possible difference the measured terahertz spectra from the computed ones on a quantitative basis. To obtain reliable statistics, thousands of particles needed to be evaluated, repeatedly for every sample. This, along with the small dimensions of particles, indicated that the optical microphotography with computer image processing automatically resolving each particle would be the most viable way to do so.
+Accurate characterisation of the particle statistics was necessary not only to assess the efficacy of sieving, but also to explain possible difference between the measured terahertz spectra and the computed ones on a quantitative basis. To obtain reliable statistics, thousands of particles needed to be evaluated, repeatedly for every sample. This, along with the small dimensions of particles, indicated that the most viable way to do so would be the optical microphotography with computer image processing automatically resolving each particle.
 
 Computer granulometry
 %, identification and measurement of photographed particles
 is a well-established technique, and is implemented in several advanced image processing programs, of which \textit{ImageJ} was selected \cite{abramoff2004image}. 
 The transmission microphotographs were acquired either with the lowest magnification on a laboratory microscope, or with a portable microscopic digital camera, yielding similar results.
-The first operation on the somewhat blurred photographs [see Fig. \ref{fg_sievingstats}(a)] was to establish the medium value between the image's bright and dark areas, and apply a threshold so that the image was a binary function. Then the \textit{ImageJ}'s \textit{watershed} algorithm was applied to relatively reliably resolve two or more touching particles, and a particle outline was found [cyan lines in \ref{fg_sievingstats}(b)]. Finally, the particle outlines were fitted by an ellipse. 
+The first operation on the somewhat blurred photographs [see Fig. \ref{fg_sievingstats}(a)] was to establish the intermediate brightness level between the image's bright and dark areas, and apply a threshold so that the image was a binary function. Then the \textit{ImageJ}'s \textit{watershed} algorithm was applied to relatively reliably resolve two or more touching particles, and a particle outline was found [cyan lines in \ref{fg_sievingstats}(b)]. Finally, the particle outlines were fitted by ellipses. 
 \begin{figure}[ht] \caption{\textbf{(a)} A small section of a microphotograph of a sample before sieving with a \textbf{(b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
 \textbf{(a)}\includegraphics[height=5cm]{img/technology/imagej_photo.pdf}
 \textbf{(b)}\includegraphics[height=5cm]{img/technology/imagej_found.pdf}
 \end{figure}
-We accompanied the built-in granulometric algorithm of \textit{ImageJ} with a script enabling to process multiple photographs in a batch, and to plot the resulting histograms of the particle size distribution, which has also been published online \cite{dominec2014_imagej}. Prior to this step, the microphotograph scale was determined from a separate photograph of a ruler.
+We accompanied the built-in granulometric algorithm of \textit{ImageJ} with a script enabling to process multiple photographs in a batch, and to plot the resulting histograms of the ellipse axes distribution. The script has also been published online \cite{dominec2014_imagej}. The microphotograph scale was determined from a separate photograph of a ruler.
 
 An intrinsic deficiency of this method results from that it was not possible to resolve the third dimension of particles. 
 It can be however estimated that if % TiO$_{2}$ 
-ellipsoidal particles were randomly sprinkled on the glass, they would lie on their flat side -- i.e. their orientation would enable to measure the \textit{medium} and \textit{major} axes of the ellipsoid. This is in contrast with the process of sieving, as described above, where the particles were discriminated according to their \textit{medium} and \textit{minor} axes. 
+ellipsoidal particles were randomly sprinkled on the glass, they would lie on their flat side -- i.e. their orientation would enable to measure the \textit{medium} $\rho_b$ and \textit{major} axis $\rho_c$ of the ellipsoid. This is in contrast with the process of sieving, as described above, where the particles were discriminated according to their and \textit{minor} $\rho_a$ and \textit{medium} $\rho_b$ axes. 
 The error is however somewhat reduced by the non-ellipsoidal shape of the particles, which presumably prevented them from free overturning. %% NOTE this again when showing sphere experimental spectra
-\todo{something should be added??}
+\todo{should something be added??}
 %}}}
 
-
-\paragraph{Cutting of dielectric bars}%{{{ ===========================TODO
+\section{Laser micro-machining}
+\paragraph{Fabrication of dielectric bars}%{{{
 Dielectric or metallic structures can be made by micromachining a thin polished slab of the given material. For instance, metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
+A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}), 
+where a structure with 10--30 $\upmu$m resolution was written into a thin slab of the dielectric of a similar thickness \cite{yahiaoui2011tunable}.
 
-One thus faces a technologically challenging task of writing a structure with 10--30 $\upmu$m resolution into a slab of a similar thickness. If the slab is made of a dielectric, it is usually very brittle and sensitive to breaking due to thermal stresses. Metallic slab is  
-% In the following section, the properties of periodic dielectric rods are discussed. 
+If the slab is made of a monocrystal or a ceramic, it is usually extremely brittle and also sensitive to breaking due to thermal stresses. Femtosecond laser micro-machining can alleviate both problems thanks to evaporating most of the heated material before the heat can spread by thermal conduction. Fabrication of the strontium titanate bars was done by the professional Alphanov facility in France.
 
-A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with  rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}). These bars were fabricated by femtosecond laser micro-machining from a thin slab of the dielectric \cite{yahiaoui2011tunable}.
-% TODO
-
-\begin{figure}[ht] \caption{Microphotograph of the TiO$_{2}$ spheres after preliminary sieving} \label{fg_microphoto} \centering 
-\includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
-\end{figure}
+\todo{write about deposition of gold electrodes?}
+\todo{should make some conclusion}
 %}}}
-\section{Laser micro-machining of sieves and fishnet metamaterial layers}%{{{
-\begin{figure}[ht] \caption{\textbf{(a)} Laser micromachining the steel sieve, and \textbf{(b)} the resulting sieves} \label{fg_microfab} \centering 
+\paragraph{Fabrication of sieves and fishnet metamaterial layers}%{{{
+Compared to the dielectrics, femtosecond machining of metallic sheets into meshes is relatively easy and was implemented in our laboratory. Machining of free-standing wire media was not succesfull and no such sample was finished, as the resulting thin wires were bent out of their original plane and their spacing was uneven.
+
+The meshes had two purposes -- either as sieves used in the second sieving apparatus described above, or as metamaterial samples known as \textit{fishnets}, which are predicted to possibly have negative index of refraction (see Sect. \ref{sect_fishnet}). 
+The femtosecond laser used was different from that serving as the femtosecond source for terahertz spectroscopy (Sect. \ref{sect_tdts}). Sufficient energy in the pulse power was obtained from the \textit{Spectra Physics Spitfire Ace} multipass amplifier, with \todo{}
+The output beam had to be attenuated to obtain finer cut at the expense of slightly slower speed. 
+
+
+
+\begin{figure}[ht] \caption{\textbf{(a)} Laser micromachining of the steel sheet, and \textbf{(b)} the resulting sieves} \label{fg_microfab} \centering 
 \textbf{(a)}\includegraphics[height=5cm]{img/technology/sieve2_drilling_m.pdf}
 \textbf{(b)}\includegraphics[height=5cm]{img/technology/steel_sieve_on_paper.pdf}
 \end{figure}
 
+\begin{figure} \caption{Mechanically drilled fishnet}  \centering \includegraphics[width=10cm]{img/fishnet.pdf} \end{figure} \clearpage
+\todo{make a figure from a photo of a laser-machined metallic fishnet (or, mesh)}
+
 To achieve the required precision of sieving, we fabricated the sieves by femtosecond laser drilling of 20 $\upmu$m thick stainless steel sheets (Fig. \ref{fg_microfab}). 
 %These sieves then were employed in a device that subjected the microsphere sample to acoustic vibrations, improving the speed of the demanding sieving process to acceptable level (Fig. \ref{fg_microfab}b,c).
-\add{ TODO}
+\todo{comment on the drilled fishnet}
+\todo{}
+\todo{}
 %}}}
 
