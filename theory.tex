@@ -279,14 +279,14 @@ Elaborate discussion on the restrictions on this tensor and its physical interpr
 If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. 
 It is important to notice that also the leftmost term in 
 \begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
-is a linear transformation of the vector $\E$, expressed by the tensor
+is a linear transformation of the vector $\E$, which can be expressed by the tensor
 $$ - \kk (\kk \cdot \E) \equiv 
 	-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
 	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
 	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right)\right] 
 		\equiv
 	\left(\begin{array}{ccc} -k_x^2 & -k_x k_y & -k_x k_z \\ -k_y k_x & -k_y^2 & -k_y k_z \\ -k_z k_x & -k_z k_y & -k_z^2 \end{array} \right) \cdot  
-	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
+	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right).
 	$$
 %$$ k^2 \E \equiv 
 %	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot 
@@ -316,28 +316,30 @@ For simplicity, let us assume the relative permeability $\murl = 1$; then it can
 	%-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
 	%-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
 	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
-A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero.
+A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero. The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
-\mdf{
-TODO FIGURE: IFC for anisotropic media (are common in nature)\\
-
-TODO FIGURE: IFC for Hyperbolic media (can also be found in nature, in narrow range like near sapphire LO phonno, cite Agranovich)\\
-}
 %}}}
 \paragraph{Isofrequency contours}  % TODO%{{{
 %A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
 It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
 frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
+\begin{figure}[ht] \caption{Relation between a plot of isofrequency contours and that of dispersion curves.} \label{fg_ifc_dc} \centering  
+	% TODO FIGURE
+	% \includegraphics[width=8cm]{img/.pdf} 
+\end{figure}
+
 Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
 information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
+Its limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  
+Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping.
 
-The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  % TODO confusing
-Each branch also has to be plotted separately, to prevent the contours from overlapping.
-
-\mdf{
-TODO FIGURE circular/elliptical/hyperbolic dispersion contours
-%% note this is shown in \cite[p. 118]{shalaev2010book}
-}
+\begin{figure}[ht] \caption{An example of circular isofrequency contours for a medium with isotropic permittivity  \textbf{(a)}, with IFCs forming circles centered in the $k=0$ point. 
+ The case of anisotropic permittivity, with either frequency independent different components \textbf{(b)}, and with one component being a function of frequency and crossing zero \textbf{(c)}.} \label{fg_ifc} \centering  %% TODO write caption; complement the text to match
+	% \includegraphics[width=17cm]{img/.pdf} 
+	% TODO FIGURE
+	\todo{FIGURE circular/elliptic/hyperbolic dispersion contours\\} %% note this is shown in \cite[p. 118]{shalaev2010book}
+\end{figure}
+Hyperbolic media can also be found in nature, in narrow range like near sapphire LO phonon, %cite Agranovich
 %}}}
 \paragraph{Index of refraction, and its applicability}  % TODO%{{{
 \mdf{
