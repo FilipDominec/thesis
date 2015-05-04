@@ -222,22 +222,17 @@ with the relative permittivity $\varepsilon_r(\omega)$ and permeability $\mu_r(\
 The wave equation (\ref{eq_wavek}) then changes to
 \begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \label{eq_wavek_disp} \end{equation}
 which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
-\begin{equation} k~= \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-with the added frequency-dispersive term responsible for the deviation from the original light line in Fig. \ref{fg_dispersion_vacuum}. 
+\begin{equation} k~= \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
+with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
 
-\begin{figure}[t] \caption{Influence of a single resonance in permittivity (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve); note the vertical frequency axis is shared. The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dc} \centering 
-	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
+\begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum to be equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots (Fig. \ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
 \end{figure}
 
-dispersion_ll_elmag.pdf
-dispersion_ll_el.pdf
-dispersion_ll_mag.pdf
-dispersion_simple_el.pdf
 
 
-In the simplest example of a single electric resonance with negligible losses, as in Fig. \ref{fg_dispersion_polariton} % TODO red? line
-, the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to it, thus the response of the medium is negative. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$. %, > \omega_0 which allows the transverse wave to propagate. 
+In the simplest example of a single electric resonance with negligible losses, as in Fig. \ref{fg_dcsimpleel}, the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and are opposite to it, thus the response of the medium is negative. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$. %, > \omega_0 which allows the transverse wave to propagate. 
 where the \textit{upper polariton branch} starts. In case of a Lorentz oscillator unaffected by the presence of others, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation) \cite{klingshirn2007semiconductor}.
 
 The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also for the spectra of resonances of macroscopic structures described later.
@@ -250,9 +245,10 @@ When losses are present, the lower and upper polariton branches are connected by
 The wave equation in local dispersive media (\ref{eq_wavek_disp}) 
 %\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
 also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for a static homogeneous field.
-
+\begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\varepsilon_r'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
+\end{figure}
 If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can have a solution with nonzero $\E$ when $\varepsilon_r(\omega)' = 0$, or with nonzero $\HH$ when $\mu_r(\omega)' = 0$. Therefore, the corresponding dispersion curve for a longitudinal wave is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that maintains the spatial amplitude envelope that was originally excited. 
-\todo{FIGURE: dispersion curves for simple oscillator in permittivity}
 
 Different physical phenomena can lead to $\varepsilon_r(\omega)' = 0$, some of which introduce relatively low losses at the corresponding $\omega_{\text{L}}$; namely lattice vibrations in nonconductive crystals or electrons in inductive media (like metals and dilute plasma). 
 
@@ -283,7 +279,7 @@ for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \texti
 	\end{array} \right) \cdot \E.
 	\label{eq_epstensor}
 \end{equation}
-Elaborate discussion on the restrictions on this tensor and its physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
+Elaborate discussion on all possible forms of this tensor and their physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  % TODO%{{{
 If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. 
@@ -478,6 +474,17 @@ The trivial extension of the local medium description to the nonlocal one could 
 % TODO add böhne nägerl reker ulbrich: evidence of spatial dispersion in the dielectric response of continuum states in gaas, 183e WE-Heraeus-Seminar nonlin opt and excit kinetics, noeks, graal-muritz 1997, Germany
 %}}}
 \paragraph{Magnetic effects can be described by electric displacement}%{{{
+\begin{figure}[ht] \caption{Dispersion curves for an electric resonance in the local permittivity. The left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as an assumption is made here that the medium is fully described by the \textit{local} permittivity and permittivity.\\
+The right panel additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as colour contours. The thin black line connects all points where $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. As a confirmation of the Landau-Lifshitz model applicability, it overlaps exactly with the original green dispersion curve from Fig. \ref{fg_dcsimpleel} that was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). } \label{fg_dcllel} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
+\end{figure}\clearpage
+\begin{figure}[ht] \caption{\todo{Magnetic resonance in L-L view of a local medium}} \label{fg_dcllmag} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
+\end{figure}
+\begin{figure}[ht] \caption{\todo{Overlapping electric and magnetic resonance in L-L view of a local medium}} \label{fg_dcllelmag} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
+\end{figure}
+
 %% TODO write about "EDB model"
 Instead, we will show here that the magnetic response can be fully expressed by a certain form of $\varepsilon_r(\omega, \kk)$ dependence on $\kk$. In the following theory, the spatial-dispersive function $\varepsilon_r(\omega, \kk)$ will consist of
 \begin{enumerate}
