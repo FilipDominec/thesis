@@ -11,9 +11,16 @@ from scipy.constants import c, hbar, pi
 epsll_contours          = 0
 epsll_dispersion        = 0
 classical_dispersion    = 1
-eampli, eomega0, egamma = .3, .35, .001
+eampli, eomega0, egamma = .0, .35, .001
 mampli, momega0, mgamma = .0, .40, .001
-outname = "dispersion_simple_el.pdf"
+outname = "dispersion_vacuum.pdf"
+
+#epsll_contours          = 0
+#epsll_dispersion        = 0
+#classical_dispersion    = 1
+#eampli, eomega0, egamma = .3, .35, .001
+#mampli, momega0, mgamma = .0, .40, .001
+#outname = "dispersion_simple_el.pdf"
 #
 #epsll_contours          = 1
 #epsll_dispersion        = 1
