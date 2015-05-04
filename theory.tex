@@ -88,7 +88,9 @@ where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsi
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they may exist in a dispersive medium.} 
  \end{enumerate}
-\begin{figure} \caption{Dispersion curve of a transverse electromagnetic wave in vacuum} \centering \includegraphics[width=6cm]{img/dispersion_curve_vacuum.pdf} \end{figure}
+\begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum to be equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots (Fig. \ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
+	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
+\end{figure}
 %}}}
 
 \subsection{Local response of media to the electromagnetic field} \label{loc_response_of_media}
@@ -226,9 +228,6 @@ which, in the isotropic case, results in the dispersion curve for the transverse
 with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
 
-\begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum to be equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots (Fig. \ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
-	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
-\end{figure}
 
 
 
@@ -245,6 +244,7 @@ When losses are present, the lower and upper polariton branches are connected by
 The wave equation in local dispersive media (\ref{eq_wavek_disp}) 
 %\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
 also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for a static homogeneous field.
+
 \begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\varepsilon_r'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering  %% TODO refto
 	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
 \end{figure}
@@ -329,10 +329,20 @@ In the most general case, it can be solved by means of numerical algebra softwar
 %A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
 It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
 frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
-\begin{figure}[ht] \caption{Relation between a plot of isofrequency contours and that of dispersion curves.} \label{fg_ifc_dc} \centering  
-	% TODO FIGURE
-	% \includegraphics[width=8cm]{img/.pdf} 
+
+\begin{figure}
+  \begin{minipage}[c]{0.5\textwidth}
+\hfill
+    \includegraphics[width=7cm]{img/dispersion_curves_to_ifc.pdf}
+  \end{minipage}
+  \begin{minipage}[c]{0.5\textwidth}
+    \caption{The relation between a plot of a dispersion curve for one photonic branch and the corresponding isofrequency contours. At a selected frequency, all points in the $k_x$-$k_y$ plane are drawn for which a nonzero solution of Maxwell equations exists. For transverse waves in local media, this is equivalent to finding a solution to the dispersion equation (\ref{eq_dispeq_loc}).\\Multiple frequencies can be plotted to describe the frequency dependence. For illustration, an isotropic medium was used, thus all IFCs take the form of a circle. To save space, only one quarter of the circle was plotted here.} \label{fg_ifc_dc}
+  \end{minipage}
 \end{figure}
+
+%\begin{figure}[ht] \caption{Relation between a plot of isofrequency contours and that of dispersion curves.} \label{fg_ifc_dc} \centering  
+	%\includegraphics[width=7cm]{img/dispersion_curves_to_ifc.pdf} 
+%\end{figure}
 
 Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
 information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
@@ -585,7 +595,7 @@ The simplest "structure" to be started with is surely the empty vacuum with homo
 Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
 
 In a homogeneous medium, there is a simple \textit{dispersion} relation between the frequency  $f$ and the wavenumber $k$, given as
-\begin{equation} f = \frac{ck}{2\pi \cdot n} = \frac{ck}{2\pi \cdot \sqrt{\varepsilon \mu}}. \label{eq_dispersion}\end{equation}
+\begin{equation} f = \frac{ck}{2\pi \cdot n} = \frac{ck}{2\pi \cdot \sqrt{\varepsilon \mu}}. \label{eq_dispersionold}\end{equation}
 The constant $n = \sqrt{\varepsilon \mu}$ connecting the frequency and wavenumber is the index of refraction.
 
 \begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
