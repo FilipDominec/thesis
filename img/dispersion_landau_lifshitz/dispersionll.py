@@ -8,40 +8,40 @@ import numpy as np
 from scipy.constants import c, hbar, pi
 
 ## User settings
-epsll_contours          = 0
-epsll_dispersion        = 0
-classical_dispersion    = 1
-eampli, eomega0, egamma = .0, .35, .001
-mampli, momega0, mgamma = .0, .40, .001
-outname = "dispersion_vacuum.pdf"
-
 #epsll_contours          = 0
 #epsll_dispersion        = 0
 #classical_dispersion    = 1
-#eampli, eomega0, egamma = .3, .35, .001
-#mampli, momega0, mgamma = .0, .40, .001
+#eampli, eomega0, egamma = .0, 1., .001
+#mampli, momega0, mgamma = .0, 1.2, .001
+#outname = "dispersion_vacuum.pdf"
+#
+#epsll_contours          = 0
+#epsll_dispersion        = 0
+#classical_dispersion    = 1
+#eampli, eomega0, egamma = 1., 1., .001
+#mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_simple_el.pdf"
-#
-#epsll_contours          = 1
-#epsll_dispersion        = 1
-#classical_dispersion    = 1
-#eampli, eomega0, egamma = .3, .35, .001
-#mampli, momega0, mgamma = .0, .40, .001
-#outname = "dispersion_ll_el.pdf"
-#
-#epsll_contours          = 1
-#epsll_dispersion        = 1
-#classical_dispersion    = 1
-#eampli, eomega0, egamma = .0, .35, .001
-#mampli, momega0, mgamma = .1, .40, .001
-#outname = "dispersion_ll_mag.pdf"
 
 #epsll_contours          = 1
 #epsll_dispersion        = 1
 #classical_dispersion    = 1
-#eampli, eomega0, egamma = .3, .35, .001
-#mampli, momega0, mgamma = .1, .40, .001
-#outname = "dispersion_ll_elmag.pdf"
+#eampli, eomega0, egamma = 1., 1., .001
+#mampli, momega0, mgamma = .0, 1.2, .001
+#outname = "dispersion_ll_el.pdf"
+
+#epsll_contours          = 1
+#epsll_dispersion        = 1
+#classical_dispersion    = 1
+#eampli, eomega0, egamma = .0, 1., .001
+#mampli, momega0, mgamma = .3, 1.2, .001
+#outname = "dispersion_ll_mag.pdf"
+#
+epsll_contours          = 1
+epsll_dispersion        = 1
+classical_dispersion    = 1
+eampli, eomega0, egamma = 1., 1., .001
+mampli, momega0, mgamma = .3, 1.2, .001
+outname = "dispersion_ll_elmag.pdf"
 
 #
 
@@ -50,15 +50,15 @@ outname = "dispersion_vacuum.pdf"
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', size=12)
 matplotlib.rc('text.latex', preamble = '\usepackage{amsmath}, \usepackage{yfonts}, \usepackage{txfonts}, \usepackage{lmodern},')
-plt.figure(figsize=(12,6))
+plt.figure(figsize=(10,4))
 
 ## An exact curve for the analytic solution of a damped oscillator
 def lorentz(omega, omega0, gamma, ampli):
     return ampli / (omega0**2 - omega**2 + 1j*omega*gamma) 
 
 ## Generate gridded data from a given 2D function (TODO)
-ks = np.linspace(0, 1, 400)
-omegas = np.linspace(0, 1, 400)
+ks = np.linspace(0, 3., 400)
+omegas = np.linspace(0, 3., 400)
 
 ## Generate classical local permittivity and permeability (the same for all wavevectors k)
 eps_clas = 1+lorentz(omegas, ampli=eampli, omega0=eomega0, gamma=egamma)
@@ -91,12 +91,12 @@ if epsll_dispersion:
 
 ## Plot the shape of permittivity and permeability
 plt.subplot(1, 2, 1)
-plt.plot(eps_clas, omegas, lw=2, c='m', label="$\\varepsilon_r'(\\omega)$")
-plt.plot(mu_clas,  omegas, lw=2, c='y', label="$\\mu_r'(\\omega)$")
-plt.ylim((-0.,1.)); plt.yscale('linear')
+plt.plot(eps_clas, omegas, lw=2, c='m', label="$\\varepsilon_r'(\\omega/\\omega_0)$")
+plt.plot(mu_clas,  omegas, lw=2, c='y', label="$\\mu_r'(\\omega/\\omega_0)$")
+plt.ylim((-0.,3.)); plt.yscale('linear')
 plt.xlim((-5.,10.)); plt.xscale('linear')
 plt.xlabel(u"relative permittivity $\\varepsilon_r$ and permeability $\\mu_r$"); 
-plt.ylabel(u"frequency $\\omega$"); 
+plt.ylabel(u"normalized frequency $\\omega/\\omega_0$"); 
 plt.grid(); plt.legend()
 
 ## Plot classical dispersion contours
@@ -104,13 +104,13 @@ plt.subplot(1, 2, 2)
 if classical_dispersion:
     plt.plot(omegas*np.sqrt(eps_clas * mu_clas), omegas, lw=2, c='g', alpha=.5)
 
-plt.ylim((-0.,1.)); plt.yscale('linear')
-plt.xlim((-0.,1.)); plt.xscale('linear')
+plt.ylim((-0.,3.)); plt.yscale('linear')
+plt.xlim((-0.,3.)); plt.xscale('linear')
 
 ## ==== Outputting ====
 ## Finish the plot + save 
-plt.xlabel(u"wavenumber $k$"); 
-plt.ylabel(u"frequency $\\omega$"); 
+plt.xlabel(u"normalized wavenumber $kc/\\omega_0$"); 
+plt.ylabel(u"normalized frequency $\\omega/\\omega_0$"); 
 plt.grid()
 plt.legend(prop={'size':10}, loc='upper right')
 plt.savefig(outname, bbox_inches='tight')
