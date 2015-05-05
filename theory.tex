@@ -40,7 +40,7 @@ The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed as a
 Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
 %Linear electrodynamics is often treated with the 
-The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent (divided by $1/\ii$). 
+The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
 %% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
 %% https://www.comsol.com/support/knowledgebase/1009/    
@@ -281,7 +281,7 @@ for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \texti
 \end{equation}
 Elaborate discussion on all possible forms of this tensor and their physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
 %}}}
-\paragraph{Dispersion relations in anisotropic local media}  % TODO%{{{
+\paragraph{Dispersion relations in anisotropic local media}  %{{{
 If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. 
 It is important to notice that also the leftmost term in 
 \begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
@@ -325,7 +325,7 @@ For simplicity, let us assume the relative permeability $\murl = 1$; then it can
 A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero. The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
 %}}}
-\paragraph{Isofrequency contours}  % TODO%{{{
+\paragraph{Isofrequency contours}  %{{{
 %A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
 It is often important to describe the dispersion curves also for different wave angles, which is the best accomplished by plotting the  %% todo ...real part of ...
 frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimensions, this would require mapping a function of three independent variables, $\omega(\kk) = \omega(k_x, k_y, k_z)$. However, in most cases the projection of two selected components of $\kk$ is sufficient to understand all relevant phenomena, and naturally it is much easier to visualize.
@@ -341,7 +341,6 @@ frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimen
 \end{figure}
 
 %\begin{figure}[ht] \caption{Relation between a plot of isofrequency contours and that of dispersion curves.} \label{fg_ifc_dc} \centering  
-	%\includegraphics[width=7cm]{img/dispersion_curves_to_ifc.pdf} 
 %\end{figure}
 
 Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
@@ -349,44 +348,46 @@ information about the medium interaction with electromagnetic waves, but also al
 Its limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  
 Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping.
 
-\begin{figure}[ht] \caption{An example of circular isofrequency contours for a medium with isotropic permittivity  \textbf{(a)}, with IFCs forming circles centered in the $k=0$ point. 
- The case of anisotropic permittivity, with either frequency independent different components \textbf{(b)}, and with one component being a function of frequency and crossing zero \textbf{(c)}.} \label{fg_ifc} \centering  %% TODO write caption; complement the text to match
+\begin{figure}[ht] \caption{An example of circular isofrequency contours, centered in the $k=0$ point, for a medium with isotropic permittivity \textbf{(a)}, with IFCs forming circles. 
+ \textbf{(b)} The case of nondispersive anisotropic permittivity, forming elliptic IFC, and a similar case \textbf{(c)} with general orientation of the optical axis (drawn as dashed black line). \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.} \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used  as hyperbolic
+	\includegraphics[width=\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
-Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
-The component of wave vector parallel to the interface (chosen as $k_x$ here, indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase at the interface, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
+Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
+The component of wave vector parallel to the interface (chosen as $k_x$ here, indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase in both media, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
+In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and three anisotropic media.
 
-In Fig. \ref{fg_ifc}, we illustrate IFCs for isotropic and three examples of anisotropic media. \todo{xx}
-
-Hyperbolic media can also be found in nature, in narrow range like near sapphire LO phonon, %cite Agranovich
 %}}}
-\paragraph{Index of refraction, and its applicability}  % TODO%{{{
-\mdf{
-develop the term of index of refraction\\
+\paragraph{Index of refraction, and its applicability}  %{{{
+With the background of the theory developed above, the notion of \textit{index of refraction} $N$ can be properly introduced and discussed. 
+In the most strict sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
+\begin{equation} N(\omega) = k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
+as directly follows from Eq. (\ref{eq_dispeq_loc}).
 
-IFCs will be useful also for nonlocal and periodic media later\\
-}
-With the background of the theory developed above, the notion of \textit{index of refraction} $N$ can be properly introduced and discussed. Starting with a harmonic plane wave with a frequency $\omega$ and a wavenumber $k^{(1)}$ which refracts at an interface of two isotropic media, the projection of wavevector to the interface is given as 
+Starting with a harmonic plane wave with a frequency $\omega$ and the wave vector $\kk^{(1)}$ refracting at an interface of two isotropic media, the projection of $\kk$ to the interface is given as 
 $$ k_x = k^{(1)}\,\sin \alpha^{(1)}, $$
-where $\alpha^{(1)}$ is the angle between the wavevector $\kk^{(1)}$ and the interface normal in the first medium. In the second medium, a similar relation must apply, however the wavenumber $k^{(2)}$ may be different and as a result, the angle in the second medium is
-\begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
+where $\alpha^{(1)}$ is the angle between the wavevector in the first medium $\kk^{(1)}$ and the interface normal. In the second medium, a similar relation must apply, however the wavenumber $k^{(2)}$ may be different and as a result, the angle in the second medium is
+\begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right) = \arcsin\left( \frac{N_1}{N_2} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
 which is known as the \textit{Snell} (or also \textit{Snell-Descartes}) law.
 
-In the most strict definition, the index of refraction makes sense only for \textit{isotropic} media, where the Snell law is directly applicable. The index of refraction then can be easily defined as the ratio of wavenumber $k(\omega)$ to the wavenumber in vacuum at the same frequency: 
-\begin{equation} N(\omega) = \k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
-as directly follows from Eq. (\ref{eq_}).
+The majority of (effective) media discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for more conscientious treatment of $N$ for such cases. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium, which can be formally done, but in a general case as in Fig. \ref{fg_ifc}b, the wavenumber $k$ also depends on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would lose its appealing simplicity, becoming an implicit equation.
 
-The majority of media or structures discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} seems to be widely used for them in the literature anyway. The author thus feels there is a need for more conscientious treatment of \textit{index of refraction} for such cases. The extremely loose definition of  
-As shown in Fig. \ref{fg_ifc}b, the IFCs of 
-
-when does index of refraction make sense? --- 
-strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
-
-
-
-\cite[p. 118]{shalaev2010book}
+The author proposes to restrict the use of the term to all cases where IFC are perpendicular to $\kk$. This obviously covers all isotropic media, but also generalizes the use to all cases when the waves propagate close the optical axis of any anisotropic media. An example of optical axis orientation, that shares the $k_x$ component with \ref{fg_ifc}a, is shown in Fig. \ref{fg_ifc}c. For small deviations from this angle, where the IFC can be approximated by an osculating circle, 
+\begin{equation} \frac{\partial k}{\partial \alpha} \ll k,\label{eq_osculating}\end{equation}
+the Snell law still gives a correct prediction of the refraction angle. We will however show in the following that the prediction of \textit{beam} propagation is more complicated, being sensitive to the \textit{curvature of IFC} rather than of its tangent. 
 
 %}}}
-\paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
+\paragraph{Isofrequency contours of hyperbolic media}  %{{{
+The IFCs in Fig. \ref{fg_ifc}a,b,c were plotted for non-dispersive media, i. e. with $\epsrl$ and $\murl$ independent of frequency. The case of the lower polariton branch of a dispersive isotropic medium is already shown in Fig. \ref{fg_ifc_dc}, characteristic by non-equidistant IFCs which lead to the refraction angle being dependent on the frequency.
+
+A more complicated cases are the \textit{hyperbolic media}, where in a certain spectral region one component of the anisotropic permittivity is positive, while another one is negative. The solution of Eq. (\ref{eq_dispdet}) then results in a hyperbola.
+
+As there is no other way to achieve negative permittivity than above a Lorentz resonator, hyperbolic media are always dispersive. 
+
+%}}}
+\paragraph{Phase velocity and group velocity near single resonance}  %{{{
+
+
+
 \mdf{
 the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
 derivative of vector function yields another vector function -> \\
