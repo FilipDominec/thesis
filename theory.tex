@@ -224,7 +224,7 @@ with the relative permittivity $\varepsilon_r(\omega)$ and permeability $\mu_r(\
 The wave equation (\ref{eq_wavek}) then changes to
 \begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \label{eq_wavek_disp} \end{equation}
 which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
-\begin{equation} k~= \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
+\begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\varepsilon_{r}(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
 
@@ -351,29 +351,39 @@ Each photonic branch also has to be plotted in a separate plot to prevent the co
 
 \begin{figure}[ht] \caption{An example of circular isofrequency contours for a medium with isotropic permittivity  \textbf{(a)}, with IFCs forming circles centered in the $k=0$ point. 
  The case of anisotropic permittivity, with either frequency independent different components \textbf{(b)}, and with one component being a function of frequency and crossing zero \textbf{(c)}.} \label{fg_ifc} \centering  %% TODO write caption; complement the text to match
-	% \includegraphics[width=17cm]{img/.pdf} 
-	% TODO FIGURE
-	\todo{FIGURE circular/elliptic/hyperbolic dispersion contours\\} %% note this is shown in \cite[p. 118]{shalaev2010book}
 \end{figure}
-In Fig. \ref{}
+Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
+The component of wave vector parallel to the interface (chosen as $k_x$ here, indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase at the interface, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
+
+In Fig. \ref{fg_ifc}, we illustrate IFCs for isotropic and three examples of anisotropic media. \todo{xx}
+
 Hyperbolic media can also be found in nature, in narrow range like near sapphire LO phonon, %cite Agranovich
 %}}}
 \paragraph{Index of refraction, and its applicability}  % TODO%{{{
 \mdf{
-Noether theorem ->\\
-refraction between two isotropic media must keep the phase along boundary   ->  \\
-how Snell's arcsin law simply comes out of IFC shape\\
-
 develop the term of index of refraction\\
-when does index of refraction make sense? --- strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
 
 IFCs will be useful also for nonlocal and periodic media later\\
-
-
-if the surface is smooth, this must hold for any type of media, including anisotropic\\
-
-TODO FIGURE refraction of two media, rgb contours with dispersive angle of refraction
 }
+With the background of the theory developed above, the notion of \textit{index of refraction} $N$ can be properly introduced and discussed. Starting with a harmonic plane wave with a frequency $\omega$ and a wavenumber $k^{(1)}$ which refracts at an interface of two isotropic media, the projection of wavevector to the interface is given as 
+$$ k_x = k^{(1)}\,\sin \alpha^{(1)}, $$
+where $\alpha^{(1)}$ is the angle between the wavevector $\kk^{(1)}$ and the interface normal in the first medium. In the second medium, a similar relation must apply, however the wavenumber $k^{(2)}$ may be different and as a result, the angle in the second medium is
+\begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
+which is known as the \textit{Snell} (or also \textit{Snell-Descartes}) law.
+
+In the most strict definition, the index of refraction makes sense only for \textit{isotropic} media, where the Snell law is directly applicable. The index of refraction then can be easily defined as the ratio of wavenumber $k(\omega)$ to the wavenumber in vacuum at the same frequency: 
+\begin{equation} N(\omega) = \k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
+as directly follows from Eq. (\ref{eq_}).
+
+The majority of media or structures discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} seems to be widely used for them in the literature anyway. The author thus feels there is a need for more conscientious treatment of \textit{index of refraction} for such cases. The extremely loose definition of  
+As shown in Fig. \ref{fg_ifc}b, the IFCs of 
+
+when does index of refraction make sense? --- 
+strict definition (circular IFC only), weaker definition (tangential and smooth IFC,  works in the limit of small angles, but the beam propagation is not correctly predicted), broadest definition ($k/c\omega$ does not guarrantee prediction of the refraction angle, unusable)
+
+
+
+\cite[p. 118]{shalaev2010book}
 
 %}}}
 \paragraph{Phase velocity and group velocity near single resonance}  % TODO%{{{
