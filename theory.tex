@@ -324,6 +324,9 @@ For simplicity, let us assume the relative permeability $\murl = 1$; then it can
 	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
 A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero. The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
+\todo{verify --}
+Rigorous solution of Eq. \ref{eq_dispdet} gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. 
+
 %}}}
 \paragraph{Isofrequency contours}  %{{{
 %A resonance in local permittivity (or permeability) creates two polariton branches -- thus the dispersion curves can not be expressed as one simple function $\omega(k)$ of the wavevector $k$. It would then appear adequate to treat dispersion curves as a function of frequency, $k(\omega)$, but as is shown below in the presence of nonlocal response, neither $k$ is necessarily a simple function of $\omega$. Also 
@@ -346,13 +349,14 @@ frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimen
 Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC). It not only displays rich %?
 information about the medium interaction with electromagnetic waves, but also allows for intuitive geometrical analysis of various physical problems. 
 Its limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot dispersion in media with negligible losses only.  
-Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping.
-
-Rigorous solution of Eq. \ref{eq_dispeq_loc} gives in fact three solutions %% TODO
+Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping. 
+For every single photonic branch, there are two sets of IFC for two different polarisations of the transverse wave, but for simplicity we plot only one polarisation. % \todo{discuss? In uniaxial media, where two diagonal components of the }
 
 \begin{figure}[ht] \caption{An example of circular isofrequency contours, centered in the $k=0$ point, for a medium with isotropic permittivity \textbf{(a)}, with IFCs forming circles. 
- \textbf{(b)} The case of nondispersive anisotropic permittivity, forming elliptic IFC, and a similar case \textbf{(c)} with general orientation of the optical axis (drawn as dashed black line). \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.} \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used  as hyperbolic
-	\includegraphics[width=\textwidth]{img/ifc_freqdispersion.pdf} 
+ \textbf{(b)} The case of nondispersive anisotropic permittivity, forming elliptic IFC, and a similar case \textbf{(c)} with general orientation of the optical axis (drawn as dashed black line).
+%% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
+} \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used  as hyperbolic
+	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
 Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
 The component of wave vector parallel to the interface (chosen as $k_x$ here, indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase in both media, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
@@ -378,17 +382,29 @@ The author proposes to restrict the use of the term index of refraction to all c
 the Snell law still gives a correct prediction of the refraction angle. We will however show in the following that the prediction of \textit{beam} propagation is more complicated, being sensitive to the \textit{curvature of IFC} rather than of its tangent. 
 
 %}}}
-\paragraph{Isofrequency contours of hyperbolic media}  %{{{
-The IFCs in Fig. \ref{fg_ifc}a,b,c were plotted for non-dispersive media, i. e. with $\epsrl$ and $\murl$ independent of frequency. The case of the lower polariton branch of a dispersive isotropic medium is already shown in Fig. \ref{fg_ifc_dc}, characteristic by non-equidistant IFCs which lead to the refraction angle being dependent on the frequency.
+%%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ FIXME
+%%   The IFCs in Fig. \ref{fg_ifc}a,b,c were plotted for non-dispersive media, i. e. with $\epsrl$ and $\murl$ independent of frequency. The case of one polariton branch of a dispersive isotropic medium is already shown in Fig. \ref{fg_ifc_dc}, characteristic by non-equidistant IFCs which lead to the refraction angle being dependent on the frequency.
+%%   
+%%   A more complicated cases are the \textit{hyperbolic media}, where, in a certain spectral region, one component of the anisotropic permittivity is positive, while another one is negative. The solution of Eq. (\ref{eq_dispdet}) then results in a hyperboloid, which is either of one sheet or two sheets, depending on the sign of the remaining diagonal component of permittivity tensor. At the frequencies where the dispersive component of permittivity is negative,  
+%%   Note that a negative permittivity is always connected with the dispersive behaviour, thus \ref{fg_ifc}d is another example of a dispersive medium. 
+%%   
+%%   %}}}
 
-A more complicated cases are the \textit{hyperbolic media}, where, in a certain spectral region, one component of the anisotropic permittivity is positive, while another one is negative. The solution of Eq. (\ref{eq_dispdet}) then results in a hyperbola.
-
-As there is no other way to achieve negative permittivity than above a Lorentz resonator, hyperbolic media are always dispersive. 
-
-%}}}
 \paragraph{Phase velocity and group velocity near single resonance}  %{{{
+So far only the propagation and refraction of an infinite, single-frequency wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency. 
+
+If the wave is temporally modulated, its amplitude in time is given as a complex envelope function $\E_0(t)$ (instead of a constant vector $\E_0$ in Eq. \ref{eq_pw}). This can be equivalently expressed in the frequency domain as the wave being composed of multiple frequency components, with respective amplitudes given by the Fourier transform of $\E_0(t)$. 
+The envelope results from the interference of these components, and therefore its position is determined by their \textit{mutual phase difference}, not by the absolute phase. If the wave propagates through vacuum or other nondispersive medium, each frequency component of the wave acquires phase proportional to its frequency.
 
 
+%If the amplitude and phase of the wave is not  temporal shape of a wave can be composed as a superposition of different frequency components with certain amplitude and phase. Similarly, any spatial shape of a beam can be composed of infinite waves of different wavevectors. The isofrequency contours, and their dependence on frequency, allow to determine how the temporal and spatial envelope will propagate. 
+
+%Assuming a short pulse for simplicity
+
+\begin{figure}[ht] \caption{Examples of IFC similar to Fig. \ref{fg_ifc}, but with different wavevectors at a single frequency. \textbf{(a)} The wavevectors in the isotropic medium lie on a circle.
+ \textbf{(b)} \textbf{(c)} } \label{fg_ifc2} \centering  %% TODO  WRITE
+	\includegraphics[width=\textwidth]{img/ifc_kdispersion_hyp.pdf} 
+\end{figure}
 
 \mdf{
 the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
