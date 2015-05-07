@@ -155,7 +155,7 @@ A more detailed treatment of the theory of the dielectric function $\epsrl(\omeg
 We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where the shows to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
 \paragraph{Permeability of Lorentz media}  %{{{ 
-In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means a response of the medium to the magnetic field:
+In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
 \begin{equation} \murl(\omega) = \frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \biggr|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m^{\rm(Loc)}(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
 where $\chi_m^{\rm(Loc)}(T)$ is the \textit{magnetic susceptibility of medium} and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an expression for the local permeability in the frequency domain:
 \begin{equation} \murl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + i\omega\gamma_m}, \label{eq_lorentz_mu}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
@@ -359,14 +359,14 @@ For every single photonic branch, there are two sets of IFC for two different po
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
 Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
-The component of wave vector parallel to the interface (chosen as $k_x$ here, indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase in both media, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
+The component of wave vector parallel to the interface (chosen as $k_x$ here and indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of phase in both media, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
 In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and three anisotropic media.
 
 %}}}
 \paragraph{Index of refraction and its applicability}  %{{{
 With the background of the theory developed above, the notion of the \textit{index of refraction}, $N$, can be properly introduced and discussed. 
-In the most strict sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
-\begin{equation} N(\omega) = k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
+In the most strict sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of the wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
+\begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
 as directly follows from Eq. (\ref{eq_dispeq_loc}).
 
 Starting with a harmonic plane wave with the frequency $\omega$ and the wave vector $\kk^{(1)}$ refracting at an interface of two isotropic media, the projection of $\kk$ to the interface is given as 
@@ -375,11 +375,11 @@ where $\alpha^{(1)}$ is the angle between the wavevector in the first medium $\k
 \begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right) = \arcsin\left( \frac{N_1}{N_2} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
 which is known as the \textit{Snell} (or also \textit{Snell-Descartes}) law.
 
-The majority of (effective) media discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for more conscientious treatment of $N$ for such cases. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium, which can be formally done. In a general case as in Fig. \ref{fg_ifc}b, however, the wavenumber $k$ also depends on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its appealing simplicity.
+The majority of (effective) media discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for a conscientious extension of $N$ for anisotropic cases, too. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium. This can be formally done, but then the wavenumber $k$ would also depend on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its \textit{raison d'\^{e}tre} that came from its simplicity.
 
-The author proposes to restrict the use of the term index of refraction to all cases where IFC are perpendicular to $\kk$. This obviously covers all isotropic media, but also generalizes the use to those cases when the waves propagate close the optical axis of any anisotropic media. An example of optical axis orientation, for which the refraction can be computed using Snell law provided the $k_x$ component is shared with \ref{fg_ifc}a, is shown in Fig. \ref{fg_ifc}c. For small deviations from this angle, where the IFC can be approximated by an osculating circle, 
+The author proposes instead to restrict the term \textit{index of refraction} to all cases where IFCs are perpendicular to $\kk$. This obviously covers all isotropic media, but also those cases when the waves propagate close the optical axis of any anisotropic media. An example of optical axis orientation, for which the refraction can be computed using Snell law provided the $k_x$ component is shared with \ref{fg_ifc}a, is shown in Fig. \ref{fg_ifc}c. For small deviations from this angle, where the IFC can be approximated by an osculating circle, 
 \begin{equation} \frac{\partial k}{\partial \alpha} \ll k,\label{eq_osculating}\end{equation}
-the Snell law still gives a correct prediction of the refraction angle. We will however show in the following that the prediction of \textit{beam} propagation is more complicated, being sensitive to the \textit{curvature of IFC} rather than of its tangent. 
+the Snell law still gives a correct prediction of the refraction angle. We will however show in the following that the prediction of \textit{beam} propagation is more complicated, being sensitive to the \textit{curvature of IFC}. 
 
 %}}}
 %%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ FIXME
@@ -390,36 +390,60 @@ the Snell law still gives a correct prediction of the refraction angle. We will 
 %%   
 %%   %}}}
 
-\paragraph{Phase velocity and group velocity near single resonance}  %{{{
-So far only the propagation and refraction of an infinite, single-frequency wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency. 
+\paragraph{Phase velocity and group velocity}  %{{{  todo near single resonance
+So far only the propagation and refraction of an infinite, single-frequency wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency. %% todo rewrite to more precise
 
-If the wave is temporally modulated, its envelope in time is given as a complex vector function $\E_0(t)$ replacing the constant vector $\E_0$ in Eq. \ref{eq_pw}. This can be equivalently expressed in the frequency domain as the wave being formed by superposition (and interference) of multiple frequency components, with respective amplitudes given by the Fourier transform of $\E_0(t)$. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
+If the wave is temporally modulated, its envelope in time is given as a complex vector function $\E_0(t)$ replacing the constant vector $\E_0$ in Eq. \ref{eq_pw}. This can be equivalently expressed in the frequency domain as the wave being formed by superposition of multiple frequency components, with respective amplitudes given by the Fourier transform of $\E_0(t)$. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
 
-A similar argument can be made regarding the spatial modulation of the wave. Any wave other than infinite plane wave is a supeposition of waves with different wavevectors.
+A similar argument can be made regarding the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of the spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
 
-If the wave propagates through vacuum or other nondispersive medium, each frequency component of the wave acquires phase proportional to its frequency, and the envelope does not shift against the propagates with the same velocity as the waves.
+The velocity vector of the envelope propagation, denoted as the \textit{group velocity} $\mathbf{v_g}$, can be found as the gradient of frequency by the wavevector: %% TODO cite
+\begin{equation} \mathbf{v_g} := \frac{\partial \omega}{\partial \kk} \equiv 
+\left(\begin{array}{c} 
+	\partial \omega/\partial k_x \\ 
+	\partial \omega/\partial k_y \\ 
+	\partial \omega/\partial k_z \\ 
+	\end{array} \right)
+ \label{eq_vg}\end{equation}
+In the IFC plot, the group velocity can be visually found as directing always perpendicular to the IFC, with its magnitude being proportional to the density of the IFCs.
 
+If the group velocity is different from the phase velocity, the envelope $\E_0(t)$ is maintained over time, but it continuously shifts against the underlying wave. Thus the actual temporal shape of $\E(t)$ changes upon passing through a dispersive medium.
+On the contrary, in vacuum or media with negligible dispersion, each frequency component of the wave acquires an additional phase strictly proportional to its frequency. Then the group velocity coincides with the phase velocity: 
+$$\hspace{3cm}\mathbf{v_g} = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
+%The orientation of $\vg$ and $\kk$ is usually the same, but later it will be shown that it can be otherwise, with peculiar physical consequences.
 
-%If the amplitude and phase of the wave is not  temporal shape of a wave can be composed as a superposition of different frequency components with certain amplitude and phase. Similarly, any spatial shape of a beam can be composed of infinite waves of different wavevectors. The isofrequency contours, and their dependence on frequency, allow to determine how the temporal and spatial envelope will propagate. 
+Usually in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, frequency, if reformulated). It results in temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
+%}}}
 
-%Assuming a short pulse for simplicity
+\paragraph{Propagation of a beam in anisotropic media}  %{{{  todo near single resonance
+The propagation of a beam is illustrated in Fig. \ref{fg_ifc2} with three slightly different wavevectors. For simplicity, a monochromatic wave was used, so brown, black and violet were chosen for the three example wavevectors to prevent confusion with the rainbow-like frequency color map used in Fig. \ref{fg_ifc}. 
 
+In the first plot, \ref{fg_ifc2}a, the case of an isotropic medium is illustrated. Upon refraction into a general anisotropic medium in Fig. \ref{fg_ifc2}b, each component must maintain its wavevector projection to the interface, thus the wavevectors spread in their direction. The resulting beam propagates along the group velocity that is different from the central wavevector;% The components of the resulting beam are   is narrower and does not propagate 
+this is also known as the spatial \textit{walk-off}.
 \begin{figure}[ht] \caption{Examples of IFC similar to Fig. \ref{fg_ifc}, but with different wavevectors at a single frequency. \textbf{(a)} The wavevectors in the isotropic medium lie on a circle.
  \textbf{(b)} \textbf{(c)} } \label{fg_ifc2} \centering  %% TODO  WRITE
 	\includegraphics[width=\textwidth]{img/ifc_kdispersion_hyp.pdf} 
 \end{figure}
 
-\mdf{
-the discussion regards partial derivative of k-vector by frequency,   d k/d omega ->  \\
-derivative of vector function yields another vector function -> \\
-show that its magnitude determines the envelope  propagation velocity  \\
-and direction determines the beam propagation\\
-TODO FIGURE: of this
 
-illustrate the walk-off in a beam \\
-TODO FIGURE: beam refraction
+Fig. \ref{fg_ifc2}c shows again the special case of anisotropic medium, where a wave propagates near its optical axis, and where the Snell law, with the generalized notion of the index of refraction, can still be used to determine the refraction of a plane wave.
+However, there is a pitfall if one tries to apply the Snell law for prediction of how the beam will refract. It originates from the differential nature of the group velocity definition in Eq. (\ref{eq_vg}). 
+%While the magnitude of the wavevector changes only negligibly, with the square of a 
+While the phase velocity of a monochromatic wave at the frequency $\omega_0$ does not appreciably change upon a small deviation of the angle $\alpha$ from the optical axis  [c.f.  Eq. (\ref{eq_osculating})], the group velocity direction does, because it has a nonzero linear component in its dependence on the wavevector:
+$$ \frac{\partial \vg(\kk)}{\partial \alpha} \neq 0.$$
+As a result, the group velocity in anisotropic media is always much more sensitive to the angle than the phase velocity, and Snell law does not predict it correctly. It can be regarded as a spatially-dependent manifestation of the group velocity dispersion.
+
+In Fig. \ref{fg_ifc2}d, an extreme case of spatial walk-off is shown on the example of a \textit{hyperbolic} medium with different signs of the permittivity along different axes. %% TODO study Belov2003 and possibly correct this if hyperbolas are wrong
+ The normal to its IFC is nearly perpendicular to the wavevector, and accordingly, the beam refracts in opposite angle with regards to the incident wave. The $k_x$ component of the wave vector is however still maintained.
+
+%If the amplitude and phase of the wave is not  temporal shape of a wave can be composed as a superposition of different frequency components with certain amplitude and phase. Similarly, any spatial shape of a beam can be composed of infinite waves of different wavevectors. The isofrequency contours, and their dependence on frequency, allow to determine how the temporal and spatial envelope will propagate. 
+
+%Assuming a short pulse for simplicity
+
+\mdf{
 TODO move later: show that nonlocal/photonic media can lead e.g. to "beam collimation" when ifc goes flat
 
+the group velocity can be negative \cite{dolling2009}, but only in lossy media and under strong GVD
 show that "signal propagation velocity" is a problematic term <- \\
 as a finite-support function spans over infinite spectrum, where group velocity has to change and differ \\
 -> "group velocity dispersion (GVD)" leads to signal "chirping" distortion\\
@@ -706,6 +730,8 @@ ref Homogenisation issues - response to our paper from OpEx
 %			[1] J. C. M. Garnett, Phil Trans. R. Soc. A 203, 385 (1904).
 %			[2] D. E. Aspnes, Thin Solid Films 89, 249 (1982).
 %			[3] W. Cai and V. Shalaev, Optical Metamaterials: Fundamentals and Applications (Springer, New York, 2010).
+
+
 
 % "Metamaterials do not bring new physical phenomena, they only force one to conscientiously review the common electrodynamics. There
 % are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
