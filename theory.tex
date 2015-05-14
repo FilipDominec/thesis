@@ -458,9 +458,11 @@ It should be noted that the negative-index media are necessarily dispersive. The
 \paragraph{Definition of nonlocal media}%{{{
 %TODO: spatial dispersion describes one specific sort of nonlocal behaviour that exists in homogeneous infinite media only
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media that follows.
-In this section a more general class of media is discussed, where the polarization explicitly depends the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
+
+In this section a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
-In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. 
+In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium, without loss of generality thanks to any wave being a superposition of plane waves.
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\brho} \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_harm_nonloc}\end{equation}
 After two  substitutions, $T:=t-\tau$, $\mathbf{R}:=\rr-\brho$, the exponent can again be separated into the original plane wave (which factors out), and a spatio-temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot(\rr - \mathbf{R})} \,\mbox{d}T \,\mbox{d}^3\brho,$$
@@ -471,16 +473,22 @@ The response of the medium to the electric field of any harmonic plane wave can 
 %%	 We must tell apart eps and eps^LL
 %%						... should not the notation be unified for clarity? 
 %%						... and when it happens that eps == eps^(Loc) ?? And when eps^LL== eps^(Loc)
-Converting the problem from spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\varepsilon(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\varepsilon$ %% TODO make it \varepsilon_r
+Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\varepsilon(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\varepsilon$ %% TODO make it \varepsilon_r
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 % , and convolution in space is equivalent to multiplication  in the reciprocal space
 
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
 %}}}
-\paragraph{Local response as a limiting case of the nonlocal one} %{{{
+\paragraph{Power expansion of the medium parameters} %{{{
+Assuming the dependence of the medium permittivity $\varepsilon(\omega,\kk)$ or permeability $\mu(\omega,\kk)$ vary only slowly with $\kk$, we generally express them as power series \cite[p. 367]{landau1984electrodynamics}:
+\begin{equation} \varepsilon(\omega,\kk) = \varepsilon(\omega) + \ii \gamma_{\text{E}}(\omega) \kk + [\alpha_{\text{E}}(\omega) \kk] \kk + \ldots, \label{eq_epssd1}\end{equation}
+\begin{equation} \mu(\omega,\kk)		 =		   \mu(\omega) + \ii \gamma_{\text{M}}(\omega) \kk + [\alpha_{\text{M}}(\omega) \kk] \kk + \ldots, \label{eq_musd1}\end{equation}
+where $\gamma_{\text{E,M}}(\omega)$ are tensors of the third rank and $\alpha_{\text{E,M}}(\omega)$ are tensors of the fourth rank. After the matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to the possibly anisotropic permittivity.
+
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
 \begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e^{\rm(Loc)}(t-\tau), \label{eq_loc_chi}\end{equation}
-which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed.
+which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed. Then the higher order tensors $\gamma_{\text{E,M}}, \alpha_{\text{E,M}}$ in Eqs. (\ref{eq_epssd1}, \ref{eq_musd1}) are identically zero:
+\begin{equation} \varepsilon(\omega,\kk) = \varepsilon(\omega), \label{eq_epssd2}\end{equation}
+\begin{equation} \mu(\omega,\kk)		 =		   \mu(\omega). \label{eq_musd2}\end{equation}
 
 % TODO The exact shape of $\varepsilon(\omega, \kk)$ will be discussed later.
 %}}}
@@ -497,20 +505,18 @@ In a very similar way, the local magnetic permeability $\murl(\omega)$ also cons
  \item{the magnetic response of vacuum,} 
  \item{and, if present, the magnetic response of the matter.} 
 \end{enumerate}
-\begin{table}[ht]   \caption{Physical effects by the quantity they are expressed by}  \label{tb_nonlocaleff} \centering 
-\begin{tabular}{lcr}
- \toprule
-Physical effect & Has a corresponding term in \\
- \hline
-Vacuum permittivity &	&	\\
- &	&	\\
-Vacuum permeability &	&	\\
- &	&	\\
- \bottomrule
- \end{tabular} \end{table}
-
-
-The trivial extension of the local medium description to the nonlocal one could consist in redefining both constitutive parameters as functions of frequency and wave vector: $\varepsilon_r(\omega) \stackrel{?}{\rightarrow} \varepsilon_r(\omega, \kk)$, $\mu_r(\omega) \stackrel{?}{\rightarrow} \mu_r(\omega, \kk)$, but this will not be used. 
+%\begin{table}[ht]   \caption{Physical effects by the quantity they are expressed by}  \label{tb_nonlocaleff} \centering 
+%\begin{tabular}{lcr}
+ %\toprule
+%Physical effect & Has a corresponding term in \\
+ %\hline
+%Vacuum permittivity &	&	\\
+ %&	&	\\
+%Vacuum permeability &	&	\\
+ %&	&	\\
+ %\bottomrule
+ %\end{tabular} \end{table}
+%The trivial extension of the local medium description to the nonlocal one could consist in redefining both constitutive parameters as functions of frequency and wave vector: $\varepsilon_r(\omega) \stackrel{?}{\rightarrow} \varepsilon_r(\omega, \kk)$, $\mu_r(\omega) \stackrel{?}{\rightarrow} \mu_r(\omega, \kk)$, but this will not be used. 
 
 % TODO add böhne nägerl reker ulbrich: evidence of spatial dispersion in the dielectric response of continuum states in gaas, 183e WE-Heraeus-Seminar nonlin opt and excit kinetics, noeks, graal-muritz 1997, Germany
 %}}}
@@ -589,7 +595,7 @@ The downsides of the spatial-dispersive model of media is that it is more compli
 \cite{makarov2013kramers}
 }%}}}
 
-\subsection{Dispersion relations in homogeneous nonlocal media} % TODO
+\subsection{Dispersion relations in homogeneous nonlocal media} % TODO   http://www.wave-scattering.com/negative.html
 \paragraph{Comparison of eps-mu and spatial-dispersive models}%{{{
 ... en vacuum ...
 \begin{equation}		\Dsd = \varepsilon_0	\E, \quad\quad\quad						\B = \mu_0			\HHsd,				 \label{eq_ce_dispersive}\end{equation}
