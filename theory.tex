@@ -460,7 +460,9 @@ It should be noted that the negative-index media are necessarily dispersive. The
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media that follows.
 The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
 
-In this section a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
+Some phenomena observed in the frequency spectrum are in fact consequences of spatial dispersion, such as Doppler broadening of resonance lines in gases \cite[p. 359]{landau1984electrodynamics}. More precisely, these phenomena are primarily dependent on the wave vector $\kk$, and their expression by means of the temporal spectrum is a mere approximation based on that the dispersion curve usually defines a simple relation between  frequency and wave vector.  %% TODO rewrite?
+
+In this section such a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
 In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. This is without loss of generality, thanks to that it is possible to express any wave as a superposition of monochromatic plane waves.
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\brho} \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_harm_nonloc}\end{equation}
@@ -481,40 +483,17 @@ may be either scalar functions, or rank-2 tensor functions; the latter case acco
 Assuming the dependence of the medium permittivity $\varepsilon(\omega,\kk)$ or permeability $\mu(\omega,\kk)$ vary only slowly with $\kk$, we can express them in general as power series \cite[p. 367]{landau1984electrodynamics}:
 $$ \epsrn(\omega,\kk) = 1 + \chi_e(\omega) + \ii \gamma_{\text{e}}(\omega) \kk + [\alpha_{\text{e}}(\omega) \kk] \kk + \ldots, \label{eq_epssd1} $$
 \begin{equation} \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, \label{eq_musd1}\end{equation}
-where $\chi_{e,m}(\omega)$ are tensors of the second rank, $\gamma_{e,m}(\omega)$ tensors of the third rank and $\alpha_{e,m}(\omega)$ are tensors of the fourth rank, etc. for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to the possibly anisotropic permittivity.
+where $\chi_{e,m}(\omega)$ are tensors of the second rank, $\gamma_{e,m}(\omega)$ of the third rank, $\alpha_{e,m}(\omega)$ of the fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the rank-2 tensor of permittivity or permeability.
 
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
 \begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e(t-\tau), \label{eq_loc_chi}\end{equation}
-which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}, \alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish:
+which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}$ and $\alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish:
 $$ \epsrn(\omega,\kk) = 1 + \chi_e(\omega) = \epsrl(\omega), $$
-\begin{equation} \epsrn(\omega,\kk) = 1 + \chi_m(\omega) = \murl(\omega). \label{eq_epsmusd2}\end{equation}
+\begin{equation} \murn(\omega,\kk) = 1 + \chi_m(\omega) = \murl(\omega). \label{eq_epsmusd2}\end{equation}
 
 % TODO The exact shape of $\varepsilon(\omega, \kk)$ will be discussed later.
 %}}}
 \paragraph{Review of local medium parameters}%{{{
-Some phenomena observed in the frequency spectrum are in fact consequences of spatial dispersion, such as Doppler broadening of resonance lines in gases \cite[p. 359]{landau1984electrodynamics}. More precisely, these phenomena are primarily dependent on the wave vector $\kk$, and their expression by means of the temporal spectrum is a mere approximation based on that the dispersion curve usually defines a simple relation between  frequency and wave vector. 
-
-The above chapter \ref{disp_rel_local_media} presented the customary approximation of local media, where the electric permittivity in Eq. (\ref{eq_eps_loc}) is composed of two terms: 
-\begin{enumerate}
- \item{one caused  by the immediate response of vacuum,} 
- \item{and another by the electric response of matter.}
- \end{enumerate}
-In a very similar way, the local magnetic permeability $\murl(\omega)$ also consists of two different components, 
-\begin{enumerate}[resume]
- \item{the magnetic response of vacuum,} 
- \item{and, if present, the magnetic response of the matter.} 
-\end{enumerate}
-%\begin{table}[ht]   \caption{Physical effects by the quantity they are expressed by}  \label{tb_nonlocaleff} \centering 
-%\begin{tabular}{lcr}
- %\toprule
-%Physical effect & Has a corresponding term in \\
- %\hline
-%Vacuum permittivity &	&	\\
- %&	&	\\
-%Vacuum permeability &	&	\\
- %&	&	\\
- %\bottomrule
- %\end{tabular} \end{table}
 %The trivial extension of the local medium description to the nonlocal one could consist in redefining both constitutive parameters as functions of frequency and wave vector: $\epsrl(\omega) \stackrel{?}{\rightarrow} \epsrn(\omega, \kk)$, $\mu_r(\omega) \stackrel{?}{\rightarrow} \mu_r(\omega, \kk)$, but this will not be used. 
 
 % TODO add böhne nägerl reker ulbrich: evidence of spatial dispersion in the dielectric response of continuum states in gaas, 183e WE-Heraeus-Seminar nonlin opt and excit kinetics, noeks, graal-muritz 1997, Germany
@@ -531,21 +510,17 @@ The right panel additionally shows the Landau-Lifshitz permittivity $\epsLL(\ome
 	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 
-%% TODO write about "EDB model"
-Instead, we will show here that the magnetic response can be fully expressed by a certain form of $\epsrn(\omega, \kk)$ dependence on $\kk$. In the following theory, the spatial-dispersive function $\epsrn(\omega, \kk)$ will consist of
+In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
+
+Here, we will show here that the magnetic response can be fully expressed by a certain form of $\epsrn(\omega, \kk)$ dependence on $\kk$. The spatial-dispersive function $\epsrn(\omega, \kk)$ will then consist of
 \begin{enumerate}
  \item{the component caused by the immediate electric response of vacuum,} 
  \item{the component caused by the electric response of matter,}
- \item{and a new component fully accounting for the \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
+ \item{a new component fully accounting for the \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
+ \item{Additionally, the spatial dispersion allows to describe other phenomena that can not be described by the local theory.}
 \end{enumerate}
-The magnetic permeability $\mu_r$ becomes a mere constant of
-\begin{enumerate}[resume]
- \item{the magnetic response of vacuum [as in Eq. (\ref{eq_ce})].} 
-\end{enumerate}
-Additionally, the spatial dispersion allows to describe
-\begin{enumerate}[resume]
- \item{other phenomena that can not be described by the local theory.} 
-\end{enumerate}
+The magnetic permeability becomes a mere constant of the magnetic response of vacuum $\murll(\omega, \kk) = 1$, thus reducing the complexness of the computation. %% [as in Eq. (\ref{eq_ce})]
+
 Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
 it is clear that if one defines new pair of vector fields
@@ -555,6 +530,7 @@ then Eq. (\ref{eq_me4}) maintains exactly the same form with the new fields, for
 \begin{equation} \nabla \times \HHsd = \nabla \times \HH + \left(\nabla\times \frac{\partial\mathbf{X}}{\partial t}\right) = \frac{\partial \D}{\partial t}+ \frac{\partial(\nabla\times \mathbf{X})}{\partial t} =  \frac{\partial \Dsd} {\partial t}, \label{eq_me4sd} \end{equation}
 because for well behaved functions the temporal and spatial derivatives commute.
 
+%% TODO how this transform is denoted?
 With the freedom of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in spatial-dispersive theory, the constitutive equation %% TODO reference some text from above pargraphs
 for magnetic induction is defined the same as in vacuum:
 \begin{equation} \mu_0 \HHsd := \mu_0 \murl \HH = \B. \label{eq_mu_sd}\end{equation}
