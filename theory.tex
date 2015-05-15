@@ -101,21 +101,21 @@ However using this local theory to a wave propagating through periodic structure
 % Applying the more familiar local electrodynamics to these structures is a mistake common to many papers. While the local theory is mathematically consistent, it predicts unusual spectral shapes and does not allow their further physical interpretation.
 
 When an electric field $\E$ is applied, the medium responds by a change of the electric displacement $\D$ in a way that is characteristic for it. 
-The immediate response of vacuum from the right side of the constitutive equations (\ref{eq_ce}) remains unchanged, but the response of the matter adds a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{electric susceptibility} $\chi_e^{\rm(Loc)}$ with the values of electric field in the previous time $\tau$:
-\begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0 \int_{-\infty}^{t}\chi_e^{\rm(Loc)}(t-\tau)\, \E(\tau,\rr)\,\mbox{d}\tau. \label{eq_loc_chi_convol}\end{equation}
+The immediate response of vacuum from the right side of the constitutive equations (\ref{eq_ce}) remains unchanged, but the response of the matter adds a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{electric susceptibility} $\chi_e$ with the values of electric field in the previous time $\tau$:
+\begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0 \int_{-\infty}^{t}\chi_e(t-\tau)\, \E(\tau,\rr)\,\mbox{d}\tau. \label{eq_loc_chi_convol}\end{equation}
 Assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$, as given by Eq. (\ref{eq_pw}). This can be inserted in the above equation:
-\begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{t} \chi_e^{\rm(Loc)}(t-\tau) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\rr} \,\mbox{d}\tau. \label{eq_chi_convol_harm}\end{equation}
+\begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{t} \chi_e(t-\tau) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\rr} \,\mbox{d}\tau. \label{eq_chi_convol_harm}\end{equation}
 Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integral, and the remaining part that turns the convolution into a temporal Fourier transform of the medium response:
-$$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e^{\rm(Loc)}(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
-$$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e^{\rm(Loc)}(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
+$$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
+$$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
 %% NOTE that the Fourier transform is never subject to the sign change, cf. \ref{eq_kkF}
 This is nothing but an application of the convolution theorem: convolution in time domain is equivalent to multiplication the in frequency domain.  %% FIXME normalisation by 2pi?
 Consequently we may introduce the local \textit{relative permittivity} $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strong it develops the electric displacement $\D$ in response to a harmonic wave. From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$.
-\begin{equation}  \epsrl(\omega) =   \frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e^{\rm(Loc)}(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
-%% TODO note that this is a complex-valued function, unlike chi_e(loc); and explain why it is so: that it allows to easily pack in also the information about the phase
+\begin{equation}  \epsrl(\omega) = \frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := 1 + \chi_e(\omega) = \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
+%% TODO note that in freq domain this is a complex-valued function, unlike time-domain response; and explain why it is so: that it allows to easily pack in also the information about the phase
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
-\begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e^{\rm(Loc)}(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
+\begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
 	\includegraphics[width=17cm]{img/oscillator_spectrum.pdf}
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on different time scales, and thus the medium response usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
@@ -155,8 +155,8 @@ We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_m
 %}}}
 \paragraph{Permeability of Lorentz media}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
-\begin{equation} \murl(\omega) = \frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \biggr|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m^{\rm(Loc)}(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
-where $\chi_m^{\rm(Loc)}(T)$ is the \textit{magnetic susceptibility of medium} and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an expression for the local permeability in the frequency domain:
+\begin{equation} \murl(\omega) = 1 + \chi_e(\omega) = \frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \biggr|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
+where $\chi_m(T)$ is the \textit{magnetic susceptibility of medium} and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an expression for the local permeability in the frequency domain:
 \begin{equation} \murl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + i\omega\gamma_m}, \label{eq_lorentz_mu}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
 where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0m}$, $\gamma_m$ and $F_m$ are the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field % todo CITE
 or their response is limited to low frequencies.
@@ -409,7 +409,7 @@ On the contrary, in vacuum or media with negligible dispersion, each frequency c
 $$\hspace{3cm}\mathbf{v_g} = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
 %The orientation of $\vg$ and $\kk$ is usually the same, but later it will be shown that it can be otherwise, with peculiar physical consequences.
 
-Usually in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, frequency, if reformulated). It results in temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
+Usually in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
 %}}}
 \paragraph{Propagation of a beam in anisotropic media}  %{{{  
 The refraction of a beam is illustrated in Fig. \ref{fg_ifc2} by means of three slightly different wavevectors it is composed of. For simplicity, a monochromatic wave was used, so brown, black and violet were chosen for the three example wavevectors to prevent confusion with the rainbow-like frequency color map used in Fig. \ref{fg_ifc}. 
@@ -448,7 +448,7 @@ Such a case can indeed occur in natural or artificial media, as described in mor
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
-In the isotropic media, or the media where the wave vector pointing parallel to the optical axis, the Snell law is still applicable, and we then speak of \textit{negative index of refraction}.  The refraction between an ordinary medium and two examples of negative-index media are plotted in Fig. \ref{fg_ifcnr}.
+In the isotropic media, or the media where the wave vector points in direction close to the optical axis, the Snell law is still applicable, and we then speak of \textit{negative index of refraction}.  The refraction between an ordinary medium and two examples of negative-index media are plotted in Fig. \ref{fg_ifcnr}.
 It should be noted that the negative-index media are necessarily dispersive. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be found from the wavevectors at different frequencies in Fig. \ref{fg_ifcnr}b,c.
 
 \todo{add that the propagation velocities are more complicated than this and will be discussed later; move a part of this text below?}
@@ -462,14 +462,13 @@ The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used in
 
 In this section a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
-In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium, without loss of generality thanks to any wave being a superposition of plane waves.
+In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. This is without loss of generality, thanks to that it is possible to express any wave as a superposition of monochromatic plane waves.
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\brho} \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_harm_nonloc}\end{equation}
 After two  substitutions, $T:=t-\tau$, $\mathbf{R}:=\rr-\brho$, the exponent can again be separated into the original plane wave (which factors out), and a spatio-temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot(\rr - \mathbf{R})} \,\mbox{d}T \,\mbox{d}^3\brho,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\left( \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R})  \, e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}}\,\mbox{d}T \,\mbox{d}^3 \mathbf{R} \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
 The response of the medium to the electric field of any harmonic plane wave can now be expressed as a function of frequency $\omega$ and wave vector $\kk$. It is defined as the ratio between the electric displacement and the electric field:
-\begin{equation} \varepsilon_r(\omega, \kk) = \frac{\Dsd(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \,e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}} \,\mbox{d}T \,\mbox{d}^3\mathbf{R} \label{eq_eps_nonloc}\end{equation}
-%% TODO think over - we substituted Dsd for D    and    eps for eps^(Loc) , but the new epsilon is not that one containing magnetic effects as in Landau-Lifshitl.
+\begin{equation} \varepsilon_r(\omega, \kk) = \frac{\Dsd(t,\rr)}{\varepsilon_0 \E(t,\rr)} \biggr|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}}  = 1 + \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \,e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}} \,\mbox{d}T \,\mbox{d}^3\mathbf{R} \label{eq_eps_nonloc}\end{equation}
 %%	 We must tell apart eps and eps^LL
 %%						... should not the notation be unified for clarity? 
 %%						... and when it happens that eps == eps^(Loc) ?? And when eps^LL== eps^(Loc)
@@ -479,16 +478,16 @@ may be either scalar functions, or rank-2 tensor functions; the latter case acco
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
-Assuming the dependence of the medium permittivity $\varepsilon(\omega,\kk)$ or permeability $\mu(\omega,\kk)$ vary only slowly with $\kk$, we generally express them as power series \cite[p. 367]{landau1984electrodynamics}:
-\begin{equation} \varepsilon(\omega,\kk) = \varepsilon(\omega) + \ii \gamma_{\text{E}}(\omega) \kk + [\alpha_{\text{E}}(\omega) \kk] \kk + \ldots, \label{eq_epssd1}\end{equation}
-\begin{equation} \mu(\omega,\kk)		 =		   \mu(\omega) + \ii \gamma_{\text{M}}(\omega) \kk + [\alpha_{\text{M}}(\omega) \kk] \kk + \ldots, \label{eq_musd1}\end{equation}
-where $\gamma_{\text{E,M}}(\omega)$ are tensors of the third rank and $\alpha_{\text{E,M}}(\omega)$ are tensors of the fourth rank. After the matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to the possibly anisotropic permittivity.
+Assuming the dependence of the medium permittivity $\varepsilon(\omega,\kk)$ or permeability $\mu(\omega,\kk)$ vary only slowly with $\kk$, we can express them in general as power series \cite[p. 367]{landau1984electrodynamics}:
+$$ \epsrn(\omega,\kk) = 1 + \chi_e(\omega) + \ii \gamma_{\text{e}}(\omega) \kk + [\alpha_{\text{e}}(\omega) \kk] \kk + \ldots, \label{eq_epssd1} $$
+\begin{equation} \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, \label{eq_musd1}\end{equation}
+where $\chi_{e,m}(\omega)$ are tensors of the second rank, $\gamma_{e,m}(\omega)$ tensors of the third rank and $\alpha_{e,m}(\omega)$ are tensors of the fourth rank, etc. for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to the possibly anisotropic permittivity.
 
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
-\begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e^{\rm(Loc)}(t-\tau), \label{eq_loc_chi}\end{equation}
-which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed. Then the higher order tensors $\gamma_{\text{E,M}}, \alpha_{\text{E,M}}$ in Eqs. (\ref{eq_epssd1}, \ref{eq_musd1}) are identically zero:
-\begin{equation} \varepsilon(\omega,\kk) = \varepsilon(\omega), \label{eq_epssd2}\end{equation}
-\begin{equation} \mu(\omega,\kk)		 =		   \mu(\omega). \label{eq_musd2}\end{equation}
+\begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e(t-\tau), \label{eq_loc_chi}\end{equation}
+which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) in the way that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}, \alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish:
+$$ \epsrn(\omega,\kk) = 1 + \chi_e(\omega) = \epsrl(\omega), $$
+\begin{equation} \epsrn(\omega,\kk) = 1 + \chi_m(\omega) = \murl(\omega). \label{eq_epsmusd2}\end{equation}
 
 % TODO The exact shape of $\varepsilon(\omega, \kk)$ will be discussed later.
 %}}}
@@ -516,12 +515,12 @@ In a very similar way, the local magnetic permeability $\murl(\omega)$ also cons
  %&	&	\\
  %\bottomrule
  %\end{tabular} \end{table}
-%The trivial extension of the local medium description to the nonlocal one could consist in redefining both constitutive parameters as functions of frequency and wave vector: $\varepsilon_r(\omega) \stackrel{?}{\rightarrow} \varepsilon_r(\omega, \kk)$, $\mu_r(\omega) \stackrel{?}{\rightarrow} \mu_r(\omega, \kk)$, but this will not be used. 
+%The trivial extension of the local medium description to the nonlocal one could consist in redefining both constitutive parameters as functions of frequency and wave vector: $\epsrl(\omega) \stackrel{?}{\rightarrow} \epsrn(\omega, \kk)$, $\mu_r(\omega) \stackrel{?}{\rightarrow} \mu_r(\omega, \kk)$, but this will not be used. 
 
 % TODO add böhne nägerl reker ulbrich: evidence of spatial dispersion in the dielectric response of continuum states in gaas, 183e WE-Heraeus-Seminar nonlin opt and excit kinetics, noeks, graal-muritz 1997, Germany
 %}}}
 \paragraph{Magnetic effects can be described by electric displacement}%{{{
-\begin{figure}[ht] \caption{Dispersion curves for an electric resonance in the local permittivity. The left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as an assumption is made here that the medium is fully described by the \textit{local} permittivity and permittivity.\\
+\begin{figure}[ht] \caption{Dispersion curves for an electric resonance in the local permittivity. The left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as an assumption is made here that the medium is fully described by the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.\\
 The right panel additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as colour contours. The thin black line connects all points where $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. As a confirmation of the equivalence of this Landau-Lifshitz model with the classical one, it is shown to exactly overlap with the original green dispersion curve from Fig. \ref{fg_dcsimpleel} that was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). } \label{fg_dcllel} \centering  %% TODO refto
 	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
 \end{figure}\clearpage
@@ -533,7 +532,7 @@ The right panel additionally shows the Landau-Lifshitz permittivity $\epsLL(\ome
 \end{figure}
 
 %% TODO write about "EDB model"
-Instead, we will show here that the magnetic response can be fully expressed by a certain form of $\varepsilon_r(\omega, \kk)$ dependence on $\kk$. In the following theory, the spatial-dispersive function $\varepsilon_r(\omega, \kk)$ will consist of
+Instead, we will show here that the magnetic response can be fully expressed by a certain form of $\epsrn(\omega, \kk)$ dependence on $\kk$. In the following theory, the spatial-dispersive function $\epsrn(\omega, \kk)$ will consist of
 \begin{enumerate}
  \item{the component caused by the immediate electric response of vacuum,} 
  \item{the component caused by the electric response of matter,}
