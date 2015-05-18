@@ -56,17 +56,7 @@ The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \
 
 An important note shall be made on the sign convention for the complex wave. 
 We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
-It is used in  roughly a half of the literature 
-(e.g. \cite[p. 9]{engheta2006book}
-\cite[pp. 21, 99]{krowne2007book}
-\cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book})
-.  In the remaining half,
-(e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}),
-\cite{jackson1962book}, 
-\cite{veselago1968},
-\cite{born1999book}, \cite[p. 5]{noginov2011book}), 
-the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. 
-The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 
 In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
@@ -79,14 +69,24 @@ Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of t
 so the wave equation (\ref{eq_wave}) can be modified the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
-\begin{equation}   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E.  \label{eq_wavek}\end{equation}
-The solutions of this wave equation for a harmonic plane wave divide into two groups: % TODO add reference that there is no other oslutino
+$$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E,  $$
+\begin{equation}  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
+\begin{equation} T = \frac{1}{k^2} 
+\left(\begin{array}{ccc} 
+	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
+	-k_y k_x 		& k_x^2+k_z^2	& -k_y k_z \\ 
+	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2
+	\end{array} \right) 
+\text{ or equivalently, }
+T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} .  \label{eq_transverse}\end{equation}
+The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum divide into two groups: % TODO add reference that there is no other oslutino
 \begin{enumerate}
- \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
+ \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $T\E = \E$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$.
+where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plot in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$.
 } 
- \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they may exist in a dispersive medium.} 
+ \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $T\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
 \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots (Fig. \ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
 	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
@@ -199,7 +199,7 @@ F_{even}(\omega)= \ldots =   \int_{-\infty}^{+\infty} \frac{e^{-\ii \omega t}+e^
 \label{eq_kkFeven}\end{equation}
 The odd and even components of the time-domain response function correspond to the imaginary and real part of the response spectrum, respectively:
 \begin{equation} F_{odd}(\omega) + F_{even}(\omega) = F(\omega), \text{ where } F_{odd}(\omega) = F''(\omega) \text{ and } F_{even}(\omega) = F'(\omega).  \label{eq_kkFodd}\end{equation}
-At the same time, $f_{even}(t)$ and $f_{odd}(t)$ are related by having the opposite sign for $t<0$ and the same sign for $t>0$, that is 
+At the same time, $f_{even}(t)$ and $f_{odd}(t)$ are related to each other by having the opposite sign for $t<0$ and the same sign for $t>0$, that is 
 \begin{equation} f_{even}(t) = \mbox{sign}(t)\,f_{odd}(t). \label{eq_kkfeven}\end{equation}
 Multiplication in the time domain manifests as a convolution in frequency domain
 \begin{equation} 
@@ -222,7 +222,7 @@ Returning to the derivation of dispersion relations, we start with modifying the
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
-\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \label{eq_wavek_disp} \end{equation}
+\begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
 which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
@@ -252,7 +252,7 @@ If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can 
 
 Different physical phenomena can lead to $\epsrl(\omega)' = 0$, some of which introduce relatively low losses at the corresponding $\omega_{\text{L}}$; namely lattice vibrations in nonconductive crystals or electrons in inductive media (like metals and dilute plasma). 
 
-At the interface of two media with negative and positive permittivity, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface. Depending on the mechanism, they are known as  \textit{surface plasmons} or \textit{surface phonon-polaritons} \cite[p. 87]{klingshirn2007semiconductor}, respectively. Accordingly, \textit{surface magnons} can be observed at interfaces where $\mu$ changes its sign.
+At the interface of two media with negative and positive permittivity, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface. Depending on the mechanism, they are known as  \textit{surface plasmons} or \textit{surface phonon-polaritons} \cite[p. 87]{klingshirn2007semiconductor}, respectively. Accordingly, \textit{surface magnons} should be observed at interfaces where $\mu$ changes its sign.
 % Are there surface magnons?
 % Are there any metamaterials designed for longitudinal waves?
 %}}}
@@ -279,20 +279,23 @@ for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \texti
 	\label{eq_epstensor}
 \end{equation}
 Elaborate discussion on all possible forms of this tensor and their physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
+
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  %{{{
-If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation. 
-It is important to notice that also the leftmost term in 
-\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
-is a linear transformation of the vector $\E$, which can be expressed by the tensor
-$$ - \kk (\kk \cdot \E) \equiv 
-	-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
-	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
-	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right)\right] 
-		\equiv
-	\left(\begin{array}{ccc} -k_x^2 & -k_x k_y & -k_x k_z \\ -k_y k_x & -k_y^2 & -k_y k_z \\ -k_z k_x & -k_z k_y & -k_z^2 \end{array} \right) \cdot  
-	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right).
-	$$
+If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. \ref{}. 
+
+%\begin{equation} xxx  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+%\begin{equation} xxx - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E,  \end{equation}
+
+%is a linear transformation of the vector $\E$, which can be expressed by the tensor
+%$$ - \kk (\kk \cdot \E) \equiv 
+	%-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
+	%\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
+	%\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right)\right] 
+		%\equiv
+	%\left(\begin{array}{ccc} -k_x^2 & -k_x k_y & -k_x k_z \\ -k_y k_x & -k_y^2 & -k_y k_z \\ -k_z k_x & -k_z k_y & -k_z^2 \end{array} \right) \cdot  
+	%\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right).
+	%$$
 %$$ k^2 \E \equiv 
 %	\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot 
 %	\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right)\right] \cdot 
@@ -302,30 +305,32 @@ $$ - \kk (\kk \cdot \E) \equiv
 %	\left(\begin{array}{ccc} k_x^2+k_y^2+k_z^2 & 0 & 0 \\ 0 & k_x^2+k_y^2+k_z^2 & 0 \\ 0 & 0 & k_x^2+k_y^2+k_z^2 \end{array} \right) \cdot  
 %	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
 %	$$
-The dispersion relation can be reformulated \cite[pp. 667]{born1999book} as a set of linear algebraic equations:
-\begin{equation} \det\left[\left(\begin{array}{ccc} 
-	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
-	-k_y k_x 		& k_x^2+k_z^2	& -k_y k_z \\ 
-	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2
-	\end{array} \right)
--
-	\mu_0 \varepsilon_0 \omega^2
-	\left(\begin{array}{ccc} 
-	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
-	{\epsrl}_{12}(\omega) & {\epsrl}_{22}(\omega) & {\epsrl}_{32}(\omega)  \\
-	{\epsrl}_{13}(\omega) & {\epsrl}_{23}(\omega) & {\epsrl}_{33}(\omega)  
-	\end{array} \right) \right] = 0, \label{eq_dispdet}\end{equation}
+The dispersion relation can however still be understood \cite[pp. 667]{born1999book} as a set of three linear algebraic equations:
+\begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\varepsilon_0 \mu_0 \, \epsrl(\omega) \murl(\omega) \omega^{2}}{k^2} \E. \tag{\ref{eq_wavek_disp} \again}\end{equation}
 %\begin{equation} \left|\begin{array}{ccc} 
 	%k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
 	%-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
 	%-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
 	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
-For simplicity, we assumed here that the relative permeability $\murl = 1$; the extension to other cases is possible, too. %% TODO Do epsilon and mu commute, if they are both tensors??
+where the wave-plane projection tensor $T$, dependent on the wavevector $\kk$, was already defined in Eq. (\ref{eq_transverse}).
 
-A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if the determinant of the set of three linear equations is zero. The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
+For simplicity, we assume here that the relative permeability $\murl = 1$; the extension to other cases is possible, too. %% TODO Do epsilon and mu commute, if they are both tensors??
+A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if and only if the determinant of the set of three linear equations is zero:
+\begin{equation} 
+\det\left[
+T -
+	\frac{\mu_0 \varepsilon_0 \omega^2}{k^2}
+	\left(\begin{array}{ccc} 
+	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
+	{\epsrl}_{12}(\omega) & {\epsrl}_{22}(\omega) & {\epsrl}_{32}(\omega)  \\
+	{\epsrl}_{13}(\omega) & {\epsrl}_{23}(\omega) & {\epsrl}_{33}(\omega)  
+	\end{array} \right) \right] = 0, \label{eq_dispdet}\end{equation}
+The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
-\todo{verify --}
-Rigorous solution of Eq. \ref{eq_dispdet} gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. 
+
+\todo{verify}
+For a given frequency $\omega$, rigorous solution of Eq. \ref{eq_dispdet} in local media gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. The two transverse solutions give identical wave vector (are degenerate) if the medium is isotropic, or if $\kk$ points along the optical axis. 
+% The longitudinal wave ... ?
 
 %}}}
 \paragraph{Isofrequency contours}  %{{{
@@ -442,7 +447,7 @@ So far, in the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_if
 
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite direction (or more generally, when they have an opposite projection on the normal to the interface).  This manifests as IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
-\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with negative index of refraction and \textbf{(c)} an anisotropic medium with negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
+\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefr.pdf} 
 \end{figure}
 \begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for media choice the same as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
@@ -459,7 +464,6 @@ It should be noted that the negative-index media are necessarily dispersive. The
 \paragraph{Definition of nonlocal media}%{{{
 %TODO: spatial dispersion describes one specific sort of nonlocal behaviour that exists in homogeneous infinite media only
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media that follows.
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
 
 The downsides of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
 Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion, such as the Doppler broadening of resonance lines in gases \cite[p. 359]{landau1984electrodynamics}. More precisely, these phenomena are primarily dependent on the wave vector $\kk$, and their expression by means of the temporal spectrum is a mere approximation based on that the dispersion curve usually defines a simple relation between  frequency and wave vector.  %% TODO rewrite?
@@ -476,6 +480,8 @@ The response of the medium to the electric field of any harmonic plane wave can 
 Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\epsrn(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\epsrn$ %% TODO make it \varepsilon_r
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 % , and convolution in space is equivalent to multiplication  in the reciprocal space
+
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
@@ -537,7 +543,9 @@ Without loss of generality, we again restrict the discussion to a plane wave (\r
 The new \textit{Landau-Lifshitz} electric displacement $\Dsd$ that also accounts for magnetic phenomena is obtained by substitution of Eq. (\ref{eq_Xsd}) into Eq. (\ref{eq_Dsd}):
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
-\begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E)  \label{eq_Dsd3}\end{equation} 
+\begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
+Double vector multiplication on the right hand side can be identified with the wave-plane projection tensor $T$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse}):
+\begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T \E,  \label{eq_Dsd3}\end{equation} 
 
 %}}}
 \paragraph{Tensor form of the Landau-Lifshitz permittivity of local isotropic media}%{{{
@@ -545,11 +553,21 @@ By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\
 From Eq. (\ref{eq_Dsd3}) we can derive the tensor form of spatial-dispersive permittivity $\epsLL(\omega,\kk)$:
 \begin{equation} 
 \left.  \begin{array}{c}
-\epsLL(\omega,\kk) = 1 + \chi_e(\omega) - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E),\todo{KxKx-tensor} \medskip \\
-\muLL(\omega,\kk) = 1. 
+\epsLL(\omega,\kk) = 1 \,+\, \chi_e(\omega) \;\;+\;\; \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T, \medskip \\
+\muLL(\omega,\kk) = 1, 
 \end{array} \quad \right\} \quad \text{(in local media)}
-\end{equation} 
-The classical,  symmetric, approach using parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. If needed, it is formally possible to use any other arrangement, which may moreover be frequency dependent, leading to a physically realistic pair of parameters with uncommon properties \cite{skaar2014}.
+\label{eq_epsmusd3} \end{equation} 
+where 
+\begin{equation} T = \frac{1}{k^2} 
+\left(\begin{array}{ccc} 
+	k_y^2+k_z^2		& -k_x k_y		& -k_x k_z \\ 
+	-k_y k_x		& k_x^2+k_z^2	& -k_y k_z \\ 
+	-k_z k_x		& -k_z k_y		& k_x^2+k_y^2
+	\end{array} \right) 
+\text{ or equivalently, }
+T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} . \tag{\ref{eq_transverse} \again} \end{equation}
+
+Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. If needed, it is formally possible to use any other arrangement, which may moreover be frequency dependent, leading to a physically realistic pair of parameters with uncommon properties \cite{skaar2014}.
 
 %% TODO REF EBD theory and nonlocal electrodynamics
 %% \cite{krowne2007book_agran}
@@ -563,7 +581,9 @@ The classical,  symmetric, approach using parameters $\epsrl(\omega,\kk),\murl(\
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
-\begin{figure}[th] \caption{Dispersion of a local medium, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters. Left column: Local parameters $$, $$ as functions of frequency. Right column: Dispersion curves computed using Eq. () an electric resonance in the local permittivity, O
+\begin{figure}[th] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
+Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
 %\end{figure}
@@ -581,13 +601,15 @@ Both the dispersion curves and the isofrequency contours predicted by the classi
 The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation holds. %% , $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. TODO this is more complicated, as epsLL is a tensor - find which equation to refer to
 As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one, the original green dispersion curve from Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
 
-For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. The Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
+For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. The Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
 
 A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit a similar dispersion curves. At the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
 %%% TODO add Eq. 2.52 repeated with underbrace
 contribution that grows proportionally with $k^2$, and its maximum magnitude is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) = 0$. This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
 $\epsLL(\omega, k)$
+
+Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. Thus, the medium behaves as described in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
 
 \clearpage
  %The left panel of Fig. \ref{fg_dcll}a is therefore identical to the previous one. Its left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as the medium can still be fully described by 
@@ -647,9 +669,6 @@ phase velocity is often higher than the speed of light, this is no problem\\
 cite Mikki for that the Poynting vector \\
 }
 %}}}
-
-
-
 %% TODO \paragraph{Speed of light and causality in spatial-dispersive media}%{{{
 %% \mdf{TODO REF Kramers-Kronig relations in nonlocal medium
 %% \cite{skettrup1970kramers}
