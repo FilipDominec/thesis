@@ -21,28 +21,28 @@ from scipy.constants import c, hbar, pi
 #eampli, eomega0, egamma = 1., 1., .001
 #mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_simple_el.pdf"
-
+#
 #epsll_contours          = 1
 #epsll_dispersion        = 1
 #classical_dispersion    = 1
 #eampli, eomega0, egamma = 1., 1., .001
 #mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_ll_el.pdf"
-
+#
 #epsll_contours          = 1
 #epsll_dispersion        = 1
 #classical_dispersion    = 1
 #eampli, eomega0, egamma = .0, 1., .001
 #mampli, momega0, mgamma = .3, 1.2, .001
 #outname = "dispersion_ll_mag.pdf"
-#
-epsll_contours          = 1
-epsll_dispersion        = 1
-classical_dispersion    = 1
-eampli, eomega0, egamma = 1., 1., .001
-mampli, momega0, mgamma = .3, 1.2, .001
-outname = "dispersion_ll_elmag.pdf"
 
+#epsll_contours          = 1
+#epsll_dispersion        = 1
+#classical_dispersion    = 1
+#eampli, eomega0, egamma = 1., 1., .001
+#mampli, momega0, mgamma = .3, 1.2, .001
+#outname = "dispersion_ll_elmag.pdf"
+#
 #
 
 
@@ -58,7 +58,7 @@ def lorentz(omega, omega0, gamma, ampli):
 
 ## Generate gridded data from a given 2D function (TODO)
 ks = np.linspace(0, 3., 400)
-omegas = np.linspace(0, 3., 400)
+omegas = np.linspace(0, 2., 400)
 
 ## Generate classical local permittivity and permeability (the same for all wavevectors k)
 eps_clas = 1+lorentz(omegas, ampli=eampli, omega0=eomega0, gamma=egamma)
@@ -80,9 +80,9 @@ dispcontours = np.array(dispcontours).T
 ## Plot contours for L-L permittivity
 plt.subplot(1, 2, 2) ## ensure the plot region is a square
 #extent = max(-np.min(epslls), np.max(epslls))
-extent = 30
+extent = 20
 if epsll_contours:
-    contours = plt.contourf(ks, omegas, np.real(epslls), levels=np.linspace(-extent,extent,50), cmap=matplotlib.cm.RdBu_r, extend='both', alpha=1)
+    contours = plt.contourf(ks, omegas, np.real(epslls), levels=np.linspace(-extent,extent,20), cmap=matplotlib.cm.RdBu_r, extend='both', alpha=1)
     #contours = plt.contourf(ks, omegas, np.real(dispcontours), levels=np.linspace(-extent,extent,50), cmap=matplotlib.cm.RdBu_r, extend='both', alpha=1)
     for contour in contours.collections: contour.set_antialiased(False)     ## optional: avoid white aliasing (for matplotlib 1.0.1 and older) 
     plt.colorbar().set_ticks(np.arange(-extent, extent+1, 5))                        ## optional: colorbar
@@ -93,7 +93,7 @@ if epsll_dispersion:
 plt.subplot(1, 2, 1)
 plt.plot(eps_clas, omegas, lw=2, c='m', label="$\\varepsilon_r'(\\omega/\\omega_0)$")
 plt.plot(mu_clas,  omegas, lw=2, c='y', label="$\\mu_r'(\\omega/\\omega_0)$")
-plt.ylim((-0.,3.)); plt.yscale('linear')
+#plt.ylim((-0.,2.)); plt.yscale('linear')
 plt.xlim((-5.,10.)); plt.xscale('linear')
 plt.xlabel(u"relative permittivity $\\varepsilon_r$ and permeability $\\mu_r$"); 
 plt.ylabel(u"normalized frequency $\\omega/\\omega_0$"); 
@@ -104,7 +104,7 @@ plt.subplot(1, 2, 2)
 if classical_dispersion:
     plt.plot(omegas*np.sqrt(eps_clas * mu_clas), omegas, lw=2, c='g', alpha=.5)
 
-plt.ylim((-0.,3.)); plt.yscale('linear')
+#plt.ylim((-0.,3.)); plt.yscale('linear')
 plt.xlim((-0.,3.)); plt.xscale('linear')
 
 ## ==== Outputting ====
