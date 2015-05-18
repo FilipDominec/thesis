@@ -49,8 +49,8 @@ outname = "dispersion_ll_elmag.pdf"
 ## Use LaTeX
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', size=12)
-matplotlib.rc('text.latex', preamble = '\usepackage{amsmath}, \usepackage{yfonts}, \usepackage{txfonts}, \usepackage{lmodern},')
-plt.figure(figsize=(10,4))
+matplotlib.rc('text.latex', preamble = '\usepackage{amsmath}, \usepackage{txfonts}, \usepackage{lmodern},')
+plt.figure(figsize=(10,3))
 
 ## An exact curve for the analytic solution of a damped oscillator
 def lorentz(omega, omega0, gamma, ampli):
