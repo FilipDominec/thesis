@@ -581,19 +581,16 @@ Let us note that the classical approach using symmetric parameters $\epsrl(\omeg
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
-\paragraph{How a local dielectric manifests in the Landau-Lifshitz model}  % TODO%{{{
+\paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
 \begin{figure}[th] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
 Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
-%\end{figure}
-%\begin{figure}[h] \caption1todo{Magnetic resonance in L-L view of a local medium}} \label{fg_dcllmag} \centering  %% TODO refto
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
-%\end{figure}
-%\begin{figure}[h] \caption1todo{Overlapping electric and magnetic resonance in L-L view of a local medium}} \label{fg_dcllelmag} \centering  %% TODO refto
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
+
 Both the dispersion curves and the isofrequency contours predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples - of a medium with electric resonance, a magnetic resonance and both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
 
 The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation holds. %% , $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. TODO this is more complicated, as epsLL is a tensor - find which equation to refer to
@@ -608,9 +605,8 @@ contribution that grows proportionally with $k^2$, and its maximum magnitude is 
 $\epsLL(\omega, k)$
 
 Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. Thus, the medium behaves as described in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
-
-\clearpage
  %The left panel of Fig. \ref{fg_dcll}a is therefore identical to the previous one. Its left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as the medium can still be fully described by 
+\pagebreak
 
  %(electric quadrupoles..., [Merlin])
 
@@ -620,12 +616,65 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 \paragraph{Multiple waves at one frequency and additional boundary conditions}%{{{
 %}}}
 
-\subsection{Phase, group, energy and signal velocity in nonlocal media}
-\paragraph{Group velocity in lossy local media}%{{{ TODO
+\subsection{Impedance and amplitudes of the refraction and reflection}
+\paragraph{The interface of two local media}\todo{connect somehow with the rest of theory?} %{{{ 
+So far, only the phase-related phenomena were discussed: based on the local or nonlocal response of the medium, the dependence of the dispersion curves and IFCs was computed. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem based on the Snell law.
+
+The conservation of wave phase at the interface is, however, not the only constraint to the refraction/reflection problem: Assuming the surface current and surface charge are zero and that the  medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements, $\D$ and $\B$, is continuous, too. This can be deduced from the integral formulation of Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], 
+
+The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks \cite[p. 38]{born1999book} with different levels of generalisation. In the particular case where wave perpendicularly impinging an interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
+\begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
+with the impedances
+$Z_{12} = \sqrt{\frac{{\murl}_{12}}{{\epsrl}_{12}}}$.
+\add{This is in fact similar to the reflection on a one-dimensional transmission line, as known from microwave engineering.}
+
+If the incidence is not perpendicular, the complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation.\todo{cite}
 
 %}}}
+\paragraph{Refraction between nonlocal media}\todo{has ever been discussed or computed?}   %{{{ TODO
+The expansion of the impedance to spatial-dispersive media is, to the knowledge of the author, never done.\todo{...verify} The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
+
+%}}}
+
+\subsection{Phase, group, energy and signal velocity in nonlocal media}
+\paragraph{Sign of the phase and group velocities}%{{{ TODO
+The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. Therefore, in media with low losses, the term of negative refraction 
+\add{... in media with time reversal, the wave may always propagate backwards - we should always speak of mutual sign of the velocities}
+%}}}
 \paragraph{"Negative-refraction", "negative-index", or "doubly-negative" media?}  %{{{
-http://www.wave-scattering.com/negative.html
+Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above. }
+
+\add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
+\begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
+The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
+
+\todo{ (here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\ }
+
+\todo{add the comments from http://www.wave-scattering.com/negative.html}
+}
+%}}}
+\paragraph{Sign of the group and energy velocities}  % TODO %{{{
+\mdf{
+% TODO 0401 how can one tell apart negative refraction due to eps-mu and due to higher, purely nonlocal terms?
+
+*doubly resonant local media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
+*singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
+*			  nonlocal media -> weird things happen, todo\\
+
+the group velocity can also be negative \cite{mcdonald2000negative, dolling2006simultaneous} or superluminal, but only in lossy media and under strong GVD\\
+
+TODO FIGURE: a) eps resonant, mu constant     b) N positive, but group velocity dropping
+
+
+Group velocity in lossy local media can be opposite to S
+
+Poynting vector usually coincides with the group velocity -- or always?\\
+
+phase velocity is often higher than the speed of light, this is no problem\\
+
+\cite{Mikki}, group velocity can be negative or superluminal - no problem here?
+}
+
 %}}}
 \paragraph{Signal velocity}%{{{
 The notion of \textit{signal propagation velocity} is sometimes % TODO cite
@@ -637,35 +686,10 @@ Near a single resonance with damping, the phase velocity can drop \\
 
 \mdf{
 TODO FIGURE to show this?: a) eps resonant, mu constant     b) N positive, but group velocity negative\\
-the group velocity can also be negative \cite{mcdonald2000negative, dolling2006simultaneous} or superluminal, but only in lossy media and under strong GVD\\
 
-
-
-
-this happens only in presence of high absorption \cite{mikki2009electromagnetic}\\
+this happens only in the presence of a high absorption \cite{mikki2009electromagnetic}\\
 }
-%}}}
-\paragraph{Negative phase velocity of doubly-resonant media}  % TODO%{{{
-\mdf{
-% TODO 0401 how can one tell apart negative refraction due to eps-mu and "nonlocality"?    or shall "nonlocality" just refer to quadrupoles etc?
 
-(here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\
-
-*singly resonant media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
-*doubly resonant media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
-*nonlocal media -> weird things happen, todo\\
-
-TODO FIGURE: a) eps resonant, mu constant     b) N positive, but group velocity dropping
-
-}%}}}
-\paragraph{Energy and the Poynting vector}  % TODO%{{{
-\mdf{
-Poynting vector usually coincides with the group velocity -- or always?\\
-
-phase velocity is often higher than the speed of light, this is no problem\\
-
-cite Mikki for that the Poynting vector \\
-}
 %}}}
 %% TODO \paragraph{Speed of light and causality in spatial-dispersive media}%{{{
 %% \mdf{TODO REF Kramers-Kronig relations in nonlocal medium
@@ -734,11 +758,8 @@ Further savings of space in the plot can be made using the symmetry of the forwa
 Although maybe less instructive, usually the \textit{folded} bands are plotted in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phc}b and \ref{fg_phc}d.
 %}}}
 \subsection{Reciprocal space, Brillouin zones and isofrequency contours}
-\subsection{Group velocity, phase velocity and their signs}
-%\cite{Mikki}
-% -> signal velocity, Group velocity, phase velocity and their signs \cite{Mikki}, group velocity can be negative or superluminal - no problem here?
-% -> "Hopping model" -- individual oscillators with frequency more-or-less dependent on boundary conditions 
-%			 (Neumann ... Gamma point ... "dE/dx=0"  vs.  Dirichlet ... M-point ... "E=0")
+"Hopping model" -- individual oscillators with frequency more-or-less dependent on boundary conditions 
+			 (Neumann ... Gamma point ... "dE/dx=0"  vs.  Dirichlet ... M-point ... "E=0")
 \subsection{Antiresonances and problems with local effective parameters}
 
 %% REF \cite{wallen2010}: Anti-resonant response of resonant inclusions
