@@ -582,7 +582,7 @@ Let us note that the classical approach using symmetric parameters $\epsrl(\omeg
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[th] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
+\begin{figure}[h!] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
 Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
@@ -591,7 +591,7 @@ Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either 
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 
-Both the dispersion curves and the isofrequency contours predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples - of a medium with electric resonance, a magnetic resonance and both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
+Both dispersion curves and isofrequency contours predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with an electric resonance, with a magnetic resonance and with both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
 
 The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation holds. %% , $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. TODO this is more complicated, as epsLL is a tensor - find which equation to refer to
 As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one, the original green dispersion curve from Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
@@ -606,7 +606,6 @@ $\epsLL(\omega, k)$
 
 Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. Thus, the medium behaves as described in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
  %The left panel of Fig. \ref{fg_dcll}a is therefore identical to the previous one. Its left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as the medium can still be fully described by 
-\pagebreak
 
  %(electric quadrupoles..., [Merlin])
 
@@ -620,19 +619,21 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 \paragraph{The interface of two local media}\todo{connect somehow with the rest of theory?} %{{{ 
 So far, only the phase-related phenomena were discussed: based on the local or nonlocal response of the medium, the dependence of the dispersion curves and IFCs was computed. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem based on the Snell law.
 
-The conservation of wave phase at the interface is, however, not the only constraint to the refraction/reflection problem: Assuming the surface current and surface charge are zero and that the  medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements, $\D$ and $\B$, is continuous, too. This can be deduced from the integral formulation of Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem: Assuming there is no surface current nor surface charge, and that the  medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the integral formulation of Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], 
 
-The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks \cite[p. 38]{born1999book} with different levels of generalisation. In the particular case where wave perpendicularly impinging an interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
+The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks \cite[p. 38]{born1999book} with different levels of generalisation. In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
 with the impedances
 $Z_{12} = \sqrt{\frac{{\murl}_{12}}{{\epsrl}_{12}}}$.
-\add{This is in fact similar to the reflection on a one-dimensional transmission line, as known from microwave engineering.}
+This is in fact similar to the reflection on a one-dimensional transmission line, as known from the microwave engineering.
 
 If the incidence is not perpendicular, the complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation.\todo{cite}
 
 %}}}
-\paragraph{Refraction between nonlocal media}\todo{has ever been discussed or computed?}   %{{{ TODO
-The expansion of the impedance to spatial-dispersive media is, to the knowledge of the author, never done.\todo{...verify} The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
+\paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
+The author is not aware of any rigorous extension of the notion of impedance to spatial-dispersive media. The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
+
+\todo{check the literature again, has this ever been discussed or computed?}
 
 %}}}
 
@@ -641,8 +642,8 @@ The expansion of the impedance to spatial-dispersive media is, to the knowledge 
 The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. Therefore, in media with low losses, the term of negative refraction 
 \add{... in media with time reversal, the wave may always propagate backwards - we should always speak of mutual sign of the velocities}
 %}}}
-\paragraph{"Negative-refraction", "negative-index", or "doubly-negative" media?}  %{{{
-Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above. }
+\paragraph{"Negative-refraction", "negative-index", "left-handed" or "doubly-negative" media?}  %{{{
+Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above.
 
 \add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
 \begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
@@ -660,20 +661,17 @@ The question of indefinite sign can be decided using the assumption of medium \t
 *doubly resonant local media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
 *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
 *			  nonlocal media -> weird things happen, todo\\
-
-the group velocity can also be negative \cite{mcdonald2000negative, dolling2006simultaneous} or superluminal, but only in lossy media and under strong GVD\\
-
-TODO FIGURE: a) eps resonant, mu constant     b) N positive, but group velocity dropping
+}
 
 
-Group velocity in lossy local media can be opposite to S
+The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy media, including the local ones. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. Nonzero losses ensure also the curve of wavenumber $k$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k < 0$, which is also known as \textit{anomalous dispersion}. This is observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses.
 
-Poynting vector usually coincides with the group velocity -- or always?\\
+Thus, the negative group velocity can also become opposite to the propagation of the light beam, which manifests as negative shift of the light envelope compared to the absence of the medium. Note this can occur in the region of negative phase velocity \cite{dolling2006simultaneous}. %% or superluminal, but only in lossy media and under strong GVD\\
+
 
 phase velocity is often higher than the speed of light, this is no problem\\
 
 \cite{Mikki}, group velocity can be negative or superluminal - no problem here?
-}
 
 %}}}
 \paragraph{Signal velocity}%{{{
