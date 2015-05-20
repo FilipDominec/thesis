@@ -750,7 +750,6 @@ Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}
 %}}}
 
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
-\add{
 The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by Eq. (\ref{eq_pw2}).
 Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
 
@@ -765,26 +764,12 @@ When the wavelength is less than double cell spacing, or equivalently when $2\pi
 \begin{enumerate}
  \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\mathrm{e}^{\mathrm{i}Kz}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\mathbf{r})}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\mathbf{r})}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
 
-In vacuum, the mode function takes the simplest form, being constant $\mathbf{u(\mathbf{r})} = 1$ at all frequencies. The dispersion relation of vacuum forms a direct line as plot in Fig. \ref{fg_phc}a.} 
- \item{The \textit{folded} plot requires $K/\left(\frac{2\pi}{a}\right) \in (-\frac{1}{2}, \frac{1}{2})$ and the remaining phase is mostly expressed by the mode function. 
-Further savings of space in the plot can be made using the symmetry of the forward and backward waves, so only the positive half for $K/\left(\frac{2\pi}{a}\right) \in (0, \frac{1}{2})$ has to be plot to describe the mode structure.} 
- \end{enumerate}
-Although maybe less instructive, usually the \textit{folded} bands are plot in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phc}b and \ref{fg_phc}d.
-}
-%}}}
-\paragraph{Dispersion curves under virtual periodicity} \label{par_disp_curv_per}%{{{
-The vacuum properties are obviously invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which can be considered a \textit{virtual} periodicity. 
-% TODO mention the terminology "band diagram" - "dispersion curves", is there any real difference?
-
-When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude.\footnote{The equilibrium forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.} We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
-\begin{enumerate}
- \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\e^{-\ii\KK\cdot\rr}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\rr)}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\rr)}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
-
 In vacuum, the mode function takes the simplest form, being constant $\mathbf{u(\rr)} = 1$ at all frequencies. The dispersion relation of vacuum forms a direct line as plotted in Fig. \ref{fg_phc}a.} 
  \item{The \textit{folded} plot requires $K/\left(\frac{2\pi}{a}\right) \in (-\frac{1}{2}, \frac{1}{2})$ and the remaining phase is mostly expressed by the mode function. 
 Further savings of space in the plot can be made using the symmetry of the forward and backward waves, so only the positive half for $K/\left(\frac{2\pi}{a}\right) \in (0, \frac{1}{2})$ has to be plotted to describe the mode structure.} 
- \end{enumerate}
+\end{enumerate}
 Although maybe less instructive, usually the \textit{folded} bands are plotted in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phc}b and \ref{fg_phc}d.
+
 %}}}
 \paragraph{Fourier expansion of the mode function}%{{{
 \add{If there is a real modulation within the unit cell, the above mentioned ambiguity between accumulating the phase in the wave vector $\KK$ or in the mode $\mathbf{u}(\rr)$ gets a new meaning: the field in the unit cell can be decomposed into a Fourier sum of waves, thus defining some amplitude $a_n$ for every possible branch.
@@ -842,6 +827,10 @@ The field shape given by Eq. (\ref{eq_})
 
 \subsection{Homogenization}
 \mdf{
+Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
+
+Effective parameters
+
 ref Homogenisation issues - response to our paper from OpEx
 \cite{rockstuhl2008transition}
 \cite{paul2011reflection}
@@ -877,23 +866,48 @@ ref Homogenisation issues - response to our paper from OpEx
 The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
 
 %The difference is in the way how the unit cell interacts with the electromagnetic field. 
-In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
-The energy of the resonant field is spread relatively evenly over the majority of the unit cell volume, which results in great sensitivity of the PhC behaviour to its periodicity and typically also in a high spatial dispersion. The most prominent phenomenon observed in PhC is the emergence of forbidden photonic bands around resonant frequencies, where the light can not propagate through the structure. 
-
-On the contrary, 
-the cells of a metamaterial (MM) are expected to exhibit individual resonances which should not significantly couple to each other. 
-At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
 
 Both types of structures exhibit the most interesting behaviour at their frequencies of resonance, but the different types of resonances define the technology and materials used to build them. The resonances in PhC rely on wave scattering, which can be easily obtained with any ordinary low-permittivity material such as silica or silicon. On the other hand, the resonances 
 %but the mentioned difference has profound consequences on the behaviour of the structure. 
 %}}}
 
+
 }
-\begin{figure} \caption{img/mm-phc-diagram.pdf}  \centering \includegraphics[width=10cm]{img/mm-phc-diagram.pdf} \end{figure} \clearpage
-%% MM: HOW the light propagates.  <------>      PhC: IF the light propagates.
+\paragraph{Definition by the Bloch wavelength}
+Igor Tsukerman in Ref. \cite{tsukerman2011nonlocal}: \textit{"metamaterials - artificial periodic structures with features smaller than the vacuum wavelength"} 
+
+\begin{figure}[h] \caption{Schematic of usual relation of reciprocal lattice vector to the wavelength in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
+
+\add{The notion of "wavelength", or more precisely "Bloch wavelength", is not uniquenly defined in such structures! }
+
+\paragraph{Definition by energy localisation}
+
+\add{Energy is the most localized at the frequencies of resonances.}
+
+In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
+The energy of the resonant field is spread relatively evenly over the majority of the unit cell volume, which results in great sensitivity of the PhC behaviour to its periodicity and typically also in a high spatial dispersion. The most prominent phenomenon observed in PhC is the emergence of forbidden photonic bands around resonant frequencies, where the light can not propagate through the structure. 
+
+On the contrary, the cells of a metamaterial (MM) are expected to exhibit individual resonances which should not significantly couple to each other. 
+At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
+
+\add{Note that completely nonresonant structures also denoted as \textit{metamaterials} exist, operating in their first photonic band \cite{richter1995, kadlec2008, sibik2010dp}.}
+
+
+\paragraph{Definition by existence of effective parameters}
+-
+
+\todo{If so, would be MMs a very narrow, or very broad  group of structures?}
+
+
+\paragraph{Definition by purpose}
+
+-
+
+\add{MMs are about HOW the light propagates. PhCs are about WHETHER the light propagates.}
+
+PK: "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true?
+
 %% Definitions:
-%% Igor Tsukerman: (Nonlocal homogenization of metamaterials by dual interpolation of fields)
-%%   "metamaterials - artificial periodic structures with features smaller than the vacuum wavelength"
 %% note that Veselago68 speaks about a truly *homogeneous* medium
 % -> cloaking (aside from losses)
 % -> superlens (aside from losses and aberration, in a hypothetical case that the MM structure can be made much finer than a detector ...)
@@ -905,13 +919,10 @@ Both types of structures exhibit the most interesting behaviour at their frequen
 % Losses are in \cite[p. 708]{born1999book}
 
 
-\paragraph{Historical regards}
+
+\paragraph{Historical regards TEMPORARY SECTION - WILL BE DISPERSED THROUGH TEXT}
+
 \paragraph{Attempt of proper definition of Metamaterials}
-%% TODO
-%% This is after the theory of eldn in periodic media.
-%% Nonresonant metamaterials (ie. in the 1st Brillouin zone, see Juraj]
-\cite{richter1995}
-\cite{kadlec2008}
 
 More detailed investigation shows that the effective-medium approach does not give accurate results when the structure is not infinite \cite{richter1995}, as is often the case. Therefore, a numerical computation using the rigorous coupled-wave analysis (RCWA) or using FDTD has to be used.
 
@@ -919,10 +930,6 @@ More detailed investigation shows that the effective-medium approach does not gi
 %% resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
 %% Think over, note the paper Dominec2014
 
-%% PK: "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true?
-
-% "note that whenever a transmission is plotted, one always refers to a finite sample; in the discussion of infinite (periodic) media, 
-%       only the allowed or forbidden band are to be discussed"
 
 
 
