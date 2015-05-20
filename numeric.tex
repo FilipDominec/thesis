@@ -1,4 +1,4 @@
-\section{Numerical simulation algorithms} % TODO
+\section{Numerical simulation algorithms} \label{chapter_numerical}
 \subsection{Finite-difference time-domain calculations}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
 Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
@@ -332,7 +332,7 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 %MEEP, OpenEMS, B-Calm, EMTL, 
 %}}}
 
-\subsection{Finite-difference frequency-domain} 
+\subsection{Finite-difference frequency-domain} % TODO
 \paragraph{Principle} 
 \mdf{ TODO
 %%% One may regard the task of
@@ -372,7 +372,8 @@ As a convenient implementation of PWEM, we used  the freely available program \t
 \subsection{Transfer-matrix method} % TODO
 \paragraph{Principles of TMM} %{{{
 \add{
-The \textit{transfer-matrix method} (TMM, or also \textit{Abelès formalism}) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, \cite[pp. 71--77]{nemec2006phd}, enabling to compute,  in frequency-domain, e.g. the reflection and transmission of structures discretized in a grid. For simplicity, we describe the one-dimensional method.
+The \textit{transfer-matrix method} (TMM, or also \textit{Abelès formalism} %% ref Abeles1950: recherche sur la propagation des ondes electromagnetiques...
+) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, \cite[pp. 71--77]{nemec2006phd}, enabling to compute,  in frequency-domain, e.g. the reflection and transmission of structures discretized in a grid. For simplicity, we describe the one-dimensional method.
 
 The method is on dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has a wave impedance $Z_m$, refractive index $N_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
 \begin{equation} \mathbb M^{(m)} := \left(\begin{array}{cc} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{array}\right), \quad\text{ where }\gamma:=1/Z_m\text{ and }\delta := k~N_m d_m.\label{eq_tmm1}\end{equation}
@@ -418,7 +419,7 @@ Other numerical methods are used, too. Finite-element methods (FEM) approximate 
 %		[15] C.R. Simovski, Optics and Spectroscopy 107 (2008)726
 %		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
 The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to a wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
-\subsection{Scattering parameters}
+\subsection{Scattering parameters method}
 \paragraph{Principle} %{{{
 The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample, originally in the microwave range. It is based on the fact that, using Fresnel-Airy formulas, as shown in the Appendix \ref{app_fresnel},
 one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material the slab consists of. The actual computation is thus denoted also as \textit{Fresnel inversion}.

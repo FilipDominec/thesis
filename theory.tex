@@ -252,7 +252,7 @@ If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can 
 
 Different physical phenomena can lead to $\epsrl(\omega)' = 0$, some of which introduce relatively low losses at the corresponding $\omega_{\text{L}}$; namely lattice vibrations in nonconductive crystals or electrons in inductive media (like metals and dilute plasma). 
 
-At the interface of two media with negative and positive permittivity, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface. Depending on the mechanism, they are known as  \textit{surface plasmons} or \textit{surface phonon-polaritons} \cite[p. 87]{klingshirn2007semiconductor}, respectively. Accordingly, \textit{surface magnons} should be observed at interfaces where $\mu$ changes its sign.
+At the interface of two media with differing signs of permittivity, another type of waves can be excited with an intermediate frequency $\omega < \omega_{\text{L}}$ that can not propagate in either of the bulk medium. The dispersion curve of such waves is not flat, allowing them to propagate along the interface. Depending on the mechanism, they are known as  \textit{surface plasmons} or \textit{surface phonon-polaritons} \cite[p. 87]{klingshirn2007semiconductor}, respectively. Accordingly, \textit{surface magnons} should be observed at interfaces where $\mu$ changes its sign.
 % Are there surface magnons?
 % Are there any metamaterials designed for longitudinal waves?
 %}}}
@@ -328,8 +328,8 @@ T -
 The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
 
-\todo{verify}
-For a given frequency $\omega$, rigorous solution of Eq. \ref{eq_dispdet} in local media gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. The two transverse solutions give identical wave vector (are degenerate) if the medium is isotropic, or if $\kk$ points along the optical axis. 
+\todo{add about the number of solutions}
+%For a given frequency $\omega$, rigorous solution of Eq. \ref{eq_dispdet} in local media gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. The two transverse solutions give identical wave vector (are degenerate) if the medium is isotropic, or if $\kk$ points along the optical axis. 
 % The longitudinal wave ... ?
 
 %}}}
@@ -640,7 +640,11 @@ The author is not aware of any rigorous extension of the notion of impedance to 
 \subsection{Phase, group, energy and signal velocity in nonlocal media}
 \paragraph{Sign of the phase and group velocities}%{{{ TODO
 The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. Therefore, in media with low losses, the term of negative refraction 
+
 \add{... in media with time reversal, the wave may always propagate backwards - we should always speak of mutual sign of the velocities}
+
+phase velocity is often higher than the speed of light, this is no problem\\
+
 %}}}
 \paragraph{"Negative-refraction", "negative-index", "left-handed" or "doubly-negative" media?}  %{{{
 Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above.
@@ -663,13 +667,14 @@ The question of indefinite sign can be decided using the assumption of medium \t
 *			  nonlocal media -> weird things happen, todo\\
 }
 
+The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones around $\omega \sim 2\pi$. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
+which is also known as \textit{anomalous dispersion}. 
 
-The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy media, including the local ones. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. Nonzero losses ensure also the curve of wavenumber $k$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k < 0$, which is also known as \textit{anomalous dispersion}. This is observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses.
+Thus, the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. Assuming no energy enters from the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component. 
+This behaviour can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
+The result of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, but it may be explained through strong deformation of the envelope shape on a short distance, which 
 
-Thus, the negative group velocity can also become opposite to the propagation of the light beam, which manifests as negative shift of the light envelope compared to the absence of the medium. Note this can occur in the region of negative phase velocity \cite{dolling2006simultaneous}. %% or superluminal, but only in lossy media and under strong GVD\\
-
-
-phase velocity is often higher than the speed of light, this is no problem\\
+In thin films, this may be experimentally observed as a negative shift of the light envelope compared to the absence of the medium. Note this can occur in the region of negative phase velocity \cite{dolling2006simultaneous}. 
 
 \cite{Mikki}, group velocity can be negative or superluminal - no problem here?
 
@@ -702,21 +707,47 @@ this happens only in the presence of a high absorption \cite{mikki2009electromag
 %% 
 
 \section{Electromagnetic waves in periodic structures}
-\subsection{Bloch theorem}
+\subsection{Periodic structures and the Bloch theorem}
 %In a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
  %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
 
-\paragraph{The Bloch-Floquet theorem}%{{{
-% TODO define periodicity
+\paragraph{Periodic media}%{{{
+The previous sections discussed homogeneous media, with the only exception when a refraction at an interface of two media was discussed, which could be easily interpreted on geometrical basis. There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
 
-The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
-\begin{equation} \E(t, \rr) = \mathrm{e}^{\mathrm{i} Kz - 2\pi \mathrm{i} f t} \cdot \mathbf{u}(\rr), \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr+a\mathbf{z}) = \mathbf{u}(\rr+2a\mathbf{z}) = \ldots, \label{eq_bloch}\end{equation} 
-The $\mathbf{u}(\rr)$ function has the same periodicity as the structure. It is generally a complex vector function so it not only alters the direction and magnitude of $\E$ (or  $\HH$), but can also introduce a \textit{phase modulation} of the wave in each unit cell. Note that the capital $\KK$ is used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in free space. Note this theorem does not determine how the shape of $\mathbf{u}(\rr)$ nor the direction and magnitude of $\KK$, it only states they do exist.
+The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in the Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for periodic structures and its most important traits can again be partially understood on analytical basis.
+
+In this chapter, we will focus on these general properties of periodic structures, leaving the particular numerical simulations to the Results section.
+Under the notion of \textit{periodicity} we understand there are discrete translational symmetries in the medium, that is, 
+\begin{equation} \epsrl(\rr) = \epsrl(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3) \quad\text{(in three dimensions).} \label{eq_trsym}\end{equation}
+where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\brho_1, \brho_2, \brho_3$ are three linearly independent vectors. The same holds for the permeability $\murl(\rr)$.
+
+The points generated by all combinations of possible translations by $m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3$ form a periodic lattice.
+In three dimensions, there are six \textit{crystal families} that differ by their rotation or mirror symmetries of their lattices (i.e. \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}).
+Combined with all possibilities for the symmetry of the dielectric shape in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions based on the group theory. 
+%fourteen Bravais lattices that differ by their rotation or mirror symmetries. % (i.e. \textit{cubic} P+I+F, \textit{tetragonal} P+I, \textit{monoclinic} P+C, \textit{hexagonal} P, \textit{ortorhombic} P+I+F+C, \textit{trigonal} P and \textit{triclinic} P). 
+
+The minimum volume associated to each point of the lattice is denoted as a \textit{unit cell}. Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
+
+Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry, as in the cubic lattice, $\brho_1, \brho_2, \brho_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
+
+%}}}
+\paragraph{The Bloch-Floquet theorem}%{{{
+The \textit{Bloch theorem} (or also \textit{Bloch-Floquet} theorem) states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
+\begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
+\label{eq_bloch}\end{equation} 
+\begin{equation}\HH(t, \rr) = \mathbf{v}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{v}(\rr) = \mathbf{v}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
+\label{eq_bloch}\end{equation} 
+Thus, $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode function}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
+
+The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical that of a plane wave
+\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}. \tag{\ref{eq_pw} \again} \end{equation}
+Capital $\KK$ is used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in free space. 
+
+Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$, nor the direction and magnitude of $\KK$, it only states they exist.
 % TODO proof /home/filip/PhD/Sources_MM_theory/Bloch_Theorem_Proof.pdf
 % TODO example illustration of Bloch wave -> plotted in Python
 
 %}}}
-
 
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
 \add{
@@ -728,7 +759,7 @@ In a homogeneous medium, there is a simple \textit{dispersion} relation between 
 The constant $n = \sqrt{\varepsilon \mu}$ connecting the frequency and wavenumber is the index of refraction.
 
 \begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
-	\includegraphics[width=17cm]{img/PhC_folding_illustration.pdf} 
+	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
 \end{figure}
 When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude. (The equilibrium of forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.) We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
 \begin{enumerate}
@@ -747,7 +778,7 @@ The vacuum properties are obviously invariant under discrete translation by an a
 
 When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude.\footnote{The equilibrium forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.} We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
 \begin{enumerate}
- \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\mathrm{e}^{\mathrm{i}Kz}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\rr)}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\rr)}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
+ \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\e^{-\ii\KK\cdot\rr}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\rr)}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\rr)}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
 
 In vacuum, the mode function takes the simplest form, being constant $\mathbf{u(\rr)} = 1$ at all frequencies. The dispersion relation of vacuum forms a direct line as plotted in Fig. \ref{fg_phc}a.} 
  \item{The \textit{folded} plot requires $K/\left(\frac{2\pi}{a}\right) \in (-\frac{1}{2}, \frac{1}{2})$ and the remaining phase is mostly expressed by the mode function. 
@@ -755,7 +786,19 @@ Further savings of space in the plot can be made using the symmetry of the forwa
  \end{enumerate}
 Although maybe less instructive, usually the \textit{folded} bands are plotted in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phc}b and \ref{fg_phc}d.
 %}}}
-\subsection{Reciprocal space, Brillouin zones and isofrequency contours}
+\paragraph{Fourier expansion of the mode function}%{{{
+\add{If there is a real modulation within the unit cell, the above mentioned ambiguity between accumulating the phase in the wave vector $\KK$ or in the mode $\mathbf{u}(\rr)$ gets a new meaning: the field in the unit cell can be decomposed into a Fourier sum of waves, thus defining some amplitude $a_n$ for every possible branch.
+
+The field shape given by Eq. (\ref{eq_})
+ }
+
+%}}}
+\paragraph{Reciprocal space, Brillouin zones and Isofrequency contours}
+
+%}}}
+\paragraph{}%{{{
+
+%}}}
 "Hopping model" -- individual oscillators with frequency more-or-less dependent on boundary conditions 
 			 (Neumann ... Gamma point ... "dE/dx=0"  vs.  Dirichlet ... M-point ... "E=0")
 \subsection{Antiresonances and problems with local effective parameters}
@@ -766,6 +809,21 @@ Although maybe less instructive, usually the \textit{folded} bands are plotted i
 
 % in the following we will plot the unfolded bands instead as it seems to give clearer physical interpretation of data.
 % -> TODO doplnit "PhC book": dispersní křivky atd.
+
+
+\paragraph{}%{{{
+
+%}}}
+\paragraph{}%{{{
+
+%}}}
+\paragraph{}%{{{
+
+%}}}
+\paragraph{}%{{{
+
+%}}}
+
 
 \subsection{Properties of photonic band-gaps}
 % -> application of PBG, todo add references; formation: \cite{laktionov2008}
@@ -900,20 +958,20 @@ More detailed investigation shows that the effective-medium approach does not gi
 %surface plasmons, standing/propagating
 %non-lossy and lossy metal (-> quasi-bound states)
 %interpreting resonance (and Fano-resonance) curves
-%wave in free space → s12 ampli constant, phase constantly growing; (s11 zero)
-%→  in polar plot: a clockwise rotating unit vector
-%reflective surface → s11 ampli constant, phase constantly growing; (s12 zero)
-%simple resonance (in SRR?) 
-%→  reflectivity peak
-%→  losses
-%in polar plot of s12: fast clockwise curl, approaching zero point, phase up-DOWN-up
-%in polar plot of s11: clockwise curl starting at zero, making trip, returning to zero
-%Fano resonance: requires spiral segment of curve
-%case of "little fast curl 1" on "big slow curl 2"
-%if fres1 = fres2 → subtractive effect, both in amplitude and phase; phase up-down-UP-down-up
-%if fres1 < fres2 → …
-%find out the difference between:
-%two coupled broad resonances with interaction inbetween?
+	%wave in free space → s12 ampli constant, phase constantly growing; (s11 zero)
+	%→  in polar plot: a clockwise rotating unit vector
+	%reflective surface → s11 ampli constant, phase constantly growing; (s12 zero)
+	%simple resonance (in SRR?) 
+	%→  reflectivity peak
+	%→  losses
+	%in polar plot of s12: fast clockwise curl, approaching zero point, phase up-DOWN-up
+	%in polar plot of s11: clockwise curl starting at zero, making trip, returning to zero
+	%Fano resonance: requires spiral segment of curve
+	%case of "little fast curl 1" on "big slow curl 2"
+	%if fres1 = fres2 → subtractive effect, both in amplitude and phase; phase up-down-UP-down-up
+	%if fres1 < fres2 → …
+	%find out the difference between:
+	%two coupled broad resonances with interaction inbetween?
 %Capacitive, inductive, resistive coupling?
 %a “fast” and a “slow” resonance superposed?
 %Two oscillators with nearly the same frequency:
