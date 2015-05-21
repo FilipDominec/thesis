@@ -57,20 +57,20 @@ TDTS 		& Time-domain terahertz spectroscopy\\
  \toprule
 Symbol & Meaning	\\
  \hline
-$\Im$ 		& Electric field\\
 $\E$ 		& Electric field\\
 $\E_0$ 		& Amplitude of the electric field\\
 $\D$ 		& Electric displacement\\
 $\HH$ 		& Magnetic field\\
 $\B$ 		& Magnetic displacement\\
 $f(t), F(\omega)$ & General function in time domain, and its counterpart in Frequency domain \\
-$\chi_e^{\rm(Loc)}$ & Electric susceptibility in the local approximantion \\
-$\varepsilon_0$ &vacuum permittivity, $8.85\cdot10^{-12}$ F/m\\
-$\varepsilon^{\rm(Loc)}_r$ &Relative permittivity in the local approximation\\
-$\mu_0$		&vacuum permeability, $1.25\cdot10^{-6}$ H/m \\
-$\mu^{\rm(Loc)}_r$ &relative permeability in the local approximation\\
-
-$\epsr$ 	& Relative dielectric permittivity\\
+$\chi_e,\chi_m$	& Electric and magnetic susceptibility in the local approximantion \\ %% TODO separate freq-domain and time-domain susc?
+$\varepsilon_0$ &Vacuum permittivity, $8.85\cdot10^{-12}$ F/m\\
+$\mu_0$		&Vacuum permeability, $1.25\cdot10^{-6}$ H/m \\
+$\epsrl(\omega)$ &Relative permittivity in the local approximation\\
+$\murl(\omega)$ &Relative permeability in the local approximation\\
+$\epsrn(\omega, \kk)$ &Relative permittivity for nonlocal media\\
+$\murn(\omega, \kk)$ &Relative permeability for nonlocal media\\
+$\epsLL(\omega, \kk)$ &Relative permittivity in the Landau-Lifshitz formulation\\
 %% TODO add eps, epsLL, mu_r, mu_LL, and distinguish between the symmetric and Landau-Lifshitz form
 $\chi_e$, $\chi_m$ 	& Electric and magnetic susceptibility\\
 $\Neff$ 	& Effective index of refraction (of periodic medium)\\
@@ -78,6 +78,7 @@ $\eeff$ 	& Effective permittivity\\
 $\meff$ 	& Effective permeability\\
 $\Zeff$ 	& Effective impedance\\
 $\rr$, $\brho$ 		& Radius vector\\
+$\mathbf{a}_{1,2,3}$, $a$ 		& Lattice vectors, unit cell size in the cubic lattice \\
 $t$, $\tau$ 		& Time\\
 $\omega$ 	& Angular frequency\\
 $\kk$ 		& Wave vector in homogeneous medium\\
@@ -85,6 +86,7 @@ $\KK$ 		& Bloch wave vector in periodic medium\\
 
 $\mathbb{R}$		& Real numbers\\
 $\mathbb{Z}$		& Integers\\
+$\mathbb{C}$		& Complex numbers\\
 $\ii$		& Imaginary unit, $\ii^2 = -1$\\
 $e$ 		& Euler constant, $e = 2.718\ldots$\\
 $h$ 		& Planck constant, $h = 6.626\cdot 10^{-34}$ J s\\

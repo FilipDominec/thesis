@@ -56,7 +56,7 @@ The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \
 
 An important note shall be made on the sign convention for the complex wave. 
 We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
-It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 
 In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
@@ -70,8 +70,10 @@ so the wave equation (\ref{eq_wave}) can be modified the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
 $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E,  $$
-\begin{equation}  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
-The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
+\begin{equation}  T\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
+\begin{equation} T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_}\end{equation}
+Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
 \begin{equation} T = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
@@ -222,8 +224,8 @@ Returning to the derivation of dispersion relations, we start with modifying the
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
-\begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
-which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
+\begin{equation}  T\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
+For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($T\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
@@ -368,7 +370,7 @@ In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and two anis
 \paragraph{Index of refraction and its applicability}  %{{{
 With the background of the theory developed above, the notion of the \textit{index of refraction} $N$ can be properly introduced and discussed. 
 In the most strict sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of the wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
-\begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_}\end{equation}
+\begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_dispeqN}\end{equation}
 as directly follows from Eq. (\ref{eq_dispeq_loc}).
 
 Starting with a harmonic plane wave with the frequency $\omega$ and the wave vector $\kk^{(1)}$ refracting at an interface of two isotropic media, the projection of $\kk$ to the interface is given as 
@@ -393,7 +395,7 @@ We will however show in the following that the prediction of \textit{beam} propa
 %%   Note that a negative permittivity is always connected with the dispersive behaviour, thus \ref{fg_ifc}d is another example of a dispersive medium. 
 %%   
 %%   %}}}
-\paragraph{Phase velocity and group velocity}  %{{{  todo near single resonance
+\paragraph{Group velocity}  %{{{  todo near single resonance
 So far only the propagation and refraction of an infinite, single-frequency wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency. %% todo rewrite to more precise
 
 If the wave is temporally modulated, its envelope in time is given as a complex vector function $\E_0(t)$ replacing the constant vector $\E_0$ in Eq. \ref{eq_pw}. This can be equivalently expressed in the frequency domain as the wave being formed by superposition of multiple frequency components, with respective amplitudes given by the Fourier transform of $\E_0(t)$. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
@@ -443,7 +445,7 @@ In Fig. \ref{fg_ifc2}d, an extreme case of spatial walk-off is shown on the exam
 
 %}}}
 \paragraph{The sign of the phase and group velocities}  %{{{
-So far, in the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without providing justification. In fact, both upwards and downwards pointing wave vector provide valid solution. The reason is that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave was propagating downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
+In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without providing justification. In fact, both upwards and downwards pointing wave vector provide valid solution. The reason is that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave was propagating downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
 
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite direction (or more generally, when they have an opposite projection on the normal to the interface).  This manifests as IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
@@ -521,7 +523,7 @@ The new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ then consists of t
  \item{the component caused by the local electric response of matter,} 
  \item{a new component fully accounting for the \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
 \end{enumerate}
-This model may be easily extended later to accept nonlocal constitutive parameters.
+This model may be easily extended later to accept nonlocal permittivity and permeability.
 
 Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
@@ -581,6 +583,21 @@ Let us note that the classical approach using symmetric parameters $\epsrl(\omeg
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
+\paragraph{Dispersion relation as an implicit equation} %{{{
+In the dispersion equation of local media, Eq. (\ref{eq_dispdet}), the wave vector could be found by solving a set of linear equations. In the particular case of \textit{isotropic} local media, the computation has an even simpler form of an explicit computation of one square root, see Eq. (\ref{eq_dispeq_loc}).
+
+An intrinsic issue of spatial-dispersive media is that the permittivity $\epsLL(\omega,\kk)$ is a function of the wavevector $\kk$ on its own. The dispersion equation then becomes an implicit equation: 
+\begin{equation} 
+\det\left[
+T -
+	\frac{\mu_0 \varepsilon_0 \omega^2}{k^2}
+	\left(\begin{array}{ccc} 
+	{\epsLL}_{11}(\omega,\kk) & {\epsLL}_{21}(\omega,\kk) & {\epsLL}_{31}(\omega,\kk)  \\
+	{\epsLL}_{12}(\omega,\kk) & {\epsLL}_{22}(\omega,\kk) & {\epsLL}_{32}(\omega,\kk)  \\
+	{\epsLL}_{13}(\omega,\kk) & {\epsLL}_{23}(\omega,\kk) & {\epsLL}_{33}(\omega,\kk)  
+	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
+If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search for any ${\epsLL}_{ij}(\omega,\kk)$.
+%}}}
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
 \begin{figure}[h!] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
@@ -591,12 +608,12 @@ Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either 
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 
-Both dispersion curves and isofrequency contours predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with an electric resonance, with a magnetic resonance and with both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
+The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with an electric resonance, with a magnetic resonance and with both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
 
-The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation holds. %% , $\epsLL(\omega, k) \,\omega^2 / k^2 = 1$. TODO this is more complicated, as epsLL is a tensor - find which equation to refer to
+The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation (\ref{eq_dispdetLL}) was found to holds by a numerical search.
 As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one, the original green dispersion curve from Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
 
-For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. The Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
+For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
 
 A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit a similar dispersion curves. At the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
@@ -604,22 +621,21 @@ A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, i
 contribution that grows proportionally with $k^2$, and its maximum magnitude is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) = 0$. This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
 $\epsLL(\omega, k)$
 
-Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. Thus, the medium behaves as described in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
- %The left panel of Fig. \ref{fg_dcll}a is therefore identical to the previous one. Its left panel is identical to that shown in Fig. \ref{fg_dcsimpleel}, as the medium can still be fully described by 
+Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
+% (electric quadrupoles..., [Merlin])
 
- %(electric quadrupoles..., [Merlin])
+\todo{Why magnetic resonances do not contribute to static permeability?}
 
-%}}}
-\paragraph{Why magnetic resonances do not contribute to static permeability?}%{{{
-%}}}
-\paragraph{Multiple waves at one frequency and additional boundary conditions}%{{{
+\paragraph{The dispersion of nonlocal media} %{{{ 
+Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead to the dispersion curves bending.
+As a result, the dispersion equations allow multiple solutions with different wavenumber $\kk$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ is an usual consequence of frequency dispersion even in local media.)
 %}}}
 
 \subsection{Impedance and amplitudes of the refraction and reflection}
-\paragraph{The interface of two local media}\todo{connect somehow with the rest of theory?} %{{{ 
-So far, only the phase-related phenomena were discussed: based on the local or nonlocal response of the medium, the dependence of the dispersion curves and IFCs was computed. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem based on the Snell law.
+\paragraph{The interface of two local media} %{{{ 
+In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem: Assuming there is no surface current nor surface charge, and that the  medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the integral formulation of Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respercively, that are cut in half by the interface. 
 
 The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks \cite[p. 38]{born1999book} with different levels of generalisation. In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
@@ -631,13 +647,21 @@ If the incidence is not perpendicular, the complex amplitudes of the reflected a
 
 %}}}
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
+-
+
+\mdf{
+Nonlocal media allow the dispersion curves to 
+
+ and additional boundary conditions
+}
+
 The author is not aware of any rigorous extension of the notion of impedance to spatial-dispersive media. The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
 
 \todo{check the literature again, has this ever been discussed or computed?}
 
 %}}}
 
-\subsection{Phase, group, energy and signal velocity in nonlocal media}
+\subsection{Phase, group, energy and signal velocity}
 \paragraph{Sign of the phase and group velocities}%{{{ TODO
 The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. Therefore, in media with low losses, the term of negative refraction 
 
@@ -712,28 +736,27 @@ this happens only in the presence of a high absorption \cite{mikki2009electromag
  %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
 
 \paragraph{Periodic media}%{{{
-The previous sections discussed homogeneous media, with the only exception when a refraction at an interface of two media was discussed, which could be easily interpreted on geometrical basis. There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
+The previous sections discussed infinite homogeneous media. The only exception was when a refraction at an interface of two media was discussed, for which we shown that the possible orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
 
-The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in the Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for periodic structures and its most important traits can again be partially understood on analytical basis.
+There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
+
+The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in the Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for the periodicity and its most important traits can again be partially understood on analytical basis.
 
 In this chapter, we will focus on these general properties of periodic structures, leaving the particular numerical simulations to the Results section.
-Under the notion of \textit{periodicity} we understand there are discrete translational symmetries in the medium, that is, 
-\begin{equation} \epsrl(\rr) = \epsrl(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3) \quad\text{(in three dimensions).} \label{eq_trsym}\end{equation}
-where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\brho_1, \brho_2, \brho_3$ are three linearly independent vectors. The same holds for the permeability $\murl(\rr)$.
+Under the notion of \textit{periodicity} we understand there exist discrete translational symmetries, that is, 
+\begin{equation} \epsrl(\omega,\rr) = \epsrl(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3) \quad\text{(in three dimensions).} \label{eq_trsym}\end{equation}
+where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$ are three linearly independent vectors. The \textit{local} relative permittivity, given by Eq. (\ref{eq_lorentz_eps}), was intuitively generalized to a function of the position $\rr$. Note that only the local quantities are used to avoid possible ambiguity problems at the boundary computing the spatial convolution [Eq. (\ref{eq_eps_nonloc})]  in nonlocal media. The same expectation is also imposed at the permeability $\murl(\omega,\rr)$. 
 
-The points generated by all combinations of possible translations by $m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3$ form a periodic lattice.
-In three dimensions, there are six \textit{crystal families} that differ by their rotation or mirror symmetries of their lattices (i.e. \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}).
-Combined with all possibilities for the symmetry of the dielectric shape in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions based on the group theory. 
-%fourteen Bravais lattices that differ by their rotation or mirror symmetries. % (i.e. \textit{cubic} P+I+F, \textit{tetragonal} P+I, \textit{monoclinic} P+C, \textit{hexagonal} P, \textit{ortorhombic} P+I+F+C, \textit{trigonal} P and \textit{triclinic} P). 
+The points generated by all combinations of possible translations by $m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3$ form a periodic lattice.
+The minimum volume associated to each point of the lattice will be denoted as a \textit{unit cell}. Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
 
-The minimum volume associated to each point of the lattice is denoted as a \textit{unit cell}. Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
-
-Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry, as in the cubic lattice, $\brho_1, \brho_2, \brho_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
+In three dimensions, there are six \textit{crystal families} that differ rotation or mirror symmetries of their lattices, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity/permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions based on the group theory. 
+Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry. In the cubic lattice, $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
 
 %}}}
-\paragraph{The Bloch-Floquet theorem}%{{{
+\paragraph{The Bloch theorem}%{{{
 The \textit{Bloch theorem} (or also \textit{Bloch-Floquet} theorem) states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
-\begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
+\begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
 \label{eq_bloch}\end{equation} 
 \begin{equation}\HH(t, \rr) = \mathbf{v}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{v}(\rr) = \mathbf{v}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_blochh}\end{equation} 
@@ -748,7 +771,23 @@ Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}
 % TODO example illustration of Bloch wave -> plotted in Python
 
 %}}}
+\paragraph{The proof of the Bloch-Floquet theorem}%{{{
+$$ $$
 
+\add{
+\begin{enumerate}
+\item{Maxwell equations are invariant in space;  medium is (periodic) thus invariant under discrete translation as in Eq. (\ref{eq_trsym}) 
+$$ \hat M E(\rr + \rho) = f(\rr); $$
+} 
+\item{for $\kk$ real, the wave is not amplified/decaying, thus ??
+$$ \exists C\in \mathbb{C}, |C| = 1:  $$ 
+} 
+ \item{
+}
+ \end{enumerate}
+}
+
+%}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
 The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by Eq. (\ref{eq_pw2}).
 Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
@@ -774,7 +813,7 @@ Although maybe less instructive, usually the \textit{folded} bands are plotted i
 \paragraph{Fourier expansion of the mode function}%{{{
 \add{If there is a real modulation within the unit cell, the above mentioned ambiguity between accumulating the phase in the wave vector $\KK$ or in the mode $\mathbf{u}(\rr)$ gets a new meaning: the field in the unit cell can be decomposed into a Fourier sum of waves, thus defining some amplitude $a_n$ for every possible branch.
 
-The field shape given by Eq. (\ref{eq_})
+The field shape given by Eq. (\ref{eq_}) \todo{eq}
  }
 
 %}}}
@@ -784,16 +823,12 @@ The field shape given by Eq. (\ref{eq_})
 \paragraph{}%{{{
 
 %}}}
+in the following we will plot the unfolded bands instead as it seems to give clearer physical interpretation of data.
+-> TODO doplnit "PhC book": dispersní křivky atd.
+
 "Hopping model" -- individual oscillators with frequency more-or-less dependent on boundary conditions 
 			 (Neumann ... Gamma point ... "dE/dx=0"  vs.  Dirichlet ... M-point ... "E=0")
-\subsection{Antiresonances and problems with local effective parameters}
 
-%% REF \cite{wallen2010}: Anti-resonant response of resonant inclusions
-%  antiresonance "may not" come from periodicity, as it is also in random structures
-%% REF \cite{alu2010}: Restoring the physical meaning of MM cosstitutive parameters
-
-% in the following we will plot the unfolded bands instead as it seems to give clearer physical interpretation of data.
-% -> TODO doplnit "PhC book": dispersní křivky atd.
 
 
 \paragraph{}%{{{
@@ -817,13 +852,6 @@ The field shape given by Eq. (\ref{eq_})
 % -> exponential wave decay with phase difference across the cell
 % -> note about how Fourier transform allows no point source to radiate energy within the bandgap
 % -> PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
-\subsection{Physics of negative phase and/or group velocity media}
-% -> homogeneous media with negative group velocity
-% -> refraction on the boundary 
-% -> negative group velocity and power flow [Mikki]
-% -> negative index media
-% -> isofrequency contours in DNG
-
 
 \subsection{Homogenization}
 \mdf{
@@ -851,9 +879,6 @@ ref Homogenisation issues - response to our paper from OpEx
 %% Many MMs do not bring negative refraction, other (composites) do, but not by means of resonances: 
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 %% Negative index may arise from resonances
-
-% "Metamaterials do not bring new physical phenomena, they only force one to conscientiously review the common electrodynamics. There
-% are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
 
 
 \subsection{What are metamaterials and photonic crystals?} %{{{

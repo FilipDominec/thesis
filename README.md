@@ -9,10 +9,11 @@ sectioning:
 == Theory ==
 + write that T === k x k x
 + wave equation with the det[TE - c omega2/kk eps]] 
-+ (... the equation, is quartic, what are its 4 solutions?)
++ (... the equation is quartic, what are its 4 solutions?)
 + finish the discussion of k,vg, S orientation, (discuss information velocity)
 
-+ Bloch theorem proof (that the wave is not growing/decaying + classical proof without commutator)
++ (Bloch theorem illustration: eiKr, u(r), both  vs. another   eiKr, u(r), both  )
++ BLOCH THEOREM PROOF (that the wave is not growing/decaying + classical proof without commutator)
 
 - somehow decide WHERE should the Fresnel coeffs and impedance be defined
 

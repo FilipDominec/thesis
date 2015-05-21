@@ -9,16 +9,16 @@
 %% * discussion of any potential applications of the research findings
 %% * an analysis of possible future research directions in the field drawing on the work
 %%   of the thesis
-%     --> hyperbolic Metamaterial theory implications in other fields of physics: eldyn in ultra-high magnetic field: Smolyaninov2011 
+%     --> 
 
 %% """ If a too-simplistic physical theory is forced to predict or explain data that are not within its scope,
 %%     it can often do so, but without giving any physical insight. Such a result is not a proof of the theory to be
 %%     applicable to the problem, and in some cases not even of the theory to make any sense whatsoever."""
 
 
+\paragraph{Outcomes}
 We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
 The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
-
 
 A versatile numerical environment for simulations was prepared and tested in the last two years. All computation scripts, containing over 2000 lines of Python code, are open-source and they use freely-redistributable libraries only, which may be useful for the broader scientific community in the future. 
 The automated effective parameters retrieval from FDTD is especially suitable for parametric scans. It proves instrumental in optimisation of the structure performance, matching experimental data, as well as studying the tunability.
@@ -27,10 +27,25 @@ Broad range of physical phenomena may be included in the simulations. A library 
  The FDTD method is applicable also to non-periodic, lossy and time-changing structures, while PWEM enables e. g. studies of the magnetooptic phenomena.
 All referred numerical methods, FDTD, PWEM and TMM, were tested also to give compatible and plausible results under oblique incidence and both TE/TM polarisations. 
 
-Some of the numerical simulations are also planned to be tested on the experimental basis. One of the proposed structures is an array of spheres embedded in a double metallic mesh. This structure is predicted to exhibit negative refraction in a narrow transmission band, and moreover, if the spheres are made of strontium titanate, which is a high-permittivity ferroelectric, the frequency of this band can be tuned by temperature or electric voltage between the metallisation. Other experimental work will focus on extraordinary transmission in metallic fishnets and tunable planar metamaterials. In all cases the experiments will be supported by thorough numerical simulations and possibly also by analytical models.
+\paragraph{Author's view on the future of metamaterials and photonic crystals}
+-
 
+\add{
+Metamaterials do not bring new physical phenomena, they only force one to conscientiously review the common electrodynamics. There
+are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
 
-\paragraph{TiO$_{2}$ resoantors}\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated, that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
+The research of Metamaterials is typical by taking a relatively novel phenomenon (wave propagation in periodic structure) and
+interpreting it on the basis of a well-developed theory (electrodynamics of homogeneous media). In future, this trend may be opposite --
+that is, new theory motivated by the metamaterial research may find its application on other phenomena.
+One example may be the theory of strongly hyperbolic media, which turns out to be fundamental for electrodynamics in extremely strong magnetic fields \cite{Smolyaninov2011}.
+}
+
+Fundamental issues have to be resolved in the MM and PhC field are
+losses
+
+\paragraph{TiO$_{2}$ resonators}
+\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated, that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
+
 
 
 
