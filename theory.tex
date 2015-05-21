@@ -88,7 +88,7 @@ where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsi
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $T\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
-\begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots (Fig. \ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
+ \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later (Fig. \todo{REMOVE}\ref{fg_dcsimpleel}, \ref{fg_dcllel}, \ref{fg_dcllmag}, \ref{fg_dcllelmag}), both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
 	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
 \end{figure}
 %}}}
@@ -545,7 +545,7 @@ The new \textit{Landau-Lifshitz} electric displacement $\Dsd$ that also accounts
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
 Double vector multiplication on the right hand side can be identified with the wave-plane projection tensor $T$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse}):
-\begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T \E,  \label{eq_Dsd3}\end{equation} 
+\begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T \E,  \label{eq_Dsd4}\end{equation} 
 
 %}}}
 \paragraph{Tensor form of the Landau-Lifshitz permittivity of local isotropic media}%{{{
@@ -736,7 +736,7 @@ The \textit{Bloch theorem} (or also \textit{Bloch-Floquet} theorem) states that 
 \begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_bloch}\end{equation} 
 \begin{equation}\HH(t, \rr) = \mathbf{v}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{v}(\rr) = \mathbf{v}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
-\label{eq_bloch}\end{equation} 
+\label{eq_blochh}\end{equation} 
 Thus, $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode function}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
 The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical that of a plane wave
