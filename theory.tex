@@ -56,7 +56,7 @@ The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \
 
 An important note shall be made on the sign convention for the complex wave. 
 We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
-It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 
 In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
@@ -70,8 +70,10 @@ so the wave equation (\ref{eq_wave}) can be modified the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
 $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E,  $$
-\begin{equation}  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
-The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
+\begin{equation}  T\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
+\begin{equation} T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_}\end{equation}
+Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
 \begin{equation} T = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
@@ -222,8 +224,8 @@ Returning to the derivation of dispersion relations, we start with modifying the
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
-\begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
-which, in the isotropic case, results in the dispersion curve for the transverse electromagnetic wave 
+\begin{equation}  T\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
+For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($T\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
@@ -755,7 +757,7 @@ $$ $$
 
 \add{
 \begin{enumerate}
-\item{Maxwell equations are invariant in space;  medium is (periodic) thus invariant under discrete translation as in Eq. (\ref{eq_trsym}) }
+\item{Maxwell equations are invariant in space;  medium is (periodic) thus invariant under discrete translation as in Eq. (\ref{eq_trsym}) 
 $$ \hat M E(\rr + \rho) = f(\rr); $$
 } 
 \item{for $\kk$ real, the wave is not amplified/decaying, thus ??
