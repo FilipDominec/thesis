@@ -443,7 +443,7 @@ In Fig. \ref{fg_ifc2}d, an extreme case of spatial walk-off is shown on the exam
 
 %}}}
 \paragraph{The sign of the phase and group velocities}  %{{{
-So far, in the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without providing justification. In fact, both upwards and downwards pointing wave vector provide valid solution. The reason is that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave was propagating downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
+In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without providing justification. In fact, both upwards and downwards pointing wave vector provide valid solution. The reason is that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave was propagating downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
 
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite direction (or more generally, when they have an opposite projection on the normal to the interface).  This manifests as IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
@@ -616,10 +616,10 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 %}}}
 
 \subsection{Impedance and amplitudes of the refraction and reflection}
-\paragraph{The interface of two local media}\todo{connect somehow with the rest of theory?} %{{{ 
-So far, only the phase-related phenomena were discussed: based on the local or nonlocal response of the medium, the dependence of the dispersion curves and IFCs was computed. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem based on the Snell law.
+\paragraph{The interface of two local media} %{{{ 
+In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem: Assuming there is no surface current nor surface charge, and that the  medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the integral formulation of Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respercively, that are cut in half by the interface. 
 
 The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks \cite[p. 38]{born1999book} with different levels of generalisation. In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
@@ -629,6 +629,8 @@ This is in fact similar to the reflection on a one-dimensional transmission line
 
 If the incidence is not perpendicular, the complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation.\todo{cite}
 
+\todo{connect somehow with the rest of theory?}
+
 %}}}
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
 The author is not aware of any rigorous extension of the notion of impedance to spatial-dispersive media. The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
@@ -637,7 +639,7 @@ The author is not aware of any rigorous extension of the notion of impedance to 
 
 %}}}
 
-\subsection{Phase, group, energy and signal velocity in nonlocal media}
+\subsection{Phase, group, energy and signal velocity}
 \paragraph{Sign of the phase and group velocities}%{{{ TODO
 The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. Therefore, in media with low losses, the term of negative refraction 
 
@@ -731,7 +733,7 @@ The minimum volume associated to each point of the lattice is denoted as a \text
 Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry, as in the cubic lattice, $\brho_1, \brho_2, \brho_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
 
 %}}}
-\paragraph{The Bloch-Floquet theorem}%{{{
+\paragraph{The Bloch theorem}%{{{
 The \textit{Bloch theorem} (or also \textit{Bloch-Floquet} theorem) states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
 \begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_bloch}\end{equation} 
@@ -748,7 +750,23 @@ Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}
 % TODO example illustration of Bloch wave -> plotted in Python
 
 %}}}
+\paragraph{The proof of the Bloch-Floquet theorem}%{{{
+$$ $$
 
+\add{
+\begin{enumerate}
+\item{Maxwell equations are invariant in space;  medium is (periodic) thus invariant under discrete translation as in Eq. (\ref{eq_trsym}) }
+$$ \hat M E(\rr + \rho) = f(\rr); $$
+} 
+\item{for $\kk$ real, the wave is not amplified/decaying, thus ??
+$$ \exists C\in \mathbb{C}, |C| = 1:  $$ 
+} 
+ \item{
+}
+ \end{enumerate}
+}
+
+%}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
 The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by Eq. (\ref{eq_pw2}).
 Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
