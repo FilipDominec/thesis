@@ -598,9 +598,8 @@ T -
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters.\\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
-Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
+\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with an resonance in permittivity, in permeability, and simultaneously in both of them.\\
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
@@ -628,6 +627,28 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 \paragraph{The dispersion of nonlocal media} %{{{ 
 Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead to the dispersion curves bending.
 As a result, the dispersion equations allow multiple solutions with different wavenumber $\kk$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ is an usual consequence of frequency dispersion even in local media.)
+
+%}}}
+\paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
+\begin{figure}[t] \caption{Dispersion curves for two nonlocal media. The left and right columns of plots show the same information as in Fig. \ref{fg_dcll}. Additionally, the value of the fourth-order expansion coefficient $\alpha$ was plotted with a thin red line. } \label{fg_dcll_nl} \centering  
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
+\end{figure}
+
+Nonlocal media allow the dispersion curves to bend ...
+\label{fg_dcll_nl}
+
+%}}}
+\paragraph{Odd expansion terms and optical activity }   %{{{ TODO
+\begin{figure}[t] \caption{Dispersion curves for two nonlocal media. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \label{fg_dcll_nl}.} \label{fg_dcllactivity} \centering  
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
+\end{figure}
+
+\label{fg_dcllactivity}
+
+Nonlocal media allow the dispersion curves to bend ...
+
 %}}}
 
 \subsection{Impedance and amplitudes of the refraction and reflection}
@@ -656,30 +677,7 @@ The reason lies in the spatial-dispersive media always being assumed infinite, s
 \todo{add from \cite{golubkov1995boundary}}
 
 %}}}
-\paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
-\begin{figure}[h!] \caption{\todo{shorten } Dispersion curves for two nonlocal media. \\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency \todo{and $\alpha$ as the term with $k^4$ }.\\
-Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
-} \label{fg_dcll} \centering  
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
-\end{figure}
 
-Nonlocal media allow the dispersion curves to bend ...
-
-%}}}
-\paragraph{Odd expansion terms and optical activity }   %{{{ TODO
-\begin{figure}[h!] \caption{\todo{shorten } Dispersion curves for two nonlocal media with optical activity. \\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\todo{and $\gamma$ as the term with $k^1$ }\\
-Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
-} \label{fg_dcll} \centering  
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
-\end{figure}
-
-Nonlocal media allow the dispersion curves to bend ...
-
-%}}}
 
 \subsection{Phase, group, energy and signal velocity}
 \paragraph{Sign of the phase and group velocities}%{{{ TODO
