@@ -577,7 +577,6 @@ Let us note that the classical approach using symmetric parameters $\epsrl(\omeg
 %% \cite{agranovich2006spatial}
 %% \cite{mikki2009electromagnetic}
 %% \cite{vinogradov2002form}
-%% \cite{golubkov1995boundary}
 %% \cite{agranovich2004linear}
 %% \cite{agranovich1962crystal}
 %}}}
@@ -599,7 +598,7 @@ T -
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[h!] \caption{Dispersion curves for three different examples of local mediua, comparing the symmetric and Landau-Lifshitz representation of constitutive parameters.\\
+\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\\
 Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
@@ -649,15 +648,36 @@ If the incidence is not perpendicular, the complex amplitudes of the reflected a
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
 -
 
-\mdf{
-Nonlocal media allow the dispersion curves to 
-
- and additional boundary conditions
+\add{
+Extending the notion of impedance to spatial-dispersive media to compute the  amplitudes. 
+The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
 }
 
-The author is not aware of any rigorous extension of the notion of impedance to spatial-dispersive media. The reason lies in the spatial-dispersive media always being assumed infinite, so their interfaces are not accounted for in the model. If such an extension would be done, the spatial integral in Eq. \ref{eq_eq_chi_convol_nonloc} would have to be better specified, either with the nonlocal response of medium to extend also behind the interface. Alternatively, the medium response could be sharply truncated at the interface.
+\todo{add from \cite{golubkov1995boundary}}
 
-\todo{check the literature again, has this ever been discussed or computed?}
+%}}}
+\paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
+\begin{figure}[h!] \caption{\todo{shorten } Dispersion curves for two nonlocal media. \\
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency \todo{and $\alpha$ as the term with $k^4$ }.\\
+Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
+} \label{fg_dcll} \centering  
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
+\end{figure}
+
+Nonlocal media allow the dispersion curves to bend ...
+
+%}}}
+\paragraph{Odd expansion terms and optical activity }   %{{{ TODO
+\begin{figure}[h!] \caption{\todo{shorten } Dispersion curves for two nonlocal media with optical activity. \\
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency.\todo{and $\gamma$ as the term with $k^1$ }\\
+Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
+} \label{fg_dcll} \centering  
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
+	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
+\end{figure}
+
+Nonlocal media allow the dispersion curves to bend ...
 
 %}}}
 

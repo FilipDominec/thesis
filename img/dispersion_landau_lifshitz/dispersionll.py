@@ -8,42 +8,56 @@ import numpy as np
 from scipy.constants import c, hbar, pi
 
 ## User settings
-#epsll_contours          = 0
-#epsll_dispersion        = 0
-#classical_dispersion    = 1
+#epsll_contours, epsll_dispersion, classical_dispersion    = 0, 0, 1
 #eampli, eomega0, egamma = .0, 1., .001
 #mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_vacuum.pdf"
 #
-#epsll_contours          = 0
-#epsll_dispersion        = 0
-#classical_dispersion    = 1
+#epsll_contours, epsll_dispersion, classical_dispersion    = 0, 0, 1
 #eampli, eomega0, egamma = 1., 1., .001
 #mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_simple_el.pdf"
 #
-#epsll_contours          = 1
-#epsll_dispersion        = 1
-#classical_dispersion    = 1
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
 #eampli, eomega0, egamma = 1., 1., .001
 #mampli, momega0, mgamma = .0, 1.2, .001
 #outname = "dispersion_ll_el.pdf"
 #
-#epsll_contours          = 1
-#epsll_dispersion        = 1
-#classical_dispersion    = 1
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
 #eampli, eomega0, egamma = .0, 1., .001
 #mampli, momega0, mgamma = .3, 1.2, .001
 #outname = "dispersion_ll_mag.pdf"
 
-#epsll_contours          = 1
-#epsll_dispersion        = 1
-#classical_dispersion    = 1
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
 #eampli, eomega0, egamma = 1., 1., .001
 #mampli, momega0, mgamma = .3, 1.2, .001
 #outname = "dispersion_ll_elmag.pdf"
+
+
+
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
+#eampli, eomega0, egamma = 1, 1., .001
+#mampli, momega0, mgamma = 0, 1.2, .001
+#qampli, qomega0, qgamma = .08, 1., .01
+#outname = "dispersion_ll_quadrupp.pdf"
 #
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
+#eampli, eomega0, egamma = 1, 1., .001
+#mampli, momega0, mgamma = 0, 1.2, .001
+#qampli, qomega0, qgamma = -.08, 1., .01
+#outname = "dispersion_ll_quadrupn.pdf"
+
+epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
+eampli, eomega0, egamma = 1, 1., .001
+mampli, momega0, mgamma = 0, 1.2, .001
+aampli, aomega0, agamma = -.7, 1., .001
+outname = "dispersion_ll_activen.pdf"
 #
+#epsll_contours, epsll_dispersion, classical_dispersion    = 1, 1, 1
+#eampli, eomega0, egamma = 1, 1., .001
+#mampli, momega0, mgamma = 0, 1.2, .001
+#aampli, aomega0, agamma = .7, 1., .001
+#outname = "dispersion_ll_activep.pdf"
 
 
 ## Use LaTeX
@@ -63,12 +77,21 @@ omegas = np.linspace(0, 2., 400)
 ## Generate classical local permittivity and permeability (the same for all wavevectors k)
 eps_clas = 1+lorentz(omegas, ampli=eampli, omega0=eomega0, gamma=egamma)
 mu_clas  = 1+lorentz(omegas, ampli=mampli, omega0=momega0, gamma=mgamma)
+if 'aampli' in locals(): ## account for the optical activity
+    activity = lorentz(omegas, ampli=aampli, omega0=aomega0, gamma=agamma)
+if 'qampli' in locals(): ## account for the fourth-order expansion terms
+    quadrupole = lorentz(omegas, ampli=qampli, omega0=qomega0, gamma=qgamma)
+
 
 epslls = []
 dispcontours = []
 for k in ks:
     # Conversion to the Landau-Lifshitz permittivity (mu_ll will be identical to 1, then)
-    epsll = eps_clas*np.ones_like(ks)   +   (1-1/mu_clas) * k**2 / omegas**2             ## FIXME generate data for the points on grid
+    epsll = eps_clas*np.ones_like(ks)   +   (1-1/mu_clas) * k**2 / omegas**2            ## note that this should divided by mu_0 for realistic values
+    if 'aampli' in locals(): ## account for the optical activity
+        epsll += activity * k**1
+    if 'qampli' in locals(): ## account for the fourth-order expansion terms
+        epsll += quadrupole * k**4
     dispcontour = epsll * omegas**2 / k**2
 
     epslls.append(epsll)
@@ -93,6 +116,11 @@ if epsll_dispersion:
 plt.subplot(1, 2, 1)
 plt.plot(eps_clas, omegas, lw=2, c='m', label="$\\varepsilon_r'(\\omega/\\omega_0)$")
 plt.plot(mu_clas,  omegas, lw=2, c='y', label="$\\mu_r'(\\omega/\\omega_0)$")
+if 'aampli' in locals(): ## account for the optical activity
+    plt.plot(activity, omegas, lw=1, c='r', label="$\\gamma'(\\omega/\\omega_0)$")
+if 'qampli' in locals(): ## account for the optical activity
+    plt.plot(quadrupole, omegas, lw=1, c='b', label="$\\alpha'(\\omega/\\omega_0)$")
+
 #plt.ylim((-0.,2.)); plt.yscale('linear')
 plt.xlim((-5.,10.)); plt.xscale('linear')
 plt.xlabel(u"relative permittivity $\\varepsilon_r$ and permeability $\\mu_r$"); 
@@ -105,7 +133,7 @@ if classical_dispersion:
     plt.plot(omegas*np.sqrt(eps_clas * mu_clas), omegas, lw=2, c='g', alpha=.5)
 
 #plt.ylim((-0.,3.)); plt.yscale('linear')
-plt.xlim((-0.,3.)); plt.xscale('linear')
+plt.xlim((-0.,np.max(ks))); plt.xscale('linear')
 
 ## ==== Outputting ====
 ## Finish the plot + save 
