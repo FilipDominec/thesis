@@ -569,21 +569,22 @@ where
 \text{ or equivalently, }
 T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} . \tag{\ref{eq_transverse} \again} \end{equation}
 
-Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. If needed, it is formally possible to use any other arrangement, which may moreover be frequency dependent, leading to a physically realistic pair of parameters with uncommon properties \cite{skaar2014}.
+\paragraph{Other formulations}%{{{
+Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. 
+
+Formally, it is possible to define any other distribution of the magnetic effects between these parameters. The distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with uncommon spectral shape \cite{skaar2014}.
+
+\todo{"Casimir" formulation of electrodynamics \cite{vinogradov2002form}}
 
 %% TODO REF EBD theory and nonlocal electrodynamics
 %% \cite{krowne2007book_agran}
 %% \cite{landau1984electrodynamics}
-%% \cite{agranovich2006spatial}
 %% \cite{mikki2009electromagnetic}
-%% \cite{vinogradov2002form}
-%% \cite{agranovich2004linear}
-%% \cite{agranovich1962crystal}
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
 \paragraph{Dispersion relation as an implicit equation} %{{{
-In the dispersion equation of local media, Eq. (\ref{eq_dispdet}), the wave vector could be found by solving a set of linear equations. In the particular case of \textit{isotropic} local media, the computation has an even simpler form of an explicit computation of one square root, see Eq. (\ref{eq_dispeq_loc}).
+In the dispersion relation for local media, Eq. (\ref{eq_dispdet}), the wave vector could be found by solving a set of linear equations. In the particular case of \textit{isotropic} local media, the computation has an even simpler form of an explicit computation of one square root, see Eq. (\ref{eq_dispeq_loc}).
 
 An intrinsic issue of spatial-dispersive media is that the permittivity $\epsLL(\omega,\kk)$ is a function of the wavevector $\kk$ on its own. The dispersion equation then becomes an implicit equation: 
 \begin{equation} 
@@ -598,18 +599,22 @@ T -
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with an resonance in permittivity, in permeability, and simultaneously in both of them.\\
+\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} simultaneously in both of them.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
+\textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
+\textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
+\textbf{(c)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
+\clearpage
 
-The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters should be identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with an electric resonance, with a magnetic resonance and with both resonances overlapping. The left column shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
+The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters for local media in Eq. (\ref{eq_epsmusd3}) are mathematically identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with (\ref{fg_dcll}a) an electric resonance, with (\ref{fg_dcll}b) a magnetic resonance and (\ref{fg_dcll}c) with both resonances overlapping. 
 
-The right column additionally shows the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a colour map with blue tone for negative values and red for positive ones. The thin black line overlay connects all points where the dispersion equation (\ref{eq_dispdetLL}) was found to holds by a numerical search.
-As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one, the original green dispersion curve from Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
+The left column in Fig. \ref{fg_dcll} shows the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
+Its right column features a thin black contour connecting all points where the dispersion equation (\ref{eq_dispdetLL}) was found to hold by a numerical search.
+This is complemented by the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a background colour map with blue tone for negative values and red for positive ones. 
+%As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one,
+Additionally, the original green dispersion curve as in Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
 
 For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
@@ -619,35 +624,41 @@ A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, i
 contribution that grows proportionally with $k^2$, and its maximum magnitude is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) = 0$. This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
 $\epsLL(\omega, k)$
 
-Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from Fig. \ref{fg_dcll}a occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
+Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from the cases of isolated resonances occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
 % (electric quadrupoles..., [Merlin])
 
-\todo{Why magnetic resonances do not contribute to static permeability?}
+\todo{Why magnetic resonances do not contribute to the static permeability?}
 
 \paragraph{The dispersion of nonlocal media} %{{{ 
-Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead to the dispersion curves bending.
-As a result, the dispersion equations allow multiple solutions with different wavenumber $\kk$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ is an usual consequence of frequency dispersion even in local media.)
+\begin{figure}[t] \caption{Dispersion curves for two nonlocal media. They differ by the value of the fourth-order expansion coefficient $\alpha(\omega)$, which was plotted with a thin blue line. The left and right columns of plots show the same information as in Fig. \ref{fg_dcll}.  } \label{fg_dcll_nl} \centering  
+\textbf{(a)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
+\textbf{(b)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
+\end{figure}
+
+Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead to the dispersion curves deviation from those predicted for local media. This is shown in Fig. \ref{fg_dcll_nl}.
+As an illustration, we add a scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This is reflected in adding a thin blue line in the left column.
+The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode.
+\todo{+relation of higher-order terms to multipoles;  }
+
+The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other. In the latter case, they approach to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, owing to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
 
 %}}}
 \paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
-\begin{figure}[t] \caption{Dispersion curves for two nonlocal media. The left and right columns of plots show the same information as in Fig. \ref{fg_dcll}. Additionally, the value of the fourth-order expansion coefficient $\alpha$ was plotted with a thin red line. } \label{fg_dcll_nl} \centering  
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
-\end{figure}
+In both cases in Fig. \ref{fg_dcll_nl}, however, it is obvious the dispersion equations allow multiple solutions with different wavenumber $k$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ has already occured as a usual consequence of frequency dispersion even in local media.)
 
-Nonlocal media allow the dispersion curves to bend ...
-\label{fg_dcll_nl}
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal} to be observed in natural media, e.g. near exciton levels. In the case of positive amplitude of $\alpha$, the additional wave of the lower polariton branch has again an opposite sign of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$).
 
 %}}}
 \paragraph{Odd expansion terms and optical activity }   %{{{ TODO
-\begin{figure}[t] \caption{Dispersion curves for two nonlocal media. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \label{fg_dcll_nl}.} \label{fg_dcllactivity} \centering  
+Returning to the power expansion of $\epsLL(\omega, \kk)$ in terms of $k$ in Eq. (\ref{eq_epsmusd1}), we can identify the constant term ($\propto k^0$) with the electric dipole moment $\chi_e(\omega)$, the term $\propto k^2$ with the magnetic dipole moment $\chi_m(\omega)$ (or, also the electric quadrupole moment), and the recently discussed term $\propto k^4$ with an electric octupole or magnetic quadrupole (\cite{agranovich2006spatial, agranovich2004linear, krowne2007book}).
+
+The odd terms were not discussed yet, although they have important physical meaning. Their nonzero values break the spatial inversion symmetry of the medium, and are related to optical activity. In media with nonzero odd terms
+, the eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column Fig. \ref{fg_dcllactivity} can be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
+
+\begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the term $\gamma_e(\omega)$ that is linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}) is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
 	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
 \end{figure}
-
-\label{fg_dcllactivity}
-
-Nonlocal media allow the dispersion curves to bend ...
 
 %}}}
 
