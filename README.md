@@ -2,9 +2,6 @@
 beta - needs checkup + finish
 
 sectioning:
-+ motivation for this thesis
-+ motivation for THz
-+ contents
 
 == Theory ==
 + write that T === k x k x

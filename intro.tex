@@ -1,4 +1,6 @@
 \section{Introduction} % TODO
+
+\paragraph{Electromagnetism of complex structures}
 The behaviour of electromagnetic waves in periodic media has attracted the human attention for ages, long before anybody perceived that light is an \textit{electromagnetic wave} or that it is the \textit{periodicity} that is responsible for the brilliant and irreproducible colours of opal gemstones and many living creatures, such as various beetles, butterflies, peacocks etc. %{{{
 The scientific community started to study the underlying phenomena in the late 19th century when the X-ray scattering was observed on (periodic) crystal lattices and also when the high optical reflection from periodic layers of entirely transparent materials was predicted. % TODO ref
 %The technological and scientific boom of the 20th century contributed with many new theoretical approaches, numerical methods and types of periodic structures to the newly born field of \textit{photonics}. With the advent of the 21th century, great progress was also made in the research of \textit{metamaterials}, a specific subset of periodic structures which will be discussed in greater detail in this work. 
@@ -6,10 +8,7 @@ The scientific community started to study the underlying phenomena in the late 1
 The key concept in photonic crystal or metamaterial studies is that the electromagnetic properties are defined predominantly by the shape of the structure, while the actual materials that are used to build it can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
 While it is unlikely that a radically new material will be invented for construction of optical elements, several new phenomena can be obtained by periodic structuring of ordinary materials. The rapid development of this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers able to predict the structure behaviour.
 
-
-% TODO introduction ??
-% TODO THz science ??
-
+\paragraph{Motivation for the terahertz photonics}
 This work focuses on the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used from microwave to optical frequencies, the selected frequency range defined the properties of materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, some materials commonly found in the microwave or optical applications must be avoided, as they exhibit excessively high losses in the terahertz range (such as glass, water, most plastics etc.)
 
 %\cite{lewis2014review} approximated the number of papers as an exponential, doubling every 3.2 years: D = 2**[(year-1975)/3.2]
@@ -24,7 +23,8 @@ Yet none of these approaches is optimal for the THz applications; from the elect
 % TODO THz MM review 
 
 
-% TODO -> cíle studie a disertace
+\paragraph{Outline of the thesis}
+% TODO  cíle disertace
 Many different designs of metamaterials  % and photonic crystals
 were proposed in the last decades, part of them being aimed to the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
 % lacks:
@@ -34,8 +34,10 @@ were proposed in the last decades, part of them being aimed to the terahertz ran
 %		often missing  cricital discussion of excessive losses, slow response etc.
 %		missing proper electrodynamics
 One of the aims of the dissertation are to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
-The second aim is to investigate the tunability of their properties depending on external parameters, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
-Last but not least, the dissertation project involves the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. Thorough the thesis, the results from these simulations will be verified against experimental data and analytic models.
+
+Some attention was paid also to \todo{investigate the tunability of their properties depending on external parameters}, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
+
+Last but not least, the dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. Thorough the thesis, the results from these simulations will be verified against experimental data and analytic models.
 % Based on a firm theory of electrodynamics of periodic structures
 
 %% TODO update 
@@ -47,3 +49,22 @@ Last but not least, the dissertation project involves the development of a relia
 % TODO Where appropriate, we also investigated how this behaviour depends on some external parameter (such as electric field, temperature or illumination) -- in other words, how the \textit{tunability} of the structure can be achieved.
 %In the last section, some general conclusions and prospects are drawn.
 
+\paragraph{The conventions used}
+Thorough the thesis, we use a single or double apostrophe ($x', x''$) to refer to the real and imaginary part of a complex numberl ($x$). Italic symbols (e.g. $k$) represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $\kk$). 
+
+The explicit time, space or frequency dependence of quantities are omitted when it . So for electric field we write $\E$ instead of $\E(\rr,t)$.
+
+An important note shall be made on the sign convention for the complex wave, introduced in Eq. \ref{eq_pw}.
+We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
+It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[chap. 1-4, 6, 9, 10]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[chap. 5, 7, 8]{eleftheriades2005book}), \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
+%% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
+%% https://www.comsol.com/support/knowledgebase/1009/    
+%% http://www.tpdsci.com/tpc/RISignDv.php
+%% Panofsky & Phillips 1962, p 200 ??
+%% ---- "OPTICS" in favor of -iwt, then using the simpler eps = (eps' + i eps'')
+
+In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
+thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. Thorough the thesis, we however represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon''$.
+
+The unit system differs  thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. Whole thesis consistently uses the meter-kilogram-second (or, SI) system.
