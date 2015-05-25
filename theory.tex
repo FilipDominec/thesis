@@ -502,7 +502,8 @@ which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media
 Here, we will follow the approach of Landau and Lifshitz (see \cite{landau1984electrodynamics}, and also \cite{krowne2007book_agran, agranovich2006spatial}) to show that the magnetic response of any medium can be fully expressed by a certain form of permittivity dependence on $\kk$. This leads to introducing new \textit{Landau-Lifshitz} permittivity $\epsLL$ and permeability $\muLL$, which are, in general, different from those used in the more customary symmetric model:
 $$\epsLL(\omega, \kk) \not\equiv \epsrn(\omega, \kk),\quad\quad\quad 1 = \muLL(\omega, \kk) \not\equiv \murn(\omega, \kk).$$
 The Maxwell equations (\ref{eq_me1}-\ref{eq_me4}) however still hold when these new parameters are substituted for the original ones. Requiring the relative permeability to be unity implies a trivial dependence of the magnetic field on the magnetic induction in this model:
-\begin{equation} \mu_0 \HHsd = \label{eq_}\end{equation}
+$$ \mu_0 \HHsd = \B. $$
+Therefore, the \textit{Landau-Lifshitz} model developed below is also denoted as the $\E\D\B$-model.
 
 The advantage is that the relative magnetic permeability is defined as a mere constant of the magnetic response of vacuum $\muLL(\omega, \kk) := 1$, thus reducing the complexity of the computation compared to the symmetric spatial-dispersive model. %% [as in Eq. (\ref{eq_ce})]
 
@@ -515,7 +516,7 @@ The new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ then consists of t
  \item{the component caused by the local electric response of matter,} 
  \item{a new component fully accounting for the \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
 \end{enumerate}
-This model may be easily extended later to accept nonlocal permittivity and permeability.
+This model may be easily extended later to describe any spatially dispersive media within the permittivity, as will be shown later.   
 
 Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
@@ -534,7 +535,7 @@ When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obta
 $$ \HHsd = \HH + (\murl(\omega) -1)\HH = \HH + \underbrace{\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B}_{=:\,\partial\mathbf{X}/\partial t}$$
 Without loss of generality, we again restrict the discussion to a plane wave (\ref{eq_pw}), thus the time derivative equals to multiplication by $\ii\omega$.
 \begin{equation} \mathbf{X} = \frac{1}{\ii\omega}\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B = \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right)\B. \label{eq_Xsd}\end{equation}
-The new \textit{Landau-Lifshitz} electric displacement $\Dsd$ that also accounts for magnetic phenomena is obtained by substitution of Eq. (\ref{eq_Xsd}) into Eq. (\ref{eq_Dsd}):
+The new electric displacement $\Dsd$ in the  Landau-Lifshitz model, that also accounts for magnetic phenomena, is obtained by substitution of Eq. (\ref{eq_Xsd}) into Eq. (\ref{eq_Dsd}):
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
@@ -592,7 +593,7 @@ T -
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
 \paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[h!] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} simultaneously in both of them.\\
+\begin{figure}[h] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
@@ -640,7 +641,7 @@ The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (F
 \paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
 For both cases shown in Fig. \ref{fg_dcll_nl}, it is obvious the dispersion equations allow multiple solutions with different wavenumber $k$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ has already occured as a usual consequence of frequency dispersion even in local media.)
 
-The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal} to be observed in natural media, e.g. near exciton levels. In the case of positive amplitude of $\alpha$, the additional wave of the lower polariton branch has again an opposite sign of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$).
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal} to be observed in natural media, e.g. near exciton levels. In the case of a positive amplitude of $\alpha$, the additional wave of the lower polariton branch has again an opposite sign of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$).
 
 %}}}
 \paragraph{Odd expansion terms and optical activity }   %{{{ TODO
@@ -650,8 +651,8 @@ The odd terms were not discussed yet, although they have important physical mean
 , the eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
 
 \begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the term $\gamma_e(\omega)$ that is linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}) is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
-	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
+\textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
+\textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
 \end{figure}
 
 %}}}
@@ -707,41 +708,36 @@ The question of indefinite sign can be decided using the assumption of medium \t
 }
 %}}}
 \paragraph{Sign of the group and energy velocities}  % TODO %{{{
-\mdf{
-% TODO 0401 how can one tell apart negative refraction due to eps-mu and due to higher, purely nonlocal terms?
-
-*doubly resonant local media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
-*singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
-*			  nonlocal media -> weird things happen, todo\\
-}
+%  \mdf{
+%  % TODO 0401 how can one tell apart negative refraction due to eps-mu and due to higher, purely nonlocal terms?
+%  *doubly resonant local media -> negative phase velocity, positive group velocity, above resonant frequencies - theoretically arbitrarily small losses\\
+%  *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
+%  *			  nonlocal media -> weird things happen, todo\\
+%  }
+In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave.
 
 The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones around $\omega \sim 2\pi$. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
 
-Thus, the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
+It follows from this that the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
 % This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
-Assuming no energy enters from the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component. 
 This behaviour can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
-The result of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, but it may be explained through strong deformation of the envelope shape on a short distance, which 
+Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component and that the group velocity   inevitablyhas to point towards the interface also in the second medium, which seems contradictory to causality.
+This result 
+%of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, 
+may however be explained through strong deformation of the envelope shape on a short distance, which ensures the information carried by the wave modulation to propagate causally, out from the source, and always with speed lower or equal to the speed of light in vacuum, $c$.
 
-In thin films, this may be experimentally observed as a negative shift of the light envelope compared to the absence of the medium. Note this can occur in the region of negative phase velocity \cite{dolling2006simultaneous}. 
-
-\cite{mikki2009electromagnetic}, group velocity can be negative or superluminal - no problem here?
+Negative group velocity has been experimentally observed in a thin sample. It manifested as a negative shift of the light envelope compared to the absence of the medium \cite{dolling2006simultaneous}. Note that negative group velocity is independent of the sign of the phase velocity, which may be both positive and negative \cite{mikki2009electromagnetic}.
 
 %}}}
 \paragraph{Signal velocity}%{{{
-The notion of \textit{signal propagation velocity} is sometimes % TODO cite
-used 
+The notion of \textit{signal} or \textit{information propagation velocity} is sometimes % TODO cite
+identified with the group velocity, $\vg$. However, this may be misleading, as its differential definition in Eq. (\ref{eq_vg}) enables one to define the group velocity for slow-enough modulation only, so that the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
 
-is a problematic term, because a finite-support function spans over infinite spectrum, where group velocity has to change and differ \\
-
-Near a single resonance with damping, the phase velocity can drop \\
-
-\mdf{
-TODO FIGURE to show this?: a) eps resonant, mu constant     b) N positive, but group velocity negative\\
-
-this happens only in the presence of a high absorption \cite{mikki2009electromagnetic}\\
-}
+%In the author's view, it is rather a problematic term because a 
+Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), leads to a contradiction. From the convolution-multiplication theorem already mentioned in Eq. (), it can be shown that any information carrying function with a finite-support has to span over an infinite spectrum. 
+A temporally limited optical pulse will be always more or less distorted upon propagation in dispersive medium, and the information velocity becomes a problematic term.
+Therefore, the author is convinced that \textit{information} velocity can not be directly identified with the group velocity. 
 
 %}}}
 %% TODO \paragraph{Speed of light and causality in spatial-dispersive media}%{{{
@@ -867,10 +863,10 @@ The
 This is . %-- individual oscillators with frequency more-or-less dependent on
 
 Returning to the figure of dispersion curves in a periodic structure, % TODO ref
-the $\Gamma$ point in the Brillouin zone, where $k = 0$, can be identified with Neumann boundary conditions, where we require $dE/dx = 0$ (otherwise the derivative of the field $E$ would not be continuous). Analogically, the $X$ point
+the $\Gamma$ point in the Brillouin zone, where $k = 0$, can be identified with Neumann boundary conditions, where we require $dE/dx = 0$ (otherwise the derivative of the field $E$ would not be continuous). % this also holds for other boundaries, on the $y$- and $z$-axis
 
-
-			 (Neumann ...  ... ""  vs.  Dirichlet ... M-point ... "E=0")
+In contrast, the $X$ point, where $k_x = 2\pi/a_x$, corresponds to the Dirichlet boundary condition at the boundary perpendicular to the $x$-axis.
+M-point ... "E=0")
 
 
 
