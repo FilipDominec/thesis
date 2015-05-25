@@ -612,7 +612,7 @@ Additionally, the original green dispersion curve as in Fig. \ref{fg_dcsimpleel}
 For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
 
-A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit a similar dispersion curves. At the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
+A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit similar dispersion curves. At the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
 %%% TODO add Eq. 2.52 repeated with underbrace
 contribution that grows proportionally with $k^2$, and its maximum magnitude is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) = 0$. This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
 $\epsLL(\omega, k)$
@@ -718,7 +718,9 @@ The question of indefinite sign can be decided using the assumption of medium \t
 The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones around $\omega \sim 2\pi$. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
 
-Thus, the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. Assuming no energy enters from the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component. 
+Thus, the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
+% This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
+Assuming no energy enters from the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component. 
 This behaviour can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
 The result of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, but it may be explained through strong deformation of the envelope shape on a short distance, which 
 
@@ -755,11 +757,11 @@ this happens only in the presence of a high absorption \cite{mikki2009electromag
 %% 
 
 \section{Electromagnetic waves in periodic structures}
-\subsection{Periodic structures and the Bloch theorem}
+\subsection{Periodic structures and the Bloch-Floquet theorem}
 %In a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
  %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
 
-\paragraph{Periodic media}%{{{
+\paragraph{Periodicity}%{{{
 The previous sections discussed infinite homogeneous media. The only exception was when a refraction at an interface of two media was discussed, for which we shown that the possible orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
 
 There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
@@ -774,29 +776,32 @@ where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}
 The points generated by all combinations of possible translations by $m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3$ form a periodic lattice.
 The minimum volume associated to each point of the lattice will be denoted as a \textit{unit cell}. Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
 
-In three dimensions, there are six \textit{crystal families} that differ rotation or mirror symmetries of their lattices, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity/permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions based on the group theory. 
+In three dimensions, there are six \textit{crystal families} that differ rotation or mirror symmetries of their lattices, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity/permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. % based on the group theory. 
 Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry. In the cubic lattice, $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
 
 %}}}
 \paragraph{The Bloch theorem}%{{{
-The \textit{Bloch theorem} (or also \textit{Bloch-Floquet} theorem) states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
+The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
 \begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
 \label{eq_bloch}\end{equation} 
 \begin{equation}\HH(t, \rr) = \mathbf{v}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{v}(\rr) = \mathbf{v}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_blochh}\end{equation} 
-Thus, $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode function}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
+Thus, $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
-The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical that of a plane wave
-\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}. \tag{\ref{eq_pw} \again} \end{equation}
-Capital $\KK$ is used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in free space. 
+The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical to that of a plane wave
+\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}, \tag{\ref{eq_pw} \again} \end{equation}
+except for the capital $\KK$ being used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in homogeneous media. 
 
-Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$, nor the direction and magnitude of $\KK$, it only states they exist.
+Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$, nor the direction and magnitude of $\KK$, it only states a solution in the form of Eqs. (\ref{eq_bloch}, \ref{eq_blochh}) can be found.
 % TODO proof /home/filip/PhD/Sources_MM_theory/Bloch_Theorem_Proof.pdf
 % TODO example illustration of Bloch wave -> plotted in Python
 
 %}}}
 \paragraph{The proof of the Bloch-Floquet theorem}%{{{
-$$ $$
+This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function in crystals on the basis of quantum mechanics. The outline of the proof which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on that the Hamiltonian operator commutes with the operator of discrete translation by the inter-atomic distance. 
+ As can be easily shown, two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
+
+The following proof will be modified to use the explicit, classical formulation of electromagnetism as the rest of this thesis does. 
 
 \add{
 \begin{enumerate}
@@ -857,8 +862,15 @@ The field shape given by Eq. (\ref{eq_}) \todo{eq}
 in the following we will plot the unfolded bands instead as it seems to give clearer physical interpretation of data.
 -> TODO doplnit "PhC book": dispersní křivky atd.
 
-"Hopping model" -- individual oscillators with frequency more-or-less dependent on boundary conditions 
-			 (Neumann ... Gamma point ... "dE/dx=0"  vs.  Dirichlet ... M-point ... "E=0")
+A different view to the formation of the dispersion curves can be drawn in analogy with the \textit{tight-binding} model in solid-state physics, first analyzing the unit cells isolated in free space, and then taking into account their mutual interaction that shifts the frequency up, or down. \label{hopping}
+The 
+This is . %-- individual oscillators with frequency more-or-less dependent on
+
+Returning to the figure of dispersion curves in a periodic structure, % TODO ref
+the $\Gamma$ point in the Brillouin zone, where $k = 0$, can be identified with Neumann boundary conditions, where we require $dE/dx = 0$ (otherwise the derivative of the field $E$ would not be continuous). Analogically, the $X$ point
+
+
+			 (Neumann ...  ... ""  vs.  Dirichlet ... M-point ... "E=0")
 
 
 
@@ -883,6 +895,16 @@ in the following we will plot the unfolded bands instead as it seems to give cle
 % -> exponential wave decay with phase difference across the cell
 % -> note about how Fourier transform allows no point source to radiate energy within the bandgap
 % -> PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
+
+
+%  \cite{johnson2003introduction}
+%  Electromagnetic wave propagation in periodic media was first studied by
+%  Lord Rayleigh in 1887, in connection with the peculiar reflective properties of a
+%  crystalline mineral with periodic “twinning” planes (across which the dielectric
+%  tensor undergoes a mirror flip). These correspond to one-dimensional photonic
+%  crystals, and he identified the fact that they have a narrow band gap prohibiting
+%  light propagation through the planes. This band gap is angle-dependent
+
 
 \subsection{Homogenization}
 \mdf{
@@ -1077,3 +1099,10 @@ PK: "The word “metamaterial” (MM) appeared first in the paper by Smith et al
 %* try the anisotropic magnetic goo from the drawing board for children (but for electrical response)
 %* find out how they could achieve negative phase speed
 %* quantum point of view to negative phase/group velocity 
+
+% TODO 2015-01-23: 
+% 1) note that zero PBG width = dirac point = zero effective photon mass 
+% 2) investigate how mode anticrossing relates to the significant spatial dispersion
+% 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
+% 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
+% 5) note about the meep peculiarity of notation: 'omega'=omega0/2pi , 'gamma'=gamma/2pi, 'sigma'=Deltaeps = F/omega0^2
