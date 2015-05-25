@@ -11,12 +11,100 @@
 %%   of the thesis
 %     --> 
 
+
+\section{Applications of periodic structures}
+\subsection{One-dimensional structures}%{{{
+%}}}
+\subsection{Planar photonic band-gap structures}%{{{
+\paragraph{Photonic-crystal waveguides in integrated optics}
+\paragraph{Photonic filters}
+\paragraph{High field concentration}
+Magnetized PhCs with enhanced magneto-optic interaction for one-dimensional light propagation
+%}}}
+\subsection{Imaging beyond the diffraction limit }%{{{
+\paragraph{Superlensing -- amplification of evanescent waves}
+\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} 
+\mdf{
+hyperbolic media, analogy with optical fibers, graphene nanostructures...
+}
+\paragraph{Challenges}
+To achieve the desired high resolution, the medium has to maintain 
+If a metamaterial is used as the medium, this obviously translates into the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact much stricter, as also the spatial dispersion has to be negligible for the waves the desired resolution, which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
+
+Aside from spatial dispersion, a great challenge are the dissipative losses. If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. This is essential for the evanescent-wave amplification, where small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
+
+To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were either limited to the easily accessible microwave % todo cite, and verify there is nothing interesting in the IR lately
+region, or were barely working experimental devices, often requiring .
+
+The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not simultaneously allow much better imaging with detectors placed in the near-field.
+%}}}
+\subsection{Electromagnetic cloaking}%{{{
+\paragraph{Transformation optics}
+
+\mdf{
+Static-field cloaking/shielding of magnetic field
+}
+\paragraph{Full cloaks and carpet cloaks}
+
+A simplified task is to construct the \textit{carpet cloak}, a hollow structure adjacent to a boundary that conceals an obstacle near the boundary. Note however, that a carpet cloak can be constructed of homogeneous, anisotropic dielectrics.
+
+\paragraph{Challenges}
+In the author's opinion, a great conceptual breakthrough would be needed to overcome the band-width limitations and losses that prevent from building any usable electromagnetic cloak. 
+%}}}
+\subsection{Metamaterials and sensing}%{{{
+%}}}
+\subsection{Metasurfaces, compact antennas and impedance engineering}%{{{
+\paragraph{}
+%}}}
+
+\section{Author's comments}
+\add{
+\chapter{Metamaterials -- Critique and alternatives}
+TODO TODO At the end, the author would like to express his concern about the efficiency and practical impact of the metamaterial research in the last years. 
+The number of papers related to metamaterials has rocketed in the last decade in almost unprecedented way % todo cite some MM scientometry here
+, and 
+the hypertrophic number of publications dissolves the concentration of pertinent ideas in almost a homeopatic way. Perhaps anybody interested in MM will soon notice there are many papers adding just a quantitative difference to what was already published, often without stating this important fact. This may give a superficial feeling of an exponential gathering of knowledge, but in fact it mostly contributes to the information noise. 
+
+%The name of this chapter is borrowed from the same-named book by Ben Munk \cite{Munk2004}. The book presents several objections against MM that seem to be ill-argumented and some of them seem to be also utterly wrong. 
+%However, as another point it also touches a really deep problem: 
+
+It is understandable that such a new (or at least newly recognized) scientific field exerts a great pressure to publish as much and as early as possible, which is exacerbated by the objective way of how the contemporary scientific work is evaluated. 
+That said, the situation is not as bad as it might seem and the author is also aware of several recent brilliant MM publications that give a deep insight into new physical phenomena.
+
+
+Another question is the practical benefit of metamaterials for the humankind. 
+Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
+
+Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
+
+To conclude this pessimistic, but well meant section, the author
+}
+
 %% """ If a too-simplistic physical theory is forced to predict or explain data that are not within its scope,
 %%     it can often do so, but without giving any physical insight. Such a result is not a proof of the theory to be
 %%     applicable to the problem, and in some cases not even of the theory to make any sense whatsoever."""
 
+Fundamental issues have to be resolved in the MM and PhC field are
+losses
 
-\paragraph{Outcomes}
+The TiO$_{2}$ resonators, whose the manufacturing and sieving process, experimental characterisation and numerical computation was extensively discussed in this thesis, can be viewed as an example of such research.
+\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
+
+\paragraph{Optimistic notes}
+That said, the author does not want the thesis to sound too sceptical about the future of electromagnetic structures. 
+
+\add{
+Metamaterials do not bring new physical phenomena on their own, they only force one to conscientiously review the common electrodynamics. There
+are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
+
+The research of Metamaterials is typical by taking a relatively novel phenomenon (wave propagation in periodic structure) and
+interpreting it on the basis of a well-developed theory (electrodynamics of homogeneous media). In future, this trend may be opposite --
+that is, new theory motivated by the metamaterial research may find its application on other phenomena.
+One example may be the theory of strongly hyperbolic media, which turns out to be fundamental for electrodynamics in extremely strong magnetic fields \cite{Smolyaninov2011}.
+}
+
+
+\section{Outcomes of the thesis}
 We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
 The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
 
@@ -27,24 +115,7 @@ Broad range of physical phenomena may be included in the simulations. A library 
  The FDTD method is applicable also to non-periodic, lossy and time-changing structures, while PWEM enables e. g. studies of the magnetooptic phenomena.
 All referred numerical methods, FDTD, PWEM and TMM, were tested also to give compatible and plausible results under oblique incidence and both TE/TM polarisations. 
 
-\paragraph{Author's view on the future of metamaterials and photonic crystals}
--
 
-\add{
-Metamaterials do not bring new physical phenomena, they only force one to conscientiously review the common electrodynamics. There
-are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
-
-The research of Metamaterials is typical by taking a relatively novel phenomenon (wave propagation in periodic structure) and
-interpreting it on the basis of a well-developed theory (electrodynamics of homogeneous media). In future, this trend may be opposite --
-that is, new theory motivated by the metamaterial research may find its application on other phenomena.
-One example may be the theory of strongly hyperbolic media, which turns out to be fundamental for electrodynamics in extremely strong magnetic fields \cite{Smolyaninov2011}.
-}
-
-Fundamental issues have to be resolved in the MM and PhC field are
-losses
-
-\paragraph{TiO$_{2}$ resonators}
-\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated, that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
 
 
 
@@ -52,22 +123,6 @@ losses
 % == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
 
 
-% \chapter{Metamaterials -- Critique and alternatives}
-% TODO TODO At the end, the author would like to express his concern about the efficiency and practical impact of the metamaterial research in the last years. 
-% 
-% The name of this chapter is borrowed from the same-named book by Ben Munk \cite{Munk2004}. The book presents several objections against MM that seem to be ill-argumented and some of them seem to be also utterly wrong. However, as another point it also touches a really deep problem: the hypertrophic number of publications dissolves the concentration of pertinent ideas in almost a homeopatic way. Perhaps anybody interested in MM will soon notice there are many papers adding just a quantitative difference to what was already published, often without stating this important fact. This may give a superficial feeling of an exponential gathering of knowledge, but in fact it mostly contributes to the information noise. 
-% 
-% It is understandable that such a new (or at least newly recognized) scientific field exerts a great pressure to publish as much and as early as possible, which is exacerbated by the objective way of how the contemporary scientific work is evaluated. 
-% That said, the situation is not as bad as it might seem and the author is also aware of several recent brilliant MM publications that give a deep insight into new physical phenomena.
-%
-% ** Subwl imaging: "if we can make deeply subwl inclusions, we can perhaps make slightly subwl near-field detectors"
-% 
-% Another question is the practical benefit of metamaterials for the humankind. 
-% Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
-% 
-% Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
-% 
-% To conclude this pessimistic, but well meant section, the author
 
 
 %%26. Y. Fu, L. Thyl ́n and H. Agren, “A Lossless Negative Dielectric Constant from Quantum e Dot Exciton Polaritons,” Nano Lett. 8, 1551 (2008).
