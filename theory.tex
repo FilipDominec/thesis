@@ -420,7 +420,7 @@ this is also known as the spatial \textit{walk-off}.
 	\includegraphics[width=\textwidth]{img/ifc_kdispersion_hyp.pdf} 
 \end{figure}
 
-Fig. \ref{fg_ifc2}c shows again the special case of anisotropic medium, where the wave propagates near the optical axis, and thus where the Snell law can still be used to determine the refraction of a plane wave, based the generalized notion of the index of refraction.
+Fig. \ref{fg_ifc2}c shows again the special case of the anisotropic medium, where the wave propagates near an optical axis, and thus where the Snell law can still be used to determine the refraction of a plane wave, based the generalized notion of the index of refraction.
 However, there is a pitfall if one tries to apply the Snell law for prediction of how the beam will refract. The problem originates from the differential nature of the group velocity definition in Eq. (\ref{eq_vg}). 
 %While the magnitude of the wavevector changes only negligibly, with the square of a 
 While the phase velocity of a monochromatic wave at the frequency $\omega_0$ does not appreciably change upon a small deviation of the angle $\alpha$ from the optical axis  [c.f.  Eq. (\ref{eq_osculating})], the group velocity direction does, because it has a nonzero linear component in its dependence on the wavevector:
@@ -714,9 +714,9 @@ The question of indefinite sign can be decided using the assumption of medium \t
 %  *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
 %  *			  nonlocal media -> weird things happen, todo\\
 %  }
-In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave.
+In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave. \todo{cite}
 
-The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones around $\omega \sim 2\pi$. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
+The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative around the resonance for $\omega \sim 2\pi$, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
 
 It follows from this that the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
@@ -727,7 +727,7 @@ This result
 %of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, 
 may however be explained through strong deformation of the envelope shape on a short distance, which ensures the information carried by the wave modulation to propagate causally, out from the source, and always with speed lower or equal to the speed of light in vacuum, $c$.
 
-Negative group velocity has been experimentally observed in a thin sample. It manifested as a negative shift of the light envelope compared to the absence of the medium \cite{dolling2006simultaneous}. Note that negative group velocity is independent of the sign of the phase velocity, which may be both positive and negative \cite{mikki2009electromagnetic}.
+Negative group velocity has been experimentally observed in a thin sample. It manifested as a negative shift of the light envelope compared to the absence of the medium \cite{dolling2006simultaneous}. Note that the negative group velocity is independent of the sign of the phase velocity, which may be both positive and negative \cite{mikki2009electromagnetic}.
 
 %}}}
 \paragraph{Signal velocity}%{{{
@@ -735,7 +735,7 @@ The notion of \textit{signal} or \textit{information propagation velocity} is so
 identified with the group velocity, $\vg$. However, this may be misleading, as its differential definition in Eq. (\ref{eq_vg}) enables one to define the group velocity for slow-enough modulation only, so that the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
 
 %In the author's view, it is rather a problematic term because a 
-Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), leads to a contradiction. From the convolution-multiplication theorem already mentioned in Eq. (), it can be shown that any information carrying function with a finite-support has to span over an infinite spectrum. 
+Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), leads to a contradiction. From the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a finite-support has to span over an infinite spectrum. 
 A temporally limited optical pulse will be always more or less distorted upon propagation in dispersive medium, and the information velocity becomes a problematic term.
 Therefore, the author is convinced that \textit{information} velocity can not be directly identified with the group velocity. 
 
@@ -754,9 +754,6 @@ Therefore, the author is convinced that \textit{information} velocity can not be
 
 \section{Electromagnetic waves in periodic structures}
 \subsection{Periodic structures and the Bloch-Floquet theorem}
-%In a given time the wave in a periodic medium takes on the form of Bloch wave (\ref{eq_bloch}): 
- %$\mathbf{E}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}Kz} \cdot \mathbf{u}(\mathbf{r})$, i.e. it is a product of a harmonic \textit{envelope} and a cell-periodic \textit{mode}. Computing the dispersion curves involves computing the envelope wavenumber $K = K(f)$ for each frequency $f$ in the desired spectrum. The information about the mode $\mathbf{u}(\mathbf{r})$ is not used and instead the metamaterial cell is treated as if it was a homogeneous medium -- therefore this procedure is also called \textit{homogenisation}.
-
 \paragraph{Periodicity}%{{{
 The previous sections discussed infinite homogeneous media. The only exception was when a refraction at an interface of two media was discussed, for which we shown that the possible orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
 
@@ -772,33 +769,72 @@ where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}
 The points generated by all combinations of possible translations by $m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3$ form a periodic lattice.
 The minimum volume associated to each point of the lattice will be denoted as a \textit{unit cell}. Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
 
-In three dimensions, there are six \textit{crystal families} that differ rotation or mirror symmetries of their lattices, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity/permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. % based on the group theory. 
+In three dimensions, there are six \textit{crystal families} that differ rotation or mirror symmetries of their lattices, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity and permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups} in three dimensions. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. % based on the group theory. 
 Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry. In the cubic lattice, $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
 
 %}}}
 \paragraph{The Bloch theorem}%{{{
 The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
-\begin{equation} \E(t, \rr) = \mathbf{u}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u}(\rr) = \mathbf{u}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
+\begin{equation} \E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
 \label{eq_bloch}\end{equation} 
-\begin{equation}\HH(t, \rr) = \mathbf{v}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{v}(\rr) = \mathbf{v}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
+\begin{equation}\HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_blochh}\end{equation} 
-Thus, $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
+Thus, $\mathbf{u}(\rr)$, $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
 The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical to that of a plane wave
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}, \tag{\ref{eq_pw} \again} \end{equation}
 except for the capital $\KK$ being used to distinguish the wave vector of the Bloch wave envelope from the wave vector $\kk$ in homogeneous media. 
 
-Note this theorem does not determine the shape of $\mathbf{u}(\rr)$, $\mathbf{v}(\rr)$, nor the direction and magnitude of $\KK$, it only states a solution in the form of Eqs. (\ref{eq_bloch}, \ref{eq_blochh}) can be found.
+Note this theorem does not determine the shape of $\mathbf{u_e}(\rr)$, $\mathbf{u_m}(\rr)$, nor the direction and magnitude of $\KK$, it only states a solution in the form of Eqs. (\ref{eq_bloch}, \ref{eq_blochh}) can be found.
 % TODO proof /home/filip/PhD/Sources_MM_theory/Bloch_Theorem_Proof.pdf
 % TODO example illustration of Bloch wave -> plotted in Python
 
 %}}}
 \paragraph{The proof of the Bloch-Floquet theorem}%{{{
-This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function in crystals on the basis of quantum mechanics. The outline of the proof which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on that the Hamiltonian operator commutes with the operator of discrete translation by the inter-atomic distance. 
- As can be easily shown, two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
+This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of the proof which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
+\begin{enumerate}
+ \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
+ \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$ } 
+ \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$.}
+ \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that 
+$\exists t\in \mathbb{C}: \hat T\psi = t\psi$. \todo{cite} 
+%$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
+}
+ \end{enumerate}
+% As can be easily shown, two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
+The steps will be followed using the explicit, classical formulation of electromagnetism as the rest of this thesis does. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the electric and magnetic fields can still be decomposed into monochromatic components:
+\begin{equation} 
+\begin{array}{cc}
+\E(t, \rr) = \E(\rr) e^{\ii \omega t}, \\
+\HH(t, \rr) = \HH(\rr) e^{\ii \omega t}. 
+\end{array}
+\label{eq_harmonic}\end{equation}
+We thus only need to prove the Bloch theorem for the time-invariant parts of the fields, which will play the same role as the wavefunction $\psi$.
 
-The following proof will instead use the explicit, classical formulation of electromagnetism as the rest of this thesis does. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the electric and magnetic fields can still be decomposed into harmonic waves:
-$\E(\rr, t) = \E(\rr) e^{\ii \omega t},\quad \HH(\rr, t) = \HH(\rr) e^{\ii \omega t}.$
+\begin{enumerate}
+\item{
+For $\E(\rr)$ and $\HH(\rr)$ to be valid solutions of Maxwell equations in the periodic structure at the angular frequency $\omega$,
+it can be derived from Eq. (\ref{eq_me3}, \ref{eq_me4}, \ref{eq_epstensor} and \ref{eq_harmonic}) in straightforward manner that
+\begin{equation} 
+\begin{array}{cc}
+{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \\
+{\murl}^{-1 }(\omega,\rr) \nabla\times \left[{\epsrl}^{-1}(\omega,\rr) \nabla\times \HH(\rr)\right] = \frac{\omega^2}{c^2}\HH(\rr),
+\end{array}
+ \label{eq_eigen}
+\end{equation}
+In analogy with the quantum-mechanical proof, the left hand side of Eq. \ref{eq_eigen} can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$. Obviously the operator differs for the electric and magnetic field.
+} 
+\item{
+The translation operator acts by substitution of the position vector $\rr$, e.g. for the electric field:
+\begin{equation} \hat T\psi \rightarrow \E(\rr+\mathbf{a_1}), \text{ or } \E(\rr+\mathbf{a_1}) \label{eq_blocht}\end{equation}
+From the periodicity in Eq. (\ref{eq_trsym}), the commutation relation directly follows:
+\begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr             ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr             ) \nabla\times \E(\rr) \right] \E(\rr+\mathbf{a_1}) \label{eq_blochht}\end{equation}
+\begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\mathbf{a_1}) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\mathbf{a_1}) \nabla\times \E(\rr) \right] \E(\rr+\mathbf{a_1}).  \label{eq_blochth}\end{equation}
+In three dimensions, there are three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
+} 
+\item{}
+ \end{enumerate}
+
 
 
 
@@ -853,7 +889,7 @@ The field shape given by Eq. (\ref{eq_}) \todo{eq}
  }
 
 %}}}
-\paragraph{Reciprocal space, Brillouin zones and Isofrequency contours}
+\paragraph{Reciprocal space, Brillouin zones and Isofrequency contours} %{{{ TODO
 
 %}}}
 \paragraph{}%{{{
