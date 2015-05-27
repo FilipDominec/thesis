@@ -775,11 +775,13 @@ Unless stated otherwise, we will assume the cubic lattice is used, which has hig
 %}}}
 \paragraph{The Bloch theorem}%{{{
 The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
-\begin{equation} \E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
+\begin{equation} 
+\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
 \label{eq_bloch}\end{equation} 
-\begin{equation}\HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
+\begin{equation}
+\HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
 \label{eq_blochh}\end{equation} 
-Thus, $\mathbf{u}(\rr)$, $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
+Thus, $\mathbf{u_e}(\rr)$, $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
 The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is formally identical to that of a plane wave
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}, \tag{\ref{eq_pw} \again} \end{equation}
@@ -797,7 +799,7 @@ This theorem is essential for understanding the electromagnetic behaviour of per
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$ } 
  \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$.}
  \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that 
-$\exists t\in \mathbb{C}: \hat T\psi = t\psi$. \todo{cite} 
+$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, eigenfunction $\psi$ is repeated across the cells, differing only by the phase being multiplied by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
 %$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
 }
  \end{enumerate}
@@ -813,64 +815,60 @@ We thus only need to prove the Bloch theorem for the time-invariant parts of the
 
 \begin{enumerate}
 \item{
-For $\E(\rr)$ and $\HH(\rr)$ to be valid solutions of Maxwell equations in the periodic structure at the angular frequency $\omega$,
+For $\E(\rr)$ to be a  valid solution of Maxwell equations in the periodic structure at the angular frequency $\omega$,
 it can be derived from Eq. (\ref{eq_me3}, \ref{eq_me4}, \ref{eq_epstensor} and \ref{eq_harmonic}) in straightforward manner that
 \begin{equation} 
-\begin{array}{cc}
-{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \\
-{\murl}^{-1 }(\omega,\rr) \nabla\times \left[{\epsrl}^{-1}(\omega,\rr) \nabla\times \HH(\rr)\right] = \frac{\omega^2}{c^2}\HH(\rr),
-\end{array}
- \label{eq_eigen}
+{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),   \label{eq_eigen_e}
 \end{equation}
-In analogy with the quantum-mechanical proof, the left hand side of Eq. \ref{eq_eigen} can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$. Obviously the operator differs for the electric and magnetic field.
+In analogy with the quantum-mechanical proof, the left hand side of Eq. (\ref{eq_eigen_e}) can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$. Obviously the operator differs for the electric and magnetic field.
 } 
 \item{
 The translation operator acts by substitution of the position vector $\rr$, e.g. for the electric field:
-\begin{equation} \hat T\psi \rightarrow \E(\rr+\mathbf{a_1}), \text{ or } \E(\rr+\mathbf{a_1}) \label{eq_blocht}\end{equation}
-From the periodicity in Eq. (\ref{eq_trsym}), the commutation relation directly follows:
+\begin{equation} \hat T\psi \rightarrow \E(\rr+\mathbf{a_1}). \label{eq_blocht}\end{equation}
+The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are equal:
 \begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr             ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr             ) \nabla\times \E(\rr) \right] \E(\rr+\mathbf{a_1}) \label{eq_blochht}\end{equation}
 \begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\mathbf{a_1}) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\mathbf{a_1}) \nabla\times \E(\rr) \right] \E(\rr+\mathbf{a_1}).  \label{eq_blochth}\end{equation}
-In three dimensions, there are three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
+In three dimensions, the argument is to be repeated for three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
 } 
-\item{}
- \end{enumerate}
-
-
-
-
-
-\add{
-\begin{enumerate}
-\item{Maxwell equations are invariant in space;  medium is (periodic) thus invariant under discrete translation as in Eq. (\ref{eq_trsym}) 
-$$ \hat M E(\rr + \rho) = f(\rr); $$
-} 
-\item{for $\kk$ real, the wave is not amplified/decaying, thus ??
-$$ \exists C\in \mathbb{C}, |C| = 1:  $$ 
-} 
- \item{
+\item{
+Then the wave translated by any of the lattice vectors $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$ is also a solution of Maxwell equations:
+\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] \E(\rr+\mathbf{a_1}) =  \frac{\omega^2}{c^2}\E(\rr+\mathbf{a_1}).  \label{eq_blochth}\end{equation}
+}
+\item{
+\begin{equation}  \E(\rr+\mathbf{a_1}) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
+where $K_1 a_1$ represents the phase shift between the adjacent cells. \todo{discuss the $\KK$ vector further}
 }
  \end{enumerate}
-}
+The same arguments have to be valid also for the magnetic field $\HH(\rr)$, where the Hamiltonian is associated with a slightly different operator:
+\begin{equation}
+{\murl}^{-1 }(\omega,\rr) \nabla\times \left[{\epsrl}^{-1}(\omega,\rr) \nabla\times \HH(\rr)\right] = \frac{\omega^2}{c^2}\HH(\rr).   \label{eq_eigen_h}
+\end{equation}
 
 %}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
--
-
-\mdf{
-The simplest "structure" to be started with is surely the empty vacuum with homogeneous $\varepsilon := 1$ and $\mu := 1$. One particularly simple solution of the Maxwell equations in vacuum is the planar wave propagating along the $z$-axis, defined by Eq. (\ref{eq_pw2}).
-Let us now introduce virtual periodicity, requiring that the vacuum properties are invariant under discrete translation by an arbitrary length $a$ along the $z$-axis, which naturally holds. The important Bloch-Floquet theorem states that while the wave in periodic medium does not have to be periodic anymore, it is a product of two periodic functions:
-
-In a homogeneous medium, there is a simple \textit{dispersion} relation between the frequency  $f$ and the wavenumber $k$, given as
-\begin{equation} f = \frac{ck}{2\pi \cdot n} = \frac{ck}{2\pi \cdot \sqrt{\varepsilon \mu}}. \label{eq_dispersionold}\end{equation}
-The constant $n = \sqrt{\varepsilon \mu}$ connecting the frequency and wavenumber is the index of refraction.
-}
-
 \begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
 	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
 \end{figure}
+Homogeneous media, such as vacuum, naturally fulfill the definition of periodicity in Eq. (\ref{eq_trsym}).
+From the principle of correspondence, the predictions of the Bloch-Floquet theorem should be verified against the already known solution of a plane wave in vacuum, Eq. (\ref{eq_pw}),
+\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}. \tag{\ref{eq_pw} \again} \end{equation}
+One solution of the Bloch wave in vacuum can be directly found as a formal modification of the dispersion relation,
+\begin{equation}  
+\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) := \E_0  \text{ and } \KK := \kk.
+\label{eq_blochvac}
+\end{equation}
+Any lattice of periodic unit cells may be imagined in vacuum. With an arbitrary choice of the unit cell size $a$, % TODO represent by lattice vectors G?
+the plane wave in vacuum can be also represented by any of infinitely many other combinations of
+\begin{equation} 
+\left.  \begin{array}{cc}
+\mathbf{u_{e}}(\rr) := \E_0 e^{2\pi\ii (m_1/a_1 + m_2/a_2 + m_3/a_3)} \\
+\KK := \kk - \frac{2\pi m_1}{a_1} - \frac{2\pi m_2}{a_2}- \frac{2\pi m_3}{a_3},\label{eq_}
+\end{array}\quad \right\} \quad \forall m_{1,2,3} \in \mathbb{Z}
+\end{equation}
+which all maintain the requirement of the mode function $\mathbf{u_{e}}(\rr)$ being periodic and still give the exactly same resulting plane wave. This means the 
 
 \mdf{
-When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude. (The equilibrium of forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.) We assume this also in this example with virtual periodicity. The \textit{Bloch wave} (\ref{eq_bloch}) is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
+When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude. (The equilibrium of forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.) We assume this also in this example with virtual periodicity. The \textit{Bloch wave} is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
 \begin{enumerate}
  \item{In the \textit{unfolded} plot, the phase shift is expressed entirely by the envelope $\mathrm{e}^{\mathrm{i}Kz}$. One can always find a line coming from the front side of a unit cell to its back side, along which the mode function does not change its phase significantly $\mathbf{u(\mathbf{r})}$. In other words, the volume of the unit cell is not divided by any \textit{nodal plane} in the real part of electric field  $\mathbf{u(\mathbf{r})}$. (However, closed nodal planes within the unit cell may appear due to individual resonances.)
 
