@@ -846,7 +846,9 @@ The same arguments have to be valid also for the magnetic field $\HH(\rr)$, wher
 
 %}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
-\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below) } \label{fg_phc} \centering  %% TODO write caption; complement the text to match
+\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below)\\
+The lattice periodicity allows to draw the dispersion curves of periodic structures using natural, scale-invariant units, with the Bloch wave number $K$ divided against the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
+} \label{fg_phc} \centering  %% TODO write caption; complement the text to match
 	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
 \end{figure}
 Homogeneous media, such as vacuum, naturally fulfill the definition of periodicity in Eq. (\ref{eq_trsym}).
@@ -872,19 +874,23 @@ All possible dispersion curves for a Bloch wave with the $\KK$ vector oriented a
 
 Note that the actual physical shape of the fields in space can not be deduced from the dispersion curve. To fully determine it, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$. This leads to the inherent ambiguity of description on the basis of the Bloch wave, which can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phc}c. Plotting any other interval of equal width would be equivalent. 
 
-xx-alibaba
-xx_babylon
+Further, all forward and backward propagating solutions are mirror-symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity} or even breaking the time-reversal symmetry (c.f. \cite{vanwolleghem2009unidirectional}). Thus, in many papers on periodic structures \todo{cite some!}
+, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only. In some other references, such as \cite{mortensen2010unambiguous}, \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
-fgbabylon
+The physical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
+\begin{enumerate}
+\item{
+For  $\omega\in\langle 0, \pi c /a\rangle$, a the mode function is constant $\mathbf{u_e}(\rr) := E_0$ and $K := \omega/c$. 
+} 
+\item{
+At the first point of folding, the mode function of $\mathbf{u_e}(\rr) := E_0 e^{2\pi\ii/a}$ and the formal solution of the \textit{backward} wave is used with $K := 2\pi/a - \omega/c$. 
+} 
+\item{
+When the dispersion curve touches the $K=0$ axis at the frequency
+} 
+ \end{enumerate}
 
-Further, all forward and backward propagating solutions are mirror-symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg} or even breaking the time-reversal symmetry (c.f. \cite{vanwolleghem2009unidirectional}). Thus, in many papers on periodic structures \todo{cite some!}
-, all dispersion curves are \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only. In some other papers, full unfolded dispersion curves are used.
-
-The physical interpretation of folding 
-
-The lattice periodicity allows to draw the dispersion curves of periodic structures using natural, scale-invariant units, with the Bloch wave number $K$ divided against the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
-
-
+In spite what was written here, in the section discussing the numerical methods we will show that there indeed exist nontrivial rules to prefer one particular from all dispersion curves in the unfolded plot. In the Results section we will show there is some physical interpretation of this.
 
 \todo{rewrite?}
 \add{
