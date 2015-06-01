@@ -478,7 +478,7 @@ The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used in
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
-Assuming the dependence of the medium permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk)$ is a function varying slowly with $\kk$, we can express them in general as power series \cite[p. 367]{landau1984electrodynamics}:
+Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk)$ are smooth functions varying slowly with $\kk$, we can express them in general as power series \cite[p. 367]{landau1984electrodynamics}:
 \begin{equation} 
 \left.  \begin{array}{c}
 \epsrn(\omega,\kk) = 1 + \chi_e(\omega) + \ii \gamma_{\text{e}}(\omega) \kk + [\alpha_{\text{e}}(\omega) \kk] \kk + \ldots, \medskip  \\
@@ -995,13 +995,16 @@ ref Homogenisation issues - response to our paper from OpEx
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 %% Negative index may arise from resonances
 
-
 \subsection{What are metamaterials and photonic crystals?} %{{{
+\paragraph{todo}%{{{
 \add{
-%% This is after the theory of eldn in periodic media.
 %% Nonresonant metamaterials (ie. in the 1st Brillouin zone, see [Kadlec2008 / Vol. 33, No. 19 / OPTICS LETTERS] and Juraj]
 %% resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
 %% Think over, note the paper Dominec2014
+
+Both the MM and PhC concepts are inspired by the physics of waves in homogeneous solid-state crystals, but viewed at different scales. Photonic crystals are related to the electron waves that have wavelength similar to the inter-atomic distances, whereas metamaterials  
+Photo
+Metamaterials 
 
 The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
 
@@ -1014,33 +1017,34 @@ Both types of structures exhibit the most interesting behaviour at their frequen
 note silveirinha2007metamaterial \cite{silveirinha2007metamaterial}
 resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
 Think over, note our paper dominec2014transition \cite{dominec2014transition}
-
 }
-\paragraph{Definition by the Bloch wavelength}
+
+%}}}
+\paragraph{Definition by the Bloch wavelength}%{{{
 Igor Tsukerman in Ref. \cite{tsukerman2011nonlocal}: \textit{"metamaterials - artificial periodic structures with features smaller than the vacuum wavelength"} 
 
 \begin{figure}[h] \caption{Schematic of usual relation of reciprocal lattice vector to the wavelength in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
 
 \add{The notion of "wavelength", or more precisely "Bloch wavelength", is not uniquenly defined in such structures! }
-
-\paragraph{Definition by energy localisation}
-
+%}}}
+\paragraph{Definition by energy localisation}%{{{
 \add{Energy is the most localized at the frequencies of resonances.}
 
-In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
+\mdf{In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
 The energy of the resonant field is spread relatively evenly over the majority of the unit cell volume, which results in great sensitivity of the PhC behaviour to its periodicity and typically also in a high spatial dispersion. The most prominent phenomenon observed in PhC is the emergence of forbidden photonic bands around resonant frequencies, where the light can not propagate through the structure. 
 
 On the contrary, the cells of a metamaterial (MM) are expected to exhibit individual resonances which should not significantly couple to each other. 
 At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
+}
 
 \add{Note that completely nonresonant structures also denoted as \textit{metamaterials} exist, operating in their first photonic band \cite{richter1995, kadlec2008, sibik2010dp}.}
 
-
-\paragraph{Definition by existence of effective parameters}
+%}}}
+\paragraph{Definition by existence of effective parameters}%{{{
 -
 
 \todo{If so, would be MMs a very narrow, or very broad  group of structures?}
-
+%}}}
 
 \paragraph{Definition by purpose and way of thinking}
 
