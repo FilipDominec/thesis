@@ -44,7 +44,6 @@ Any other complicated shape of the fields can be decomposed into a linear superp
 The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
  
-
 %% TODO add figure: plane wave
 Without loss of generality, we define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
@@ -82,7 +81,7 @@ where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsi
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $T\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
  \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
-	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
+	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
 \end{figure}
 %}}}
 
@@ -110,7 +109,7 @@ Consequently we may introduce the local \textit{relative permittivity} $\epsrl(\
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
 \begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
-	\includegraphics[width=17cm]{img/oscillator_spectrum.pdf}
+	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf}
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on different time scales, and thus the medium response usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
 
@@ -239,7 +238,7 @@ The wave equation in local dispersive media (\ref{eq_wavek_disp})
 also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for a static homogeneous field.
 
 \begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\epsrl'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering  %% TODO refto
-	\includegraphics[width=17cm]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
+	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
 \end{figure}
 If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can have a solution with nonzero $\E$ when $\epsrl(\omega)' = 0$, or with nonzero $\HH$ when $\mu_r(\omega)' = 0$. Therefore, the corresponding dispersion curve for a longitudinal wave is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that maintains the spatial amplitude envelope that was originally excited. 
 
@@ -443,7 +442,7 @@ Such a case can indeed occur in natural or artificial media, as described in mor
 \begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefr.pdf} 
 \end{figure}
-\begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for media choice the same as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
+\begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for the same medium as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
@@ -597,9 +596,6 @@ If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the 
 \begin{figure}[h] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plot as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plot as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
-\textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
-\textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
-\textbf{(c)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 \clearpage
 
@@ -648,7 +644,7 @@ The waves propagating with the higher wavenumber $k$ are denoted as \textit{addi
 \paragraph{Odd expansion terms and optical activity }   %{{{ TODO
 Returning to the power expansion of $\epsLL(\omega, \kk)$ in terms of $k$ in Eq. (\ref{eq_epsmusd1}), we can identify the term constant in $k$ with the electric dipole moment $\chi_e(\omega)$, the term proportional to $k^2$ with the magnetic dipole moment $\chi_m(\omega)$ (or, also the electric quadrupole moment), and the recently discussed term proportional to $k^4$ with an electric octupole or magnetic quadrupole (\cite{agranovich2006spatial, agranovich2004linear, krowne2007book}).
 
-The odd terms were not discussed yet, although they have important physical meaning. Their nonzero values break the spatial inversion symmetry of the medium, and are related to optical activity \cite{bungay1993equivalency}
+The odd terms were not discussed yet, although they have important physical meaning. Their nonzero values break the spatial inversion symmetry of the medium, and are related to optical activity \cite{bungay1993equivalency}.
 
 \todo{related: \cite{fietz2011homogenization}}
 
@@ -660,7 +656,7 @@ The odd terms were not discussed yet, although they have important physical mean
 . In media with nonzero odd terms
 , the eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
 
-\begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the term $\gamma_e(\omega)$ that is linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}) is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
+\begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the function $\gamma_e(\omega)$, which occurs in the term linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}), is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
 \textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activen.pdf}
 \end{figure}
@@ -671,7 +667,7 @@ The odd terms were not discussed yet, although they have important physical mean
 \paragraph{The interface of two local media} %{{{ 
 In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction/reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respercively, that are cut in half by the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respercively, that are cut in half by the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
 
 The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks  with different levels of generalisation.  
 In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
@@ -784,9 +780,9 @@ Unless stated otherwise, we will assume the cubic lattice is used, which has hig
 
 %}}}
 \paragraph{The Bloch theorem}%{{{
-The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be expressed a product of two periodic functions:
+The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not have to be periodic anymore, it can always be decomposed as a product of two periodic functions:
 \begin{equation} 
-\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3).
+\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3),
 \label{eq_bloch}\end{equation} 
 \begin{equation}
 \HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \brho_1 + m_2 \brho_2 + m_3 \brho_3).
