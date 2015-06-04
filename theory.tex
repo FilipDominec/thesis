@@ -807,13 +807,13 @@ This theorem is essential for understanding the electromagnetic behaviour of per
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$ } 
  \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$.}
- \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that 
-$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, eigenfunction $\psi$ is repeated across the cells, differing only by the phase being multiplied by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
+ \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ is eigenfunction of the translation operator, that is,
+$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being multiplied by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
 %$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
 }
  \end{enumerate}
 % As can be easily shown, two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
-The steps will be followed using the explicit, classical formulation of electromagnetism as the rest of this thesis does. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the electric and magnetic fields can still be decomposed into monochromatic components:
+The steps can be reformulated using the explicit, classical formulation of electromagnetism as is used in the rest of this thesis. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the electric and magnetic fields can still be decomposed into monochromatic components:
 \begin{equation} 
 \begin{array}{cc}
 \E(t, \rr) = \E(\rr) e^{\ii \omega t}, \\
@@ -827,21 +827,21 @@ We thus only need to prove the Bloch theorem for the time-invariant parts of the
 For $\E(\rr)$ to be a  valid solution of Maxwell equations in the periodic structure at the angular frequency $\omega$,
 it can be derived from Eq. (\ref{eq_me3}, \ref{eq_me4}, \ref{eq_epstensor} and \ref{eq_harmonic}) in straightforward manner that
 \begin{equation} 
-{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),   \label{eq_eigen_e}
+{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr).   \label{eq_eigen_e}
 \end{equation}
 In analogy with the quantum-mechanical proof, the left hand side of Eq. (\ref{eq_eigen_e}) can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$ \cite{johnson2003introduction}. Obviously the operator differs for the electric and magnetic field.
 } 
 \item{
-The translation operator acts by substitution of the position vector $\rr$, e.g. for the electric field:
+The translation operator acts by substitution of the position vector $\rr$ in the argument. For example, the translated electric field is
 \begin{equation} \hat T\psi \rightarrow \E(\rr+\mathbf{a_1}). \label{eq_blocht}\end{equation}
-The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are equal:
+The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus the right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are equal:
 \begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr             ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr             ) \nabla\times \E(\rr+\mathbf{a_1})\right]  \label{eq_blochht}\end{equation}
 \begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\mathbf{a_1}) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\mathbf{a_1}) \nabla\times \E(\rr+\mathbf{a_1})\right] .  \label{eq_blochth}\end{equation}
 In three dimensions, the argument is to be repeated for three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
 } 
 \item{
 Then the wave translated by any of the lattice vectors $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$ is also a solution of Maxwell equations:
-\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\mathbf{a_1})\right] =  \frac{\omega^2}{c^2}\E(\rr+\mathbf{a_1}).  \label{eq_blochth}\end{equation}
+\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\mathbf{a_1})\right] =  \frac{\omega^2}{c^2}\E(\rr+\mathbf{a_1}).  \label{eq_blochme}\end{equation}
 }
 \item{
 \begin{equation}  \E(\rr+\mathbf{a_1}) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
