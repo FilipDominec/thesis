@@ -837,24 +837,34 @@ The translation operator acts by substitution of the position vector $\rr$ in th
 The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus the right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are equal:
 \begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr             ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr             ) \nabla\times \E(\rr+\mathbf{a_1})\right]  \label{eq_blochht}\end{equation}
 \begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\mathbf{a_1}) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\mathbf{a_1}) \nabla\times \E(\rr+\mathbf{a_1})\right] .  \label{eq_blochth}\end{equation}
-In three dimensions, the argument is to be repeated for three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
+In three dimensions, this argument is valid for three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
 } 
 \item{
 Then the wave translated by any of the lattice vectors $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$ is also a solution of Maxwell equations:
 \begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\mathbf{a_1})\right] =  \frac{\omega^2}{c^2}\E(\rr+\mathbf{a_1}).  \label{eq_blochme}\end{equation}
 }
-\item{
+\item{In analogy with the fourth step in the Bloch theorem proof, there exists at least one constant $K_1$ for which
 \begin{equation}  \E(\rr+\mathbf{a_1}) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
-where $K_1 a_1$ represents the phase shift between the adjacent cells. \todo{discuss the $\KK$ vector further}
+	where $K_1 a_1$ represents the phase shift between the adjacent cells along the direction of the lattice vector $\mathbf{a_1}$. In a similar manner, constants $K_2$ and $K_3$ can be associated with the translation by the $\mathbf{a_2}$ and $\mathbf{a_3}$ vectors, respectively. 
 }
  \end{enumerate}
-The same arguments have to be valid also for the magnetic field $\HH(\rr)$, where the Hamiltonian is associated with a slightly different operator:
+The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: 
+\begin{equation} \KK := 
+\frac{2\pi K_1(\mathbf{a_2}\times\mathbf{a_3})}{\mathbf{a_1}\cdot(\mathbf{a_2}\times\mathbf{a_3})} +  
+\frac{2\pi K_2(\mathbf{a_3}\times\mathbf{a_1})}{\mathbf{a_2}\cdot(\mathbf{a_3}\times\mathbf{a_1})} +  
+\frac{2\pi K_3(\mathbf{a_1}\times\mathbf{a_2})}{\mathbf{a_3}\cdot(\mathbf{a_1}\times\mathbf{a_2})}
+\label{eq_reciprocalK}\end{equation}
+If the translation vectors $\mathbf{a_{1,2,3}}$ are orthogonal, Eq. (\ref{eq_reciprocalK}) simplifies to
+% $K_{1,2,3}$ directly define the projection of the $\KK$:
+\begin{equation} \KK := 
+	\frac{2\pi K_1 \mathbf{a_1}}{a_1^{2}} +  
+	\frac{2\pi K_2 \mathbf{a_2}}{a_2^{2}} +  
+	\frac{2\pi K_3 \mathbf{a_3}}{a_3^{2}}
+\label{eq_reciprocalKorto}\end{equation}
+ The same arguments, with the identical wave vector $\KK$, have to be valid also for the magnetic field $\HH(\rr)$, where the Hamiltonian is associated with an operator very similar to that of the electric field in Eq. (\ref{eq_eigen_e}):
 \begin{equation}
 {\murl}^{-1 }(\omega,\rr) \nabla\times \left[{\epsrl}^{-1}(\omega,\rr) \nabla\times \HH(\rr)\right] = \frac{\omega^2}{c^2}\HH(\rr).   \label{eq_eigen_h}
 \end{equation}
-
-\todo{Elaborate mathematical treatise on this topic: \cite{sjoberg2005floquet}}
-%A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization
 
 %}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
@@ -945,6 +955,7 @@ M-point ... "E=0")
 
 %}}}
 
+
 % \paragraph{}%{{{
 % 
 % %}}}
@@ -968,7 +979,7 @@ M-point ... "E=0")
 %  light propagation through the planes. This band gap is angle-dependent
 
 
-\subsection{Homogenization}
+\subsection{Metamaterials and homogenization}
 \mdf{
 Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
 
@@ -984,7 +995,16 @@ ref Homogenisation issues - response to our paper from OpEx
 \cite{simovski2011electromagnetic}
 \cite{mortensen2010unambiguous}
 }
-%% "process of replacing a complex structure of subwavelength sized components with an “effective medium” with uni-
+
+% todo{Elaborate mathematical treatise on this topic: \cite{sjoberg2005floquet}}
+% A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization
+% " The behavior of the solutions of a PDE with rapidly oscil-
+%   lating coefficients, considered over distances large compared to the oscillations, is in
+%   several respects similar to the solutions of a PDE with slowly varying coefficients.
+%   The problem of homogenization is to find these slowly varying coefficients by an ap-
+%   propriate limit process of the rapidly oscillating ones"
+
+%% todo "process of replacing a complex structure of subwavelength sized components with an “effective medium” with uni-
 %% form properties. It is a fundamentally important notion which can be traced back to the earliest days of electro-
 %% magnetic theory, to the Lorentz-Lorenz and Maxwell-Garnet effective medium models [1–3]
 %			[1] J. C. M. Garnett, Phil Trans. R. Soc. A 203, 385 (1904).
