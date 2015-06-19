@@ -258,10 +258,10 @@ It shall be noted here that permittivity $\epsrl$ was introduced as a scalar, as
 	\end{array} \right) \cdot \E
 	\label{eq_ed_orientation}
 \end{equation}
-In some media of lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric field direction. At the beginning of the chapter, however, we assumed the fields are relatively weak, and we imposed the requirement of \textit{linearity} of the medium. Whatever the linear relation of $\D := \mathcal{L}(\E)$
+In some media of lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric or magnetic field direction, and the medium is denoted as \textit{anisotropic}. At the beginning of the chapter we assumed the fields are relatively weak, which enables one to describe the medium as \textit{linear}. Whatever the linear relation of $\D := \mathcal{L}(\E)$
 is, it must obey the rule
 $$\D_1 + \D_2 = \mathcal{L}(\E_1) + \mathcal{L}(\E_2) = \mathcal{L}(\E_1 + \E_2)$$
-for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \textit{tensor of permittivity} % TODO cite 
+for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \textit{tensor of permittivity} 
 \begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
 	\left(\begin{array}{ccc} 
 	{\epsrl}_{xx}(\omega) & {\epsrl}_{xy}(\omega) & {\epsrl}_{xz}(\omega)  \\
@@ -297,7 +297,7 @@ If the medium response depends on the direction of the field, the dispersion rel
 %	\left(\begin{array}{ccc} k_x^2+k_y^2+k_z^2 & 0 & 0 \\ 0 & k_x^2+k_y^2+k_z^2 & 0 \\ 0 & 0 & k_x^2+k_y^2+k_z^2 \end{array} \right) \cdot  
 %	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
 %	$$
-The dispersion relation can however still be understood \cite[pp. 667]{born1999book} as a set of three linear algebraic equations:
+The dispersion relation can however still be solved \cite[pp. 667]{born1999book} as a set of three linear algebraic equations:
 \begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\varepsilon_0 \mu_0 \, \epsrl(\omega) \murl(\omega) \omega^{2}}{k^2} \E. \tag{\ref{eq_wavek_disp} \again}\end{equation}
 %\begin{equation} \left|\begin{array}{ccc} 
 	%k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
@@ -913,7 +913,7 @@ When the dispersion curve touches the $K=0$ axis at the frequency $\omega = 2\pi
  \end{enumerate}
 In vacuum, this process repeats with higher order of the mode function: $\mathbf{u_e}(\rr) := E_0 e^{4\pi\ii r/a}$, $\mathbf{u_e}(\rr) := E_0 e^{6\pi\ii r/a}$, etc.
 
-We will show in the Results section that some numerical approaches provide nontrivial rules to prefer one particular dispersion curve in the unfolded plot. The Results section also contains a physical interpretation of this.
+We will show in the Results section on a particular example that some numerical approaches provide nontrivial rules to prefer one particular dispersion curve in the unfolded plot. The Results section also contains a physical interpretation of this.
 
 %When the wavelength is less than double cell spacing, or equivalently when $2\pi c /K < 2 a$, the unit cells can scatter the forward propagating wave into the backward direction and vice versa. In an infinite periodic structure the energy transfer must be conserved, so the forward and backward waves must be of the same amplitude. (The equilibrium of forward and backward wave amplitudes may, however, differ in some cases even in in infinite periodic structure. One example is when the constituent materials lose time-reversal symmetry due to static magnetic field.) We assume this also in this example with virtual periodicity. The \textit{Bloch wave} is a product of two functions, and it gives one degree of freedom to select which part of (\ref{eq_bloch}) expresses the phase shift across one unit cell. Two different conventions are used in the literature.
 % \begin{enumerate}
