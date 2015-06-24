@@ -432,7 +432,7 @@ Aside from yielding multiple branches, the physical interpretation of the data c
 %}}}
 \paragraph{Simulation setup} %{{{
 \begin{figure}[ht] \centering \caption{The setup of the FDTD simulation for the scattering parameter method\todo{REWRITE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
-\begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
+%%  TODO ADD TO GIT \begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
 The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with a direction parallel to the $z$-axis. The temporal shape of the wave was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
 
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab was simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers to absorb all radiation (pink blocks). The implementation used is based on gradually introducing imaginary part into the unit cell dimensions  to prevent reflections under arbitrary incidence angle, polarisation or frequency of the wave. There are different approaches for this problem \cite{oskooi2011distinguishing}. %, thus 
