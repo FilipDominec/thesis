@@ -905,13 +905,13 @@ The mathematical interpretation of folding the dispersion curves in vacuum can b
 For  $\omega\in\langle 0, \pi c /a\rangle$, a the mode function is constant $\mathbf{u_e}(\rr) := E_0$ and $K := \omega/c$. 
 } 
 \item{
-At the first point of folding, the mode function of $\mathbf{u_e}(\rr) := E_0 e^{2\pi\ii r/a}$ and the formal solution of the \textit{backward} wave is used with $K := 2\pi r/a - \omega r/c$.  The phase advance across one unit cell remains positive, although the phase advance of the envelope has sign opposite to the phase of the mode function.
+At the first point of folding, the mode function changes to $\mathbf{u_e}(\rr) := E_0 e^{2\pi\ii r/a}$ and the formal solution of the \textit{backward} wave is used with $K := 2\pi r/a - \omega r/c$.  The phase advance across one unit cell remains positive, although the phase advance of the envelope has sign opposite to the phase of the mode function.
 } 
 \item{
 When the dispersion curve touches the $K=0$ axis at the frequency $\omega = 2\pi c/a$, the mode function is not changed, but the dispersion curve continues again along with the \textit{forward} wave $K := - 2\pi r/a + \omega r/c$.
 } 
  \end{enumerate}
-In vacuum, this process repeats with higher order of the mode function: $\mathbf{u_e}(\rr) := E_0 e^{4\pi\ii r/a}$, $\mathbf{u_e}(\rr) := E_0 e^{6\pi\ii r/a}$, etc.
+In vacuum, this process repeats with higher orders of the mode function: $\mathbf{u_e}(\rr) := E_0 e^{4\pi\ii r/a}$, $\mathbf{u_e}(\rr) := E_0 e^{6\pi\ii r/a}$, etc.
 
 We will show in the Results section on a particular example that some numerical approaches provide nontrivial rules to prefer one particular dispersion curve in the unfolded plot. The Results section also contains a physical interpretation of this.
 
@@ -927,7 +927,9 @@ We will show in the Results section on a particular example that some numerical 
 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
-The periodically repeated interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. Such a unit cell is then denoted as a \textit{Brillouin zone}. While in one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis into equal intervals, in two or three dimensions the shapes of higher Brillouin zones get much more complex, and are unlike to each other.  As a general rule, the $m$-th Brillouin zone is the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. All Brillouin zones 
+The periodically repeated interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. Such a unit cell is then denoted as a \textit{Brillouin zone}. 
+
+While in one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis into equal intervals, in two or three dimensions the shapes of higher Brillouin zones get much more complex, and are unlike to each other. \cite[pp. 134--135]{klingshirn2007semiconductor}  As a general rule, the $m$-th Brillouin zone is the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. In two dimensions, all Brillouin zones are divided by straight line segments that lie on the axis of symmetry between two points $K = 2m\pi/a$
 
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 
@@ -970,7 +972,7 @@ photonic band-gaps are new compared to the band gaps arising from permittivity/p
 %}}}
 \paragraph{Tight-binding model for photonic band-gaps}%{{{
 The described view of the dispersion was 
-A different view to the formation of the dispersion curves can be drawn in analogy with the \textit{tight-binding} model in solid-state physics, first analyzing the unit cells isolated in free space, and then taking into account their mutual interaction that shifts the frequency up, or down. \label{hopping}
+A different view to the formation of the dispersion curves can be drawn in analogy with the \textit{tight-binding} model in solid-state physics, first analyzing the unit cells isolated in free space, and then taking into account their mutual interaction that shifts the frequency up, or down \cite[p. 75]{klingshirn2007semiconductor}. \label{hopping}
 The 
 This is . %-- individual oscillators with frequency more-or-less dependent on
 
