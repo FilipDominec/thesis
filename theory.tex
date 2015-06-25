@@ -1,13 +1,15 @@
-%% TODO fix that f is used as frequency (replace with omega) and also as arbitrary function f(t) 
-%% TODO get rid of the term "response function" for susceptibility
-%% TODO ensure more consistent usage of "dispersion curve", "dispersion relation" and "solution of Maxwell equations"
+%% Things to be optionally fixed:
+%% *  fix that f is used as frequency (replace with omega) and also as arbitrary function f(t) 
+%% *  fix that T is transverse-field operator and integrated time
+%% *  get rid of the term "response function" for susceptibility
+%% *  ensure more consistent usage of "dispersion curve", "dispersion relation" and "solution of Maxwell equations"
 
 \add{The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner.
 %, avoiding many relevant topics such as  TODO, which are not essential for the description of metamaterials.  
 This serves as a basis for transforming into the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics for spatially-dispersive media, which is elaborated more in detail.}
 
 \section{Electrodynamics of continuous media} 
-\subsection{Electromagnetic wave in vacuum} % FIXME
+\subsection{Electromagnetic wave in vacuum}
 \paragraph{Maxwell equations}  %{{{
 In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form.
 We assume here that no free charges and no sources of currents are present: 
@@ -33,7 +35,7 @@ we obtain the \textit{wave equation} for the electric field in vacuum:
 \begin{equation}  \nabla (\nabla \cdot \E) - \nabla^2 \E = -\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}}.  \label{eq_wave}\end{equation}
 %Note this holds for each component of electric field independently. -- NOT: the divergence is not independent of other components
 Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), the same result could also be easily obtained for the magnetic field $\HH$.
-%% TODO develop why (E, H, k) forms the RIGHT-handed triplet
+
 %}}}
 \paragraph{Plane wave} %{{{
 The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed as a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(t)$). As a \textit{plane wave} we denote such a spatial shape of the fields, that is a function of a single  scalar parameter $\kk\cdot\rr$. Assuming the wave propagates with nonzero velocity, also the spatial dependence on  $\kk\cdot\rr$ must be harmonic, and therefore 
@@ -43,13 +45,9 @@ Any other complicated shape of the fields can be decomposed into a linear superp
 %Linear electrodynamics is often treated with the 
 The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
- 
-%% TODO add figure: plane wave
 Without loss of generality, we define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
-The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. Note that no restrictions were put to the amplitude vector $\E_0$ so far, thus Eq. (\ref{eq_pw}) can describe both \textit{transverse} wave of any polarization, with $\E_0 \perp \kk$, and \textit{longitudinal wave} with $\E_0 || \kk$.
-
-As discussed in the introduction, the time dependence of complex fields with positive evolution in time ($e^{+\ii\omega t}$)  was chosen without any impact on the physical consequences.
+The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. Note that no restrictions were put to the amplitude vector $\E_0$ so far, thus Eq. (\ref{eq_pw}) can describe both \textit{transverse} wave of any polarization, with $\E_0 \perp \kk$, and \textit{longitudinal wave} with $\E_0 || \kk$.  As discussed in the introduction, the time dependence of complex fields with positive evolution in time ($e^{+\ii\omega t}$)  was chosen without any impact on the physical consequences.
 
 %}}}
 \paragraph{Dispersion relations in vacuum} %{{{
@@ -76,11 +74,11 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum divide
 \begin{enumerate}
  \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $T\E = \E$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plot in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$.
+	where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plot in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular triplet $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed} media.
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $T\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
- \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering  %% TODO refto
+ \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering 
 	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
 \end{figure}
 %}}}
@@ -101,30 +99,32 @@ Assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) 
 Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integral, and the remaining part that turns the convolution into a temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
-%% NOTE that the Fourier transform is never subject to the sign change, cf. \ref{eq_kkF}
 This is nothing but an application of the convolution theorem: convolution in time domain is equivalent to multiplication the in frequency domain.  %% FIXME normalisation by 2pi?
-Consequently we may introduce the local \textit{relative permittivity} $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strong it develops the electric displacement $\D$ in response to a harmonic wave. From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$.
+Consequently we may introduce the local \textit{relative permittivity}, or also \textit{dielectric function}, $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strong it develops the electric displacement $\D$ in response to the electric field $\E$ of a harmonic wave.
+From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$.
 \begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := 1 + \chi_e(\omega) = \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
-%% TODO note that in freq domain this is a complex-valued function, unlike time-domain response; and explain why it is so: that it allows to easily pack in also the information about the phase
+
+In general, the function $\epsrl(\omega)$ is complex to account for possible phase delay between the harmonic driving field and the medium response. Phase delay different than $0$ (or integer multiple of $\pi$) corresponds to energy being dissipated in the medium.
+Let us note that the definition of the Fourier transform is never subject to the sign change, even when the convention of $e^{\ii \omega t}$ is exchanged for $e^{-\ii \omega t}$.
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
 \begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
-	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf}
+	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf} %% TODO change eps(LOC),chi(LOC) to eps, chi in the image
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on different time scales, and thus the medium response usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
 
 Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium position in the lattice. The molecular rotation can also be modelled as an (possibly overdamped) harmonic oscillator. Even the free electrons in conductive media can fit into the theory of harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time domain and frequency domain, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
 
 A damped harmonic oscillator is described by a second-order differential equation:
-\begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} + \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
-Provided the driving term on the right hand side  is harmonic $f(t) = e^{+\ii \omega t}$, the system response is also a harmonic function, $x(t) = \chi(\omega) e^{+\ii \omega t}$. The differential equation (\ref{eq_harm_osc}) can be easily solved to show that the complex amplitude of the driven oscillations, $\chi(\omega)$, depends on the angular frequency and on the parameters $\alpha$, $\beta$ and $\zeta$ in the following way:
-\begin{equation} \chi(\omega) \equiv \frac{x(t)}{f(t)} = \frac{1}{\zeta-\alpha\omega^{2} + \ii\omega\beta}  = \frac{\alpha^{-1}}{\frac{\zeta}{\alpha}-\omega^{2} + \ii\omega\frac{\beta}{\alpha}}. \label{eq_harm_osc_result}\end{equation}
+\begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} - \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
+Provided the driving term on the right hand side  is harmonic $f(t) = e^{+\ii \omega t}$, the system response is also a harmonic function, $x(t) = \chi(\omega) e^{+\ii \omega t}$. The differential equation (\ref{eq_harm_osc}) can be easily solved to show that the complex amplitude of the driven oscillations, $\chi(\omega)$, depends on the angular frequency and on the positive real parameters $\alpha$, $\beta$ and $\zeta$ in the following way:
+\begin{equation} \chi(\omega) \equiv \frac{x(t)}{f(t)} = \frac{1}{\zeta-\alpha\omega^{2} - \ii\omega\beta}  = \frac{\alpha^{-1}}{\frac{\zeta}{\alpha}-\omega^{2} - \ii\omega\frac{\beta}{\alpha}}. \label{eq_harm_osc_result}\end{equation}
 The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in this text, but without loss of generality the result of Eq. (\ref{eq_harm_osc_result}) can be rewritten into
-\begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} + \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
+\begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} - \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
  \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{frequency of resonance}, at which the response is pure imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
- \item{$\gamma = \zeta/\alpha$ is the \textit{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. In frequency domain, it is roughly proportional to the resonance width. } 
+ \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. In frequency domain, it is roughly proportional to the resonance width. } 
  \item{$F = \alpha^{-1}$ is the \textit{oscillator strength}, determining the amplitude of the response function.}
  \end{itemize}
 
@@ -132,7 +132,7 @@ where the physical interpretation of the three (real and positive) parameters is
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
 The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $M$ independent harmonic oscillators, each $m$-th oscillator having the resonance angular frequency $\omega_{0m}$, damping rate $\gamma_m$ and strength $F_m$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
-\begin{equation} \epsrl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + \ii\omega\gamma_m} \label{eq_lorentz_eps}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
+\begin{equation} \epsrl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 - \ii\omega\gamma_m} \label{eq_lorentz_eps}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
 An example of the time- and frequency-domain response of a medium with one harmonic oscillator in is Fig. \ref{fg_oscillator_spectrum}.
 % It is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
@@ -142,7 +142,7 @@ One can see that each oscillator increases the real part of permittivity, but in
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 
-A more detailed treatment of the theory of the dielectric function $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
+A more detailed treatment of the theory of the permittivity $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
 
 We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where the shows to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
@@ -209,7 +209,7 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 %}}}
 
 \subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
-\paragraph{Lower and upper polariton branches of transverse waves}  % TODO%{{{
+\paragraph{Lower and upper polariton branches of transverse waves} %{{{
 Returning to the derivation of dispersion relations, we start with modifying the constitutive relation (\ref{eq_ce}) to a plane wave propagating in a medium:
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
@@ -237,7 +237,7 @@ The wave equation in local dispersive media (\ref{eq_wavek_disp})
 %\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
 also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for a static homogeneous field.
 
-\begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\epsrl'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering  %% TODO refto
+\begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\epsrl'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering 
 	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
 \end{figure}
 If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can have a solution with nonzero $\E$ when $\epsrl(\omega)' = 0$, or with nonzero $\HH$ when $\mu_r(\omega)' = 0$. Therefore, the corresponding dispersion curve for a longitudinal wave is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that maintains the spatial amplitude envelope that was originally excited. 
