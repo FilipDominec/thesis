@@ -5,7 +5,7 @@
 %% *  ensure more consistent usage of "dispersion curve", "dispersion relation" and "solution of Maxwell equations"
 
 \add{The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner.
-%, avoiding many relevant topics such as  TODO, which are not essential for the description of metamaterials.  
+%, avoiding many relevant topics such as nonlinearity, optical activity and gyrotropy, , which are not essential for the description of metamaterials.  
 This serves as a basis for transforming into the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics for spatially-dispersive media, which is elaborated more in detail.}
 
 \section{Electrodynamics of continuous media} 
@@ -109,7 +109,7 @@ Let us note that the definition of the Fourier transform is never subject to the
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
 \begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
-	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf} %% TODO change eps(LOC),chi(LOC) to eps, chi in the image
+	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf}
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on different time scales, and thus the medium response usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
 
@@ -130,13 +130,12 @@ where the physical interpretation of the three (real and positive) parameters is
 
 
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
-The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $M$ independent harmonic oscillators, each $m$-th oscillator having the resonance angular frequency $\omega_{0m}$, damping rate $\gamma_m$ and strength $F_m$.
+The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the resonance angular frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
-\begin{equation} \epsrl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 - \ii\omega\gamma_m} \label{eq_lorentz_eps}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
+\begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q} \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
 An example of the time- and frequency-domain response of a medium with one harmonic oscillator in is Fig. \ref{fg_oscillator_spectrum}.
-% It is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
-% TODO decide whether we use exp(i omega t)     -> leads to negative eps''
+% Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
 
 One can see that each oscillator increases the real part of permittivity, but in the high frequency limit the contribution of the oscillator vanishes. This can be intuitively understood as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at high frequencies  $\omega \gg \omega_0$, the system does not follow the driving force at all.
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
@@ -150,16 +149,14 @@ We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_m
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
 \begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \right|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
 where $\chi_m(T)$ is the \textit{magnetic susceptibility of medium} and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an expression for the local permeability in the frequency domain:
-\begin{equation} \murl(\omega) = 1 + \sum_{m=1}^M \frac{F_m}{\omega_{0m}^2 - \omega^2 + i\omega\gamma_m}, \label{eq_lorentz_mu}\end{equation} %% TODO fix sign; TODO what about eps0 before summation?
-where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0m}$, $\gamma_m$ and $F_m$ are the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field % todo CITE
-or their response is limited to low frequencies.
+\begin{equation} \murl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - i\omega\gamma_q}, \label{eq_lorentz_mu}\end{equation} 
+where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0q}$, $\gamma_q$ and $F_q$ are here the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field or their response is limited to low frequencies.
 
 %}}}
 \paragraph{Kramers-Kronig relations in local media}%{{{
 Causality prevents any medium from reacting to the future electric (or magnetic) field, so the integration in Eq. (\ref{eq_loc_chi_convol}) goes up to the current time only, $\tau \in (-\infty, t)$. The response of the medium to a real-valued field must moreover be also real, no matter that the computations are often done with complex field amplitude [Eq. (\ref{eq_pw})] for the sake of convenience. 
 
-Thus, the basic physical laws impose relatively strict constraints to the time-domain response function $f(t)$, which translate into another constraints for the possible shape of the response in frequency domain $F(\omega)$. The intuitive physical derivation is based on the fact that any time-domain response function can be trivially separated into its odd and even parts as 
-, as shown in Fig. \ref{fg_kk}. 
+Thus, the basic physical laws impose relatively strict constraints to the time-domain response function $f(t)$, which translate into another constraints for the possible shape of the response in frequency domain $F(\omega)$. The intuitive physical derivation is based on the fact that any time-domain response function can be trivially separated into its odd and even parts, as shown in Fig. \ref{fg_kk}. 
 \begin{equation}f(t) = f_{odd}(t) + f_{even}(t) = -f_{odd}(-t) + f_{even}(-t) \label{eq_odd_even_decomp}\end{equation}
 \begin{figure}[t] \caption{Illustration of how a real causal function $f(t)$ can be decomposed into the odd and even parts, which then yield a pure imaginary and pure real functions in the spectrum, respectively. Mathematically this is expressed in Eqs. (\ref{eq_odd_even_decomp}--\ref{eq_kkresult}).} \label{fg_kk} \centering 
 	\includegraphics[width=17.5cm]{img/Kramers_Kronig_plot/kk.pdf}
@@ -446,10 +443,9 @@ Such a case can indeed occur in natural or artificial media, as described in mor
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
-In the isotropic media, or the media where the wave vector points in direction close to the optical axis, the Snell law is still applicable, and we then speak of \textit{negative index of refraction}.  The refraction between an ordinary medium and two examples of negative-index media are plotted in Fig. \ref{fg_ifcnr}.
-It should be noted that the negative-index media are necessarily dispersive. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be found from the wavevectors at different frequencies in Fig. \ref{fg_ifcnr}b,c.
+Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in direction close to the optical axis, the Snell law is still applicable and we then speak of \textit{negative index of refraction}.  The refraction between an ordinary medium and two examples of negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
+%% maybe?? the propagation velocities are more complicated 
 
-\todo{add that the propagation velocities are more complicated than this and will be discussed later; move a part of this text below?}
 %}}}
 
 \subsection{Nonlocal response} 

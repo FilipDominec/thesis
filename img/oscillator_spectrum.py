@@ -43,7 +43,7 @@ plt.ylim((-10,10)); plt.yscale('linear')
 
 ## Plot time-domain 
 plt.xlabel(u"time $t$") 
-plt.ylabel(u"medium response function $\\chi_e^{\\rm(Loc)}(t) + \\delta(t)$") 
+plt.ylabel(u"medium response $\\chi_e(t) + \\delta(t)$") 
 plt.title(u"\\textbf{a)} Time domain")
 #plt.title('Right Title', loc='right')
 
@@ -77,7 +77,7 @@ truncated = np.logical_and(freq>0, freq<np.inf)         # (optional) get the fre
 omega = np.linspace(-15, 15, 3000)  # (note: if only positive frequencies are used, the energy will be half of that in time-domain)
 yomega = np.sum(y * np.exp(-1j*        np.outer(omega,x)), axis=1) * (x[1]-x[0])
 plt.plot(omega, np.real(yomega), c='#008844', label='Real part') # , label='FT in $\\omega$-convention'
-plt.plot(omega, -np.imag(yomega), c='#88aa00', lw=.8, ls='--', label='Imaginary part')
+plt.plot(omega, np.imag(yomega), c='#88aa00', lw=.8, ls='--', label='Imaginary part')
 #plt.plot(omega, -np.imag(yomega)/np.real(yomega), c='k', label='tg($\\delta)$')        # tg(delta) is often used in microwave engineering
 
 #   ## Test the Kramers-Kronig relations - in omega
@@ -91,9 +91,9 @@ plt.plot(omega, -np.imag(yomega), c='#88aa00', lw=.8, ls='--', label='Imaginary 
 
 ## Plot
 plt.xlim((-0,15)); plt.xscale('linear')
-plt.ylim((-16,16)); plt.yscale('linear')
+plt.ylim((-10,10)); plt.yscale('linear')
 plt.xlabel(u"angular frequency $\\omega$"); 
-plt.ylabel(u"local permittivity $\\varepsilon^{\\rm(Loc)}(\\omega)$"); 
+plt.ylabel(u"local permittivity $\\varepsilon_r(\\omega)$"); 
 plt.title(u"\\textbf{b)} Frequency domain")
 plt.grid()
 
@@ -110,5 +110,5 @@ plt.grid()
 ## ==== Outputting ====
 ## Finish the plot + save 
 plt.legend(prop={'size':10}, loc='upper right')
-plt.savefig("oscillator_spectrum.png", bbox_inches='tight')
+plt.savefig("oscillator_spectrum.pdf", bbox_inches='tight')
 
