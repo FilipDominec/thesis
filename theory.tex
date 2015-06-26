@@ -219,7 +219,7 @@ The same behaviour is observed for a single resonance in the permeability $\mu_r
 
 Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line).
 
-When losses are present, the lower and upper polariton branches are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO \ref{fg_dispersion_polariton}
+When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO 
 
 %}}}
 \paragraph{Longitudinal waves in dispersive media} %{{{
@@ -309,10 +309,7 @@ T -
 	\end{array} \right) \right] = 0, \label{eq_dispdet}\end{equation}
 The search for dispersion curves in an anisotropic medium is thus transformed into finding zeroes of this function of four scalar variables, $k_x$, $k_y$, $k_z$ and $\omega$.
 In the most general case, it can be solved by means of numerical algebra software. 
-
-\todo{add about the number of solutions}
-%For a given frequency $\omega$, rigorous solution of Eq. \ref{eq_dispdet} in local media gives in fact three solutions, of which two are for different polarisations of a transverse wave, and the third is for the longitudinal wave. The two transverse solutions give identical wave vector (are degenerate) if the medium is isotropic, or if $\kk$ points along the optical axis. 
-% The longitudinal wave ... ?
+%It would be nice to write about the number of solutions
 
 %}}}
 \paragraph{Isofrequency contours}  %{{{
@@ -334,7 +331,8 @@ The relation between a dispersion curve for one photonic branch and the correspo
 
 Its limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot the dispersion in media with no or negligible losses only.  
 Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping (see the right panel of Fig. \ref{fg_dcsimpleel}). 
-Moreover, in every single photonic branch, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are generally different in anisotropic media, but we always restrict the discussion only one polarisation in the following figures  for simplicity. % \todo{discuss? In uniaxial media, where two diagonal components of the }
+Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are generally different in anisotropic media, but we always restrict the discussion only one polarisation in the following figures for simplicity. 
+% discuss this further? In uniaxial media, where two diagonal components ...
 
 \begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point.  
 		\textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$.
@@ -375,12 +373,11 @@ We will however show in the following that the prediction of \textit{beam} propa
 %%   Note that a negative permittivity is always connected with the dispersive behaviour, thus \ref{fg_ifc}d is another example of a dispersive medium. 
 %%   
 %%   %}}}
-\paragraph{Group velocity}  %{{{  todo near single resonance
-So far only the propagation and refraction of an infinite, single-frequency wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency. %% todo rewrite to more precise
+\paragraph{Group velocity}  %{{{  
+So far only the propagation and refraction of a plane harmonic wave wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency.
+Temporal modulation of the wave can be expressed by a complex vector function $\E_0(t)$ that replaces the constant vector $\E_0$ in Eq. \ref{eq_pw}. This is equivalent to the wave being formed by superposition of multiple frequency components in  the frequency domain, with their respective amplitudes given by the Fourier transform of $\E_0(t)$. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
 
-If the wave is temporally modulated, its envelope in time is given as a complex vector function $\E_0(t)$ replacing the constant vector $\E_0$ in Eq. \ref{eq_pw}. This can be equivalently expressed in the frequency domain as the wave being formed by superposition of multiple frequency components, with respective amplitudes given by the Fourier transform of $\E_0(t)$. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
-
-A similar argument can be made regarding the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of the spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
+A similar argument can be made with regards to the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of the spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
 
 The velocity vector of the envelope propagation, denoted as the \textit{group velocity} $\mathbf{v_g}$, can be found as the gradient of frequency by the wavevector: %% TODO cite
 \begin{equation} \mathbf{v_g} := \frac{\partial \omega}{\partial \kk} \equiv 

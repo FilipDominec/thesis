@@ -4,7 +4,7 @@
 \usepackage{mathrsfs} 
 \usepackage{palatino} 
 \usepackage[font=it]{caption}
-\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,url,color,enumitem}	\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  
+\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,color,enumitem}
 \usepackage{upgreek}
 
 \usepackage[backend=biber]{biblatex} 
@@ -13,6 +13,7 @@
   %pageranges=true, sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits=true]{biblatex}
 %\usepackage[unicode=true,pdftitle={\WorkTitle}, pdfauthor={\FirstandFamilyName}, bookmarks=true, colorlinks=true, breaklinks=true, urlcolor=black, citecolor=black, linkcolor=black, breaklinks=true, plainpages=false,pdfpagelabels=true]{hyperref}
 
+
 %% DEBUGGING ONLY, comment out in production version:
 \setcounter{tocdepth}{4} 
 \setcounter{secnumdepth}{4} 
@@ -20,6 +21,17 @@
 \addbibresource{fdphd.bib}
 
 \input{defs.tex}
+
+
+
+\usepackage{xcolor}
+%\usepackage[notref,notcite]{showkeys}
+\usepackage[color]{showkeys}
+%\definecolor{refkey}{blue}
+\definecolor{refkey}{rgb}{1.0, 0.0, 0.0}
+\definecolor{labelkey}{rgb}{1.0, 0.0, .40}
+%\definecolor{labelkey}{blue}
+\renewcommand*{\showkeyslabelformat}[1]{\hspace{-9mm}\vbox{\hsize=1.1cm\normalfont\tiny#1}}
 
 
 \begin{document}
