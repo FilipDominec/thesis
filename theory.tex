@@ -47,7 +47,7 @@ The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \
 
 %}}}
 \paragraph{Dispersion relations in vacuum} %{{{
-Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of the wave equation (\ref{eq_wave}). In vacuum, the allowed solutions can be obtained by first substituting the differential operators by their equivalents for a particular plane wave: %TODO explain
+Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of the wave equation (\ref{eq_wave}). In vacuum, the allowed solutions can be obtained by first substituting the differential operators by their equivalents for a particular plane wave:
 \begin{equation} \nabla \rightarrow -\ii\kk, \quad\quad\quad 
 \frac{\partial} {\partial t} \rightarrow \ii\omega, \label{eq_difftok}\end{equation}
 so the wave equation (\ref{eq_wave}) can be modified the following way:
@@ -194,7 +194,7 @@ where we used the knowledge that the $-2\ii/\omega$ function is the Fourier tran
 
 Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary part of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{odd}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
 
-A related mathematical proof of Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. %% TODO cite
+A related mathematical proof of Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. \cite[p. 125]{klingshirn2007semiconductor}
 
 %% TODO: why do K-K relations forbid to choose arbitrary phase difference over an unit cell? 
 %% ie. Why the Neff can be unambiguously extracted from spectra?
@@ -446,7 +446,8 @@ Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency conto
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media that follows.
 
 The downsides of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
-Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion, such as the Doppler broadening of resonance lines in gases \cite[p. 359]{landau1984electrodynamics}. More precisely, these phenomena are primarily dependent on the wave vector $\kk$, and their expression by means of the temporal spectrum is a mere approximation based on that the dispersion curve usually defines a simple relation between  frequency and wave vector.  %% TODO rewrite?
+Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics},  such as the Doppler broadening of resonance lines in gases. \cite{makarov2004permittivity}
+These phenomena are primarily dependent on the wave vector $\kk$, and the apparent broadening on the \textit{frequency} axis is only due to the dispersion curve defining a simple relation between  frequency and wave vector.  
 
 In this section such a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
@@ -457,11 +458,10 @@ $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \var
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\left( \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R})  \, e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}}\,\mbox{d}T \,\mbox{d}^3 \mathbf{R} \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
 The response of the medium to the electric field of any harmonic plane wave can now be expressed as a function of frequency $\omega$ and wave vector $\kk$. It is defined as the ratio between the electric displacement and the electric field:
 \begin{equation} \epsrn(\omega, \kk) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}}  = 1 + \int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \,e^{-\ii\omega T + \ii\kk\cdot \mathbf{R}} \,\mbox{d}T \,\mbox{d}^3\mathbf{R} \label{eq_eps_nonloc}\end{equation}
-Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\epsrn(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\epsrn$ %% TODO make it \varepsilon_r
+Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\epsrn(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\epsrn$ 
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
-% , and convolution in space is equivalent to multiplication  in the reciprocal space
 
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that a plane wave of a defined wavevector is considered in an infinite medium.
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that an infinite plane wave of a defined wavevector is being considered.
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
@@ -471,13 +471,13 @@ Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk
 \epsrn(\omega,\kk) = 1 + \chi_e(\omega) + \ii \gamma_{\text{e}}(\omega) \kk + [\alpha_{\text{e}}(\omega) \kk] \kk + \ldots, \medskip  \\
 \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, 
 \end{array} \quad \right\} \quad \text{(in any media)}
-\label{eq_epsmusd1}\end{equation}
+\label{eq_epsmusd1}\end{equation} %% TODO gamma->eta, alpha->phi, ...->psi, ...-xi
 where $\chi_{e,m}(\omega)$ are tensors of the second rank, $\gamma_{e,m}(\omega)$ of the third rank, $\alpha_{e,m}(\omega)$ of the fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
 %In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
 
-Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence by a Dirac delta function: %% TODO fix the sencence - it is in fact incorrect
-\begin{equation} \chi_e(t-\tau, \rr-\brho) = \delta^{3}(\rr-\brho) \; \chi_e(t-\tau), \label{eq_loc_chi}\end{equation}
-which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}$ and $\alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish:
+Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% TODO fix the sencence - it is in fact incorrect
+\begin{equation} \chi_e(t-\tau, \rr-\brho) \rightarrow \delta^{3}(\rr-\brho) \; \chi_e(t-\tau), \label{eq_loc_chi}\end{equation}
+which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}$ and $\alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish and
 \begin{equation} 
 \left.  \begin{array}{c}
 \epsrn(\omega,\kk) = 1 + \chi_e(\omega) = \epsrl(\omega), \medskip \\
@@ -497,14 +497,15 @@ Its advantage is that the relative magnetic permeability is defined as a mere co
 
 %}}}
 \paragraph{Local medium in the Landau-Lifshitz model} %{{{
-For simplicity we assume %% ... or "start with" TODO extend also to nonlocal ones
-the medium is local, and described by $\epsrl(\omega)$ and $\murl(\omega)$.
-The new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ then consists of the 
+%For simplicity we assume %% ... or "start with" TODO extend also to nonlocal ones
+%the medium is local, and described by $\epsrl(\omega)$ and $\murl(\omega)$.
+%As a verification that the constitutive equations were transformed correctly into the Landau-Lifshitz model, we show the correspondence
+An important step towards using the Landau-Lifshitz model is to explicitly derive how a classical, local medium with the magnetic response is represented. From the principle of correspondence, all local media should be compatible with this model, and it should predict exactly the same dispersion curves. In the Landau-Lifshitz model, the new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ consists of
 \begin{enumerate}
  \item{the component caused by the local electric response of matter,} 
- \item{a new component fully accounting for the \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
+ \item{a new component fully accounting for the local \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
 \end{enumerate}
-This model may be easily extended later to describe any spatially dispersive media within the permittivity, as will be shown later.   
+Later, higher-order expansion terms can be easily added to describe all sorts of the nonlocal response.
 
 Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
@@ -580,8 +581,8 @@ T -
 	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
-\paragraph{How a local dielectric manifests in the Landau-Lifshitz model} %{{{
-\begin{figure}[h] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
+\paragraph{Dispersion of a local dielectric in the Landau-Lifshitz model} %{{{
+\begin{figure}[t] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plotted as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plotted as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
@@ -620,32 +621,29 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 
 Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead the dispersion curves to deviate from those predicted for local media. This corresponds to the black contour deviating from the green line in Fig. \ref{fg_dcll_nl}.
 As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This is reflected in adding a thin blue line in the left column.
-The choice of using the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode.
-\todo{+relation of higher-order terms to multipoles;  }
+
+The choice of using the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}\cite{vinogradov2002form}.  % ... perhaps other papers, too?
 
 The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other. In the latter case, they approach to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, and that its occurence is only due to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
 
 %}}}
-\paragraph{Multiple waves and additional boundary conditions}   %{{{ TODO
-For both cases shown in Fig. \ref{fg_dcll_nl}, it is obvious the dispersion equations allow multiple solutions with different wavenumber $k$ at one frequency $\omega$. (In contrast, the existence of multiple solutions with different $\omega$ for a given wavevector $\kk$ has already occured as a usual consequence of frequency dispersion even in local media.)
+\paragraph{Multiple waves and additional boundary conditions}   %{{{ 
+For both cases shown in Fig. \ref{fg_dcll_nl}, it is obvious the dispersion equations can allow multiple solutions with different wavenumber $k$ at one frequency $\omega$, even when the waves have the same orientation and polarisation. (Note that, conversely, multiple solutions with different $\omega$ for a given wavevector $\kk$ are commonly present, as a usual consequence of frequency dispersion even in local media.)
 
-The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal} to be observed in natural media, e.g. near exciton levels. In the case of a positive amplitude of $\alpha$, the additional wave of the lower polariton branch has again an opposite sign of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$).
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted by the works of Pekar and others
+%\cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}
+and also suggested by experimental data of dispersion near exciton levels in cadmium sulphide
+\cite{pekar1975spatial}. 
+
+In the case of a positive amplitude of $\alpha$ (c.f. Fig. \label{fg_dcll_nl}a), one of the two solutions of the lower polariton branch has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), giving raise to negative index of refraction in natural homogeneous media.
 
 %}}}
-\paragraph{Odd expansion terms and optical activity }   %{{{ TODO
+\paragraph{Odd expansion terms and optical activity }   %{{{ 
 Returning to the power expansion of $\epsLL(\omega, \kk)$ in terms of $k$ in Eq. (\ref{eq_epsmusd1}), we can identify the term constant in $k$ with the electric dipole moment $\chi_e(\omega)$, the term proportional to $k^2$ with the magnetic dipole moment $\chi_m(\omega)$ (or, also the electric quadrupole moment), and the recently discussed term proportional to $k^4$ with an electric octupole or magnetic quadrupole (\cite{agranovich2006spatial, agranovich2004linear, krowne2007book}).
 
-The odd terms were not discussed yet, although they have important physical meaning. Their nonzero values break the spatial inversion symmetry of the medium, and are related to optical activity \cite{bungay1993equivalency}.
-
-\todo{related: \cite{fietz2011homogenization}}
-
-
-
-
-
-
-. In media with nonzero odd terms
-, the eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
+The odd terms were not discussed yet, although they have important physical interpretation -- their nonzero values break the spatial inversion symmetry of the medium, and are thus related to optical activity \cite{bungay1993equivalency}. 
+%% todo related: \cite{fietz2011homogenization}
+In media with nonzero odd terms, the corresponding eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
 
 \begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the function $\gamma_e(\omega)$, which occurs in the term linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}), is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
@@ -654,20 +652,20 @@ The odd terms were not discussed yet, although they have important physical mean
 
 %}}}
 
-\subsection{Impedance and amplitudes of the refraction and reflection}
+\subsection{Amplitudes of the refraction and reflection and Impedance}
 \paragraph{The interface of two local media} %{{{ 
 In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respercively, that are cut in half by the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respectively, that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
 
-The reflection and refraction (i.e. transmission) coefficients are derived in many textbooks  with different levels of generalisation.  
+The reflection and refraction (i.e. transmission) coefficients for the \textit{amplitudes} of the waves are derived in many textbooks  with different levels of generalisation.  
 In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
 with the impedances
 $Z_{12} = \sqrt{\frac{{\murl}_{12}}{{\epsrl}_{12}  }  }$.
-This is in fact similar to the reflection on a one-dimensional transmission line, as known from the microwave engineering.
+Eq. (\ref{eq_reflection}) is analogous to the reflection on a one-dimensional transmission line, as known from the microwave engineering, although the impedance of a transmission line is defined in a more complicated way than in a continuous medium.
 
-If the incidence is not perpendicular, the complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation \cite[p. 38]{born1999book}.
+If the incidence is not perpendicular, the complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation \cite[p. 38]{born1999book}.  % todo add analytic eqs.?
 
 %}}}
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
