@@ -13,16 +13,16 @@ We assume here that no free charges and no sources of currents are present:
 \begin{equation} \nabla \cdot  \B = 0, \label{eq_me2}\end{equation}  
 \begin{equation} \nabla \times \E = -\frac{\partial \B} {\partial t}, \label{eq_me3}\end{equation}  
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \label{eq_me4}\end{equation}  
-where the $\E$ and $\HH$ are the electric and magnetic vector fields, and $\D$ and $\B$ are the electric and magnetic displacements,
+where $\E$ and $\HH$ are the electric and magnetic vector fields, and $\D$ and $\B$ are the electric and magnetic displacements,
  respectively. These two pairs of field and displacement are related in a similar way as a force is related to the deformation. % note that Simovski2007 regards the current J as force, and E as the deformation!
  The \textit{constitutive relations} depend on the properties of the medium the wave propagates in, and in vacuum they take the simplest possible form:
 \begin{equation}		\D = \varepsilon_0	\E, \quad\quad\quad						\B = \mu_0			\HH,				 \label{eq_ce}\end{equation}
-the $\varepsilon_0 \approx 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 4\pi \cdot 10^{-7} \approx 1.25\cdot10^{-6}$ H/m being the \textit{vacuum permeability}. 
-Pages \pageref{starttext}--\pageref{endtext} of this thesis will be concerned with computation, interpretation, and experimental verification of the Eq. (\ref{eq_me1}--\ref{eq_me4}) solutions for specific choices of constitutive equations.
+$\varepsilon_0 \approx 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 4\pi \cdot 10^{-7} \approx 1.25\cdot10^{-6}$ H/m he \textit{vacuum permeability}. 
+Pages \pageref{starttext}--\pageref{endtext} of this thesis will be concerned with computation, interpretation, and experimental verification of the solutions of Eq. (\ref{eq_me1}--\ref{eq_me4})  for specific choices of constitutive relations.
 %}}}
 \paragraph{Wave equation in vacuum} %{{{
 \label{starttext}
-The pair of first-order differential equations (\ref{eq_me3}, \ref{eq_me4}) can be converted to a single second-order differential equation. To this end, we apply an extra curl operator $\nabla\times$ from the left, and substituting from one equation into the another, we accumulate two curl operators on the left hand side and two derivatives on the right hand side: 
+The pair of first-order differential equations (\ref{eq_me3}, \ref{eq_me4}) can be converted to a single second-order differential equation. To this end, we apply an extra curl operator $\nabla\times$ from the left, and substituting one equation into the another, we obtain two curl operators on the left hand side and two derivatives on the right hand side: 
 \begin{equation} \nabla\times (\nabla\times \E) = \nabla\times \left(- \frac{\partial \B} {\partial t}\right) = -\mu_0 \frac{\partial}{\partial t} \left(\nabla\times \HH\right) 
 = -\mu_0 \frac{\partial^{2} \D}{\partial t^{2}} = -\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}}.  \label{eq_elim}\end{equation}
 Using the vector calculus identity
@@ -30,18 +30,16 @@ Using the vector calculus identity
 we obtain the \textit{wave equation} for the electric field in vacuum: 
 \begin{equation}  \nabla (\nabla \cdot \E) - \nabla^2 \E = -\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}}.  \label{eq_wave}\end{equation}
 %Note this holds for each component of electric field independently. -- NOT: the divergence is not independent of other components
-Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), the same result could also be easily obtained for the magnetic field $\HH$.
+Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), an analogous result can also be easily obtained for the magnetic field $\HH$.
 
 %}}}
 \paragraph{Plane wave} %{{{
-The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed as a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(t)$). As a \textit{plane wave} we denote such a spatial shape of the fields, that is a function of a single  scalar parameter $\kk\cdot\rr$. Assuming the wave propagates with nonzero velocity, also the spatial dependence on  $\kk\cdot\rr$ must be harmonic, and therefore 
-
-Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
+The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\i \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector \textit{} and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
 %Linear electrodynamics is often treated with the 
-The electromagnetic field will described as a complex exponential, i.e. as a superposition of two waves differing by a mere quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, e.g. it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
+The electromagnetic field can be described as a complex exponential, i.e. as a superposition of two waves differing by a quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, namely, it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
-Without loss of generality, we define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
+We define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
 The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. Note that no restrictions were put to the amplitude vector $\E_0$ so far, thus Eq. (\ref{eq_pw}) can describe both \textit{transverse} wave of any polarization, with $\E_0 \perp \kk$, and \textit{longitudinal wave} with $\E_0 || \kk$.  As discussed in the introduction, the time dependence of complex fields with positive evolution in time ($e^{+\ii\omega t}$)  was chosen without any impact on the physical consequences.
 
@@ -66,7 +64,7 @@ Rewriting it explicitly, we define the \textit{wave-plane projection tensor} tha
 	\end{array} \right) 
 \text{ or equivalently, }
 T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} .  \label{eq_transverse2}\end{equation}
-The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum divide into two groups: % TODO add reference that there is no other oslutino
+The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be divided into two groups: % TODO add reference that there is no other oslutino
 \begin{enumerate}
  \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $T\E = \E$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
@@ -82,77 +80,77 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum divide
 \subsection{Local response of media to the electromagnetic field} \label{loc_response_of_media}
 \paragraph{Local response definition} \label{subsection_local_resp} %{{{
 In the whole chapter, we expect the medium properties to be time-invariant, linear, and homogeneous (i.e. independent of time, field amplitude and position in space, respectively). 
-In this section, we focus on the special case when the medium response in point $\rr$ is not influenced by the electric field in any other point $\brho \neq \rr$. The medium is then said to be \textit{local}. 
+In this section, we focus on the special case when the response of the medium in point $\rr$ is not influenced by the electric field in any other point $\brho \neq \rr$. The medium is then said to be \textit{local}. 
 For most media found in nature, this approximation is very close to reality and thus numerous electrodynamics textbooks tend to omit the nonlocal effects. 
 However using this local theory to a wave propagating through periodic structures has a priori no justification and may lead to completely wrong results. The local theory presented here will serve as a basis for the nonlocal theory developed in following chapters.
 % Applying the more familiar local electrodynamics to these structures is a mistake common to many papers. While the local theory is mathematically consistent, it predicts unusual spectral shapes and does not allow their further physical interpretation.
 
-When an electric field $\E$ is applied, the medium responds by a change of the electric displacement $\D$ in a way that is characteristic for it. 
-The immediate response of vacuum from the right side of the constitutive equations (\ref{eq_ce}) remains unchanged, but the response of the matter adds a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{electric susceptibility} $\chi_e$ with the values of electric field in the previous time $\tau$:
+When an electric field $\E$ is applied, the medium responds by a change of the electric displacement $\D$ in a characteristic way. 
+The immediate response of vacuum from the right side of the constitutive equations (\ref{eq_ce}) remains unchanged, but the response of the matter adds a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{response function} $\chi_e$ with the values of electric field in the previous time $\tau$:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0 \int_{-\infty}^{t}\chi_e(t-\tau)\, \E(\tau,\rr)\,\mbox{d}\tau. \label{eq_loc_chi_convol}\end{equation}
-Assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$, as given by Eq. (\ref{eq_pw}). This can be inserted in the above equation:
+Let us assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$, as given by Eq. (\ref{eq_pw}). This can be inserted in the above equation:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{t} \chi_e(t-\tau) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\rr} \,\mbox{d}\tau. \label{eq_chi_convol_harm}\end{equation}
-Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integral, and the remaining part that turns the convolution into a temporal Fourier transform of the medium response:
+Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integral, and one which turns the convolution into a temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
-This is nothing but an application of the convolution theorem: convolution in time domain is equivalent to multiplication the in frequency domain.  %% FIXME normalisation by 2pi?
-Consequently we may introduce the local \textit{relative permittivity}, or also \textit{dielectric function}, $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strong it develops the electric displacement $\D$ in response to the electric field $\E$ of a harmonic wave.
-From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$.
-\begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := 1 + \chi_e(\omega) = \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T \label{eq_eps_loc}\end{equation}
+This can be viewed as an application of the convolution theorem: convolution in time domain is equivalent to multiplication the in frequency domain.  %% FIXME normalisation by 2pi?
+Consequently, we may introduce the local \textit{relative permittivity}, or also \textit{dielectric function}, $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strongly it develops the electric displacement $\D$ in response to the electric field $\E$ of a harmonic wave.
+From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$. In the medium, the permittivity may be obtained as
+\begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := 1 + \chi_e(\omega) = \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T. \label{eq_eps_loc}\end{equation}
 
 In general, the function $\epsrl(\omega)$ is complex to account for possible phase delay between the harmonic driving field and the medium response. Phase delay different than $0$ (or integer multiple of $\pi$) corresponds to energy being dissipated in the medium.
 Let us note that the definition of the Fourier transform is never subject to the sign change, even when the convention of $e^{\ii \omega t}$ is exchanged for $e^{-\ii \omega t}$.
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
-\begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium may respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
+\begin{figure}[t] \caption{\textbf{a)} Illustration of how a simplified medium respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
 	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf}
 \end{figure}
-The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on different time scales, and thus the medium response usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
+The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on a different time scale, thus the response of the medium usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
 
-Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium position in the lattice. The molecular rotation can also be modelled as an (possibly overdamped) harmonic oscillator. Even the free electrons in conductive media can fit into the theory of harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time domain and frequency domain, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
+Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium positions in the lattice. The molecular rotations can also be modelled as (possibly overdamped) harmonic oscillators. Even free electrons in conductive media can fit into the theory of a harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time and frequency domains, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
 
 A damped harmonic oscillator is described by a second-order differential equation:
 \begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} - \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
-Provided the driving term on the right hand side  is harmonic $f(t) = e^{+\ii \omega t}$, the system response is also a harmonic function, $x(t) = \chi(\omega) e^{+\ii \omega t}$. The differential equation (\ref{eq_harm_osc}) can be easily solved to show that the complex amplitude of the driven oscillations, $\chi(\omega)$, depends on the angular frequency and on the positive real parameters $\alpha$, $\beta$ and $\zeta$ in the following way:
+Provided the driving term on the right hand side  is harmonic, $f(t) = e^{+\ii \omega t}$, the system response is also a harmonic function, $x(t) = \chi(\omega) e^{+\ii \omega t}$. The differential equation (\ref{eq_harm_osc}) can be easily solved to show that the complex amplitude of the driven oscillations, $\chi(\omega)$, depends on the angular frequency and on the positive real parameters $\alpha$, $\beta$ and $\zeta$ in the following way:
 \begin{equation} \chi(\omega) \equiv \frac{x(t)}{f(t)} = \frac{1}{\zeta-\alpha\omega^{2} - \ii\omega\beta}  = \frac{\alpha^{-1}}{\frac{\zeta}{\alpha}-\omega^{2} - \ii\omega\frac{\beta}{\alpha}}. \label{eq_harm_osc_result}\end{equation}
 The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in this text, but without loss of generality the result of Eq. (\ref{eq_harm_osc_result}) can be rewritten into
 \begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} - \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
- \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{frequency of resonance}, at which the response is pure imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
+ \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonance frequency}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
  \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. In frequency domain, it is roughly proportional to the resonance width. } 
  \item{$F = \alpha^{-1}$ is the \textit{oscillator strength}, determining the amplitude of the response function.}
  \end{itemize}
 
 
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
-The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the resonance angular frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
+The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the angular resonance frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
 \begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q} \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
-An example of the time- and frequency-domain response of a medium with one harmonic oscillator in is Fig. \ref{fg_oscillator_spectrum}.
+A sample time- and frequency-domain response of a medium with one harmonic oscillator in is Fig. \ref{fg_oscillator_spectrum}.
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
 
-One can see that each oscillator increases the real part of permittivity, but in the high frequency limit the contribution of the oscillator vanishes. This can be intuitively understood as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at high frequencies  $\omega \gg \omega_0$, the system does not follow the driving force at all.
+One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at high frequencies  $\omega \gg \omega_0$, the system does not follow the driving force at all.
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 
 A more detailed treatment of the theory of the permittivity $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
 
-We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where the shows to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
+We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
 \paragraph{Permeability of Lorentz media}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
 \begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \right|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
-where $\chi_m(T)$ is the \textit{magnetic susceptibility of medium} and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an expression for the local permeability in the frequency domain:
+where $\chi_m(T)$ is the \textit{magnetic response function} of the medium and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an analogous expression for the local permeability in the frequency domain:
 \begin{equation} \murl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - i\omega\gamma_q}, \label{eq_lorentz_mu}\end{equation} 
 where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0q}$, $\gamma_q$ and $F_q$ are here the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field or their response is limited to low frequencies.
 
 %}}}
 \paragraph{Kramers-Kronig relations in local media}%{{{
-Causality prevents any medium from reacting to the future electric (or magnetic) field, so the integration in Eq. (\ref{eq_loc_chi_convol}) goes up to the current time only, $\tau \in (-\infty, t)$. The response of the medium to a real-valued field must moreover be also real, no matter that the computations are often done with complex field amplitude [Eq. (\ref{eq_pw})] for the sake of convenience. 
+Causality prevents any medium from reacting to the future electric (or magnetic) field, so the integration in Eq. (\ref{eq_loc_chi_convol}) goes up to the current time only, $\tau \in (-\infty, t)$. The response of the medium to a real-valued field must moreover be also real, no matter that the computations are often done with complex field amplitude [Eq. (\ref{eq_pw})] for sake of convenience. 
 
-Thus, the basic physical laws impose relatively strict constraints to the time-domain response function $f(t)$, which translate into another constraints for the possible shape of the response in frequency domain $F(\omega)$. The intuitive physical derivation is based on the fact that any time-domain response function can be trivially separated into its odd and even parts, as shown in Fig. \ref{fg_kk}. 
+Thus, the basic physical laws impose relatively strict constraints on the time-domain response function $f(t)$, which translate into other constraints for the possible shape of the response in frequency domain $F(\omega)$. The intuitive physical derivation is based on the fact that any time-domain response function can be trivially separated into its odd and even parts, as shown in Fig. \ref{fg_kk}. 
 \begin{equation}f(t) = f_{odd}(t) + f_{even}(t) = -f_{odd}(-t) + f_{even}(-t) \label{eq_odd_even_decomp}\end{equation}
 \begin{figure}[t] \caption{Illustration of how a real causal function $f(t)$ can be decomposed into the odd and even parts, which then yield a pure imaginary and pure real functions in the spectrum, respectively. Mathematically this is expressed in Eqs. (\ref{eq_odd_even_decomp}--\ref{eq_kkresult}).} \label{fg_kk} \centering 
 	\includegraphics[width=17.5cm]{img/Kramers_Kronig_plot/kk.pdf}
@@ -186,15 +184,15 @@ The odd and even components of the time-domain response function correspond to t
 \begin{equation} F_{odd}(\omega) + F_{even}(\omega) = F(\omega), \text{ where } F_{odd}(\omega) = F''(\omega) \text{ and } F_{even}(\omega) = F'(\omega).  \label{eq_kkFodd}\end{equation}
 At the same time, $f_{even}(t)$ and $f_{odd}(t)$ are related to each other by having the opposite sign for $t<0$ and the same sign for $t>0$, that is 
 \begin{equation} f_{even}(t) = \mbox{sign}(t)\,f_{odd}(t). \label{eq_kkfeven}\end{equation}
-Multiplication in the time domain manifests as a convolution in frequency domain
+The multiplication in the time domain translates into a convolution in the frequency domain
 \begin{equation} 
 F_{even}(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F_{odd}(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F_{odd}(\omega),
 \label{eq_kkresult}\end{equation} 
 where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the Hilbert transform.% tODO cite
 
-Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary part of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{odd}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
+Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary parts of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{even}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
 
-A related mathematical proof of Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. \cite[p. 125]{klingshirn2007semiconductor}
+A related mathematical proof of the Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. \cite[p. 125]{klingshirn2007semiconductor}
 
 %% TODO: why do K-K relations forbid to choose arbitrary phase difference over an unit cell? 
 %% ie. Why the Neff can be unambiguously extracted from spectra?
@@ -203,23 +201,22 @@ A related mathematical proof of Kramers-Kronig relations can be derived from the
 
 \subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
 \paragraph{Lower and upper polariton branches of transverse waves} %{{{
-Returning to the derivation of dispersion relations, we start with modifying the constitutive relation (\ref{eq_ce}) to a plane wave propagating in a medium:
+Returning to the derivation of dispersion relations, we start with modifying the constitutive relations (\ref{eq_ce}) to a plane wave propagating in a medium:
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
 \begin{equation}  T\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
 For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($T\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
-with the added frequency-dispersive term responsible for the deviation of Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
+with the added frequency-dispersive term responsible for the deviation of the curve in Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
-In the simplest example of a single electric resonance with negligible losses, as in Fig. \ref{fg_dcsimpleel}, the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and point in the opposite direction. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$. %, > \omega_0 which allows the transverse wave to propagate. 
-where the \textit{upper polariton branch} starts. In case of a single (or well-isolated) Lorentz oscillator, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation) \cite{klingshirn2007semiconductor}.
+In the simplest example of a single electric resonance with negligible losses, as shown in Fig. \ref{fg_dcsimpleel}, the curve is divided into two separate branches. The \textit{lower polariton branch} is below the resonance frequency $\omega_0$ and it is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and point in the opposite direction. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$ where the \textit{upper polariton branch} starts. In case of a single (or well-isolated) Lorentz oscillator, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation) \cite{klingshirn2007semiconductor}.
 
-The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also for the spectra of resonances of macroscopic structures described later.
+The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also of the spectra of resonances of macroscopic structures described later.
 
-Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line).
+Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
 
-When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  % TODO 
+When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  
 
 %}}}
 \paragraph{Longitudinal waves in dispersive media} %{{{
@@ -239,7 +236,7 @@ At the interface of two media with differing signs of permittivity, another type
 % Are there any metamaterials designed for longitudinal waves?
 %}}}
 \paragraph{Anisotropy of permittivity} \label{par_anisotropy} %{{{
-It shall be noted here that permittivity $\epsrl$ was introduced as a scalar, assuming that the vector of electric field $\E$ and electric induction $\D$ are always of the same orientation:
+It shall be noted here that the permittivity $\epsrl$ was introduced as a scalar, assuming that the vector of electric field $\E$ and electric induction $\D$ are always parallel:
 \begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
 	\left(\begin{array}{ccc} 
 			\epsrl(\omega) & 0 & 0  \\
@@ -248,8 +245,7 @@ It shall be noted here that permittivity $\epsrl$ was introduced as a scalar, as
 	\end{array} \right) \cdot \E
 	\label{eq_ed_orientation}
 \end{equation}
-In some media of lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric or magnetic field direction, and the medium is denoted as \textit{anisotropic}. At the beginning of the chapter we assumed the fields are relatively weak, which enables one to describe the medium as \textit{linear}. Whatever the linear relation of $\D := \mathcal{L}(\E)$
-is, it must obey the rule
+In some media with a lower rotational symmetry (such as many crystals, or liquids under static electric field), the medium response depends on the electric or magnetic field direction, and the medium is denoted as \textit{anisotropic}. At the beginning of the chapter we assumed the fields to be relatively weak, which enables one to describe the medium as \textit{linear}. Whatever the linear relation of $\D := \mathcal{L}(\E)$, it must obey the rule
 $$\D_1 + \D_2 = \mathcal{L}(\E_1) + \mathcal{L}(\E_2) = \mathcal{L}(\E_1 + \E_2)$$
 for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \textit{tensor of permittivity} 
 \begin{equation} \D = \varepsilon_0 \epsrl(\omega) \E \equiv \varepsilon_0  
@@ -260,12 +256,11 @@ for any vectors $\E_1, \E_2$. Such a relation can be fully described by a \texti
 	\end{array} \right) \cdot \E.
 	\label{eq_epstensor}
 \end{equation}
-Elaborate discussion on all possible forms of this tensor and their physical interpretation can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
+An elaborate discussion on all possible forms of this tensor and their physical interpretations can be found e.g. in \cite[pp. 678--686]{born1999book}. An analogous treatment can be applied to the magnetic permeability, though it is less often needed.
 
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  %{{{
-If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. % \ref{}. 
-
+If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. \ref{eq_dispeq_loc}.
 %\begin{equation} xxx  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
 %\begin{equation} xxx - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E,  \end{equation}
 
@@ -287,15 +282,12 @@ If the medium response depends on the direction of the field, the dispersion rel
 %	\left(\begin{array}{ccc} k_x^2+k_y^2+k_z^2 & 0 & 0 \\ 0 & k_x^2+k_y^2+k_z^2 & 0 \\ 0 & 0 & k_x^2+k_y^2+k_z^2 \end{array} \right) \cdot  
 %	\left(\begin{array}{c} E_x \\ E_y \\ E_z \end{array} \right),
 %	$$
-The dispersion relation can however still be solved \cite[pp. 667]{born1999book} as a set of three linear algebraic equations:
-\begin{equation}  T\E =  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\varepsilon_0 \mu_0 \, \epsrl(\omega) \murl(\omega) \omega^{2}}{k^2} \E. \tag{\ref{eq_wavek_disp} \again}\end{equation}
+The dispersion relation can however still be solved \cite[pp. 667]{born1999book} as a set of three linear algebraic equations based on Eq. (\ref{eq_wavek_disp}).
 %\begin{equation} \left|\begin{array}{ccc} 
 	%k_y^2+k_z^2 - \mu_0 \varepsilon_0 \omega^{2} 		& -k_x k_y 		& -k_x k_z \\ 
 	%-k_y k_x 		& k_x^2+k_z^2-\mu_0\varepsilon_0\omega^{2} 		& -k_y k_z \\ 
 	%-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
 	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
-where the wave-plane projection tensor $T$, dependent on the wavevector $\kk$, was already defined in Eq. (\ref{eq_transverse1}).
-
 For simplicity, we assume here that the relative permeability $\murl = 1$; the extension to other cases is possible, too. %% TODO Do epsilon and mu commute, if they are both tensors??
 A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if and only if the determinant of the set of three linear equations is zero:
 \begin{equation} 
@@ -322,16 +314,16 @@ frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimen
     \includegraphics[width=7cm]{img/dispersion_curves_to_ifc.pdf}
   \end{minipage}
   \begin{minipage}[c]{0.5\textwidth}
-    \caption{The relation between a plot of a dispersion curve for one photonic branch and the corresponding isofrequency contours. At a selected frequency, all points in the $k_x$-$k_y$ plane are drawn for which a nonzero solution of Maxwell equations exists. For transverse waves in local media, this is equivalent to finding a solution to the dispersion equation (\ref{eq_dispeq_loc}).\\Multiple frequencies can be plotted to describe the frequency dependence. For illustration, an isotropic medium was used, thus all IFCs take the form of a circle. To save space, only one quarter of the circle was plotted here.} \label{fg_ifc_dc}
+    \caption{Relation between a dispersion curve for one photonic branch and the corresponding isofrequency contours. At a selected frequency, all points in the $k_x$-$k_y$ plane are drawn for which a nonzero solution of Maxwell equations exists. For transverse waves in local media, this is equivalent to finding a solution to the dispersion equation (\ref{eq_dispeq_loc}).\\Multiple frequencies can be plotted to describe the frequency dependence. For illustration, an isotropic medium was used, thus all IFCs take the form of a circle. To save space, only one quarter of the circle was plotted here.} \label{fg_ifc_dc}
   \end{minipage}
 \end{figure}
 
-Such a plot is known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC), and allows for intuitive geometrical analysis of various phenomena such as light refraction, beam walk-off, total internal reflection etc. 
-The relation between a dispersion curve for one photonic branch and the corresponding isofrequency contours in an isotropic medium is shown in Fig. \ref{fg_ifc_dc}.
+Such plots are known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC), and they allow intuitive geometrical analysis of various phenomena such as light refraction, beam walk-off, total internal reflection etc. 
+The relation between a dispersion curve for one photonic branch and the corresponding isofrequency contours in an isotropic medium is illustrated in Fig. \ref{fg_ifc_dc}.
 
-Its limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot the dispersion in media with no or negligible losses only.  
+The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot the dispersion in media with no or negligible losses only.  
 Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping (see the right panel of Fig. \ref{fg_dcsimpleel}). 
-Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are generally different in anisotropic media, but we always restrict the discussion only one polarisation in the following figures for simplicity. 
+Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
 \begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point.  
@@ -340,30 +332,30 @@ Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutio
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used  as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
-Isofrequency contours are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., in the isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
-The component of wave vector parallel to the interface (chosen as $k_x$ here and indicated by the vertical dashed lines) must be maintained upon refraction. This rule can be intuitively deduced from the continuity of the wave phase at the interface, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
+IFCs are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., by an isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
+The component of wave vector parallel to the interface (chosen as $k_x$ here and indicated by the vertical dashed lines) must be conserved upon refraction. This rule can be intuitively deduced from the continuity of the wave phase at the interface, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to an IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
 In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and two anisotropic media.
 
 %}}}
 \paragraph{Index of refraction and its applicability}  %{{{
 With the background of the theory developed above, the notion of the \textit{index of refraction} $N$ can be properly introduced and discussed. 
-In the most strict sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of the wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
+In the strictest sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of the wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
 \begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_dispeqN}\end{equation}
 as directly follows from Eq. (\ref{eq_dispeq_loc}).
 
-Starting with a harmonic plane wave with the frequency $\omega$ and the wave vector $\kk^{(1)}$ refracting at an interface of two isotropic media, the projection of $\kk$ to the interface is given as 
+Starting with a harmonic plane wave with the frequency $\omega$ and the wave vector $\kk^{(1)}$ refracting at an interface of two isotropic media, the projection of $\kk^{(1)}$ to the interface is given as 
 $$ k_x = k^{(1)}\,\sin \alpha^{(1)}, $$
-where $\alpha^{(1)}$ is the angle between the wavevector in the first medium $\kk^{(1)}$ and the  normal to the interface. In the second medium, a similar relation must apply, however the wavenumber $k^{(2)}$ may be different and as a result, the angle in the second medium is
+where $\alpha^{(1)}$ is the angle between the wavevector in the first medium $\kk^{(1)}$ and the  normal to the interface. In the second medium, a similar relation must apply. Therefore, the wavenumber $k^{(2)}$ may be different and as a result, the angle in the second medium is
 \begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right) = \arcsin\left( \frac{N_1}{N_2} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
 which is known as the \textit{Snell} (or also \textit{Snell-Descartes}) law.
 
-The majority of (effective) media discussed in this thesis are however more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for a conscientious extension of $N$ for anisotropic cases, too. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium. This can be formally done, but then the wavenumber $k$ would also depend on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its original purpose of making the computation explicit and notably simple.
+The majority of (effective) media discussed in this thesis are, however, more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for a conscientious extension of $N$ for anisotropic cases, too. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium. This can be formally done, but then the wavenumber $k$ would also depend on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its original purpose of making the computation explicit and notably simple.
 
 The author proposes instead to restrict the term \textit{index of refraction} to all cases where IFCs are perpendicular to $\kk$. This covers not only all isotropic media, but also those cases when the waves propagate close the optical axis of any anisotropic media. An example of an anisotropic medium with its optical axis oriented in such a way that the refraction can be computed using Snell law provided the $k_x$ component is shared with \ref{fg_ifc}a, is shown in Fig. \ref{fg_ifc}c. For small deviations from this angle, where the IFC can be approximated by an osculating circle, 
 \begin{equation} \frac{\partial k}{\partial \alpha} \ll k,\label{eq_osculating}\end{equation}
 the Snell law still gives a correct prediction of the refraction angle. 
 
-We will however show in the following that the prediction of \textit{beam} propagation is more complicated, being sensitive to the \textit{curvature of IFC}. 
+We will show in the following that the prediction of \textit{beam} propagation is more complex, because it is sensitive to the \textit{curvature of IFCs}. 
 
 %}}}
 %%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ TODO READ BELOV2003 and FIXME
@@ -374,12 +366,13 @@ We will however show in the following that the prediction of \textit{beam} propa
 %%   
 %%   %}}}
 \paragraph{Group velocity}  %{{{  
-So far only the propagation and refraction of a plane harmonic wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency.
+So far, only the propagation and refraction of a plane harmonic wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency.
 Temporal modulation of the wave 
 % can be expressed by a complex vector function $\E_0(t)$ that replaces the constant vector $\E_0$ in Eq. \ref{eq_pw}. This 
-is equivalent to the wave being formed by superposition of multiple frequency components in the frequency domain, with their respective amplitudes given by the Fourier transform of the field envelope. The position of the envelope in time is determined by their \textit{mutual phase difference}, not by the absolute wave phase. Thus, when all components propagate with the same velocity, the envelope does not shift against the wave phase. 
+is equivalent to the wave being formed by superposition of multiple frequency components in the frequency domain, with their respective amplitudes given by the Fourier transform of the field envelope. The temporal position of the envelope in is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
+%redund As a special case, when all components propagate with the same velocity, the envelope does not shift against the wave phase. 
 
-A similar argument can be made with regards to the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of the spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
+A similar argument can be made with regards to the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of its spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
 
 The velocity vector of the envelope propagation, denoted as the \textit{group velocity} $\mathbf{v_g}$, can be found as the gradient of frequency by the wavevector: %% TODO cite
 \begin{equation} \mathbf{v_g} := \frac{\partial \omega}{\partial \kk} \equiv 
@@ -389,16 +382,16 @@ The velocity vector of the envelope propagation, denoted as the \textit{group ve
 	\partial \omega/\partial k_z \\ 
 	\end{array} \right)
  \label{eq_vg}\end{equation}
-In the IFC plot, the group velocity can be visually found as directing always perpendicular to the IFC, with its magnitude being proportional to the density of the IFCs.
+In the IFC plot, the group velocity can be found visually as directing always perpendicular to the IFC, with a magnitude being proportional to the density of the IFCs.
 
-If the group velocity is different from the phase velocity, the envelope $\E_0(t)$ is maintained over time, but it continuously shifts against the underlying wave. Thus the actual temporal shape of $\E(t)$ changes upon passing through a dispersive medium.
+If the group velocity is different from the phase velocity, the envelope $\E_0(t)$ is maintained in time, but it continuously shifts against the underlying wave. Thus the actual temporal shape of $\E(t)$ changes upon passing through a dispersive medium.
 On the contrary, in vacuum or media with negligible dispersion, each frequency component of the wave acquires an additional phase strictly proportional to its frequency. Then the group velocity coincides with the phase velocity: 
 $$\hspace{3cm}\mathbf{v_g} = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
 %The orientation of $\vg$ and $\kk$ is usually the same, but later it will be shown that it can be otherwise, with peculiar physical consequences.
 
-Usually in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
+Usually, in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in a temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
 %}}}
-\paragraph{Propagation of a beam in anisotropic media}  %{{{  
+\paragraph{Propagation of beams in anisotropic media}  %{{{  
 The refraction of a beam is illustrated in Fig. \ref{fg_ifc2} by means of three slightly different wavevectors it is composed of. For simplicity, a monochromatic wave was used, so brown, black and violet were chosen for the three example wavevectors to prevent confusion with the rainbow-like frequency color map used in Fig. \ref{fg_ifc}. 
 
 In the first plot, \ref{fg_ifc2}a, the case of an isotropic medium is illustrated. Upon refraction into a general anisotropic medium in Fig. \ref{fg_ifc2}b, each component must maintain its wavevector projection to the interface, thus the wavevectors spread in their direction. The resulting beam propagates along the group velocity that is different from the central wavevector; % The components of the resulting beam are   is narrower and does not propagate 
@@ -424,9 +417,9 @@ In Fig. \ref{fg_ifc2}d, an extreme case of spatial walk-off is shown on the exam
 
 %}}}
 \paragraph{The sign of the phase and group velocities}  %{{{
-In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without providing justification. In fact, both upwards and downwards pointing wave vector provide valid solution. The reason is that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave was propagating downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
+In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the solution of the vertical wave vector component $k_y$ pointing downwards was always selected without justification. In fact, both upwards and downwards pointing wave vectors provides valid solution. The choice was made so that in the first medium represented by the leftmost plots (Fig. \ref{fg_ifc}a and \ref{fg_ifc2}a), the incident wave propagates downwards to the interface, and it was assumed that also the refracted wave will propagate downwards, from the interface.
 
-A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite direction (or more generally, when they have an opposite projection on the normal to the interface).  This manifests as IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}.
+A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite directions (or, more generally, when they have opposite projections on the normal to the interface).  This manifests itself by the IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}b,c.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
 \begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefr.pdf} 
@@ -435,7 +428,7 @@ Such a case can indeed occur in natural or artificial media, as described in mor
 	\includegraphics[width=.8\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
-Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in direction close to the optical axis, the Snell law is still applicable and we then speak of \textit{negative index of refraction}.  The refraction between an ordinary medium and two examples of negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
+Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in a direction close to the optical axis, the Snell law is still applicable and we then speak of a \textit{negative index of refraction}.  The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
 %% maybe?? the propagation velocities are more complicated 
 
 %}}}
@@ -443,15 +436,13 @@ Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency conto
 \subsection{Nonlocal response} 
 \paragraph{Definition of nonlocal media}%{{{
 %TODO: spatial dispersion describes one specific sort of nonlocal behaviour that exists in homogeneous infinite media only
-The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media that follows.
-
-The downsides of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
-Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics},  such as the Doppler broadening of resonance lines in gases. \cite{makarov2004permittivity}
+The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media.  The downside of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
+Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics}, which is the case, for example, of the Doppler broadening of resonance lines in gases \cite{makarov2004permittivity}. 
 These phenomena are primarily dependent on the wave vector $\kk$, and the apparent broadening on the \textit{frequency} axis is only due to the dispersion curve defining a simple relation between  frequency and wave vector.  
 
-In this section such a more general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore is described by a spatio-temporal convolution:
+In this section, a general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore it is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
-In a very similar manner as in the local theory above, we assume a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. This is without loss of generality, thanks to that it is possible to express any wave as a superposition of monochromatic plane waves.
+In a very similar manner as in the local theory above, we assume that a plane wave $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$ propagates through the medium. This is without loss of generality, since it is possible to express any wave as a superposition of monochromatic plane waves.
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\brho} \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_harm_nonloc}\end{equation}
 After two  substitutions, $T:=t-\tau$, $\mathbf{R}:=\rr-\brho$, the exponent can again be separated into the original plane wave (which factors out), and a spatio-temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0\int_{V} \int_{-\infty}^{0} \chi_e(T, \mathbf{R}) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot(\rr - \mathbf{R})} \,\mbox{d}T \,\mbox{d}^3\brho,$$
@@ -461,7 +452,7 @@ The response of the medium to the electric field of any harmonic plane wave can 
 Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\epsrn(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\epsrn$ 
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of slightly narrower meaning, as it implies that an infinite plane wave of a defined wavevector is being considered.
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of a slightly narrower meaning, as it implies that an infinite plane wave of a defined wavevector is being considered.
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
@@ -472,7 +463,7 @@ Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk
 \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, 
 \end{array} \quad \right\} \quad \text{(in any media)}
 \label{eq_epsmusd1}\end{equation} %% TODO gamma->eta, alpha->phi, ...->psi, ...-xi
-where $\chi_{e,m}(\omega)$ are tensors of the second rank, $\gamma_{e,m}(\omega)$ of the third rank, $\alpha_{e,m}(\omega)$ of the fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
+where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensor, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
 %In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
 
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% TODO fix the sencence - it is in fact incorrect
@@ -491,9 +482,9 @@ Here, we will follow the approach of Landau and Lifshitz (see \cite{landau1984el
 $$\epsLL(\omega, \kk) \not\equiv \epsrn(\omega, \kk),\quad\quad\quad 1 = \muLL(\omega, \kk) \not\equiv \murn(\omega, \kk).$$
 The Maxwell equations (\ref{eq_me1}-\ref{eq_me4}) however still hold when these new parameters are substituted for the original ones. Requiring the relative permeability to be unity implies a trivial dependence of the magnetic field on the magnetic induction in this model:
 $$ \mu_0 \HHsd = \B. $$
-Therefore, the \textit{Landau-Lifshitz} model developed below is also denoted as the $\E\D\B$-model.
 
-Its advantage is that the relative magnetic permeability is defined as a mere constant of the magnetic response of vacuum $\muLL(\omega, \kk) := 1$, thus reducing the complexity of the computation compared to the symmetric spatial-dispersive model. %% [as in Eq. (\ref{eq_ce})]
+The advantage is that the relative magnetic permeability is defined as a mere constant of the magnetic response of vacuum $\muLL(\omega, \kk) := 1$, thus reducing the complexity of the computation compared to the symmetric spatial-dispersive model. %% [as in Eq. (\ref{eq_ce})]
+Therefore, the \textit{Landau-Lifshitz} model developed below is also denoted as the $\E\D\B$-model, \add{since it allows to write the Maxwell equations without explicit use for the magnetic field $\HH$.  }
 
 %}}}
 \paragraph{Local medium in the Landau-Lifshitz model} %{{{
@@ -507,20 +498,20 @@ An important step towards using the Landau-Lifshitz model is to explicitly deriv
 \end{enumerate}
 Later, higher-order expansion terms can be easily added to describe all sorts of the nonlocal response.
 
-Repeating the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
+Recalling the Maxwell equation (\ref{eq_me4}) that links the magnetic field $\HH$ with the electric induction $\D$, 
 \begin{equation} \nabla \times \HH =  \frac{\partial \D} {\partial t}, \tag{\ref{eq_me4} \again} \end{equation}
-it is clear that if one defines new pair of vector fields
+it is clear that if one defines a new pair of vector fields
 \begin{equation} \HHsd = \HH + \frac{\partial\mathbf{X}}{\partial t}, \label{eq_HHsd}\end{equation}
 \begin{equation} \Dsd  = \D  + \nabla\times \mathbf{X}, \label{eq_Dsd}\end{equation}
 then Eq. (\ref{eq_me4}) maintains exactly the same form with the new fields, for any differentiable vector field $\mathbf{X}$:
 \begin{equation} \nabla \times \HHsd = \nabla \times \HH + \left(\nabla\times \frac{\partial\mathbf{X}}{\partial t}\right) = \frac{\partial \D}{\partial t}+ \frac{\partial(\nabla\times \mathbf{X})}{\partial t} =  \frac{\partial \Dsd} {\partial t}, \label{eq_me4sd} \end{equation}
-because for well behaved functions the temporal and spatial derivatives commute.
+because for reasonably shaped functions the temporal and spatial derivatives commute.
 
 %% TODO how this transform is denoted?
 With the freedom of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in spatial-dispersive theory, the constitutive equation %% TODO reference some text from above pargraphs
 for magnetic induction is defined the same as in vacuum:
 \begin{equation} \mu_0 \HHsd := \mu_0 \murl(\omega) \HH = \B. \label{eq_mu_sd}\end{equation}
-When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obtain a prescription for sought $\mathbf{X}$: 
+When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obtain a prescription for the sought $\mathbf{X}$: 
 $$ \HHsd = \HH + (\murl(\omega) -1)\HH = \HH + \underbrace{\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B}_{=:\,\partial\mathbf{X}/\partial t}$$
 Without loss of generality, we again restrict the discussion to a plane wave (\ref{eq_pw}), thus the time derivative equals to multiplication by $\ii\omega$.
 \begin{equation} \mathbf{X} = \frac{1}{\ii\omega}\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B = \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right)\B. \label{eq_Xsd}\end{equation}
@@ -557,7 +548,7 @@ Let us note that the classical approach using symmetric parameters $\epsrl(\omeg
 
 Formally, it is possible to define any other representation of the medium response between these parameters. The distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with uncommon spectral shape \cite{skaar2014diamagnetism}.
 
-\todo{"Casimir" formulation of electrodynamics \cite{vinogradov2002form}}
+% todo "Casimir" formulation of electrodynamics \cite{vinogradov2002form}
 
 %% TODO REF EBD theory and nonlocal electrodynamics
 %% \cite{krowne2007book_agran}
@@ -581,36 +572,40 @@ T -
 	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
 %}}}
-\paragraph{Dispersion of a local dielectric in the Landau-Lifshitz model} %{{{
-\begin{figure}[t] \caption{Dispersion curves for three different examples of local media, comparing the local and Landau-Lifshitz representation of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed using Eq. (\ref{eq_disp}), either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plotted as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plotted as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
+\begin{figure}[t] \caption{Dispersion curves for three different types of local media, comparing the local and Landau-Lifshitz representations of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plotted as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plotted as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
 \textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
 \textbf{(c)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 \clearpage
-
+\paragraph{Dispersion of a local dielectric in the Landau-Lifshitz model} %{{{
 The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters for local media in Eq. (\ref{eq_epsmusd3}) are mathematically identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with (\ref{fg_dcll}a) an electric resonance, with (\ref{fg_dcll}b) a magnetic resonance and (\ref{fg_dcll}c) with both resonances overlapping. 
 
-The plots in the left column in Fig. \ref{fg_dcll} show the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
+The plots in the left column of Fig. \ref{fg_dcll} show the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
 Its right column features a thin black contour connecting all points where the dispersion equation (\ref{eq_dispdetLL}) was found to hold by a numerical search.
 This is complemented by the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as a background colour map with blue tone for negative values and red for positive ones. 
 %As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one,
-Additionally, the original green dispersion curve as in Fig. \ref{fg_dcsimpleel} is retained, which was computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
+Additionally, the original green dispersion curve as in Fig. \ref{fg_dcsimpleel} is retained, as computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
 
 For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
 
-A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit similar dispersion curves. At the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
-%%% TODO add Eq. 2.52 repeated with underbrace
-contribution that grows proportionally with $k^2$, and its maximum magnitude is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) = 0$. This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
+A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit similar dispersion curves. In the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
+contribution that grows proportionally with $k^2$: 
+\begin{equation} \Dsd = \D + \underbrace{\frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T \E}_{\text{magnetic contribution}},      \tag{\ref{eq_Dsd4} \again} \end{equation}
+% TODO FK: Nějak to tam nevidím. To jako pro ω/ω0> 1.3? Chtělo by to popsat nějak názorněji.
+and unlike the case of the electric resonance, the maximum magnitude of the magnetic contribution is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) \rightarrow 0$. In the plot \ref{fg_dcll}b, this is at $\omega/\omega_0 \approx 1.3$.
+% TODO FK: Ani tady se mi nezdá zjevné, kde je tato podmínka splněna.
+This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
 $\epsLL(\omega, k)$
 
 Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from the cases of isolated resonances occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
 % (electric quadrupoles..., [Merlin])
+% todo Why magnetic resonances do not contribute to the static permeability?
 
-\todo{Why magnetic resonances do not contribute to the static permeability?}
+%% XXX up to here revision of FK 2015-06-28 XXX
 
 %}}}
 \paragraph{The dispersion of nonlocal media} %{{{ 
@@ -622,9 +617,9 @@ Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main differen
 Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead the dispersion curves to deviate from those predicted for local media. This corresponds to the black contour deviating from the green line in Fig. \ref{fg_dcll_nl}.
 As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This is reflected in adding a thin blue line in the left column.
 
-The choice of using the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}\cite{vinogradov2002form}.  % ... perhaps other papers, too?
+The choice of using the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
 
-The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other. In the latter case, they approach to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, and that its occurence is only due to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
+The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other with frequency growing. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
 
 %}}}
 \paragraph{Multiple waves and additional boundary conditions}   %{{{ 
@@ -641,8 +636,7 @@ In the case of a positive amplitude of $\alpha$ (c.f. Fig. \label{fg_dcll_nl}a),
 \paragraph{Odd expansion terms and optical activity }   %{{{ 
 Returning to the power expansion of $\epsLL(\omega, \kk)$ in terms of $k$ in Eq. (\ref{eq_epsmusd1}), we can identify the term constant in $k$ with the electric dipole moment $\chi_e(\omega)$, the term proportional to $k^2$ with the magnetic dipole moment $\chi_m(\omega)$ (or, also the electric quadrupole moment), and the recently discussed term proportional to $k^4$ with an electric octupole or magnetic quadrupole (\cite{agranovich2006spatial, agranovich2004linear, krowne2007book}).
 
-The odd terms were not discussed yet, although they have important physical interpretation -- their nonzero values break the spatial inversion symmetry of the medium, and are thus related to optical activity \cite{bungay1993equivalency}. 
-%% todo related: \cite{fietz2011homogenization}
+The odd expansion terms were not discussed yet, although they have important physical interpretation -- their nonzero values break the spatial inversion symmetry of the medium, and are thus related to optical activity \cite{bungay1993equivalency}. 
 In media with nonzero odd terms, the corresponding eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
 
 \begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the function $\gamma_e(\omega)$, which occurs in the term linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}), is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
@@ -754,7 +748,7 @@ The previous sections discussed infinite homogeneous media. The only exception w
 
 There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
 
-The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in the Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for the periodicity and its most important traits can again be partially understood on analytical basis.
+The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for the periodicity and its most important traits can again be partially understood on analytical basis.
 
 In this chapter, we will focus on these general properties of periodic structures, leaving the particular numerical simulations to the Results section.
 Under the notion of \textit{periodicity} we understand there exist discrete translational symmetries, that is, 
@@ -790,7 +784,7 @@ Note this theorem does not determine the shape of $\mathbf{u_e}(\rr)$, $\mathbf{
 This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of the proof which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
 \begin{enumerate}
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
- \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$ } 
+ \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
  \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$.}
  \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ is eigenfunction of the translation operator, that is,
 $\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being multiplied by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.

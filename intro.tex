@@ -5,20 +5,18 @@ The behaviour of electromagnetic waves in periodic media has attracted the human
 The scientific community started to study the underlying phenomena in the late 19th century when the X-ray scattering was observed on (periodic) crystal lattices and also when the high optical reflection from periodic layers of entirely transparent materials was predicted. % TODO ref
 %The technological and scientific boom of the 20th century contributed with many new theoretical approaches, numerical methods and types of periodic structures to the newly born field of \textit{photonics}. With the advent of the 21th century, great progress was also made in the research of \textit{metamaterials}, a specific subset of periodic structures which will be discussed in greater detail in this work. 
 % TODO motivation - finish
-The key concept in photonic crystal or metamaterial studies is that the electromagnetic properties are defined predominantly by the shape of the structure, while the actual materials that are used to build it can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
-While it is unlikely that a radically new material will be invented for construction of optical elements, several new phenomena can be obtained by periodic structuring of ordinary materials. The rapid development of this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers able to predict the structure behaviour.
+The key concept in photonic crystal or metamaterial studies is that the electromagnetic properties are defined predominantly by the shape of the structure, while the actual materials that are used to build such a structure can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
+While it is unlikely that a radically new homogeneous material will be invented for construction of optical elements, by periodic structuring of ordinary materials, several new phenomena can be obtained. The rapid development of this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers able to predict the structure behaviour.
 
 \subsection{Motivation for the terahertz photonics}
-This work focuses on the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used from microwave to optical frequencies, the selected frequency range defined the properties of materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, some materials commonly found in the microwave or optical applications must be avoided, as they exhibit excessively high losses in the terahertz range (such as glass, water, most plastics etc.)
+This work focuses on the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used from microwave to optical frequencies, the selected frequency range defined the properties of materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high-permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, some materials commonly found in the microwave or optical applications must be avoided, as they exhibit excessively high losses in the terahertz range (such as glass, water, most plastics etc.)
 
-%\cite{lewis2014review} approximated the number of papers as an exponential, doubling every 3.2 years: D = 2**[(year-1975)/3.2]
-
-The THz range is located in the spectrum at the boundary of the regions where people use "electronic" or "optical" approaches. At THz frequencies, devices from both paradigms are often seamlessly used together: waves from waveguides can be collimated by lenses, pulses emitted from lumped antenna emitters are detected by electrooptical crystals etc. 
-%%\cite{ozyuzer2007emission} ... gap in the generation of electromagnetic radiation, extending ap- proximately from 0.5 THz to 2 THz, stems from the separation of the two general
+The THz range is located in the spectrum at the boundary between the regions where people use "electronic" or "optical" approaches \cite{ozyuzer2007emission}. At THz frequencies, concepts from both paradigms are often seamlessly used together: waves from waveguides can be collimated by lenses, pulses emitted from lumped antenna emitters are detected by electrooptical crystals etc. 
+%% ... gap in the generation of electromagnetic radiation, extending ap- proximately from 0.5 THz to 2 THz, stems from the separation of the two general
 %%paradigms for generating electromagnetic waves (1–3): alternating currents in semiconductor- based electronics and electronic transitions be- tween quantized electronic states in lasers,
 %%respectively. The frequency of semiconductor devices is bounded from above by limits of the electron velocities, whereas the frequency of solid-
 %%state lasers is bounded from below by thermal energies that limit the smallest electronic transitions useful for lasing...
-Yet none of these approaches is optimal for the THz applications; from the electronic point of view, we are for instance still lacking transistors with fast enough response and the microstrip circuits become too lossy at high frequencies. The optical approach is often complicated by the strong wave-optics phenomena such as diffraction, while some light-matter interactions are weaker, limiting the possibilities for e.g. amplitude modulation by Pockels effect. These deficiencies give additional reasons to search for the new possibilities of the photonic crystals and metamaterials operating in the terahertz range.
+Yet none of these approaches is optimal for the THz applications; from the electronic point of view, we are for instance still lacking transistors with fast enough response and the microstrip circuits become too lossy at high frequencies. The optical approach is often complicated by the strong wave-optics phenomena such as diffraction, while some light-matter interactions are weaker, limiting the possibilities for e.g. amplitude modulation by Pockels effect. These deficiencies provide additional reasons to search for the new possibilities of the photonic crystals and metamaterials operating in the terahertz range.
 
 % TODO THz MM review 
 
@@ -27,7 +25,10 @@ Yet none of these approaches is optimal for the THz applications; from the elect
 % TODO  cíle disertace
 \add{
 Many different designs of metamaterials  % and photonic crystals
-were proposed in the last decades, part of them being aimed to the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
+were proposed in the last decades, part of them being aimed at the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
+One of the aims of the dissertation is to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
+Some attention was paid also to \todo{investigate the tunability of their properties depending on external parameters}, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
+Last but not least, the dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. The results from these simulations will be verified against experimental data and analytic models.
 \\
 
 lacks:
@@ -41,7 +42,7 @@ lacks:
 \paragraph{Theory} %{{{
 The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner. Many related topics such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the description of metamaterials in the rest of the thesis.  
 
-The local electrodynamics serves as a basis for transforming into the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics for spatially-dispersive media. 
+The local electrodynamics serves as a basis for the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics for spatially-dispersive media. 
 %, which is elaborated more in detail.  ---  in fact I should write more there.
 In the author's opinion, this topic does not receive due attention in most of the literature.
 
@@ -62,13 +63,6 @@ The distinction of two widely recognized types of these, namely \textit{metamate
 
 %}}}
 
-\add{
-One of the aims of the dissertation are to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
-
-Some attention was paid also to \todo{investigate the tunability of their properties depending on external parameters}, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
-
-Last but not least, the dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. Thorough the thesis, the results from these simulations will be verified against experimental data and analytic models.
-}
 
 %% TODO update 
 %In the following section we present a brief overview of the relevant physical theory. We review the propagation of electromagnetic waves in the free space and in simple periodic structures. We  outline the boundary which usually divides the fields of \textit{photonic crystals} and \textit{metamaterials}, trying to support the hypothesis that the theoretical approaches used for each field can be unified and used for the other field as well.
@@ -87,7 +81,7 @@ The explicit time, space or frequency dependence of quantities are omitted when 
 
 An important note shall be made on the sign convention for the complex wave, introduced in Eq. \ref{eq_pw}.
 We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
-It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[(Chapters 1-4, 6, 9, 10)]{eleftheriades2005book}).  In the remaining half, (e.g. \cite[(Chapters 5, 7, 8)]{eleftheriades2005book}), \cite{klingshirn2007semiconductor}, \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[(Chapters 1-4, 6, 9, 10)]{eleftheriades2005book}).  In the remaining part, (e.g. \cite[(Chapters 5, 7, 8)]{eleftheriades2005book}), \cite{klingshirn2007semiconductor}, \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 %% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
 %% https://www.comsol.com/support/knowledgebase/1009/    
@@ -98,5 +92,5 @@ In the real world, observable fields do not have any imaginary component so the 
 In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
 thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. Thorough the thesis, we however represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon''$.
 
-The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. Whole thesis consistently uses the meter-kilogram-second (or, SI) system.
+The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (or, SI) system.
 %}}}
