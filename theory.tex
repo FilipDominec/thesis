@@ -916,37 +916,41 @@ In one-dimensional case the definition of higher Brillouin zones trivially consi
 In two or three dimensions the shapes of higher Brillouin zones get much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}. 
 In two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
 
-The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures. 
-The exact shapes of the Brillouin zones are determined by the \textit{crystal family} of the real-space lattice and its set of lattice vectors ($\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$). An argument followed that the space occupied by the plot can be further reduced thanks to the symmetry of the dispersion curves. This naturally applies to higher dimensions as well; the minimum part of the Brillouin zone that contains all necessary information is denoted as the \textit{irreducible Brillouin zone} and is determined by the crystallographic point group of the lattice.
+The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures, where it actually becomes a practical help for visualisation.
+The exact shapes of the Brillouin zones are determined by the \textit{crystal family} of the real-space lattice and its set of lattice vectors ($\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$). 
+As was also noted above, the space occupied by the plot can be further reduced thanks to the symmetry of the dispersion curves. This naturally applies to higher dimensions as well; the minimum part of the Brillouin zone that contains all necessary information is denoted as the \textit{irreducible Brillouin zone} and is determined by the crystallographic point group of the lattice. 
+
+More detailed listing and comparison of Brillouin zone shapes is beyond the scope of this thesis, but can be found in numerous solid-state textbooks, e.g. \cite[pp. 96-99]{klingshirn2007semiconductor}. %% TODO add some good detailed textbook on BZ
 
 %}}}
-\paragraph{Brillouin zones of orthogonal lattices} %{{{ 
+\paragraph{High-symmetry points of the Brillouin zones} %{{{ 
+The fundamental difference between simple plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only an one-dimensional scan (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where all three components of $\KK$ should be scanned in the ideal case.
 
-Notation of high-symmetry points in the 
+A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary of one selected irreducible .
 
-%}}}
-\paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
-
-Gamma-X-K-Gamma plot
+The notation of high-symmetry points in the  %% TODO 
 
 %}}}
-\paragraph{Tight-binding model for photonic band-gaps}%{{{
-The described view of the dispersion was 
-A different view to the formation of the dispersion curves can be drawn in analogy with the \textit{tight-binding} model in solid-state physics, first analyzing the unit cells isolated in free space, and then taking into account their mutual interaction that shifts the frequency up, or down \cite[p. 75]{klingshirn2007semiconductor}. \label{hopping}
-The 
-This is . %-- individual oscillators with frequency more-or-less dependent on
+%% TODO add an example plot of vacuum and comment
+%% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
+%% Gamma-X-K-Gamma plot
+%% %}}}
+\paragraph{Tight-binding model for photonic band-gaps} %{{{
+The notation of the high-symmetry points in the Brillouin zone is a good background to take  a different view to the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
+or \textit{hopping}  %% TODO cite?
+model in solid-state physics. 
 
-Returning to the figure of dispersion curves in a periodic structure, % TODO ref
-the $\Gamma$ point in the Brillouin zone, where $k = 0$, can be identified with Neumann boundary conditions, where we require $dE/dx = 0$ (otherwise the derivative of the field $E$ would not be continuous). % this also holds for other boundaries, on the $y$- and $z$-axis
+\label{hopping}
+Analyzing the unit cells isolated in free space, one obtains the natural resonance frequency.
+This frequency shifts up, or down \cite[p. 75]{klingshirn2007semiconductor}, when their mutual interaction is taken into account, that is, limiting the dimensions of the unit cell and specifying some particular boundary conditions.
+%Returning to the figure of dispersion curves in a periodic structure, % TODO ref
+In particular, the $\Gamma$ point in the Brillouin zone, where $k = 0$ in any dimension, can be identified with the \textit{Neumann boundary conditions} $dE/dx = 0$. This condition is equivalent to the field being stationary on the boundary, since  otherwise, the derivative of the field $E$ would not be continuous. % this also holds for other boundaries, on the $y$- and $z$-axis
 
 In contrast, the $X$ point, where $k_x = 2\pi/a_x$, corresponds to the Dirichlet boundary condition at the boundary perpendicular to the $x$-axis.
-M-point ... "E=0")
-
+M-point ... "E=0") %% TODO
 
 %}}}
-
-\paragraph
-\paragraph{Fourier expansion of the mode function}%{{{
+\paragraph{Fourier expansion of the mode function}%{{{ TODO where to move this?
 If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more harmonic as they were in Eq. (\ref{eq_blochvac2}). They  however still share the periodicity of the lattice as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}) and their exact shape can thus be decomposed into Fourier series
 % with the coefficients $c_{ijk}$ being TODO? add equation?
 characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$.
@@ -996,12 +1000,9 @@ ref Homogenisation issues - response to our paper from OpEx
 }
 
 % todo{Elaborate mathematical treatise on this topic: \cite{sjoberg2005floquet}}
-% A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization
-% " The behavior of the solutions of a PDE with rapidly oscil-
-%   lating coefficients, considered over distances large compared to the oscillations, is in
-%   several respects similar to the solutions of a PDE with slowly varying coefficients.
-%   The problem of homogenization is to find these slowly varying coefficients by an ap-
-%   propriate limit process of the rapidly oscillating ones"
+% A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscil-
+%   lating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.
+%   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
 
 %% todo "process of replacing a complex structure of subwavelength sized components with an “effective medium” with uni-
 %% form properties. It is a fundamentally important notion which can be traced back to the earliest days of electro-
@@ -1014,14 +1015,17 @@ ref Homogenisation issues - response to our paper from OpEx
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 %% Negative index may arise from resonances
 
-% cite Negative Refraction of Natural Composite Based on Graphene Barium Ferrite --  Karen  Oganisianr PIERS 2015 Prague
 
 \subsection{What are metamaterials and photonic crystals?} %{{{
 \paragraph{todo}%{{{
 \add{
-%% Nonresonant metamaterials (ie. in the 1st Brillouin zone, see [Kadlec2008 / Vol. 33, No. 19 / OPTICS LETTERS] and Juraj]
-%% resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
-%% Think over, note the paper Dominec2014
+Nonresonant metamaterials can be identified with those designed to operate in the first photonic band. The reason is given by the facts that every type of resonance is associated to some band gap, and by that the desired effects of a resonance  are obtained at frequencies \textit{above} it, at least in all metamaterials known to the author. Let us stress that the word \textit{nonresonant} is inseparably linked with specifying the relatively low frequencies of operation, since for nearly any structure, some electromagnetic resonances can be found at their respective frequencies.
+
+The useful properties that can be obtained by averaging the properties of the constituent materials \cite{oganisian2014observation} or by engineering the unit cell are typically a strongly anisotropic tensor of permittivity \cite{kadlec2008, sibik2010dp}. Strictly speaking, this class of structures does not require periodicity, 
+
+
+resonant metamaterials operate in the 2nd BZ. From the arguments given in the Results section and in Ref. \cite{dominec2014transition}, on the example of dielectric rod array, the author conjectures that no useful metamaterial properties will be obtained from designing a linear metamaterial to operate in the third or higher photonic band.
+
 
 Both the MM and PhC concepts are inspired by the physics of waves in homogeneous solid-state crystals, but viewed at different scales. Photonic crystals are related to the electron waves that have wavelength similar to the inter-atomic distances, whereas metamaterials  
 Photo
@@ -1153,8 +1157,6 @@ PK: "The word “metamaterial” (MM) appeared first in the paper by Smith et al
 %methods, issues, desired homogenized parameters
 %Metal functions
 %diluted metal → Pendry1996's low frequency plasmons
-%(Are cut-wire stripes useful e.g. for stable numerical simulations? They have finite eps at freq=0)
-%antennae: resonator-field coupling
 %metallic resonators: negative mu from SRR/Horseshoe/double-stripe
 %Bianisotropy and chirality
 %SRR and double-SRR
