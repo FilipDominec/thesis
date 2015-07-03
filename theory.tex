@@ -646,14 +646,14 @@ In media with nonzero odd terms, the corresponding eigenwaves are circularly pol
 
 %}}}
 
-\subsection{Amplitudes of the refraction and reflection and Impedance}
+\subsection{Amplitudes of the refraction and reflection}
 \paragraph{The interface of two local media} %{{{ 
 In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
 The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that the medium is local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respectively, that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
 
 The reflection and refraction (i.e. transmission) coefficients for the \textit{amplitudes} of the waves are derived in many textbooks  with different levels of generalisation.  
-In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their impedances $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
+In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their \textit{impedances} $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
 with the impedances
 $Z_{12} = \sqrt{\frac{{\murl}_{12}}{{\epsrl}_{12}  }  }$.
@@ -1024,42 +1024,60 @@ ref Homogenisation issues - response to our paper from OpEx
 
 
 \subsection{What are metamaterials and photonic crystals?} %{{{
-\paragraph{todo}%{{{
-\add{
-Nonresonant metamaterials can be identified with those designed to operate in the first photonic band. The reason is given by the facts that every type of resonance is associated to some band gap, and by that the desired effects of a resonance  are obtained at frequencies \textit{above} it, at least in all metamaterials known to the author. Let us stress that the word \textit{nonresonant} is inseparably linked with specifying the relatively low frequencies of operation, since for nearly any structure, some electromagnetic resonances can be found at their respective frequencies.
+\paragraph{Difference in the Bloch wavelength}%{{{
+Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is historical - metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice. The difference between electrons in solids and optical photons is in that the electron wavelength is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the use of the Bloch theorem, whereas the wavelength of light is four order of magnitude larger and the medium.
+%are in the scale (inter-atomic distances are in the order of $10^{-10}$ m, while in electromagnetic structures, the cell dimensions usually range from $10^{-2}$ to $10^{-7}$ m. 
 
-The useful properties that can be obtained by averaging the properties of the constituent materials \cite{oganisian2014observation} or by engineering the unit cell are typically a strongly anisotropic tensor of permittivity \cite{kadlec2008, sibik2010dp}. Strictly speaking, this class of structures does not require periodicity, 
+To the knowledge of the author, the ratio of the (Bloch) wavelength to the unit cell size tends to be between 0.1 and 1 in all periodic structures at their expected frequency of operation.
+% According to Ref. \cite{tsukerman2011nonlocal}: \textit{metamaterials (are) artificial periodic structures with features smaller than the vacuum wavelength}. TODO add counter example
 
+The boundary between the MM and PhC fields is therefore much less clear, and this is the reason why the more general term of \textit{periodic structure} is predominantly used in this thesis. 
 
-resonant metamaterials operate in the 2nd BZ. From the arguments given in the Results section and in Ref. \cite{dominec2014transition}, on the example of dielectric rod array, the author conjectures that no useful metamaterial properties will be obtained from designing a linear metamaterial to operate in the third or higher photonic band.
-
-
-Both the MM and PhC concepts are inspired by the physics of waves in homogeneous solid-state crystals, but viewed at different scales. Photonic crystals are related to the electron waves that have wavelength similar to the inter-atomic distances, whereas metamaterials  
-Photo
-Metamaterials 
-
-The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
-
-%The difference is in the way how the unit cell interacts with the electromagnetic field. 
-
-Both types of structures exhibit the most interesting behaviour at their frequencies of resonance, but the different types of resonances define the technology and materials used to build them. The resonances in PhC rely on wave scattering, which can be easily obtained with any ordinary low-permittivity material such as silica or silicon. On the other hand, the resonances 
-%but the mentioned difference has profound consequences on the behaviour of the structure. 
-%}}}
-
-note silveirinha2007metamaterial \cite{silveirinha2007metamaterial}
-resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
-Think over, note our paper dominec2014transition \cite{dominec2014transition}
-}
+However, both fields of MM and PhC seem to be customarily associated with other characteristic properties, which differ. Later in this thesis, we will show structures that would classify as  MM by one criterion, but as a PhC by another one. Let us name few of these properties.
 
 %}}}
-\paragraph{Definition by the Bloch wavelength}%{{{
-Igor Tsukerman in Ref. \cite{tsukerman2011nonlocal}: \textit{"metamaterials - artificial periodic structures with features smaller than the vacuum wavelength"} 
+\paragraph{Difference in the number of the photonic band}%{{{
+At a given frequency of operation, any periodic structure can either allow the Bloch wave to propagate, or. The (allowed) photonic bands are thus interlaced by photonic band-gaps (PBGs), and the number of the photonic band, counted from zero frequency, gives an important characteristic of the structure.
 
 \begin{figure}[h] \caption{Schematic of the usual ratio of the reciprocal lattice vector to the wave:vector in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
 
+%%% XXX ============================== 1st band
+	Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usuallly classified as \textit{metamaterials operating in their first photonic band}.     
+\cite{richter1995, kadlec2008, sibik2010dp}.
+
+As far as the frequency of operation does not approach the upper edge of the first photonic band, these structures are completely nonresonant.  Let us stress that this classification is inseparably linked with specifying the frequency band of operation, since for any periodic structure, some electromagnetic resonances can be found at their respective frequencies.
+The desired properties of nonresonant structures are obtained by averaging the properties of the constituent materials \cite{oganisian2014observation} or by engineering the unit cell are typically a strongly anisotropic tensor of permittivity \cite{kadlec2008, sibik2010dp}. Strictly speaking, this class of structures does not require periodicity, 
+
+%%% XXX ============================== 1st band-gap
+%%% XXX ============================== 2nd band
+%%% XXX ============================== higher band-gaps and bands
 \add{The notion of "wavelength", or more precisely "Bloch wavelength", is not uniquenly defined in such structures! }
+
+\add{
+
+
+
+		Resonant metamaterials operate in the 2nd BZ. From the arguments given in the Results section and in Ref. \cite{dominec2014transition}, on the example of dielectric rod array, the author conjectures that no useful metamaterial properties will be obtained from designing a linear metamaterial to operate in the third or higher photonic band.
+
+
+		The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
+
+		%The difference is in the way how the unit cell interacts with the electromagnetic field. 
+
+		Both types of structures exhibit the most interesting behaviour at their frequencies of resonance, but the different types of resonances define the technology and materials used to build them. The resonances in PhC rely on wave scattering, which can be easily obtained with any ordinary low-permittivity material such as silica or silicon. On the other hand, the resonances 
+		%but the mentioned difference has profound consequences on the behaviour of the structure. 
+		%}}}
+
+		note silveirinha2007metamaterial \cite{silveirinha2007metamaterial}
+		resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
+		Think over, note our paper dominec2014transition \cite{dominec2014transition}
+}
+
+
 %}}}
-\paragraph{Definition by energy localisation}%{{{
+\paragraph{Difference in the energy localisation}%{{{
+... and resistance of the behaviour to the disorder
+
 \add{Energy is the most localized at the frequencies of resonances.}
 
 \mdf{In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
@@ -1069,22 +1087,17 @@ On the contrary, the cells of a metamaterial (MM) are expected to exhibit indivi
 At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
 }
 
-\add{Note that completely nonresonant structures also denoted as \textit{metamaterials} exist, operating in their first photonic band \cite{richter1995, kadlec2008, sibik2010dp}.}
-
-%}}}
-\paragraph{Definition by existence of effective parameters}%{{{
 -
 
 \todo{If so, would be MMs a very narrow, or very broad  group of structures?}
 %}}}
 \paragraph{Definition by purpose and way of thinking}%{{{
 
+existence of effective parameters
+
 -
 
 \cite{sihvola2009metamaterials}
-
-
-
 
 \add{MMs are about HOW the light propagates. PhCs are about WHETHER the light propagates.}
 
