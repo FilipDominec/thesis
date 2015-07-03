@@ -52,25 +52,25 @@ so the wave equation (\ref{eq_wave}) can be modified the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
 $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E,  $$
-\begin{equation}  T\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
-The linear operation $T$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
-\begin{equation} T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_transverse1}\end{equation}
+\begin{equation}  \TT\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+The linear operation $\TT$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
+\begin{equation} \TT\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_transverse1}\end{equation}
 Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
-\begin{equation} T = \frac{1}{k^2} 
+\begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
 	-k_y k_x 		& k_x^2+k_z^2	& -k_y k_z \\ 
 	-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2
 	\end{array} \right) 
 \text{ or equivalently, }
-T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} .  \label{eq_transverse2}\end{equation}
+(\TT)_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} .  \label{eq_transverse2}\end{equation}
 The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be divided into two groups: % TODO add reference that there is no other oslutino
 \begin{enumerate}
- \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $T\E = \E$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
+ \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $\TT\E = \E$. Therefore, the \textit{dispersion relation} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
 	where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular triplet $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed} media.
 } 
- \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $T\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
+ \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
  \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering 
 	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
@@ -205,8 +205,8 @@ Returning to the derivation of dispersion relations, we start with modifying the
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
-\begin{equation}  T\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
-For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($T\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
+\begin{equation}  \TT\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
+For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($\TT\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of the curve in Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
@@ -261,7 +261,7 @@ An elaborate discussion on all possible forms of this tensor and their physical 
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  %{{{
 If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. \ref{eq_dispeq_loc}.
-%\begin{equation} xxx  T\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
+%\begin{equation} xxx  \TT\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
 %\begin{equation} xxx - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E,  \end{equation}
 
 %is a linear transformation of the vector $\E$, which can be expressed by the tensor
@@ -292,7 +292,7 @@ For simplicity, we assume here that the relative permeability $\murl = 1$; the e
 A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if and only if the determinant of the set of three linear equations is zero:
 \begin{equation} 
 \det\left[
-T -
+\TT -
 	\frac{\mu_0 \varepsilon_0 \omega^2}{k^2}
 	\left(\begin{array}{ccc} 
 	{\epsrl}_{11}(\omega) & {\epsrl}_{21}(\omega) & {\epsrl}_{31}(\omega)  \\
@@ -519,7 +519,7 @@ The new electric displacement $\Dsd$ in the  Landau-Lifshitz model, that also ac
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
-Double vector multiplication on the right hand side can be identified with the wave-plane projection tensor $T$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
+Double vector multiplication on the right hand side can be identified with the wave-plane projection tensor $\TT$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
 \begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T \E,  \label{eq_Dsd4}\end{equation} 
 
 %}}}
@@ -571,7 +571,6 @@ T -
 	{\epsLL}_{13}(\omega,\kk) & {\epsLL}_{23}(\omega,\kk) & {\epsLL}_{33}(\omega,\kk)  
 	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
-%}}}
 \begin{figure}[t] \caption{Dispersion curves for three different types of local media, comparing the local and Landau-Lifshitz representations of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
 Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plotted as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plotted as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
 } \label{fg_dcll} \centering  
@@ -580,6 +579,8 @@ Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of 
 \textbf{(c)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_elmag.pdf}
 \end{figure}
 \clearpage
+
+%}}}
 \paragraph{Dispersion of a local dielectric in the Landau-Lifshitz model} %{{{
 The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters for local media in Eq. (\ref{eq_epsmusd3}) are mathematically identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with (\ref{fg_dcll}a) an electric resonance, with (\ref{fg_dcll}b) a magnetic resonance and (\ref{fg_dcll}c) with both resonances overlapping. 
 
@@ -729,7 +730,7 @@ A temporally limited optical pulse will be always more or less distorted upon pr
 Therefore, the author is convinced that the \textit{information velocity} is too vague unless its exact definition is provided, and should not be confused with the group velocity. 
 
 %}}}
-%% TODO \paragraph{Speed of light and causality in spatial-dispersive media}%{{{
+%% TODO \paragraph{Speed of light and causality in nonlocal media}%{{{
 %% \mdf{TODO REF Kramers-Kronig relations in nonlocal medium
 %% \cite{skettrup1970kramers}
 %% \cite{kirzhnitz1976}
@@ -739,7 +740,6 @@ Therefore, the author is convinced that the \textit{information velocity} is too
 %% \cite{bruleanalysis}
 %% \cite{makarov2013kramers}
 %% }%}}}
-%% 
 
 \section{Electromagnetic waves in periodic structures}
 \subsection{Periodic structures and the Bloch-Floquet theorem}
