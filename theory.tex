@@ -374,8 +374,8 @@ is equivalent to the wave being formed by superposition of multiple frequency co
 
 A similar argument can be made with regards to the spatial modulation of the wave. Any wave shape other than the infinite plane wave is a superposition of waves with different wavevectors, and the direction of propagation of its spatial envelope is given by mutual phase difference of the constituent waves. % TODO rewrite-unclear
 
-The velocity vector of the envelope propagation, denoted as the \textit{group velocity} $\mathbf{v_g}$, can be found as the gradient of frequency by the wavevector: %% TODO cite
-\begin{equation} \mathbf{v_g} := \frac{\partial \omega}{\partial \kk} \equiv 
+The velocity vector of the envelope propagation, denoted as the \textit{group velocity} $\vg$, can be found as the gradient of frequency by the wavevector: %% TODO cite
+\begin{equation} \vg := \frac{\partial \omega}{\partial \kk} \equiv 
 \left(\begin{array}{c} 
 	\partial \omega/\partial k_x \\ 
 	\partial \omega/\partial k_y \\ 
@@ -386,7 +386,7 @@ In the IFC plot, the group velocity can be found visually as directing always pe
 
 If the group velocity is different from the phase velocity, the envelope $\E_0(t)$ is maintained in time, but it continuously shifts against the underlying wave. Thus the actual temporal shape of $\E(t)$ changes upon passing through a dispersive medium.
 On the contrary, in vacuum or media with negligible dispersion, each frequency component of the wave acquires an additional phase strictly proportional to its frequency. Then the group velocity coincides with the phase velocity: 
-$$\hspace{3cm}\mathbf{v_g} = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
+$$\hspace{3cm}\vg = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
 %The orientation of $\vg$ and $\kk$ is usually the same, but later it will be shown that it can be otherwise, with peculiar physical consequences.
 
 Usually, in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in a temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
@@ -743,33 +743,37 @@ Therefore, the author is convinced that the \textit{information velocity} is too
 
 \section{Electromagnetic waves in periodic structures}
 \subsection{Periodic structures and the Bloch-Floquet theorem}
-\paragraph{Periodicity}%{{{
-The previous sections discussed infinite homogeneous media. The only exception was when a refraction at an interface of two media was discussed, for which we shown that the possible orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
+\paragraph{Inhomogeneous structures}%{{{
+The previous sections discussed infinite homogeneous media, with the only exception of an interface of two media, where refraction of the waves is observed. For this case it was shown that the possible orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
 
 There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
 
 The interaction of electromagnetic waves with the rest of possible structures is generally too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting structure behaves in a way that is characteristic for the periodicity and its most important traits can again be partially understood on analytical basis.
+This chapter focuses on these general properties of periodic structures, leaving the particular numerical simulations to the Results section.
 
-In this chapter, we will focus on these general properties of periodic structures, leaving the particular numerical simulations to the Results section.
-Under the notion of \textit{periodicity} we understand there exist discrete translational symmetries, that is, 
-\begin{equation} \epsrl(\omega,\rr) = \epsrl(\rr + m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3) \quad\text{(in three dimensions).} \label{eq_trsym}\end{equation}
-	where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$ are three linearly independent vectors. The permittivity, given by Eq. (\ref{eq_lorentz_eps}), was intuitively generalized to a function of the position $\rr$. The same expectation is also imposed on the permeability $\murl(\omega,\rr)$. Note that only the \textit{local} quantities are used to avoid possible problems at the boundary computing the spatial convolution [Eq. (\ref{eq_eps_nonloc})]  in nonlocal media. 
+%}}}
+\paragraph{Periodicity}%{{{
+Under the notion of \textit{periodicity} we understand there exist discrete translational symmetries, in three dimensions, that is 
+\begin{equation} \epsrl(\omega,\rr) = \epsrl(\rr + m_1 \ava + m_2 \avb + m_3 \avc) \quad\text{ where }\quad m_1, m_2, m_3 \in \mathbb{Z} \label{eq_trsym}\end{equation}
+and $\ava, \avb, \avc$ are three linearly independent vectors. The permittivity, given by Eq. (\ref{eq_lorentz_eps}), was intuitively generalized to a function of the position $\rr$. The same periodicity is also imposed on the permeability $\murl(\omega,\rr)$ and possibly all other quantities. Note that the constituent media are described by the \textit{local} quantities only, to avoid possible problems at the boundary computing the spatial convolution  in nonlocal media, Eq. (\ref{eq_eps_nonloc}). 
 
-The points generated by all combinations of possible translations by $m_1 \mathbf{a}_1 + m_2 \mathbf{a}_2 + m_3 \mathbf{a}_3$ form a periodic lattice.
-The volume defined by being the closest to a given point of the lattice will be denoted as a \textit{unit cell} (similar to the \textit{Wigner-Seitz} or \textit{Voronoi} cell in solid-state physics.) Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
+The points generated by all combinations of possible translations by $m_1 \ava + m_2 \avb + m_3 \avc$ form a periodic lattice.
+The volume defined as a \textit{set of points closest to} a given point of the lattice will be denoted as a \textit{unit cell} (similar to the \textit{Wigner-Seitz}, or \textit{Voronoi}, cell in solid-state physics). Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
 
-The choice of lattice vectors $\mathbf{a}_{1,2,3}$ defines the rotation or mirror symmetries of the lattice. The lattices can be classified into six \textit{crystal families} in three dimensions, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal/trigonal} and \textit{triclinic}. Combined with all possibilities for the symmetry of the permittivity and permeability distribution in each unit cell, the periodic structures can be classified into total 230 \textit{crystallographic point groups}. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. Unless stated otherwise, we will assume the cubic lattice is used, which has highest possible symmetry. In the cubic lattice, $\mathbf{a_1}, \mathbf{a_2}, \mathbf{a_3}$ are of the same magnitude and mutually orthogonal. Note however that no structure with a periodic modulation of permittivity is truly isotropic, i.e. posessing continuous rotational symmetry.
+The choice of lattice vectors $\avabc$ limits the set of the rotation or mirror symmetries of the structure. Based on different symmetries, all lattices in three dimensions can be classified into six \textit{crystal families}, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal-trigonal} and \textit{triclinic}. Combined with additional restrictions of the symmetry given by the structure with each unit cell, all periodic structures can be classified into total 230 \textit{crystallographic point groups}. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. 
+
+Unless stated otherwise, we will assume that the cubic lattice is used, which allows the highest possible symmetry. In the cubic lattice, the lattice vectors $\ava, \avb, \avc$ are of the same magnitude $a$ and mutually orthogonal. % Note, however, that even the structure with a periodic modulation of permittivity is no more isotropic, i.e. posessing continuous rotational symmetry.
 
 %}}}
 \paragraph{The Bloch theorem}%{{{
-The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure (see. Eq. \ref{eq_trsym}) does not maintain its original harmonic form, it can always be decomposed as a product of two periodic functions:
+The \textit{Bloch-Floquet theorem} states that while the wave in a periodic structure conforming to Eq. (\ref{eq_trsym}) is not harmonic as in homogeneous media, it can always be decomposed as a product of a harmonic function and another periodic one:
 \begin{equation} 
-\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \mathbf{a_1} + m_2 \mathbf{a_2} + m_3 \mathbf{a_3}),
+\E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) = \mathbf{u_e}(\rr + m_1 \ava + m_2 \avc + m_3 \avc),
 \label{eq_bloch}\end{equation} 
 \begin{equation}
-\HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \mathbf{a_1} + m_2 \mathbf{a_2} + m_3 \mathbf{a_3}).
+\HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \ava + m_2 \avb + m_3 \avc).
 \label{eq_blochh}\end{equation} 
-Thus, $\mathbf{u_e}(\rr)$, $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are generally complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
+Thus, $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are, in general, complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
 The remaining term, $e^{\ii\omega t - \ii\KK\cdot\rr}$, is analogous to that of a plane wave
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}, \tag{\ref{eq_pw} \again} \end{equation}
@@ -781,7 +785,7 @@ Note this theorem does not determine the shape of $\mathbf{u_e}(\rr)$, $\mathbf{
 
 %}}}
 \paragraph{The proof of the Bloch-Floquet theorem}%{{{
-This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of the proof which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
+This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of such a proof in one dimension, which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
 \begin{enumerate}
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
@@ -792,7 +796,7 @@ $\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, 
 }
  \end{enumerate}
 % As can be easily shown, two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
-The steps can be reformulated replacing the abstract Hamiltonian with the Maxwell and constitutive equations. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the monochromatic electric and magnetic fields can still be decomposed into a product of a complex function of space position, and a harmonic function of time:
+The steps can be reformulated replacing the abstract Hamiltonian with the modified Maxwell equations. We can no further assume the solution in the form of a plane wave (\ref{eq_pw}), but as long as the structure is time-invariant and linear, the monochromatic electric and magnetic fields can still be decomposed into a product of a complex function of space position, and a harmonic function of time:
 \begin{equation} 
 \begin{array}{cc}
 \E(t, \rr) = \E(\rr) e^{\ii \omega t}, \\
@@ -808,76 +812,83 @@ it can be derived from Eq. (\ref{eq_me3}, \ref{eq_me4}, \ref{eq_epstensor} and \
 \begin{equation} 
 {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr).   \label{eq_eigen_e}
 \end{equation}
-In analogy with the quantum-mechanical proof, the left hand side of Eq. (\ref{eq_eigen_e}) can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$ \cite{johnson2003introduction}. Obviously the operator differs for the electric and magnetic field.
+In analogy with the quantum-mechanical proof, the left hand side of Eq. (\ref{eq_eigen_e}) can be associated with the Hamiltonian $\hat H\psi$, and the right hand side with its eigenvalue $h\psi$ \cite{johnson2003introduction}. 
 } 
 \item{
 The translation operator acts by substitution of the position vector $\rr$ in the argument. For example, the translated electric field is
 \begin{equation} \hat T\psi \rightarrow \E(\rr+\mathbf{a_1}). \label{eq_blocht}\end{equation}
-The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus the right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are equal:
-\begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr             ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr             ) \nabla\times \E(\rr+\mathbf{a_1})\right]  \label{eq_blochht}\end{equation}
-\begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\mathbf{a_1}) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\mathbf{a_1}) \nabla\times \E(\rr+\mathbf{a_1})\right] .  \label{eq_blochth}\end{equation}
-In three dimensions, this argument is valid for three different translation operators that correspond to the addition of the different lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$.
+The commutation relation directly follows from the periodicity in Eq. (\ref{eq_trsym}), thus the right terms in Eqs. (\ref{eq_blochht}) and (\ref{eq_blochth}) are identical by definition:
+\begin{equation} \hat H \hat T \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr    ) \nabla\times \left[{\murl}^{-1 }(\omega,\rr    ) \nabla\times \E(\rr+\ava)\right]  \label{eq_blochht}\end{equation}
+\begin{equation} \hat T \hat H \psi \quad  \rightarrow \quad  {\epsrl}^{-1}(\omega,\rr+\ava) \nabla\times \left[{\murl}^{-1 }(\omega,\rr+\ava) \nabla\times \E(\rr+\ava)\right] .  \label{eq_blochth}\end{equation}
+In three dimensions, this argument is valid for three different translation operators that correspond to the addition of the different lattice vectors, $\ava$, $\avb$ and $\avc$.
 } 
 \item{
-Then the wave translated by any of the lattice vectors $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{a_3}$ is also a solution of Maxwell equations:
-\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\mathbf{a_1})\right] =  \frac{\omega^2}{c^2}\E(\rr+\mathbf{a_1}).  \label{eq_blochme}\end{equation}
+Then the wave translated by any of the lattice vectors $\ava$, $\avb$ and $\avc$ is also a solution of Maxwell equations:
+\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\ava)\right] =  \frac{\omega^2}{c^2}\E(\rr+\ava).  \label{eq_blochme}\end{equation}
 }
 \item{In analogy with the fourth step in the Bloch theorem proof, there exists at least one constant $K_1$ for which
-\begin{equation}  \E(\rr+\mathbf{a_1}) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
-	where $K_1 a_1$ represents the phase shift between the adjacent cells along the direction of the lattice vector $\mathbf{a_1}$. In a similar manner, constants $K_2$ and $K_3$ can be associated with the translation by the $\mathbf{a_2}$ and $\mathbf{a_3}$ vectors, respectively. 
+\begin{equation}  \E(\rr+\ava) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
+	where $K_1 a_1$ represents the phase shift between the adjacent cells along the direction of the lattice vector $\ava$. In a similar manner, constants $K_2$ and $K_3$ can be associated with the translation by the $\avb$ and $\avc$ vectors, respectively. 
 }
  \end{enumerate}
 The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: 
 \begin{equation} \KK := 
-\frac{2\pi K_1(\mathbf{a_2}\times\mathbf{a_3})}{\mathbf{a_1}\cdot(\mathbf{a_2}\times\mathbf{a_3})} +  
-\frac{2\pi K_2(\mathbf{a_3}\times\mathbf{a_1})}{\mathbf{a_2}\cdot(\mathbf{a_3}\times\mathbf{a_1})} +  
-\frac{2\pi K_3(\mathbf{a_1}\times\mathbf{a_2})}{\mathbf{a_3}\cdot(\mathbf{a_1}\times\mathbf{a_2})}.
+\frac{2\pi K_1(\avb\times\avc)}{\ava\cdot(\avb\times\avc)} +  
+\frac{2\pi K_2(\avc\times\ava)}{\avb\cdot(\avc\times\ava)} +  
+\frac{2\pi K_3(\ava\times\avb)}{\avc\cdot(\ava\times\avb)}.
 \label{eq_reciprocalK}\end{equation}
-If the translation vectors $\mathbf{a_{1,2,3}}$ are orthogonal, Eq. (\ref{eq_reciprocalK}) simplifies to
+If the lattice vectors $\avabc$ are orthogonal, Eq. (\ref{eq_reciprocalK}) simplifies to
 % $K_{1,2,3}$ directly define the projection of the $\KK$:
 \begin{equation} \KK := 
-	\frac{2\pi K_1 \mathbf{a_1}}{a_1^{2}} +  
-	\frac{2\pi K_2 \mathbf{a_2}}{a_2^{2}} +  
-	\frac{2\pi K_3 \mathbf{a_3}}{a_3^{2}}.
+	\frac{2\pi K_1 \ava}{a_1^{2}} +  
+	\frac{2\pi K_2 \avb}{a_2^{2}} +  
+	\frac{2\pi K_3 \avc}{a_3^{2}}.
 \label{eq_reciprocalKorto}\end{equation}
- The same arguments, with the identical wave vector $\KK$, have to be valid also for the magnetic field $\HH(\rr)$, where the Hamiltonian is associated with an operator very similar to that of the electric field in Eq. (\ref{eq_eigen_e}):
+
+Repeating the procedure for the magnetic field, a similar operator can be obtained, where the multiplication by ${\epsrl}^{-1}(\omega,\rr)$ and ${\murl}^{-1 }(\omega,\rr)$ occurs in opposite order. Thus the same arguments, with the identical wave vector $\KK$, have to be valid also for the magnetic field $\HH(\rr)$, where the Hamiltonian is associated with an operator very similar to that of the electric field in Eq. (\ref{eq_eigen_e}):
 \begin{equation}
 {\murl}^{-1 }(\omega,\rr) \nabla\times \left[{\epsrl}^{-1}(\omega,\rr) \nabla\times \HH(\rr)\right] = \frac{\omega^2}{c^2}\HH(\rr).   \label{eq_eigen_h}
 \end{equation}
 
 %}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
-\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and photonic crystal. The phase difference over an unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below)\\
-The lattice periodicity allows to draw the dispersion curves of periodic structures using natural, scale-invariant units, with the Bloch wave number $K$ divided against the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
+\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and a periodic structure viewed along one of its axes. The phase difference over a unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below)\\
+The lattice periodicity allows to draw the dispersion curves of periodic structures using natural scale-invariant units, with the Bloch wave number $K$ divided by the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
 } \label{fg_phcfolding} \centering  %% TODO write caption; complement the text to match
 	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
 \end{figure}
 Homogeneous media, such as vacuum, naturally fulfill the definition of periodicity in Eq. (\ref{eq_trsym}).
-From the principle of correspondence, the predictions of the Bloch-Floquet theorem should be verified against the already known solution of a plane wave in vacuum, 
-\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}. \tag{\ref{eq_pw} \again} \end{equation}
-One solution of the Bloch wave in vacuum can be directly found as a formal modification of the dispersion relation,
+From the principle of correspondence, 
+the already known solution of a harmonic plane wave in vacuum, 
+\begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr}, \tag{\ref{eq_pw} \again} \end{equation}
+should be predicted by the Bloch-Floquet theorem. One solution of the Bloch wave in vacuum can be directly found as a formal modification of the dispersion relation,
 \begin{equation}  
 \E(t, \rr) = \mathbf{u_e}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_e}(\rr) := \E_0  \text{ and } \KK := \kk.
 \label{eq_blochvac}
 \end{equation}
-Any lattice of periodic unit cells may be imagined in vacuum. With an arbitrary choice of the unit cell size $a$, % TODO represent by lattice vectors G?
-the plane wave in vacuum can be also represented by any of infinitely many other combinations of
+However, this is not the only possible representation of a plane wave; the formulation of the Bloch wave in Eqs. (\ref{eq_bloch}, \ref{eq_blochh}) is inherently ambiguous. Any lattice of periodic unit cells may be imagined in vacuum. For illustration, given one cubic lattice with an arbitrary unit cell size $a$, % TODO represent by lattice vectors G?
+the plane wave in vacuum can be simultaneously represented by any of infinitely many other combinations of
 \begin{equation} 
 \left.  \begin{array}{cc}
-\mathbf{u_{e}}(\rr) := \E_0 e^{2\pi\ii (m_1/a_1 + m_2/a_2 + m_3/a_3)} \\ %% TODO use mathbf here? or is this whole a rubbish?
-\KK := \kk - \frac{2\pi m_1}{a_1} - \frac{2\pi m_2}{a_2}- \frac{2\pi m_3}{a_3},
+	\mathbf{u_{e}}(\rr) := \E_0 e^{2\pi\ii (m_1\ava\cdot\rr + m_2/\avb\cdot\rr + m_3/\avc\cdot\rr)/a^{2}} \vspace{2mm} \\ %% TODO use mathbf here? or is this whole a rubbish?
+%\KK := \kk - \frac{2\pi m_1}{a_1} - \frac{2\pi m_2}{a_2}- \frac{2\pi m_3}{a_3},
 \end{array}\quad \right\} \quad \forall m_{1,2,3} \in \mathbb{Z}
 \label{eq_blochvac2}
 \end{equation}
-which all maintain the requirement of the mode function $\mathbf{u_{e}}(\rr)$ being periodic and still give the exactly same resulting plane wave.
+%\begin{equation} \KK := 
+	%\frac{2\pi K_1 \mathbf{a_1}}{a_1^{2}} +  
+	%\frac{2\pi K_2 \mathbf{a_2}}{a_2^{2}} +  
+	%\frac{2\pi K_3 \mathbf{a_3}}{a_3^{2}}.
+%\label{eq_reciprocalKorto}\end{equation}
+which all maintain the requirement of the mode function $\mathbf{u_{e}}(\rr)$ being periodic and still give the exactly same resulting plane wave. 
 
 %}}}
 \subsection{Dispersion in periodic structures}
 \paragraph{Folding of the dispersion curves} %{{{
-All possible dispersion curves for a Bloch wave with the $\KK$ vector oriented along one lattice axis in vacuum is plotted in Fig. \ref{fg_phcfolding}a. The dispersion curve for the original forward wave from Eq. (\ref{eq_blochvac}) is plotted in blue; another solution exists for a wave propagating in the opposite direction which is plotted in red. All other solutions generated by Eq. (\ref{eq_blochvac2}) are plotted in gray, for both forward and backward waves. 
+All possible dispersion curves for a Bloch wave with the $\KK$ vector oriented along one lattice axis in vacuum are plotted in Fig. \ref{fg_phcfolding}a. The dispersion curve for the original forward wave from Eq. (\ref{eq_blochvac}) is plotted in blue; another solution exists for a wave propagating in the opposite direction which is plotted in red. All other solutions generated by Eq. (\ref{eq_blochvac2}) are plotted in gray, for both forward and backward waves. 
+Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(\rr)$, can not be deduced from the dispersion curve. To fully determine the fields, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$ (that depend on the frequency). 
 
-Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(\rr)$, can not be deduced from the dispersion curve. To fully determine the fields, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$. This leads to the inherent ambiguity of description on the basis of the Bloch wave, which can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent. 
-
+The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent. 
 The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity} or even breaking the time-reversal symmetry (c.f. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. Thus, in many papers on periodic structures \cite{obrien2002photonic,yannopapas2005negative}, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only. In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
 The mathematical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
@@ -910,33 +921,34 @@ We will show in the Results section on a particular example that some numerical 
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
 The periodically repeated interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}. 
 The $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. 
-All Brillouin zones have equal measure, and moreover, they can be rearranged into the first one by simple translation. 
+All Brillouin zones have equal measure, and moreover, they can be rearranged into the first one by simple translation. %% TODO specify what this re-arrangement means
 
-In one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$ for the second one etc. 
+In the one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$ for the second one etc. 
 
-In two or three dimensions the shapes of higher Brillouin zones get much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}. 
-In two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
+In two or three dimensions the shapes of higher Brillouin zones become much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}: in two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
 
-The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures, where it actually becomes a practical help for visualisation.
-The exact shapes of the Brillouin zones are determined by the \textit{crystal family} of the real-space lattice and its set of lattice vectors ($\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$). 
+The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures.
+%, where it actually becomes a practical help for visualisation. TODO rm this?
+The exact shapes of the Brillouin zones are determined by the \textit{crystal family} of the real-space lattice and its set of lattice vectors $\avabc$. 
 As was also noted above, the space occupied by the plot can be further reduced thanks to the symmetry of the dispersion curves. This naturally applies to higher dimensions as well; the minimum part of the Brillouin zone that contains all necessary information is denoted as the \textit{irreducible Brillouin zone} and is determined by the crystallographic point group of the lattice. 
 
 More detailed listing and comparison of Brillouin zone shapes is beyond the scope of this thesis, but can be found in numerous solid-state textbooks, e.g. \cite[pp. 96-99]{klingshirn2007semiconductor}. %% TODO add some good detailed textbook on BZ
 
 %}}}
 \paragraph{High-symmetry points of the Brillouin zones} %{{{ 
-The fundamental difference between simple plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only an one-dimensional scan (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where all three components of $\KK$ should be scanned in the ideal case.
+The fundamental difference between simple plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
 
-A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary of one selected irreducible .
+A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out the inner surface.
 
-The notation of high-symmetry points in the  %% TODO 
+The notation of high-symmetry points in the $\KK$-space is standardized. For the square lattice in two dimensions, four high-symmetry points are named as follows: "$\mathbf{\Gamma}$" corresponds to the center, $K=0$. Provided that the first lattice vector $\ava$ is parallel to the $x$-axis of the coordinate system, the point where $\KK = (\pi/a, 0)$ is denoted as  "$\mathbf{X}$" and the point $\KK = (0, \pi/a)$ as		"$\mathbf{Y}$". Finally, the diagonal point of $\KK = (\pi/a, \pi/a)$ is known as "$\mathbf{M}$".
+\todo{image here}
 
 %}}}
 %% TODO add an example plot of vacuum and comment
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
 %% Gamma-X-K-Gamma plot
 %% %}}}
-\paragraph{Tight-binding model for photonic band-gaps} %{{{
+\paragraph{Tight-binding model for the photonic band-gaps} %{{{
 The notation of the high-symmetry points in the Brillouin zone is a good background to take  a different view to the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
 or \textit{hopping}  %% TODO cite?
 model in solid-state physics. 
