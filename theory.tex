@@ -940,45 +940,52 @@ The fundamental difference between simple plotting of one dispersion curve and t
 
 A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out the inner surface.
 
-The notation of high-symmetry points in the $\KK$-space is standardized. For the square lattice in two dimensions, four high-symmetry points are named as follows: "$\mathbf{\Gamma}$" corresponds to the center, $K=0$. Provided that the first lattice vector $\ava$ is parallel to the $x$-axis of the coordinate system, the point where $\KK = (\pi/a, 0)$ is denoted as  "$\mathbf{X}$" and the point $\KK = (0, \pi/a)$ as		"$\mathbf{Y}$". Finally, the diagonal point of $\KK = (\pi/a, \pi/a)$ is known as "$\mathbf{M}$".
-\todo{image here}
+The notation of high-symmetry points in the $\KK$-space is standardized. For the square lattice in two dimensions, four high-symmetry points are named as follows: "$\mathbf{\Gamma}$" corresponds to the center, $K=0$. Provided that the first lattice vector $\ava$ is parallel to the $x$-axis of the coordinate system, the point where $\KK = (\pi/a, 0)$ is denoted as  "$\mathbf{X}$" and the point $\KK = (0, \pi/a)$ as "$\mathbf{Y}$". Finally, the diagonal point of $\KK = (\pi/a, \pi/a)$ is known as "$\mathbf{M}$".
+In two-dimensional case, the dispersion curves are typically plotted along the triangle encircling the irreducible Brillouin zone: $\mathbf{\Gamma}-\mathbf{X}-\mathbf{M}-\mathbf{\Gamma}$.
+
+In three-dimensional cubic lattice, these points maintain their meaning in the plane perpendicular to the $z$-axis \cite[p. 99]{klingshirn2007semiconductor}. Additionally, "$\mathbf{R}$" denotes the spatial diagonal of $\KK = (\pi/a, \pi/a, \pi/a)$. Other lattices introduce more complex sets of the high-symmetry points and the paths along which the dispersion curves are plotted do not seem to be standardized.
 
 %}}}
-%% TODO add an example plot of vacuum and comment
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
-%% Gamma-X-K-Gamma plot
+%% TODO Gamma-X-K-Gamma plot
 %% %}}}
 \paragraph{Tight-binding model for the photonic band-gaps} %{{{
-The notation of the high-symmetry points in the Brillouin zone is a good background to take  a different view to the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
+The notation of the high-symmetry points in the Brillouin zone can outline a different way of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
 or \textit{hopping}  %% TODO cite?
 model in solid-state physics. 
 
 \label{hopping}
-Analyzing the unit cells isolated in free space, one obtains the natural resonance frequency.
-This frequency shifts up, or down \cite[p. 75]{klingshirn2007semiconductor}, when their mutual interaction is taken into account, that is, limiting the dimensions of the unit cell and specifying some particular boundary conditions.
-%Returning to the figure of dispersion curves in a periodic structure, % TODO ref
-In particular, the $\Gamma$ point in the Brillouin zone, where $k = 0$ in any dimension, can be identified with the \textit{Neumann boundary conditions} $dE/dx = 0$. This condition is equivalent to the field being stationary on the boundary, since  otherwise, the derivative of the field $E$ would not be continuous. % this also holds for other boundaries, on the $y$- and $z$-axis
+Analyzing one unit cell isolated in free space, one obtains its natural resonance frequency.  When the cell is surrounded by other cells in the periodic lattice, their mutual coupling alters the resonance frequency \cite[p. 75]{klingshirn2007semiconductor}; the actual sign of the coupling effect does not seem to be determined by any simple general rule, however.	
 
-In contrast, the $X$ point, where $k_x = 2\pi/a_x$, corresponds to the Dirichlet boundary condition at the boundary perpendicular to the $x$-axis.
-M-point ... "E=0") %% TODO
+For a steady oscillatory solution to be obtained, the electromagnetic fields in the surrounding cells must have the same modulus of oscillation amplitude, but they do not need to share the phase. This is equivalent to a single Bloch wave propagating in the structure. 
+
+Identical phase in all cells corresponds to zero Bloch wave vector, $\KK = 0$, and to the point $\mathbf{\Gamma}$ in the center of the Brillouin zone. Under the basic assumption that the fields $\E, \HH$ are continuous and smooth vector functions, identical phase of adjacent cells translates into
+\begin{equation} \frac{\partial \E}{\partial\mathbf{n}} = \frac{\partial \HH}{\partial\mathbf{n}} = 0 \quad\text{(Neumann boundary conditions).} \label{eq_bcond_neumann}\end{equation} 
+Here, the operator $\partial/\partial \mathbf{n}$ denotes the derivative along the normal to the boundaries.
+
+Other special cases are observed when $\KK$ is in some of the high-symmetry points of the Brillouin zone. For the simple case of a two-dimensional square lattice, the $\mathbf{M}$-point corresponds to the adjacent cells having exactly opposite phase of the fields. This requires that the field amplitudes at the boundary are zero:
+\begin{equation} \E = \HH = 0 \quad\text{(Dirichlet boundary conditions).} \label{eq_bcond_neumann}\end{equation} 
+
+The $\mathbf{X}$ and $\mathbf{Y}$ points are combination of the Dirichlet and Neumann boundary conditions for two different directions.
+As a generalization of the above mentioned, the boundary conditions can be found for any point in the Brillouin zone, provided that correct phase difference between all opposite faces is correctly maintained.
+
+The stronger the coupling between the neighbouring cells, the bigger the difference between the resonance frequencies for the $\mathbf{\Gamma}$ and $\mathbf{X}$ points. Returning to the definition of the group velocity in Eq. (\ref{eq_vg}), one comes to the already expected fact that the energy transfer is proportional to the strength of the inter-cell coupling.
 
 %}}}
 \paragraph{Fourier expansion of the mode function}%{{{ TODO where to move this?
-If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more harmonic as they were in Eq. (\ref{eq_blochvac2}). They  however still share the periodicity of the lattice as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}) and their exact shape can thus be decomposed into Fourier series
+If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shape can thus be decomposed into Fourier series
 \todo{ with the coefficients $c_{ijk}$ being TODO? add equation?}
-characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$.
+characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
 
 The dependence of the Bloch wavevector $\KK$ on frequency can be plotted in the same way as it was for homogeneous media, with the difference that all branches are simultaneously present. %% TODO note that this fig phcfolding is only for one direction; plotting K~for other directions requires using IFC
 
 %}}}
-\paragraph{Spatial dispersion in photonic structures} %{{{  TODO
-Near the X, K~or M points, the spatial dispersion must be strong to account for the zero group velocity, and actual bending of the dispersion curve downwards in the adjacent zone. The effect can however not be directly interpreted as the negative group velocity, as the dispersion curve only corresponds to one term in the Fourier expansion of the field shape.  \todo{rewrite + add}
-%}}}
-\subsection{Photonic band-gaps} %{{{  TODO
-\paragraph{Bragg band-gaps}%{{{
-at the same wavevector there are two different solutions - there are frequencies where no wave propagates - nodal planes/surfaces can be identified at the PBG boundaries as K=m.2pi/a and all cells have the same field shape except for the sign
-
-photonic band-gaps are new compared to the band gaps arising from permittivity/permeabiliyt resonances, and arae characteristic by not reducing the number of nodal planes 
+%%% \paragraph{Spatial dispersion in photonic structures} %{{{  TODO develop
+%%% Near the $\mathbf{\Gamma}$, $\mathbf{\Gamma}$K~or $\mathbf{\Gamma}$M points, the spatial dispersion must be strong to account for the zero group velocity, and actual bending of the dispersion curve downwards in the adjacent zone. The effect can however not be directly interpreted as the negative group velocity, as the dispersion curve only corresponds to one term in the Fourier expansion of the field shape. 
+%%% %}}}
+\subsection{Photonic band-gaps} 
+\paragraph{Properties of band-gaps}%{{{
+frequencies between the ranges covered by dispersion curves
 
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 
@@ -997,9 +1004,19 @@ photonic band-gaps are new compared to the band gaps arising from permittivity/p
 %  crystals, and he identified the fact that they have a narrow band gap prohibiting
 %  light propagation through the planes. This band gap is angle-dependent
 
-%}}}
+
+% }}}
 \paragraph{Band-gaps stemming from individual resonances}%{{{
-Are analogous to \todo{add}
+** Are analogous to \todo{add}
+** Related to some internal change of response, typ. below-above a resonance in a homogeneous medium, or similarly a resonance confinde in the unit cell 
+
+%}}}
+\paragraph{Bragg band-gaps}%{{{
+at the same wavevector there are two different solutions - there are frequencies where no wave propagates - nodal planes/surfaces can be identified at the PBG boundaries as K=m.2pi/a and all cells have the same field shape except for the sign
+
+photonic band-gaps are new compared to the band gaps arising from permittivity/permeabiliyt resonances, and arae characteristic by not reducing the number of nodal planes 
+
+
 %}}}
 \subsection{Metamaterials and homogenization}
 \mdf{
