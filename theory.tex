@@ -36,7 +36,6 @@ Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), an analogous result 
 \paragraph{Plane wave} %{{{
 The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\i \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector \textit{} and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
-%Linear electrodynamics is often treated with the 
 The electromagnetic field can be described as a complex exponential, i.e. as a superposition of two waves differing by a quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, namely, it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
 We define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
@@ -722,12 +721,13 @@ Negative group velocity has been experimentally observed in a thin sample. It ma
 %}}}
 \paragraph{Signal velocity}%{{{
 The notion of \textit{signal} or \textit{information propagation velocity} is sometimes % TODO cite
-identified with the group velocity, $\vg$. However, this may be misleading, as its differential definition in Eq. (\ref{eq_vg}) enables one to define the group velocity for slow-enough modulation only, so that the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
+identified with the group velocity, $\vg$. However, this may be misleading, as the differential definition of the group velocity in Eq. (\ref{eq_vg}) enables one to define it for slow-enough modulation only, so that the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
 
-%In the author's view, it is rather a problematic term because a 
-Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), leads to a contradiction. From the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a finite-support has to span over an infinite spectrum. 
-A temporally limited optical pulse will be always more or less distorted upon propagation in dispersive medium, and the information velocity becomes a problematic term.
-Therefore, the author is convinced that the \textit{information velocity} is too vague unless its exact definition is provided, and should not be confused with the group velocity. 
+Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), one leaves the comfortable approximation of narrow spectrum: from the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a finite support has to span over an infinite spectrum. (The proof can be drawn along the line of that such a function does not change, e.g., under the following operation: $$ f(t) \rightarrow f(t) \sgn^2[f(t)] $$)
+
+A temporally limited optical pulse will be always more or less distorted upon propagation in dispersive medium where the dispersion curves are not straight. Then the information velocity becomes a problematic term. If the information can be detected exactly in the first moment when the fields deviate from strict zero, one comes to the surprising conclision that, in dispersive media, the information propagates probably with the speed of light. In the opposite example of a highly noisy channel, the pulse can be reliably detected only after most its energy already arrived.
+
+Therefore, the author is convinced that the notion of \textit{information velocity} is too vague unless its exact definition is provided first, and should not be directly associated with the group velocity. 
 
 %}}}
 %% TODO \paragraph{Speed of light and causality in nonlocal media}%{{{
