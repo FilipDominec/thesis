@@ -630,7 +630,7 @@ The waves propagating with the higher wavenumber $k$ are denoted as \textit{addi
 and also suggested by experimental data of dispersion near exciton levels in cadmium sulphide
 \cite{pekar1975spatial}. 
 
-In the case of a positive amplitude of $\alpha$ (c.f. Fig. \label{fg_dcll_nl}a), one of the two solutions of the lower polariton branch has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), giving raise to negative index of refraction in natural homogeneous media.
+In the case of a positive amplitude of $\alpha$ (c.f. Fig. \ref{fg_dcll_nl}a), one of the two solutions of the lower polariton branch has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), giving raise to negative index of refraction in natural homogeneous media.
 
 %}}}
 \paragraph{Odd expansion terms and optical activity }   %{{{ 
@@ -931,6 +931,16 @@ We will show in the Results section on a particular example that some numerical 
 % Although maybe less instructive, usually the \textit{folded} bands are plotted in the literature and they are used also in Fig. \ref{fg_1dbd}, \ref{fg_rodh} and \ref{fg_erod_radius11} below. The same approach can be used for periodic structures, where the bands are separated by band gaps, cf. Fig. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
 
 %}}}
+\paragraph{Fourier expansion of the mode function}%{{{ 
+If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shape can thus be decomposed into Fourier series
+\todo{ with the coefficients $c_{ijk}$ being TODO? add equation?}
+characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
+
+The dependence of the Bloch wavevector $\KK$ on frequency can be plotted in the same way as it was for homogeneous media, with the difference that all branches are simultaneously present. %% TODO note that this fig phcfolding is only for one direction; plotting K~for other directions requires using IFC
+
+\todo{expand}
+
+%}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
 The periodically repeated one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}.  \todo{unify somehow the alternating explanation in 1-D and 3-D}
 The $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. 
@@ -986,14 +996,6 @@ The $\mathbf{X}$ and $\mathbf{Y}$ points are combination of the Dirichlet and Ne
 As a generalization of the above mentioned, the boundary conditions can be found for any point in the Brillouin zone, provided that correct phase difference between all opposite faces is correctly maintained.
 
 The stronger the coupling between the neighbouring cells, the bigger the difference between the resonance frequencies for the $\mathbf{\Gamma}$ and $\mathbf{X}$ points. Returning to the definition of the group velocity in Eq. (\ref{eq_vg}), one comes to the already expected fact that the energy transfer is proportional to the strength of the inter-cell coupling.
-
-%}}}
-\paragraph{Fourier expansion of the mode function}%{{{ TODO where to move this?
-If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shape can thus be decomposed into Fourier series
-\todo{ with the coefficients $c_{ijk}$ being TODO? add equation?}
-characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
-
-The dependence of the Bloch wavevector $\KK$ on frequency can be plotted in the same way as it was for homogeneous media, with the difference that all branches are simultaneously present. %% TODO note that this fig phcfolding is only for one direction; plotting K~for other directions requires using IFC
 
 %}}}
 %%% \paragraph{Spatial dispersion in photonic structures} %{{{  TODO develop

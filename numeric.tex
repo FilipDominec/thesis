@@ -432,12 +432,11 @@ Aside from yielding multiple branches, the physical interpretation of the data c
 %}}}
 \paragraph{Simulation setup} %{{{
 \begin{figure}[ht] \centering \caption{The setup of the FDTD simulation for the scattering parameter method\todo{REWRITE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
-\begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
 The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with a direction parallel to the $z$-axis. The temporal shape of the wave was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
 
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab was simulated. On both faces perpendicular to the $z$ axis we added perfectly matched layers to absorb all radiation (pink blocks). The implementation used is based on gradually introducing imaginary part into the unit cell dimensions  to prevent reflections under arbitrary incidence angle, polarisation or frequency of the wave. There are different approaches for this problem \cite{oskooi2011distinguishing}. %, thus 
 
-The electric and magnetic fields are averaged and recorded by the monitor planes (blue rectangles) in each simulation step.  %% add FK: as described in detail in Sec. 1.1 ??
+The electric and magnetic fields are averaged and recorded by the monitor planes (blue rectangles) in each simulation step.  \todo{add FK: as described in detail in Sec. 1.1 ??}
 
 Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. A part of its energy is reflected back, a part passes through and part may be dissipated if the structure was lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to a small enough level, the FDTD simulation was terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t(f)$ as functions of frequency $f$. Before this procedure is described, a modification important for the accuracy of this setup is discussed below.
 \todo{convert frequency f to omega? Why not?}
@@ -612,6 +611,7 @@ this method makes several assumptions that may not hold always. One of them is t
 %}}}
 
 \subsection{Current-driven homogenisation} % TODO
+\begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_cdh} \end{figure} %% 
 \mdf{TODO
 %% Markel2013: Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally intro- duced for a Bloch wave.
 
