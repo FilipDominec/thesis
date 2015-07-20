@@ -790,9 +790,9 @@ This theorem is essential for understanding the electromagnetic behaviour of per
 \begin{enumerate}
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
- \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$.} %% TODO this is perhaps redundant; remove this step?
+ \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. \todo{this is perhaps redundant; remove this step?} }
  \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ is eigenfunction of the translation operator, that is,
-$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{cite} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being shifted by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
+$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{HT=TH implies eig common} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being shifted by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
 %$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
 }
  \end{enumerate}
@@ -835,7 +835,10 @@ Then the wave translated by any of the lattice vectors, is also a solution of th
 	where $K_1 a_1$ represents the phase shift between the adjacent cells along the direction of the lattice vector $\ava$. In a similar manner, constants $K_2$ and $K_3$ can be associated with the translation by the $\avb$ and $\avc$ vectors, respectively. 
 }
  \end{enumerate}
-The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: 
+%}}}
+
+\paragraph{Bloch theorem in three dimensions} %{{{
+The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: \todo{expand, and refer to symbols above}
 \begin{equation} \KK := 
 \frac{2\pi K_1(\avb\times\avc)}{\ava\cdot(\avb\times\avc)} +  
 \frac{2\pi K_2(\avc\times\ava)}{\avb\cdot(\avc\times\ava)} +  
@@ -856,11 +859,6 @@ Repeating the procedure for the magnetic field, a similar operator can be obtain
 
 %}}}
 \paragraph{Virtual periodicity and ambiguity of the mode function}%{{{
-\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and a periodic structure viewed along one of its axes. The phase difference over a unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below)\\
-The lattice periodicity allows to draw the dispersion curves of periodic structures using natural scale-invariant units, with the Bloch wave number $K$ divided by the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
-} \label{fg_phcfolding} \centering  %% TODO write caption; complement the text to match
-	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
-\end{figure}
 Homogeneous media, such as vacuum, naturally fulfill the definition of periodicity in Eq. (\ref{eq_trsym}).
 From the principle of correspondence, the Bloch theorem must predict
 the already known solution of a harmonic plane wave in vacuum
@@ -889,6 +887,13 @@ which all
 %maintain the requirement of the mode function $\mathbf{u_{e}}(\rr)$ being periodic and still 
 give the exactly same resulting plane wave. 
 
+\begin{figure}[ht] \caption{Folded and unfolded dispersion curves for free space and a periodic structure viewed along one of its axes. The phase difference over a unit cell can be expressed either by the wavenumber $K$ (unfolded plots \textbf{a, b} above), or it can be partially absorbed into the periodic mode function $\mathbf{u}(\rr)$ (folded plots \textbf{c, d} below)\\
+The lattice periodicity allows to draw the dispersion curves of periodic structures using natural scale-invariant units, with the Bloch wave number $K$ divided by the spatial frequency of the lattice $2\pi/a$, and the angular frequency $\omega$ multiplied by the time needed for the light to traverse the unit cell.
+} \label{fg_phcfolding} \centering  %% TODO write caption; complement the text to match
+	\includegraphics[width=\textwidth]{img/PhC_folding_illustration.pdf} 
+\end{figure}
+\clearpage
+
 %}}}
 \subsection{Dispersion in periodic structures}
 \paragraph{Folding of the dispersion curves} %{{{
@@ -897,7 +902,7 @@ Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(
 
 The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent. 
 
-The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity} or even breaking the time-reversal symmetry (c.f. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. Thus, in many papers on periodic structures \cite{obrien2002photonic,yannopapas2005negative}, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only. In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
+The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. Thus, in many papers on periodic structures, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only \cite{obrien2002photonic,yannopapas2005negative}. In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
 The mathematical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
 \begin{enumerate}
@@ -927,7 +932,7 @@ We will show in the Results section on a particular example that some numerical 
 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
-The periodically repeated interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}. 
+The periodically repeated one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}.  \todo{unify somehow the alternating explanation in 1-D and 3-D}
 The $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. 
 All Brillouin zones have equal measure, and moreover, they can be rearranged into the first one by simple translation. %% TODO specify what this re-arrangement means
 
@@ -944,18 +949,21 @@ More detailed listing and comparison of Brillouin zone shapes is beyond the scop
 
 %}}}
 \paragraph{High-symmetry points of the Brillouin zones} %{{{ 
-The fundamental difference between simple plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
+The fundamental difference between plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
 
-A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out the inner surface.
+A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out its inner surface.
 
 The notation of high-symmetry points in the $\KK$-space is standardized. For the square lattice in two dimensions, four high-symmetry points are named as follows: "$\mathbf{\Gamma}$" corresponds to the center, $K=0$. Provided that the first lattice vector $\ava$ is parallel to the $x$-axis of the coordinate system, the point where $\KK = (\pi/a, 0)$ is denoted as  "$\mathbf{X}$" and the point $\KK = (0, \pi/a)$ as "$\mathbf{Y}$". Finally, the diagonal point of $\KK = (\pi/a, \pi/a)$ is known as "$\mathbf{M}$".
 In two-dimensional case, the dispersion curves are typically plotted along the triangle encircling the irreducible Brillouin zone: $\mathbf{\Gamma}-\mathbf{X}-\mathbf{M}-\mathbf{\Gamma}$.
 
 In three-dimensional cubic lattice, these points maintain their meaning in the plane perpendicular to the $z$-axis \cite[p. 99]{klingshirn2007semiconductor}. Additionally, "$\mathbf{R}$" denotes the spatial diagonal of $\KK = (\pi/a, \pi/a, \pi/a)$. Other lattices introduce more complex sets of the high-symmetry points and the paths along which the dispersion curves are plotted do not seem to be standardized.
 
+\todo{Figure - irr Brill zone for square and cubic lattices}
+
+\todo{Figure - Gamma-X-K-Gamma dc}
+
 %}}}
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
-%% TODO Gamma-X-K-Gamma plot
 %% %}}}
 \paragraph{Tight-binding model for the photonic band-gaps} %{{{
 The notation of the high-symmetry points in the Brillouin zone can outline a different way of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
@@ -972,7 +980,7 @@ Identical phase in all cells corresponds to zero Bloch wave vector, $\KK = 0$, a
 Here, the operator $\partial/\partial \mathbf{n}$ denotes the derivative along the normal to the boundaries.
 
 Other special cases are observed when $\KK$ is in some of the high-symmetry points of the Brillouin zone. For the simple case of a two-dimensional square lattice, the $\mathbf{M}$-point corresponds to the adjacent cells having exactly opposite phase of the fields. This requires that the field amplitudes at the boundary are zero:
-\begin{equation} \E = \HH = 0 \quad\text{(Dirichlet boundary conditions).} \label{eq_bcond_neumann}\end{equation} 
+\begin{equation} \E = \HH = 0 \quad\text{(Dirichlet boundary conditions).} \label{eq_bcond_dirichlet}\end{equation} 
 
 The $\mathbf{X}$ and $\mathbf{Y}$ points are combination of the Dirichlet and Neumann boundary conditions for two different directions.
 As a generalization of the above mentioned, the boundary conditions can be found for any point in the Brillouin zone, provided that correct phase difference between all opposite faces is correctly maintained.
