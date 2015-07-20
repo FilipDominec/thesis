@@ -34,7 +34,7 @@ Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), an analogous result 
 
 %}}}
 \paragraph{Plane wave} %{{{
-The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\i \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector \textit{} and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
+The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\ii \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector \textit{} and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
 The electromagnetic field can be described as a complex exponential, i.e. as a superposition of two waves differing by a quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, namely, it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
 
@@ -625,7 +625,7 @@ The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (F
 \paragraph{Multiple waves and additional boundary conditions}   %{{{ 
 For both cases shown in Fig. \ref{fg_dcll_nl}, it is obvious the dispersion equations can allow multiple solutions with different wavenumber $k$ at one frequency $\omega$, even when the waves have the same orientation and polarisation. (Note that, conversely, multiple solutions with different $\omega$ for a given wavevector $\kk$ are commonly present, as a usual consequence of frequency dispersion even in local media.)
 
-The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, and were predicted by the works of Pekar and others
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, were predicted by the works of Pekar and others
 %\cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}
 and also suggested by experimental data of dispersion near exciton levels in cadmium sulphide
 \cite{pekar1975spatial}. 
@@ -835,8 +835,8 @@ Then the wave translated by any of the lattice vectors, is also a solution of th
 	where $K_1 a_1$ represents the phase shift between the adjacent cells along the direction of the lattice vector $\ava$. In a similar manner, constants $K_2$ and $K_3$ can be associated with the translation by the $\avb$ and $\avc$ vectors, respectively. 
 }
  \end{enumerate}
-%}}}
 
+%}}}
 \paragraph{Bloch theorem in three dimensions} %{{{
 The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: \todo{expand, and refer to symbols above}
 \begin{equation} \KK := 
@@ -933,12 +933,8 @@ We will show in the Results section on a particular example that some numerical 
 %}}}
 \paragraph{Fourier expansion of the mode function}%{{{ 
 If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shape can thus be decomposed into Fourier series
-\todo{ with the coefficients $c_{ijk}$ being TODO? add equation?}
-characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches plotted in Fig. \ref{fg_phcfolding}. Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
-
-The dependence of the Bloch wavevector $\KK$ on frequency can be plotted in the same way as it was for homogeneous media, with the difference that all branches are simultaneously present. %% TODO note that this fig phcfolding is only for one direction; plotting K~for other directions requires using IFC
-
-\todo{expand}
+characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches. The grey lines plotted in Fig. \ref{fg_phcfolding} then are no more hypothetical solutions to be chosen from, but they all have real amplitudes, and are present simultaneously. 
+Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
@@ -977,10 +973,10 @@ In three-dimensional cubic lattice, these points maintain their meaning in the p
 %% %}}}
 \paragraph{Tight-binding model for the photonic band-gaps} %{{{
 The notation of the high-symmetry points in the Brillouin zone can outline a different way of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
-or \textit{hopping}  %% TODO cite?
+or also \textit{hopping},  %% TODO cite?
 model in solid-state physics. 
 
-\label{hopping}
+\label{tight-binding}
 Analyzing one unit cell isolated in free space, one obtains its natural resonance frequency.  When the cell is surrounded by other cells in the periodic lattice, their mutual coupling alters the resonance frequency \cite[p. 75]{klingshirn2007semiconductor}; the actual sign of the coupling effect does not seem to be determined by any simple general rule, however.	
 
 For a steady oscillatory solution to be obtained, the electromagnetic fields in the surrounding cells must have the same modulus of oscillation amplitude, but they do not need to share the phase. This is equivalent to a single Bloch wave propagating in the structure. 
@@ -1001,18 +997,45 @@ The stronger the coupling between the neighbouring cells, the bigger the differe
 %%% \paragraph{Spatial dispersion in photonic structures} %{{{  TODO develop
 %%% Near the $\mathbf{\Gamma}$, $\mathbf{\Gamma}$K~or $\mathbf{\Gamma}$M points, the spatial dispersion must be strong to account for the zero group velocity, and actual bending of the dispersion curve downwards in the adjacent zone. The effect can however not be directly interpreted as the negative group velocity, as the dispersion curve only corresponds to one term in the Fourier expansion of the field shape. 
 %%% %}}}
-\subsection{Photonic band-gaps} 
-\paragraph{Properties of band-gaps}%{{{
-frequencies between the ranges covered by dispersion curves
+\subsection{Band-gaps} 
+\paragraph{Properties of band-gaps} %{{{
+In the plots of dispersion curves, one could identify ranges of frequencies which were not associated with any dispersion curve. 
+They could be observed for a local dielectric (Figs. \ref{fg_dcsimpleel} and \ref{fg_dcll}), for nonlocal dielectrics (Figs. \ref{fg_dcll_nl}, \ref{fg_dcllactivity}), as well as for periodic structures in Fig. \ref{fg_phcfolding}. Such regions are denoted as (electromagnetic) \textit{band-gaps}. Their occurence is obviously a very common phenomenon both in dispersive homogeneous media, and periodic structures. 
+%It is essential to point out the similarities and eventual differences between them.
+While the wave propagation received due attention in the above, also the wave "non-propagation" deserves to be commented.
+
+The band-gap behaviour is simplest to describe in isotropic media, analogous to the one-dimensional case: for a frequency within the band-gap, no wavevector $\KK$ can be found under which the electromagnetic wave would propagate. The more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of the Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band-gap for one polarisation and only in some set of wave vector orientations.
+
+A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations require the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential way with the distance below the interface.
+
+If losses are present, part of the impinging wave energy may be also dissipated. Nonetheless, he exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law.
+
+A scenario less typical, but not less instructive, is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band-gap. Intuitively, one could expect such a "hard" dipole will inevitably put energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole to act as a purely elastic or inertial load to the driving force. For continuous oscillations, all energy will return to the driving force. (If the dipole is realized as a dipolar antenna driven by a high-frequency circuit, it will appear as purely capacitive or inductive load, respectively.) 
+
+To force some energy into the band-gap medium, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole somehow disappears. However, the nature of the band-gap can not be overcome. From the convolution-multiplication theorem, such a pulsed source would have a broad spectrum and it would radiate the energy in the neighbouring allowed bands. 
 
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 
-% -> application of PBG, todo add references; formation: \cite{laktionov2008}
-% -> zero-width case, as a transition between a mode traversing from one photonic band to another
-% -> concept of nodal planes (or, more precisely, surfaces)
+
+% -> Field shape: concept of nodal planes (or, more precisely, surfaces)
 % -> exponential wave decay with phase difference across the cell
-% -> note about how Fourier transform allows no point source to radiate energy within the bandgap
+
+% -> Energy concerns: note about how Fourier transform allows no point source to radiate energy within the bandgap
 % -> PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
+
+% }}}
+\paragraph{Band-gaps stemming from individual resonances}%{{{
+One common class of band-gaps is based on \textit{individual resonances} in the medium or structure. These band-gaps are observed in homogeneous media, where the resonances arise from vibration of electrons, atoms or molecules as described above. It is important that these particles are smaller than the  %% TODO ... Bloch? Or what wavelength??
+wavelength; their interaction with the wave can be approximated as a point dipole (or possibly quadrupole etc.).
+
+Another important characteristic is that when frequency is changed between the lower and upper limit of the band-gap, some internal change of the response happens. Typically, at the lower band-gap edge, the dipoles are \textit{in-phase} with the wave, whereas at the upper edge, they are \textit{in counter-phase}. 
+
+Periodic structures can similarly exhibit a resonance confined in the unit cell. \todo{++}
+
+%% TODO how much should be "predicted" here, and nhow much should be left for the Results section?
+
+%}}}
+\paragraph{Bragg band-gaps}%{{{
 
 %  \cite{johnson2003introduction}
 %  Electromagnetic wave propagation in periodic media was first studied by
@@ -1023,21 +1046,20 @@ frequencies between the ranges covered by dispersion curves
 %  light propagation through the planes. This band gap is angle-dependent
 
 
-% }}}
-\paragraph{Band-gaps stemming from individual resonances}%{{{
-** Are analogous to \todo{add}
-** Related to some internal change of response, typ. below-above a resonance in a homogeneous medium, or similarly a resonance confinde in the unit cell 
+% -> application of PBG, todo add references; formation: \cite{laktionov2008}
+% -> zero-width case, as a transition between a mode traversing from one photonic band to another
 
-%}}}
-\paragraph{Bragg band-gaps}%{{{
 at the same wavevector there are two different solutions - there are frequencies where no wave propagates - nodal planes/surfaces can be identified at the PBG boundaries as K=m.2pi/a and all cells have the same field shape except for the sign
 
 photonic band-gaps are new compared to the band gaps arising from permittivity/permeabiliyt resonances, and arae characteristic by not reducing the number of nodal planes 
 
+%}}}
+\paragraph{Other types of band-gaps}%{{{
+zero-average-index band gaps?
 
 %}}}
 \subsection{Metamaterials and homogenization}
-\mdf{
+\paragraph{todo}%{{{
 Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
 
 Effective parameters
@@ -1051,8 +1073,6 @@ ref Homogenisation issues - response to our paper from OpEx
 \cite{simovski2009material}
 \cite{simovski2011electromagnetic}
 \cite{mortensen2010unambiguous}
-}
-
 % todo{Elaborate mathematical treatise on this topic: \cite{sjoberg2005floquet}}
 % A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscil-
 %   lating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.
@@ -1068,7 +1088,9 @@ ref Homogenisation issues - response to our paper from OpEx
 %% Many MMs do not bring negative refraction, other (composites) do, but not by means of resonances: 
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 %% Negative index may arise from resonances
-\subsection{What are metamaterials and photonic crystals?} %{{{
+
+%}}}
+\subsection{What are metamaterials and photonic crystals?} 
 \paragraph{Difference in the Bloch wavelength}%{{{
 Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is historical - metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice. The difference between electrons in solids and optical photons is in that the electron wavelength is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the use of the Bloch theorem, whereas the wavelength of light is four order of magnitude larger and the medium.
 %are in the scale (inter-atomic distances are in the order of $10^{-10}$ m, while in electromagnetic structures, the cell dimensions usually range from $10^{-2}$ to $10^{-7}$ m. 
@@ -1099,11 +1121,7 @@ The desired properties of nonresonant structures are obtained by averaging the p
 \add{The notion of "wavelength", or more precisely "Bloch wavelength", is not uniquenly defined in such structures! }
 
 \add{
-
-
-
 		Resonant metamaterials operate in the 2nd BZ. From the arguments given in the Results section and in Ref. \cite{dominec2014transition}, on the example of dielectric rod array, the author conjectures that no useful metamaterial properties will be obtained from designing a linear metamaterial to operate in the third or higher photonic band.
-
 
 		The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
 
@@ -1118,7 +1136,6 @@ The desired properties of nonresonant structures are obtained by averaging the p
 		Think over, note our paper dominec2014transition \cite{dominec2014transition}
 }
 
-
 %}}}
 \paragraph{Difference in the energy localisation}%{{{
 ... and resistance of the behaviour to the disorder
@@ -1132,15 +1149,11 @@ On the contrary, the cells of a metamaterial (MM) are expected to exhibit indivi
 At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
 }
 
--
-
 \todo{If so, would be MMs a very narrow, or very broad  group of structures?}
 %}}}
 \paragraph{Definition by purpose and way of thinking}%{{{
 
 existence of effective parameters
-
--
 
 \cite{sihvola2009metamaterials}
 

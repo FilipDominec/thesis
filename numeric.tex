@@ -358,9 +358,9 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 \paragraph{Principles of PWEM} %{{{
 \add{
 
-Another numerical method used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, is fundamentally different from FDTD. Both methods however give similar results if applied to the same task. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved; the resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
+	Another numerical method used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, is fundamentally different from FDTD. Both methods however give similar results if applied to the same task. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
 
-For a given wavevector, PWEM gives also the shape of the fields for each mode. This approach turned out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
+For the given wavevector, PWEM also gives the shape of the fields for each mode. This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
 As a convenient implementation of PWEM, we used  the freely available program \textit{MPB}\cite{johnson2001mpb}, again from the \textit{ab-initio} group at MIT.
 % Todo comments on MPB
 }
