@@ -528,32 +528,27 @@ Double vector multiplication on the right hand side can be identified with the w
 From Eq. (\ref{eq_Dsd3}) we can derive the tensor form of spatial-dispersive permittivity $\epsLL(\omega,\kk)$:
 \begin{equation} 
 \left.  \begin{array}{c}
-\epsLL(\omega,\kk) = 1 \,+\, \chi_e(\omega) \;\;+\;\; \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, T, \medskip \\
+\epsLL(\omega,\kk) = 1 \,+\, \chi_e(\omega) \;\;+\;\; \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, \TT, \medskip \\
 \muLL(\omega,\kk) = 1, 
 \end{array} \quad \right\} \quad \text{(in local media)}
 \label{eq_epsmusd3} \end{equation} 
 where 
-\begin{equation} T = \frac{1}{k^2} 
+\begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2		& -k_x k_y		& -k_x k_z \\ 
 	-k_y k_x		& k_x^2+k_z^2	& -k_y k_z \\ 
 	-k_z k_x		& -k_z k_y		& k_x^2+k_y^2
 	\end{array} \right) 
 \text{ or equivalently, }
-T_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} . \tag{\ref{eq_transverse2} \again} \end{equation}
+(\TT)_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} . \tag{\ref{eq_transverse2} \again} \end{equation}
 
 %}}}
 \paragraph{Other formulations}%{{{
 Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. 
 
-Formally, it is possible to define any other representation of the medium response between these parameters. The distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with uncommon spectral shape \cite{skaar2014diamagnetism}.
-
+Formally, it is possible to arbitrarily distribute the medium electric and magnetic responses between these parameters. The distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with uncommon spectral shape \cite{skaar2014diamagnetism}.
 % todo "Casimir" formulation of electrodynamics \cite{vinogradov2002form}
-
-%% TODO REF EBD theory and nonlocal electrodynamics
-%% \cite{krowne2007book_agran}
-%% \cite{landau1984electrodynamics}
-%% \cite{mikki2009electromagnetic}
+%% TODO REF EBD theory and nonlocal electrodynamics %% \cite{krowne2007book_agran} %% \cite{landau1984electrodynamics} %% \cite{mikki2009electromagnetic}
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
@@ -1015,7 +1010,7 @@ A familiar scenario is that a wave propagates through a transparent medium (e.g.
 
 If losses are present, part of the impinging wave energy may be also dissipated. Nonetheless, he exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law.
 
-A scenario less typical, but not less instructive, is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band-gap. Intuitively, one could expect such a "hard" dipole will inevitably put energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole to act as a purely elastic or inertial load to the driving force. For continuous oscillations, all energy will be returned to the driving mechanism, so for example, if the dipole is realized as a dipolar antenna driven by a high-frequency circuit, it will appear as purely capacitive or inductive load. 
+A scenario less typical, but not less instructive, is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band-gap. Intuitively, one could expect such a "hard" dipole will inevitably put energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole to act as a purely elastic or inertial load to the driving force. If the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. For continuous oscillations, all energy will be returned to the driving mechanism. 
 
 To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole somehow disappears. However, the nature of the band-gap can not be overcome. From the convolution-multiplication theorem, such a pulsed source would have a broad spectrum and it would radiate the energy in the neighbouring allowed bands. 
 
@@ -1036,6 +1031,8 @@ Other resonances have no dipole, again due to the symmetry. Their interaction wi
 %}}}
 \paragraph{Bragg band-gaps}%{{{ TODO
 A different class of band-gaps is formed 
+
+In contrast with the individual resonance, the behaviour of the structure does not fundamentally change between the lower and upper band-gap edge. The difference can however be always found in the location of the \textit{nodal planes}. 
 %  \cite{johnson2003introduction}
 %  Electromagnetic wave propagation in periodic media was first studied by
 %  Lord Rayleigh in 1887, in connection with the peculiar reflective properties of a
@@ -1170,7 +1167,7 @@ At a given frequency of operation, any periodic structure can either allow the B
 \begin{figure}[h] \caption{Schematic of the usual ratio of the reciprocal lattice vector to the wave:vector in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
 
 %%% XXX ============================== 1st band
-	Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usuallly classified as \textit{metamaterials operating in their first photonic band}.     
+	Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{chap_wiremedium}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usuallly classified as \textit{metamaterials operating in their first photonic band}.     
 \cite{richter1995, kadlec2008, sibik2010dp}.
 
 As far as the frequency of operation does not approach the upper edge of the first photonic band, these structures are completely nonresonant.  Let us stress that this classification is inseparably linked with specifying the frequency band of operation, since for any periodic structure, some electromagnetic resonances can be found at their respective frequencies.
