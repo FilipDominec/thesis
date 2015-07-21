@@ -23,12 +23,13 @@ the resulting Fabry-Pérot resonances result in the typical Fresnel-Airy functio
 \paragraph{General notation of vectors and scalars} %{{{
 %}}}
 
-\paragraph{Abbreviations used} %{{{
+\paragraph{Abbreviations used, ordered alphabetically} %{{{
 \begin{table}[ht]   \caption{Table of abbreviations}  \label{tb_shortcuts} \centering 
 \begin{tabular}{ll}
  \toprule
 Abbreviation & Meaning	\\
  \hline
+EDB			& (Formulation of Maxwell equations using the $\E$, $\D$ and $\B$ vectors)\\
 FDTD 		& Finite-difference time-domain (numerical simulation)\\
 FDFD 		& Finite-difference frequency-domain (numerical simulation)\\
 FEM 		& Finite-element method (numerical simulation)\\
@@ -48,7 +49,7 @@ TDTS 		& Time-domain terahertz spectroscopy\\
  \end{tabular} \end{table}
 %}}}
 
-\begin{table}[ht]   \caption{Symbols used}  \label{tb_symbols} \centering %{{{
+\begin{table}[ht]   \caption{Symbols used, approximately in the order they are introduced in text}  \label{tb_symbols} \centering %{{{
 \begin{tabular}{ll}
  \toprule
 Symbol & Meaning	\\
@@ -57,35 +58,36 @@ $\E$ 		& Electric field\\
 $\E_0$ 		& Amplitude of the electric field\\
 $\D$ 		& Electric displacement\\
 $\HH$ 		& Magnetic field\\
-$\B$ 		& Magnetic displacement\\
+$\B$ 		& Magnetic displacement									\vspace{3mm}\\
+ 
+$\varepsilon_0$ &Vacuum permittivity, $8.85\cdot10^{-12}$ F/m\\
+$\mu_0$		&Vacuum permeability, $1.25\cdot10^{-6}$ H/m			\vspace{3mm}\\
+ 
+$\ii$		& Imaginary unit, $\ii^2 = -1$\\
+$e$ 		& Euler constant, $e = 2.718\ldots$\\
+$\pi$ 		& $\pi = 3.141\ldots$\\
+$f$			& Frequency\\
+$\omega$ 	& Angular frequency, $\omega = 2\pi f$\\
+$\kk$ 		& Wave vector in homogeneous media\\
+$\KK$ 		& Wave vector of the Bloch wave in periodic media\\
+$t$, $\tau$ 		& Time\\
+$c$ 		& Speed of light in vacuum, $c=2.998\cdot 10^8$ m/s \\
 $f(t), F(\omega)$ & General function in time domain, and its counterpart in Frequency domain \\
 $\chi_e(t),\chi_m(t)$	& Electric and magnetic susceptibility in the local approximantion \\ %% TODO separate freq-domain and time-domain susc?
 $\chi_e(\omega)$, $\chi_m(\omega)$ 	& Electric and magnetic susceptibility\\
-$\varepsilon_0$ &Vacuum permittivity, $8.85\cdot10^{-12}$ F/m\\
-$\mu_0$		&Vacuum permeability, $1.25\cdot10^{-6}$ H/m \\
-$\epsrl(\omega)$ &Relative permittivity in the local approximation\\
-$\murl(\omega)$ &Relative permeability in the local approximation\\
+$\epsrl(\omega), \murl(\omega)$ &Relative permittivity and permeability in the local approximation\\
 $\epsrn(\omega, \kk)$ &Relative permittivity for nonlocal media\\
 $\murn(\omega, \kk)$ &Relative permeability for nonlocal media\\
 $\epsLL(\omega, \kk)$ &Relative permittivity in the Landau-Lifshitz ($\E\D\B$) formulation\\
-%% TODO add eps, epsLL, mu_r, mu_LL, and distinguish between the symmetric and Landau-Lifshitz form
-$\Neff$ 	& Effective index of refraction (of periodic medium)\\
-$\eeff$ 	& Effective permittivity\\
-$\meff$ 	& Effective permeability\\
+$\Neff$ 	& Effective index of refraction (of periodic media)\\
 $\Zeff$ 	& Effective impedance\\
+$\eeff, \meff$ 	& Effective permittivity and permeability (of periodic media)\\
 $\rr$, $\brho$ 		& Position in space (radius vector)\\
 $\mathbf{a}_{1,2,3}$, $a$ 		& Lattice vectors, unit cell size in the cubic lattice \\
-$t$, $\tau$ 		& Time\\
-$\omega$ 	& Angular frequency\\
-$\kk$ 		& Wave vector in homogeneous medium\\
-$\KK$ 		& Wave vector of the Bloch wave in periodic medium\\
 $\mathbb{R}$		& Real numbers\\
 $\mathbb{Z}$		& Integers\\
 $\mathbb{C}$		& Complex numbers\\
-$\ii$		& Imaginary unit, $\ii^2 = -1$\\
-$e$ 		& Euler constant, $e = 2.718\ldots$\\
 $h$ 		& Planck constant, $h = 6.626\cdot 10^{-34}$ J s\\
-$\mathcal F$ 		& Fourier transform\\
 
  \bottomrule
  \end{tabular} \end{table}
