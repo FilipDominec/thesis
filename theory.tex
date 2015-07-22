@@ -1064,7 +1064,8 @@ zero-average-index band gaps?
 %}}}
 
 \section{Metamaterials and photonic crystals}
-\subsection{Definitions} 
+\subsection{Historical notes} 
+
 %% Definitions:
 %% note that Veselago68 speaks about a truly *homogeneous* medium
 % -> cloaking (aside from losses)
@@ -1077,12 +1078,31 @@ zero-average-index band gaps?
 % Losses are in \cite[p. 708]{born1999book}
 % phc, mm, "electromagnetic materials"
 
-\subsection{Historical notes} 
 of designing and investigating periodic structures
 % == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
 
 \subsection{Application of metamaterials} 
-%Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion, sensor MMs, switchable MMs, amplifying MMs, enhanced nonlinearity, and quantum effects.
+\paragraph{Negative and unusual values of effective parameters}%{{{
+Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion, sensor MMs, switchable MMs, amplifying MMs, enhanced nonlinearity, and quantum effects.
+- 
+
+\mdf{
+\textit{Superlensing -- amplification of evanescent waves}
+\textit{Hyperlensing -- coupling of evanescent and radiated waves} 
+hyperbolic media, analogy with optical fibers, graphene nanostructures...
+}
+
+To achieve the desired high resolution, the medium has to maintain  \todo{+}
+
+If a metamaterial is used as the medium, this obviously translates into the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact much stricter, as also the spatial dispersion has to be negligible for all waves needed for the desired resolution.  which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
+
+Aside from spatial dispersion, a great challenge are the dissipative losses. If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. This is essential for the evanescent-wave amplification, where small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
+
+To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were either limited to the easily accessible microwave % todo cite, and verify there is nothing interesting in the IR lately
+region, or were barely working experimental devices, often requiring .
+
+The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not simultaneously allow much better imaging with detectors placed in the near-field.
+%}}}
 \paragraph{Imaging beyond the diffraction limit }%{{{
 - 
 
