@@ -186,15 +186,15 @@ The multiplication in the time domain translates into a convolution in the frequ
 \begin{equation} 
 F_{even}(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F_{odd}(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F_{odd}(\omega),
 \label{eq_kkresult}\end{equation} 
-where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the Hilbert transform.% tODO cite
+where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the Hilbert transform. % tODO cite
 
 Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary parts of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{even}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
 
 A related mathematical proof of the Kramers-Kronig relations can be derived from the analyticity of the response function in the complex plane of frequency. \cite[p. 125]{klingshirn2007semiconductor}
 
-%% TODO: why do K-K relations forbid to choose arbitrary phase difference over an unit cell? 
-%% ie. Why the Neff can be unambiguously extracted from spectra?
-% TODO show how it dictates the "constant area of imaginary part " when resonance Q is changed
+% maybe:: why do K-K relations forbid to choose arbitrary phase difference over an unit cell? 
+%     ... ie. Why the N_eff can be unambiguously extracted from spectra?
+% maybe: show how it dictates the "constant area of imaginary part " when resonance Q is changed
 %}}}
 
 \subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
@@ -259,10 +259,7 @@ An elaborate discussion on all possible forms of this tensor and their physical 
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  %{{{
 If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. \ref{eq_dispeq_loc}.
-%\begin{equation} xxx  \TT\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
-%\begin{equation} xxx - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E,  \end{equation}
-
-%is a linear transformation of the vector $\E$, which can be expressed by the tensor
+% a linear transformation of the vector $\E$, which can be expressed by the tensor
 %$$ - \kk (\kk \cdot \E) \equiv 
 	%-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
 	%\left[\left(\begin{array}{ccc} k_x & k_y & k_z \end{array} \right) \cdot
@@ -327,7 +324,7 @@ Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutio
 \begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point.  
 		\textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$.
 %% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
-} \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used  as hyperbolic
+} \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
 IFCs are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., by an isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
@@ -356,7 +353,7 @@ the Snell law still gives a correct prediction of the refraction angle.
 We will show in the following that the prediction of \textit{beam} propagation is more complex, because it is sensitive to the \textit{curvature of IFCs}. 
 
 %}}}
-%%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ TODO READ BELOV2003 and FIXME
+%%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ todo? add from Belov2003 
 %%   The IFCs in Fig. \ref{fg_ifc}a,b,c were plotted for non-dispersive media, i. e. with $\epsrl$ and $\murl$ independent of frequency. The case of one polariton branch of a dispersive isotropic medium is already shown in Fig. \ref{fg_ifc_dc}, characteristic by non-equidistant IFCs which lead to the refraction angle being dependent on the frequency.
 %%   
 %%   A more complicated cases are the \textit{hyperbolic media}, where, in a certain spectral region, one component of the anisotropic permittivity is positive, while another one is negative. The solution of Eq. (\ref{eq_dispdet}) then results in a hyperboloid, which is either of one sheet or two sheets, depending on the sign of the remaining diagonal component of permittivity tensor. At the frequencies where the dispersive component of permittivity is negative,  
@@ -387,7 +384,7 @@ On the contrary, in vacuum or media with negligible dispersion, each frequency c
 $$\hspace{3cm}\vg = \kk \omega / k^2 \hspace{3cm} \text{(in nondispersive isotropic media)}.$$
 %The orientation of $\vg$ and $\kk$ is usually the same, but later it will be shown that it can be otherwise, with peculiar physical consequences.
 
-Usually, in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in a temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about distortion in space?
+Usually, in spectral regions near a resonance, also the quadratic or even higher terms in the Taylor expansion of the $\omega(\kk)$ dependence shall be taken into account. This effect is known as the \textit{group velocity dispersion} as it is equivalent to the group velocity $\vg(\kk)$ being dependent on the wavevector (or, if reformulated, on frequency). It results in a temporal distortion of the wave envelope $\E_0(t)$.  %% TODO ... and what about the wave distortion in space?
 %}}}
 \paragraph{Propagation of beams in anisotropic media}  %{{{  
 The refraction of a beam is illustrated in Fig. \ref{fg_ifc2} by means of three slightly different wavevectors it is composed of. For simplicity, a monochromatic wave was used, so brown, black and violet were chosen for the three example wavevectors to prevent confusion with the rainbow-like frequency color map used in Fig. \ref{fg_ifc}. 
@@ -420,10 +417,10 @@ In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite directions (or, more generally, when they have opposite projections on the normal to the interface).  This manifests itself by the IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}b,c.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
 \begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
-	\includegraphics[width=.8\textwidth]{img/ifc_negrefr.pdf} 
+	\includegraphics[width=.9\textwidth]{img/ifc_negrefr.pdf} 
 \end{figure}
 \begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for the same medium as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
-	\includegraphics[width=.8\textwidth]{img/ifc_negrefrk.pdf} 
+	\includegraphics[width=.9\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
 Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in a direction close to the optical axis, the Snell law is still applicable and we then speak of a \textit{negative index of refraction}.  The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
@@ -434,7 +431,6 @@ Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency conto
 \section{Electrodynamics of nonlocal homogeneous media} 
 \subsection{Nonlocal response} 
 \paragraph{Definition of nonlocal media}%{{{
-%TODO: spatial dispersion describes one specific sort of nonlocal behaviour that exists in homogeneous infinite media only
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media.  The downside of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
 Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics}, which is the case, for example, of the Doppler broadening of resonance lines in gases \cite{makarov2004permittivity}. 
 These phenomena are primarily dependent on the wave vector $\kk$, and the apparent broadening on the \textit{frequency} axis is only due to the dispersion curve defining a simple relation between  frequency and wave vector.  
@@ -461,11 +457,11 @@ Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk
 \epsrn(\omega,\kk) = 1 + \chi_e(\omega) + \ii \gamma_{\text{e}}(\omega) \kk + [\alpha_{\text{e}}(\omega) \kk] \kk + \ldots, \medskip  \\
 \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, 
 \end{array} \quad \right\} \quad \text{(in any media)}
-\label{eq_epsmusd1}\end{equation} %% TODO gamma->eta, alpha->phi, ...->psi, ...-xi
+\label{eq_epsmusd1}\end{equation} %% maybe change gamma->eta, alpha->phi, ...->psi, ...-xi ? 
 where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensor, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
 %In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
 
-Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% TODO fix the sencence - it is in fact incorrect
+Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% is the sencence correct?
 \begin{equation} \chi_e(t-\tau, \rr-\brho) \rightarrow \delta^{3}(\rr-\brho) \; \chi_e(t-\tau), \label{eq_loc_chi}\end{equation}
 which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media only the temporal convolution has to be computed. Then the higher order terms including $\gamma_{e,m}$ and $\alpha_{e,m}$ in Eqs. (\ref{eq_epsmusd1}) vanish and
 \begin{equation} 
@@ -487,10 +483,9 @@ Therefore, the \textit{Landau-Lifshitz} model developed below is also denoted as
 
 %}}}
 \paragraph{Local medium in the Landau-Lifshitz model} %{{{
-%For simplicity we assume %% ... or "start with" TODO extend also to nonlocal ones
-%the medium is local, and described by $\epsrl(\omega)$ and $\murl(\omega)$.
-%As a verification that the constitutive equations were transformed correctly into the Landau-Lifshitz model, we show the correspondence
-An important step towards using the Landau-Lifshitz model is to explicitly derive how a classical, local medium with the magnetic response is represented. From the principle of correspondence, all local media should be compatible with this model, and it should predict exactly the same dispersion curves. In the Landau-Lifshitz model, the new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ consists of
+An important step towards using the Landau-Lifshitz model is to explicitly derive how a classical, local medium with the magnetic response is represented. From the principle of correspondence, all local media can be expressed with this model without any change in the dispersion curves predicted. 
+
+In the Landau-Lifshitz model, the new spatial-dispersive permittivity $\epsLL(\omega, \kk)$ consists of
 \begin{enumerate}
  \item{the component caused by the local electric response of matter,} 
  \item{a new component fully accounting for the local \textit{magnetic} response of matter, thanks to a particular shape of its spatial dispersion.}
@@ -506,9 +501,9 @@ then Eq. (\ref{eq_me4}) maintains exactly the same form with the new fields, for
 \begin{equation} \nabla \times \HHsd = \nabla \times \HH + \left(\nabla\times \frac{\partial\mathbf{X}}{\partial t}\right) = \frac{\partial \D}{\partial t}+ \frac{\partial(\nabla\times \mathbf{X})}{\partial t} =  \frac{\partial \Dsd} {\partial t}, \label{eq_me4sd} \end{equation}
 because for reasonably shaped functions the temporal and spatial derivatives commute.
 
-%% TODO how this transform is denoted?
-With the freedom of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in spatial-dispersive theory, the constitutive equation %% TODO reference some text from above pargraphs
-for magnetic induction is defined the same as in vacuum:
+%% todo how this transform is denoted?
+With the freedom of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in spatial-dispersive theory, the constitutive equation 
+for magnetic induction is defined the same as in vacuum, c.f. Eq. \ref{eq_ce}:
 \begin{equation} \mu_0 \HHsd := \mu_0 \murl(\omega) \HH = \B. \label{eq_mu_sd}\end{equation}
 When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obtain a prescription for the sought $\mathbf{X}$: 
 $$ \HHsd = \HH + (\murl(\omega) -1)\HH = \HH + \underbrace{\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B}_{=:\,\partial\mathbf{X}/\partial t}$$
@@ -546,8 +541,8 @@ where
 Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible transformations of medium parameters that keep the Maxwell equations unchanged. 
 
 Formally, it is possible to arbitrarily distribute the medium electric and magnetic responses between these parameters. The distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with custom spectral shape \cite{skaar2014diamagnetism}.
-% todo "Casimir" formulation of electrodynamics \cite{vinogradov2002form}
-%% TODO REF EBD theory and nonlocal electrodynamics %% \cite{krowne2007book_agran} %% \cite{landau1984electrodynamics} %% \cite{mikki2009electromagnetic}
+% maybe "Casimir" formulation of electrodynamics \cite{vinogradov2002form}
+% TODO REF EBD theory and nonlocal electrodynamics %% \cite{krowne2007book_agran} %% \cite{landau1984electrodynamics} %% \cite{mikki2009electromagnetic}
 %}}}
 
 \subsection{Dispersion relations in homogeneous nonlocal media} 
@@ -679,18 +674,6 @@ The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_if
 
 phase velocity is often higher than the speed of light, this is no problem\\
 
-%}}}
-\paragraph{"Negative-refraction", "negative-index", "left-handed" or "doubly-negative" media?}  %{{{
-Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above.
-
-\add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
-\begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
-The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
-
-\todo{ (here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\ }
-
-\todo{add the comments from http://www.wave-scattering.com/negative.html}
-}
 %}}}
 \paragraph{Sign of the group and energy velocities}  % TODO %{{{
 %  \mdf{
@@ -1268,6 +1251,18 @@ ref Homogenisation issues - response to our paper from OpEx
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 %% Negative index may arise from resonances
 
+%}}}
+\paragraph{"Negative-refraction", "negative-index", "left-handed" or "doubly-negative" media?}  %{{{
+Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above.
+
+\add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
+\begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
+The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
+
+\todo{ (here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\ }
+
+\todo{add the comments from http://www.wave-scattering.com/negative.html}
+}
 %}}}
 
 %% finish this? or leave this out?
