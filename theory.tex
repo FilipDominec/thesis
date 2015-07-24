@@ -618,7 +618,7 @@ For both cases shown in Fig. \ref{fg_dcll_nl}, it follows that the dispersion eq
 
 The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, were predicted by the works of Pekar and others
 %\cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}
-and also suggested by experimental data of dispersion near exciton levels in cadmium sulphide
+and also suggested by experimental data of dispersion near exciton levels e.g. in cadmium sulphide
 \cite{pekar1975spatial}. 
 
 In the case of a positive amplitude of $\alpha$ (c.f. Fig. \ref{fg_dcll_nl}a), one of the two solutions of the lower polariton branch has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), giving raise to negative index of refraction in natural homogeneous media.
@@ -1034,29 +1034,39 @@ This difference arises from the fact that the behaviour of the structure does no
 %}}}
 %% TODO \paragraph{Other types of band-gaps}%{{{
 %% In the literature, also other types of band-gaps were identified.  zero-average-index band gaps?
-%% 
+
+% a) the zero averaged refractive index, b) the zero permeability and c) the zero permittivity gaps
+% in
+% Interaction between non-Bragg band gaps in 1D metamaterial photonic crystals
+
 %% %}}}
 
 \section{Metamaterials and photonic crystals}
 \subsection{Historical notes} 
 
+X-ray scattering on atomic lattices observed by Max von Laue (details?)
+explained by WH+WL Bragg (NP 1915) as narrow band-gap
+
+TODO add the blue-green boxes from printed
+independently of periodic structures Veselago in 1968 discusses a *homogeneous* medium with negative index of refraction
+
+phc ??
+term first used in
+
+mm ??
+term first used in
+
+90's in designing and investigating periodic structures
+
 %% Definitions:
-%% note that Veselago68 speaks about a truly *homogeneous* medium
-% -> cloaking (aside from losses)
 % -> superlens (aside from losses and aberration, in a hypothetical case that the MM structure can be made much finer than a detector ...)
-% -> hyperlens 
-%    The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
-%    Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation
-%    for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
-% -> metasurfaces (impedance engineering, tunable properties, thin high-contrast filters)
 % Losses are in \cite[p. 708]{born1999book}
 % phc, mm, "electromagnetic materials"
 
-of designing and investigating periodic structures
 % == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
 
 \subsection{Application of photonic crystals} 
-\paragraph{One-dimensional structures}%{{{
+\paragraph{One-dimensional band-gap structures}%{{{
 \add{
 It was first studied by Lord Rayleigh in 1887 \cite{johnson2003introduction} in a laminar crystal composed of thin periodic layers of slightly different properties. The field at the lower  whenever there are two different solutions at the same wavevector. % They are typical by 
 At the band boundaries where $K=m\pi/a, m\in \mathbb Z$, all cells have the same field shape (except possibly for the sign), and correspondingly nodal planes/surfaces can be identified in the unit cell and 
@@ -1070,16 +1080,17 @@ application of PBG
 }
 
 %}}}
-\paragraph{Planar photonic band-gap structures}%{{{
+\paragraph{Planar band-gap structures}%{{{
 \textit{Photonic-crystal waveguides in integrated optics}
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 
 %}}}
-\paragraph{Photonic filters}%{{{
+\paragraph{Defect modes and photonic filters}%{{{
+High field concentration
 
-%}}}
-\paragraph{High field concentration}
 Magnetized PhCs with enhanced magneto-optic interaction for one-dimensional light propagation
+%}}}
+\paragraph{Photonic filters}%{{{
 
 %}}}
 % -> PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
@@ -1093,9 +1104,10 @@ Ref. \cite{zheludev2010road} identifies major points of metamaterial research in
 \textit{Superlensing -- amplification of evanescent waves}
 \textit{Hyperlensing -- coupling of evanescent and radiated waves} 
 hyperbolic media, analogy with optical fibers, graphene nanostructures...
-}
-
+The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
+Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
 To achieve the desired high resolution, the medium has to maintain  \todo{+}
+}
 
 If a metamaterial is used as the medium, this obviously translates into the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact much stricter, as also the spatial dispersion has to be negligible for all waves needed for the desired resolution.  which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 
@@ -1134,12 +1146,11 @@ The question remains whether the significant progress of technology required to 
 Transformation optics
 Static-field cloaking/shielding of magnetic field
 Full cloaks and carpet cloaks
-}
 
 A simplified task is to construct the \textit{carpet cloak}, a hollow structure adjacent to a boundary that conceals an obstacle near the boundary. Note however, that a carpet cloak can be constructed of homogeneous, anisotropic dielectrics.
 
 In the author's opinion, a great conceptual breakthrough would be needed to overcome the band-width limitations and losses that prevent from building any usable electromagnetic cloak. 
-
+}
 %}}}
 \paragraph{Metamaterials and sensing}%{{{
 %% + TODO Negative Casimir force
@@ -1147,6 +1158,8 @@ In the author's opinion, a great conceptual breakthrough would be needed to over
 
 %}}}
 \paragraph{Metasurfaces, compact antennas and impedance engineering}%{{{
+-
+\mdf{metasurfaces (impedance engineering, tunable properties, thin high-contrast filters)}
 
 %}}}
 
