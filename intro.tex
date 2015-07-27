@@ -11,10 +11,10 @@ Electromagnetic phenomena in periodic structures were studied in analogy with th
 The key concept is that the electromagnetic properties of a periodic structure can be, at least partially, understood as those of a homogeneous medium, but in fact they are determined predominantly by the spatial arrangement of the structure unit cell. The actual constituent materials can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
 While it is unlikely that a radically new homogeneous material will be invented for construction of optical elements, periodic structuring of ordinary materials provides unprecedented freedom in tuning the electromagnetic properties and even enables to obtain phenomena unusual in homogeneous materials. 
 
-\section{Motivation for the terahertz photonics}
+\section{Motivation for terahertz photonics}
 This work focuses on periodic structures operating in the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used in the whole electromagnetic spectrum, the selected frequency range defines the properties of constituent materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high-permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, materials such as glass, most plastics etc. commonly used in other spectral ranges must be avoided, since they exhibit excessively high losses in the terahertz range.
 
-The THz range is located in the spectrum at the boundary between the microwave region where most often the paradigm of high-frequency electronics is used, and the infrared and optical region where classical optics is used \cite{ozyuzer2007emission}. At THz frequencies, concepts from both paradigms are often seamlessly used together: waves emitted from lumped semiconductor components can be collimated by lenses, picosecond pulses generated in nonlinear crystals can be detected by photoconductive sampling, etc. 
+The terahertz range is located in the electromagnetic spectrum at the boundary between the microwave region where most often the paradigm of high-frequency electronics is used, and the infrared and optical region where classical optics is used \cite{ozyuzer2007emission}. At THz frequencies, concepts from both paradigms are often seamlessly used together: waves emitted from lumped semiconductor components can be collimated by lenses, picosecond pulses generated in nonlinear crystals can be detected by photoconductive sampling, etc. 
 %% ... gap in the generation of electromagnetic radiation, extending ap- proximately from 0.5 THz to 2 THz, stems from the separation of the two general
 %%paradigms for generating electromagnetic waves (1–3): alternating currents in semiconductor- based electronics and electronic transitions be- tween quantized electronic states in lasers,
 %%respectively. The frequency of semiconductor devices is bounded from above by limits of the electron velocities, whereas the frequency of solid-
@@ -25,12 +25,10 @@ Yet none of these approaches is optimal for the THz applications; from the elect
 These deficiencies provide additional reasons to search for the new possibilities opened by photonic devices and periodic structures operating in the terahertz range.  
 
 %}}}
-% TODO  cíle disertace
-
+%% \section{Aims of the thesis} ??
 \section{Outline of the thesis} %{{{
 \paragraph{Theory} %{{{
-
-The theoretical chapter starts with a brief review of linear \textit{electrodynamics of continuous media} with an account for anisotropy. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner. Many related topics such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the description of metamaterials in the rest of the thesis.  
+The theoretical chapter starts with a review of linear \textit{electrodynamics of continuous media} with an account for anisotropy. In its customary form without account for spatial dispersion, this topic is treated in every related textbook. Many related topics such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the description of metamaterials in the rest of the thesis.  
 
 The classical electrodynamics for local media serves as a basis for the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics that can be easier extended also for spatially-dispersive media, that is, to account for the material properties depending not only on the frequency, but also on the magnitude of the wave vector.
 %, which is elaborated more in detail.  ---  in fact I should write more there.
@@ -42,6 +40,9 @@ The Bloch theorem follows along with its mathematical proof, which enables to ad
 The distinction of two widely recognized types of these, namely \textit{metamaterials} and \textit{photonic crystals}, is discussed from different aspects, with an emphasis on that the theoretical approaches used for each field can be unified and used for the other field as well.
 
 %}}}
+%%% TODO TODO TODO TODO TODO TODO 
+%%% Hole 1: Outline of the thesis, write
+%%% TODO TODO TODO TODO TODO TODO 
 \paragraph{Experimental methods} %{{{
 %The fourth section gives an overview of the experimental techniques that were used to fabricate the samples and measure their response to a broadband terahertz impulse.
 
@@ -72,8 +73,8 @@ At the end of the thesis, several sections are devoted to topics which did not f
 
 
 %}}}
-\section{The conventions used}%{{{
-Thorough the thesis, we use a single or double apostrophe ($x', x''$) to refer to the real and imaginary part of a complex numberl ($x$). Italic symbols (e.g. $k$) represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$.
+\section{Conventions used}%{{{
+Thorough the thesis, we use a single or double apostrophe ($x', x''$) to refer to the real and imaginary part of a complex number ($x$). Italic symbols (e.g. $k$) represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$.
 
 The explicit time, space or frequency dependence of quantities are omitted when it does not allow confusion. So for electric field we write $\E$ instead of $\E(\rr,t)$.
 
@@ -90,5 +91,5 @@ In the real world, observable fields do not have any imaginary component so the 
 In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
 thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. Thorough the thesis, we however represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon''$.
 
-The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (or, SI) system.
+The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (SI) system.
 %}}}
