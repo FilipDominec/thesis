@@ -8,7 +8,7 @@ Simultaneous theoretical and technological progress through the 20th century all
 Out of all structures studied, arguably the largest theoretical attention was attracted to structures that are periodic.
 Electromagnetic phenomena in periodic structures were studied in analogy with the physical theories established previously. One paradigm of \textit{photonic crystals} was inspired by the electron waves in crystals; slightly later the paradigm of \textit{metamaterials} was inspired by the electromagnetic waves in homogeneous materials. 
 
-The key concept is that the electromagnetic properties of a periodic structure can be, at least partially, understood as those of a homogeneous medium, but are defined predominantly by \textit{shape} in space. The actual constituent materials can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
+The key concept is that the electromagnetic properties of a periodic structure can be, at least partially, understood as those of a homogeneous medium, but in fact they are determined predominantly by the spatial arrangement of the structure unit cell. The actual constituent materials can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
 While it is unlikely that a radically new homogeneous material will be invented for construction of optical elements, periodic structuring of ordinary materials provides unprecedented freedom in tuning the electromagnetic properties and even enables to obtain phenomena unusual in homogeneous materials. 
 
 \section{Motivation for the terahertz photonics}
@@ -25,57 +25,51 @@ Yet none of these approaches is optimal for the THz applications; from the elect
 These deficiencies provide additional reasons to search for the new possibilities opened by photonic devices and periodic structures operating in the terahertz range.  
 
 %}}}
-\section{Outline of the thesis} %{{{
 % TODO  cíle disertace
-\add{
-Many different designs of metamaterials and photonic crystals
-were proposed in the last decades, part of them being aimed at the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
-One of the aims of the dissertation is to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious .  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
-Some attention was paid also to \todo{investigate the tunability of their properties depending on external parameters}, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
-Last but not least, the dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. The results from these simulations will be verified against experimental data and analytic models.
-\\
 
-lacks:
-\\ not covering the area of possible structures
-\\ too much technology?
-\\ too specific, no comparison with similar structures, different frequency-spatial scalings of the same
-\\ often missing  cricital discussion of excessive losses, slow response etc.
-\\ missing proper electrodynamics
-}
-
+\section{Outline of the thesis} %{{{
 \paragraph{Theory} %{{{
-The theoretical chapter starts with a brief review of \textit{electrodynamics of continuous media}. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner. Many related topics such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the description of metamaterials in the rest of the thesis.  
 
-The local electrodynamics serves as a basis for the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics for spatially-dispersive media. 
+The theoretical chapter starts with a brief review of linear \textit{electrodynamics of continuous media} with an account for anisotropy. In its customary form without account for spatial dispersion, this topic is treated in every related textbook, so classical linear electrodynamics is introduced in a minimalistic manner. Many related topics such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the description of metamaterials in the rest of the thesis.  
+
+The classical electrodynamics for local media serves as a basis for the so-called Landau-Lifshitz (or, $EDB$) formulation of electrodynamics that can be easier extended also for spatially-dispersive media, that is, to account for the material properties depending not only on the frequency, but also on the magnitude of the wave vector.
 %, which is elaborated more in detail.  ---  in fact I should write more there.
+Multiple examples of weak spatial dispersion can be found in natural media, but for the description of  
 In the author's opinion, this topic does not receive due attention in most of the literature.
+%% ((( first we build the theory from first principles, and using it we then easier classify the structures)))
 
 The Bloch theorem follows along with its mathematical proof, which enables to adapt the continuum electrodynamics also for waves propagating in periodic structures. 
-The distinction of two widely recognized types of these, namely \textit{metamaterials} and \textit{photonic crystals}, is discussed from different aspects. 
-
-%}}}
-\paragraph{Results} %{{{
+The distinction of two widely recognized types of these, namely \textit{metamaterials} and \textit{photonic crystals}, is discussed from different aspects, with an emphasis on that the theoretical approaches used for each field can be unified and used for the other field as well.
 
 %}}}
 \paragraph{Experimental methods} %{{{
+%The fourth section gives an overview of the experimental techniques that were used to fabricate the samples and measure their response to a broadband terahertz impulse.
+
+% TODO Where appropriate, we also investigated how this behaviour depends on some external parameter (such as electric field, temperature or illumination) -- in other words, how the \textit{tunability} of the structure can be achieved.
+% TODO is this true? Uncomment or remove! ...   Attention  was also paid also to investigate the tunability of their properties depending on external parameters, such as temperature, electric and magnetic fields and illumination. %, i.e. to 
+
 
 %}}}
 \paragraph{Numerical methods} %{{{
+The  section focuses on the numerical methods we employed to predict experimental results and, most importantly, to understand the physical nature of the predicted phenomena. We provide a comparison of the finite-difference time-domain simulation (FDTD), the plane-wave expansion (PWE) and the transfer matrix method (TMM). We point out the capabilities of each of them and we also show how the results from these different methods can be processed to give comparable quantities.
 
+%The dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. 
 %}}}
 \paragraph{Results and conclusion} %{{{
+%The longest section follows, in which a systematic list of the most important periodic structures is provided along with their electromagnetic behaviour. Through this work we focused on the terahertz spectral range. 
+
+The results from the simulations were verified against experimental data and analytic models.
+
+One of the aims of the dissertation is to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
+
+General conclusions and prospects are drawn in a separate section that follows the former.
+%}}}
+\paragraph{Appendices} %{{{
+At the end of the thesis, several sections are devoted to topics which did not fit into the flow of the text. 
 
 %}}}
 
 
-%% TODO update 
-%In the following section we present a brief overview of the relevant physical theory. We review the propagation of electromagnetic waves in the free space and in simple periodic structures. We  outline the boundary which usually divides the fields of \textit{photonic crystals} and \textit{metamaterials}, trying to support the hypothesis that the theoretical approaches used for each field can be unified and used for the other field as well.
-%% ((( first we build the theory from first principles, and using it we then easier classify the structures)))
-%The next section focuses on the numerical methods we employed to predict experimental results and, most importantly, to understand the physical nature of the predicted phenomena. We provide a comparison of the finite-difference time-domain simulation (FDTD), the plane-wave expansion (PWE) and the transfer matrix method (TMM). We point out the capabilities of each of them and we also show how the results from these different methods can be processed to give comparable quantities.
-%The fourth section gives an overview of the experimental techniques that were used to fabricate the samples and measure their response to a broadband terahertz impulse.
-%The longest section follows, in which a systematic list of the most important periodic structures is provided along with their electromagnetic behaviour. Through this work we focused on the terahertz spectral range. 
-% TODO Where appropriate, we also investigated how this behaviour depends on some external parameter (such as electric field, temperature or illumination) -- in other words, how the \textit{tunability} of the structure can be achieved.
-%In the last section, some general conclusions and prospects are drawn.
 
 %}}}
 \section{The conventions used}%{{{
