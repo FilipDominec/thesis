@@ -197,7 +197,7 @@ A related mathematical proof of the Kramers-Kronig relations can be derived from
 % maybe: show how it dictates the "constant area of imaginary part " when resonance Q is changed
 %}}}
 
-\subsection{Dispersion relations in local Drude-Lorentz media} \label{disp_rel_local_media}
+\subsection{Dispersion relations in local Lorentz media} \label{disp_rel_local_media}
 \paragraph{Lower and upper polariton branches of transverse waves} %{{{
 Returning to the derivation of dispersion relations, we start with modifying the constitutive relations (\ref{eq_ce}) to a plane wave propagating in a medium:
 \begin{equation}		\D := \varepsilon_0\epsrl(\omega)	\E, \quad\quad\quad						\B := \mu_0\mu_r(\omega)		\HH,				 \label{eq_ce2}\end{equation}
@@ -321,8 +321,7 @@ Each photonic branch also has to be plotted in a separate plot to prevent the co
 Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
-\begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point.  
-		\textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$.
+\begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. In the plots (b) and (c), the IFCs are plotted for one polarisation only.
 %% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
@@ -1041,11 +1040,19 @@ This difference arises from the fact that the behaviour of the structure does no
 %% %}}}
 
 \section{Metamaterials and photonic crystals}
+%% XXX XXX XXX 
 \subsection{Historical notes} 
+X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg \cite{bragg1913reflection} (Nobel Prize 1915) as a narrow band-gap resulting from constructive interference of the X-rays reflected from the atomic layers.
 
-X-ray scattering on atomic lattices observed by Max von Laue (details?)
-explained by WH+WL Bragg (NP 1915) as narrow band-gap
 
+artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
+
+
+Independently, the electrodynamics of negative-index homogeneous media was developed by 
+Mandelshtam
+Lamb
+von Laue
+Schuster
 TODO add the blue-green boxes from printed
 independently of periodic structures Veselago in 1968 discusses a *homogeneous* medium with negative index of refraction
 
@@ -1060,9 +1067,8 @@ term first used in
 %% Definitions:
 % phc, mm, "electromagnetic materials"
 
-% == History ==    artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
 
-\subsection{Application of photonic crystals} 
+\subsection{Applications of photonic crystals} 
 \paragraph{One-dimensional band-gap structures}%{{{
 \add{
 It was first studied by Lord Rayleigh in 1887 \cite{johnson2003introduction} in a laminar crystal composed of thin periodic layers of slightly different properties. The field at the lower  whenever there are two different solutions at the same wavevector. % They are typical by 
@@ -1092,7 +1098,7 @@ Magnetized PhCs with enhanced magneto-optic interaction for one-dimensional ligh
 %}}}
 % -> PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
 
-\subsection{Application of metamaterials} 
+\subsection{Applications of metamaterials} 
 \paragraph{Negative and unusual values of effective parameters}%{{{
 Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion, sensor MMs, switchable MMs, amplifying MMs, enhanced nonlinearity, and quantum effects.
 - 
@@ -1235,8 +1241,10 @@ existence of effective parameters
 
 PK: "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true?
 %}}}
+
 \subsection{Metamaterial homogenization} % note that NRW and CDH are discussed later
 \paragraph{todo}%{{{
+%% This is my approach only to a very complex problem; I can not solve all humankind's problems
 Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
 
 Effective parameters

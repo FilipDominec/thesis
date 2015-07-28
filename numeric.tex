@@ -334,16 +334,15 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 
 \subsection{Finite-difference frequency-domain} % TODO
 \paragraph{Principle} 
-%%% TODO TODO TODO TODO TODO TODO 
-%%% Hole : FDFD
-%%% TODO TODO TODO TODO TODO TODO 
+%%% TODO TODO TODO TODO TODO TODO Hole : FDFD
 \mdf{ TODO
 %%% One may regard the task of
-%%% frequency-domain solution as eigenvector problem, where the
-%%% % time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
-%%% % eigenvalue. The fields $\EE, \HH$ may be optimized so that:
-%%% % \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
-%%% % and so for $\HH$ 
+	%%% frequency-domain solution as eigenvector problem, where the
+	%%% % time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
+	%%% % eigenvalue. The fields $\EE, \HH$ may be optimized so that:
+	%%% % \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
+	%%% % and so for $\HH$ 
+	
 
 %%% The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
 }%}}}
@@ -391,8 +390,9 @@ The TMM is instrumental not only for its obvious simplicity, but also for provid
 %}}}
 \paragraph{Slab transmission -- comparison of TMM and FDTD} %{{{
 %}}}
-\subsection{Summary of numerical methods used} %{{{
-This section described four fundamentally different numerical methods for electromagnetic simulations. 
+\subsection{Summary of numerical methods used} 
+%{{{
+This section describes several fundamentally different numerical methods for electromagnetic simulations. 
 \begin{enumerate}
 \item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve a broad spectrum at once by Fourier transform. In the following chapter, two fundamentally different setups for FDTD are described that provide similar information on the metamaterial.} 
 \item{The finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching and Fourier transforming the result, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is useful e.g. for mode analysis in complicated structures.} 
@@ -400,7 +400,8 @@ This section described four fundamentally different numerical methods for electr
 \item{The transfer-matrix method (TMM) also allows to find dispersion curves and field distribution. Although it can be extended to two or three dimensions, its one-dimensional implementation is most popular. Thanks to its simplicity, it can even give an analytical insight into the behaviour of planar structures.} 
 \end{enumerate}
 %}}}
-\subsection{Overview of other numerical methods} %{{{
+\paragraph{Overview of other numerical methods} 
+%{{{
 Other numerical methods are used, too. Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation on the element is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
 %% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
 %}}}
