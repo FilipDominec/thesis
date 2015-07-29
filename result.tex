@@ -52,6 +52,8 @@ It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) 
 % TODO FIND PYTHON SCRIPT ----> compare TMM and FDTD for metallic slabs
 
 \section{Wire medium} % references to -> %{{{
+
+\label{chap_wiremedium}
 \mdf{
 ref Homogenisation of nonlocal media such as wires 
 \cite{capolino2009book}
@@ -61,21 +63,27 @@ ref Homogenisation of nonlocal media such as wires
 \cite{lindell2001bw}
 \cite{silveirinha2005homogenization}
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
+
+This type of metamaterial has been historically denoted also as \textit{metallic delay dielectrics}, owing to the possibility to reduce  the phase or group velocities in the proper part of spectrum.
+\cite{brown1953artificial} as  % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 }
 \add{
 We assume the medium is inductive $\quad \Rightarrow \quad  \varepsilon(f) = 1 - \frac{f_p^2}{f^2}$. 
 
-\label{chap_wiremedium}
-\begin{itemize} \item{What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)?} \end{itemize}
+What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)? 
+
+Discussed 40 years earlier \cite[p. 54]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 
 Pendry \textit{et al.} 1996: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log(\frac{a}{r})}}$
+\cite{pendry1996extremely}
+%CITE J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  \\
 
 Maslovski \textit{et al.} 2003: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac{a^2}{4r (a-r)}\right)}}$
+\cite{maslovski2002wire}
+%CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
 
 \begin{itemize} \item{How these models compare to the simulation?} \end{itemize}
 
-CITE J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  \\
-CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
 
 }
 
@@ -465,6 +473,8 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 \section{A fishnet - metallic screen with holes} % references to ->
 \label{sect_fishnet}
+
+Perforated plates \cite[p. 58]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 %{{{
 \cite{yahiaoui2012metallo,rockstuhl2008light}
 %}}}
