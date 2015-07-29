@@ -877,7 +877,7 @@ All possible dispersion curves for a \textit{Bloch wave in vacuum} with the $\KK
 Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(\rr)$, can not be deduced from the dispersion curve. To fully determine the fields, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$ (that depend on the frequency). 
 
 \label{par_disp_curv_per}
-The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent. 
+The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent \cite[p. 177]{brillouin2003wave}. 
 
 The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. Thus, in many papers on periodic structures, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only \cite{obrien2002photonic,yannopapas2005negative}. In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
@@ -921,7 +921,7 @@ All Brillouin zones have equal measure, and moreover, they can be rearranged int
 
 In the one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$ for the second one etc. 
 
-In two or three dimensions the shapes of higher Brillouin zones become much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}: in two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
+In two or three dimensions the shapes of higher Brillouin zones become much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}: in two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone \cite[p. 126]{brillouin2003wave}. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
 
 The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures.
 %, where it actually becomes a practical help for visualisation. TODO rm this?
@@ -1040,34 +1040,54 @@ This difference arises from the fact that the behaviour of the structure does no
 %% %}}}
 
 \section{Metamaterials and photonic crystals}
-%% XXX XXX XXX 
+The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review is therefore important to understand the current state of research, and following the reasoning behind it may even help to understand the actual physical theory. 
+
+Moreover, author perceives that the field covered by this thesis is also somewhat burdened by confusion of the terminology: objects denoted simply as \textit{periodic structures} in this text have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{photonic materials} or \textit{electromagnetic composites}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition. The issue of terminology is apparently not only a formal one, as it psychologically divides the scientific community and more or less directs the future research.
+
+Physics, and the fields of photonics in particular, have developed rapidly in the recent decades. It may be useful to note that some of the, seemingly novel, concepts were in fact conceived much longer ago, and that sometimes the different terminology leads to re-invention of already known concepts. 
+
+The following humble review of the history of metamaterials and photonic crystals is divided into three paradigms that developed independently, and were unified only much later. 
+Although each of the three topics on its own might have seemed to already have given their fruits, it is their \textit{unification} what renewed the scientific interest and pushed the research further.
+
 \subsection{Historical notes} 
 \paragraph{Photonic band-gap structures} 
 X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection} as a narrow band-gap resulting from constructive interference of the X-rays reflected from the atomic layers. The very same principle was later %% when?
 employed for manufacturing of the \textit{dielectric mirrors}. Operating usually in the optical range, the mirrors consist of periodically alternating layers of quarter-wavelength thickness, made of two dielectrics with different wave impedance.  They are widely used, owing to their advantages over classical metallic mirrors such as higher reflectivity and spectral selectivity.
 % related to the \textit{structural colours} found in nature -- who and when did it explain?
 
-\paragraph{Early discussion of media with uncommon parameters} 
-Theoretical investigation on electrodynamics of media posessing negative index of refraction, permittivity or permeability can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction}. L. I. Mandelshtam's lectures on optics touched predicted negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \vCerenkov radiation \cite{pafomov1956cerenkov}. The Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 later received significantly wider attention.
-Note that the theory was developed as the electrodynamics of \textit{homogeneous} media, without assuming microscopic periodicity nor any other way how such a medium should be obtained. 
 
-However, the properties of quasi-periodic structures 
-
-Independently, in the late 19th century, the scientific community resolved the question of how the polarizability of individual atoms in a matter affects the macroscopic permittivity. Except for gases, their mutual interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz} (or, \textit{Clausius-Mossoti}) formula is less trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all transparent media were successfully approximated as homogeneous. 
-
-TODO add the blue-green boxes from printed
-
-
-artificial dielectrics, which were already designed in the 1940s for microwave frequencies -- J. Brown, “Artificial dielectrics,” Prog. Dielectr. 2, 193–225 (1960)
-
-
-
-The metamaterial field has gained on significant popularity with  
-%\cite{lewis2014review} approximated the number of papers as an exponential, doubling every 3.2 years: D = 2**[(year-1975)/3.2]
-Metamaterials are not limited to electrodynamics; similar concepts are employed also for acoustic waves.
+\paragraph{Homogeneous media with uncommon parameters} 
+Theoretical investigation on electrodynamics of media posessing negative index of refraction, permittivity or permeability can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction}. L. I. Mandelshtam's lectures on optics touched predicted negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. The Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 later received significantly wider attention.
+Note that these papers were developed as the electrodynamics of \textit{homogeneous} media, without assuming microscopic periodicity nor any other way how such a medium should be obtained. 
 
 phc ??
 term first used in
+
+\paragraph{Homogenized periodic structures} 
+The macroscopic properties of quasi-periodic structures received due attention, too. 
+can be identified as a third independent paradigm. 	%	 the macroscopic properties of quasi-periodic structures received due attention, too. the macroscopic properties of quasi-periodic structures received due attention, too. 
+In the late 19th century, the scientific community resolved the question of how the polarizability of individual atoms in a matter affects the macroscopic permittivity. Except for gases, their mutual interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz} (or, \textit{Clausius-Mossoti}) formula is less trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all transparent media were successfully approximated as homogeneous. 
+
+These periodic structures, denoted as \textit{artificial dielectrics} \cite{brown1955properties}, which were already designed in the 1940s for microwave frequencies -- 
+A typical design was random array of short wires that interacted by their electric dipoles with the wave \cite{rotman1962plasma}, and thus acted as Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum} \cite{merkel1973simulation}. % TODO find some older publication?
+The unit cell size was kept much smaller than the wavelength, so the task of \textit{homogenization} appeared as settled and apparently did not cause much concerns.
+
+
+
+
+
+\paragraph{Homogenized periodic structures with uncommon parameters} 
+Soon it was realized that artificial dielectrics can attain effective refractive index lower than vacuum \cite{brown1953artificial}, however it took about half a century until the concept of periodic structures was unified with the concept of negative effective parameters.
+
+term of \textit{metamaterial} was first used  %% TODO
+It gained on significant popularity at the late 1990s, probably in connection with the Pendry's paper \cite{} which outlined how a negative index of refraction can be obtained in a periodic medium of metallic wires and split-ring resonators (see
+
+This is probably the reason why metamaterials are often associated with negative index refraction; however many of their applications will be shown to use positive index of refraction. 
+Note that the concept of metamaterials is not even limited to electrodynamics; macroscopic mechanical structures were demonstrated to exhibit comparable phenomena for acoustic waves.
+
+
+\paragraph{Periodic structures with uncommon parameters and band-gaps} 
+The unification between 
 
 mm ??
 term first used in
@@ -1169,7 +1189,10 @@ Full cloaks and carpet cloaks
 
 A simplified task is to construct the \textit{carpet cloak}, a hollow structure adjacent to a boundary that conceals an obstacle near the boundary. Note however, that a carpet cloak can be constructed of homogeneous, anisotropic dielectrics.
 
+Yet another group are DC, or static, magnetic cloaks, which
+
 In the author's opinion, a great conceptual breakthrough would be needed to overcome the band-width limitations and losses that prevent from building any usable electromagnetic cloak. 
+
 }
 %}}}
 \paragraph{Metamaterials and sensing}%{{{
@@ -1203,8 +1226,8 @@ At a given frequency of operation, any periodic structure can either allow the B
 \begin{figure}[h] \caption{Schematic of the usual ratio of the reciprocal lattice vector to the wave:vector in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
 
 %%% XXX ============================== 1st band
-	Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{chap_wiremedium}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usuallly classified as \textit{metamaterials operating in their first photonic band}.     
-\cite{richter1995, kadlec2008, sibik2010dp}.
+Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{chap_wiremedium}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usually classified as metamaterials operating in their first photonic band \cite{richter1995, kadlec2008, sibik2010dp}.
+% in the author's view, this subset of metamaterials can be directly associated with the term of \textit{artificial dielectrics}
 
 As far as the frequency of operation does not approach the upper edge of the first photonic band, these structures are completely nonresonant.  Let us stress that this classification is inseparably linked with specifying the frequency band of operation, since for any periodic structure, some electromagnetic resonances can be found at their respective frequencies.
 The desired properties of nonresonant structures are obtained by averaging the properties of the constituent materials \cite{oganisian2014observation} or by engineering the unit cell are typically a strongly anisotropic tensor of permittivity \cite{kadlec2008, sibik2010dp}. Strictly speaking, this class of structures does not require periodicity, 
@@ -1294,7 +1317,6 @@ Media with a negative index of refraction are a subset of negative refraction, w
 \begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
 The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
 
-\todo{ (here first cite Veselago, not earlier, not later, note that Veselago68 speaks about a truly *homogeneous* medium)\\ }
 
 \todo{add the comments from http://www.wave-scattering.com/negative.html}
 }
