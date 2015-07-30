@@ -424,6 +424,7 @@ Other numerical methods are used, too. Finite-element methods (FEM) approximate 
 %		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
 The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to a wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
 \subsection{Scattering parameters method}
+\label{chapter_sparam}
 \paragraph{Principle} %{{{
 The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample, originally in the microwave range. It is based on the fact that, using Fresnel-Airy formulas, as shown in the Appendix \ref{app_fresnel},
 one can easily compute the transmission $t$ and reflection $r$ from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material the slab consists of. The actual computation is thus denoted also as \textit{Fresnel inversion}.
@@ -616,7 +617,6 @@ this method makes several assumptions that may not always hold. One of them is t
 
 \subsection{Current-driven homogenisation} % TODO
 \begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_cdh} \end{figure} %% 
-\mdf{TODO
 %% Markel2013: Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally intro- duced for a Bloch wave.
 
 \paragraph{Simulation setup}
@@ -624,23 +624,23 @@ this method makes several assumptions that may not always hold. One of them is t
 \paragraph{Identification of dispersion curves}
 \paragraph{Retrieval of effective permittivity out of dispersion curves}
 \paragraph{Comparison with the scattering-parameters method}
-% TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
 %\begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=8cm]{img/cdh_srrwire_structure.pdf} \end{figure} 
 %\begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=6cm]{img/cdh_srrwirethick.pdf} \end{figure} 
-}
 
-\subsection{Simulation of refraction on a wedge} % TODO
-\mdf{TODO
-\paragraph{Simulation setup}
-\paragraph{Derivation of the beam deflection angle}
-\paragraph{Why the beam deflection angle depends on beam direction}
-\paragraph{Analysis of spatio-temporal spectrum}
-\paragraph{Limitations of this method}
-%}}}
-}
+%% \subsection{Simulation of refraction on a wedge} % ... shall I write this?
+%% \mdf{
+%% \paragraph{Simulation setup}
+%% \paragraph{Derivation of the beam deflection angle}
+%% \paragraph{Why the beam deflection angle depends on beam direction}
+%% \paragraph{Analysis of spatio-temporal spectrum}
+%% \paragraph{Limitations of this method}
+%% }
+
 
 \subsection{Other effective parameter retrieval methods} % TODO
 \mdf{TODO
+% TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
+
 WPRM (Wave Propagation Retrieval Method), \cite{andryieuski2010homogenization}: review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena")
 
 only reflection (single-interface) problem, \cite{yang2010retrieving} 
@@ -648,5 +648,4 @@ only reflection (single-interface) problem, \cite{yang2010retrieving}
 only transmission? \cite{hasar2009new} 
 %%% /home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
 }
-%}}}
 
