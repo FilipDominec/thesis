@@ -18,6 +18,13 @@
 %%% Hole : Conclusion - what to put here?
 %%% TODO TODO TODO TODO TODO TODO 
 
+Things that could be pursued further on the basis of the presented work:
+observe bianisotropy of the metamaterial particles
+
+Further, also the effects of more general properties of the constituent materials could be investigated, but this would require expanding the source code of the FDTD simulation library used (i.e., MEEP). While anisotropy and optical activity would be welcome, the particularly interesting option is gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors  that breaks time-reversal symmetry. This would open the wide research possibilies of non-reciprocal metamaterial devices.
+
+
+
 \add{
 \section{Metamaterials -- Critique and alternatives}
 Many different designs of photonic crystals, and in particular, of metamaterials were proposed in the last decades, part of them being aimed at the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
@@ -53,8 +60,8 @@ To conclude this pessimistic, but well meant section, the author
 %%     it can often do so, but without giving any physical insight. Such a result is not a proof of the theory to be
 %%     applicable to the problem, and in some cases not even of the theory to make any sense whatsoever."""
 
-Fundamental issues have to be resolved in the MM and PhC field are
-losses
+%Fundamental issues have to be resolved in the MM and PhC field are
+%losses
 
 The TiO$_{2}$ resonators, whose the manufacturing and sieving process, experimental characterisation and numerical computation was extensively discussed in this thesis, can be viewed as an example of such research.
 \add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
@@ -75,11 +82,10 @@ One example may be the theory of strongly hyperbolic media, which turns out to b
 
 \section{Outcomes of the thesis}
 
-
-
 We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
 The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
 
+% TODO comment on, give links, encourage one to use: The dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. 
 A versatile numerical environment for simulations was prepared and tested in the last two years. All computation scripts, containing over 2000 lines of Python code, are open-source and they use freely-redistributable libraries only, which may be useful for the broader scientific community in the future. 
 The automated effective parameters retrieval from FDTD is especially suitable for parametric scans. It proves instrumental in optimisation of the structure performance, matching experimental data, as well as studying the tunability.
 
