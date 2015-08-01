@@ -137,7 +137,7 @@ A more detailed treatment of the theory of the permittivity $\epsrl(\omega)$ may
 
 We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
-\paragraph{Permeability of Lorentz media}  %{{{ 
+\paragraph{Permeability}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
 \begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \right|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
 where $\chi_m(T)$ is the \textit{magnetic response function} of the medium and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an analogous expression for the local permeability in the frequency domain:
@@ -544,7 +544,7 @@ Formally, it is possible to arbitrarily distribute the medium electric and magne
 % TODO REF EBD theory and nonlocal electrodynamics %% \cite{krowne2007book_agran} %% \cite{landau1984electrodynamics} %% \cite{mikki2009electromagnetic}
 %}}}
 
-\subsection{Dispersion relations in homogeneous nonlocal media} 
+\subsection{Dispersion relations in nonlocal homogeneous media} 
 \paragraph{Dispersion relation as an implicit equation} %{{{
 In the dispersion relation for local media, Eq. (\ref{eq_dispdet}), the wave vector could be found by solving a set of linear equations. In the particular case of \textit{isotropic} local media, the computation has an even simpler form of an explicit computation of one square root, see Eq. (\ref{eq_dispeq_loc}).
 
@@ -1148,8 +1148,6 @@ Magnetized PhCs with enhanced magneto-optic interaction for one-dimensional ligh
 %}}}
 
 \subsection{Applications of metamaterials} 
-
-
 \paragraph{Negative and unusual values of effective parameters}%{{{
 Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion, sensor MMs, switchable MMs, amplifying MMs, enhanced nonlinearity, and quantum effects.
 - 
