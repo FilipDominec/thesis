@@ -334,8 +334,12 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 
 \subsection{Finite-difference frequency-domain} % TODO
 \paragraph{Principle} 
-%%% TODO TODO TODO TODO TODO TODO Hole : FDFD
-\mdf{ TODO
+When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
+$$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
+where the function $\psi$ represents either of the electric or magnetic fields. The particular form for the linear operator $\mathcal{L}$ has been developed in the proof of the Bloch theorem, Chapter \ref{blochproof}.
+
+The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+
 %%% One may regard the task of
 	%%% frequency-domain solution as eigenvector problem, where the
 	%%% % time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
@@ -344,7 +348,8 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 	%%% % and so for $\HH$ 
 	
 
-%%% The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+%%% TODO TODO TODO TODO TODO TODO Hole : FDFD
+
 }%}}}
 \paragraph{Comparison to the time-domain computation} 
 \mdf{ TODO}
