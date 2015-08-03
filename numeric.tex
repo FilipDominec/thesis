@@ -1,4 +1,5 @@
 \section{Numerical simulation algorithms} \label{chapter_numerical}
+%% todo - IR: uvod v numerickych metodach?
 \subsection{Finite-difference time-domain calculations}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
 Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
@@ -363,20 +364,20 @@ The modes obtained by frequency-domain simulation can have arbitrary phase; some
 
 \subsection{Plane-wave expansion method} % TODO
 \paragraph{Principles of PWEM} %{{{
-\add{
+Another algorithm used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, its use is similar to the frequency-domain finite-difference solver (FDFD) described above, though it is based on directly solving a linear algebraic problem in contrast with the somewhat inefficient optimisation used in FDFD.
+PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
 
-	Another numerical method used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, is fundamentally different from FDTD. Both methods however give similar results if applied to the same task. The PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
 
 For the given wavevector, PWEM also gives the shape of the fields for each mode. This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
 As a convenient implementation of PWEM, we used  the freely available program \textit{MPB}\cite{johnson2001mpb}, again from the \textit{ab-initio} group at MIT.
 % Todo comments on MPB
-}
 %}}}
 %  \paragraph{Comparison of PWEM to FDTD} %{{{ WTF
 %  While the time-domain methods are very general, allowing to compute both periodic and non-periodic structures with losses or nonlinearity, some tasks may be better solved by more specialized methods. An example is the \textit{plane-wave expansion method} (PWEM), which is superior for efficient search of dispersion curves in periodic structures, and for the mode shapes at the band edges.
 %}}}
 
 %% \subsection{Transfer-matrix method} % TODO??
+
 %% \paragraph{Principles of TMM} %{{{
 %% \add{
 %% The \textit{transfer-matrix method} (TMM, or also \textit{Abelès formalism} %% ref Abeles1950: recherche sur la propagation des ondes electromagnetiques...
