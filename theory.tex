@@ -326,7 +326,7 @@ Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutio
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
 \end{figure}
-IFCs are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}. Starting, e.g., by an isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
+IFCs are valuable for graphical prediction of wave refraction on interface of two media \cite[p. 118]{shalaev2010book}, \cite{boardman2005negative}. Starting, e.g., by an isotropic medium in Fig. \ref{fg_ifc}a, the wavevectors are known for given frequencies (as three coloured arrows).
 The component of wave vector parallel to the interface (chosen as $k_x$ here and indicated by the vertical dashed lines) must be conserved upon refraction. This rule can be intuitively deduced from the continuity of the wave phase at the interface, as well as from the Noether theorem applied to the infinite translational symmetry of the interface. Transferring the vertical dashed lines to an IFC plot of another medium and finding the intersections with an IFC of the corresponding frequency, one can find the new wavevector. 
 In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and two anisotropic media.
 
@@ -352,7 +352,7 @@ the Snell law still gives a correct prediction of the refraction angle.
 We will show in the following that the prediction of \textit{beam} propagation is more complex, because it is sensitive to the \textit{curvature of IFCs}. 
 
 %}}}
-%%   \paragraph{Isofrequency contours of hyperbolic media}  %{{{ todo? add from Belov2003 
+%% \paragraph{Isofrequency contours of hyperbolic media}  %{{{ todo? add from Belov2003 
 %%   The IFCs in Fig. \ref{fg_ifc}a,b,c were plotted for non-dispersive media, i. e. with $\epsrl$ and $\murl$ independent of frequency. The case of one polariton branch of a dispersive isotropic medium is already shown in Fig. \ref{fg_ifc_dc}, characteristic by non-equidistant IFCs which lead to the refraction angle being dependent on the frequency.
 %%   
 %%   A more complicated cases are the \textit{hyperbolic media}, where, in a certain spectral region, one component of the anisotropic permittivity is positive, while another one is negative. The solution of Eq. (\ref{eq_dispdet}) then results in a hyperboloid, which is either of one sheet or two sheets, depending on the sign of the remaining diagonal component of permittivity tensor. At the frequencies where the dispersive component of permittivity is negative,  
@@ -1042,17 +1042,15 @@ This difference arises from the fact that the behaviour of the structure does no
 
 \section{Historical notes on metamaterials and photonic crystals}
 \subsection{One history of three paradigms} %{{{
-The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review is therefore important to understand the current state of research, and following the reasoning behind it may even help to understand the actual physical theory. 
+The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review and following the development is therefore important to understand the current state of research, and possibly also the actual physical theory. 
 
-Moreover, author perceives that the field covered by this thesis is also somewhat burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured materials}, \textit{photonic band-gap materials} or \textit{electromagnetic composites}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. An inconsistent terminology is apparently not only a formal issue, as it psychologically divides the scientific community and affects the future research.
+Moreover, the field covered by this thesis is also somewhat burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
 
-Physics, and the fields of photonics in particular, have developed rapidly in the recent decades. It may be useful to note that some of the seemingly novel concepts were in fact conceived much longer ago  , and that sometimes the mere change in terminology can lead one to disregard, and later painstakingly and expensively re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
+An inconsistent terminology is apparently not only a formal issue, as it psychologically divides the scientific community and affects the future research.
+Physics, and the fields of photonics in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following, and sometimes the mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
 
-The following humble review of the history of metamaterials and photonic crystals is divided into three paradigms that developed independently and in parallel, and were unified only much later. 
-%Although each of them, on its own, might have seemed to already have given their fruits, it is their \textit{unification} what renewed the scientific interest and pushed the research further.
-Although each of them, on its own, might have seemed to already have given their fruits, it is their \textit{unification} what renewed the scientific interest and pushed the research further.
-
-Useful resources on the history of the field are, e.g. in \cite{shamonina2007metamaterials,eleftheriades2012transforming} and at the web pages of Moroz \cite{moroz}.
+The historical review of metamaterials and photonic crystals in this thesis is viewed as three independent paradigms that developed in parallel, and only later they were unified. 
+Although each of them, on its own, might have seemed to already have given their fruits, it is their \textit{unification} what renewed the scientific interest and pushed the research further. Useful resources on the history of the field are, among others, in \cite{shamonina2007metamaterials,eleftheriades2012transforming} and at the web pages of Moroz \cite{moroz}.
 
 %}}}
 \subsection{Photonic band-gap structures} %{{{
@@ -1070,6 +1068,8 @@ Embedding one different layer, a \textit{defect}, into the middle of a dielectri
 %% yablonovich, john...
 %% phc  term first used in ??
 % "Any dielectric material can be used to fabricate a photonic crystal with a sizeable and robust complete photonic bandgap (CPBG) in three dimensions, as long as small metal inclusions can be added." \cite{moroz2002metallo}
+\cite{joannopoulos2011photonic}
+
 
 
 \textit{Planar band-gap structures} - \textit{Photonic-crystal waveguides in integrated optics} %todo
@@ -1111,7 +1111,7 @@ Similar quasi-periodic structures, then denoted as \textit{artificial dielectric
 %}}}
 \subsection{First unification: metamaterials with uncommon parameters} %{{{
 1950s brought a first step towards achieving negative effective parameters from man-made periodic structures: The geometry of the wire array was chosen to put the fundamental resonance of the electric dipole \textit{below} the frequency of operation \cite{rotman1962plasma}, and thus acted as Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum}. 
-
+e{boardman2005negative
 In the approximation of local media, the \textit{effective permittivity} $\eeff(\omega)$ of this type of artificial dielectrics had a frequency range of values negative, or at least lower than one, leading to the occasional use of the term \textit{artificial plasma} \cite{merkel1973simulation}. 
 The effective refractive index $\Neff(\omega)$ in all such cases was also lower than that of vacuum \cite{brown1953artificial}, but, following Eq. (\ref{eq_dispeqN}), it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
 
@@ -1204,22 +1204,7 @@ the unification of mm and phc become apparently a more important topic when the 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{The boundary between metamaterials and photonic crystals} 
+\section{The boundary between metamaterials and photonic crystals} 
 \paragraph{Difference in the Bloch wavelength}%{{{
 Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is historical - metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice. The difference between electrons in solids and optical photons is in that the electron wavelength is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the use of the Bloch theorem, whereas the wavelength of light is four order of magnitude larger and the medium.
 %are in the scale (inter-atomic distances are in the order of $10^{-10}$ m, while in electromagnetic structures, the cell dimensions usually range from $10^{-2}$ to $10^{-7}$ m. 
