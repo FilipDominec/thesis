@@ -37,7 +37,7 @@ The theoretical chapter aims to present an accessible introduction to the electr
 %Many related topics, such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the selection of structures in rest of the thesis. 
 
 The electrodynamic theory is generalized to account for the \textit{nonlocal} response, or equivalently \textit{spatial dispersion}, in the medium -- a phenomenon which can be usually neglected in the natural media, but is of key importance in any conscientious treatise on electrodynamics of periodic structures.
-The less commonly used nowadays, but advantageous, Landau-Lifshitz (or, $EDB$) formulation of nonlocal medium parameters is also introduced. 
+The less commonly used nowadays, but advantageous, Landau-Lifshitz (or, $\E\D\B$) formulation of nonlocal medium parameters is also introduced. 
 %% ((( first we build the theory from first principles, and using it we then easier classify the structures)))
 
 The third part of the theoretical section is dedicated to periodic structures, starting with the Bloch theorem that enables one to transfer some of the concepts from continuous optics even to waves propagating in periodic structures. Its impact on the form of dispersion curves and on the ambiguity of the wave vector is shown.
@@ -84,13 +84,12 @@ At the end of the thesis, somewhat critical conclusions from the above results a
 %}}}
 
 \section{Conventions used}%{{{
-Throughout the thesis, we use a single or double apostrophe ($x', x''$) to refer to the real and imaginary part of a complex number ($x$). Italic symbols (e.g. $k$) represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
-
-The explicit time, space or frequency dependence of quantities are omitted when it does not allow confusion. So for electric field we write $\E$ instead of $\E(\rr,t)$.
+Throughout the thesis, a single or double apostrophe ($x', x''$) refers to the real and imaginary part of a complex number ($x$). Italic symbols represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
+rhe explicit time, space or frequency dependence of quantities are omitted when it can not cause confusion. So for electric field we write $\E$ instead of $\E(\rr,t)$.
 
 An important note shall be made on the sign convention for the complex wave, introduced in Eq. \ref{eq_pw}.
-We use the `engineering' convention of time dependence: $e^{+\ii \omega t}$, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. 
-It is used in  roughly a half of the literature (e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[(Chapters 1-4, 6, 9, 10)]{eleftheriades2005book}).  In the remaining part, (e.g. \cite[(Chapters 5, 7, 8)]{eleftheriades2005book}), \cite{klingshirn2007semiconductor}, \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions as it is only a formal simplification.
+The `engineering' convention of time dependence of the complex exponential $e^{+\ii \omega t}$ is used, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. Such a convention is used in  roughly a half of the literature, e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21, 99]{krowne2007book}, \cite[Chapters 1-4, 6, 9 and 10]{eleftheriades2005book}.  In the remaining part, e.g. \cite[chapters 5, 7, 8]{eleftheriades2005book}, \cite{klingshirn2007semiconductor}, \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}), the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions.
+%as it is only a formal simplification.
 In the real world, observable fields do not have any imaginary component so the real part of the result has to be taken. 
 %% ---- "ENGINEERING" in favor of +iwt , and then perhaps using eps = (eps' - i eps''), or getting along with all-negative eps''
 %% https://www.comsol.com/support/knowledgebase/1009/    
@@ -98,7 +97,7 @@ In the real world, observable fields do not have any imaginary component so the 
 %% Panofsky & Phillips 1962, p 200 ??
 %% ---- "OPTICS" in favor of -iwt, then using the simpler eps = (eps' + i eps'')
 
-In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}.  An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
+In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}. An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
 thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. Thorough the thesis, we however represent the real and imaginary parts naturally as $\varepsilon := \varepsilon' + \ii \varepsilon''$.
 
 The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (SI) system.
