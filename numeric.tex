@@ -405,6 +405,8 @@ This section describes several fundamentally different numerical methods for ele
 \paragraph{Overview of other numerical methods} %{{{
 Other numerical methods are used, too. Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation on the element is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
 %% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
+%% discontinuous Galerkin method
+
 %}}}
 
 % \begin{verbatim}
