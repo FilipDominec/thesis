@@ -1045,16 +1045,18 @@ This difference arises from the fact that the behaviour of the structure does no
 \subsection{One history of three paradigms} %{{{
 The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review and following the development is therefore important to understand the current state of research, and possibly also the actual physical theory. 
 
-Moreover, the field covered by this thesis is also somewhat burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
+Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
 
 An inconsistent terminology is apparently not only a formal issue, as it psychologically divides the scientific community and affects the future research.
-Physics, and the fields of photonics in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following, and sometimes the mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
+Physics, and the field of photonics in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes the mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
 
-The historical review of metamaterials and photonic crystals in this thesis is organized into three independent paradigms that developed in parallel, and only later they were unified. 
-Although each of them, on its own, might have seemed to already have given their fruits, it is their \textit{unification} what renewed the scientific interest and pushed the research further. This thesis can in no way cover all relevant papers and ideas over the last century; much better resources on the history of the field are, among others, in \cite{shamonina2007metamaterials,eleftheriades2012transforming} and at the web pages of Moroz \cite{moroz}.
+Somewhat experimentally, the following historical review of metamaterials and photonic crystals is organized into three independent paradigms that developed in parallel, and only later they were unified. Each of them on its own once might seem to already have given their fruits, but their \textit{unification} appears to have renewed the scientific interest and pushed the research further. 
+
+This chapter can in no way cover all relevant papers and ideas over the last century; much better resources on the history of the field are in \cite{shamonina2007metamaterials,eleftheriades2012transforming}, at the web pages of Moroz \cite{moroz} etc. Also the actual designs of the periodic structures are mentioned very briefly, since they will be the subject of the Results section.
 
 %}}}
-\subsection{Photonic band-gap structures} %{{{
+\subsection{Photonic band-gap structures} 
+\paragraph{One-dimensional band-gaps and dielectric mirrors}%{{{
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
 Both effects are due to a presence of a Bragg band-gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
 
@@ -1063,14 +1065,18 @@ employed for design and manufacturing of the \textit{dielectric mirrors}. Operat
 
 Embedding one different layer, a \textit{defect}, into the middle of a dielectric mirror can introduce a narrow transmission window within its photonic band-gap. The corresponding \textit{defect mode} is characteristic by a strong field concentration in the defect, enabling to construct narrow-band photonic filters that can be moderately tuned by the defect properties \cite{nemec2005highly}.
 
+%}}}
+\paragraph{Photonic crystals}%{{{
 The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals} in analogy with the band-gaps for the electron wave in natural crystals. A nontrivial accomplishments of achieving the \textit{complete band-gap}, blocking the light in all directions, is attributed to 
 %% yablonovich, john...
 %% phc  term first used in ??
 % "Any dielectric material can be used to fabricate a photonic crystal with a sizeable and robust complete photonic bandgap (CPBG) in three dimensions, as long as small metal inclusions can be added." \cite{moroz2002metallo}
 \cite{joannopoulos2011photonic}
 
-
-
+%}}}
+\paragraph{modes and wave guiding}%{{{
+%% Waveguiding
+%}}}
 \textit{Planar band-gap structures} - \textit{Photonic-crystal waveguides in integrated optics} %todo
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 %% TODO PhC slabs \cite{zengerle1987light}
@@ -1079,48 +1085,61 @@ The \textit{photonic-crystal fiber} (PCF), which differs from the common index-g
 
 Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decade: Obviously, a minor shift of the band-gap changes whether the light at the frequency of the band-gap edge can propagate. Such a shift can be introduced e.g. by static magnetic-field in low-symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
 
+%}}}
 
+\subsection{Homogeneous media with uncommon parameters} 
+\paragraph{Negative parameters}%{{{
+By uncommon parameters it is understood either the negative permittivity or permeability, or negative index of refraction which results from these being negative simultaneously.
+
+Theoretical investigation of electrodynamics in media with a negative index of refraction, i.e., with antiparallel group and phase velocities, can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
+
+It was the Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true 
+the term of \textit{left-handed media} and speculated to which extent media with negative index of refraction due to the simultaneously negative permittivity and permeability might exist in nature (but did not discuss spatial dispersion, which may lead to more general negative refraction, too).
+
+Note that all theoretical papers referred in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
 %}}}
-\subsection{Homogeneous media with uncommon parameters} %{{{
-By uncommon parameters it is understood either the negative permittivity or permeability, or negative index of refraction which results from these being negative simultaneously, at least in the widely used local-medium approximation.  
+\paragraph{Prediction of focusing by a negative-index slab} %{{{
+As also discussed by Veselago \cite[p. 511]{veselago1968} and a decade later by Silin \cite{silin1978possibility},  %: Silin in 1978  %% TODO READPAPER, does not discuss amplification of evanescent waves?
+a plane-parallel slab with negative-index and sufficient thickness would refocus a divergent beam. \todo{Figure-refocusing} It is thus often referred to as a \textit{negative-index lens}, although it differs from lenses and its focal point nor optical axis are not defined. 
 
-Theoretical investigation of electrodynamics in media with a negative index of refraction, i.e., with antiparallel group and phase velocities, can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. It was, however, the Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 that later received significantly wider attention. %todo what was it new in it?
+Clearly, the spherical aberrations would be absent in it, allowing a wide-angle and high numerical aperture for the imaging, but there was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
-Note that the referenced theoretical papers all used the electrodynamics of \textit{homogeneous} media, without assuming microscopic periodicity nor any other technical way how such a medium should be obtained. 
-
-\mdf{
-\textit{Flat negative-index lens}
-Conceptual design of a plane-parallel lens: Silin in 1978 \cite{silin1978possibility} %% TODO READPAPER, does not discuss amplification of evanescent waves?
-Spherical aberrations would be absent, allowing a wide-angle and high numerical aperture for the imaging, but in the Silin's paper there was no discussion yet of overcoming the diffraction limit nor amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
-}
-
-\mdf{
-Electromagnetic cloaking
+%}}}
+\paragraph{Electromagnetic cloaks}
 \cite{dollin1961possibility,alitalo2009electromagnetic}
-}
 
 %}}}
-\subsection{Artificial dielectrics and metamaterials} %{{{
-Third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
-Its roots can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in a matter affects the macroscopic permittivity. Except for gases, their mutual interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz} (or, \textit{Clausius-Mossoti}) formula is less trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all transparent natural media are successfully approximated as homogeneous. 
+\subsection{Artificial dielectrics and metamaterials} 
+\paragraph{Analysis of nonresonant sub-wavelength structures} %{{{
+The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
-The design of inhomogeneous structures that could be treated as homogeneous has also a surprisingly long history. 
+Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in a matter affects the macroscopic permittivity. Except for gases, their mutual interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz} (or, \textit{Clausius-Mossoti}) formula is less trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all transparent natural media are successfully approximated as homogeneous. 
+
+\mdf{TODO bruggemann and maxwell-garnett theories for composites; note that composites may be somewhat random if in quasi-static case}
+
+%}}}
+\paragraph{Synthesis of nonresonant sub-wavelength structures}
+The design of inhomogeneous structures that could be treated as homogeneous ones with some desired properties has also a surprisingly long history. 
 Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit} of frequencies well below any resonance frequency of the particle, and the \textit{long-wavelength limit} well below the first photonic band-gap. 
 
 Subwavelength wire arrays have been experimentally used, at least, since 1898 as microwave polarisers. The concept of assembling a microwave polarisation rotator from organic or metallic helices comes from that era, too \cite{bose1898rotation, emerson}.
 
 Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor with the application in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
 
-\mdf{TODO bruggemann and maxwell-garnett theories for composites; note that composites may be somewhat random if in quasi-static case}
-
 %}}}
 \subsection{First unification: metamaterials with uncommon parameters} %{{{
+\paragraph{Negative effective permittivity} %  - resonant electric dipole arrays
 1950s brought the first step towards achieving negative effective parameters from man-made periodic structures: The geometry of the wire array was chosen to put the fundamental resonance of the electric dipole \textit{below} the frequency of operation \cite{rotman1962plasma,boardman2005negative}, and thus acted as a Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum}. 
+
 In the approximation of local media, the \textit{effective permittivity} $\eeff(\omega)$ of this type of artificial dielectrics had therefore a frequency range of negative values, or at least lower than one. This feature lead to the occasional use of the term \textit{artificial plasma} \cite{merkel1973simulation}. 
+
 The effective refractive index $\Neff(\omega)$ in such cases of $\eeff(\omega)<1$ was also lower than that of vacuum \cite{brown1953artificial}, but, following Eq. (\ref{eq_dispeqN}), it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
 
+\mdf{Continuous wire arrays in waveguides etc., }
+
+\paragraph{Negative effective permeability and refractive index} %  - resonant magnetic dipole arrays
 
 \mdf{PK-"The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
 Although somewhat redundant to \textit{artificial dielectrics}, it can be viewed as more fortunate as 
@@ -1130,8 +1149,8 @@ It gained on significant popularity around the millenium break, probably in conn
 \textit{split-ring resonator}
 
 
-A major issue are the dissipative losses in resonant periodic structures, which was not sufficiently resolved yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite
-and it may be favorable to substitute metals with certain types of oxides with near-infrared resonances \cite{naik2011}.
+A major issue are the dissipative losses in resonant periodic structures, which were not sufficiently resolved yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite
+and it may be favorable to substitute metals with certain types of oxides with near-infrared resonances \cite{naik2011oxides}.
 
 \mdf{
 \textit{Superlensing with metamaterials}
