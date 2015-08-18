@@ -2,9 +2,15 @@
 %% *  fix that f is used as frequency (replace with omega) and also as arbitrary function f(t) 
 %% *  get rid of the term "response function" for susceptibility
 %% *  ensure more consistent usage of "dispersion curve", "dispersion relation" and "solution of Maxwell equations"
+% TODO 2015-01-23: 
+% 1) note that zero PBG width = dirac point = zero effective photon mass 
+% 2) investigate how mode anticrossing relates to the significant spatial dispersion
+% 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
+% 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
+% 5) note about the meep peculiarity of notation: 'omega'=omega0/2pi , 'gamma'=gamma/2pi, 'sigma'=Deltaeps = F/omega0^2
 
 
-\section{Electrodynamics of local homogeneous media} 
+\section{Electrodynamics of local homogeneous media} %{{{
 \subsection{Electromagnetic wave in vacuum}
 \paragraph{Maxwell equations}  %{{{
 In the realm of classical physics, the electromagnetic phenomena are governed by the \textit{Maxwell equations} in the following form.
@@ -213,7 +219,7 @@ In the simplest example of a single electric resonance with negligible losses, a
 
 The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also of the spectra of resonances of macroscopic structures described later.
 
-Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
+Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing}, or also \textit{avoided crossing}, between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
 
 When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  
 
@@ -322,7 +328,7 @@ Each photonic branch also has to be plotted in a separate plot to prevent the co
 Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
-\begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. In the plots (b) and (c), the IFCs are plotted for one polarisation only.
+\begin{figure}[ht] \caption{Isofrequency contours for three different frequencies: \textbf{(a)} IFCs in the isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. Note that for clarity, the plots (b) (c) show the IFCs only for one wave polarisation. %%% XXX XXX XXX todo what is the orientation of the group velocity??
 %% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
@@ -416,19 +422,21 @@ In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the
 
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite directions (or, more generally, when they have opposite projections on the normal to the interface).  This manifests itself by the IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}b,c.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
-\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
+\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction. } \label{fg_ifcnr} \centering  %% TODO  WRITE
 	\includegraphics[width=.9\textwidth]{img/ifc_negrefr.pdf} 
 \end{figure}
 \begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for the same medium as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
 	\includegraphics[width=.9\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
-Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in a direction close to the optical axis, the Snell law is still applicable and we then speak of a \textit{negative index of refraction}.  The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
+Whenever the wave vector $\kk$ is nearly perpendicular to the isofrequency contour the Snell law is still applicable and we then speak of a \textit{negative index of refraction}. 
+This is typically, but not exclusively, observed in isotropic media or in media where the wave vector points in a direction close to the optical axis.
+The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
 %% maybe?? the propagation velocities are more complicated 
 
 %}}}
-
-\section{Electrodynamics of nonlocal homogeneous media} 
+%}}}
+\section{Electrodynamics of nonlocal homogeneous media} %{{{
 \subsection{Nonlocal response} 
 \paragraph{Definition of nonlocal media}%{{{
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media.  The downside of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
@@ -458,7 +466,7 @@ Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk
 \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, 
 \end{array} \quad \right\} \quad \text{(in any media)}
 \label{eq_epsmusd1}\end{equation} %% maybe change gamma->eta, alpha->phi, ...->psi, ...-xi ? 
-where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensor, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
+where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensors, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
 %In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
 
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% is the sencence correct?
@@ -715,8 +723,8 @@ A temporally limited optical pulse will be always more or less distorted upon pr
 %% \cite{bruleanalysis}
 %% \cite{makarov2013kramers}
 %% }%}}}
-
-\section{Electromagnetic waves in periodic structures}
+%}}}
+\section{Electromagnetic waves in periodic structures}%{{{
 \subsection{Periodic structures and the Bloch theorem}
 \paragraph{Inhomogeneity}%{{{
 The previous sections discussed infinite media, with the only deviation from homogenity at an interface of two media, where refraction of the waves is observed, and it was shown that the resulting orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
@@ -1040,6 +1048,10 @@ This difference arises from the fact that the behaviour of the structure does no
 % Interaction between non-Bragg band gaps in 1D metamaterial photonic crystals
 
 %% %}}}
+%}}}
+
+
+
 
 \section{Historical notes on metamaterials and photonic crystals}
 \subsection{One history of three paradigms} %{{{
@@ -1136,16 +1148,21 @@ Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955pr
 
 In the approximation of local media, the \textit{effective permittivity} $\eeff(\omega)$ of this type of artificial dielectrics had therefore a frequency range of negative values, or at least lower than one. This feature lead to the occasional use of the term \textit{artificial plasma} \cite{merkel1973simulation}. 
 
-The effective refractive index $\Neff(\omega)$ in such cases of $\eeff(\omega)<1$ was also lower than that of vacuum \cite{brown1953artificial}, but, following Eq. (\ref{eq_dispeqN}), it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
+The effective refractive index $\Neff(\omega)$ in all cases of $\eeff(\omega)<1$ was also lower than that of vacuum \cite{brown1953artificial}, but, following
+Eq. (\ref{eq_dispeqN}), 
+\begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \tag{\ref{eq_dispeqN}\again} \end{equation}
+it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
 
-\mdf{Continuous wire arrays in waveguides etc., }
+% \mdf{Continuous wire arrays in waveguides etc., } ??
 
-\paragraph{Negative effective permeability and refractive index} %  - resonant magnetic dipole arrays
+\paragraph{Negative effective permeability and negative refractive index} %  - resonant magnetic dipole arrays
 
 \mdf{PK-"The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
 Although somewhat redundant to \textit{artificial dielectrics}, it can be viewed as more fortunate as 
-It gained on significant popularity around the millenium break, probably in connection with the Pendry's paper \cite{pendry1999magnetism} which outlined how a negative index of refraction can be obtained in a periodic medium, where metallic wires introduce $\eeff<0$ and small metallic loops embedded in the lattice, known as \textit{split-ring resonators} (SRR), introduce $\meff<0$.
+It gained on significant popularity in the early 2000s, probably in connection with the Pendry's paper \cite{pendry1999magnetism} which outlined how a negative index of refraction can be obtained in a periodic medium, where metallic wires introduce $\eeff<0$ and small metallic loops embedded in the lattice, known as \textit{split-ring resonators} (SRR), introduce $\meff<0$.
 }
+
+
 
 \textit{split-ring resonator}
 
@@ -1390,23 +1407,11 @@ The question of indefinite sign can be decided using the assumption of medium \t
 	%two coupled broad resonances with interaction inbetween?
 
 %Scaling and non-scaling properties [Zhou PRL 2005]
-%(Mode curve anticrossing)
 %Babinet principle
-%(Quantum states in left-handed media?)
-%
-%Building metamaterials: key principles
-%Homogenisation
-%methods, issues, desired homogenized parameters
 %Metal functions
 %diluted metal → Pendry1996's low frequency plasmons
-%metallic resonators: negative mu from SRR/Horseshoe/double-stripe
 %Bianisotropy and chirality
-%SRR and double-SRR
-%keeping rotational-translational symmetry
-%tunability
-%MM impedance and coupling to free-space waves
-%Mode coupling
-%capacitive/resistive, behaviour, conditions, applications
+
 %relations between MM and photonic crystal
 %Higher-order Bloch modes
 %
@@ -1419,19 +1424,4 @@ The question of indefinite sign can be decided using the assumption of medium \t
 		%Wood anomaly in hole arrays
 		%Standing SPP wave
 	%“thin wires [8], [28], Swiss rolls [9], SRRs [9], electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
-%
-%== Weird ideas to elaborate ==
-%* helical wire medium -> higher inductive load -> enables low plasma freq even for thicker wires
-	%---> calculate FDTD
-	%---> measure   TDTS with light bulb wires!
-%* Possibility of standing phonon-polariton on SiC (!) 
-%* try the anisotropic magnetic goo from the drawing board for children (but for electrical response)
-%* find out how they could achieve negative phase speed
-%* quantum point of view to negative phase/group velocity 
 
-% TODO 2015-01-23: 
-% 1) note that zero PBG width = dirac point = zero effective photon mass 
-% 2) investigate how mode anticrossing relates to the significant spatial dispersion
-% 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
-% 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
-% 5) note about the meep peculiarity of notation: 'omega'=omega0/2pi , 'gamma'=gamma/2pi, 'sigma'=Deltaeps = F/omega0^2
