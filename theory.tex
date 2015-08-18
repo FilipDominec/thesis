@@ -219,7 +219,7 @@ In the simplest example of a single electric resonance with negligible losses, a
 
 The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also of the spectra of resonances of macroscopic structures described later.
 
-Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing} between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
+Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing}, or also \textit{avoided crossing}, between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
 
 When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  
 
@@ -328,7 +328,7 @@ Each photonic branch also has to be plotted in a separate plot to prevent the co
 Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
-\begin{figure}[ht] \caption{\textbf{(a)} Isofrequency contours for an isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. In the plots (b) and (c), the IFCs are plotted for one polarisation only.
+\begin{figure}[ht] \caption{Isofrequency contours for three different frequencies: \textbf{(a)} IFCs in the isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. Note that for clarity, the plots (b) (c) show the IFCs only for one wave polarisation. %%% XXX XXX XXX todo what is the orientation of the group velocity??
 %% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
@@ -422,14 +422,16 @@ In the discussion of refraction both in Fig. \ref{fg_ifc} and \ref{fg_ifc2}, the
 
 A more complicated case occurs when the wave vector $\kk$ and group velocity $\vg$ point in opposite directions (or, more generally, when they have opposite projections on the normal to the interface).  This manifests itself by the IFC radius \textit{decreasing} with frequency growing, as shown in  Fig. \ref{fg_ifcnr}b,c.
 Such a case can indeed occur in natural or artificial media, as described in more detail below. 
-\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction \todo{comment}} \label{fg_ifcnr} \centering  %% TODO  WRITE
+\begin{figure}[ht] \caption{Frequency-dependent IFCs of \textbf{(a)} an ordinary medium, \textbf{(b)} an isotropic medium with a negative index of refraction and \textbf{(c)} an anisotropic medium with a negative index of refraction. } \label{fg_ifcnr} \centering  %% TODO  WRITE
 	\includegraphics[width=.9\textwidth]{img/ifc_negrefr.pdf} 
 \end{figure}
 \begin{figure}[ht] \caption{Wavevector-dependent IFCs for one frequency, for the same medium as in Fig. \ref{fg_ifcnr} \todo{extend}} \label{fg_ifcnrk} \centering  %% TODO  WRITE
 	\includegraphics[width=.9\textwidth]{img/ifc_negrefrk.pdf} 
 \end{figure}
 
-Whenever the wave vector $\KK$ is nearly perpendicular to the isofrequency contour, which is the most often observed in isotropic media or in media where the wave vector points in a direction close to the optical axis, the Snell law is still applicable and we then speak of a \textit{negative index of refraction}.  The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
+Whenever the wave vector $\kk$ is nearly perpendicular to the isofrequency contour the Snell law is still applicable and we then speak of a \textit{negative index of refraction}. 
+This is typically, but not exclusively, observed in isotropic media or in media where the wave vector points in a direction close to the optical axis.
+The refraction between ordinary media and two examples involving negative-index media are plotted in Fig. \ref{fg_ifcnr}. It should be noted that the negative-index media always exhibity temporal dispersion. Therefore, the refraction of temporally short pulses disperses different frequencies into different angles, as can be seen from the wavevector orientation dependent on frequency in Fig. \ref{fg_ifcnr}b,c.
 %% maybe?? the propagation velocities are more complicated 
 
 %}}}
@@ -464,7 +466,7 @@ Assuming the permittivity $\epsrn(\omega,\kk)$ or permeability $\murn(\omega,\kk
 \murn(\omega,\kk) = 1 + \chi_m(\omega) + \ii \gamma_{\text{m}}(\omega) \kk + [\alpha_{\text{m}}(\omega) \kk] \kk + \ldots, 
 \end{array} \quad \right\} \quad \text{(in any media)}
 \label{eq_epsmusd1}\end{equation} %% maybe change gamma->eta, alpha->phi, ...->psi, ...-xi ? 
-where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensor, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
+where $\chi_{e,m}(\omega)$ are second rank tensors, $\gamma_{e,m}(\omega)$ third rank tensors, $\alpha_{e,m}(\omega)$ fourth rank, and similarly for possible higher orders of expansion. After the corresponding number of matrix multiplication with $\kk$, they all yield rank-2 tensors that add up to form the tensor of permittivity or permeability.
 %In this customary symmetric approximation of local media, both the electric permittivity and permeability in Eq. (\ref{eq_eps_loc}) are composed of two terms, one caused by the immediate response of vacuum, and another by the response of matter. In nonlocal media, both functions depend on the wavevector $\kk$, making the solution of Maxwell equations more complicated.
 
 Note the response function for a local medium can be formally derived from its nonlocal formulation by replacing the spatial dependence in Eq. (\ref{eq_chi_convol_nonloc}) by a Dirac delta function as follows: %% is the sencence correct?
@@ -1404,7 +1406,6 @@ The question of indefinite sign can be decided using the assumption of medium \t
 	%two coupled broad resonances with interaction inbetween?
 
 %Scaling and non-scaling properties [Zhou PRL 2005]
-%(Mode curve anticrossing)
 %Babinet principle
 %Metal functions
 %diluted metal → Pendry1996's low frequency plasmons
