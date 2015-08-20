@@ -337,23 +337,20 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 \paragraph{Principle} 
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
-where the function $\psi$ represents either of the electric or magnetic fields. The particular form for the linear operator $\mathcal{L}$ has been developed in the proof of the Bloch theorem, Chapter \ref{blochproof}.
+where the function $\psi$ represents either of the electric or magnetic fields. The particular form for the linear operator $\mathcal{L}$ is  
+as has already been developed in the proof of the Bloch theorem, Chapter \ref{blochproof}.
+
+Numerically, the problem can be expressed as a simultaneous optimization of the $\E, \HH$ fields shape such that one time-stepis identical to phase rotation of the field at the given angular frequency $\omega$.
+We remind that unless stated otherwise, the simulations use complex numbers to represent all field components.
+For the optimization to be as efficient as possible, the authors of the simulation used, namely MEEP , chose the stabilized biconjugate gradient \cite{oskooi2010meep}. More information on the frequency-domain solver is on the project's website. % todo cite ab-init
 
 The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
 
-%%% One may regard the task of
-	%%% frequency-domain solution as eigenvector problem, where the
-	%%% % time-stepping acts as a linear operator $\hat M$ and $\e^{\ii \omega t}$ is the
-	%%% % eigenvalue. The fields $\EE, \HH$ may be optimized so that:
-	%%% % \begin{equation} \hat M \EE = \e^{\ii \omega t} \EE \label{eq_}\end{equation} 
-	%%% % and so for $\HH$ 
-	
-
-%%% TODO TODO TODO TODO TODO TODO Hole : FDFD
 
 %}}}
 \paragraph{Comparison to the time-domain computation} 
-\mdf{ TODO}
+To verify their reliability, the results of the frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation.
+
 %%% Cons: inefficient, convergence not guaranteed
 %%% Pros: very convenient once time-domain simulation is prepared
 %%% In the latest meep version (1.2.1), nondispersive $\varepsilon_r, \sigma$ must be
