@@ -667,6 +667,7 @@ For weak spatial dispersion, different approaches to the problem are discussed (
 %}}}
 
 \subsection{Phase, group, energy and signal velocity}
+\label{chap_vfvg}
 \paragraph{Signs of the phase and group velocities}%{{{ TODO
 The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. 
 
@@ -1086,26 +1087,26 @@ The success in prohibiting the light to propagate along one direction inspired t
 \cite{joannopoulos2011photonic}
 
 %}}}
-\paragraph{Planar band-gap structures} %{{{
-The demands for the photonic crystal, 
-\textit{Photonic-crystal waveguides in integrated optics} %todo
+\paragraph{Band-gap used in fibers and waveguides} %{{{
+Embedding a linear defect into a photonic crystal forms a waveguide that can not radiate even when bent under sharp angles.
+The demands for achieving a complete band-gap in the photonic crystal, can be reduced if a two-dimensional band-gap structure is etched into a slab. Planar structures are also much easier to fabricate using developed techniques such as photolitography. A \textit{planar band-gap waveguide} are formed by a linear defect in a thin silica photonic crystal slab, which restricts the light by the total internal reflection horizontally and by the means of the two-dimensional band-gap vertically. Such structures are finding wide use as waveguides, beamsplitters and filters in \textit{integrated optics}. %todo
 % Beam propagation in periodic planar waveguides \cite{zengerle1987light}
 %% TODO PhC slabs \cite{zengerle1987light}
 
-The \textit{photonic-crystal fiber} (PCF), which differs from the common index-guiding fibers by that the light is confined in its core by a photonic band-gap in both lateral directions, was conceived in 1970s. Both types of fibers can be additionally structured in the longitudinal directions, forming a \textit{distributed Bragg reflector}. Such mirrors, acting on the guided wave, can be made extremely narrowband, finding their use in fiber lasers, telecommunication, sensing, etc.
+The \textit{photonic-crystal fiber} (PCF), which differs from the common index-guiding fibers by that the light is confined in its core by a photonic band-gap in both lateral directions, was conceived in 1970s. % todo cite, where are the 70's ?
 
-Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decade: Obviously, a minor shift of the band-gap changes whether the light at the frequency of the band-gap edge can propagate. Such a shift can be introduced e.g. by static magnetic-field in low-symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
+As a complementary concept, a longitudinal modulation can be inscribed into the index-guiding fibers, forming a \textit{distributed Bragg reflector}. Its filtering capabilities can be made extremely narrowband, which is employed in fiber lasers, telecommunication, sensing, etc. % TODO cite, when first?
 
+Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decades: Obviously, a minor shift of the band-gap changes whether the light at the frequency of the band-gap edge can propagate. Such a shift can be introduced e.g. by static magnetic field in low symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
 
 %}}}
-
 \subsection{Homogeneous media with uncommon parameters} 
 \paragraph{Negative parameters}%{{{
-By uncommon parameters it is understood either the negative permittivity or permeability, or negative index of refraction which results from these being negative simultaneously.
+By uncommon parameters it is understood either the negative permittivity or permeability, or negative index of refraction which results from these being negative simultaneously. Also uncommon in nature are media where all these parameters are close to zero.
 
-Theoretical investigation of electrodynamics in media with a negative index of refraction, i.e., with antiparallel group and phase velocities, can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
+Theoretical investigation of electrodynamics in media with a negative index of refraction, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
-It was the Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true 
+It was the Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true ?
 the term of \textit{left-handed media} and speculated to which extent media with negative index of refraction due to the simultaneously negative permittivity and permeability might exist in nature (but did not discuss spatial dispersion, which may lead to more general negative refraction, too).
 
 Note that all theoretical papers referred in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
@@ -1113,17 +1114,18 @@ Note that all theoretical papers referred in this subsection used the electrodyn
 %}}}
 \paragraph{Prediction of focusing by a negative-index slab} %{{{
 As also discussed by Veselago \cite[p. 511]{veselago1968} and a decade later by Silin \cite{silin1978possibility},  %: Silin in 1978  %% TODO READPAPER, does not discuss amplification of evanescent waves?
-a plane-parallel slab with negative-index and sufficient thickness would refocus a divergent beam. \todo{Figure-refocusing} It is thus often referred to as a \textit{negative-index lens}, although it differs from lenses and its focal point nor optical axis are not defined. 
+a plane-parallel slab with isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source in such a manner that a new focus in formed in its volume, and another focus is made behind it. It is thus often referred to as a \textit{negative-index lens}, although its behaviour fundamentally differs from those of lenses, its focal point nor optical axis not being defined. 
 
 Clearly, the spherical aberrations would be absent in it, allowing a wide-angle and high numerical aperture for the imaging, but there was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
 %}}}
 \paragraph{Electromagnetic cloaks}
-\cite{dollin1961possibility,alitalo2009electromagnetic}
+\cite{alitalo2009electromagnetic}
 
-\cite{smith2000composite}
+Electromagnetic cloaking by homogeneous media was considered in early 60s by Dollin \cite{dollin1961possibility}
+
+
 %}}}
-
 \subsection{Artificial dielectrics and metamaterials} 
 \paragraph{Analysis of nonresonant sub-wavelength structures} %{{{
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
@@ -1156,7 +1158,11 @@ it could not become negative, since the effective permeability $\meff(\omega) > 
 
 % \mdf{Continuous wire arrays in waveguides etc., } ??
 
-\paragraph{Negative effective permeability and negative refractive index} %  - resonant magnetic dipole arrays
+%}}}
+\paragraph{Negative effective permeability and negative refractive index}  %{{{
+%  - resonant magnetic dipole arrays
+
+\cite{smith2000composite}
 
 \mdf{PK-"The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
 Although somewhat redundant to \textit{artificial dielectrics}, it can be viewed as more fortunate as 
@@ -1210,6 +1216,7 @@ add some notable papers; quotes may be in: Epsilon-Mu Zero Meta-material with Ze
 The apparent unification of \textit{metamaterials} with \textit{negative index of refraction} should not be perceived as their sole use -- in fact, a notable part of contemporary metamaterial research is based on purely positive index of refraction.
 %Transformation optics
 
+%% TODO Decide if to put here or earlier!
 The most important example is the \textit{electromagnetic cloak}, a structure causing and obstacle become invisible by guiding the wave coming from any direction around its hollow core so that the obstacle nor the cloak cast any shadow. This is typically achieved the use of $\Neff\in \langle0,1\rangle$ properly deployed by transformation-optics calculations. %TODO move to continuous media
 A simplified task is to construct the \textit{carpet cloak} which conceals an obstacle near a mirror so that it is not visible for reflected light. Note, however, that a carpet cloak can also be made of homogeneous, anisotropic dielectrics  \cite{wang2013homogeneous}.
 %Yet another group are static magnetic cloaks
@@ -1223,13 +1230,9 @@ Staying in the electrodynamics field, metamaterial research is not limited to sp
 
 %Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity!!!, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion!!!, sensor MMs!!!, switchable MMs, amplifying MMs, enhanced nonlinearity!!!, and quantum effects.
 
-
 %}}}
-
-
 \subsection{Second unification: metamaterials with photonic crystals} %%						 TODO%{{{
 The unification between 
-
 
 \cite{shamonina2007metamaterials}
 
