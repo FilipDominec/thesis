@@ -1,6 +1,6 @@
 \section{Numerical simulation algorithms} \label{chapter_numerical}
 %% todo - IR: uvod v numerickych metodach?
-\subsection{Finite-difference time-domain calculations}
+\subsection{Finite-difference time-domain method}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
 Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
 %Two-dimensional computations can reduce the number of arrays thanks to symmetry.??
@@ -333,7 +333,7 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 %MEEP, OpenEMS, B-Calm, EMTL, 
 %}}}
 
-\subsection{Finite-difference frequency-domain} % TODO
+\subsection{Finite-difference frequency-domain method} % TODO
 \paragraph{Principle} 
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
