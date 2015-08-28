@@ -1100,15 +1100,22 @@ Within the sole paradigm of band-gap engineering, new concepts emerge even in th
 
 %}}}
 \subsection{Homogeneous media with uncommon parameters} 
-\paragraph{Negative parameters}%{{{
-By uncommon parameters it is understood either the negative permittivity or permeability, or negative index of refraction which results from these being negative simultaneously. Also uncommon in nature are media where all these parameters are close to zero.
+\paragraph{Negative parameters}%{{{ 
+By \textit{negative} parameters it is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
+or negative index of refraction which, in transparent media, coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
+Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
-Theoretical investigation of electrodynamics in media with a negative index of refraction, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
+Media with \textit{negative permittivity} are in fact very common in the nature. This group incorporates all conductors including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
+as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent} and to rapidly decaying under the surface}. %A particular interest in the same phenomenon arose with 
+The same mechanism causing the radio wave reflection from dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly, starting its ongoing research.
 
-It was the Veselago's review of the negative-parameter media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true ?
+\textit{Negative permeability} manifests similarly from the electrodynamic point of view, but is observed much less often, due to the absence of magnetic monopoles, above magnetic resonances in matter.
+
+Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
+
+It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true ?
 the term of \textit{left-handed media} and speculated to which extent media with negative index of refraction due to the simultaneously negative permittivity and permeability might exist in nature (but did not discuss spatial dispersion, which may lead to more general negative refraction, too).
-
-Note that all theoretical papers referred in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
+% note about spatial dispersion in homogeneous media? Or in an extra paragraph later, under 2nd unification?
 
 %}}}
 \paragraph{Prediction of focusing by a negative-index slab} %{{{  ================== OK? (readpaper, +img)
@@ -1118,12 +1125,26 @@ a plane-parallel slab with an isotropic negative index of refraction and suffici
 Clearly, the negative-index slab would be free of spherical aberrations, allowing a wide-angle and high numerical aperture for the imaging. There was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
 %}}}
+\paragraph{Media with parameters near zero}%{  {{ ================= TODO
+Also uncommon in nature are media where $\epsrl(\omega)$ or $\murl(\omega)$ have a very low value compared to vacuum. They are often denoted as \textit{epsilon-near-zero} (ENZ) and \textit{mu-near-zero} (MNZ). % and perhaps note superhigh opt activity?
+The result is also the index of refraction being close to zero, $N\sim 0$. The scientific interest to this class started with the paper of  %% TODO
+published after the merging of the paradigms, and therefore such media are denoted as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties usually do not assume any structuration and are thus also applicable to natural homogeneous media of such properties.
+
+Typical for this class is a very low wavevector, which can be approximated to the case of the whole $N\sim 0$ region oscillating in-phase. 
+
+% electromagnetic nihility?
+
+%}}}
 \paragraph{Electromagnetic cloaks}%{  {{ ================= TODO
 \cite{alitalo2009electromagnetic}
 
 Electromagnetic cloaking by homogeneous media was considered in early 60s by Dollin \cite{dollin1961possibility}
 
 %}}}
+
+
+
+
 \subsection{Artificial dielectrics and metamaterials} 
 \paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== (add Brugg + M-G)
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
@@ -1143,6 +1164,10 @@ Subwavelength wire arrays have been experimentally used, at least, since 1898 as
 Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor with the application in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
 
 %}}}
+
+
+
+
 \subsection{First unification: metamaterials with uncommon parameters} 
 \paragraph{Negative effective permittivity} %{{{ ============================= OK
 1950s brought the first step towards achieving negative effective parameters from man-made periodic structures: The geometry of the wire antennas was chosen to put the fundamental resonance of the electric dipole \textit{below} the frequency of operation \cite{rotman1962plasma,boardman2005negative}, and thus acted as a Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum}. 
