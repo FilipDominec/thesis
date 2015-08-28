@@ -7,8 +7,6 @@
 % 2) investigate how mode anticrossing relates to the significant spatial dispersion
 % 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
 % 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
-% 5) note about the meep peculiarity of notation: 'omega'=omega0/2pi , 'gamma'=gamma/2pi, 'sigma'=Deltaeps = F/omega0^2
-
 
 \section{Electrodynamics of local homogeneous media} %{{{
 \subsection{Electromagnetic wave in vacuum}
@@ -1051,9 +1049,6 @@ This difference arises from the fact that the behaviour of the structure does no
 %% %}}}
 %}}}
 
-
-
-
 \section{Historical notes on metamaterials and photonic crystals}
 \subsection{One history of three paradigms} %{{{
 The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review and following the development is therefore important to understand the current state of research, and possibly also the actual physical theory. 
@@ -1215,6 +1210,7 @@ To achieve the desired high resolution, the medium has to maintain  \todo{+}
 the 2000s have brought also the \textit{near-zero} effective parameter structures into the limelight, which are also unusual in nature
 add some notable papers; quotes may be in: Epsilon-Mu Zero Meta-material with Zero Refractive Index An Electromagnetic Nihility, Shantanu Das
 
+
 \paragraph{Metamaterial cloaking}
 The apparent unification of \textit{metamaterials} with \textit{negative index of refraction} should not be perceived as their sole use -- in fact, a notable part of contemporary metamaterial research is based on purely positive index of refraction.
 %Transformation optics
@@ -1225,11 +1221,13 @@ A simplified task is to construct the \textit{carpet cloak} which conceals an ob
 %Yet another group are static magnetic cloaks
 All reported cloaks are, however, strongly limited in band-width and moreover, the presence of any macroscopic cloak is revealed by its losses. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
 
-\paragraph{Metamaterial cloaking}
+\paragraph{Metamaterial applications without unusual parameters}
+In spite of the above mentioned applications, many metamaterial applications do not involve unusual effective parameters \cite{zheludev2010road}.
+Among these are  reaching strong chirality, building sensors and light modulators or devices making use of the enhanced nonlinear interaction.
+
 Another example of recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial research which does not aim to achieve negative $\Neff$, $\eeff$ nor $\meff$ is in reversing the Casimir force.
 
-
-%Ref. \cite{zheludev2010road} identifies major points of metamaterial research in reaching chirality, negative index of refraction, artificial magnetism, unusually low or high permittivity!!!, building transformation optics e.g. for electromagnetic cloaking, engineering dispersion!!!, sensor MMs!!!, switchable MMs, amplifying MMs, enhanced nonlinearity!!!, and quantum effects.
+%Metasurfaces.
 
 %}}}
 \subsection{Second unification: metamaterials with photonic crystals} %%						 TODO%{{{
