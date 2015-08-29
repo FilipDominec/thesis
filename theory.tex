@@ -1075,35 +1075,38 @@ In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecti
 Both effects are due to a presence of a Bragg band-gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
 
 The very same principle was later %% who was the first?
-employed for design and manufacturing of the \textit{dielectric mirrors}, which are made by sputtering multiple layers two alternating dielectrics of different wave impedance and with quarter-wavelength thickness. They find a wide variety of applications, owing to their advantages over classical metallic mirrors such as higher reflectivity and spectral selectivity.  %% this is related to the \textit{structural colours} found in nature -- who and when did it explain?
+employed for the design and fabrication of the \textit{dielectric mirrors}, which are made by stacking multiple layers two alternating dielectrics with different wave impedance and quarter-wavelength thickness. They find a wide variety of applications, owing to their advantages over classical metallic mirrors such as higher reflectivity and spectral selectivity.  %% this is related to the \textit{structural colours} found in nature -- who and when did it explain?
 
 Embedding one layer different from others, a \textit{defect}, into the middle of a dielectric mirror can introduce a narrow transmission window within its photonic band-gap. The corresponding \textit{defect mode} is characteristic by a strong field concentration in the defect, enabling to construct narrow-band photonic filters that can be moderately tuned by the defect properties \cite{nemec2005highly}.
 
 %}}}
 \paragraph{Photonic crystals}%{{{ ============================= find 1 cite "phc"
-The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band-gaps for the electron wave in natural crystals. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a nonzero range of frequencies for which there exists no propagating wave in any direction, the \textit{complete band-gap}, is attributed to Jablonovich \cite{yablonovitch1987}.
+The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band-gaps for the electron wave in natural crystals. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a nonzero range of frequencies for which there exists no propagating wave in any direction, the \textit{complete band-gap}, is attributed to Yablonovitch \cite{yablonovitch1987} in 1987.
+
+The structure, known as \textit{yablonovite}, was designed for microwaves, since it was made by precise mechanical drilling into a plastic cube. Different technologies were developed in 1990s in attempts to efficiently fabricate photonic crystals operating in optical range, such as stacking of structured layers, direct laser writing in the resin,  self-assembly of dielectric spheres into opal-like structures etc. 
+
+The demands for achieving a complete three-dimensional band-gap can be reduced when a singly or doubly periodic modulation is etched into a dielectric slab, as was developed by Zengerle in the late 1970s \cite{zengerle1987light}. Planar structures are also much easier to fabricate using developed technology such as photolitography. 
 %% phc term first used in ??
 % "Any dielectric material can be used to fabricate a photonic crystal with a sizeable and robust complete photonic bandgap (CPBG) in three dimensions, as long as small metal inclusions can be added." \cite{moroz2002metallo}
 \cite{joannopoulos2011photonic}
 
 %}}}
-\paragraph{Band-gap used in fibers and waveguides} %{{{ ============= cites: PCF, DBR,   incl Zengerle
+\paragraph{Band-gap used in fibers and waveguides} %{{{ ============= (cites: DBR)
 Embedding a linear defect into the photonic crystal with a complete band gap forms a waveguide from which the wave can not escape, even when it is bent under sharp angles.
-The \textit{photonic-crystal fiber} (PCF), which differs from the common index-guiding fibers by that the light is confined in its core by a photonic band-gap in both lateral directions, was conceived in 1970s. Its special capability is to strongly guiede the wave even in a hollow core. % todo cite, where are the 70's ?
+Likewise, the \textit{planar band-gap waveguide} can be formed by a linear defect in the photonic crystal slab, which restricts the light by the total internal reflection horizontally and by the means of the two-dimensional band-gap vertically. Such structures can form waveguides, beamsplitters and filters in \textit{integrated optics}. 
 
-The demands for achieving a complete three-dimensional band-gap can be reduced when a planar structure is etched into a dielectric slab. It is also much easier to fabricate using developed techniques such as photolitography. A \textit{planar band-gap waveguide} can be formed by a linear defect in the photonic crystal slab, which restricts the light by the total internal reflection horizontally and by the means of the two-dimensional band-gap vertically. Such structures can form waveguides, beamsplitters and filters in \textit{integrated optics}. 
-% Beam propagation in periodic planar waveguides \cite{zengerle1987light}
-%% TODO PhC slabs \cite{zengerle1987light}
+The \textit{photonic-crystal fiber} (PCF), conceived by Russel in 1991 \cite{russell2007photonic}, differs from the common index-guiding fibers by that the light is confined in its core by a photonic band-gap in both lateral directions. 
+Its special capability is to strongly guide the wave even if its core is hollow, that is, with refractive index lower than the cladding. Broad-band single mode operation can be achieved, and the high field concentration can lead to very strong nonlinear interaction.
 
-As a complementary concept, a longitudinal modulation can be inscribed into the index-guiding fibers, forming a \textit{distributed Bragg reflector}. Its filtering capabilities can be made extremely narrowband, which is employed in fiber lasers, telecommunication, sensing, etc. % TODO cite, when first?
+As a complementary concept, an one-dimensional photonic band-gap structure can be inscribed into the index-guiding fibers, forming a \textit{distributed Bragg reflector}. Its filtering capabilities can be made extremely narrowband, which is employed in fiber lasers, telecommunication, sensing, etc. % TODO cite, when first?
 
 Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decades: Obviously, a minor shift of the band-gap has a strong impact on whether the light can propagate. Such a shift can be introduced e.g. by static magnetic field in low symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
 
 %}}}
 \subsection{Homogeneous media with uncommon parameters} 
-\paragraph{Negative parameters}%{{{ 
-By \textit{negative} parameters it is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
-or negative index of refraction which, in transparent media, coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
+\paragraph{Negative parameters}%{{{  ================= OK
+By \textit{negative} parameters is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
+or negative index of refraction. In transparent media without spatial dispersion, the latter coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
 Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
 Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from the lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
@@ -1114,24 +1117,25 @@ The same mechanism causing the radio wave reflection from dilute plasma in the E
 
 Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
-It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago coined % is it true ?
-the term of \textit{left-handed media} and speculated to which extent media with negative index of refraction due to the simultaneously negative permittivity and permeability might exist in nature (but did not discuss spatial dispersion, which may lead to more general negative refraction, too).
-% note about spatial dispersion in homogeneous media? Or in an extra paragraph later, under 2nd unification?
+It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago used % is he first?
+the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but did not discuss the more general theory of the spatial dispersion, which may lead to negative refraction, too.
+% add a note about negative index and spatial dispersion in homogeneous media? 
+% Or in an extra paragraph later, under 2nd unification?
 
 %}}}
 \paragraph{Prediction of focusing by a negative-index slab} %{{{  ================== OK? (readpaper, +img)
 As also discussed by Veselago \cite[p. 511]{veselago1968} and a decade later by Silin \cite{silin1978possibility},  %: Silin in 1978  %% TODO READPAPER, does not discuss amplification of evanescent waves?
-a plane-parallel slab with an isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source towards a new focus in its volume, and similar negative refraction forms a second focus behind the slab. It is thus often referred to as a \textit{negative-index lens}, although unlike in classical lenses, its focal point nor optical axis are not defined.
+a plane-parallel slab with an isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source towards a new focus in its volume, and similar negative refraction forms a second focus behind the slab. It is thus often referred to as a \textit{negative-index lens}, although its focal point nor optical axis are not defined as in classical lenses.
 
 Clearly, the negative-index slab would be free of spherical aberrations, allowing a wide-angle and high numerical aperture for the imaging. There was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
 %}}}
 \paragraph{Media with parameters close to zero}%{{{ ================= (optional todos)
-Media where $\epsrl(\omega)$ or $\murl(\omega)$ have a very low value compared to vacuum are another class uncommon in nature. They are often denoted as \textit{epsilon-near-zero} (ENZ) and \textit{mu-near-zero} (MNZ). % and perhaps note superhigh opt activity?
+Media where $\epsrl(\omega)$ or $\murl(\omega)$ have a very low value compared to vacuum are another class uncommon in nature. They are often denoted as \textit{epsilon-near-zero} (ENZ) and \textit{mu-near-zero} (MNZ).
+% and perhaps note superhigh opt activity?
 The result of $\epsrl(\omega)\sim 0$ or $\murl(\omega)\sim 0$ is also the index of refraction being close to zero, $N\sim 0$, particularly when both conditions are satisfied simultaneusly. 
 
-Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in designing such media 
-significantly grew
+Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in designing such media significantly grew
 % with the paper of ...todo.... published  in ...
 after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013} 
 % todo basharin 2013 e n z based phenomena in metamaterials
@@ -1143,7 +1147,7 @@ Typical of this class of media is a very small wavevector, which can be approxim
 % electromagnetic nihility?
 
 %}}}
-\paragraph{Transformation optics and electromagnetic cloaks}%{  {{ ================= OK (cites)
+\paragraph{Transformation optics and electromagnetic cloaks}%{{{ ================= OK (cites)
 Slow spatial changes of refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
 The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
@@ -1157,23 +1161,20 @@ The concept of cloaking was realized \cite{schurig2006} in 2006 using a microwav
 %todo add Schurig: metamaterial electromagnetic cloak at microwave frequencies
 All reported electromagnetic cloaks based on $N<1$ media are inevitably dispersive, which limits their band-width; they are also usually polarisation sensitive. The presence of any macroscopic cloak made of known materials is also revealed by its losses, at least at the infrared or optical frequencies. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
 
-
 A simplified task is to construct the \textit{carpet cloak} which conceals the obstacle near a surface \cite{valentine2009}.
 %valentine2009 an optical cloak made of dielectrics
 The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however it also can be made of virtually loss-less anisotropic dielectrics with rather usual values of parameters \cite{wang2013homogeneous}.
 
 %}}}
 
-
-
-
 \subsection{Artificial dielectrics and metamaterials} 
-\paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== (add Brugg + M-G)
+\paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== OK
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
-Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in a matter affects the macroscopic permittivity. Except for gases, their mutual interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or equivalently, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
+Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
 
-\mdf{TODO bruggemann and maxwell-garnett theories for composites; note that composites may be somewhat random if in quasi-static case}
+Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) and Bruggemann (1935) are most known. Their common assumption is that the wavelength is much larger than the particles, when there are no internal resonances. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
+% todo cite http://www.mpia.de/homes/henning/Dust_opacities/Opacities/Ralf/Eff/rules.html
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
@@ -1186,9 +1187,6 @@ Subwavelength wire arrays have been experimentally used, at least, since 1898 as
 Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor with the application in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
 
 %}}}
-
-
-
 
 \subsection{First unification: metamaterials with uncommon parameters} 
 \paragraph{Negative effective permittivity} %{{{ ============================= OK
@@ -1205,9 +1203,7 @@ it could not become negative, since the effective permeability $\meff(\omega) > 
 
 %}}}
 \paragraph{Negative effective permeability and negative refractive index}  %{ {{ ================== TODO  "MM" term first?
-%  - resonant magnetic dipole arrays
-
-\cite{smith2000composite}
+Metamaterials with resonant magnetic dipole arrays \cite{smith2000composite} %% TODO check XXX XXX
 
 \mdf{PK-"The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
 Although somewhat redundant to \textit{artificial dielectrics}, it can be viewed as more fortunate as 
