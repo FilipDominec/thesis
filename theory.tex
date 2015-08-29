@@ -1107,7 +1107,7 @@ or negative index of refraction which, in transparent media, coincides with $\ep
 Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
 Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from the lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
-as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent} and to rapidly decaying under the surface}. %A particular interest in the same phenomenon arose with 
+as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent} and to rapidly decaying under the surface. %A particular interest in the same phenomenon arose with 
 The same mechanism causing the radio wave reflection from dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly, starting its ongoing research.
 
 \textit{Negative permeability} manifests similarly from the electrodynamic point of view, but is observed much less often, due to the absence of magnetic monopoles, above magnetic resonances in matter.
@@ -1126,24 +1126,41 @@ a plane-parallel slab with an isotropic negative index of refraction and suffici
 Clearly, the negative-index slab would be free of spherical aberrations, allowing a wide-angle and high numerical aperture for the imaging. There was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
 %}}}
-\paragraph{Media with parameters near zero}%{  {{ ================= TODO
+\paragraph{Media with parameters close to zero}%{{{ ================= (optional todos)
 Media where $\epsrl(\omega)$ or $\murl(\omega)$ have a very low value compared to vacuum are another class uncommon in nature. They are often denoted as \textit{epsilon-near-zero} (ENZ) and \textit{mu-near-zero} (MNZ). % and perhaps note superhigh opt activity?
-The result of $\epsrl(\omega)\sim 0$ or $\murl(\omega)\sim 0$ is also the index of refraction being close to zero, $N\sim 0$. 
-Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in this class of media started with the paper of  %% TODO
-published after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties usually do not assume any structuration and are thus also applicable to natural homogeneous media of such properties.
+The result of $\epsrl(\omega)\sim 0$ or $\murl(\omega)\sim 0$ is also the index of refraction being close to zero, $N\sim 0$, particularly when both conditions are satisfied simultaneusly. 
 
-Typical of this class is a very small wavevector, which can be approximated to the case of the whole $N\sim 0$ region oscillating in-phase. Wave impinging from air to such a medium refracts from the normal; for angles higher than the usually small critical angle the wave undergoes the \textit{total external reflection}. 
+Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in designing such media 
+significantly grew
+% with the paper of ...todo.... published  in ...
+after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013} 
+% todo basharin 2013 e n z based phenomena in metamaterials
+usually do not discuss any structuration and are thus also applicable to fully homogeneous media of such properties.
+
+Typical of this class of media is a very small wavevector, which can be approximated to the extreme case of the whole $N\sim 0$ region oscillating in-phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts rapidly from the normal; for angles higher than the very small critical angle the wave undergoes the \textit{total external reflection}. 
 % note: this has been observed in thinned waveguides, too
 % Epsilon-near-zero metamaterials and electromagnetic sources: Tailoring the radiation phase pattern
 % electromagnetic nihility?
 
 %}}}
-\paragraph{Transformation optics and electromagnetic cloaks}%{  {{ ================= TODO
-\cite{eleftheriades2012transforming}
+\paragraph{Transformation optics and electromagnetic cloaks}%{  {{ ================= OK (cites)
+Slow spatial changes of refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
-\cite{alitalo2009electromagnetic} Electromagnetic cloaking % by homogeneous media ???
-was considered in the early 60s by Dollin \cite{dollin1961possibility}
+The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
+The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations 
+%todo \cite{alitalo2009electromagnetic}
+%todo \cite{eleftheriades2012transforming}
+Electromagnetic cloaking % by homogeneous media ???
+was considered in the early 60s by Dollin \cite{dollin1961possibility} and later by Kerker \cite{kerker1975invisible}.
 
+The concept of cloaking was realized \cite{schurig2006} in 2006 using a microwave metamaterial, and many other followed.
+%todo add Schurig: metamaterial electromagnetic cloak at microwave frequencies
+All reported electromagnetic cloaks based on $N<1$ media are inevitably dispersive, which limits their band-width; they are also usually polarisation sensitive. The presence of any macroscopic cloak made of known materials is also revealed by its losses, at least at the infrared or optical frequencies. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
+
+
+A simplified task is to construct the \textit{carpet cloak} which conceals the obstacle near a surface \cite{valentine2009}.
+%valentine2009 an optical cloak made of dielectrics
+The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however it also can be made of virtually loss-less anisotropic dielectrics with rather usual values of parameters \cite{wang2013homogeneous}.
 
 %}}}
 
@@ -1241,15 +1258,10 @@ the 2000s have brought also the \textit{near-zero} effective parameter structure
 add some notable papers; quotes may be in: Epsilon-Mu Zero Meta-material with Zero Refractive Index An Electromagnetic Nihility, Shantanu Das
 
 
-\paragraph{Metamaterial cloaking}
-The apparent unification of \textit{metamaterials} with \textit{negative index of refraction} should not be perceived as their sole use -- in fact, a notable part of contemporary metamaterial research is based on purely positive index of refraction.
+% \paragraph{Metamaterial cloaking}
+% TODO The apparent unification of \textit{metamaterials} with \textit{negative index of refraction} should not be perceived as their sole use -- in fact, a notable part of contemporary metamaterial research is based on purely positive index of refraction.
 %Transformation optics
 
-%% TODO Decide if to put here or earlier!
-The most important example is the \textit{electromagnetic cloak}, a structure causing and obstacle become invisible by guiding the wave coming from any direction around its hollow core so that the obstacle nor the cloak cast any shadow. This is typically achieved the use of $\Neff\in \langle0,1\rangle$ properly deployed by transformation-optics calculations. %TODO move to continuous media
-A simplified task is to construct the \textit{carpet cloak} which conceals an obstacle near a mirror so that it is not visible for reflected light. Note, however, that a carpet cloak can also be made of homogeneous, anisotropic dielectrics  \cite{wang2013homogeneous}.
-%Yet another group are static magnetic cloaks
-All reported cloaks are, however, strongly limited in band-width and moreover, the presence of any macroscopic cloak is revealed by its losses. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
 
 \paragraph{Metamaterial applications without unusual parameters}
 In spite of the above mentioned applications, many metamaterial applications do not involve unusual effective parameters \cite{zheludev2010road}.
