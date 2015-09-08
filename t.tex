@@ -8,6 +8,63 @@
 \usepackage{upgreek}
 
 \usepackage[backend=biber]{biblatex} 
+
+%_	P Ř Í K A Z   D Ě K A N A    č. 2/2014:  Formální náležitosti disertačních prací
+%_	Disertační práce musí být svázána v pevných deskách. Titulní stranu označí doktorand nahoře zarovnaně na střed názvem univerzity a fakulty:
+%_	České vysoké učení technické v Praze
+%_	Fakulta jaderná a fyzikálně inženýrská
+%_	uprostřed slovy DISERTAČNÍ PRÁCE, vlevo dole Praha 20?? (dle roku odevzdání práce), vpravo dole uvede své jméno a příjmení. Titulní strana se uvádí v jazyce práce.
+%_	Volitelně může doktorand na deskách též uvést název, znak ČVUT nebo označit hřbet práce svým jménem a názvem práce.
+%_	
+%_	1. strana disertační práce je totožná s titulní stranou na deskách, navíc je zde uprostřed, pod slovy „DISERTAČNÍ PRÁCE“, uveden název práce. Tato a další strany se počítají do číslování stran, ale čísla se tisknou až od strany s obsahem dále. Systém číslování stran (průběžně arabskými číslicemi nebo zvlášť číslování úvodních stran římskými číslicemi) se řídí zvyklostmi v oboru a jazyce práce. Práce může být tištěna jednostranně či oboustranně. V druhém případě jsou úvodní strany (až po první stranu obsahu včetně) tištěny na lícových stranách listů, tj. na lichých stranách, rubové (tj. sudé) strany zůstávají prázdné.
+%_	
+%_		Strana Bibliografický záznam (česky)
+%_	
+%_	Jedná se o dvousloupcovou tabulku, která je nadepsána Bibliografický záznam. Na levé straně jsou uvedeny položky: Autor (resp. Autorka), Název práce, Studijní program, Studijní obor, Školitel, (případně Školitel specialista) Akademický rok, Počet stran, Klíčová slova. V pravé části této tabulky jsou uvedeny konkrétní údaje. V položce Autor/ka se jméno uvádí včetně titulů a dále je uvedeno České vysoké učení technické v Praze, Fakulta jaderná a fyzikálně inženýrská a název katedry. Informace o titulech a pracovišti jsou také uvedeny u školitele a případného školitele specialisty.
+%_	
+%_		Strana Bibliografický záznam (anglicky)
+%_	
+%_	Jedná se o dvousloupcovou tabulku, která je nadepsána Bibliographic Entry. Na levé straně jsou uvedeny položky Author, Title of Dissertation, Degree Programme, Field of Study, Supervisor (případně Supervisor specialist), Academic Year, Number of Pages, Keywords. V pravé části této tabulky jsou v anglickém jazyce uvedeny konkrétní údaje. V položce Author se jméno uvádí včetně titulů a dále je uvedeno Czech Technical University in Prague, Faculty of Nuclear Sciences and Physical Engineering a název katedry. Informace o titulech a pracovišti jsou také uvedeny u školitele a případného školitele specialisty.
+%_	
+%_	 
+%_	
+%_		Strana Abstrakt
+%_	
+%_	uvádí se česky (resp. slovensky), anglicky a příp. v jazyce práce, pokud je jiný než uvedený. Pokud to délka textu umožňuje, uvádějí se na jedné straně. Z abstraktu musí být zřejmé, co je cílem předložené práce a jakých vědeckých výsledků doktorand osobně dosáhl.
+%_	
+%_	 
+%_	
+%_		Strana Obsah
+%_	
+%_	(první viditelně číslovaná strana, obvykle strana 5 či V při jednostranném tisku)
+%_	
+%_	 
+%_	
+%_		Disertace musí obsahovat tyto hlavní části
+%_	
+%_	 
+%_	
+%_			úvod s přehledem o současném stavu problematiky,
+%_			cíle disertační práce,
+%_			zvolené metody zpracování,
+%_			výsledky práce,
+%_			konkrétní závěry pro praxi či další rozvoj vědy.
+%_	
+%_	 
+%_	
+%_	Pořadí a označení těchto kapitol v nadpisech a obsahu je možné tvůrčím způsobem přizpůsobit při respektování jejich faktického obsahu. V případě, že disertační práce je tvořena souborem publikací autora, musí být povinné části obsaženy v úvodním sjednocujícím textu.
+%_	
+%_		Na závěr doktorand uvede Seznam literatury a publikací vztahujících se k disertaci (své i přejaté). Tato kapitola je obsažena v obsahu jako nečíslovaná.
+%_	
+%_		Pokud práce obsahuje výsledky kolektivní vědecké práce, jejímž spoluautorem je doktorand, musí být z textu disertace zřejmé, kterých výsledků dosáhl osobně doktorand jako autor. Současně musí být přiloženo prohlášení spoluautorů tuto skutečnost potvrzující (vztažené přímo k textu práce či k původním publikacím, na nichž je založena). Úlevy z tohoto pravidla:
+%_			v případě, že jediným spoluautorem je školitel, může být toto prohlášení obsaženo v posudku školitele,
+%_			v případě, že kolektivní práce je dílem většího počtu autorů, postačuje vyjádření zodpovědného člena autorského týmu.
+%_		V dizertační práci může být uvedeno poděkování školiteli, jiným spolupracujícím pracovníkům a/nebo rodinným příslušníkům.
+%_	
+%_		Disertační práce se odevzdává ve 4 vyhotoveních a též elektronicky (v podobě PDF souboru) oddělení pro vědeckovýzkumnou činnost FJFI.
+
+ 
+
 %\usepackage{biblatex} 
 %\usepackage[backend=biber, style=/home/filip/d/biblatex-phys/phys, articletitle=true, biblabel=enumerate, chaptertitle=true,  
   %pageranges=true, sorting=none, isbn=false, url=false, doi=false, eprint=false, hyperref=true, firstinits=true]{biblatex}
@@ -52,11 +109,14 @@
 
 \chapter{Conclusion}
 % \input{conclusion.tex}
+\label{endtext} 
 
 \chapter{Appendices}
  \input{appendices.tex}
 
+\chapter*{List of own publications}
+%\input{fd_publications.tex} % TODO
 
-\label{endtext} 
 \printbibliography
+\label{enddocument} 
 \end{document}

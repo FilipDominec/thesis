@@ -1137,11 +1137,10 @@ The result of $\epsrl(\omega)\sim 0$ or $\murl(\omega)\sim 0$ is also the index 
 
 Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in designing such media significantly grew
 % with the paper of ...todo.... published  in ...
-after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013} 
-% todo basharin 2013 e n z based phenomena in metamaterials
+after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013epsilon} 
 usually do not discuss any structuration and are thus also applicable to fully homogeneous media of such properties.
 
-Typical of this class of media is a very small wavevector, which can be approximated to the extreme case of the whole $N\sim 0$ region oscillating in-phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts rapidly from the normal; for angles higher than the very small critical angle the wave undergoes the \textit{total external reflection}. 
+Typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than the small critical angle the wave undergoes the \textit{total external reflection}. 
 % note: this has been observed in thinned waveguides, too
 % Epsilon-near-zero metamaterials and electromagnetic sources: Tailoring the radiation phase pattern
 
@@ -1160,12 +1159,10 @@ The curved path used to evade the obstacle is always longer than a line segment,
 Electromagnetic cloaking % by homogeneous media ???
 was considered in the early 60s by Dollin \cite{dollin1961possibility} and later by Kerker \cite{kerker1975invisible}.
 
-The concept of cloaking was realized \cite{schurig2006} in 2006 using a microwave metamaterial, and many other followed.
-%todo add Schurig: metamaterial electromagnetic cloak at microwave frequencies
+The concept of cloaking was realized \cite{schurig2006metamaterial} in 2006 using a microwave metamaterial, and many other followed.
 All reported electromagnetic cloaks based on $N<1$ media are inevitably dispersive, which limits their band-width; they are also usually polarisation sensitive. The presence of any macroscopic cloak made of known materials is also revealed by its losses, at least at the infrared or optical frequencies. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
 
-A simplified task is to construct the \textit{carpet cloak} which conceals the obstacle near a surface \cite{valentine2009}.
-%valentine2009 an optical cloak made of dielectrics
+A simplified task is to construct the \textit{carpet cloak} which conceals the obstacle near a surface \cite{valentine2009optical}.
 The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however it also can be made of virtually loss-less anisotropic dielectrics with rather usual values of parameters \cite{wang2013homogeneous}.
 
 %}}}
@@ -1213,10 +1210,7 @@ The research of artificial dielectrics, or newly, metamaterials, gained on signi
 \paragraph{Superlensing with metamaterials}
 Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index, should enable imaging with better resolution than is allowed by the diffraction limit for any usual lens, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
 
-% -> superlens (aside from losses and aberration, in a hypothetical case that the MM structure can be made much finer than a detector ...)
-% Losses are in \cite[p. 708]{born1999book}
-
-If a metamaterial is used as the negative-index medium, this obviously translates into the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact much stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
+If a metamaterial is used as the negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
 %If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. 
 For the proportional amplification of evanescent-waves, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
@@ -1224,44 +1218,56 @@ For the proportional amplification of evanescent-waves, the small energy flow-th
 The dissipative losses in resonant periodic structures were not sufficiently resolved yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite
 and it may be favorable to substitute metals with certain types of oxides with metallic-like permittivity in the optical range \cite{naik2011oxides}.
 
-To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % todo cite, and verify there is nothing interesting in the IR lately
+To the author's knowledge, all demonstrations of s tebou metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
 The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near-field.
 
-\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} 
-hyperbolic media, analogy with optical fibers, graphene nanostructures...
-The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
-Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
-To achieve the desired high resolution, the medium has to maintain  \todo{+}
-}
+%\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} 
+%hyperbolic media, analogy with optical fibers, graphene nanostructures...
+%The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
+%Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
 
-\paragraph{Metamaterial applications without unusual parameters} %{ {{ ============== (todo expand?)
-In spite of the above mentioned applications, many metamaterial applications do not involve unusual effective parameters \cite{zheludev2010road}.
-Among these are  reaching strong chirality, building sensors and light modulators or devices making use of the enhanced nonlinear interaction.
+%To achieve the desired high resolution, the medium has to maintain  \todo{+}
 
-Another example of recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, possible metamaterial application which does not require to achieve negative $\Neff$, $\eeff$ nor $\meff$ is in reversing the Casimir force.
+\paragraph{Metamaterials with strong chirality} %{ {{ ============== (todo expand?)
+In spite of the above mentioned application being popular, many metamaterial applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
+Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction.
 
-% use of mms for cloaking
-
-%Metasurfaces.
+An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application which does not require negative values of $\Neff$, $\eeff$ nor $\meff$ is in reversing the Casimir force.
 
 %}}}
 
 \subsection{Second unification: metamaterials with photonic crystals} 
+
+
+%Ad_Monsoriu:
+%Chakrabarti2001_From_effective_response_to_PBG.pdf
+%Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
+%Chen2005_Dispersion_of_defect_modes_in_PBG_from_DNG-DPS.pdf
+%Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
+%Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
+%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
+%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
+%Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
+%YihangChen2009-Unusual_bands_of_1D_PhC_containing_SNG.pdf
+%
+%Ad_Monsoriu2:
+%Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
+%Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf
+%Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
+%Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
+%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG-crop.pdf
+%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
+%Liang2003-Unusual_narrow_bands_in_LHM_stack-crop.pdf
+%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
+%Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
+
 the unification of mm and phc become apparently a more important topic when the practical realizations of the structures were tested
 \cite{yannopapas2005negative}
-
-
 \cite{shamonina2007metamaterials}
 
 PhCs with metallic/metamaterial inclusions, [Monsoriu, Lina Shi and friends]
 
-
 \mdf{\textit{plasmonic nanoparticles} at optical frequencies}
-
-
-
-
-
 
 \section{The boundary between photonic crystals and metamaterials} 
 The historical section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
@@ -1309,9 +1315,9 @@ The desired properties of nonresonant structures are obtained by averaging the p
 		%but the mentioned difference has profound consequences on the behaviour of the structure. 
 		%}}}
 
-		note \cite{silveirinha2007metamaterial}
-		resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
-		Think over, note our paper dominec2014transition \cite{dominec2014transition}
+note \cite{silveirinha2007metamaterial}
+resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
+Think over, note our paper dominec2014transition \cite{dominec2014transition}
 }
 \paragraph{Difference in the energy localisation}%{{{
 ... and resistance of the behaviour to the disorder
@@ -1402,11 +1408,11 @@ Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 
 \paragraph{Metamaterial definitions}
 whatis.com (http://whatis.techtarget.com/definition/metamaterial):
-\quote{A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
+{\quote A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
 % and this continues with description of neg refr as the typical application
 
 Duke university (http://metamaterials.duke.edu/research/metamaterials):
-\quote{MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
+{\quote MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
 % further they stress the importance of homogenization
 % "it is difficult to arrive to a strict and unambiguous definition"
 
