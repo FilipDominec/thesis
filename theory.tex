@@ -685,7 +685,7 @@ phase velocity is often higher than the speed of light, this is no problem\\
 %  *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
 %  *			  nonlocal media -> weird things happen, todo\\
 %  }
-In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave. \todo{cite}
+In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave \cite[p. 16]{klingshirn2007semiconductor}. 
 
 The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative around the resonance for $\omega \sim 2\pi$, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
@@ -1203,12 +1203,12 @@ it could not become negative, since the effective permeability $\meff(\omega) > 
 \paragraph{Negative effective permeability and negative refractive index}  %{ {{ ================== 
 % PK writes (where??) 
 % "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
-Despite the literature provides different information, a thorough search shows that the term \textit{metamaterial} (MM) was first used by Walser in 1999. Although apparently redundant to \textit{artificial dielectrics}, which was used for decades before,  the term of \textit{metamaterial} can be viewed as more fortunate as it does not depend on whether the structure is man-made or not, nor whether its effective parameters mimic a dielectric or, e.g., a metal.
+Despite the literature is somewhat ambiguous, a thorough search shows that the term \textit{metamaterial} (MM) was first used by Walser in 1999. Although apparently redundant to \textit{artificial dielectrics}, which was used for decades before,  the new term of \textit{metamaterial} can be viewed as more fortunate as it does not imply that the structure is man-made or not, nor whether its effective parameters mimic a dielectric or, e.g., a metal.
 
 The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
 
 \paragraph{Superlensing with metamaterials}
-Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index, should enable imaging with better resolution than is allowed by the diffraction limit for any usual lens, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
+Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with better resolution than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
 
 If a metamaterial is used as the negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
@@ -1237,8 +1237,6 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 %}}}
 
 \subsection{Second unification: metamaterials with photonic crystals} 
-
-
 %Ad_Monsoriu:
 %Chakrabarti2001_From_effective_response_to_PBG.pdf
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
@@ -1261,7 +1259,13 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 %Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
 %Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
 
+%filip@chrudos:~/PhD/Sources_MM_theory/ad_Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC $ ls -1
+%Antonnoyiannakis1997-Mie_resonances_and_bonding_in_PhC.pdf
+%Rybin2015-Phase_diagram.pdf
+%Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC.pdf
+
 the unification of mm and phc become apparently a more important topic when the practical realizations of the structures were tested
+
 \cite{yannopapas2005negative}
 \cite{shamonina2007metamaterials}
 
