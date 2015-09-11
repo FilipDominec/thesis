@@ -888,7 +888,9 @@ Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(
 \label{par_disp_curv_per}
 The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent \cite[p. 177]{brillouin2003wave}. 
 
-The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. Thus, in many papers on periodic structures, all dispersion curves are plotted as \textit{folded} in the $K\in\langle0, \pi/a\rangle$ region only \cite{obrien2002photonic,yannopapas2005negative}. In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
+The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
+
+In many papers on periodic structures, all dispersion curves are plotted as \textit{folded} into the $K\in\langle0, \pi/a\rangle$ region only (\cite{obrien2002photonic, chakrabarti2001magnetic}), while some employ the symmetry to fold all curves into the $K\in\langle0, \pi/a\rangle$ (e.g. \cite{yannopapas2005negative}). In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
 The mathematical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
 \begin{enumerate}
@@ -1237,42 +1239,58 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 %}}}
 
 \subsection{Second unification: metamaterials with photonic crystals} 
-%Ad_Monsoriu:
-%Chakrabarti2001_From_effective_response_to_PBG.pdf
-%	scanning the a/λ ratio of SRR array, "medium progressively becomes less homogenizable", "Bragg scattering ... becomes the dominant"
-%Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
-%Chen2005_Dispersion_of_defect_modes_in_PBG_from_DNG-DPS.pdf
-%Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
-%Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
-%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
-%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
-%Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
-%YihangChen2009-Unusual_bands_of_1D_PhC_containing_SNG.pdf
-%
-%Ad_Monsoriu2:
-%Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
-%Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf
-%Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
-%Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
-%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG-crop.pdf
-%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
-%Liang2003-Unusual_narrow_bands_in_LHM_stack-crop.pdf
-%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
-%Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
 
-%filip@chrudos:~/PhD/Sources_MM_theory/ad_Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC $ ls -1
+
+The unification of mm and phc become apparently a more important topic when the metamaterial structures were realized using the available materials. As already stated, reduction of the unit cell size becomes a big issue if the metamaterial is to operate at near-infrared or optical frequencies. Not only the technology is required to have nanometric accuracy in the whole structure, the choice of materials becomes more stringent to the allowable losses, the more the tighter the field confinement is. 
+
+Therefore, in the optical range a compromise is usually made that the particle size becomes only few times smaller than the wavelength of operation, and such a structure then classifies at the boundary of metamaterials and photonic crystals. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
+%Chakrabarti2001_From_effective_response_to_PBG.pdf
+%	scanning the a/λ ratio of SRR array, "medium progressively becomes less homogenizable", 
+%	discuss the possibility of effparam  when λ~3a, "Bragg scattering ... becomes the dominant"
+%	changing resonance freq -> crossing of indiv/bragg resonances
+
+% todo write about {\textit{plasmonic nanoparticles} at optical frequencies?
+
+
+Probably the miniaturisation issues have incited also the purely theoretical studies of the interplay of the localized, metamaterial-like, resonances and distributed, photonic crystal-like, resonances in the unit cells.
+% typically one scans the relative cell spacing...
+
+%PhCs with metallic/metamaterial inclusions
+%ad_Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC $ ls -1
 %Antonnoyiannakis1997-Mie_resonances_and_bonding_in_PhC.pdf
 %Rybin2015-Phase_diagram.pdf
 %Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC.pdf
 
-the unification of mm and phc become apparently a more important topic when the practical realizations of the structures were tested
 
-\cite{yannopapas2005negative}
-\cite{shamonina2007metamaterials}
+The full electrodynamic behaviour of the unit cell has also been substituted by effective parameters. This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative index of refraction.
+An atypical type of a photonic crystal is formed which exhibits a specific \textit{zero order photonic band-gap} when the phase advance through the layer stack is zero. (Note that typical photonic band gaps occur when the phase advance is $2\pi M, M\in \mathbb{N}$).
+%Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
+%	hypothetical nondispersive N<0 layers interlaced by air - zero-transmission disp curve of adjacent bandgaps
+%	"avg(n)=0" band-gap blocks light even for deeply subwavelength layers
+%	they denote the bandgap above N<0 band as "avg(n)=0" band - is it correct?
+%	they write that in a bandgap, complex eps and mu are unphysical as there is no absorption
+%Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
+%	nondispersive layers -> peculiar dispersion curves with v_g->infty
+%Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
+%	experimental zero-avg(N) bandgap, denoted also as zero-order photonic band-gap
+% 	this band gap is invariant to the wave angle
+%Chen2005_Dispersion_of_defect_modes_in_PBG_from_DNG-DPS.pdf
+%	defect modes in "avg(n)=0" bands, expression is given for dispersion curves
+%Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
+%	??? zero-gap width when 1) impedance is matched AND 2) (opt.?) thickness is equal
+%LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
+% 	zero-avg(N) band gap is invariant to the wave angle
+% 	LHM-RHM stacks, ENG-MNG stacks
+% 	all assume a metamaterial purveys the negative eff params
+%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
+%	
+%YihangChen2009-Unusual_bands_of_1D_PhC_containing_SNG.pdf
+%
+%Ad_Monsoriu2:
+%Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf
 
-PhCs with metallic/metamaterial inclusions, [Monsoriu, Lina Shi and friends]
 
-\mdf{\textit{plasmonic nanoparticles} at optical frequencies}
+
 
 \section{The boundary between photonic crystals and metamaterials} 
 The historical section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
