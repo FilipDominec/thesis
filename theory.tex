@@ -1061,6 +1061,7 @@ Moreover, the field covered by this thesis is also burdened by confusion of the 
 A split in terminology is apparently not only a formal issue, as it psychologically divides the scientific community and thus directs the future research.
 Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes the mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
 
+
 Following the author's personal view,
 the following historical notes on metamaterials and photonic crystals are organized into three independent paradigms that developed in parallel, and only later they were unified. Each of them, on its own, once might seem to already have given their fruits, but their \textit{unification} appears to have renewed the scientific interest and pushed the research further. 
 
@@ -1108,21 +1109,22 @@ Within the sole paradigm of band-gap engineering, new concepts emerge even in th
 %}}}
 \subsection{Homogeneous media with uncommon parameters} 
 \paragraph{Negative parameters}%{{{  ================= OK
-By \textit{negative} parameters is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
+By \textit{negative parameters} it is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
 or negative index of refraction. In transparent media without spatial dispersion, the latter coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
 Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
 Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from the lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
 as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent} and to rapidly decaying under the surface. %A particular interest in the same phenomenon arose with 
-The same mechanism causing the radio wave reflection from dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly, starting its ongoing research.
+The same mechanism causing the radio wave reflection from dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly, starting the ongoing research.
 
-\textit{Negative permeability} manifests similarly from the electrodynamic point of view, but is observed much less often, due to the absence of magnetic monopoles, above magnetic resonances in matter.
+\textit{Negative permeability} manifests similarly from the electrodynamic point of view, but is observed much less often, typically above magnetic resonances in matter.
 
 Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
 It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago used % is he first?
-the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but did not discuss the more general theory of the spatial dispersion, which may lead to negative refraction, too.
+the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but did not discuss the way of achieving such media, nor the more general theory of the spatial dispersion which may lead to natural negative refraction.
 % add a note about negative index and spatial dispersion in homogeneous media? 
+% (todo) The electrodynamics of spatially-dispersive media ...
 % Or in an extra paragraph later, under 2nd unification?
 
 %}}}
@@ -1203,14 +1205,15 @@ Eq. (\ref{eq_dispeqN}),
 it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
 
 %}}}
-\paragraph{Negative effective permeability and negative refractive index}  %{ {{ ================== 
+\paragraph{Negative effective permeability and negative refractive index}  %{{{ ================== 
 % PK writes (where??) 
 % "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
 Despite the literature is somewhat ambiguous, a thorough search shows that the term \textit{metamaterial} (MM) was first used by Walser in 1999. Although apparently redundant to \textit{artificial dielectrics}, which was used for decades before,  the new term of \textit{metamaterial} can be viewed as more fortunate as it does not imply that the structure is man-made or not, nor whether its effective parameters mimic a dielectric or, e.g., a metal.
 
 The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
 
-\paragraph{Superlensing with metamaterials}
+%}}}
+\paragraph{Superlensing with metamaterials} %{{{ ===================== cite fn
 Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with better resolution than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
 
 If a metamaterial is used as the negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
@@ -1223,46 +1226,65 @@ and it may be favorable to substitute metals with certain types of oxides with m
 
 To the author's knowledge, all demonstrations of s tebou metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
 The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near-field.
-
-%\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} 
+%}}}
+%\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} %{ {{ ================== TODO finish and expand
 %hyperbolic media, analogy with optical fibers, graphene nanostructures...
 %The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
 %Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
 
-%To achieve the desired high resolution, the medium has to maintain  \todo{+}
-
-\paragraph{Metamaterials with strong chirality} %{ {{ ============== (todo expand?)
-In spite of the above mentioned application being popular, many metamaterial applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
+%}}}
+\paragraph{Metamaterials without negative or near-zero parameters} %{ {{ ============== (todo expand?)
+In spite of the superlenses and cloaks being the most often connected with MMs, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
 Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction.
 
-An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application which does not require negative values of $\Neff$, $\eeff$ nor $\meff$ is in reversing the Casimir force.
+
+An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application with strong chirality at its core is in reversing the Casimir force between two close matematerial surfaces to become repulsive.
+
+\begin{figure}[h] \caption{Author's view of the development in the metamaterial and photonic crystal research over the past century} \label{fg_history} \centering 
+	\begin{tikzpicture}[box/.style={draw,rounded corners,text width=4cm,align=center}, node distance=5mm, arrow/.style={rounded corners}]
+	\node[box] (a)             {\textbf{Media with negative parameters}};
+	\node[box, below=of a] (b) {\textbf{Artificial dielectrics and metamaterials}};
+	\node[box, below=of b] (c) {\textbf{Photonic band-gap structures}};
+	\node[box, right=of a] (d) {\textit{1950s\\ 1st unification}};
+	\node[box, right=of d] (e) {\textit{2000s\\ 2nd unification}};
+	\draw[->] (a) -- (d);
+	\draw[->] (b.east) -| (d.south);
+	\draw[->] (d) -- (e);
+	\draw[->] (c.east) -| (e.south);
+	\end{tikzpicture}
+\end{figure}
 
 %}}}
 
 \subsection{Second unification: metamaterials with photonic crystals} 
-Over the 20th century, the paradigms of metamaterials (MM) and photonic crystals (PhC) apparently developed independent of each other. The situation started to change in 2000s, when the metamaterial structures were realized to operate at near-infrared or optical frequencies. As already stated, reduction of the unit cell size becomes a big issue; not only is the contemporary technology somewhat limited in its resolution, but more importantly, with any choice of available materials the dissipative losses become a problem, particularly when the tight confinement is required. 
+\paragraph{Experimental reasons}
+Over the 20th century, the paradigms of metamaterials (MM) and photonic crystals (PhC) apparently developed independent of each other. The situation started to change in 2000s, when the metamaterial structures were realized to operate at near-infrared or optical frequencies. As already stated, increasing of the operation frequency is intricate; not only is the contemporary three-dimensional submicroscopic fabrication technology somewhat limited in its resolution, but even more importantly, with any choice of available materials the dissipative losses become a major issue at the optical frequencies, particularly when the tight confinement of the field is required. 
 
-For both reasons, in the optical range a compromise is usually made that the particle size becomes only few times smaller than the wavelength of operation, and such a structure then classifies at the boundary of metamaterials and photonic crystals. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
+For both reasons,  a compromise is usually made at the near-infrared and optical frequencies in that the particle size is chosen only few times smaller than the wavelength of operation. Such a structure then can not be viewed as deeply subwavelength, and classifies at the boundary of metamaterials and photonic crystals. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
+where the unit cell size compared to the wavelength $2\pi a/K \approx $, %todo
+or %todo
+or %todo
+. This second unification of paradigms is sketched in Fig. \ref{fg_history}. 
+
+% todo write about {\textit{plasmonic nanoparticles} at optical frequencies?
+
+\paragraph{Theoretical investigation of the structures on the boundary}
+Probably also the miniaturisation issues incited the studies of the interplay of the localized and distributed resonances, the former being typical for metamaterials, the latter for photonic crystals. Typically, one either scans the relative cell spacing (e.g. \cite{shi2007, rybin2015}),  % and \cite{antonoyiannakis1997mie}?
+or tunes the individual resonance frequency keeping the lattice unchanged (e.g. \cite{chakrabarti2012magnetic})
 %Chakrabarti2001_From_effective_response_to_PBG.pdf
 %	scanning the a/λ ratio of SRR array, "medium progressively becomes less homogenizable", 
 %	discuss the possibility of effparam  when λ~3a, "Bragg scattering ... becomes the dominant"
 %	changing resonance freq -> crossing of indiv/bragg resonances
 
-% todo write about {\textit{plasmonic nanoparticles} at optical frequencies?
-
-
-Probably the miniaturisation issues have incited also the purely theoretical studies of the interplay of the localized, metamaterial-like, resonances and distributed, photonic crystal-like, resonances in the unit cells.
-% typically one scans the relative cell spacing...
-
 %PhCs with metallic/metamaterial inclusions
-%ad_Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC $ ls -1
 %Antonnoyiannakis1997-Mie_resonances_and_bonding_in_PhC.pdf
-%Rybin2015-Phase_diagram.pdf
-%Shi2007-Effects_induced_by_Mie_resonance_in_2D_PhC.pdf
+% --- weird, examine
+% 
 
+In the more abstract studies, the full electrodynamic behaviour of the unit are substituted by a flat layer with given, possibly negative, effective parameters. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
+This is only an approximation, as usually the unit cells can also couple with nonradiative fields, which is not taken into account if they are replaced by a layer, but on the other hand it allows for deeper understanding of the causes of the band diagram.
 
-The full electrodynamic behaviour of the unit cell has also been substituted by effective parameters. This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative index of refraction.
-An atypical type of a photonic crystal is formed which exhibits a specific \textit{zero order photonic band-gap} when the phase advance through the layer stack is zero. (Note that typical photonic band gaps occur when the phase advance is $2\pi M, M\in \mathbb{N}$).
+Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band-gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack was zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occured when the phase advance is $2\pi M, M\in \mathbb{N}$. Another type of a band-gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
 %	hypothetical nondispersive N<0 layers interlaced by air - zero-transmission disp curve of adjacent bandgaps
 %	"avg(n)=0" band-gap blocks light even for deeply subwavelength layers
@@ -1281,14 +1303,11 @@ An atypical type of a photonic crystal is formed which exhibits a specific \text
 % 	zero-avg(N) band gap is invariant to the wave angle
 % 	LHM-RHM stacks, ENG-MNG stacks
 % 	all assume a metamaterial purveys the negative eff params
-%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf
+%Liang2003-Unusual_narrow_bands_in_LHM_stack.pdf todo
 %	
-%YihangChen2009-Unusual_bands_of_1D_PhC_containing_SNG.pdf
+%YihangChen2009-Unusual_bands_of_1D_PhC_containing_SNG.pdf todo
 %
-%Ad_Monsoriu2:
-%Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf
-
-
+%Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf todo
 
 
 \section{The boundary between photonic crystals and metamaterials} 
