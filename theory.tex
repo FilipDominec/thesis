@@ -1234,7 +1234,7 @@ The question remains whether the significant progress of technology required to 
 
 %}}}
 \paragraph{Metamaterials without negative or near-zero parameters} %{ {{ ============== (todo expand?)
-In spite of the superlenses and cloaks being the most often connected with MMs, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
+In spite of the superlenses and cloaks being the most often associated with MMs, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
 Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction.
 
 
@@ -1247,10 +1247,13 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 	\node[box, below=of b] (c) {\textbf{Photonic band-gap structures}};
 	\node[box, right=of a] (d) {\textit{1950s\\ 1st unification}};
 	\node[box, right=of d] (e) {\textit{2000s\\ 2nd unification}};
+	\node[text tet, right=of e] (f) {xx};
+	\draw[->] (a) -- (d);
 	\draw[->] (a) -- (d);
 	\draw[->] (b.east) -| (d.south);
 	\draw[->] (d) -- (e);
 	\draw[->] (c.east) -| (e.south);
+	\draw[->] (e.east) -- (f);
 	\end{tikzpicture}
 \end{figure}
 
