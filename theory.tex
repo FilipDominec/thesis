@@ -435,6 +435,7 @@ The refraction between ordinary media and two examples involving negative-index 
 %}}}
 %}}}
 \section{Electrodynamics of nonlocal homogeneous media} %{{{
+\label{chap_nonloc}
 \subsection{Nonlocal response} 
 \paragraph{Definition of nonlocal media}%{{{
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media.  The downside of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
@@ -1213,30 +1214,25 @@ Despite the literature is somewhat ambiguous, a thorough search shows that the t
 The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
 
 %}}}
-\paragraph{Superlensing with metamaterials} %{{{ ===================== cite fn
+\paragraph{Imaging beyond diffraction limit with metamaterials} %{{{ ===================== cite fn
 Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with better resolution than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
 
 If a metamaterial is used as the negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
 %If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. 
-For the proportional amplification of evanescent-waves, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
+For the proportional amplification of evanescent waves, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
+
+A related concept is the \textit{hyperlens}, an inhomogeneous structure which employs anisotropic negative-index media to couple near fields to waves radiated in the air, thus enabling subdiffractive imaging in the far field. Again, the ultimate resolution of the hyperlens is determined by the spatial dispersion of the metamaterial used.
 
 The dissipative losses in resonant periodic structures were not sufficiently resolved yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite
 and it may be favorable to substitute metals with certain types of oxides with metallic-like permittivity in the optical range \cite{naik2011oxides}.
 
-To the author's knowledge, all demonstrations of s tebou metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
+To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
 The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near-field.
-%}}}
-%\paragraph{Hyperlensing -- coupling of evanescent and radiated waves} %{ {{ ================== TODO finish and expand
-%hyperbolic media, analogy with optical fibers, graphene nanostructures...
-%The resolution of metamaterials is hindered by their internal cell size, and even sooner, by the spatial dispersion.
-%Hyperbolic metamaterials are commonly thought to be able to form a hyperlens, but the hyperbolic shape of the IFC is only an approximation for low wavenumber; it possibly strongly differs when K~is big, and possibly also forms a closed surface instead of infinite hyperboloids.
 
 %}}}
-\paragraph{Metamaterials without negative or near-zero parameters} %{ {{ ============== (todo expand?)
-In spite of the superlenses and cloaks being the most often associated with MMs, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters.
-Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction.
-
+\paragraph{Metamaterials without negative or near-zero parameters} %{{{ ============== 
+In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters. Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}.
 
 An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application with strong chirality at its core is in reversing the Casimir force between two close matematerial surfaces to become repulsive.
 
@@ -1247,7 +1243,7 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 	\node[box, below=of b] (c) {\textbf{Photonic band-gap structures}};
 	\node[box, right=of a] (d) {\textit{1950s\\ 1st unification}};
 	\node[box, right=of d] (e) {\textit{2000s\\ 2nd unification}};
-	\node[text tet, right=of e] (f) {xx};
+	\node[coordinate, right=of e] (f) {};
 	\draw[->] (a) -- (d);
 	\draw[->] (a) -- (d);
 	\draw[->] (b.east) -| (d.south);
@@ -1260,20 +1256,19 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 %}}}
 
 \subsection{Second unification: metamaterials with photonic crystals} 
-\paragraph{Experimental reasons}
+\paragraph{Experimental reasons}%{{{
 Over the 20th century, the paradigms of metamaterials (MM) and photonic crystals (PhC) apparently developed independent of each other. The situation started to change in 2000s, when the metamaterial structures were realized to operate at near-infrared or optical frequencies. As already stated, increasing of the operation frequency is intricate; not only is the contemporary three-dimensional submicroscopic fabrication technology somewhat limited in its resolution, but even more importantly, with any choice of available materials the dissipative losses become a major issue at the optical frequencies, particularly when the tight confinement of the field is required. 
 
-For both reasons,  a compromise is usually made at the near-infrared and optical frequencies in that the particle size is chosen only few times smaller than the wavelength of operation. Such a structure then can not be viewed as deeply subwavelength, and classifies at the boundary of metamaterials and photonic crystals. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
+For both reasons,  a compromise is usually made at the near-infrared and optical frequencies: the particle size is chosen only few times smaller than the wavelength of operation. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
 where the unit cell size compared to the wavelength $2\pi a/K \approx $, %todo
 or %todo
 or %todo
-. This second unification of paradigms is sketched in Fig. \ref{fg_history}. 
+. Such a structure can no more be viewed as deeply subwavelength, and classifies at the boundary of metamaterials and photonic crystals. This second unification of paradigms is sketched in Fig. \ref{fg_history}. 
 
-% todo write about {\textit{plasmonic nanoparticles} at optical frequencies?
-
-\paragraph{Theoretical investigation of the structures on the boundary}
-Probably also the miniaturisation issues incited the studies of the interplay of the localized and distributed resonances, the former being typical for metamaterials, the latter for photonic crystals. Typically, one either scans the relative cell spacing (e.g. \cite{shi2007, rybin2015}),  % and \cite{antonoyiannakis1997mie}?
-or tunes the individual resonance frequency keeping the lattice unchanged (e.g. \cite{chakrabarti2012magnetic})
+%}}}
+\paragraph{Theoretical investigation of the structures on the MM-PhC boundary}%{{{
+Probably it were the miniaturisation issues that incited the studies of the interplay between the individual and Bragg-type resonances, the former being typical for metamaterials, the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007} as well as in experiments \cite{rybin2015}),  % and \cite{antonoyiannakis1997mie}?
+or tunes the individual resonance frequency keeping the lattice unchanged (e.g. \cite{chakrabarti2012magnetic}). The frequency of the individual and Bragg resonances have different sensitivity to these parameters, and can thus be identified in the spectra. Such a study of a typical structure, the array of dielectric rods, is elaborated in the Results section of this thesis.
 %Chakrabarti2001_From_effective_response_to_PBG.pdf
 %	scanning the a/λ ratio of SRR array, "medium progressively becomes less homogenizable", 
 %	discuss the possibility of effparam  when λ~3a, "Bragg scattering ... becomes the dominant"
@@ -1284,8 +1279,8 @@ or tunes the individual resonance frequency keeping the lattice unchanged (e.g. 
 % --- weird, examine
 % 
 
-In the more abstract studies, the full electrodynamic behaviour of the unit are substituted by a flat layer with given, possibly negative, effective parameters. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
-This is only an approximation, as usually the unit cells can also couple with nonradiative fields, which is not taken into account if they are replaced by a layer, but on the other hand it allows for deeper understanding of the causes of the band diagram.
+In the more abstract studies, the structure of the unit cell, with its full electrodynamic behaviour, is substituted by a flat layer characterized only by its effective parameters which may be negative at certain frequencies. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
+This approach is only an approximation, since usually a part of the unit cell behaviour is its coupling with nonradiative fields, which is not taken into account if they are replaced by a layer, but on the other hand it allows for deeper understanding of the factors forming the band diagram.
 
 Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band-gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack was zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occured when the phase advance is $2\pi M, M\in \mathbb{N}$. Another type of a band-gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
@@ -1312,14 +1307,25 @@ Such an unusual photonic crystal can exhibit a specific \textit{zero order photo
 %
 %Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf todo
 
+The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \\gtsim 0.2$) is the strong manifestation of the spatial dispersion. Except for special cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight, and in the contrary, it leads to confusing deviation from the expected Lorentz oscillator curves, namely \textit{antiresonances} \cite{koschny2003resonant}  and complex values of $\eeff$ and $\meff$ even in lossless media \cite{chan2003}.
+In the author's belief, it is necessary to adopt the full theory of spatial-dispersive media, as sketched in the Chapter \ref{chap_nonloc} of this thesis.
 
+%}}}
 \section{The boundary between photonic crystals and metamaterials} 
-The historical section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
+The section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
 
-At the end of the previous section it is however shown that the most recent research involves also structures at the boundary between both paradigms, and it is a pertinent question of whether there are some objective apriori differences. Several different criteria are listed below, which are not strictly equivalent. As a result, there exists a "grey zone" of structures that can more or less fit into both categories  simultaneously.
+Merging of the MM and PhC paradigms brings into the focus % todo
+also the structures at the boundary, and it is a pertinent question of whether there are any objective differences between the notions of MMs and PhCs at all. 
+
+Several different criteria are listed below, which are not strictly equivalent. As a result, there exists a "grey zone" of structures that can more or less fit into both categories  simultaneously.
 
 \paragraph{Difference in the Bloch wavelength}%{{{
-Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is historical - metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice. The difference between electrons in solids and optical photons is in that the electron wavelength is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the use of the Bloch theorem, whereas the wavelength of light is four order of magnitude larger and the medium.
+Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is \textit{which type of wave} was the initial analogy: 
+\begin{enumerate}
+ \item{Metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas } 
+ \item{the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice.} 
+\end{enumerate}
+The difference between electrons in solids and optical photons is in that the wavelength valence-band electrons is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the description through the Bloch theorem, whereas the wavelength of light is at least four order of magnitude larger and does not usually the medium.
 %are in the scale (inter-atomic distances are in the order of $10^{-10}$ m, while in electromagnetic structures, the cell dimensions usually range from $10^{-2}$ to $10^{-7}$ m. 
 
 To the knowledge of the author, the ratio of the (Bloch) wavelength to the unit cell size tends to be between 0.1 and 1 in all periodic structures at their expected frequency of operation.
