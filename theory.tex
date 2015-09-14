@@ -1311,33 +1311,33 @@ The common property of structures operating at Bloch wavelengths of comparable m
 In the author's belief, it is necessary to adopt the full theory of spatial-dispersive media, as sketched in the Chapter \ref{chap_nonloc} of this thesis.
 
 %}}}
+
+
 \section{The boundary between photonic crystals and metamaterials} 
 The section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
 
-Merging of the MM and PhC paradigms brings into the focus % todo
-also the structures at the boundary, and it is a pertinent question of whether there are any objective differences between the notions of MMs and PhCs at all. 
+The reason behind merging of the MM and PhC paradigms are the practical aspects that lie at the boundary, and it is a pertinent question of whether there are any objective differences between the notions of MMs and PhCs at all. 
 
 Several different criteria are listed below, which are not strictly equivalent. As a result, there exists a "grey zone" of structures that can more or less fit into both categories  simultaneously.
 
-\paragraph{Difference in the Bloch wavelength}%{{{
+\paragraph{Difference in the Bloch wavelength} %{ {{ ==================================================
 Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is \textit{which type of wave} was the initial analogy: 
 \begin{enumerate}
  \item{Metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas } 
  \item{the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice.} 
 \end{enumerate}
-The difference between electrons in solids and optical photons is in that the wavelength valence-band electrons is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the description through the Bloch theorem, whereas the wavelength of light is at least four order of magnitude larger and does not usually the medium.
-%are in the scale (inter-atomic distances are in the order of $10^{-10}$ m, while in electromagnetic structures, the cell dimensions usually range from $10^{-2}$ to $10^{-7}$ m. 
+The wavelength of the valence-band electrons wavefunction is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the description through the Bloch theorem, whereas the wavelength of light is roughly four orders of magnitude larger.
 
-To the knowledge of the author, the ratio of the (Bloch) wavelength to the unit cell size tends to be between 0.1 and 1 in all periodic structures at their expected frequency of operation.
-% According to Ref. \cite{tsukerman2011nonlocal}: \textit{metamaterials (are) artificial periodic structures with features smaller than the vacuum wavelength}. TODO add counter example
+Some papers base their definition of metamaterials on the wavelength criterion. For instance, ref. \cite{tsukerman2011nonlocal} defines that \textit{metamaterials (are) artificial periodic structures with features smaller than the vacuum wavelength}. 
 
-The boundary between the MM and PhC fields is therefore much less clear, and this is the reason why the more general term of \textit{periodic structure} is predominantly used in this thesis. 
+Such definitions however lack rigour: the ratio of the (Bloch) wavelength to the unit cell size tends to be between 0.1 and 1 in all periodic structures at their expected frequency of operation.
+The boundary between the realizable MM and PhC fields is therefore much less clear, and this is the reason why the more general term of \textit{periodic structure} is predominantly used in this thesis.  % TODO rewrite
 
-However, both fields of MM and PhC seem to be customarily associated with other characteristic properties, which differ. Later in this thesis, we will show structures that would classify as  MM by one criterion, but as a PhC by another one. Let us name few of these properties.
+% However, both fields of MM and PhC seem to be customarily associated with other characteristic properties, which differ. Later in this thesis, we will show structures that would classify as  MM by one criterion, but as a PhC by another one. Let us name few of these properties.
 
 %}}}
-\paragraph{Difference in the number of the photonic band}%{{{
-At a given frequency of operation, any periodic structure can either allow the Bloch wave to propagate, or. The (allowed) photonic bands are thus interlaced by photonic band-gaps (PBGs), and the number of the photonic band, counted from zero frequency, gives an important characteristic of the structure.
+\paragraph{Difference in the number of the photonic band} %{ {{ ==================================================
+At a given frequency of operation, any periodic structure can either allow the Bloch wave to propagate, or exhibits a band-ga. The photonic bands are thus well separated by the band-gaps (PBGs), and the number of the photonic band, counted from zero frequency, gives an important characteristic of the structure.
 %% The choice of the band is, of course, not an inherent property of the structure, but rather a way of its intended use.
 
 \begin{figure}[h] \caption{Schematic of the usual ratio of the reciprocal lattice vector to the wave:vector in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
@@ -1369,7 +1369,7 @@ note \cite{silveirinha2007metamaterial}
 resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
 Think over, note our paper dominec2014transition \cite{dominec2014transition}
 }
-\paragraph{Difference in the energy localisation}%{{{
+\paragraph{Difference in the energy localisation} %{ {{ ==================================================
 ... and resistance of the behaviour to the disorder
 
 \add{Energy is the most localized at the frequencies of resonances.}
@@ -1382,17 +1382,30 @@ At the resonant frequencies in the metamaterials, the majority of the energy of 
 }
 
 \todo{If so, would be MMs a very narrow, or very broad  group of structures?}
+
 %}}}
 \paragraph{Difference in purpose and way of thinking}%{{{
+Finally, we return to denoting of MMs and PhCs as two \textit{paradigms} rather than being two rigorously defined classes of  structures. Throughout their development, they have been associated with different purposes: the development of PhCs focused on the band-gap phenomenon, and aimed to control \textit{whether} the electromagnetic waves can propagate or not. 
 
-The \textit{For Beginners} page of the ECONAM project states
-Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties
+With MMs, the aims were more ambitious -- their analysis and synthesis were always concerned \textit{how} the waves propagate. Such a MM description aimed towards describing the medium in terms of \textit{effective parameters}
+
+ and different analogies.
 
 existence of effective parameters
 
-\cite{sihvola2009metamaterials}
+The \textit{For Beginners} page of the ECONAM project states
+\textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}
 
-\add{MMs are about HOW the light propagates. PhCs are about WHETHER the light propagates.}
+whatis.com (http://whatis.techtarget.com/definition/metamaterial):
+{\quote A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
+% and this continues with description of neg refr as the typical application
+
+Duke university (http://metamaterials.duke.edu/research/metamaterials):
+{\quote MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
+% further they stress the importance of homogenization
+% "it is difficult to arrive to a strict and unambiguous definition"
+
+% \cite{sihvola2009metamaterials}
 
 %}}}
 
@@ -1461,14 +1474,10 @@ Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 }
 
 \paragraph{Metamaterial definitions}
-whatis.com (http://whatis.techtarget.com/definition/metamaterial):
-{\quote A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
-% and this continues with description of neg refr as the typical application
 
-Duke university (http://metamaterials.duke.edu/research/metamaterials):
-{\quote MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
-% further they stress the importance of homogenization
-% "it is difficult to arrive to a strict and unambiguous definition"
+
+
+
 
 
 
