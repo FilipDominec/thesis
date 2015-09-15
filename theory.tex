@@ -995,7 +995,7 @@ They could be observed for a local dielectric (Figs. \ref{fg_dcsimpleel} and \re
 While the wave propagation received due attention in the above, also the wave "non-propagation" deserves to be commented here.
 %It is essential to point out the similarities and eventual differences between them.
 
-The band-gap behaviour is simplest to describe in isotropic media, analogous to the one-dimensional case: for a frequency within the band-gap, no wavevector $\KK$ can be found under which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band-gap for one polarisation and only in some set of wave vector orientations.
+The band-gap behaviour is simplest to be described in isotropic media, analogous to the one-dimensional case: for a frequency within the band-gap, no wavevector $\KK$ can be found under which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band-gap for one polarisation and only in some set of wave vector orientations.
 
 A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations however require that the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential manner with the distance below the interface.
 
@@ -1034,6 +1034,7 @@ Along an axis of a cubic lattice, with unit cell size $a$, the rule for the Brag
 Thus, the first Bragg band-gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
 Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band-gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band-gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}a and \ref{fg_phcfolding}d.
 
+% The waves between the cells in a Bragg band-gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
 The width of the band-gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band-gap can vanish. 
 % -> zero-width case (it is a transition between a mode traversing from one photonic band to another --- TODO put into Results)
 
@@ -1074,6 +1075,7 @@ This chapter can in no way cover all relevant papers and ideas over the last cen
 % Staying in the electrodynamics field, metamaterial research is not limited to spatial structures only; so called \textit{metasurfaces} are developed to widely engineer the impedance of the surface, to enhance nonlinearity and to construct absorbers or high-contrast filters with tunable properties.
 
 %}}}
+
 \subsection{Photonic band-gap structures} 
 \paragraph{One-dimensional band-gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
@@ -1108,6 +1110,7 @@ As a complementary concept, an one-dimensional photonic band-gap structure can b
 Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decades: Obviously, a minor shift of the band-gap has a strong impact on whether the light can propagate. Such a shift can be introduced e.g. by static magnetic field in low symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
 
 %}}}
+
 \subsection{Homogeneous media with uncommon parameters} 
 \paragraph{Negative parameters}%{{{  ================= OK
 By \textit{negative parameters} it is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
@@ -1314,94 +1317,76 @@ In the author's belief, it is necessary to adopt the full theory of spatial-disp
 
 
 \section{The boundary between photonic crystals and metamaterials} 
-The section above suggests the primary difference between the notions of photonic crystals (PhC) and metamaterials (MM) is historical -- that is, each of these notions is connected to a different paradigm, which reflects in the way of description and in the search for application.
+In the light of the previous historical review, MMs and PhCs are divided by historical reasons as different paradigms that seem to have developed separately for most of the 20th century. At least in the author's view, both paradigms however undergo the process of unification, which incites the question whether there exist any objective rules to tell whether a given structure is a MM or a PhC.
 
-The reason behind merging of the MM and PhC paradigms are the practical aspects that lie at the boundary, and it is a pertinent question of whether there are any objective differences between the notions of MMs and PhCs at all. 
-
-Several different criteria are listed below, which are not strictly equivalent. As a result, there exists a "grey zone" of structures that can more or less fit into both categories  simultaneously.
-
-\paragraph{Difference in the Bloch wavelength} %{ {{ ==================================================
-Both the metamaterial (MM) and photonic crystal (PhC) concepts are inspired by solid-state physics, namely by theories of waves propagating in solids. The fundamental difference between these is \textit{which type of wave} was the initial analogy: 
-\begin{enumerate}
- \item{Metamaterials are related to \textit{optical waves} propagating in the quasi-homogeneous crystal lattice, whereas } 
- \item{the theory of photonic crystals was developed on the basis of \textit{electron waves} in the crystal lattice.} 
-\end{enumerate}
-The wavelength of the valence-band electrons wavefunction is similar to the inter-atomic distance ($\approx 10^{-10}$ m), demanding the description through the Bloch theorem, whereas the wavelength of light is roughly four orders of magnitude larger.
-
-Some papers base their definition of metamaterials on the wavelength criterion. For instance, ref. \cite{tsukerman2011nonlocal} defines that \textit{metamaterials (are) artificial periodic structures with features smaller than the vacuum wavelength}. 
-
-Such definitions however lack rigour: the ratio of the (Bloch) wavelength to the unit cell size tends to be between 0.1 and 1 in all periodic structures at their expected frequency of operation.
-The boundary between the realizable MM and PhC fields is therefore much less clear, and this is the reason why the more general term of \textit{periodic structure} is predominantly used in this thesis.  % TODO rewrite
-
-% However, both fields of MM and PhC seem to be customarily associated with other characteristic properties, which differ. Later in this thesis, we will show structures that would classify as  MM by one criterion, but as a PhC by another one. Let us name few of these properties.
 
 %}}}
-\paragraph{Difference in the number of the photonic band} %{ {{ ==================================================
-At a given frequency of operation, any periodic structure can either allow the Bloch wave to propagate, or exhibits a band-ga. The photonic bands are thus well separated by the band-gaps (PBGs), and the number of the photonic band, counted from zero frequency, gives an important characteristic of the structure.
-%% The choice of the band is, of course, not an inherent property of the structure, but rather a way of its intended use.
+\paragraph{The wavelength criterion} %{{{
+Originally, the determining parameter was surely the ratio of the unit cell size to the wavelength of the electromagnetic wave (at the given frequency of operation).
+Even some modern recent papers \cite{tsukerman2011nonlocal} define MMs as \textit{(...) artificial periodic structures with features smaller than the vacuum wavelength}.
 
-\begin{figure}[h] \caption{Schematic of the usual ratio of the reciprocal lattice vector to the wave:vector in metamaterials and photonic crystals}  \centering \includegraphics[width=8cm]{img/mm-phc-diagram.pdf} \end{figure} 
+It should be noted that the studies of MM and PhC were both inspired by a wave propagating through the lattice of a natural crystal. The difference was however that in the earlier case of MMs, it was an \textit{optical} wave, whereas in the case of PhCs the inspiration came from the \textit{electron wavefunction}. The wavelength of the valence-band electrons is similar to the inter-atomic distance ($\approx 10^{-10}$ m), always demanding the description through the Bloch theorem, whereas the wavelength of light is roughly four orders of magnitude larger, enabling to approximate the crystal as a homogeneous medium.
 
-%%% XXX ============================== 1st band
-Starting from the lowest frequencies, most periodic structures allow the Bloch wave to propagate. (An exception are conductive structures, see Chapter \ref{chap_wiremedium}, )  Due to very long wavelength, they can be easily treated as homogeneous medium and are usually classified as metamaterials operating in their first photonic band \cite{richter1995, kadlec2008, sibik2010dp}.
-% in the author's view, this subset of metamaterials can be directly associated with the term of \textit{artificial dielectrics}
-
-As far as the frequency of operation does not approach the upper edge of the first photonic band, these structures are completely nonresonant.  Let us stress that this classification is inseparably linked with specifying the frequency band of operation, since for any periodic structure, some electromagnetic resonances can be found at their respective frequencies.
-The desired properties of nonresonant structures are obtained by averaging the properties of the constituent materials \cite{oganisian2014observation} or by engineering the unit cell are typically a strongly anisotropic tensor of permittivity \cite{kadlec2008, sibik2010dp}. Strictly speaking, this class of structures does not require periodicity, 
-
-%%% XXX ============================== 1st band-gap
-%%% XXX ============================== 2nd band
-%%% XXX ============================== higher band-gaps and bands
-\add{The notion of "wavelength", or more precisely "Bloch wavelength", is not uniquenly defined in such structures! }
-
-\add{
-		Resonant metamaterials operate in the 2nd BZ. From the arguments given in the Results section and in Ref. \cite{dominec2014transition}, on the example of dielectric rod array, the author conjectures that no useful metamaterial properties will be obtained from designing a linear metamaterial to operate in the third or higher photonic band.
-
-		The studies of periodic electromagnetic structures is generally divided into two classes: the \textit{photonic crystals} and \textit{metamaterials}. These types of structures are formally very similar, as they are composed of 2-D or 3-D periodic array of unit cells, and the qualitative difference can be found only after the interaction with an electromagnetic wave is known. 
-
-		%The difference is in the way how the unit cell interacts with the electromagnetic field. 
-
-		Both types of structures exhibit the most interesting behaviour at their frequencies of resonance, but the different types of resonances define the technology and materials used to build them. The resonances in PhC rely on wave scattering, which can be easily obtained with any ordinary low-permittivity material such as silica or silicon. On the other hand, the resonances 
-		%but the mentioned difference has profound consequences on the behaviour of the structure. 
-		%}}}
-
-note \cite{silveirinha2007metamaterial}
-resonant metamaterials operate in the 2nd BZ (or possibly even third or higher? )
-Think over, note our paper dominec2014transition \cite{dominec2014transition}
-}
-\paragraph{Difference in the energy localisation} %{ {{ ==================================================
-... and resistance of the behaviour to the disorder
-
-\add{Energy is the most localized at the frequencies of resonances.}
-
-\mdf{In the photonic crystal (PhC), at its frequency range of operation, the effective wavelength is similar to the cell spacing and the cells scatter the propagating wave.
-The energy of the resonant field is spread relatively evenly over the majority of the unit cell volume, which results in great sensitivity of the PhC behaviour to its periodicity and typically also in a high spatial dispersion. The most prominent phenomenon observed in PhC is the emergence of forbidden photonic bands around resonant frequencies, where the light can not propagate through the structure. 
-
-On the contrary, the cells of a metamaterial (MM) are expected to exhibit individual resonances which should not significantly couple to each other. 
-At the resonant frequencies in the metamaterials, the majority of the energy of the electromagnetic field is localised in a fraction of the unit cell volume, so that the behaviour of the metamaterial usually has only weak spatial dispersion, if any. This allows one to describe many metamaterials with acceptable precision as a homogeneous medium with a index of refraction $N(f)$, wave impedance $Z(f)$ and related effective permittivity $\varepsilon(f)=N/Z$ and permeability $\mu(f)=NZ$. 
-}
-
-\todo{If so, would be MMs a very narrow, or very broad  group of structures?}
+In the analogy, the earlier metamaterials (or, artificial dielectrics) were mostly though as deeply subwavelength, which provided a clear and easy distinction from all PhCs. It also allowed to neglect spatial dispersion for the wave. The situation however appears to change with realistic MM scaling to the optical range, since the wavelength becomes comparable to the unit cell size. Besides, the PhC-MM boundary then becomes also frequency dependent.
 
 %}}}
-\paragraph{Difference in purpose and way of thinking}%{{{
-Finally, we return to denoting of MMs and PhCs as two \textit{paradigms} rather than being two rigorously defined classes of  structures. Throughout their development, they have been associated with different purposes: the development of PhCs focused on the band-gap phenomenon, and aimed to control \textit{whether} the electromagnetic waves can propagate or not. 
+\paragraph{The energy criterion} %{{{
+The time-averaged energy of a plane wave in vacuum is constant.  All peculiar interaction of MMs and PhCs with the wave is inherently connected to the uneven distribution of the electromagnetic energy in the structure. This is the rationale for the new criterion: In the MMs near a resonance, the energy is highly concentrated inside a part of the unit cell, typically close to sharp edges of metals or within a particle of high-permittivity dielectric. On the contrary, the resonances in typical PhCs do not concentrate the energy, and instead there is a moderately high intensity of the field in the majority of the space between the scattering structure elements.
 
-With MMs, the aims were more ambitious -- their analysis and synthesis were always concerned \textit{how} the waves propagate. Such a MM description aimed towards describing the medium in terms of \textit{effective parameters}
+As a result, the individual, MM-like resonances are more sensitive to changes in the structure shaping, whereas the Bragg band gaps typical of a PhC are more sensitive to the unit-cell spacing. This is the reason behind the aforementioned parametric scans through the unit cell spacing, % (todo add refs from AdMonsoriu ...)
+since they recognize the nature of each single resonance mode, and justify even the problematic structures at the boundary to be viewed either as a MM or a PhC in different parts of the spectra.
 
- and different analogies.
+The high concentration of the energy within a small part of the structure reduces the sensitivity of the parameters under a moderate disorder in the cell position, which has also been viewed as a trait of metamaterials: % TODO quote and cite Peng
 
-existence of effective parameters
+%}}}
+\paragraph{The phase criterion} %{{{
+In spite of what was written above, there exists a well-defined, rigorous criterion dividing the periodic structures into two groups at a given frequency: When the structure is excited above its frequency of resonance, and the resonant energy is well localized in the part of a unit cell, part of the volume contains field of sign opposite to the excitation wave (c.f. Fig. \ref{fg_lorentz}). %% TODO check Fig 2.2 
+This opposite-field domain is delimited by a closed surface.
 
-The \textit{For Beginners} page of the ECONAM project states
-\textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}
+On the contrary, a Bragg band gap exhibits open surfaces, transversally interconnected between the cells. A limiting case is the band gap in a plan-parallel dielectric mirror.
 
-whatis.com (http://whatis.techtarget.com/definition/metamaterial):
-{\quote A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
+The difference between the topology of a sphere and of two parallel planes can be interpreted as the boundary between MMs and PhCs. However, this well-defined difference practically manifests as a $2\pi$-skip of the phase across each unit cell without any obvious impact on the wave energy. In more details this is demonstrated in the Chapter \ref{chap_results} %TODO point to the diel array
+by numerical studies of the transition cases.
+
+With this criterion it is also clear that its decision is frequency-dependent; as a matter of fact, all structures fall into the PhC class in the high-frequency limit.
+
+%}}}
+\paragraph{Less fortunate criteria} %{{{
+Some sources include the "unusual parameters" into the MM definition, but this is hardly acceptable since it would obviously exclude some established MMs out of the definition; the previous historical chapter attempts to give several examples. 
+
+Also the demand for "artificiality" in some other definitions appears to be somewhat artificial on its own, provided that one is interested in the structure properties rather than history.
+ 
+Confusion may arise from that some authors seem to overly broaden the applicability of the popular term of metamaterials. Two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and should be denoted as \textit{metasurfaces}.
+
+Even more unfortunate is to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can be a single split-ring resonator attached to a microwave transmission line denoted as a metamaterial. As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
+to a topic such as longitudinally modulated waveguide filters.
+
+%}}}
+\paragraph{Metamaterials as all structures being subject to homogenisation} %{{{
+With the criteria of wavelength or energy localisation leaving many structures in the "grey zone", and the phase-advance criterion being rigorous however at most marginally related to the flow of energy, the author proposes to adopt another criterion based solely on one's subjective decision on how each structure is characterized. 
+
+The unifying concept of virtually all MM studies is to describe \textit{how} the wave propagates though them. Their overwhelmingly complicated electromagnetic interaction is approximated by \textit{homogenization}, i.e. by finding such properties of a homogeneous medium that would behave in similar way.
+
+In contrast, the PhC research focuses on \textit{whether} the wave can propagate at all. When a mirror, filter, waveguide cladding or other structure with band-gap is designed, it is important to prevent the light from propagating rather than to homogenize the structure. 
+
+This also justifies denoting MMs and PhCs as two different \textit{paradigms} rather than two distinct \textit{classes} of periodic structures, and it is the reason why the neutral term of \textit{periodic structure} is used in this thesis. 
+
+With this criterion, the author believes, there is no strict rule for classification. Some structures are only more useful to be subject to homogenization, and with some other it is more interesting to focus on their band and band-gap structure. 
+An important question arises as to what extent the homogenization is applicable, and when its theory can fail. The basic answers are sketched in the following section.
+
+
+
+
+
+%   The \textit{For Beginners} page of the ECONAM project states
+%   \textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}
+
+% whatis.com (http://whatis.techtarget.com/definition/metamaterial):
+% {\quote A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.}
 % and this continues with description of neg refr as the typical application
 
-Duke university (http://metamaterials.duke.edu/research/metamaterials):
-{\quote MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
+%   Duke university (http://metamaterials.duke.edu/research/metamaterials):
+%   {\quote MMs are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}
 % further they stress the importance of homogenization
 % "it is difficult to arrive to a strict and unambiguous definition"
 
