@@ -533,7 +533,7 @@ From Eq. (\ref{eq_Dsd3}) we can derive the tensor form of spatial-dispersive per
 \muLL(\omega,\kk) = 1, 
 \end{array} \quad \right\} \quad \text{(in local media)}
 \label{eq_epsmusd3} \end{equation} 
-where 
+where we make use of the wave-plane projection tensor defined as
 \begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2		& -k_x k_y		& -k_x k_z \\ 
@@ -568,7 +568,7 @@ An intrinsic issue of spatial-dispersive media is that the permittivity $\epsLL(
 	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
 \begin{figure}[t] \caption{Dispersion curves for three different types of local media, comparing the local and Landau-Lifshitz representations of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}) [plotted as green lines] or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}) [plotted as black contour]. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background.
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}), plotted as green lines, or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}), plotted as black contours. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background. %% TODO make clearer?
 } \label{fg_dcll} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
 \textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
@@ -577,8 +577,8 @@ Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of 
 \clearpage
 
 %}}}
-\paragraph{Dispersion of a local dielectric in the Landau-Lifshitz model} %{{{
-The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters for local media in Eq. (\ref{eq_epsmusd3}) are mathematically identical. This is illustrated by Fig. \ref{fg_dcll} on three examples: of a medium with (\ref{fg_dcll}a) an electric resonance, with (\ref{fg_dcll}b) a magnetic resonance and (\ref{fg_dcll}c) with both resonances overlapping. 
+\paragraph{Dispersion in a local dielectric in the Landau-Lifshitz model} %{{{
+The dispersion curves predicted by the classical and Landau-Lifshitz representations of the constitutive parameters for local media in Eq. (\ref{eq_epsmusd3}) are mathematically identical. This is illustrated in Fig. \ref{fg_dcll} on three examples: that of a medium with an electric resonance (\ref{fg_dcll}a), one with  a magnetic resonance (\ref{fg_dcll}b) and  with both resonances overlapping (\ref{fg_dcll}c). 
 
 The plots in the left column of Fig. \ref{fg_dcll} show the \textit{local} permittivity $\epsrl(\omega)$ and permeability $\murl(\omega)$.
 Its right column features a thin black contour connecting all points where the dispersion equation (\ref{eq_dispdetLL}) was found to hold by a numerical search.
@@ -586,35 +586,36 @@ This is complemented by the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ as 
 %As a confirmation of the compatibility of the Landau-Lifshitz model with the classical one,
 Additionally, the original green dispersion curve as in Fig. \ref{fg_dcsimpleel} is retained, as computed using the classical approach based on the Eq. (\ref{eq_dispeq_loc}). It can thus be seen that both models always predict exactly the same dispersion.
 
-For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the curves plotted are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With frequency increasing, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
+For a local isotropic medium with a single electric resonance in Fig. \ref{fg_dcll}a, the plotted curves are identical to Fig. \ref{fg_dcsimpleel}. On the right panel, the Landau-Lifshitz permittivity $\epsLL(\omega, k)$ follows a resonance curve in frequency, but is independent of the wavenumber $k$ (as long as the medium is local). With increasing frequency, the lower polariton branch bends towards higher $k$, as $\epsLL(\omega, k)$ increases towards the resonance at $\omega_0$, then a band of frequency follows where and no solution of the wave equation %% TODO REF
 exists due to $\epsLL(\omega, k)$ being negative, and finally the upper polariton branch starts when $\epsLL(\omega, k)$ crosses zero and becomes positive again.
 
 A local medium with a single \textit{magnetic} resonance, Fig. \ref{fg_dcll}b, is predicted by the symmetric model to exhibit similar dispersion curves. In the right panel of Fig. \ref{fg_dcll}b, the magnetic resonance is represented by the
-contribution that grows proportionally with $k^2$: 
+contribution that grows proportionally to $k^2$: 
 \begin{equation} \Dsd = \D + \underbrace{\frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, \TT \E}_{\text{magnetic contribution}},      \tag{\ref{eq_Dsd4} \again} \end{equation}
 % TODO FK: Nějak to tam nevidím. To jako pro ω/ω0> 1.3? Chtělo by to popsat nějak názorněji.
 and unlike the case of the electric resonance, the maximum magnitude of the magnetic contribution is located at the frequency $\omega_{mp}$ where $\murl(\omega_{mp}) \rightarrow 0$. In the plot \ref{fg_dcll}b, this is at $\omega/\omega_0 \approx 1.3$.
 % TODO FK: Ani tady se mi nezdá zjevné, kde je tato podmínka splněna.
 This shape of $\epsLL(\omega, k)$ causes the lower polariton branch to bend and approach a horizontal asymptote, which is again separated by a band of no allowed wave from the upper polariton branch, starting at $\omega_{mp}$.
-$\epsLL(\omega, k)$
 
-Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from the cases of isolated resonances occurs in the frequency range where originally $\epsLL(\omega, k) < 0$ and no wave could propagate. However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
+Finally, in Fig. \ref{fg_dcll}c, both resonances are combined. The main difference from the cases of isolated resonances occurs in the frequency range where originally $\epsLL(\omega, k)$ was negative and no wave could propagate. %% TODO "Ja to v techobrazech nejak nevidim, nebo presne rerozumim, co tym myslis."
+However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proportional to $k^2$, and consequently a new photonic branch is formed with $\mathrm{d}\omega/\mathrm{d}k < 0$, that is, with opposite group and phase velocities. IFCs for the new band then appear as sketched in Figs. \ref{fg_ifcnr}b and \ref{fg_ifcnrk}b.
 % (electric quadrupoles..., [Merlin])
 % todo Why magnetic resonances do not contribute to the static permeability?
 
 %% XXX up to here revision of FK 2015-06-28 XXX
+%% XXX from  here revision of FK 2015-09-28 XXX
 
 %}}}
-\paragraph{The dispersion of nonlocal media} %{{{ 
+\paragraph{The dispersion in nonlocal media} %{{{ 
 \begin{figure}[t] \caption{Dispersion curves for two nonlocal media. They differ by the value of the fourth-order expansion coefficient $\alpha(\omega)$, which was plotted with a thin blue line. The left and right columns of plots show the same information as in Fig. \ref{fg_dcll}.  } \label{fg_dcll_nl} \centering  
 \textbf{(a)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
 \textbf{(b)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
 \end{figure}
-Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} lead the dispersion curves to deviate from those predicted for local media. This corresponds to the black contour deviating from the green line in Fig. \ref{fg_dcll_nl}.
-As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This is reflected in adding a thin blue line in the left column.
+Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} make the dispersion curves deviate from those predicted for local media. This corresponds to the black contours deviating from the green lines in Fig. \ref{fg_dcll_nl}.
+As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
 
 \label{chap_sd}
-The choice of using the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
+The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
 
 The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other with frequency growing. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
 
@@ -1315,8 +1316,6 @@ In the author's belief, it is necessary to adopt the full theory of spatial-disp
 \section{The boundary between photonic crystals and metamaterials} 
 In the light of the previous historical review, MMs and PhCs are divided by historical reasons as different paradigms that seem to have developed separately for most of the 20th century. At least in the author's view, both paradigms however undergo the process of unification, which incites the question whether there exist any objective rules to tell whether a given structure is a MM or a PhC.
 
-
-%}}}
 \paragraph{The wavelength criterion} %{{{
 Originally, the determining parameter was surely the ratio of the unit cell size to the wavelength of the electromagnetic wave (at the given frequency of operation).
 Even some modern recent papers \cite{tsukerman2011nonlocal} define MMs as \textit{(...) artificial periodic structures with features smaller than the vacuum wavelength}.
