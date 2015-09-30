@@ -1036,7 +1036,9 @@ Thus, the first Bragg band-gap is observed in a periodic structure when the wave
 Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band-gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band-gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}a and \ref{fg_phcfolding}d.
 
 % The waves between the cells in a Bragg band-gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
-The width of the band-gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band-gap can vanish. 
+The width of the band-gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
+% TODO 2 cos(K d) = Tr(M)    -- \cite Y. Fink, J.N. Winn, S. Fan, C. Chen, J. Michel, J.D. Joannopoulos, E.L.  Thomas, Science 282 (1998) 1679
+In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band-gap can vanish. 
 % -> zero-width case (it is a transition between a mode traversing from one photonic band to another --- TODO put into Results)
 
 In analogy with the solid-state physics, where the notion of band-gaps originates from, the Bragg band-gaps can be viewed as the \textit{direct} ones, as the dispersion curves at the lower and upper band-gap edges are at the same wavenumber $K$. In contrast, the individual resonances are analogous to the \textit{indirect} band-gaps, as the internal resonances also cause the 
@@ -1149,7 +1151,7 @@ Although e.g. the physics of the ionosphere involves regions where the permittiv
 after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013epsilon} 
 usually do not discuss any structuration and are thus also applicable to fully homogeneous media of such properties.
 
-Typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than the small critical angle the wave undergoes the \textit{total external reflection}. 
+Typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than the small critical angle the wave undergoes the \textit{total external reflection} \cite{schwartz2003total}. 
 % note: this has been observed in thinned waveguides, too
 % Epsilon-near-zero metamaterials and electromagnetic sources: Tailoring the radiation phase pattern
 
@@ -1270,7 +1272,7 @@ or %todo
 
 %}}}
 \paragraph{Theoretical investigation of the structures on the MM-PhC boundary}%{{{
-Probably it were the miniaturisation issues that incited the studies of the interplay between the individual and Bragg-type resonances, the former being typical for metamaterials, the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007, dominec2014transition} as well as in experiments \cite{rybin2015}),  % and \cite{antonoyiannakis1997mie}?
+Probably due to the miniaturisation issues, the interplay between the individual and Bragg-type resonances was also studied. The former is typical for metamaterials, while the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007, dominec2014transition} as well as in experiments \cite{rybin2015}),  % and \cite{antonoyiannakis1997mie}?
 or tunes the individual resonance frequency keeping the lattice unchanged (e.g. \cite{chakrabarti2012magnetic}). The frequency of the individual and Bragg resonances have different sensitivity to these parameters, and can thus be identified in the spectra. Such a study of a typical structure, the array of dielectric rods, is elaborated in the Results section of this thesis.
 
 %PhCs with metallic/metamaterial inclusions
@@ -1278,10 +1280,12 @@ or tunes the individual resonance frequency keeping the lattice unchanged (e.g. 
 % --- weird, examine
 % 
 
-In the more abstract studies, the structure of the unit cell, with its full electrodynamic behaviour, is substituted by a flat layer characterized only by its effective parameters which may be negative at certain frequencies. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
-This approach is only an approximation, since usually a part of the unit cell behaviour is its coupling with nonradiative fields, which is not taken into account if they are replaced by a layer, but on the other hand it allows for deeper understanding of the factors forming the band diagram.
+In the more abstract studies, the structure of the unit cell with its full electrodynamic behaviour is substituted by a flat homogeneous layer characterized only by its effective parameters which may be negative at certain frequencies. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
+This approach is only an approximation, since usually the unit cell behaviour involves its coupling with nonradiative fields, which can no more be taken into account when they are replaced by a layer. The advantage is however in the possibility to use analytic means for understanding of the factors forming the band diagram.
 
-Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band-gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack was zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occured when the phase advance is $2\pi M, M\in \mathbb{N}$. Another type of a band-gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
+Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack is zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occur when the phase advance is $2\pi M, M\in \mathbb{N}$. The characteristic property of the \textit{zero-order} band gap lies in zero sensitivity to the structure scaling; it can manifest itself even when the layer spacing is deeply subwavelength.
+
+Another type of a band-gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
 %	hypothetical nondispersive N<0 layers interlaced by air - zero-transmission disp curve of adjacent bandgaps
 %	"avg(n)=0" band-gap blocks light even for deeply subwavelength layers
@@ -1295,6 +1299,8 @@ Such an unusual photonic crystal can exhibit a specific \textit{zero order photo
 %Chen2005_Dispersion_of_defect_modes_in_PBG_from_DNG-DPS.pdf
 %	defect modes in "avg(n)=0" bands, expression is given for dispersion curves
 %Jiang2004-Props_of_1D_PhC_containing_SNG.pdf
+%	analytic proof of the zero-avgN gap,  special by: the frequency is independent of the lattice	
+% 	demonstrate a numeric example of an uncommon MM shapes
 %	??? zero-gap width when 1) impedance is matched AND 2) (opt.?) thickness is equal
 %LGWang2004_Omnidirectional_PBG_of_1D_PhC_with_SNG.pdf
 % 	zero-avg(N) band gap is invariant to the wave angle
@@ -1405,7 +1411,7 @@ An important question arises as to what extent the homogenization is applicable,
 
 Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
 
-\cite{Andryieuski2010homogenization}
+% TODO \cite{Andryieuski2010homogenization}
 % classifies homog approaches into 1) s-parameters, 2) field averaging, 3) quasimode[17], 4) wave phenomena
 % elaborates no. 4 to unambiguously retrieve bulk parameters; but there is still one interface and the simulation volume is large
 \cite{Andryieuski2012-Blochmode_analysis_for_effparam.pdf}

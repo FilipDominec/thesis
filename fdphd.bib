@@ -532,7 +532,10 @@ Terahertz spectroscopy of ferroelectrics and related materials
   publisher={APS}
 }
 /*}}}*/
-%  -- homogenisation -- /*{{{*/
+
+
+
+%  -- homogenisation - older  -- 
 @article{nicolson1970measurement,
   title={Measurement of the intrinsic properties of materials by time-domain techniques},
   author={Nicolson, AM and Ross, GF},
@@ -553,7 +556,7 @@ Terahertz spectroscopy of ferroelectrics and related materials
   year={1974},
   publisher={IEEE}
 }
-
+%% first applying NRW method to inhomogeneus cells of a MM, did not discuss possible problems
 @article{smith2002determination, 
   title={Determination of effective permittivity and permeability of metamaterials from reflection and transmission coefficients},
   author={Smith, DR and Schultz, S and Marko{\v{s}}, P and Soukoulis, CM},
@@ -564,37 +567,42 @@ Terahertz spectroscopy of ferroelectrics and related materials
   year={2002},
   publisher={APS}
 }
-@article{terao2011,
-  title={Finite-difference frequency-domain method to study photonic crystals with dispersive metamaterials},
-  author={Terao, Takamichi},
-  journal={Japanese Journal of Applied Physics},
-  volume={50},
-  number={10},
-  pages={2204},
-  year={2011}
-}
-@article{sihvola2009metamaterials,
-  title={Metamaterials: a personal view},
-  author={Sihvola, Ari},
-  journal={Radioengineering},
-  volume={18},
-  number={2},
-  pages={90--94},
-  year={2009}
-}
-
 /*}}}*/
-%  -- Homogenisation and Fresnel inversion --/*{{{*/
+ 
 
-%% review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena"), presents the WPRM (Wave Propagation Retrieval Method)
-@inproceedings{andryieuski2010homogenization,
-  title={Homogenization of metamaterials: Parameters retrieval methods and intrinsic problems},
-  author={Andryieuski, Andrei and Malureanu, Radu and Lavrinenko, Andrei V},
-  booktitle={Transparent Optical Networks (ICTON), 2010 12th International Conference on},
-  pages={1--5},
-  year={2010},
-  organization={IEEE}
+% ################################################################################
+
+%  -- Homogenisation: Ad_Monsoriu --
+
+%	scanning the a/λ ratio of SRR array, "medium progressively becomes less homogenizable", 
+%	discuss the possibility of effparam  when λ~3a, "Bragg scattering ... becomes the dominant"
+%	changing resonance freq -> crossing of indiv/bragg resonances
+@article{chakrabarti2012magnetic,
+  title={Magnetic response of split ring resonator metamaterials: From effective medium dispersion to photonic band gaps},
+  author={Chakrabarti, Sangeeta and Ramakrishna, S Anantha},
+  journal={Pramana},
+  volume={78},
+  number={3},
+  pages={483--492},
+  year={2012},
+  publisher={Springer}
 }
+ 	 	Chan2003 PBG from stack of PIM and NIM
+
+		% analytic 0avgN, Dispersion diagrams, transmission of finite stacks
+ 	 	Chen2005 Dispersion of defect modes in PBG from DNG DPS
+ 	 	Jiang2004 Props of 1D PhC containing SNG
+ 	 	Kocaman Panoiu Zero order PBG in NIM PhC in near infrared
+ 	 	LGWang2004 Omnidirectional PBG of 1D PhC with SNG
+ 	 	Liang2003 Unusual narrow bands in LHM stack
+ 	 	Panoiu2006 ZeroN PBG in PhC superlattices
+ 	 	YihangChen2009 Unusual bands of 1D PhC containing SNG
+
+
+
+%  -- Homogenisation: 120626_Homogenisation_approaches --
+
+
 @article{chen2004robust,
   title={Robust method to retrieve the constitutive effective parameters of metamaterials},
   author={Chen, Xudong and Grzegorczyk, Tomasz M and Wu, Bae-Ian and Pacheco Jr, Joe and Kong, Jin Au},
@@ -605,8 +613,6 @@ Terahertz spectroscopy of ferroelectrics and related materials
   year={2004},
   publisher={APS}
 }
-% Li 2009
-% Rockstuhl 2008
 @article{yang2010retrieving,
   title={Retrieving the effective parameters of metamaterials from the single interface scattering problem},
   author={Yang, Jianji and Sauvan, Christophe and Paul, T and Rockstuhl, C and Lederer, F and Lalanne, Philippe},
@@ -627,7 +633,31 @@ Terahertz spectroscopy of ferroelectrics and related materials
   year={2008},
   publisher={APS}
 }
-j%% TODO understand what this is about
+@article{silveirinha2007metamaterial,
+  title={Metamaterial homogenization approach with application to the characterization of microstructured composites with negative parameters},
+  author={Silveirinha, M{\'a}rio G},
+  journal={Physical Review B},
+  volume={75},
+  number={11},
+  pages={115104},
+  year={2007},
+  publisher={APS}
+}
+  	 	Hasar2011 Retrieval of effparam bianisotropic
+  	 	Chalapat2009 Wideband reference plane invariant
+  	 	Li2009
+  	 	Smith2005 Elmg parameter retrieval from inhom metamaterials
+  	 	Szabo2010
+%% TODO:
+% Luukkonen, O.; Maslovski, Stanislav I. ; Tretyakov, S.A.
+
+
+
+%  -- Homogenisation: misc --
+ 	 	Jelinek2010 Fishnet homogenization
+
+
+%% TODO understand what this is about
 @article{hasar2009new,
   title={A new microwave method based on transmission scattering parameter measurements for simultaneous broadband and stable permittivity and permeability determination},
   author={Hasar, Ugur Cem},
@@ -638,9 +668,28 @@ j%% TODO understand what this is about
   publisher={EMW Publishing}
 }
 
-%% TODO:
-% Luukkonen, O.; Maslovski, Stanislav I. ; Tretyakov, S.A.
+% todo 
+@article{terao2011,
+  title={Finite-difference frequency-domain method to study photonic crystals with dispersive metamaterials},
+  author={Terao, Takamichi},
+  journal={Japanese Journal of Applied Physics},
+  volume={50},
+  number={10},
+  pages={2204},
+  year={2011}
+}
+% todo: read
+@article{sihvola2009metamaterials,
+  title={Metamaterials: a personal view},
+  author={Sihvola, Ari},
+  journal={Radioengineering},
+  volume={18},
+  number={2},
+  pages={90--94},
+  year={2009}
+}
 /*}}}*/
+
 %  -- Current driven homogenisation --/*{{{*/
 @article{markel2013current,
   title={Current-driven homogenization and effective medium parameters for finite samples},
@@ -1858,16 +1907,6 @@ lts.fzu.cz/pdf/d-js.pdf
   editor={Capolino, Filippo},
   year={2009},
   publisher={CRC Press}
-}
-@article{silveirinha2007metamaterial,
-  title={Metamaterial homogenization approach with application to the characterization of microstructured composites with negative parameters},
-  author={Silveirinha, M{\'a}rio G},
-  journal={Physical Review B},
-  volume={75},
-  number={11},
-  pages={115104},
-  year={2007},
-  publisher={APS}
 }
 @article{belov2003strong,
   title={Strong spatial dispersion in wire media in the very large wavelength limit},
