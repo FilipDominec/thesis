@@ -7,6 +7,7 @@
 % 2) investigate how mode anticrossing relates to the significant spatial dispersion
 % 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
 % 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
+%  * 'to that' -> 'to the fact that'
 
 \section{Electrodynamics of local homogeneous media} %{{{
 \subsection{Electromagnetic wave in vacuum}
@@ -615,27 +616,28 @@ Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_
 As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
 
 \label{chap_sd}
-The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole. The relation of higher-order expansion terms of Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
+The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole. The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
 
-The choices of positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate away from each other with frequency growing. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. Author however believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient, and absence of higher-order expansion terms.
+The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
 
 %}}}
 \paragraph{Multiple waves and additional boundary conditions}   %{{{ 
-For both cases shown in Fig. \ref{fg_dcll_nl}, it follows that the dispersion equations can allow multiple solutions with different wavenumber $k$ at one frequency $\omega$, even when the waves have the same orientation and polarisation. (Note that, conversely, multiple solutions with different $\omega$ for a given wavevector $\kk$ are commonly present, as a usual consequence of frequency dispersion even in local media.)
+For both cases shown in Fig. \ref{fg_dcll_nl}, it follows that the dispersion equations can allow multiple solutions with different wavenumbers $k$ at one frequency $\omega$, even when the waves have the same orientation and polarisation. (Note that, conversely, multiple solutions with different $\omega$ for a given wavevector $\kk$ are commonly present, as a usual consequence of frequency dispersion even in local media.)
 
-The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, were predicted by the works of Pekar and others
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, were predicted by the works of Pekar et al.
 %\cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}
-and also suggested by experimental data of dispersion near exciton levels e.g. in cadmium sulphide
+and also suggested by experimental data of dispersion near exciton levels, e.g. in cadmium sulphide
 \cite{pekar1975spatial}. 
 
-In the case of a positive amplitude of $\alpha$ (c.f. Fig. \ref{fg_dcll_nl}a), one of the two solutions of the lower polariton branch has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), giving raise to negative index of refraction in natural homogeneous media.
+The dispersion curves suggest the existence additional waves around $\omega \sim 0.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}a and $\omega \sim 1.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}b. In both cases, one of the two solutions depicted has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), predicting a negative refraction also in natural homogeneous media.
 
 %}}}
-\paragraph{Odd expansion terms and optical activity }   %{{{ 
+\paragraph{Odd-power expansion terms and optical activity }   %{{{ 
 Returning to the power expansion of $\epsLL(\omega, \kk)$ in terms of $k$ in Eq. (\ref{eq_epsmusd1}), we can identify the term constant in $k$ with the electric dipole moment $\chi_e(\omega)$, the term proportional to $k^2$ with the magnetic dipole moment $\chi_m(\omega)$ (or, also the electric quadrupole moment), and the recently discussed term proportional to $k^4$ with an electric octupole or magnetic quadrupole (\cite{agranovich2006spatial, agranovich2004linear, krowne2007book}).
 
-The odd expansion terms were not discussed yet, although they have important physical interpretation -- their nonzero values break the spatial inversion symmetry of the medium, and are thus related to optical activity \cite{bungay1993equivalency}. 
-In media with nonzero odd terms, the corresponding eigenwaves are circularly polarized, and they propagate with different velocity, feeling opposite signs of the odd expansion terms. Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
+The odd-power expansion terms were not discussed yet, although they have an important physical interpretation -- their nonzero values break the spatial inversion symmetry of the medium, and are thus related to optical activity \cite{bungay1993equivalency}. 
+In media with nonzero odd-power terms, the corresponding eigenwaves are circularly polarized, and they propagate with different velocity depending on the direction. %, opposite signs of the odd expansion terms. 
+Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also be viewed as the dispersion curves of the same medium, for the left and right circularly polarized waves.
 
 \begin{figure}[t] \caption{Dispersion curves for two media with optical activity. The left and right columns of plots show the same information as in Figs. \ref{fg_dcll} and \ref{fg_dcll_nl}. The frequency dependence of the function $\gamma_e(\omega)$, which occurs in the term linearly proportional to $k$ in the expansion (\ref{eq_epsmusd1}), is plotted in the left column as a thin red line. } \label{fg_dcllactivity} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_activep.pdf}
@@ -645,39 +647,35 @@ In media with nonzero odd terms, the corresponding eigenwaves are circularly pol
 %}}}
 
 \subsection{Amplitudes of the refraction and reflection}
-\paragraph{The interface of two local media} %{{{ 
-In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs was computed as a result of the local or nonlocal response of the medium. Geometrical arguments then were used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that in some cases the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
+\paragraph{Interface between two local media} %{{{ 
+In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs were computed as a result of the local or nonlocal response of the medium. Geometrical arguments were then used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that, in some cases, the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that both media are local, the \textit{parallel} component of the fields $\E$, $\HH$ with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respectively, that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that both media are local, the components of the fields $\E$, $\HH$ \textit{parallel} with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respectively, that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
 
 The reflection and refraction (i.e. transmission) coefficients for the \textit{amplitudes} of the waves are derived in many textbooks  with different levels of generalisation.  
 In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their \textit{impedances} $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
 with the impedance of each medium
 $Z_{1} = \sqrt{\frac{\murl}{\epsrl}}$.
-Eq. (\ref{eq_reflection}) is analogous to the reflection on a one-dimensional transmission line, as known from the microwave engineering, although the impedance of a transmission line is defined in a more complicated way than in a continuous medium.
+Eq. (\ref{eq_reflection}) is analogous to the reflection in a one-dimensional transmission line, known from the microwave engineering, although the impedance of a transmission line is defined in a more complicated way than in a continuous medium.
 The complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation \cite[p. 38]{born1999book}.  % todo add analytic eqs.?
 
 %}}}
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
-To compute the amplitudes of reflection and transmission for nonlocal media is a substantially more complicated task than for the local media. The fundamental reason is related to that the definition of the medium response (\ref{eq_chi_convol_nonloc}) contains a convolution over an infinite space, which naturally does not account for the interface. For the problem to be better formulated, the integral would have to be modified, either with the nonlocal response of medium to extend also behind the interface, or with the medium response sharply truncated at the interface.
+The task to compute the amplitudes of reflection and transmission for nonlocal media is substantially more complicated than for the local media. The fundamental reason is related to the fact that the definition of the medium response (\ref{eq_chi_convol_nonloc}) contains a convolution over an infinite space, which naturally does not account for the interface. For the problem to be better formulated, the integral would have to be modified, either with the nonlocal response of medium to extend also behind the interface, or with the medium response sharply truncated at the interface.
 
-For weak spatial dispersion, different approaches to the problem are discussed (and corrected) in \cite{golubkov1995boundary}. %Extending the notion of impedance to spatial-dispersive media to compute the amplitudes. 
+For a weak spatial dispersion, different approaches to the problem are discussed (and corrected) in \cite{golubkov1995boundary}. %Extending the notion of impedance to spatial-dispersive media to compute the amplitudes. 
 
 %}}}
 
-\subsection{Phase, group, energy and signal velocity}
+\subsection{Phase, group, energy and signal velocities}
 \label{chap_vfvg}
 \paragraph{Signs of the phase and group velocities}%{{{ TODO
-The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to maintain its component perpendicular to the interface, and for the wave vector $\kk$ to maintain its projection onto the plane of interface. 
+The negative refraction in media shown in Figs. \ref{fg_ifcnr}b,c and \ref{fg_ifcnrk}b,c was a result of the requirement for the group velocity $\vg$ to conserve its component perpendicular to the interface, and for the wave vector $\kk$ to conserve its projection onto the plane of interface. 
 
-It was assumed that the group velocity coincides with the energy or information propagation, and therefore that it should always be "positive", that is, it should propagate towards the interface in the first medium and outwards from it in the second one.  in the following paragraphs, This assumption will be challenged for special cases, but usually it is correct and the terminology of \textit{negative phase} velocity is used when it is opposite to the group velocity.
+It was assumed that the group velocity coincides with the energy or information propagation, and therefore that it should always be "positive", that is, it should propagate towards the interface in the first medium and outwards from it in the second one. In the following paragraphs, this assumption will be challenged for special cases of absorbing media, but it will be shown that in media with low losses it is correct and the term of \textit{negative phase} velocity is used when it is opposite to the group velocity.
 
-Therefore, in media with low losses, the term of negative refraction 
-
-\add{... in media with time reversal, the wave may always propagate backwards - we should always speak of mutual sign of the velocities}
-
-phase velocity is often higher than the speed of light, this is no problem\\
+Note that the phase velocity does not carry energy, it can be also higher than the speed of light in vacuum, as is typically obtained in inductive media.
 
 %}}}
 \paragraph{Signs of the group and energy velocities}  % TODO %{{{
@@ -687,31 +685,31 @@ phase velocity is often higher than the speed of light, this is no problem\\
 %  *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
 %  *			  nonlocal media -> weird things happen, todo\\
 %  }
-In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates out \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave \cite[p. 16]{klingshirn2007semiconductor}. 
+In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates away \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave \cite[p. 16]{klingshirn2007semiconductor}. 
 
-The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. If the medium is defined as a lossy one, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative around the resonance for $\omega \sim 2\pi$, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
+The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. If the medium is defined lossy, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative around the resonance for $\omega \sim 2\pi$, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
 
-It follows from this that the group velocity $\vg$ can also point opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
+It follows from this that the group velocity $\vg$ can also point in a direction opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
 % This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
 This behaviour can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
-Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to maintain its perpendicular component and that the group velocity has inevitably to point towards the interface also in the second medium, which seems contradictory to causality.
+Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to conserve its perpendicular component and that the group velocity has inevitably to point towards the interface also in the second medium, which seems contradictory to causality.
 This result 
 %of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, 
-may however be explained through strong deformation of the envelope shape on a short distance, which ensures the information carried by the wave modulation to propagate causally, out from the source, and always with speed lower or equal to the speed of light in vacuum $c$.
+may however be explained by a strong deformation of the envelope shape on a short distance. %, which ensures the information carried by the wave modulation to propagate causally, out from the source, and always with speed lower or equal to the speed of light in vacuum $c$.
 
-Negative group velocity has been experimentally observed in a thin sample. It manifested as a negative shift of the light envelope compared to the absence of the medium \cite{dolling2006simultaneous}. Note that the negative group velocity is independent of the sign of the phase velocity, which may be both positive and negative \cite{mikki2009electromagnetic}.
+A negative group velocity has been experimentally observed in a thin sample. It manifested itself as a negative shift of the light envelope center-of-mass compared to the absence of the medium \cite{dolling2006simultaneous}. Note that the negative group velocity is independent of the sign of the phase velocity, which may be both positive and negative \cite{mikki2009electromagnetic}.
 
 %}}}
 \paragraph{Signal velocity}%{{{
 The notion of \textit{signal} or \textit{information propagation velocity} is sometimes % TODO cite
-identified with the group velocity, $\vg$. However, this may be misleading, as the differential definition of the group velocity in Eq. (\ref{eq_vg}) enables one to define it for slow-enough modulation only, so that the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
+identified with the group velocity, $\vg$. However, this may be misleading, as the differential definition of the group velocity in Eq. (\ref{eq_vg}) enables one to define it for slow-enough modulation only, as long as  the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
 
-Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), one leaves the comfortable approximation of narrow spectrum: from the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a compact support has to span over an infinite spectrum. The proof \cite{hill2013uncertainty} can be drawn along the line of that under multiplication by some compact-supported binary functions, e.g., 
+Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), one leaves the comfortable approximation of narrow spectrum: from the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a compact support has to span over an infinite spectrum. The proof \cite{hill2013uncertainty} can be based on the obvious fact that under multiplication by a well chosen compact-supported binary function, e.g., 
 $$ f(t) \rightarrow f(t) \cdot \mathrm{sign}^2[f(t)], $$
-the original function does not change.
+the original function does not change, yet the Fourier transform of this binary function is nonzero over almost all frequencies. 
 
-A temporally limited optical pulse will be always more or less distorted upon propagation in dispersive medium where the dispersion curves are not straight. Then the information velocity becomes a problematic term. If the information can be detected exactly in the first moment when the fields deviate from strict zero, one comes to the surprising conclusion that, in dispersive media, the information propagates probably with the speed of light. In the opposite example of a highly noisy channel, the pulse may be reliably detected only after most its energy already arrived. To conclude, the author is convinced that the notion of \textit{information velocity} is too vague unless its exact definition is provided first, and should not be directly associated with the group velocity. 
+A temporally limited optical pulse will be always more or less distorted upon propagation in a dispersive medium where the dispersion curves are not straight. Then the information velocity becomes a problematic term. If the information can be detected exactly in the first moment when the fields deviate from strict zero, one comes to the surprising conclusion that, in dispersive media, the information propagates probably with the speed of light. In the opposite example of a highly noisy channel, the pulse may be reliably detected only after most of its energy already arrived. To conclude, the author is convinced that the notion of \textit{information velocity} is too vague unless its exact definition is provided first, and should not be directly associated with the group velocity. 
 
 %}}}
 %% TODO \paragraph{Speed of light and causality in nonlocal media}%{{{
@@ -728,23 +726,23 @@ A temporally limited optical pulse will be always more or less distorted upon pr
 \section{Electromagnetic waves in periodic structures}%{{{
 \subsection{Periodic structures and the Bloch theorem}
 \paragraph{Inhomogeneity}%{{{
-The previous sections discussed infinite media, with the only deviation from homogenity at an interface of two media, where refraction of the waves is observed, and it was shown that the resulting orientation of the wave vector and of the group velocity could be easily deduced on geometrical basis. The amplitude of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
+The previous sections discussed infinite media, with the only deviation from homogenity at an interface of two media, where refraction of the waves is observed, and it was shown that the resulting orientation of the wave vector and of the group velocity could be easily deduced on a geometrical basis. The amplitudes of the reflected and refracted waves can be also easily computed for local media, whereas their computation for nonlocal media is much less straightforward. 
 
-There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interaction with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
+There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interactions with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
 
-The interaction of electromagnetic waves with most of possible structures is too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting periodic structure behaves in a way that is characteristic for the periodicity and its most important traits can again be partially understood on analytical basis.
+The interactions of electromagnetic waves with most of possible structures are too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting periodic structure behaves in a way characteristic for the periodicity and its most important traits can again be partially understood on an analytical basis.
 This chapter focuses on these general properties shared by periodic structures, leaving the particular numerical simulations to the Results section.
 
 %}}}
 \paragraph{Periodicity}%{{{
-Under the notion of \textit{periodicity} we understand there exist discrete translational symmetries. In three dimensions, that is 
-\begin{equation} \epsrl(\omega,\rr) = \epsrl(\rr + m_1 \ava + m_2 \avb + m_3 \avc) \quad\text{ where }\quad m_1, m_2, m_3 \in \mathbb{Z} \label{eq_trsym}\end{equation}
-and $\ava, \avb, \avc$ are three linearly independent vectors. The permittivity, given by Eq. (\ref{eq_lorentz_eps}), was intuitively generalized to a function of the position $\rr$. The same periodicity is also imposed on the permeability $\murl(\omega,\rr)$ and possibly all other quantities. Note that the constituent media are described by the \textit{local} quantities only, to avoid possible problems at the boundary computing the spatial convolution  in nonlocal media, Eq. (\ref{eq_eps_nonloc}). 
+Under the notion of \textit{periodicity} we understand the existence of discrete translational symmetries. In three dimensions, we can write
+\begin{equation} \epsrl(\omega, \rr) = \epsrl(\omega, \rr + m_1 \ava + m_2 \avb + m_3 \avc) \label{eq_trsym}\end{equation}
+where $m_1, m_2, m_3 \in \mathbb{Z}$ and $\ava, \avb, \avc$ are three linearly independent vectors. The local permittivity, given by Eq. (\ref{eq_lorentz_eps}), was intuitively generalized to a function of the position $\rr$. The same periodicity is also imposed on the permeability $\murl(\omega,\rr)$ etc. The constituent media are described by the \textit{local} quantities only, to avoid possible problems at the boundary computing the spatial convolution  in nonlocal media, Eq. (\ref{eq_eps_nonloc}). 
 
 The points generated by all combinations of possible translations by $m_1 \ava + m_2 \avb + m_3 \avc$ form a periodic lattice.
 The volume defined as a \textit{set of points closest to} one given point of the lattice will be denoted as a \textit{unit cell} (similar to the \textit{Wigner-Seitz cell} in solid-state physics). Obviously, the permittivity or permeability in periodic structures needs only to be specified in the domain of one unit cell.
 
-The choice of lattice vectors $\avabc$ limits the set of the rotation or mirror symmetries of the structure. Based on the allowed symmetries, all lattices in three dimensions can be classified into six \textit{crystal families}, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal-trigonal} and \textit{triclinic}. Combined with additional restrictions of the symmetry given by the structure with each unit cell, all periodic structures can be classified into total 230 \textit{crystallographic point groups}. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. 
+The choice of lattice vectors $\avabc$ limits the set of the rotation or mirror symmetries of the structure. Based on the allowed symmetries, all lattices in three dimensions can be classified into six \textit{crystal systems}, namely \textit{cubic}, \textit{tetragonal}, \textit{ortorhombic}, \textit{monoclinic}, \textit{hexagonal-trigonal} and \textit{triclinic}. Combined with additional restrictions of the symmetry given by the structure with each unit cell, all periodic structures can be classified into total 230 \textit{crystallographic space groups}. Numerous crystal optics textbooks (e.g. \cite[p. 678]{born1999book}) give more rigorous definitions. 
 
 Unless stated otherwise, we will assume that the cubic lattice is used, which allows the highest possible symmetry. In the cubic lattice, the lattice vectors $\avabc$ are of the same magnitude $a$ and mutually orthogonal. % Note, however, that even the structure with a periodic modulation of permittivity is no more isotropic, i.e. posessing continuous rotational symmetry.
 
@@ -757,7 +755,7 @@ The \textit{Bloch} (or \textit{Bloch-Floquet}) theorem states that while the har
 \begin{equation}
 \HH(t, \rr) = \mathbf{u_m}(\rr)\,\mathrm{e}^{\ii\omega t - \ii\KK\cdot\rr}, \text{ where } \mathbf{u_m}(\rr) = \mathbf{u_m}(\rr + m_1 \ava + m_2 \avb + m_3 \avc).
 \label{eq_blochh}\end{equation} 
-As a rule of all linear systems, any sum of Bloch waves is also a proper solution, but for simplicity we will focus on one Bloch wave at a time.
+As a rule, in all linear systems, any sum of Bloch waves is also a proper solution, but for simplicity we will focus on one Bloch wave at a time.
 
 Functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$ have the same periodicity as the structure, and will be denoted as the \textit{mode functions}. They are, in general, complex vector functions, so they not only alter the direction and magnitude of the electric and magnetic fields, but can also introduce a \textit{phase modulation} of the wave in each unit cell. 
 
@@ -771,12 +769,12 @@ Note that the Bloch theorem does not determine the shape of $\mathbf{u_e}(\rr)$,
 
 %}}}
 \paragraph{Proof of the Bloch theorem in one dimension}%{{{
-This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of such a proof in one dimension, which is the most often found in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
+This theorem is essential for understanding the electromagnetic behaviour of periodic structures, and it deserves a proof. Originally, it was developed for the electron wave function $\psi$ in crystals on the basis of quantum mechanics. The outline of such a proof in one dimension, which is the most usual one in textbooks (e.g. \cite[p. 134]{ashcroft2005solid}) is based on the following:
 \label{blochproof}
 \begin{enumerate}
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
- \item{Then $(T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. \todo{this is perhaps redundant; remove this step?} }
+ \item{Then $(\hat T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. \todo{this is perhaps redundant; remove this step?} }
  \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ is eigenfunction of the translation operator, that is,
 $\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{HT=TH implies eig common} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being shifted by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
 %$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
@@ -885,10 +883,10 @@ The lattice periodicity allows to draw the dispersion curves of periodic structu
 \subsection{Dispersion in periodic structures}
 \paragraph{Folding of the dispersion curves} %{{{
 All possible dispersion curves for a \textit{Bloch wave in vacuum} with the $\KK$ vector oriented along one lattice axis in vacuum are plotted in Fig. \ref{fg_phcfolding}a. The dispersion curve for the original forward wave from Eq. (\ref{eq_blochvac}) is plotted in blue; another solution exists for a wave propagating in the opposite direction which is plotted in red. All other solutions generated by Eq. (\ref{eq_blochvac2}) are plotted in gray, for both forward and backward waves. 
-Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(\rr)$, can not be deduced from the dispersion curve. To fully determine the fields, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$ (that depend on the frequency). 
+Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(\rr)$, can not be deduced from the dispersion curve. To fully determine the fields, the dispersion curves would have to be complemented by the mode functions $\mathbf{u_e}(\rr)$ and $\mathbf{u_m}(\rr)$, which depend on the frequency. 
 
 \label{par_disp_curv_per}
-The inherent ambiguity of description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent \cite[p. 177]{brillouin2003wave}. 
+The inherent ambiguity of the description on the basis of the Bloch wave can be used to graphically save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent \cite[p. 177]{brillouin2003wave}. 
 
 The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
 
@@ -901,7 +899,7 @@ The mathematical interpretation of folding the dispersion curves in vacuum can b
 For  $\omega\in\langle 0, \pi c /a\rangle$, the mode function is constant in space, $\mathbf{u_e}(\rr) := E_0$, and $K := \omega/c$. 
 } 
 \item{
-At the first point of folding for $K=\pi/a$, the mode function changes to $\mathbf{u_e}(\rr) := E_0 e^{2\pi\ii r/a}$ and the formal solution of the \textit{backward} wave is used with $K := 2\pi r/a - \omega r/c$.  The phase advance across one unit cell remains positive, since the negative phase advance of the backward-wave envelope is less than the phase contribution of the mode function.
+At the first point of folding for $K=\pi/a$, the mode function changes to $\mathbf{u_e}(\rr) := E_0 e^{2\pi\ii r/a}$ and the formal solution of the \textit{backward} wave is used with $K := 2\pi r/a - \omega r/c$.  The phase increase across one unit cell remains positive, since the phase decrease of the backward-wave envelope is less than the phase contribution of the mode function.
 } 
 \item{
 When the dispersion curve touches the $K=0$ axis at the frequency $\omega = 2\pi c/a$, the mode function is not changed, but the dispersion curve continues again along with the \textit{forward} wave $K := - 2\pi r/a + \omega r/c$. 
@@ -923,15 +921,15 @@ We will show in the Results section on a particular example that some numerical 
 
 %}}}
 \paragraph{Fourier expansion of the mode function}%{{{ 
-If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shape can thus be decomposed into Fourier series
+If the periodic structure is not homogeneous, that is, $\epsrl(\omega,\rr)$ or $\murl(\omega,\rr)$ depends on $\rr$, the mode functions $\mathbf{u_{em}}(\rr)$ are no more constant nor harmonic as they were in Eq. (\ref{eq_blochvac2}). They however still share the periodicity of the lattice, as dictated by the Bloch theorem in Eq. (\ref{eq_bloch}), and their exact shapes can thus be decomposed into Fourier series
 characteristic for the structure and the frequency of operation, defining nonzero amplitudes for all branches. The grey lines plotted in Fig. \ref{fg_phcfolding} then are no more hypothetical solutions to be chosen from, but they all have real amplitudes, and are present simultaneously. 
 Note this does not contradict the ambiguity of choice of the Bloch wavevector $\KK$, which stems from the  mathematical representation of the Bloch wave.
 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
-The periodically repeated one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}.  \todo{unify somehow the alternating explanation in 1-D and 3-D}
+The periodically repeating one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}.  \todo{unify somehow the alternating explanation in 1-D and 3-D}
 The $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. 
-All Brillouin zones have equal measure, and moreover, they can be rearranged into the first one by simple translation. %% TODO specify what this re-arrangement means
+All Brillouin zones have equal measure (i.e. length, area or volume), and moreover, they can be transformed into the first one by simple translation. %% TODO specify what this re-arrangement means
 
 In the one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$ for the second one etc. 
 
@@ -951,7 +949,7 @@ The fundamental difference between plotting of one dispersion curve and the isof
 A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out its inner surface.
 
 The notation of high-symmetry points in the $\KK$-space is standardized. For the square lattice in two dimensions, four high-symmetry points are named as follows: "$\mathbf{\Gamma}$" corresponds to the center, $K=0$. Provided that the first lattice vector $\ava$ is parallel to the $x$-axis of the coordinate system, the point where $\KK = (\pi/a, 0)$ is denoted as  "$\mathbf{X}$" and the point $\KK = (0, \pi/a)$ as "$\mathbf{Y}$". Finally, the diagonal point of $\KK = (\pi/a, \pi/a)$ is known as "$\mathbf{M}$".
-In two-dimensional case, the dispersion curves are typically plotted along the triangle encircling the irreducible Brillouin zone: $\mathbf{\Gamma}-\mathbf{X}-\mathbf{M}-\mathbf{\Gamma}$.
+In a two-dimensional case, the dispersion curves are typically plotted along the triangle encircling the irreducible Brillouin zone: $\mathbf{\Gamma}-\mathbf{X}-\mathbf{M}-\mathbf{\Gamma}$.
 
 In three-dimensional cubic lattice, these points maintain their meaning in the plane perpendicular to the $z$-axis \cite[p. 99]{klingshirn2007semiconductor}. Additionally, "$\mathbf{R}$" denotes the spatial diagonal of $\KK = (\pi/a, \pi/a, \pi/a)$. Other lattices introduce more complex sets of the high-symmetry points and the paths along which the dispersion curves are plotted do not seem to be standardized.
 
@@ -962,7 +960,7 @@ In three-dimensional cubic lattice, these points maintain their meaning in the p
 %}}}
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
 %% %}}}
-\paragraph{Tight-binding model for the photonic band-gaps} %{{{
+\paragraph{Tight-binding model for the photonic band gaps} %{{{
 The notation of the high-symmetry points in the Brillouin zone can outline a different way of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
 or also \textit{hopping},  %% TODO cite?
 model in solid-state physics. 
@@ -972,7 +970,7 @@ Analyzing one unit cell isolated in free space, one obtains its natural resonanc
 
 For a steady oscillatory solution to be obtained, the electromagnetic fields in the surrounding cells must have the same modulus of oscillation amplitude, but they do not need to share the phase. This is equivalent to a single Bloch wave propagating in the structure. 
 
-Identical phase in all cells corresponds to zero Bloch wave vector, $\KK = 0$, and to the point $\mathbf{\Gamma}$ in the center of the Brillouin zone. Under the basic assumption that the fields $\E, \HH$ are continuous and smooth vector functions, identical phase of adjacent cells translates into
+Identical phase in all cells corresponds to a zero Bloch wave vector, $\KK = 0$, and to the point $\mathbf{\Gamma}$ in the center of the Brillouin zone. Under the basic assumption that the fields $\E, \HH$ are continuous and smooth vector functions, the requirement of an identical phase of adjacent cells translates into
 \begin{equation} \frac{\partial \E}{\partial\mathbf{n}} = \frac{\partial \HH}{\partial\mathbf{n}} = 0 \quad\text{(Neumann boundary conditions).} \label{eq_bcond_neumann}\end{equation} 
 Here, the operator $\partial/\partial \mathbf{n}$ denotes the derivative along the normal to the boundaries.
 
@@ -980,7 +978,7 @@ Other special cases are observed when $\KK$ is in some of the high-symmetry poin
 \begin{equation} \E = \HH = 0 \quad\text{(Dirichlet boundary conditions).} \label{eq_bcond_dirichlet}\end{equation} 
 
 The $\mathbf{X}$ and $\mathbf{Y}$ points are combination of the Dirichlet and Neumann boundary conditions for two different directions.
-As a generalization of the above mentioned, the boundary conditions can be found for any point in the Brillouin zone, provided that correct phase difference between all opposite faces is correctly maintained.
+As a generalization of the above mentioned criteria, the boundary conditions can be found for any point in the Brillouin zone, provided that a correct phase difference between all opposite faces is conserved.
 
 The stronger the coupling between the neighbouring cells, the bigger the difference between the resonance frequencies for the $\mathbf{\Gamma}$ and $\mathbf{X}$ points. Returning to the definition of the group velocity in Eq. (\ref{eq_vg}), one comes to the already expected fact that the energy transfer is proportional to the strength of the inter-cell coupling.
 
@@ -989,66 +987,69 @@ The stronger the coupling between the neighbouring cells, the bigger the differe
 %%% Near the $\mathbf{\Gamma}$, $\mathbf{\Gamma}$K~or $\mathbf{\Gamma}$M points, the spatial dispersion must be strong to account for the zero group velocity, and actual bending of the dispersion curve downwards in the adjacent zone. The effect can however not be directly interpreted as the negative group velocity, as the dispersion curve only corresponds to one term in the Fourier expansion of the field shape. 
 %%% %}}}
 
-\subsection{Band-gaps} 
-\paragraph{Properties of band-gaps} %{{{
-In the plots of dispersion curves, one could identify ranges of frequencies which were not associated with any dispersion curve. 
-They could be observed for a local dielectric (Figs. \ref{fg_dcsimpleel} and \ref{fg_dcll}), for nonlocal dielectrics (Figs. \ref{fg_dcll_nl}, \ref{fg_dcllactivity}), as well as for periodic structures in Fig. \ref{fg_phcfolding}. Such regions are denoted as (electromagnetic) \textit{band-gaps}. They are a very common phenomenon both in dispersive homogeneous media and periodic structures. 
-While the wave propagation received due attention in the above, also the wave "non-propagation" deserves to be commented here.
+\subsection{Band gaps} 
+\paragraph{Properties of band gaps} %{{{
+In the plots of dispersion curves, one can identify ranges of frequencies which are not associated with any dispersion curve. 
+They could be observed for a local dielectric (Figs. \ref{fg_dcsimpleel} and \ref{fg_dcll}), for nonlocal dielectrics (Figs. \ref{fg_dcll_nl}, \ref{fg_dcllactivity}), as well as for periodic structures in Fig. \ref{fg_phcfolding}. Such regions are denoted as (electromagnetic) \textit{band gaps}. They are a very common phenomenon both in dispersive homogeneous media and periodic structures. 
+While the wave propagation received due attention in the above, also the wave "non-propagation" deserves to be commented.
 %It is essential to point out the similarities and eventual differences between them.
 
-The band-gap behaviour is simplest to be described in isotropic media, analogous to the one-dimensional case: for a frequency within the band-gap, no wavevector $\KK$ can be found under which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band-gap for one polarisation and only in some set of wave vector orientations.
+The band-gap behaviour is the simplest to be described in isotropic media, analogous to the one-dimensional case: for a frequency within the band gap, no wavevector $\KK$ can be found with which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band gap for one polarisation and only in some set of wave vector orientations.
 
-A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations however require that the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential manner with the distance below the interface.
+A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges upon an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations however require that the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential manner with the distance below the interface.
 
-If losses are present, part of the impinging wave energy may be also dissipated. Nonetheless, he exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law in absorbing media.
+If losses are present, a part of the impinging wave energy may be also dissipated. Nonetheless, the exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law in absorbing media.
 
-A scenario less typical, but not less instructive, is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band-gap. Intuitively, one could expect such a "hard" dipole will inevitably put energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole act, with regards the driving force, as a purely elastic or inertial load. In particular, if the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. Thus, for continuous oscillations, all energy will be returned to the driving mechanism. 
+A less usual, but equally instructive, scenario is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band gap. Intuitively, one could expect such a "hard" dipole could inevitably radiate energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole act, with regards the driving force, as a purely elastic or inertial load. In particular, if the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. Thus, for continuous oscillations, all energy will be returned to the driving mechanism. 
 
-To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole completely disappears. However, the nature of the band-gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad spectrum and it would radiate the energy in the neighbouring allowed bands. 
+To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole completely disappears. However, the nature of the band gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad spectrum and it would radiate the energy in the neighbouring allowed bands. 
 
 % }}}
-\paragraph{Band-gaps stemming from individual resonances}%{{{
-One common class of band-gaps is based on \textit{individual resonances} in the medium or structure. These band-gaps are often observed in realistic natural media, where the resonances arise from the vibration of electrons, atoms or molecules, as described above. 
-Although realistic media are composed of a lattice of individual atoms, which would suggest that even here the wave has the Bloch form of Eqs. (\ref{eq_bloch},\ref{eq_blochh}), the atoms are roughly $10^{4}$ times smaller than the wavelength, and the electromagnetic wave can be sufficiently approximated as a harmonic wave in Eq. (\ref{eq_pw}) with a well-defined wavelength.  To make this harmonic approximation, it is important that these particles are small and close to each other compared to the wavelength. % ; otherwise  % 
+\paragraph{Band gaps stemming from individual resonances}%{{{
+One common class of band gaps is based on \textit{individual resonances} in the medium or structure. These band gaps are often observed in realistic natural media, where the resonances arise the vibrations of electrons, atoms or molecules, as described above. 
+Although realistic crystalline media are composed of a lattice of individual atoms, which would suggest that even here the wave has the Bloch form of Eqs. (\ref{eq_bloch},\ref{eq_blochh}), the atoms are roughly $10^{4}$ times smaller than the wavelength, and in Eq. (\ref{eq_pw}) the electromagnetic wave can be satisfactorily approximated as a harmonic wave with a well-defined wavelength. To make this harmonic approximation, it is important that these particles are small and close to each other compared to the wavelength. % ; otherwise  % 
 
 Periodic structures can similarly exhibit a resonance confined in the unit cell. 
 To the author's knowledge,  %% XX?
 every possible shape formed from a dielectric or metal has infinitely many resonance modes,  %% ... high-permittivity and...
-characteristic by relatively high concentration of energy in the structure, or near to it, and relatively weak coupling to the incident electromagnetic wave.  %% ... More specific rules will be given in the Results.
-Arranging such resonant elements into the lattice is a fundamental step in building a periodic structure with resonant behaviour. In such structures, the dispersion for the Bloch wave follows a resonance curve similar (but not the same) as in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory}, and the word \textit{microscopic} is left for the much finer fields in the constituent atoms or molecules.
+characteristic by a relatively high concentration of energy in the structure, or near to it, and a relatively weak coupling to the incident electromagnetic wave.  %% ... More specific rules will be given in the Results.
+Arranging such resonant elements into the lattice is a fundamental step in building a periodic structure with resonant behaviour. In such structures, the dispersion for the Bloch wave follows a resonance curve similar (but not the same) as that in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory}, and the word \textit{microscopic} is left for the much finer fields in the constituent atoms or molecules.
 
-Another important characteristic of individual resonances is in a \textit{qualitative} change in the field shape between the lower and upper edge of the band-gap. This is true for natural media as well as for lattices of individual resonators. Typically, at the lower band-gap edge, the dipoles are \textit{in-phase} with the wave, whereas at the upper edge, they are \textit{in counter-phase}.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
+Another important characteristic of individual resonances consists in a \textit{qualitative} change in the field shape between the lower and upper edge of the band gap. This is true for natural media as well as for lattices of individual resonators. Typically, at the lower band-gap edge, the dipoles are \textit{in-phase} with the wave, whereas at the upper edge, they are \textit{in counter-phase}.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
 Inside the bandgap, usually closer to the lower frequency edge, a resonance frequency is located (c.f. Fig. \ref{fg_oscillator_spectrum}).
 
-Yet another characteristic is that the resonant interaction of a particle with the wave can be approximated as a point dipole or multipole. As is dictated by the symmetry of the resonant field in the particle, the dipole moment may be electric, magnetic, zero or both simultaneously. A particle has multiple resonances at different frequencies, each of them having usually either an electric or a magnetic dipole. In particles of lower symmetry, one resonant mode may have both nonzero dipole moments simultaneously; this leads to optical activity. 
+Yet another characteristic is whether the resonant field shape in the structure unit cell can be approximated as a point dipole or multipole. Depending on the symmetry of the field, the dipole moment may be electric, magnetic, zero or both simultaneously. Most types of structures exhibit multiple resonances at different frequencies, each of them having usually either an electric or a magnetic dipole. In structures of lower symmetry, one resonant mode may have both nonzero dipole moments simultaneously; this leads to optical activity. 
 
-Other resonances have both dipole moments zero, which in general results from higher rotational symmetry of the fields. Their interaction with the electromagnetic wave is mediated by the electric or magnetic \textit{quadrupole moment} (or even higher \textit{multipole} \cite{merlin2009metamaterials}). This interaction is usually weak, however it grows with the wavenumber $k$. Such multipole moments often complement dipole resonances, and are responsible for spatial dispersion, see Chapter \ref{chap_sd}. %% TODO this should be moved elsewhere...
+Other resonances have both dipole moments zero, which in general results from higher rotational symmetry of the fields. Their interaction with the electromagnetic waves is mediated by the electric or magnetic \textit{quadrupole} (or even higher \textit{multipole} \cite{merlin2009metamaterials}) moment. This interaction is usually weak, however it grows with the wavenumber $k$. Such multipole moments often complement dipole resonances, and are responsible for the spatial dispersion, see Chapter \ref{chap_sd}. %% TODO this should be moved elsewhere...
 %% TODO how much should be "predicted" here, and nhow much should be left for the Results section?
 
 %}}}
-\paragraph{Bragg band-gaps}%{{{ TODO
-Band-gaps of a different type, denoted as Bragg band-gaps or also as \textit{photonic band-gaps} (PBG), are observed exclusively in periodic structures when an integer number of half-waves fits into the unit cell. 
-In the above mentioned periodic lattice of isolated particles, the Bragg band-gap can therefore be understood as a resonance of the electromagnetic wave in the space \textit{between} the particles, in contrast with the individual resonances where most of the energy is localised \textit{inside} the particles -- or at least very close to them.
+\paragraph{Bragg band gaps}%{{{ TODO
+Band gaps of a different type, denoted as Bragg band gaps or also as \textit{photonic band gaps} (PBG), are observed exclusively in periodic structures when an integer number of half-waves fits into the unit cell. 
+In the above mentioned periodic lattice of isolated particles, the Bragg band gap can therefore be understood as a resonance of the electromagnetic wave in the space \textit{between} the particles, in contrast with the individual resonances where most of the energy is localised \textit{inside} the particles -- or at least very close to them.
 
-Along an axis of a cubic lattice, with unit cell size $a$, the rule for the Bragg band-gaps to be observed is particularly simple:
+Along an axis of a cubic lattice with unit cell size $a$, the rule for the Bragg band gaps to be observed is particularly simple:
 \begin{equation} K= \frac{\pi m}{a}, m\in\mathbb{N}. \label{eq_braggbg}\end{equation}
-Thus, the first Bragg band-gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
-Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band-gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band-gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}a and \ref{fg_phcfolding}d.
+Thus, the first Bragg band gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
+Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
 
-% The waves between the cells in a Bragg band-gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
-The width of the band-gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
+% The waves between the cells in a Bragg band gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
+The width of the band gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
 % TODO 2 cos(K d) = Tr(M)    -- \cite Y. Fink, J.N. Winn, S. Fan, C. Chen, J. Michel, J.D. Joannopoulos, E.L.  Thomas, Science 282 (1998) 1679
-In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band-gap can vanish. 
+In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band gap can vanish. 
 % -> zero-width case (it is a transition between a mode traversing from one photonic band to another --- TODO put into Results)
 
-In analogy with the solid-state physics, where the notion of band-gaps originates from, the Bragg band-gaps can be viewed as the \textit{direct} ones, as the dispersion curves at the lower and upper band-gap edges are at the same wavenumber $K$. In contrast, the individual resonances are analogous to the \textit{indirect} band-gaps, as the internal resonances also cause the 
-This difference arises from the fact that the behaviour of the structure does not fundamentally change between the lower and upper band-gap edge. The difference can however be always found in the location of the \textit{nodal planes}. 
+In analogy with the solid-state physics, where the notion of band gaps originates from, the Bragg band gaps can be called \textit{direct} if the dispersion curves at the lower and upper band gap edges are at the same wavenumber $K$. 
+Equivalently, between the lower and upper edge of the Bragg band gap, the phase increase across an unit cell does not change. The different field shape can however be always found in the location of the \textit{nodal planes}. 
+
+In contrast, the individual resonances are analogous to the \textit{indirect} band gaps, as the of phase increase over an unit cell is different  for frequencies below and above the individual resonance. Some particular examples are shown later.
+
 % -> Field shape: concept of nodal planes (or, more precisely, surfaces)
 % -> exponential wave decay with phase difference across the cell
 
 %}}}
-%% TODO \paragraph{Other types of band-gaps}%{{{
-%% In the literature, also other types of band-gaps were identified.  zero-average-index band gaps?
+%% TODO \paragraph{Other types of band gaps}%{{{
+%% In the literature, also other types of band gaps were identified.  zero-average-index band gaps?
 
 % a) the zero averaged refractive index, b) the zero permeability and c) the zero permittivity gaps
 % in
@@ -1063,72 +1064,71 @@ The scientific progress rarely follows a straightforward, efficient way. Making 
 Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
 
 A split in terminology is apparently not only a formal issue, as it psychologically divides the scientific community and thus directs the future research.
-Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes the mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
+Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes a mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
 
 
 Following the author's personal view,
-the following historical notes on metamaterials and photonic crystals are organized into three independent paradigms that developed in parallel, and only later they were unified. Each of them, on its own, once might seem to already have given their fruits, but their \textit{unification} appears to have renewed the scientific interest and pushed the research further. 
+the historical notes on metamaterials and photonic crystals below are organized into three independent paradigms that developed in parallel, and only later they were unified. Each of them, on its own, once might seem to already have given their fruits, but their \textit{unification} appears to have renewed the scientific interest and pushed the research further. 
 
-This chapter can in no way cover all relevant papers and ideas over the last century; much better resources on the history of the field are in \cite{shamonina2007metamaterials,eleftheriades2012transforming, paudyal2013left}, 
-, at the web pages of Moroz \cite{moroz} etc. Also the actual designs of the periodic structures are mentioned very briefly, since they will be the subject of the Results section.
+This chapter can in no way cover all relevant papers and ideas over the last century; much better resources on the history of the field are in \cite{shamonina2007metamaterials,eleftheriades2012transforming, paudyal2013left}, at the web pages of Moroz \cite{moroz} etc. Also the actual designs of the periodic structures are mentioned very briefly, since they will be the subject of the Results section.
 
 % TODO incorporate TODO Note that the concept of metamaterials is not even limited to electrodynamics; macroscopic mechanical structures were demonstrated to exhibit comparable phenomena for acoustic waves. %CITE
-% Photonic crystal slabs with band-gaps for electromagnetic and acoustic waves are also investigated %CITE O. Painter's lab
+% Photonic crystal slabs with band gaps for electromagnetic and acoustic waves are also investigated %CITE O. Painter's lab
 % Staying in the electrodynamics field, metamaterial research is not limited to spatial structures only; so called \textit{metasurfaces} are developed to widely engineer the impedance of the surface, to enhance nonlinearity and to construct absorbers or high-contrast filters with tunable properties.
 
 %}}}
 
 \subsection{Photonic band-gap structures} 
-\paragraph{One-dimensional band-gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
+\paragraph{One-dimensional band gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
-Both effects are due to a presence of a Bragg band-gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
+Both effects are due to a presence of a Bragg band gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
 
 The very same principle was later %% who was the first?
-employed for the design and fabrication of the \textit{dielectric mirrors}, which are made by stacking multiple layers two alternating dielectrics with different wave impedance and quarter-wavelength thickness. They find a wide variety of applications, owing to their advantages over classical metallic mirrors such as higher reflectivity and spectral selectivity.  %% this is related to the \textit{structural colours} found in nature -- who and when did it explain?
+employed for the design and fabrication of \textit{dielectric mirrors}, which are made by stacking multiple layers of two alternating dielectrics with different wave impedances and quarter-wavelength thicknesses. They find a wide variety of applications, owing to their advantages over classical metallic mirrors such as higher reflectivity and spectral selectivity.  %% this is related to the \textit{structural colours} found in nature -- who and when did it explain?
 
-Embedding one layer different from others, a \textit{defect}, into the middle of a dielectric mirror can introduce a narrow transmission window within its photonic band-gap. The corresponding \textit{defect mode} is characteristic by a strong field concentration in the defect, enabling to construct narrow-band photonic filters that can be moderately tuned by the defect properties \cite{nemec2005highly}.
+Embedding one layer different from others, a \textit{defect}, into the middle of a dielectric mirror can introduce a narrow transmission window within its photonic band gap. The corresponding \textit{defect mode} is characteristic by a strong concentration the electric field $\E$ in the defect, enabling to construct narrow-band photonic filters that can be moderately tuned by the defect properties \cite{nemec2005highly}.
 
 %}}}
 \paragraph{Photonic crystals}%{{{ ============================= find 1 cite "phc"
-The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band-gaps for the electron wave in natural crystals. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a nonzero range of frequencies for which there exists no propagating wave in any direction, the \textit{complete band-gap}, is attributed to Yablonovitch \cite{yablonovitch1987} in 1987.
+The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band gaps for the electron wave in natural crystals. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a delimited range of frequencies for which there exists no propagating wave in any direction, a \textit{complete band gap}, is attributed to Yablonovitch \cite{yablonovitch1987} in 1987.
 
-The structure, known as \textit{yablonovite}, was designed for microwaves, since it was made by precise mechanical drilling into a plastic cube. Different technologies were developed in 1990s in attempts to efficiently fabricate photonic crystals operating in optical range, such as stacking of structured layers, direct laser writing in the resin,  self-assembly of dielectric spheres into opal-like structures etc. 
+The structure, known as \textit{yablonovite}, was designed for microwaves, since it was made by precise mechanical drilling into a plastic cube. Different technologies were developed in 1990s in attempts to efficiently fabricate photonic crystals operating in the optical range, such as stacking of structured layers, direct laser writing in a resin,  self-assembly of dielectric spheres into opal-like structures etc. 
 
-The demands for achieving a complete three-dimensional band-gap can be reduced when a singly or doubly periodic modulation is etched into a dielectric slab, as was developed by Zengerle in the late 1970s \cite{zengerle1987light}. Planar structures are also much easier to fabricate using developed technology such as photolitography. 
+The demands for achieving a complete three-dimensional band gap can be reduced when a singly or doubly periodic modulation is etched into a dielectric slab, as was developed by Zengerle in the late 1970s \cite{zengerle1987light}. Planar structures are also much easier to fabricate using existing technologies such as photolitography. 
 %% phc term first used in ??
 % "Any dielectric material can be used to fabricate a photonic crystal with a sizeable and robust complete photonic bandgap (CPBG) in three dimensions, as long as small metal inclusions can be added." \cite{moroz2002metallo}
 \cite{joannopoulos2011photonic}
 
 %}}}
-\paragraph{Band-gap used in fibers and waveguides} %{{{ ============= (cites: DBR)
-Embedding a linear defect into the photonic crystal with a complete band gap forms a waveguide from which the wave can not escape, even when it is bent under sharp angles.
-Likewise, the \textit{planar band-gap waveguide} can be formed by a linear defect in the photonic crystal slab, which restricts the light by the total internal reflection horizontally and by the means of the two-dimensional band-gap vertically. Such structures can form waveguides, beamsplitters and filters in \textit{integrated optics}. 
+\paragraph{Band gap used in fibers and waveguides} %{{{ ============= (cites: DBR)
+Embedding a linear defect into a photonic crystal with a complete band gap forms a waveguide from which the wave can not escape, even when it is bent under sharp angles.
+Likewise, the \textit{planar band-gap waveguide} can be formed by a linear defect in a photonic crystal slab, which restricts the light by the total internal reflection horizontally and by a means of the two-dimensional band gap vertically. Such structures can form waveguides, beamsplitters and filters in \textit{integrated optics}. 
 
-The \textit{photonic-crystal fiber} (PCF), conceived by Russel in 1991 \cite{russell2007photonic}, differs from the common index-guiding fibers by that the light is confined in its core by a photonic band-gap in both lateral directions. 
-Its special capability is to strongly guide the wave even if its core is hollow, that is, with refractive index lower than the cladding. Broad-band single mode operation can be achieved, and the high field concentration can lead to very strong nonlinear interaction.
+The \textit{photonic-crystal fiber} (PCF), conceived by Russel in 1991 \cite{russell2007photonic}, differs from the common index-guiding fibers in that the light is confined to its core by a photonic band gap in both lateral directions. 
+Its special feature is the strong guiding of waves even if its core is hollow, that is, with refractive index lower than the cladding. Broad-band single mode operation can be achieved, and the high field concentration can lead to very strong nonlinear interaction.
 
-As a complementary concept, an one-dimensional photonic band-gap structure can be inscribed into the index-guiding fibers, forming a \textit{distributed Bragg reflector}. Its filtering capabilities can be made extremely narrowband, which is employed in fiber lasers, telecommunication, sensing, etc. % TODO cite, when first?
+As a complementary concept, a one-dimensional photonic band-gap structure can be inscribed into the index-guiding fibers, forming a \textit{distributed Bragg reflector}. Its filtering capabilities can be made extremely narrowband, which is employed in fiber lasers, telecommunication, sensing, etc. % TODO cite, when first?
 
-Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decades: Obviously, a minor shift of the band-gap has a strong impact on whether the light can propagate. Such a shift can be introduced e.g. by static magnetic field in low symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
+Within the sole paradigm of band-gap engineering, new concepts emerge even in the last decades: Obviously, a minor shift of the band gap has a strong impact on whether the light can propagate. Such a shift can be introduced e.g. by static magnetic field in low symmetry PhCs, resulting in enhanced magneto-optic interaction for one-dimensional light propagation \cite{vanwolleghem2009unidirectional}.
 
 %}}}
 
 \subsection{Homogeneous media with uncommon parameters} 
 \paragraph{Negative parameters}%{{{  ================= OK
-By \textit{negative parameters} it is understood either the negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
-or negative index of refraction. In transparent media without spatial dispersion, the latter coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
+By \textit{negative parameters} we  understand either a negative real value of permittivity $\epsrl(\omega)$, permeability $\murl(\omega)$, 
+or a negative index of refraction. In transparent media without spatial dispersion, the latter coincides with $\epsrl(\omega)$ and $\murl(\omega)$  being negative simultaneously.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
 Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
-Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from the lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
+Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from lattice or electronic vibrations, forming the so called \textit{reststrahlen} bands. Reflection from metals has been explained  % when? by whom?
 as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent} and to rapidly decaying under the surface. %A particular interest in the same phenomenon arose with 
-The same mechanism causing the radio wave reflection from dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly, starting the ongoing research.
+The same mechanism causing the radio wave reflection from the dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly.
 
-\textit{Negative permeability} manifests similarly from the electrodynamic point of view, but is observed much less often, typically above magnetic resonances in matter.
+\textit{Negative permeability} manifests itself similarly from the electrodynamic point of view, but is observed much less often, typically above magnetic resonances in matter.
 
 Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
-It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that later received significantly wider attention. Veselago used % is he first?
-the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but did not discuss the way of achieving such media, nor the more general theory of the spatial dispersion which may lead to natural negative refraction.
+It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that received later a significantly wider attention. Veselago used % is he first?
+the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but he did not discuss the way of achieving such media, nor the more general theory of the spatial dispersion which may lead to natural negative refraction.
 % add a note about negative index and spatial dispersion in homogeneous media? 
 % (todo) The electrodynamics of spatially-dispersive media ...
 % Or in an extra paragraph later, under 2nd unification?
@@ -1136,9 +1136,9 @@ the term of \textit{left-handed media} and speculated to what extent they might 
 %}}}
 \paragraph{Prediction of focusing by a negative-index slab} %{{{  ================== OK? (readpaper, +img)
 As also discussed by Veselago \cite[p. 511]{veselago1968} and a decade later by Silin \cite{silin1978possibility},  %: Silin in 1978  %% TODO READPAPER, does not discuss amplification of evanescent waves?
-a plane-parallel slab with an isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source towards a new focus in its volume, and similar negative refraction forms a second focus behind the slab. It is thus often referred to as a \textit{negative-index lens}, although its focal point nor optical axis are not defined as in classical lenses.
+a plane-parallel slab with an isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source towards a new focus in its volume, and similar negative refraction forms a second focus behind the slab. It is thus often referred to as a \textit{negative-index lens}, although neither its focal point nor optical axis are defined as in classical lenses.
 
-Clearly, the negative-index slab would be free of spherical aberrations, allowing a wide-angle and high numerical aperture for the imaging. There was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
+Clearly, a negative-index slab would be free of spherical aberrations, allowing a wide-angle and high numerical aperture for the imaging. There was no discussion yet of overcoming the diffraction limit nor of amplification of evanescent waves.  % should the thin silver lens be noted here, or elsewhere?
 
 %}}}
 \paragraph{Media with parameters close to zero}%{{{ ================= (optional todos)
@@ -1148,10 +1148,10 @@ The result of $\epsrl(\omega)\sim 0$ or $\murl(\omega)\sim 0$ is also the index 
 
 Although e.g. the physics of the ionosphere involves regions where the permittivity transits from negative to positive values, the scientific interest in designing such media significantly grew
 % with the paper of ...todo.... published  in ...
-after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focused on their peculiar macroscopic properties \cite{basharin2013epsilon} 
+after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}. This is a somewhat confusing term, as the papers focusing on their peculiar macroscopic properties \cite{basharin2013epsilon} 
 usually do not discuss any structuration and are thus also applicable to fully homogeneous media of such properties.
 
-Typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than the small critical angle the wave undergoes the \textit{total external reflection} \cite{schwartz2003total}. 
+A feature typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering from air into a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than a small critical angle, the wave undergoes the \textit{total external reflection} \cite{schwartz2003total}. 
 % note: this has been observed in thinned waveguides, too
 % Epsilon-near-zero metamaterials and electromagnetic sources: Tailoring the radiation phase pattern
 
@@ -1161,7 +1161,7 @@ Typical of this class of media is a very small wavevector $K\sim 0$, which can b
 
 %}}}
 \paragraph{Transformation optics and electromagnetic cloaks}%{{{ ================= OK (cites)
-Slow spatial changes of refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
+Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
 The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
 The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations 
@@ -1170,11 +1170,11 @@ The curved path used to evade the obstacle is always longer than a line segment,
 Electromagnetic cloaking % by homogeneous media ???
 was considered in the early 60s by Dollin \cite{dollin1961possibility} and later by Kerker \cite{kerker1975invisible}.
 
-The concept of cloaking was realized \cite{schurig2006metamaterial} in 2006 using a microwave metamaterial, and many other followed.
-All reported electromagnetic cloaks based on $N<1$ media are inevitably dispersive, which limits their band-width; they are also usually polarisation sensitive. The presence of any macroscopic cloak made of known materials is also revealed by its losses, at least at the infrared or optical frequencies. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
+The concept of cloaking was realized \cite{schurig2006metamaterial} in 2006 using a microwave metamaterial, and followed by many others.
+All reported electromagnetic cloaks based on $N<1$ media are inevitably dispersive, which limits their band width; they are also usually polarisation sensitive. The presence of any macroscopic cloak made of known materials is also revealed by its losses, at least at the infrared or optical frequencies. Obviously a great conceptual breakthrough would be needed to overcome these issues. 
 
 A simplified task is to construct the \textit{carpet cloak} which conceals the obstacle near a surface \cite{valentine2009optical}.
-The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however it also can be made of virtually loss-less anisotropic dielectrics with rather usual values of parameters \cite{wang2013homogeneous}.
+The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however it also can be made of virtually loss-less anisotropic dielectrics with quite usual values of parameters \cite{wang2013homogeneous}.
 
 %}}}
 
@@ -1182,54 +1182,54 @@ The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however 
 \paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== OK
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
-Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interaction is not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
+Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interactions are not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
 
-Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) and Bruggemann (1935) are most known. Their common assumption is that the wavelength is much larger than the particles, when there are no internal resonances. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
+Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) and Bruggemann (1935) are most known. Their common assumption is that the wavelength is much larger than the particles; furthermore, they suppose there are no internal resonances in the embedded particles. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
 % todo cite http://www.mpia.de/homes/henning/Dust_opacities/Opacities/Ralf/Eff/rules.html
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
-The design of inhomogeneous structures that could be treated as homogeneous ones with some desired properties has also a surprisingly long history. 
+The design of inhomogeneous structures that could be treated as homogeneous with some desired properties has also a surprisingly long history. 
 
-Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit} of frequencies well below any resonance frequency of the particle, and the \textit{long-wavelength limit} well below the first photonic band-gap. 
+Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit} of frequencies well below any resonance frequency of the particle, and to the \textit{long-wavelength limit} well below the first photonic band gap. 
 
 Subwavelength wire arrays have been experimentally used, at least, since 1898 as microwave polarisers. The concept of assembling a microwave polarisation rotator from organic or metallic helices comes from that era, too \cite{bose1898rotation, emerson}.
 
-Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor with the application in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
+Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor for the applications in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
 
 %}}}
 
 \subsection{First unification: metamaterials with uncommon parameters} 
 \paragraph{Negative effective permittivity} %{{{ ============================= OK
-1950s brought the first step towards achieving negative effective parameters from man-made periodic structures: The geometry of the wire antennas was chosen to put the fundamental resonance of the electric dipole \textit{below} the frequency of operation \cite{rotman1962plasma,boardman2005negative}, and thus acted as a Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum}. 
+1950s brought the first step towards achieving negative effective parameters from man-made periodic structures: The geometry of the wire antennas was chosen to put the fundamental resonance of the electric dipole \textit{below} the frequency of operation \cite{rotman1962plasma,boardman2005negative}, and thus the structure acted as a Lorentz oscillator with permittivity curve very similar to that in Fig. \ref{fg_oscillator_spectrum}. 
 
 In the approximation of local media, the \textit{effective permittivity} $\eeff(\omega)$ of this type of artificial dielectrics had therefore a frequency range of negative values, or at least lower than one. This feature lead to the occasional use of the term \textit{artificial plasma} \cite{merkel1973simulation}. 
 
-The effective refractive index $\Neff(\omega)$ in all cases of $\eeff(\omega)<1$ was also lower than that of vacuum \cite{brown1953artificial}, but, following
+In all cases of $\eeff(\omega)<1$, the effective refractive index $\Neff(\omega)$ was also lower than that of vacuum \cite{brown1953artificial}, but, following
 Eq. (\ref{eq_dispeqN}), 
 \begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \tag{\ref{eq_dispeqN}\again} \end{equation}
-it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concerns.
+it could not become negative, since the effective permeability $\meff(\omega) > 0$ was still positive. The unit cell size was kept much smaller than the wavelength, so the problem of \textit{homogenization} appeared as settled and the nonlocal effects apparently did not cause much concern.
 
 %}}}
 \paragraph{Negative effective permeability and negative refractive index}  %{{{ ================== 
 % PK writes (where??) 
 % "The word “metamaterial” (MM) appeared first in the paper by Smith et al. in 2000 [6] where a structured material" -- is it true? 
-Despite the literature is somewhat ambiguous, a thorough search shows that the term \textit{metamaterial} (MM) was first used by Walser in 1999. Although apparently redundant to \textit{artificial dielectrics}, which was used for decades before,  the new term of \textit{metamaterial} can be viewed as more fortunate as it does not imply that the structure is man-made or not, nor whether its effective parameters mimic a dielectric or, e.g., a metal.
+Although the literature is somewhat ambiguous, a thorough search shows that the term \textit{metamaterial} (MM) was first used by Walser in 1999. Although apparently redundant to \textit{artificial dielectrics}, which was used for decades before,  the new term of \textit{metamaterial} can be viewed as more fortunate as it does not imply whether the structure is man-made or not, nor whether its effective parameters mimic a dielectric or, e.g., a metal.
 
 The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
 
 %}}}
 \paragraph{Imaging beyond diffraction limit with metamaterials} %{{{ ===================== cite fn
-Arguably the most excitement introduced another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with better resolution than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves on its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
+Arguably the most excitement was caused by another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with a resolution better than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves at its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
 
-If a metamaterial is used as the negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
+If a metamaterial is used as a negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
 %If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. 
 For the proportional amplification of evanescent waves, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
 
 A related concept is the \textit{hyperlens}, an inhomogeneous structure which employs anisotropic negative-index media to couple near fields to waves radiated in the air, thus enabling subdiffractive imaging in the far field. Again, the ultimate resolution of the hyperlens is determined by the spatial dispersion of the metamaterial used.
 
-The dissipative losses in resonant periodic structures were not sufficiently resolved yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite
+The problems of dissipative losses in resonant periodic structures were not sufficiently overcome yet. Some quantitative improvements can be easily done, namely thickening the metallic structures and increasing their inductance-to-capacitance ratios of the split-ring resonators (SRR) \cite{zhou2008efficient}. At the near-infrared and optical wavelengths, SRRs are better substituted by perforated metallic sheets, so called \textit{fishnets}, % todo cite 
 and it may be favorable to substitute metals with certain types of oxides with metallic-like permittivity in the optical range \cite{naik2011oxides}.
 
 To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
@@ -1285,16 +1285,16 @@ This approach is only an approximation, since usually the unit cell behaviour in
 
 Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack is zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occur when the phase advance is $2\pi M, M\in \mathbb{N}$. The characteristic property of the \textit{zero-order} band gap lies in zero sensitivity to the structure scaling; it can manifest itself even when the layer spacing is deeply subwavelength.
 
-Another type of a band-gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
+Another type of a band gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
 %	hypothetical nondispersive N<0 layers interlaced by air - zero-transmission disp curve of adjacent bandgaps
-%	"avg(n)=0" band-gap blocks light even for deeply subwavelength layers
+%	"avg(n)=0" band gap blocks light even for deeply subwavelength layers
 %	they denote the bandgap above N<0 band as "avg(n)=0" band - is it correct?
 %	they write that in a bandgap, complex eps and mu are unphysical as there is no absorption
 %Panoiu2006-ZeroN_PBG_in_PhC_superlattices.pdf
 %	nondispersive layers -> peculiar dispersion curves with v_g->infty
 %Kocaman_Panoiu-Zero_order_PBG_in_NIM_PhC_in_near-infrared.pdf
-%	experimental zero-avg(N) bandgap, denoted also as zero-order photonic band-gap
+%	experimental zero-avg(N) bandgap, denoted also as zero-order photonic band gap
 % 	this band gap is invariant to the wave angle
 %Chen2005_Dispersion_of_defect_modes_in_PBG_from_DNG-DPS.pdf
 %	defect modes in "avg(n)=0" bands, expression is given for dispersion curves
@@ -1370,7 +1370,7 @@ With the criteria of wavelength or energy localisation leaving many structures i
 
 The unifying concept of virtually all MM studies is to describe \textit{how} the wave propagates though them. Their overwhelmingly complicated electromagnetic interaction is approximated by \textit{homogenization}, i.e. by finding such properties of a homogeneous medium that would behave in similar way.
 
-In contrast, the PhC research focuses on \textit{whether} the wave can propagate at all. When a mirror, filter, waveguide cladding or other structure with band-gap is designed, it is important to prevent the light from propagating rather than to homogenize the structure. 
+In contrast, the PhC research focuses on \textit{whether} the wave can propagate at all. When a mirror, filter, waveguide cladding or other structure with a band gap is designed, it is important to prevent the light from propagating rather than to homogenize the structure. 
 
 This also justifies denoting MMs and PhCs as two different \textit{paradigms} rather than two distinct \textit{classes} of periodic structures, and it is the reason why the neutral term of \textit{periodic structure} is used in this thesis. 
 
@@ -1533,12 +1533,6 @@ Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 	%reflective surface → s11 ampli constant, phase constantly growing; (s12 zero)
 	%simple resonance (in SRR?) 
 	%→  reflectivity peak
-	%→  losses
-	%in polar plot of s12: fast clockwise curl, approaching zero point, phase up-DOWN-up
-	%in polar plot of s11: clockwise curl starting at zero, making trip, returning to zero
-	%Fano resonance: requires spiral segment of curve
-	%case of "little fast curl 1" on "big slow curl 2"
-	%if fres1 = fres2 → subtractive effect, both in amplitude and phase; phase up-down-UP-down-up
 	%if fres1 < fres2 → …
 	%find out the difference between:
 	%two coupled broad resonances with interaction inbetween?
