@@ -774,13 +774,14 @@ This theorem is essential for understanding the electromagnetic behaviour of per
 \begin{enumerate}
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
- \item{Then $(\hat T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. \todo{this is perhaps redundant; remove this step?} }
- \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ is eigenfunction of the translation operator, that is,
-$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi$. \todo{HT=TH implies eig common} Therefore, the eigenfunction $\psi$ is unchanged upon a discrete translation, differing only by the phase being shifted by $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
-%$\exists t\in \mathbb{C}: hT\psi = HT\psi = Ht\psi = ht\psi$. \todo{cite} %In the special case that more eigenfunctions are associated 
+ \item{Then $(\hat T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. }
+ \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ and $\hat T\psi$ must either represent the very same physical eigenstate of $\hat H$ that is uniquely related to its eigenvalue $h$, or that there otherwise must exist more different \textit{degenerate} states $\psi_1\neq \psi_2$ with the same eigenvalue $h$. The second case of \textit{degeneracy} is proven in many textbooks not to change the conclusion that $\psi$ must be also an eigenfunction of the translation operator, that is,
+$$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi.$$ 
 }
- \end{enumerate}
-Two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
+\end{enumerate}
+ The physical consequence is that when the Hamiltonian operator is invariant to discrete translation, its eigenfunctions are also \textit{almost unchanged} upon this particular discrete translation and differing only by a phase shift of $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
+%
+%Two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
 
 %}}}
 \paragraph{The Bloch theorem proof in the electromagnetic formulation}%{{{
@@ -811,8 +812,8 @@ The commutation relation directly follows from the periodicity in Eq. (\ref{eq_t
 In three dimensions, this argument is valid for three different translation operators that correspond to the addition of the different lattice vectors, $\ava$, $\avb$ and $\avc$.
 } 
 \item{
-Then the wave translated by any of the lattice vectors, is also a solution of the Maxwell equations:
-\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\ava)\right] =  \frac{\omega^2}{c^2}\E(\rr+\ava).  \label{eq_blochme}\end{equation}
+Then the wave translated by any of the lattice vectors is also a solution of the Maxwell equations:
+\begin{equation}  {\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times   \E(\rr+\avabc)\right] =  \frac{\omega^2}{c^2}\E(\rr+\avabc).  \label{eq_blochme}\end{equation}
 }
 \item{In analogy with the fourth step in the Bloch theorem proof, there exists at least one constant $K_1$ for which
 \begin{equation}  \E(\rr+\ava) = e^{-\ii K_1 a_1} \E(\rr),  \label{eq_blochtt}\end{equation}
@@ -1233,7 +1234,7 @@ The problems of dissipative losses in resonant periodic structures were not suff
 and it may be favorable to substitute metals with certain types of oxides with metallic-like permittivity in the optical range \cite{naik2011oxides}.
 
 To the author's knowledge, all demonstrations of metamaterial sub-wavelength imaging demonstrated so far were therefore either only proof-of-concept, microscopic devices, or were limited to the easier accessible microwave region. % (verify there is no breakthrough in the IR lately?)
-The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near-field.
+The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near field.
 
 %}}}
 \paragraph{Metamaterials without negative or near-zero parameters} %{{{ ============== 
@@ -1260,8 +1261,9 @@ An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cit
 
 %}}}
 
+%% XXX up to here revision of FK 2015-10-01 XXX
 \subsection{Second unification: metamaterials with photonic crystals} 
-\paragraph{Experimental reasons}%{{{
+\paragraph{Experimental research}%{{{
 Over the 20th century, the paradigms of metamaterials (MM) and photonic crystals (PhC) apparently developed independent of each other. The situation started to change in 2000s, when the metamaterial structures were realized to operate at near-infrared or optical frequencies. As already stated, increasing of the operation frequency is intricate; not only is the contemporary three-dimensional submicroscopic fabrication technology somewhat limited in its resolution, but even more importantly, with any choice of available materials the dissipative losses become a major issue at the optical frequencies, particularly when the tight confinement of the field is required. 
 
 For both reasons,  a compromise is usually made at the near-infrared and optical frequencies: the particle size is chosen only few times smaller than the wavelength of operation. For example, this is the case of  % TODO 3 examples here!  \cite{yannopapas2005negative} \cite{shamonina2007metamaterials}
@@ -1272,7 +1274,7 @@ or %todo
 
 %}}}
 \paragraph{Theoretical investigation of the structures on the MM-PhC boundary}%{{{
-Probably due to the miniaturisation issues, the interplay between the individual and Bragg-type resonances was also studied. The former is typical for metamaterials, while the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007, dominec2014transition} as well as in experiments \cite{rybin2015}),  % and \cite{antonoyiannakis1997mie}?
+Along with the experiments, the interplay between the individual and Bragg-type resonances was also studied on theoretical basis. The former type of resonances is typical for metamaterials, while the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007, dominec2014transition} as well as in experiments \cite{rybin2015}),  % and \cite{antonoyiannakis1997mie}?
 or tunes the individual resonance frequency keeping the lattice unchanged (e.g. \cite{chakrabarti2012magnetic}). The frequency of the individual and Bragg resonances have different sensitivity to these parameters, and can thus be identified in the spectra. Such a study of a typical structure, the array of dielectric rods, is elaborated in the Results section of this thesis.
 
 %PhCs with metallic/metamaterial inclusions
@@ -1283,7 +1285,7 @@ or tunes the individual resonance frequency keeping the lattice unchanged (e.g. 
 In the more abstract studies, the structure of the unit cell with its full electrodynamic behaviour is substituted by a flat homogeneous layer characterized only by its effective parameters which may be negative at certain frequencies. % This is equivalent to examining a one-dimensional structure of alternating layers of positive and negative effective parameters.
 This approach is only an approximation, since usually the unit cell behaviour involves its coupling with nonradiative fields, which can no more be taken into account when they are replaced by a layer. The advantage is however in the possibility to use analytic means for understanding of the factors forming the band diagram.
 
-Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack is zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occur when the phase advance is $2\pi M, M\in \mathbb{N}$. The characteristic property of the \textit{zero-order} band gap lies in zero sensitivity to the structure scaling; it can manifest itself even when the layer spacing is deeply subwavelength.
+Such an unusual photonic crystal can exhibit a specific \textit{zero order photonic band gap} \cite{chan2003, panoiu2006, chen2005} when the phase advance through the layer stack is zero, as has been confirmed also on experimental basis \cite{kocaman}. In contrast, the typical photonic band gaps in positive-index dielectric layers occur when the phase advance is $2\pi M, M\in \mathbb{N}$. The characteristic property of the \textit{zero-order} band gap lies in zero sensitivity to the structure scaling; it can manifest itself even when the spacing of the hypothetical PhC is deeply subwavelength.
 
 Another type of a band gap with different field pattern were predicted \cite{wang2004} when layers with $\epsrl>0, \murl<0$ and $\epsrl<0, \murl>0$ were stacked.
 %Chan2003-PBG_from_stack_of_PIM_and_NIM.pdf
@@ -1312,7 +1314,7 @@ Another type of a band gap with different field pattern were predicted \cite{wan
 %
 %Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf todo
 
-The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \\gtsim 0.2$) is the strong manifestation of the spatial dispersion. Except for special cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight, and in the contrary, it leads to confusing deviation from the expected Lorentz oscillator curves, namely \textit{antiresonances} \cite{koschny2003resonant}  and complex values of $\eeff$ and $\meff$ even in lossless media \cite{chan2003}.
+The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \gtrsim 0.2$) is the strong manifestation of the spatial dispersion. Except for special cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight, and in the contrary, it leads to confusing deviation from the expected Lorentz oscillator curves, namely \textit{antiresonances} \cite{koschny2003resonant}  and complex values of $\eeff$ and $\meff$ even in lossless media \cite{chan2003}.
 In the author's belief, it is necessary to adopt the full theory of spatial-dispersive media, as sketched in the Chapter \ref{chap_nonloc} of this thesis.
 
 %}}}
@@ -1338,7 +1340,7 @@ since they recognize the nature of each single resonance mode, and justify even 
 
 The high concentration of the energy within a small part of the structure reduces the sensitivity of the parameters under a moderate disorder in the cell position, which has also been viewed as a trait of metamaterials, \cite{peng2007}: 
 \begin{displayquote}
-the randomized positions do not influence significantly the left-handed properties indicates that such composite is different from (...) photonic crystals
+	\textit{(the fact that) the randomized positions do not influence significantly the left-handed properties indicates that such composite is different from (...) photonic crystals}
 \end{displayquote}
 
 %}}}
