@@ -339,7 +339,7 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
 where the function $\psi$ represents either of the electric or magnetic fields. The particular form for the linear operator $\mathcal{L}$ is  
-as has already been developed in the proof of the Bloch theorem, Chapter \ref{blochproof}.
+as has already been developed for the proof of the Bloch theorem in Eq. (\label{eq_eigen_e}).
 
 Numerically, the problem can be expressed as a simultaneous optimization of the $\E, \HH$ fields shape such that one time-stepis identical to phase rotation of the field at the given angular frequency $\omega$.
 We remind that unless stated otherwise, the simulations use complex numbers to represent all field components.
@@ -350,7 +350,7 @@ The modes obtained by frequency-domain simulation can have arbitrary phase; some
 
 %}}}
 \paragraph{Comparison to the time-domain computation} 
-To verify their reliability, the results of the frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation.
+To verify their reliability, the results of the frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation. \todo{add results from freq-domain test}
 
 %%% Cons: inefficient, convergence not guaranteed
 %%% Pros: very convenient once time-domain simulation is prepared
