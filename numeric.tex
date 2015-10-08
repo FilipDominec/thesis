@@ -338,27 +338,23 @@ Free unbounded	& Negligible				& Resistive medium						& \shortstack{doped semic
 \paragraph{Principle} 
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
-where the function $\psi$ represents either of the electric or magnetic fields. The particular form for the linear operator $\mathcal{L}$ is  
-as has already been developed for the proof of the Bloch theorem in Eq. (\label{eq_eigen_e}).
+where the function $\psi$ represents either of the electric or magnetic fields. 
+%The particular form for the linear operator $\mathcal{L}$ is  as has already been developed for the proof of the Bloch theorem in Eq. (\label{eq_eigen_e}).
+% TODO maybe not! The Hamiltonian might be SQUARE of the "Maxwellian"!
 
-Numerically, the problem can be expressed as a simultaneous optimization of the $\E, \HH$ fields shape such that one time-stepis identical to phase rotation of the field at the given angular frequency $\omega$.
-We remind that unless stated otherwise, the simulations use complex numbers to represent all field components.
-For the optimization to be as efficient as possible, the authors of the simulation used, namely MEEP , chose the stabilized biconjugate gradient \cite{oskooi2010meep}. More information on the frequency-domain solver is on the project's website. % todo cite ab-init
+Both time- and frequency-domain simulations used for this thesis use complex numbers to represent all field components.
+Whole frequency-domain problem thus can be expressed as a simultaneous optimization of the $\E, \HH$ fields shape, so that one time-step of FDTD is identical to phase rotation of the field at the given angular frequency $\omega$. For the optimization to be as efficient as possible, the \textit{stabilized biconjugate gradient} algorithm \cite{oskooi2010meep} is used. More information on the frequency-domain solver is on the project's website. % todo cite ab-init
 
 The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
 
 
 %}}}
 \paragraph{Comparison to the time-domain computation} 
-To verify their reliability, the results of the frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation. \todo{add results from freq-domain test}
+To verify their reliability, the results of the frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation. 
 
-%%% Cons: inefficient, convergence not guaranteed
-%%% Pros: very convenient once time-domain simulation is prepared
-%%% In the latest meep version (1.2.1), nondispersive $\varepsilon_r, \sigma$ must be
-%%% provided. This is facilitated by meep utils.py.
-%%% 
-%%% No limitation is known for the permittivity value in frequency-domain; however too exotic values can prevent the solver from converging.
-%%% 
+The advantage of the frequency-domain (FDFD) method over the time-domain (FDTD) is greater efficiency for obtaining the field shape at a single frequency, where the computational time of the time-domain methods grows proportionally with the desired spectral resolution. Having both algorithms packed in one library enables extremely easy switching between them. 
+
+For FDFD, the permittivities and conductivities of all media can be freely chosen, including negative values. A frequency scan of FDFD simulations can thus be needed, if one needs to specify arbitrary frequency dependence of the materials (which does not have to conform to Kramers-Kronig relations as required by FDTD). It was, however, observed by the author that the FDFD solver often fails to converge for plasmonics at the optical frequencies; in such cases, one has to return to the FDTD algorithm with a narrow frequency source.
 
 \subsection{Plane-wave expansion method} % TODO
 \paragraph{Principles of PWEM} %{{{

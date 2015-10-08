@@ -1,15 +1,11 @@
-\label{section_result}
 
 %% TODO remaining topics to be added or checked: 
 %%	* PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
-	%Aperture-array transmission
-	%Wood anomaly in slit arrays
-	%Wood anomaly in hole arrays
-	%Standing SPP wave
 	%thin wires [8], [28], Swiss rolls [9], SRRs [9], electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
 
 
-\section{Dielectric slab} %{{{
+\label{section_result}
+\section{Dielectric slab} \label{section_Dielectric slab}
 The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, has been investigated thoroughly in the previous decades. We review it mostly for comparison with the structures presented in the following. 
 
 \begin{figure}[ht] \caption{Dispersion curves for a one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
@@ -30,25 +26,29 @@ The situation is different when we introduce periodic dielectric layers as in Fi
  \end{enumerate}
 
 Such a shifting between waves at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} gaps that are responsible for the dispersion of the 1-D photonic crystal. 
-%}}}
-\paragraph{Band-gap formation from different number of unit cells}%{{{
-%% cite laktionov? Or put everything in the theory section?
+
+\paragraph{Band-gap formation from different number of unit cells}
+% Or put everything in the theory section?
+% illustrate the band-gap formation \cite{laktionov2008}
+% TODO FIND PYTHON SCRIPT ----> compare TMM and FDTD for metallic slabs
 %\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
                %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
                %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
                %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 
-\subsection{Finite planar structure with defect mode} % references to ->
-A defect-mode transmission peak of 1.5\% energy transmission appears in the band gap.
-It can be tuned from 173 to 184 GHz by application of electric field (40 kV/cm) to the defect STO layer \cite{skoromets2013}.
-%}}}
-%illustrate the band-gap formation \cite{laktionov2008}
-% TODO FIND PYTHON SCRIPT ----> compare TMM and FDTD for metallic slabs
+% TODO Finite planar structure with defect mode {skoromets2013}
 
-\section{Wire medium} % references to -> %{{{
 
-\label{chap_wiremedium}
+
+
+
+
+
+%====================================================================================================
+\section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
+
+
 \mdf{
 ref Homogenisation of nonlocal media such as wires 
 \cite{capolino2009book}
@@ -59,7 +59,7 @@ ref Homogenisation of nonlocal media such as wires
 \cite{silveirinha2005homogenization}
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
-This type of metamaterial has been historically denoted also as \textit{metallic delay dielectrics}, owing to the possibility to reduce  the phase or group velocities in the proper part of spectrum.
+This type of metamaterial has been historically denoted also as \textit{metallic delay dielectrics}, owing to the possibility to reduce the phase or group velocities in the proper part of spectrum.
 \cite{brown1953artificial} as  % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 }
 \add{
@@ -79,9 +79,7 @@ Maslovski \textit{et al.} 2003: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac
 
 \begin{itemize} \item{How these models compare to the simulation?} \end{itemize}
 
-
 }
-
 
 %\begin{figure} \caption{img/EWire\_plasmaF\_radiusscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_radiusscan.pdf} \end{figure} \clearpage
 %\begin{figure} \caption{img/EWire\_plasmaF\_spacingscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_spacingscan.pdf} \end{figure} \clearpage
@@ -112,21 +110,41 @@ We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple
 In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
 }
 %}}}
-\section{Metal mesh}%{{{
-The resonance in the metallic mesh has been used as a filter 
-\cite{ulrich1967effective,ulrich1967far}
-... has been known for half a century\cite{vogel1964transmission}
 
-Improved cross-shaped pattern for better spectral selectivity \cite{porterfield1994resonant}
 
-%}}}
-\section{Metallic strips} % references to -> % note about plasmonic particles
+
+
+
+%====================================================================================================
+\section{Cut-wires} \label{section_cutwires} % references to -> % note about plasmonic particles 
 %% (I guess the spatial dispersion will be visible in the CDH plots)
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
-\section{Metallic strip pair} % references to ->
-\section{Split-ring resonator} % references to ->
+
+
+
+
+
+%====================================================================================================
+\section{Electric resonators} \label{section_esrr} % references to -> % note about plasmonic particles 
+
+
+
+
+
+
+
+%====================================================================================================
+\section{Split-ring resonator} \label{section_srr} % references to -> 
 % todo note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
+Metallic strip pair
+
+
+
+
+
+
+%====================================================================================================
 \section{Dielectric sphere} % references to ->				%{{{
 \add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
@@ -152,7 +170,7 @@ The main difference compared to the lossless resonances discussed above (cf. Fig
 
 An important property of the periodic sphere array is its \textit{isotropic} electromagnetic behaviour. It trivially follows from symmetry under any orthogonal rotation, and it also holds almost exactly under any other orientation (unless the spheres are not touching or too high frequencies are studied).
 
-The right plot in Fig. \ref{fg_spheres_fdtd}b shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section.
+The right plot in Fig. \ref{fg_spheres_fdtd}b shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section. %% which one?
 
 The magnetic resonance introduces narrow regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
 %In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
@@ -219,7 +237,14 @@ We performed series of experiments to measure the effective permeability  $\mu_{
   %publisher={Optical Society of America}
 %}
 %}}}
+
+
+
+
+
+%====================================================================================================
 \section{SRRs and spheres in a wire array or grid} % references to ->
+% Cai_Zhu2008-Diel_resonators_wires.pdf
 %{{{
 \begin{figure} \caption{img/SphereWire\_eps100\_R25\_FDTD.pdf}  \centering  \includegraphics[width=10cm]{img/SphereWire_eps100_R25_FDTD.pdf} \end{figure} \clearpage
 \begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} \clearpage
@@ -231,6 +256,12 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 %TODO Bitzer2011-Babinet_principle_SRR.pdf
 
 %}}}
+
+
+
+
+
+%====================================================================================================
 \section{Dielectric rods parallel to magnetic field} % references to ->
 \label{sect_diel_rods_mag}
 %{{{
@@ -256,7 +287,8 @@ We would not indeed pose this question if its answer were negative. It is closel
 \end{figure}
 
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
-The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
+The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, %% TODO which one?
+and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
 
 % discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
 This new type of resonance is known as a \textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}. Unlike the Bragg gaps, it can be observed also in a single rod in free space. Being a function of the frequency of the incident wave, the magnetic dipole moment of the free-standing dielectric rod follows the characteristic Lorentzian shape of its \textit{resonance curve}. Below the resonance the magnetic dipole moment of the resonator goes to strongly positive values, while in a narrow region above the resonance it is strongly negative. How does this behaviour change if we arrange the rods in an infinite periodic array? 
@@ -300,7 +332,13 @@ The situation is different in the terahertz range, as the lattice of the crystal
 }
 
 %}}}
-\section{Dielectric rods parallel to electric field} % references to ->
+
+
+
+
+
+%====================================================================================================
+\section{Dielectric rods parallel to the electric field} % references to ->
 
 \label{sect_diel_rods_el}
 %{{{
@@ -465,18 +503,47 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 \begin{figure} \caption{img/ERods\_sketch\_recordedline.pdf}  \centering  \includegraphics[width=10cm]{img/ERods_sketch_recordedline.pdf} \end{figure} \clearpage
 \begin{figure} \caption{img/ERods\_eps100\_R10u5\_FXplot.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R10u5_FXplot.pdf} \end{figure} \clearpage
 
-\section{Metallic screen with a slit} % references to ->
 
-\section{A fishnet - metallic screen with holes} % references to ->
-\label{sect_fishnet}
+
+
+
+
+
+%====================================================================================================
+\section{Metallic sheet with slits} % references to ->
+Wood anomaly in hole arrays
+Standing SPP wave
+
+
+
+
+
+
+%====================================================================================================
+\section{Fishnet -- metallic sheet with holes} \label{section_fishnet} % references to ->
+	%Aperture-array transmission
+	%Wood anomaly in slit arrays
+
+
 
 Perforated plates \cite[p. 58]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 %{{{
 \cite{yahiaoui2012metallo,rockstuhl2008light}
+
+The resonance in the metallic mesh has been used as a filter 
+\cite{ulrich1967effective,ulrich1967far}
+... has been known for half a century \cite{vogel1964transmission}
+
+Improved cross-shaped pattern for better spectral selectivity \cite{porterfield1994resonant}
+
 %}}}
 
+
+
+
+
+
+
+%====================================================================================================
 \section{Other structures} % plasmonic spheres (note: resonance width determined by gamma of the metal?)
 \begin{figure} \caption{Modes in sphere-wire structure}  \centering \includegraphics[width=10cm]{img/new/modes_Mag_and_El.pdf} \end{figure} \clearpage
-
-
-%\subsection{} % references to ->
