@@ -6,28 +6,15 @@
 
 \label{section_result}
 \section{Dielectric slab} \label{section_Dielectric slab}
-The structure composed of alternating dielectric layers, effectively a one-dimensional photonic crystal, is the simplest periodic structure to be started with. It has been investigated thoroughly in the previous century and found major application as the dielectric mirror. 
+\paragraph{Dispersion curves}
+The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly in the previous century and found its major application as the dielectric mirror. 
 
-Thanks to its continuous translational symmetry in the transverse direction, it exhibits only a subset of all different phenomena that can be observed in most periodic structures. The key difference is that no \textit{individual resonances} can occur. This does not imply that the energy would have to be distributed evenly in the structure, but that energy is stored and transported solely by propagating, non-evanescent waves.
+It is the simplest representative of periodic structures, since due to its continuous translational symmetry in the transverse direction, it exhibits only a subset of different phenomena that can be observed in most periodic structures. Most importantly, no \textit{individual resonances} can occur in 1-D PhC; all interaction with the wave happens through electromagnetic wave reflection (or, scattering) on the interfaces of the layers. The only type of the band gap observed is thus of the Bragg type.
 
-% for comparison with the structures presented in the following. 
+Dispersion curves for a one-dimensional photonic crystal, computed using PWEM, are shown in Fig. \ref{fg_1dbd}. The side plots show the shape of the electric field  in the $(y,z)$ plane, at the respective frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map.
 
 % TODO discuss the PWEM results, illustrate folding
-
-
-% TODO N x half-wave in unit cell --> bragg gap,   N x half-wave in either of the layers  -->   
-%		e.g. one example is when the layers have the same  (optical thickness, $n d$), the Bragg band-gap width is zero
-% TODO scan of spectra for unit cell filling fraction
-
-% TODO 
-% TODO 
-% TODO 
-
-
-% XXX XXX XXX XXX XXX 
-
-
-\begin{figure}[ht] \caption{Dispersion curves for a one-dimensional photonic crystal, computed using PWEM. The side plots show the shape of the fields in the $(y,z)$ plane, at the frequencies of the band edges. Note that each field plot spans two unit cells. The electric field $E_x$ is plot as color map. \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines)} \label{fg_1dbd} \centering 
+\begin{figure}[ht] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
 \textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
 \textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
 \end{figure}
@@ -36,31 +23,56 @@ Thanks to its continuous translational symmetry in the transverse direction, it 
 
 Fig. \ref{fg_1dbd}a shows the folded dispersion curves for a plane wave propagating in vacuum.
 %As predicted by the Bloch-Floquet theorem (\ref{eq_bloch}), the fields are periodic over each cell whenever the wavenumber $k$ touches the Brillouin zone boundary. 
-To save space, we plot the  dispersion curves as \textit{folded}, but one can easily imagine how the curve unfolds into a straight light line. For any frequency $f$, there is a wavenumber $k$ corresponding to a propagating wave. 
+To save space, we the dispersion curves as \textit{folded}, but one can easily imagine how the curve unfolds into a straight light line. For any frequency $f$, there is a wavenumber $k$ corresponding to a propagating wave. 
 
-The situation is different when we introduce periodic dielectric layers as in Fig. \ref{fg_1dbd}b. In the band structure, we observe allowed bands with \textit{band gaps} between them. At the frequencies in a bandgap, the wave can not propagate through the structure. The first photonic band ends when half the wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because it is shifted by half its period so that it maximizes electric energy in air. For a 1-D photonic crystal, we can generally conclude that in order to move up on the frequency axis,
+When the periodic dielectric layers are introduced, \textit{band gaps} of nonzero width open between the allowed bands as shown in Fig. \ref{fg_1dbd}b. 
+At the frequencies in a bandgap, the wave can not propagate through the structure. The first photonic band ends when half the wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because it is shifted by half its period so that it maximizes the energy of the electric field in the areas of lower permittivity. 
+
+
+\paragraph{Bragg and Fabry-Pérot resonances}
+The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi$ of the wave along the unit cell is 
+\begin{equation} \phi = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
+The width of the band gap grows with the amplitude of the wave scattered at the interfaces.
+
+A condition for the \textit{Fabry-Pérot resonance} states that the reflection amplitude of a lossless dielectric slab is zero if an integer number of the wave fits into one slab. In the contrary, this effect reduces the width of the band gap. A special case can occur when both Bragg and Fabry-Pérot conditions are fulfilled simultaneously; then a zero-width band gap is obtained and two photonic bands 
+
+An example class of structures that exhibit zero band-gap width are binary 1-D PhCs with equal optical thickness of both slabs. Exactly at the frequency when whole wavelength should fit into the unit cell, thus forming the second band gap, the scattered amplitude from each of the layers becomes zero.
+
+% TODO scan of spectra for unit cell filling fraction
+
+
+
+
+
+For a 1-D photonic crystal, we can generally conclude that in order to move up on the frequency axis,
 \begin{enumerate}
- \item{within each photonic band, one nodal plane per unit cell is added\footnote{In this paper, the mode plots show $2\times 2$ unit cells for clarity.},} 
+ \item{within each photonic band, one nodal plane per unit cell is added
+} 
  \item{within each photonic band gap, the wave shifts the most of electric field energy into lower-permittivity medium\footnote{Note that the band gaps do not have the same width on the frequency scale. For a certain thickness of the high-dielectric layer that corresponds to the Fabry-Pérot resonance, no frequency difference at all results from shifting the wave. In this case the band gap attains zero thickness, as is illustrated in Fig. \ref{fg_ebar_radiusscan}a for $r\approx20\,\upmu$m and $f\approx1.6$ THz. In other words, there may be a \textit{gap-less} transition between photonic bands.}, while the number of nodal planes remains constant. }
  \end{enumerate}
 
 Such a shifting between waves at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} gaps that are responsible for the dispersion of the 1-D photonic crystal. 
 
-\paragraph{Band-gap formation from different number of unit cells}
+
+\paragraph{Effective parameters of a 1-D PhC}
+Employing the NRW method described in 
+% the question is in what frequency range they make any physical sense.
+
+
+% TODO \paragraph{Transmission through a finite number of unit cells}
 % Or put everything in the theory section?
 % illustrate the band-gap formation \cite{laktionov2008}
-% TODO FIND PYTHON SCRIPT ----> compare TMM and FDTD for metallic slabs
+% (todo) FIND PYTHON SCRIPT ----> compare TMM and FDTD for metallic slabs
 %\begin{figure} \caption{1red.pdf}  \includegraphics[width=3cm]{img/multilay_1red.pdf}
                %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
                %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
                %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
+% note the ripples inside the band-gap (for more cells)
+% and note that the NRW effective parameters do not change; the method is exact here due to absence of evanescent fields, whose detrimental effect was described in -todo-
+% finite planar structure with defect mode \cite{skoromets2013}
 
-% TODO note the ripples inside the band-gap (for more cells)
-
-% TODO Finite planar structure with defect mode {skoromets2013}
-
-
+% TODO \paragraph{Transmission through a finite number of unit cells}
 
 
 
