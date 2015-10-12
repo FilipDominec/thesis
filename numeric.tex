@@ -400,7 +400,8 @@ This section describes several fundamentally different numerical methods for ele
 
 %}}}
 \paragraph{Overview of other numerical methods} %{{{
-Other numerical methods are used, too. Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation on the element is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
+Other numerical methods than described above are used in the literature.
+Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation of the tetrahedral mesh is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
 %% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
 %% discontinuous Galerkin method
 
@@ -423,6 +424,7 @@ Other numerical methods are used, too. Finite-element methods (FEM) approximate 
 %		[15] C.R. Simovski, Optics and Spectroscopy 107 (2008)726
 %		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
 The general electromagnetic methods, such as FDTD, FDFD or FEM, can be employed to a wide variety of electromagnetic problems. Thanks to their versatility, different ways exist to retrieve effective parameters of metamaterials. We implemented two of them, and other approaches are mentioned at the end of this section.
+
 \subsection{Scattering parameters method}
 \label{chapter_sparam}
 \paragraph{Principle} %{{{
@@ -460,10 +462,10 @@ An evanescent wave does not transport energy out of the structure into free spac
 
 The impact of the near-field reaching out of a structure to the s-parameters method is twofold:
 \begin{enumerate}
- \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the s-parameter method, % FK: nebyly zavedeny?
+ \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the scattering parameter method, % FK: nebyly zavedeny?
 the near-field spreads into free vacuum at the front and rear sides. 
 
-This issue seems to be inherent to the method, but its impact can be assessed by simulating more than one unit cell. Generally, the retrieved $\Neff$ and $\Zeff$ values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells result in a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can supply intermediate results unsuitable to the retrieval method.
+This issue seems to be inherent to the method, but its impact can be assessed by simulating more than one unit cell. Generally, the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells result in a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can supply intermediate results unsuitable to the retrieval method.
  } 
  \item{Second, the monitor planes can not distinguish between the evanescent or radiated waves, but only the latter are desired for the s-parameter computations. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
 
