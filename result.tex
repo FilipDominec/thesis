@@ -7,18 +7,18 @@
 \label{section_result}
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves}
-% TODO discuss the PWEM results, illustrate folding
+
 \begin{figure}[t] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
 \textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
 \textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and retrieved effective index of refraction for the dielectric slab of 10\% fill fraction and varied permittivity $\epsrl \in \{4,9,16\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering 
+\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the dielectric slab of 10\% fill fraction and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
-\includegraphics[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf}\vspace{-10.5mm}\\
-\includegraphics[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf}\vspace{-10.5mm}\\
-\includegraphics[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_nr.pdf}\vspace{-10.5mm}\\
-\includegraphics[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_ni.pdf}\vspace{-5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_nr.pdf}\put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_ni.pdf}\put (-1,27) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
 
@@ -40,6 +40,15 @@ For the Bragg resonances shown in the subplots of \ref{fg_1dbd}b, we can general
 Such a shifting between waves at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} gaps that are responsible for the dispersion of the 1-D photonic crystal. 
 
 \paragraph{Bragg and Fabry-Pérot resonances}
+\begin{figure}[t] \caption{Slab fillfraction015 epsilon scan} \label{fg_Slab_fillfraction015_epsilon_scan} \centering 
+\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}
+%Slab_fillfraction015_epsilon_scan_r.pdf
+%Slab_fillfraction015_epsilon_scan_t.pdf
+\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}
+%Slab_epsilon4_fillfraction_scan_r.pdf
+%Slab_epsilon4_fillfraction_scan_t.pdf
+\end{figure}
+
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
 where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of the two layers.
@@ -48,6 +57,7 @@ The width of the band gap grows with the amplitude of the wave scattered from th
 The reflection amplitude of a lossless dielectric slab can become zero under a  condition for  states that if an integer number of the halfwaves fits into either of the dielectric layers, that is
 \begin{equation} \phi_{1} = d_1 n_1 \frac{\omega}{c} = \pi m \text{\quad or \quad} \phi_{2} = d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_fpcond}\end{equation}
 Unlike the Bragg resonance, this effect can be observed even in a single isolated unit cell; in fact it is the well known \textit{Fabry-Pérot resonance}. A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other just as they were in vacuum (Fig. \ref{fg_1dbd}a). A simplest example of a structure that exhibits a zero-width band gap is the 1-D PhC with equal optical thickness of both slabs $d_1 n_1 = d_2 n_2$. 
+
 
 % NOTE that PWEM gives results in natural units. The natural unit of frequency is defined as that at which exactly one wavelength fits into the unit cell size if it contains empty vacuum.
 
@@ -86,7 +96,28 @@ Note that with the correct branch retrieval, the index of refraction never drops
 %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
 \paragraph{High-frequency behaviour}
-The structure formed from a regular square lattice of conductive wires exhibits the most interesting properties when the electric field is parallel to the wires. This polarisation will be the assumed in the following. 
+\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/Wires_radiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[th]
+  \begin{minipage}[c]{0.69\textwidth}
+\begin{overpic}[width=.98\textwidth]{img/EWire_plasmaF_spacingscan.pdf} \put (-1,60) {\textbf{(a)}} \end{overpic}\\
+\begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
+  \end{minipage}
+  \begin{minipage}[c]{0.3\textwidth}
+	  \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_ifc_dc}
+  \end{minipage}  
+\end{figure} \clearpage
+
+
+The structure formed from a regular square lattice of conductive wires exhibits the most interesting properties when the electric field is parallel to the wires. This polarisation will be the one assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is qualitatively different and is discussed later (see Section \ref{section_eot}).
 
 In the part of the spectrum where more than a half wave fits into the unit cell, i.e. above the first band, the 
 
@@ -105,28 +136,26 @@ ref Homogenisation of nonlocal media such as wires
 This type of metamaterial has been historically denoted also as \textit{metallic delay dielectrics}, owing to the possibility to reduce the phase or group velocities in the proper part of spectrum.
 \cite{brown1953artificial} as  % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 }
-\add{
-We assume the medium is inductive $\quad \Rightarrow \quad  \varepsilon(f) = 1 - \frac{f_p^2}{f^2}$. 
 
-What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)? 
+We assume the medium is inductive $\quad \Rightarrow \quad  \epsrl(\omega) = 1 - \frac{(2\pi f_p)^2}{\omega^2}$. 
 
 Discussed 40 years earlier \cite[p. 54]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 
-Pendry \textit{et al.} 1996: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log(\frac{a}{r})}}$
+also know as \textit{diluted metal}
+
+What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)? 
+
+
+Pendry \textit{et al.} 1996 \cite{pendry1996extremely}: 
+\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \log(\frac{a}{r})}} \label{eq_fp_pendry}\end{equation}
+
 \cite{pendry1996extremely}
 %CITE J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  \\
 
-Maslovski \textit{et al.} 2003: $\sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac{a^2}{4r (a-r)}\right)}}$
+Maslovski \textit{et al.} 2003 \cite{maslovski2002wire}: 
+\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac{a^2}{4r (a-r)}\right)}} \label{eq_fp_maslovski}\end{equation}
 \cite{maslovski2002wire}
 %CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
-
-\begin{itemize} \item{How these models compare to the simulation?} \end{itemize}
-
-}
-
-%\begin{figure} \caption{img/EWire\_plasmaF\_radiusscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_radiusscan.pdf} \end{figure} \clearpage
-%\begin{figure} \caption{img/EWire\_plasmaF\_spacingscan.pdf}  \centering \includegraphics[width=10cm]{img/EWire_plasmaF_spacingscan.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/EWire\_r03\_FDTDwide.pdf}  \centering \includegraphics[width=10cm]{img/EWire_r03_FDTDwide.pdf} \end{figure} \clearpage
 
 \add{
 A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
@@ -145,10 +174,6 @@ The more space is left around each wire and the smaller radius the wire has, the
 Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
 
 We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple verification of both the FDTD algorithm and the mentioned analytic model. In the first series we kept the wire radius constant $r = 16\,\upmu$m  and changed the wire spacing $a$ (red points). For comparison, we plot in Fig. \ref{fg_omegap_a} the plasma frequency predicted by the Maslovski's analytic model\cite{maslovski2002wire} from Eq. (\ref{eq_fp_maslovski}) and by the older Pendry's model \cite{pendry1996extremely} (full and dotted lines, respectively). To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m.
-\begin{figure}[ht] \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium. Left: $f_p$ as a function of wire spacing, right: $f_p$ as a function of wire radius. } \label{fg_omegap_a} \centering 
-\includegraphics[width=8.5cm]{img/EWire_plasmaF_spacingscan.pdf}
-\includegraphics[width=8.5cm]{img/EWire_plasmaF_radiusscan.pdf}
-\end{figure}
 
 In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
 }
@@ -554,7 +579,7 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 
 %====================================================================================================
-\section{Metallic sheet with slits} % references to ->
+\section{Metallic sheet with slits} \label{section_eot} % references to ->
 Wood anomaly in hole arrays
 Standing SPP wave
 
