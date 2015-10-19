@@ -17,7 +17,7 @@
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_nr.pdf}\put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_nr.pdf}\put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_ni.pdf}\put (-1,27) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
@@ -158,13 +158,9 @@ Maslovski \textit{et al.} 2003 \cite{maslovski2002wire}:
 %CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
 
 \add{
-A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
-\begin{figure}[ht]  \caption{Effective parameters of wire mesh, wires oriented both along the electric and magnetic field, with radius of $r_w = 12\;\mu$m. A realistic Drude model was used for the metal.\\ Due to high conductivity of the wires, a wrong sign of $N'$ at 0--200 GHz and of $N''$ at 1620--2080 GHz was given by computation.\\As an illustration of the plasma-like behaviour, a grey curve shows the permittivity predicted by Drude model with $f_p = 1110$ GHz.}
-\label{fg_wire_fdtd} \centering 
-\includegraphics[width=11cm]{img/XCylWire_a100r4.pdf}
-\end{figure}
+A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, at nonzero frequency, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
 
-Why does the transmission of a wire array differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
+Why does the transmission of a dense wire array oriented along the electric field differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
 
 In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
 \begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
