@@ -44,10 +44,20 @@ Such a shifting between waves at the lower and upper boundaries of the band gap 
 \includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}
 %Slab_fillfraction015_epsilon_scan_r.pdf
 %Slab_fillfraction015_epsilon_scan_t.pdf
-\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}
+%\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}  TODO rm voids
 %Slab_epsilon4_fillfraction_scan_r.pdf
 %Slab_epsilon4_fillfraction_scan_t.pdf
 \end{figure}
+
+\begin{figure}[t] \caption{Slab fillfraction015 epsilon scan} \label{fg_Slab} \centering 
+%\includegraphics[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf} TODO  lower number of contours
+%Slab_fillfraction015_epsilon_scan_r.pdf
+%Slab_fillfraction015_epsilon_scan_t.pdf
+%\includegraphics[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf} TODO rm voids
+%Slab_epsilon4_fillfraction_scan_r.pdf
+%Slab_epsilon4_fillfraction_scan_t.pdf
+\end{figure}
+
 
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
@@ -174,7 +184,7 @@ We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple
 In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
 }
 %}}}
-
+	
 
 
 
@@ -185,6 +195,49 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %% (I guess the spatial dispersion will be visible in the CDH plots)
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
+
+\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. Cubic unit cell size in all cases $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_epsr.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
+
+\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_epsr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mur.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -330,13 +383,9 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 \section{Dielectric rods parallel to magnetic field} % references to ->
 \label{sect_diel_rods_mag}
 %{{{
-\begin{figure} \caption{img/HRods\_eps012\_R12\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps012_R12_PWEM.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/HRods\_eps100\_R12\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps100_R12_FDTD.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/HRods\_eps100\_R12\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps100_R12_PWEM.pdf} \end{figure} \clearpage
-%\begin{figure} \caption{img/HRods\_sketch.pdf}  \centering \includegraphics[width=10cm]{img/HRods_sketch.pdf} \end{figure} \clearpage ## nonexistent
-% todo? analytic Mie resonance frequency? -> OBrien&Pendry2002, szabos etc
-analytic shape of the Mie resonance, \cite{obrien2002photonic} 
+%TODO REPLACE: \begin{figure} \caption{img/HRods\_eps100\_R12\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/HRods_eps100_R12_FDTD.pdf} \end{figure} \clearpage
 
+analytic shape of the Mie resonance, \cite{obrien2002photonic} 
 
 \add{
 Are there also different, non-Bragg, mechanisms that can create band gaps?
@@ -348,7 +397,7 @@ We would not indeed pose this question if its answer were negative. It is closel
 % Big question: Can one approximate a metamaterial by ENG/DNG/MNG/DPS 1-D PhC??
 \begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
 \textbf{(a)}	\includegraphics[width=8cm]{img/HRods_eps012_R12_PWEM.pdf}
-\textbf{(b)}	\includegraphics[width=8cm]{img/HRods_eps100_R12_FDTD.pdf}
+\textbf{(b)}	\includegraphics[width=8cm]{img/HRods_eps100_R12_PWEM.pdf}
 \end{figure}
 
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
