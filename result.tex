@@ -13,12 +13,11 @@
 \textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the dielectric slab of 10\% fill fraction and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_nr.pdf}\put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_ni.pdf}\put (-1,27) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_n.pdf} \put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
 
@@ -106,25 +105,13 @@ Note that with the correct branch retrieval, the index of refraction never drops
 %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
 \paragraph{High-frequency behaviour}
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/Wires_radiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_radiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
-
-
-\begin{figure}[th]
-  \begin{minipage}[c]{0.69\textwidth}
-\begin{overpic}[width=.98\textwidth]{img/EWire_plasmaF_spacingscan.pdf} \put (-1,60) {\textbf{(a)}} \end{overpic}\\
-\begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
-  \end{minipage}
-  \begin{minipage}[c]{0.3\textwidth}
-	  \caption{Comparison of numerical results and analytic model for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_ifc_dc}
-  \end{minipage}  
-\end{figure} \clearpage
 
 
 The structure formed from a regular square lattice of conductive wires exhibits the most interesting properties when the electric field is parallel to the wires. This polarisation will be the one assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is qualitatively different and is discussed later (see Section \ref{section_eot}).
@@ -132,6 +119,16 @@ The structure formed from a regular square lattice of conductive wires exhibits 
 In the part of the spectrum where more than a half wave fits into the unit cell, i.e. above the first band, the 
 
 \paragraph{Low-frequency behaviour}
+\begin{figure}[th]
+  \begin{minipage}[c]{0.69\textwidth}
+\begin{overpic}[width=.98\textwidth]{img/EWire_plasmaF_spacingscan.pdf} \put (-1,60) {\textbf{(a)}} \end{overpic}\\
+\begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
+  \end{minipage}
+  \begin{minipage}[c]{0.3\textwidth}
+	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_ifc_dc}
+  \end{minipage}  
+\end{figure} \clearpage
+
 
 \mdf{
 ref Homogenisation of nonlocal media such as wires 
@@ -196,43 +193,34 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
 
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. Cubic unit cell size in all cases $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. Cubic unit cell size in all cases $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
 
-
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_epsr.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
+%%% TODO this plot is too dense! make a contour plot instead?
 
-\begin{figure}[t] \caption{Amplitude of reflectance, transmittance and the real and imaginary components of the retrieved effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; diameter is 30 $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_epsr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mur.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
-
-
-
-
-
-
-
 
 
 
