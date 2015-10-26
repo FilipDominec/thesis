@@ -110,6 +110,7 @@ Note that with the correct branch retrieval, the index of refraction never drops
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
 
@@ -193,22 +194,22 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest wire $r_w = 2$ $\upmu$m.. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_nr.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-10.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-10.5mm}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
@@ -259,7 +260,6 @@ Metallic strip pair
 }
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
 The scattering of a single sphere can be computed analytically: from mie.m, see http://atol.ucsd.edu/scatlib/index.htm, Bohren and Huffman originally published the code in their book on light scattering }
-\begin{figure} \caption{img/Sphere\_eps100\_R25\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/Sphere_eps100_R25_FDTD.pdf} \end{figure} 
 
 \begin{figure} \caption{\textbf{a)} The electric and \textbf{b)} magnetic Mie resonance in a dielectric sphere}  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_electric.pdf} 
  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_magnetic.pdf} \end{figure}

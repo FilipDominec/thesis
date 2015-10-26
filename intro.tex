@@ -1,46 +1,54 @@
 % \newpage\vfill I declare I elaborated this thesis by myself. All literary sources and publications I have used had been cited.  \newpage 
 
 \section{Electromagnetic waves in periodic structures} %{{{
-The peculiar behaviour of light in periodic structures has attracted human attention for ages, long before anybody perceived that light is an \textit{electromagnetic wave} or that it is the \textit{periodicity} is responsible for the brilliant and irreproducible colours of opal gemstones and many living creatures, such as various beetles, butterflies or peacocks. 
+The peculiar behaviour of light in periodic structures has attracted human attention for ages, long before anybody perceived that light is an \textit{electromagnetic wave} or that it is the \textit{periodicity} which is responsible for the brilliant and irreproducible colours of opal gemstones and many living creatures, such as various beetles, butterflies or peacocks. 
 
 The scientific community started to rigorously study the underlying phenomena in the late 19th century.
 Simultaneous theoretical and technological progress through the 20th century allowed to design custom structures that interact with electromagnetic waves in a desired way. In analogy with the rapidly growing field of \textit{electronics}, the term of \textit{photonics} was coined for the design of optical fibers and other waveguides, sources, filters, detectors etc. The rapid development in this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers used for numerical simulations. Nowadays, photonics-based devices play a practically irreplaceable role in the high-bandwidth telecommunication, science and industry.
 
 Out of all structures studied in photonics, particularly detailed theoretical studies were devoted to structures that are periodic. %% TODO this needs stylistic fixes
 %Electromagnetic phenomena in periodic structures were studied in analogy with the physical theories established previously % outside optics. 
-In the view of author, three independent paradigms developed, as is described in the historical section: while \textit{photonic crystals} were inspired by the electron waves in crystals, \textit{metamaterials} were inspired by the electromagnetic waves in homogeneous materials. Early treatises of electrodynamics in media with negative or unusual parameters did not assume any structuring or other way of how these parameters should be achieved. On behalf of natural development, the paradigms unified into one, an as such they are is elaborated in this thesis.
+In the view of author, three independent paradigms developed, as is described in the historical section: while \textit{photonic crystals} were inspired by the electron waves in crystals, \textit{metamaterials} were inspired by the electromagnetic waves in homogeneous materials. Early treatises of electrodynamics in media with negative or unusual parameters did not assume any structuring or other way of how these parameters should be achieved. On behalf of natural development, the paradigms unified into one, and as such they are elaborated in this thesis. 
 
 The unifying concept is that the electromagnetic properties of a periodic structure can be, at least partially, understood as those of a homogeneous medium, but in fact they are determined predominantly by the spatial arrangement of the structure unit cell. The actual constituent materials can be relatively freely chosen. % This allows one to take into account the technological and economical aspects. 
 While it is unlikely that a radically new homogeneous material will be invented for construction of optical elements, periodic structuring of ordinary materials provides unprecedented freedom in tuning the electromagnetic properties and even enables to obtain phenomena unusual in homogeneous materials. 
 
 %}}}
 \section{Motivation for terahertz photonics} %{{{
-This work focuses on the electromagnetic behaviour of periodic structures operating in the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used in the whole electromagnetic spectrum, the selected frequency range defines the properties of constituent materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high-permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of the structures. On the other hand, materials such as glass, most plastics etc. commonly used in other spectral ranges must be avoided, since they exhibit excessively high losses in the terahertz range.
+This work focuses on the electromagnetic behaviour of periodic structures operating in the terahertz (THz) spectral range, which spans roughly from 100 GHz to 10 THz. While the electrodynamic theory presented in this work is scale-invariant and can be used in the whole electromagnetic spectrum, the selected frequency range defines the properties of constituent materials and technological processes available. Compared to the well established optical technology (400---700 THz), the range of materials suitable for THz frequencies gives additional possibilities, such as the use of superconductors, extremely high-permittivity dielectrics and tunable ferroelectrics. Additionally, the much longer wavelength of terahertz waves, e.g. 300 $\upmu$m for 1 THz in free space, also enables much easier fabrication of relevant structures. On the other hand, materials such as glass and most plastics, commonly used in other spectral ranges, must be avoided, since they exhibit excessively high losses in the terahertz range.
 
-The terahertz range is located in the electromagnetic spectrum at the boundary between the microwave region where most often the paradigm of high-frequency electronics is used, and the infrared and optical region where classical optics is used \cite{ozyuzer2007emission}. At THz frequencies, concepts from both paradigms are often seamlessly used together: waves emitted from lumped semiconductor components can be collimated by lenses, picosecond pulses generated in nonlinear crystals can be detected by photoconductive sampling, etc.  %% TODO - maybe write examples that are better covered by the use of MMs or PhCs
+The terahertz range is located in the electromagnetic spectrum at the boundary between the microwave region where most often the approaches of high-frequency electronics is used, and the infrared and optical region where classical optics is used \cite{ozyuzer2007emission}. At THz frequencies, both approaches are often seamlessly used together: waves emitted from lumped semiconductor components can be collimated by lenses, picosecond pulses generated in nonlinear crystals can be detected by photoconductive sampling, etc.  %% TODO - maybe write examples that are better covered by the use of MMs or PhCs
 
-Yet none of these two approaches is optimal for the THz applications; from the electronic point of view, there is still demand for fast-enough diodes and power transistors and the microstrip circuits become too lossy at high frequencies. The optical approach is often burdened by the strong wave-optics phenomena such as diffraction, and moreover some light-matter interactions are weaker than at the optical frequencies, limiting the possibilities for e.g. amplitude modulation by the Pockels effect. 
+Yet none of these two approaches is optimal for the THz applications; from the electronic point of view, there is still demand for fast-enough semiconductor devices and also the microstrip circuits become too lossy at high frequencies. The optical approach is often burdened by the strong wave-optics phenomena such as diffraction, and moreover some light-matter interactions are weaker than at the optical frequencies, limiting the possibilities for e.g. amplitude modulation by the Pockels effect. 
 
 These deficiencies provide additional reasons to search for the new possibilities opened by photonic devices and periodic structures operating in the terahertz range.  
 
 %}}}
-\section{Outline and goals of the thesis}
-% 1  emphasize the importance of spatial-dispersive electrodynamics
-%spatially-dispersive media, that is, to account for the material properties depending not only on the frequency, but also on the magnitude of the wave vector.
 
-% 4  note that, although many successes have been achieved, all metamaterial application still suffer from fundamental issues as excessive losses and anisotropy
-%	 and on the example of dielectric rods, show that it probably can not be overcome without a significant breakthrough
+\section{Goals of the thesis}
+\begin{enumerate}
+\item{During the preparation of the thesis, its author encountered difficulties finding a focused, accessible, yet rigorous enough tutorial covering the necessary theory. The main aim of the theoretical section therefore lies in bridging the fundamental electrodynamics with the concepts used for description of metamaterials and photonic crystals.} 
 % 6  by the way, point out some pertaining misconceptions, such as that MMs are completely novel, that they are the only way to achieve negative refraction or 
 %    vice versa that negative refraction is their sole purpose, ...
+\item{The importance of the more general \textit{spatially-dispersive} electrodynamics is emphasized, although it is unfortunately often neglected in the literature in favor of the simpler \textit{local} electrodynamics. Both approaches are compared throughout the thesis.} 
+\item{The third aim of this thesis is to promote the unification of paradigms, i.e. \textit{photonic crystals}, \textit{metamaterials} and \textit{media of unusual parameters}, by showing that they can -- and should -- be described by the same theoretical approaches. This is supported by elaborating the concept of spatial dispersion in the theoretical section and by providing historical review of the surprisingly long parallel development of such structures.} 
+\item{A overview of the electromagnetic behaviour of diverse periodic structures is provided in the Results section, taking into account also the properties of materials available for THz photonics, with the realistic level of absorption in particular. This section is more than just results -- proceeding from simpler structures to the more complex ones, it aims to explain all observed phenomena in a didactic manner. Some of the simulations are verified against the experimental results from the terahertz measurements.} 
+\item{Last but not least, the numerical results present a small demonstration of the use of the extensive simulation scripts, which were developed solely for the thesis and are published online free of charge. The basic concepts of the numerical simulations are described to help others in adapting the simulations for their further research. } 
+\end{enumerate}
+
+\section{Thesis outline}
 \paragraph{Theory} %{{{
-The theoretical chapter aims to present an accessible introduction to the electrodynamics of periodic structures. As a first step, it starts with a review of linear \textit{electrodynamics of continuous media}; the concepts of harmonic oscillators, dispersion curves, and isofrequency contours are introduced. The generalized index of refraction is introduced, and it is demonstrated how the wave refraction depends on the shape of isofrequency contours.
+The theoretical chapter starts with a review of linear \textit{electrodynamics of continuous media}; the concepts of harmonic oscillators, dispersion curves, and isofrequency contours are introduced. The generalized index of refraction is introduced, and it is demonstrated how the wave refraction depends on the shape of isofrequency contours.
 %Many related topics, such as nonlinearity, optical activity and gyrotropy are not discussed here, as they are not essential for the selection of structures in rest of the thesis. 
 
 The electrodynamic theory is generalized to account for the \textit{nonlocal} response, or equivalently \textit{spatial dispersion}, in the medium -- a phenomenon which can be usually neglected in the natural media, but is of key importance in any conscientious treatise on electrodynamics of periodic structures.
-The advantageous Landau-Lifshitz formulation of nonlocal medium parameters is also introduced and shown to result in the same dispersion as the customary model.  
+The more general Landau-Lifshitz formulation of nonlocal medium parameters is also introduced and shown to result in the same dispersion as the customary model.  
 
 The third part of the theoretical section is dedicated to periodic structures, starting with the Bloch theorem that enables one to transfer some of the concepts from continuous optics even to waves propagating in periodic structures. Its impact on the form of dispersion curves and on the ambiguity of the wave vector is shown.
-The distinction of two widely recognized types of periodic structures, namely \textit{metamaterials} and \textit{photonic crystals}, is discussed from historical, theoretical and practical aspects, with an emphasis on that the theoretical approaches used for each field can be unified and used for the other field as well.
+
+The distinction of two widely recognized types of periodic structures, namely \textit{metamaterials} and \textit{photonic crystals}, is discussed from historical
+%, theoretical and practical 
+aspects, with an emphasis on the author's view that the theoretical approaches used for each field can be unified and used for the other field as well.
 % stress that the metamaterial and photonic crystal fields should be unified in terminology and approaches
 
 %}}}
@@ -54,7 +62,7 @@ The fabrication and characterisation of the titanium dioxide microspheres sample
 This section describes the tools and methods used to calculate the electromagnetic behaviour of periodic structures and, even more importantly, to understand the physical nature of the predicted phenomena. Its structure reflects the separation between the algorithms that solve the Maxwell equations as a purely numerical problem, and between their particular application.
 
 Its first part provides a comparison of the finite-difference time-domain simulation (FDTD), its frequency-domain modification (FDFD) 
-and the plane-wave expansion (PWEM) methods.
+and the plane-wave expansion methods (PWEM).
 %and the transfer matrix method (TMM). 
 We point out the capabilities of each of them and we also briefly review multiple other methods that were not used here. % and we also show how the results from these different methods can be processed to give comparable quantities.
 Defining numerically stable FDTD simulations with realistic materials, one encounters several pitfalls. They were painstakingly resolved during the preparation of the thesis, and are also presented here.
@@ -65,16 +73,16 @@ One of such simulation setups of the current-driven homogenization is presented 
 % TODO one should really devise an algorithm for the Landau-Lifshitz permittivity retrieval from CDH (i.e. calibrate the source first on vacuum?)
 %}}}
 \paragraph{Results, conclusion and appendices} %{{{
-The perhaps most important section follows, 
+%The perhaps most important section follows, 
 %in which a systematic overview of the most important periodic structures is provided
-whose main aim is to put the common metamaterial types into a perspective, pointing out what they have in common, and how they differ. 
+The Results section puts the common metamaterial types into a perspective, pointing out what they have in common, and how they differ.  % TODO write which structures are discussed
 However, the space of all imaginable structures can never be covered, and another aim of this section is to demonstrate the capabilities of the simulation scripts used. 
 %for metamaterial simulation
 
 The scale of the simulated structures is chosen for the structures to operate in the terahertz range. 
 Thanks to the scale invariance of Maxwell equations, many of the designs and observations can be transposed also into other spectral regions, be it microwave or infrared. However, one has to bear in mind that the properties of the constituent materials may be different in other spectral regions. Naturally, also the techniques of fabrication and characterisation may be different.
 
-One of the aims of the dissertation is to give a comparison of these structures and to point out the profound similarities in their operation, which may not be obvious.  Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
+Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
 The results from the simulations were verified against experimental data and analytic models.
 
 At the end of the thesis, somewhat critical conclusions from the above results are drawn, along with directions in which the research could be pursued in future.
@@ -84,6 +92,8 @@ At the end of the thesis, somewhat critical conclusions from the above results a
 
 \section{Conventions used}%{{{
 Throughout the thesis, a single or double apostrophe ($x', x''$) refers to the real and imaginary part of a complex number ($x$). Italic symbols represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
+
+The lists of symbols and abbreviations used are in Tables \ref{tb_symbols} and \ref{tb_shortcuts}, respectively.
 %The explicit time, space or frequency dependence of quantities are omitted when it can not cause confusion.
 
 An important note shall be made on the sign convention for the complex wave, as introduced in Eq. \ref{eq_pw}.
@@ -101,4 +111,76 @@ thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. This is not th
 
 The unit system differs thorough the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (SI) system.
 
+\begin{table}[ht]   \caption{Table of abbreviations}  \label{tb_shortcuts} \centering 
+\begin{tabular}{ll}
+ \toprule
+Abbreviation & Meaning	\\
+ \hline
+EDB		& (Formulation of Maxwell equations using the $\E$, $\D$ and $\B$ vectors)\\
+FDTD 		& Finite-difference time-domain (algorithm)\\
+FDFD 		& Finite-difference frequency-domain (algorithm)\\
+FEM 		& Finite-element method (algorithm)\\
+FFT 		& Fast Fourier transform (algorithm)\\
+FRoI 		& Frequency range of interest\\
+FDM 		& Filter diagonalisation method (algorithm)\\
+GVD 		& Group velocity dispersion \\
+IFC		& Isofrequency contours\\
+LHM		& Left-Handed Material\\ %% TODO used anywhere?
+MM		& Metamaterial\\
+NRW 		& Nicolson-Ross-Weir (method for effective parameter retrieval)\\
+NGV 		& Negative group velocity\\
+PBG		& Photonic band-gap\\
+PhC 		& Photonic crystal\\
+PML 		& Perfectly matched layers (absorber in simulation)\\
+PWEM 		& Plane-wave expansion method (algorithm)\\
+RHM 		& Right-Handed Material\\ %% TODO used anywhere?
+STO		& Strontium titanate, SrTiO$_3$ (ferroelectric material)\\
+SRR		& Split-ring resonator\\
+TDTS 		& Time-domain terahertz spectroscopy\\
+%TMM			& Transfer-matrix method  (numerical computation)\\
+ \bottomrule
+ \end{tabular} \end{table}
+
+\begin{table}[ht]   \caption{Symbols used, approximately in the order they are introduced in text}  \label{tb_symbols} \centering 
+\begin{tabular}{ll}
+ \toprule
+Symbol & Meaning	\\
+ \hline
+$\E$ 		& Electric field\\
+$\E_0$ 		& Amplitude of the electric field\\
+$\D$ 		& Electric displacement\\
+$\HH$ 		& Magnetic field\\
+$\B$ 		& Magnetic displacement									\vspace{3mm}\\
+ 
+$\varepsilon_0$ &Vacuum permittivity, $8.85\cdot10^{-12}$ F/m\\
+$\mu_0$		&Vacuum permeability, $1.25\cdot10^{-6}$ H/m			\vspace{3mm}\\
+ 
+$\ii$		& Imaginary unit, $\ii^2 = -1$\\
+$e$ 		& Euler constant, $e = 2.718\ldots$\\
+$\pi$ 		& $\pi = 3.141\ldots$\\
+$f$			& Frequency\\
+$\omega$ 	& Angular frequency, $\omega = 2\pi f$\\
+$\kk$ 		& Wave vector in homogeneous media\\
+$\KK$ 		& Wave vector of the Bloch wave in periodic media\\
+$t$, $\tau$ 		& Time\\
+$c$ 		& Speed of light in vacuum, $c=2.998\cdot 10^8$ m/s \\
+$f(t), F(\omega)$ & General function in time domain, and its counterpart in Frequency domain \\
+$\chi_e(t),\chi_m(t)$	& Electric and magnetic susceptibility in the local approximantion \\ %% TODO separate freq-domain and time-domain susc?
+$\chi_e(\omega)$, $\chi_m(\omega)$ 	& Electric and magnetic susceptibility\\
+$\epsrl(\omega), \murl(\omega)$ &Relative permittivity and permeability in the local approximation\\
+$\epsrn(\omega, \kk)$ &Relative permittivity for nonlocal media\\
+$\murn(\omega, \kk)$ &Relative permeability for nonlocal media\\
+$\epsLL(\omega, \kk)$ &Relative permittivity in the Landau-Lifshitz ($\E\D\B$) formulation\\
+$\Neff$ 	& Effective index of refraction (of periodic media)\\
+$\Zeff$ 	& Effective impedance\\
+$\eeff, \meff$ 	& Effective permittivity and permeability (of periodic media)\\
+$\rr$, $\brho$ 		& Position in space (radius vector)\\
+$\mathbf{a}_{1,2,3}$, $a$ 		& Lattice vectors, unit cell size in the cubic lattice \\
+$\mathbb{R}$		& Real numbers\\
+$\mathbb{Z}$		& Integers\\
+$\mathbb{C}$		& Complex numbers\\
+$h$ 		& Planck constant, $h = 6.626\cdot 10^{-34}$ J s\\
+
+ \bottomrule
+ \end{tabular} \end{table}
 %}}}
