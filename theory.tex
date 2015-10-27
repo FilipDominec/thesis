@@ -130,7 +130,7 @@ where the physical interpretation of the three (real and positive) parameters is
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
 The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the angular resonance frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
-\begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q} \label{eq_lorentz_eps}\end{equation} 
+\begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q}. \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
 A sample time- and frequency-domain response of a medium with one harmonic oscillator is shown in Fig. \ref{fg_oscillator_spectrum}.
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
@@ -621,13 +621,10 @@ The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\ome
 The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
 
 %}}}
-\paragraph{Multiple waves and additional boundary conditions}   %{{{ 
+\paragraph{Existence of additional waves}   %{{{ 
 For both cases shown in Fig. \ref{fg_dcll_nl}, it follows that the dispersion equations can allow multiple solutions with different wavenumbers $k$ at one frequency $\omega$, even when the waves have the same orientation and polarisation. (Note that, conversely, multiple solutions with different $\omega$ for a given wavevector $\kk$ are commonly present, as a usual consequence of frequency dispersion even in local media.)
 
-The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves, were predicted by the works of Pekar et al.
-%\cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}
-and also suggested by experimental data of dispersion near exciton levels, e.g. in cadmium sulphide
-\cite{pekar1975spatial}. 
+The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional} waves \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}, were predicted by the works of Pekar et al. and also suggested by experimental data of dispersion near exciton levels, e.g. in cadmium sulphide \cite{pekar1975spatial}. 
 
 The dispersion curves suggest the existence additional waves around $\omega \sim 0.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}a and $\omega \sim 1.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}b. In both cases, one of the two solutions depicted has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), predicting a negative refraction also in natural homogeneous media.
 
@@ -655,8 +652,7 @@ The conservation of the wave phase at the interface is, however, not the only co
 The reflection and refraction (i.e. transmission) coefficients for the \textit{amplitudes} of the waves are derived in many textbooks  with different levels of generalisation.  
 In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their \textit{impedances} $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
-with the impedance of each medium
-$Z_{1} = \sqrt{\frac{\murl}{\epsrl}}$.
+with the impedance of each medium $Z_{1} = \sqrt{\murl/\epsrl}$.
 Eq. (\ref{eq_reflection}) is analogous to the reflection in a one-dimensional transmission line, known from the microwave engineering, although the impedance of a transmission line is defined in a more complicated way than in a continuous medium.
 The complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation \cite[p. 38]{born1999book}.  % todo add analytic eqs.?
 
@@ -685,14 +681,14 @@ Note that the phase velocity does not carry energy, it can be also higher than t
 %  *singly resonant local media -> positive phase velocity, negative group velocity, this happens near resonance so there are always high losses\\
 %  *			  nonlocal media -> weird things happen, todo\\
 %  }
-In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates away \textit{from} the interface in the second medium. The envelope propagates with the group velocity, $\vg$, as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{P} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave \cite[p. 16]{klingshirn2007semiconductor}. 
+In the discussion of wave refraction on an interface, it was assumed that the envelope (or modulation) of the wave approaches the interface in the first medium, then refracts and propagates away \textit{from} the interface in the second medium. The envelope propagates with the group velocity $\vg$ as defined by Eq. (\ref{eq_vg}). There is another quantity, the \textit{Poynting vector} $\mathbf{S} := \E\times\HH$, describing the direction and density of the \textit{power} carried by the optical wave \cite[p. 16]{klingshirn2007semiconductor}. 
 
 The group velocity usually points in the same direction as the Poynting vector, but this has not necessarily to be always true. A typical counterexample can be found near resonances in lossy (local) media. Such a behaviour can be traced back to Fig. \ref{fg_oscillator_spectrum}, where the permittivity drops from high values to negative ones. If the medium is defined lossy, the curve of the wavenumber $k(\omega)$ is continuous and smooth, and as a result the magnitude of the group velocity $v_g = \mathrm{d}\omega / \mathrm{d}k$ is negative around the resonance for $\omega \sim 2\pi$, %% TODO "negative" means "opposite to kk"? But we are speaking of scalars...
 which is also known as \textit{anomalous dispersion}. 
 
 It follows from this that the group velocity $\vg$ can also point in a direction opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
 % This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
-This \textit{anomalous dispersion} can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
+This can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
 Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to conserve its perpendicular component and that the group velocity has inevitably to point towards the interface also in the second medium, which seems contradictory to causality.
 This result 
 %of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, 
@@ -705,11 +701,13 @@ A negative group velocity has been experimentally observed in a thin sample. It 
 The notion of \textit{signal} or \textit{information propagation velocity} is sometimes % TODO cite
 identified with the group velocity, $\vg$. However, this may be misleading, as the differential definition of the group velocity in Eq. (\ref{eq_vg}) enables one to define it for slow-enough modulation only, as long as  the span of frequencies is narrow and the second derivative, corresponding to the group velocity dispersion, can be neglected.
 
-Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), one leaves the comfortable approximation of narrow spectrum: from the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a compact support has to span over an infinite spectrum. The proof \cite{hill2013uncertainty} can be based on the obvious fact that under multiplication by a well chosen compact-supported binary function, e.g., 
+Assuming the information is carried by a wave modulation that is limited in time (e. g. presence or absence of an optical pulse), one leaves the comfortable approximation of narrow spectrum: from the convolution-multiplication theorem already used in Eq. (\ref{eq_kkresult}), it can be shown that any information carrying function with a compact support has to span over an infinite spectrum. The simplified version of the proof \cite{hill2013uncertainty} can be based on the fact that under multiplication by a well chosen compact-supported binary function, e.g., 
 $$ f(t) \rightarrow f(t) \cdot \mathrm{sign}^2[f(t)], $$
-the original function does not change, yet the Fourier transform of this binary function is nonzero over almost all frequencies. 
+the original function obviously does not change, yet the Fourier transform of this binary function is nonzero over almost all frequencies. 
 
-A temporally limited optical pulse will be always more or less distorted upon propagation in a dispersive medium where the dispersion curves are not straight. Then the information velocity becomes a problematic term. If the information can be detected exactly in the first moment when the fields deviate from strict zero, one comes to the surprising conclusion that, in dispersive media, the information propagates probably with the speed of light. In the opposite example of a highly noisy channel, the pulse may be reliably detected only after most of its energy already arrived. To conclude, the author is convinced that the notion of \textit{information velocity} is too vague unless its exact definition is provided first, and should not be directly associated with the group velocity. 
+A temporally limited optical pulse will be always more or less distorted upon propagation in a dispersive medium where the dispersion curves are not straight. Then the information velocity becomes a problematic term. If the information could be detected exactly in the first moment when the fields deviate from strict zero, one would come to the surprising conclusion that, even in dispersive media, the information would propagate with the speed of light. In the opposite example of a highly noisy transmission, the pulse may be reliably detected only after most of its energy already arrived, resulting in information propagation even slower than the group velocity. 
+
+To conclude, the author is convinced that the notion of \textit{information velocity} is too vague unless its exact definition is provided first, and should not be directly associated with the group velocity. 
 
 %}}}
 %% TODO \paragraph{Speed of light and causality in nonlocal media}%{{{
@@ -822,13 +820,14 @@ Then the wave translated by any of the lattice vectors is also a solution of the
  \end{enumerate}
 
 %}}}
-\paragraph{Bloch theorem in three dimensions} %{{{
-The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$: \todo{expand, and refer to symbols above}
+\paragraph{Bloch theorem in three dimensions} %{{{ %% TODO unify 1-D 2-D and 3-D terminology
+The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$ in three dimensions: 
 \begin{equation} \KK := 
 \frac{2\pi K_1(\avb\times\avc)}{\ava\cdot(\avb\times\avc)} +  
 \frac{2\pi K_2(\avc\times\ava)}{\avb\cdot(\avc\times\ava)} +  
 \frac{2\pi K_3(\ava\times\avb)}{\avc\cdot(\ava\times\avb)}.
 \label{eq_reciprocalK}\end{equation}
+Each of three addends in Eq. (\ref{eq_reciprocalK}) relates to one of the lattice vectors and is orthogonal to the two remaining lattice vectors. %In contrast, inner product of $\KK$ with any of the three elementary lattice vectors is equal to $2\pi$. % elementary translation by 
 If the lattice vectors $\avabc$ are orthogonal, Eq. (\ref{eq_reciprocalK}) simplifies to
 % $K_{1,2,3}$ directly define the projection of the $\KK$:
 \begin{equation} \KK := 
@@ -891,7 +890,7 @@ The inherent ambiguity of the description on the basis of the Bloch wave can be 
 
 The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or even breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
 
-In many papers on periodic structures, all dispersion curves are plotted as \textit{folded} into the $K\in\langle -\pi/a, \pi/a\rangle$ region only (\cite{obrien2002photonic, yannopapas2005negative, chakrabarti2001magnetic}), while some employ the symmetry to fold  all curves further into the $K\in\langle0, \pi/a\rangle$ range. % (e.g. \cite{}). 
+In many papers on periodic structures, all dispersion curves are plotted as \textit{folded} into the $K\in\langle -\pi/a, \pi/a\rangle$ region only (\cite{obrien2002photonic, yannopapas2005negative, chakrabarti2012magnetic}), while some employ the symmetry to fold  all curves further into the $K\in\langle0, \pi/a\rangle$ range. % (e.g. \cite{}). 
 In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
 The mathematical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
@@ -1315,7 +1314,7 @@ Another type of a band gap with different field pattern were predicted \cite{wan
 %Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf todo
 
 The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \gtrsim 0.2$) is the strong manifestation of the spatial dispersion. Except for special cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight, and in the contrary, it leads to confusing deviation from the expected Lorentz oscillator curves, namely \textit{antiresonances} \cite{koschny2003resonant}  and complex values of $\eeff$ and $\meff$ even in lossless media \cite{chan2003}.
-In the author's belief, it is necessary to adopt the full theory of spatial-dispersive media, as sketched in the Chapter \ref{chap_nonloc} of this thesis.
+In the author's belief, it is necessary to adopt the full theory of spatial-dispersive media, as sketched in Chapter \ref{chap_nonloc} of this thesis.
 
 %}}}
 %}}}
@@ -1350,7 +1349,7 @@ This opposite-field domain is delimited by a closed surface.
 
 On the contrary, a Bragg band gap exhibits open surfaces, transversally interconnected between the cells. A limiting case is the band gap in a plan-parallel dielectric mirror.
 
-The difference between the topology of a sphere and of two parallel planes can be interpreted as the boundary between MMs and PhCs. However, this well-defined difference practically manifests as a $2\pi$-skip of the phase across each unit cell without any obvious impact on the wave energy. In more details this is demonstrated in the Chapter \ref{chap_results} %TODO point to the diel array
+The difference between the topology of a sphere and of two parallel planes can be interpreted as the boundary between MMs and PhCs. However, this well-defined difference practically manifests as a $2\pi$-skip of the phase across each unit cell without any obvious impact on the wave energy. In more details this is demonstrated in Chapter \ref{chap_results} %TODO point to the diel array
 by numerical studies of the transition cases.
 
 With this criterion it is also clear that its decision is frequency-dependent; as a matter of fact, all structures fall into the PhC class in the high-frequency limit.
@@ -1363,7 +1362,7 @@ Also the demand for "artificiality" in some other definitions appears to be some
  
 Confusion may arise from that some authors seem to overly broaden the applicability of the popular term of metamaterials. Two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and should be denoted as \textit{metasurfaces}.
 
-Even more unfortunate is to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can be a single split-ring resonator attached to a microwave transmission line denoted as a metamaterial. As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
+Even more unfortunate is to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can be a metamaterial made by attaching single split-ring resonator to a microwave transmission line. As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
 to a topic such as longitudinally modulated waveguide filters.
 
 %}}}
