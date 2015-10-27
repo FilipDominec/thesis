@@ -23,6 +23,7 @@ sectioning:
 	+ When one can use N, 
 	+ Unambiguous N retrieval, and resulting nontrivial conclusions
 	+ 
++ Kramers-Kronig check of the RodArray spectrum (or some other?)
 == Appendices ==
 
 ----

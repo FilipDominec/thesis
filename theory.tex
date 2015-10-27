@@ -22,7 +22,7 @@ where $\E$ and $\HH$ are the electric and magnetic vector fields, and $\D$ and $
  respectively. These two pairs of field and displacement are related in a similar way as a force is related to the deformation. % note that Simovski2007 regards the current J as force, and E as the deformation!
  The \textit{constitutive relations} depend on the properties of the medium the wave propagates in, and in vacuum they take the simplest possible form:
 \begin{equation}		\D = \varepsilon_0	\E, \quad\quad\quad						\B = \mu_0			\HH,				 \label{eq_ce}\end{equation}
-$\varepsilon_0 \approx 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 4\pi \cdot 10^{-7} \approx 1.25\cdot10^{-6}$ H/m he \textit{vacuum permeability}. 
+$\varepsilon_0 \approx 8.85\cdot10^{-12}$ F/m being the \textit{vacuum permittivity} and $\mu_0 = 4\pi \cdot 10^{-7} \approx 1.25\cdot10^{-6}$ H/m the \textit{vacuum permeability}. 
 Pages \pageref{starttext}--\pageref{endtext} of this thesis will be concerned with computation, interpretation, and experimental verification of the solutions of Eq. (\ref{eq_me1}--\ref{eq_me4})  for specific choices of constitutive relations.
 %}}}
 \paragraph{Wave equation in vacuum} %{{{
@@ -52,7 +52,7 @@ The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \
 Only some combinations of ($\E_0, \omega, \kk$) provide a physical solution of the wave equation (\ref{eq_wave}). In vacuum, the allowed solutions can be obtained by first substituting the differential operators by their equivalents for a particular plane wave:
 \begin{equation} \nabla \rightarrow -\ii\kk, \quad\quad\quad 
 \frac{\partial} {\partial t} \rightarrow \ii\omega, \label{eq_difftok}\end{equation}
-so the wave equation (\ref{eq_wave}) can be modified the following way:
+so the wave equation (\ref{eq_wave}) can be modified in the following way:
 $$					\nabla (\nabla \cdot \E) - \nabla^2 \E				  =	-\mu_0 \varepsilon_0 \frac{\partial^{2} \E}{\partial t^{2}},  $$
 $$				 -\ii\kk (-\ii\kk \cdot \E)  - (-\ii\kk \cdot -\ii\kk) \E = -\mu_0 \varepsilon_0 (\ii\omega)^2 \E, $$
 $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon_0 \omega^{2} \E,  $$
@@ -97,10 +97,10 @@ Let us assume that a harmonic plane wave propagates through the medium, so $\E(t
 Substituting $T:=t-\tau$, the exponent can be separated into two parts: one of which factors out of the integral, and one which turns the convolution into a temporal Fourier transform of the medium response:
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{0} \chi_e(T) \, \E_0 \, e^{\ii\omega (t - T) - \ii\kk\cdot\rr} \,\mbox{d}T,$$
 $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \left( \int_{-\infty}^{0} \chi_e(T)  \, e^{-\ii\omega T}\,\mbox{d}T  \right) \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}.$$
-This can be viewed as an application of the convolution theorem: convolution in time domain is equivalent to multiplication the in frequency domain.  %% FIXME normalisation by 2pi?
+This can be viewed as an application of the convolution theorem: convolution in time domain is equivalent to multiplication in the frequency domain.  %% FIXME normalisation by 2pi?
 Consequently, we may introduce the local \textit{relative permittivity}, or also \textit{dielectric function}, $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strongly it develops the electric displacement $\D$ in response to the electric field $\E$ of a harmonic wave.
-From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$. In the medium, the permittivity may be obtained as
-\begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := 1 + \chi_e(\omega) = \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T. \label{eq_eps_loc}\end{equation}
+From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$. In the medium, the permittivity may be obtained as % \E(t, \rr) ??=  1 + \chi_e(\omega) = 
+\begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T. \label{eq_eps_loc}\end{equation}
 
 In general, the function $\epsrl(\omega)$ is complex to account for possible phase delay between the harmonic driving field and the medium response. Phase delay different than $0$ (or integer multiple of $\pi$) corresponds to energy being dissipated in the medium.
 Let us note that the definition of the Fourier transform is never subject to the sign change, even when the convention of $e^{\ii \omega t}$ is exchanged for $e^{-\ii \omega t}$.
@@ -122,7 +122,7 @@ The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
  \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonance frequency}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
- \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. In frequency domain, it is roughly proportional to the resonance width. } 
+ \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. } 
  \item{$F = \alpha^{-1}$ is the \textit{oscillator strength}, determining the amplitude of the response function.}
  \end{itemize}
 
@@ -132,7 +132,7 @@ The response of usual media in frequency domain can thus be decomposed with acce
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
 \begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q} \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
-A sample time- and frequency-domain response of a medium with one harmonic oscillator in is Fig. \ref{fg_oscillator_spectrum}.
+A sample time- and frequency-domain response of a medium with one harmonic oscillator is shown in Fig. \ref{fg_oscillator_spectrum}.
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
 
 One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at high frequencies  $\omega \gg \omega_0$, the system does not follow the driving force at all.
@@ -141,7 +141,7 @@ The contribution of one oscillator to the low-frequency permittivity $\Delta\eps
 
 A more detailed treatment of the theory of the permittivity $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
 
-We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
+We will return to the Lorentz oscillator model also in Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
 \paragraph{Permeability}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
@@ -228,7 +228,7 @@ The wave equation in local dispersive media (\ref{eq_wavek_disp})
 %\begin{equation} - \kk (\kk \cdot \E) + k^2 \E = \varepsilon_0 \epsrl(\omega) \mu_0 \murl(\omega) \omega^{2} \E, \tag{\ref{eq_wavek_disp} \again} \end{equation}
 also allows the existence of longitudinal waves with electric field parallel to the wave vector $\E || \kk$. It was shown earlier that there is no solution for longitudinal waves in vacuum except for a static homogeneous field.
 
-\begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\epsrl'(\omega)$ (magenta curve in the left panel) to the shape of dispersion curves in the right panel (green curve, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance (nonzero losses yield a finite solution here, though).} \label{fg_dcsimpleel} \centering 
+\begin{figure}[t] \caption{Influence of a single resonance in the real part of relative permittivity $\epsrl'(\omega)$ (magenta line in the left panel) to the shape of dispersion curves in the right panel (dashed green line, computed using Eq. (\ref{eq_dispeq_loc}). The lower and upper polariton branches are separated by a spectral region $\omega \in (0.3, 0.65)$, where the wave does not propagate on an appreciable distance.} \label{fg_dcsimpleel} \centering 
 	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_simple_el.pdf}
 \end{figure}
 If a local medium is assumed, and the wavenumber $k$ is nonzero, such waves can have a solution with nonzero $\E$ when $\epsrl(\omega)' = 0$, or with nonzero $\HH$ when $\mu_r(\omega)' = 0$. Therefore, the corresponding dispersion curve for a longitudinal wave is a horizontal line at $\omega = \omega_{\text{L}}$, independent of $k$. This would be equivalent to a standing oscillation that maintains the spatial amplitude envelope that was originally excited. 
@@ -569,7 +569,7 @@ An intrinsic issue of spatial-dispersive media is that the permittivity $\epsLL(
 	\end{array} \right) \right] = 0. \label{eq_dispdetLL}\end{equation}
 If all tensor elements, ${\epsLL}_{ij}(\omega,\kk)$, can be approximated in the form of a polynomial expansion to a low order in $\kk$, the solution can again be found as roots of a characteristic polynomial. The degree of this polynomial may be substantially higher than in Eq. (\ref{eq_dispdet}), the dispersion curves can nonetheless be found by a brutal-force numerical search. %% ?? for any ${\epsLL}_{ij}(\omega,\kk)$.
 \begin{figure}[t] \caption{Dispersion curves for three different types of local media, comparing the local and Landau-Lifshitz representations of constitutive parameters. Three rows show media with \textbf{(a)} a  resonance in permittivity, \textbf{(b)} in permeability, and \textbf{(c)} in both parameters simultaneously.\\
-Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}), plotted as green lines, or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}), plotted as black contours. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background. %% TODO make clearer?
+Left column: Local parameters $\epsrl(\omega)$, $\murl(\omega)$ as functions of frequency. Right column: Dispersion curves were computed either with the local parameters from Eq. (\ref{eq_epsmusd2}), plotted as dashed green lines, or with the Landau-Lifshitz parameters from Eq. (\ref{eq_epsmusd3}), plotted as black line. The Landau-Lifshitz permittivity $\epsLL(\omega,\kk)$ is color shaded on the background. %% TODO make clearer?
 } \label{fg_dcll} \centering  
 \textbf{(a)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_el.pdf}    
 \textbf{(b)}\\\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_mag.pdf}
@@ -692,7 +692,7 @@ which is also known as \textit{anomalous dispersion}.
 
 It follows from this that the group velocity $\vg$ can also point in a direction opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
 % This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
-This behaviour can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
+This \textit{anomalous dispersion} can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
 Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to conserve its perpendicular component and that the group velocity has inevitably to point towards the interface also in the second medium, which seems contradictory to causality.
 This result 
 %of the light envelope propagating with the group velocity \textit{from} the second medium \textit{towards} the interface may seem unphysical, 
@@ -928,8 +928,10 @@ Note this does not contradict the ambiguity of choice of the Bloch wavevector $\
 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
-The periodically repeating one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}.  \todo{unify somehow the alternating explanation in 1-D and 3-D}
-The $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point in the lattice. 
+
+The periodically repeating one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}. 
+
+In two or three dimensions, any $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point from the regular lattice of all points where $\KK = (2\pi m_1/a, 2\pi m_2/a, \ldots)$ for $m_1, n_2, \ldots \in \mathbb{Z}$.
 All Brillouin zones have equal measure (i.e. length, area or volume), and moreover, they can be transformed into the first one by simple translation. %% TODO specify what this re-arrangement means
 
 In the one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$ for the second one etc. 
@@ -937,14 +939,16 @@ In the one-dimensional case the definition of higher Brillouin zones trivially c
 In two or three dimensions the shapes of higher Brillouin zones become much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}: in two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to encircle the previous Brillouin zone \cite[p. 126]{brillouin2003wave}. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
 
 The above illustration of how the plot space can be spared by folding the dispersion curves into the first Brillouin zone also applies to two- or three-dimensional structures.
-%, where it actually becomes a practical help for visualisation. TODO rm this?
 The exact shapes of the Brillouin zones are determined by the \textit{crystal family} of the real-space lattice and its set of lattice vectors $\avabc$. 
 As was also noted above, the space occupied by the plot can be further reduced thanks to the symmetry of the dispersion curves. This naturally applies to higher dimensions as well; the minimum part of the Brillouin zone that contains all necessary information is denoted as the \textit{irreducible Brillouin zone} and is determined by the crystallographic point group of the lattice. 
 
-More detailed listing and comparison of Brillouin zone shapes is beyond the scope of this thesis, but can be found in numerous solid-state textbooks, e.g. \cite[pp. 96-99]{klingshirn2007semiconductor}. %% TODO add some good detailed textbook on BZ
+More detailed listing and comparison of Brillouin zone shapes is beyond the scope of this thesis, but can be found in numerous solid-state textbooks, e.g. \cite[pp. 96-99]{klingshirn2007semiconductor}. 
 
 %}}}
 \paragraph{High-symmetry points of the Brillouin zones} %{{{ 
+\begin{figure}[t] \caption{High-symmetry points in the reciprocal $\KK$-space and the Brillouin zones for \textbf{(a)} a two-dimensional square lattice and \textbf{(b)} a three-dimensional cubic lattice. For these lattices, the first Brillouin zones have a square and cubic shapes, respectively. At each figure, one of the irreducible Brillouin zones is highlighted white and outlined with blue line.  } \label{fg_phcbrillouin} \centering 
+	\includegraphics[width=.9\textwidth]{img/PhC_high_symmetry_points.pdf}
+\end{figure}
 The fundamental difference between plotting of one dispersion curve and the isofrequency contours (IFCs) is that IFCs give the information about the dispersion for a two-dimensional scan of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
 
 A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out its inner surface.
@@ -953,10 +957,6 @@ The notation of high-symmetry points in the $\KK$-space is standardized. For the
 In a two-dimensional case, the dispersion curves are typically plotted along the triangle encircling the irreducible Brillouin zone: $\mathbf{\Gamma}-\mathbf{X}-\mathbf{M}-\mathbf{\Gamma}$.
 
 In three-dimensional cubic lattice, these points maintain their meaning in the plane perpendicular to the $z$-axis \cite[p. 99]{klingshirn2007semiconductor}. Additionally, "$\mathbf{R}$" denotes the spatial diagonal of $\KK = (\pi/a, \pi/a, \pi/a)$. Other lattices introduce more complex sets of the high-symmetry points and the paths along which the dispersion curves are plotted do not seem to be standardized.
-
-\todo{Figure - irr Brill zone for square and cubic lattices}
-
-\todo{Figure - Gamma-X-K-Gamma dc}
 
 %}}}
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 

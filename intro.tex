@@ -68,21 +68,21 @@ We point out the capabilities of each of them and we also briefly review multipl
 Defining numerically stable FDTD simulations with realistic materials, one encounters several pitfalls. They were painstakingly resolved during the preparation of the thesis, and are also presented here.
 
 The second part describes the setups of the "numerical experiments" that are built atop the algorithms. 
-The time-domain simulation of the \textit{s}-parameter retrieval, being based on transmitting a broadband pulse towards a metamaterial unit cell and recovering its effective parameters from the reflected and transmitted fields, is shown to give realistic results. However, it has its limitations which are also presented. Although the \textit{s}-parameter retrieval seems by far the most commonly used, different setups were described in the literature which are briefly noted.
+The time-domain simulation is first used in conjunction with the \textit{s}-parameter retrieval setup, which is based on transmitting a broadband pulse towards a metamaterial unit cell and recovering its effective parameters from the reflected and transmitted fields. While this setup is shown to give mostly realistic results, however, it has its limitations which are also presented. Although the \textit{s}-parameter retrieval seems by far the most commonly used, different setups were described in the literature which are briefly noted.
 One of such simulation setups of the current-driven homogenization is presented in details, and it is shown that its weaker prior assumptions on the structure behaviour lead to higher reliability.
 % TODO one should really devise an algorithm for the Landau-Lifshitz permittivity retrieval from CDH (i.e. calibrate the source first on vacuum?)
 %}}}
-\paragraph{Results, conclusion and appendices} %{{{
+\paragraph{Results, conclusion and appendices} %{{{				%% TODO
 %The perhaps most important section follows, 
 %in which a systematic overview of the most important periodic structures is provided
 The Results section puts the common metamaterial types into a perspective, pointing out what they have in common, and how they differ.  % TODO write which structures are discussed
-However, the space of all imaginable structures can never be covered, and another aim of this section is to demonstrate the capabilities of the simulation scripts used. 
+While the space of all imaginable structures can never be covered, most typical classes  another aim of this section is to demonstrate the capabilities of the simulation scripts used. 
 %for metamaterial simulation
 
 The scale of the simulated structures is chosen for the structures to operate in the terahertz range. 
 Thanks to the scale invariance of Maxwell equations, many of the designs and observations can be transposed also into other spectral regions, be it microwave or infrared. However, one has to bear in mind that the properties of the constituent materials may be different in other spectral regions. Naturally, also the techniques of fabrication and characterisation may be different.
 
-Some of the structures discussed were also manufactured and experimentally characterized during this PhD project. 
+Some of the structures discussed were also fabricated and experimentally characterized during this PhD project. 
 The results from the simulations were verified against experimental data and analytic models.
 
 At the end of the thesis, somewhat critical conclusions from the above results are drawn, along with directions in which the research could be pursued in future.
