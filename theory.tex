@@ -119,11 +119,11 @@ The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of diff
 Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium positions in the lattice. The molecular rotations can also be modelled as (possibly overdamped) harmonic oscillators. Even free electrons in conductive media can fit into the theory of a harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time and frequency domains, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
 
 A damped harmonic oscillator is described by a second-order differential equation:
-\begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} - \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
+\begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} + \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
 Provided the driving term on the right hand side  is harmonic, $f(t) = e^{+\ii \omega t}$, the system response is also a harmonic function, $x(t) = \chi(\omega) e^{+\ii \omega t}$. The differential equation (\ref{eq_harm_osc}) can be easily solved to show that the complex amplitude of the driven oscillations, $\chi(\omega)$, depends on the angular frequency and on the positive real parameters $\alpha$, $\beta$ and $\zeta$ in the following way:
-\begin{equation} \chi(\omega) \equiv \frac{x(t)}{f(t)} = \frac{1}{\zeta-\alpha\omega^{2} - \ii\omega\beta}  = \frac{\alpha^{-1}}{\frac{\zeta}{\alpha}-\omega^{2} - \ii\omega\frac{\beta}{\alpha}}. \label{eq_harm_osc_result}\end{equation}
+\begin{equation} \chi(\omega) \equiv \frac{x(t)}{f(t)} = \frac{1}{\zeta - \alpha\omega^{2} + \ii\omega\beta}  = \frac{\alpha^{-1}}{\frac{\zeta}{\alpha}-\omega^{2} + \ii\omega\frac{\beta}{\alpha}}. \label{eq_harm_osc_result}\end{equation}
 The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in this text, but without loss of generality the result of Eq. (\ref{eq_harm_osc_result}) can be rewritten into
-\begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} - \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
+\begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} + \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
  \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonance frequency}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
@@ -135,7 +135,7 @@ where the physical interpretation of the three (real and positive) parameters is
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
 The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the angular resonance frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
-\begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - \ii\omega\gamma_q}. \label{eq_lorentz_eps}\end{equation} 
+\begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 + \ii\omega\gamma_q}. \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
 A sample time- and frequency-domain response of a medium with one harmonic oscillator is shown in Fig. \ref{fg_oscillator_spectrum}.
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
@@ -152,7 +152,7 @@ We will return to the Lorentz oscillator model also in Chapter \ref{def_of_mat},
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
 \begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \right|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
 where $\chi_m(T)$ is the \textit{magnetic response function} of the medium and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an analogous expression for the local permeability in the frequency domain:
-\begin{equation} \murl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 - i\omega\gamma_q}, \label{eq_lorentz_mu}\end{equation} 
+\begin{equation} \murl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 + i\omega\gamma_q}, \label{eq_lorentz_mu}\end{equation} 
 where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0q}$, $\gamma_q$ and $F_q$ are here the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field or their response is limited to low frequencies.
 
 %}}}
