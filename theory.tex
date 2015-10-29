@@ -1,3 +1,8 @@
+%% Things that need fixing:
+% sign of imag part in Lorentz osc
+% courant factor S -> s, and put into symbols table
+% 
+
 %% Things to be optionally fixed:
 %% *  fix that f is used as frequency (replace with omega) and also as arbitrary function f(t) 
 %% *  get rid of the term "response function" for susceptibility
@@ -135,7 +140,7 @@ Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz 
 A sample time- and frequency-domain response of a medium with one harmonic oscillator is shown in Fig. \ref{fg_oscillator_spectrum}.
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
 
-One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at high frequencies  $\omega \gg \omega_0$, the system does not follow the driving force at all.
+One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at very high frequencies $\omega \gg \omega_0$, the system can not respond to the driving force.
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 
@@ -618,7 +623,7 @@ As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\
 \label{chap_sd}
 The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole. The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
 
-The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have characteristic impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
+The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have typical impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
 
 %}}}
 \paragraph{Existence of additional waves}   %{{{ 
@@ -728,7 +733,7 @@ The previous sections discussed infinite media, with the only deviation from hom
 
 There is a broader class of structures for which analytical or semianalytical methods have been developed to compute their interactions with electromagnetic waves, such as scattering on dielectric/metallic spheres, propagation through arbitrary stacks of parallel layers, diffraction on thin apertures, resonances in orthogonal, cylindrical or spherical cavities, or wave guiding in high-symmetry waveguides or optical fibers. 
 
-The interactions of electromagnetic waves with most of possible structures are too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, the resulting periodic structure behaves in a way characteristic for the periodicity and its most important traits can again be partially understood on an analytical basis.
+The interactions of electromagnetic waves with most of possible structures are too complex to be expressed analytically, and can only be accessed by numerical methods, some of which are described in Chapter \ref{chapter_numerical}. However, when these elementary structures are arranged into an infinite array, any resulting periodic structure behaves in a way that is typical for the periodicity and its most important traits can again be partially understood on an analytical basis.
 This chapter focuses on these general properties shared by periodic structures, leaving the particular numerical simulations to the Results section.
 
 %}}}
@@ -1011,9 +1016,9 @@ Although realistic crystalline media are composed of a lattice of individual ato
 
 Periodic structures can similarly exhibit a resonance confined in the unit cell. 
 To the author's knowledge,  %% XX?
-every possible shape formed from a dielectric or metal has infinitely many resonance modes,  %% ... high-permittivity and...
-characteristic by a relatively high concentration of energy in the structure, or near to it, and a relatively weak coupling to the incident electromagnetic wave.  %% ... More specific rules will be given in the Results.
-Arranging such resonant elements into the lattice is a fundamental step in building a periodic structure with resonant behaviour. In such structures, the dispersion for the Bloch wave follows a resonance curve similar (but not the same) as that in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory}, and the word \textit{microscopic} is left for the much finer fields in the constituent atoms or molecules.
+every possible shape formed from a dielectric or metal has multiple resonance modes,  %% ... high-permittivity and...
+characteristic by a relatively high localisation of energy close to the structure. %% ... More specific rules will be given in the Results.
+Arranging such resonant elements into the lattice is a fundamental step in building a periodic structure with resonant behaviour. When such a structure is viewed as a homogeneous medium, its dispersion for the Bloch wave follows a resonance curve similar (but not exactly the same) to that in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory}, while the word \textit{microscopic} is left for the much finer fields in the constituent atoms or molecules.
 
 Another important characteristic of individual resonances consists in a \textit{qualitative} change in the field shape between the lower and upper edge of the band gap. This is true for natural media as well as for lattices of individual resonators. Typically, at the lower band-gap edge, the dipoles are \textit{in-phase} with the wave, whereas at the upper edge, they are \textit{in counter-phase}.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
 Inside the bandgap, usually closer to the lower frequency edge, a resonance frequency is located (c.f. Fig. \ref{fg_oscillator_spectrum}).
@@ -1164,9 +1169,8 @@ A feature typical of this class of media is a very small wavevector $K\sim 0$, w
 Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
 The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
-The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations 
+The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations \cite{eleftheriades2012transforming}.
 %todo \cite{alitalo2009electromagnetic}
-%todo \cite{eleftheriades2012transforming}
 Electromagnetic cloaking % by homogeneous media ???
 was considered in the early 60s by Dollin \cite{dollin1961possibility} and later by Kerker \cite{kerker1975invisible}.
 
@@ -1220,7 +1224,7 @@ The research of artificial dielectrics, or newly, metamaterials, gained on signi
 
 %}}}
 \paragraph{Imaging beyond diffraction limit with metamaterials} %{{{ ===================== cite fn
-Arguably the most excitement was caused by another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with a resolution better than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves at its rear surface. The resulting extremely sharp image would then be composed not only by negatively refracted propagating waves, also by the amplified evanescent waves.
+Arguably the most excitement was caused by another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with a resolution better than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves at its rear surface. The resulting extremely sharp image would then be composed not only of negatively refracted propagating waves, also of the amplified evanescent waves.
 
 If a metamaterial is used as a negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
@@ -1344,7 +1348,7 @@ The high concentration of the energy within a small part of the structure reduce
 
 %}}}
 \paragraph{The phase criterion} %{{{
-In spite of what was written above, there exists a well-defined, rigorous criterion dividing the periodic structures into two groups at a given frequency: When the structure is excited above its frequency of resonance, and the resonant energy is well localized in the part of a unit cell, part of the volume contains field of sign opposite to the excitation wave (c.f. Fig. \ref{fg_lorentz}). %% TODO check Fig 2.2 
+In spite of what was written above, there exists a well-defined, rigorous criterion dividing the periodic structures into two groups at a given frequency: When the structure is excited above its frequency of resonance, and the resonant energy is well localized in the part of a unit cell, part of the volume contains field with sign opposite to the excitation wave, which is enabled by the behaviour of the Lorentz oscillator illustrated in Fig. \ref{fg_oscillator_spectrum}. %% TODO check Fig 2.2 
 This opposite-field domain is delimited by a closed surface.
 
 On the contrary, a Bragg band gap exhibits open surfaces, transversally interconnected between the cells. A limiting case is the band gap in a plan-parallel dielectric mirror.
