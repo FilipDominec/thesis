@@ -862,7 +862,7 @@ For illustration, using the fact that any lattice of periodic unit cells may be 
 for which the plane wave in vacuum can be simultaneously represented by any of infinitely many other combinations of
 \begin{equation} 
 \left.  \begin{array}{cc}
-	\mathbf{u_{e}}(\rr) := \E_0 e^{2\pi\ii (m_1\ava\cdot\rr + m_2/\avb\cdot\rr + m_3/\avc\cdot\rr)/a^{2}} \vspace{2mm} \\ %% TODO use mathbf here? or is this whole a rubbish?
+	\mathbf{u_{e}}(\rr) := \E_0 e^{2\pi\ii \left(\frac{m_1}{\ava\cdot\rr} + \frac{m_2}{\avb\cdot\rr} + \frac{m_3}{\avc\cdot\rr} \right)} \vspace{2mm} \\ %% /a^{2} TODO use mathbf here? or is this whole a rubbish?
 %\KK := \kk - \frac{2\pi m_1}{a_1} - \frac{2\pi m_2}{a_2}- \frac{2\pi m_3}{a_3},
 \end{array}\quad \right\} \quad \forall m_{1,2,3} \in \mathbb{Z}
 \label{eq_blochvac2}
@@ -1033,10 +1033,10 @@ Other resonances have both dipole moments zero, which in general results from hi
 Band gaps of a different type, denoted as Bragg band gaps or also as \textit{photonic band gaps} (PBG), are observed exclusively in periodic structures when an integer number of half-waves fits into the unit cell. 
 In the above mentioned periodic lattice of isolated particles, the Bragg band gap can therefore be understood as a resonance of the electromagnetic wave in the space \textit{between} the particles, in contrast with the individual resonances where most of the energy is localised \textit{inside} the particles -- or at least very close to them.
 
-Along an axis of a cubic lattice with unit cell size $a$, the rule for the Bragg band gaps to be observed is particularly simple:
-\begin{equation} K= \frac{\pi m}{a}, m\in\mathbb{N}. \label{eq_braggbg}\end{equation}
-Thus, the first Bragg band gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
-Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
+For a wave propagating parallel to any axis of a square or cubic lattice with unit cell size $a$, the rule for the Bragg band gaps to be observed is particularly simple:
+\begin{equation} K= \frac{\pi m}{a}, m\in\mathbb{Z}. \label{eq_braggbg}\end{equation}
+The first Bragg band gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
+%Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
 
 % The waves between the cells in a Bragg band gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
 The width of the band gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
@@ -1165,7 +1165,7 @@ A feature typical of this class of media is a very small wavevector $K\sim 0$, w
 %add some notable papers; quotes may be in: Epsilon-Mu Zero Meta-material with Zero Refractive Index An Electromagnetic Nihility, Shantanu Das
 
 %}}}
-\paragraph{Transformation optics and electromagnetic cloaks}%{{{ ================= OK (cites)
+\paragraph{Transformation optics and electromagnetic cloaks} %{{{ ================= OK (cites)
 Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
 The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
