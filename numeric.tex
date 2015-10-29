@@ -40,7 +40,7 @@ In general, the effect of discretization in FDTD simulations can be easily ident
 While the spatial resolution $\Delta x$ can be relatively freely set depending on the accuracy expected by the user, the \textit{temporal resolution} $\Delta t$ is related to $\Delta x$ by rules that will be discussed below. Generally, if $\Delta t$ is set too high, the simulation will get numerically unstable, yielding unrealistic or even infinite values.  %  slowing down the computation and
 
 In the literature, one often encounters that the \textit{Courant factor} $\cour$ is used instead of the description in terms of $\Delta t$,
-\begin{equation} S~= \frac{c \Delta t}{\Delta x}, \label{eq_courant}\end{equation}
+\begin{equation} \cour = \frac{c \Delta t}{\Delta x}, \label{eq_courant}\end{equation}
 In words, the Courant factor $\cour$ denotes what part of a FDTD cell the light can travel within one time step. 
 The reason for introducing this quantity consists in the Maxwell equations [Eq. (\ref{eq_me1}-\ref{eq_me4})] being scale invariant, which holds also for the field update routine in FDTD when materials with frequency-independent permittivity are used. Therefore, when the resolution $\Delta x$ is changed, $\cour$ can be a well-chosen built-in constant and the time resolution given by Eq. (\ref{eq_courant}) ensures that the simulation does not go unstable.
 
