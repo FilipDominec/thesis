@@ -74,6 +74,7 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
+
  \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering 
 	\includegraphics[width=\textwidth]{img/dispersion_landau_lifshitz/dispersion_vacuum.pdf}
 \end{figure}
@@ -1076,6 +1077,7 @@ This chapter can in no way cover all relevant papers and ideas over the last cen
 %}}}
 
 \subsection{Photonic band-gap structures} 
+
 \paragraph{One-dimensional band gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
 Both effects are due to a presence of a Bragg band gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
@@ -1087,16 +1089,14 @@ Embedding one layer different from others, a \textit{defect}, into the middle of
 
 %}}}
 \paragraph{Photonic crystals}%{{{ ============================= find 1 cite "phc"
-The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band gaps for the electron wave in natural crystals. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a delimited range of frequencies for which there exists no propagating wave in any direction, a \textit{complete band gap}, is attributed to Yablonovitch \cite{yablonovitch1987} in 1987.
-% this can be made using X-ray litography   https://www.google.com.ar/patents/US6875544
-% another structure depicted in patent from 1994: https://www.google.com.ar/patents/US5335240
-
-The structure, known as \textit{yablonovite}, was designed for microwaves, since it was made by precise mechanical drilling into a plastic cube. Different technologies were developed in 1990s in attempts to efficiently fabricate photonic crystals operating in the optical range, such as stacking of structured layers, direct laser writing in a resin,  self-assembly of dielectric spheres into opal-like structures etc. 
-
-The demands for achieving a complete three-dimensional band gap can be reduced when a singly or doubly periodic modulation is etched into a dielectric slab, as was developed by Zengerle in the late 1970s \cite{zengerle1987light}. Planar structures are also much easier to fabricate using existing technologies such as photolitography. 
+\begin{figure}[t] \caption{Two approaches for efficient fabrication of a photonic crystal: \textbf{(a)} dielectric rods stacking into a \textit{woodpile} structure, \textbf{(b)} top view and side view of soft X-ray litography inscribing a \textit{yablonovite}-like hole lattice into a negative photoresist. Both drawings adapted from patent applications  \cite{ho1994periodic} and \cite{sweatt2005method}, respectively.} \label{fg_phc_patents} \centering \includegraphics[width=\textwidth]{img/patents/phc_patents.pdf} \end{figure}
+The success in prohibiting the light to propagate along one direction inspired the design of two- and three-dimensional \textit{photonic crystals}, named in analogy with the band gaps for the electron wave in natural crystals \cite{joannopoulos2011photonic}. A nontrivial accomplishment of manufacturing the first three-dimensional structure with a delimited range of frequencies for which there exists no propagating wave in any direction, a \textit{complete band gap}, is attributed to Yablonovitch \cite{yablonovitch1987} in 1987.
 %% phc term first used in ??
+
+The structure, known as \textit{yablonovite}, was designed for microwaves, since it was made by precise mechanical drilling into a plastic cube. Different technologies were developed in 1990s in attempts to efficiently fabricate photonic crystals operating in the optical range, e.g. a similar approach based on X-ray nanolitography (see Fig. \ref{fg_phc_patents}a), stacking of structured layers (Fig. \ref{fg_phc_patents}b), direct laser writing in a resin or self-assembly of dielectric spheres into opal-like lattice.
+
+The demands for achieving a complete three-dimensional band gap can be reduced when a singly or doubly periodic modulation is etched into an index-guiding dielectric slab, as was developed by Zengerle in the late 1970s \cite{zengerle1987light}. Planar structures are also much easier to fabricate using existing technologies such as photolitography.  
 % "Any dielectric material can be used to fabricate a photonic crystal with a sizeable and robust complete photonic bandgap (CPBG) in three dimensions, as long as small metal inclusions can be added." \cite{moroz2002metallo}
-\cite{joannopoulos2011photonic}
 
 %}}}
 \paragraph{Band gap used in fibers and waveguides} %{{{ ============= (cites: DBR)
@@ -1187,20 +1187,16 @@ Theories of dielectric behaviour of nonhomogeneous composites have been develope
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
+\begin{figure}[h] \caption{Three examples of artificial dielectrics designs patented half a century ago: \textbf{(a)} sheets containing cut wires of alternating orientation and resonance frequency, enabling to manipulate microwave polarisation, \textbf{(b)} cross-section through a lightweight lens of 3 m diameter designed for 50-500 MHz radio waves, made of partially metallized plastic layers, \textbf{(c)} artificial dielectric made of non-resonant cut wires arranged into a nearly isotropic 3-D lattice. Drawings adapted from patent applications \cite{wickersham1960artificial},  \cite{anderson1967artificial} and \cite{hannan1966artificial}, respectively.} \label{fg_phc_patents} \label{fg_mm_patents} \centering \includegraphics[width=\textwidth]{img/patents/mm_patents.pdf} \end{figure}
+
 The design of inhomogeneous structures that could be treated as homogeneous with some desired properties has also a surprisingly long history. 
 
 Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit} of frequencies well below any resonance frequency of the particle, and to the \textit{long-wavelength limit} well below the first photonic band gap. 
 
 Subwavelength wire arrays have been experimentally used, at least, since 1898 as microwave polarisers. The concept of assembling a microwave polarisation rotator from organic or metallic helices comes from that era, too \cite{bose1898rotation, emerson}.
 
-Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use in the 1940s to engineer the broad-band permittivity tensor for the applications in lightweight lenses for microwave frequencies \cite{kock1948metallic}. They were still operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
+Periodic structures denoted as \textit{artificial dielectrics} \cite{brown1955properties} found their use since the 1940s to engineer the broad-band permittivity tensor for the applications in lightweight lenses for microwave frequencies \cite{kock1948metallic}. Initially, they were operated in the static limit below any resonance. Usually the particles consisted of hollow metal waveguides or spheres/disks which increased or reduced the wave phase velocity, respectively. 
 
-%Lightbowne		1969 https://www.google.com/patents/US3430248			Artificial dielectric material for use in microwave optics
-%Wickersham		1960 http://www.google.com/patents/US2921312			Artificial dielectric polarizer
-%John, McKay	1975 http://www.google.com/patents/US3886558			Artificial dielectric material for controlling antennae patterns
-%Hannan			1966 http://www.google.com.py/patents/US3254345			Artificial dielectric using interspersed rods
-%Wickersham		1966 https://www.google.com.ar/patents/US3089142		Artificial dielectric polarizer
-%Anderson		1967 http://google.ru/patents/US3329958					Artificial dielectric lens structure
 %}}}
 
 \subsection{First unification: metamaterials with uncommon parameters} 
@@ -1324,7 +1320,7 @@ In the author's belief, it is necessary to adopt the full theory of spatial-disp
 %}}}
 
 \section{The boundary between photonic crystals and metamaterials} 
-In the light of the previous historical review, MMs and PhCs are divided by historical reasons as different paradigms that seem to have developed separately for most of the 20th century. At least in the author's view, both paradigms however undergo the process of unification, which incites the question whether there exist any objective rules to tell whether a given structure is a MM or a PhC.
+In the light of the previous historical review, it appears that MMs and PhCs are divided by historical reasons as different paradigms which have developed separately for most of the 20th century. It was however argued above that these paradigms and research comumnities are undergoing the process of unification, which incites the question whether there exist any objective rules to tell apart MMs from PhCs.
 
 \paragraph{The wavelength criterion} %{{{
 Originally, the determining parameter was surely the ratio of the unit cell size to the wavelength of the electromagnetic wave (at the given frequency of operation).
@@ -1332,23 +1328,23 @@ Even some modern recent papers \cite{tsukerman2011nonlocal} define MMs as \texti
 
 It should be noted that the studies of MM and PhC were both inspired by a wave propagating through the lattice of a natural crystal. The difference was however that in the earlier case of MMs, it was an \textit{optical} wave, whereas in the case of PhCs the inspiration came from the \textit{electron wavefunction}. The wavelength of the valence-band electrons is similar to the inter-atomic distance ($\approx 10^{-10}$ m), always demanding the description through the Bloch theorem, whereas the wavelength of light is roughly four orders of magnitude larger, enabling to approximate the crystal as a homogeneous medium.
 
-In the analogy, the earlier metamaterials (or, artificial dielectrics) were mostly though as deeply subwavelength, which provided a clear and easy distinction from all PhCs. It also allowed to neglect spatial dispersion for the wave. The situation however appears to change with realistic MM scaling to the optical range, since the wavelength becomes comparable to the unit cell size. Besides, the PhC-MM boundary then becomes also frequency dependent.
+In the analogy, the earlier metamaterials (or, artificial dielectrics) were mostly thought as deeply subwavelength, which provided a clear and easy distinction from all PhCs. It also allowed to neglect spatial dispersion for the wave. The situation however appears to change with realistic MM scaling to the optical range, since the wavelength becomes comparable to the unit cell size and both regions start to overlap as illustrated in Fig. \ref{fg_mm_phc_diagram}. Besides, the PhC-MM boundary then becomes also frequency dependent.
 
+\begin{figure}[h] \caption{Rough illustration of the ratio of the Bloch wavelength ($2\pi/K$) to the unit cell size $a$ in metamaterials and photonic crystals} \label{fg_mm_phc_diagram} \centering \includegraphics[width=.4\textwidth]{img/mm-phc-diagram.pdf} \end{figure}
 %}}}
 \paragraph{The energy criterion} %{{{
-The time-averaged energy of a plane wave in vacuum is constant.  All peculiar interaction of MMs and PhCs with the wave is inherently connected to the uneven distribution of the electromagnetic energy in the structure. This is the rationale for the new criterion: In the MMs near a resonance, the energy is highly concentrated inside a part of the unit cell, typically close to sharp edges of metals or within a particle of high-permittivity dielectric. On the contrary, the resonances in typical PhCs do not concentrate the energy, and instead there is a moderately high intensity of the field in the majority of the space between the scattering structure elements.
+The time-averaged energy of a plane wave in vacuum is constant. Any sort of interaction of MMs or PhCs with the wave is inherently connected to an uneven distribution of the electromagnetic energy in the structure. This may become the rationale for a new criterion: In the MMs near a resonance, the energy is highly concentrated inside a part of the unit cell, typically close to sharp edges of metals or within a particle of high-permittivity dielectric. On the contrary, the resonances in typical PhCs do not concentrate the energy, and instead there is a moderately high intensity of the field in the majority of the space between the scattering structure elements.
 
-As a result, the individual, MM-like resonances are more sensitive to changes in the structure shaping, whereas the Bragg band gaps typical of a PhC are more sensitive to the unit-cell spacing. This is the reason behind the aforementioned parametric scans \cite{shi2007,rybin2015,dominec2014transition} through the unit cell spacing, % (todo add refs from AdMonsoriu ...)
-since they recognize the nature of each single resonance mode, and justify even the problematic structures at the boundary to be viewed either as a MM or a PhC in different parts of the spectra.
-
-The high concentration of the energy within a small part of the structure reduces the sensitivity of the parameters under a moderate disorder in the cell position, which has also been viewed as a trait of metamaterials, \cite{peng2007}: 
+As a result, the Bragg band gaps typical of a PhC are more sensitive to the unit-cell spacing. % This is the reason behind the aforementioned parametric scans \cite{shi2007,rybin2015,dominec2014transition} through the unit cell spacing, % (todo add refs from AdMonsoriu ...) since they recognize the nature of each single resonance mode, and justify even the problematic structures at the boundary to be viewed either as a MM or a PhC in different parts of the spectra.
+On the contrary, a high concentration of the energy within a small part of the structure reduces the sensitivity of the parameters under a moderate disorder in the cell position, which has also been viewed as a trait of metamaterials, \cite{peng2007}: 
 \begin{displayquote}
 	\textit{(the fact that) the randomized positions do not influence significantly the left-handed properties indicates that such composite is different from (...) photonic crystals}
 \end{displayquote}
+%This criterion is somewhat vague, as 
 
 %}}}
 \paragraph{The phase criterion} %{{{
-In spite of what was written above, there exists a well-defined, rigorous criterion dividing the periodic structures into two groups at a given frequency: When the structure is excited above its frequency of resonance, and the resonant energy is well localized in the part of a unit cell, part of the volume contains field with sign opposite to the excitation wave, which is enabled by the behaviour of the Lorentz oscillator illustrated in Fig. \ref{fg_oscillator_spectrum}. %% TODO check Fig 2.2 
+There however exists a well-defined, rigorous criterion dividing the periodic structures into two groups at a given frequency: When the structure is excited above its frequency of resonance, and the resonant energy is well localized in the part of a unit cell, part of the volume contains field with sign opposite to the excitation wave, which is enabled by the behaviour of the Lorentz oscillator illustrated in Fig. \ref{fg_oscillator_spectrum}. %% TODO check Fig 2.2 
 This opposite-field domain is delimited by a closed surface.
 
 On the contrary, a Bragg band gap exhibits open surfaces, transversally interconnected between the cells. A limiting case is the band gap in a plan-parallel dielectric mirror.
