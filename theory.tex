@@ -111,7 +111,7 @@ Let us note that the definition of the Fourier transform is never subject to the
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on a different time scale, thus the response of the medium usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
 
-Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium positions in the lattice. The molecular rotations can also be modelled as (possibly overdamped) harmonic oscillators. Even free electrons in conductive media can fit into the theory of a harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time and frequency domains, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
+Linear physical systems with an inertial mass, friction force and a restoring force are known as \textit{damped harmonic oscillators}.  This theory applies well to the electrons elastically bound to an atomic nucleus, as well as to the atoms elastically bound to their equilibrium positions in the lattice. The molecular rotations can also be modelled as (possibly overdamped) harmonic oscillators. Even free electrons in conductive media can fit into the model of a harmonic oscillator provided the restoring force is set to nearly zero. The response of a harmonic oscillator is easy to describe both in time and frequency domains, even without the explicit use of the Fourier transform from Eq. (\ref{eq_eps_loc}). The harmonic oscillator model thus becomes a convenient starting point to approximate the response of materials.
 
 A damped harmonic oscillator is described by a second-order differential equation:
 \begin{equation} \alpha \frac{\partial^{2} x(t)}{\partial t^{2}} + \beta\frac{\partial x(t)}{\partial t} + \zeta x(t) = f(t). \label{eq_harm_osc}\end{equation}
@@ -139,7 +139,7 @@ One can see that each oscillator increases the real part of the low-frequency pe
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 
-A more detailed treatment of the theory of the permittivity $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
+A more detailed treatment of the permittivity spectra $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
 
 We will return to the Lorentz oscillator model also in Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
 %}}}
@@ -218,7 +218,7 @@ In the simplest example of a single electric resonance with negligible losses, a
 
 The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also of the spectra of resonances of macroscopic structures described later.
 
-Note that the formation of upper and lower polariton branches can be reinterpreted\cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing}, or also \textit{avoided crossing}, between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
+Note that the formation of upper and lower polariton branches can be also interpreted \cite{landau1984electrodynamics} using the theory of coupled oscillators as the result of \textit{anticrossing}, or also \textit{avoided crossing}, between the oscillator at the frequency $\omega_0$ (forming a horizontal line) and the photon branch (forming a straight growing light-line). \label{anticrossing}
 
 When losses are present, the lower and upper polariton branches (in Fig. \ref{fg_dcsimpleel}) are connected by a smooth line of \textit{anomalous} dispersion and very high losses.  
 
@@ -1040,7 +1040,6 @@ In the Results section, it is also shown that for a particular choice of paramet
 % -> zero-width case (it is a transition between a mode traversing from one photonic band to another --- TODO put into Results)
 
 In analogy with the solid-state physics, where the notion of band gaps originates from, the Bragg band gaps can be called \textit{direct} if the dispersion curves at the lower and upper band gap edges are at the same wavenumber $K$. 
-Equivalently, between the lower and upper edge of the Bragg band gap, the phase increase across an unit cell does not change. The different field shape can however be always found in the location of the \textit{nodal planes}. 
 
 In contrast, the individual resonances are analogous to the \textit{indirect} band gaps, as the of phase increase over an unit cell is different  for frequencies below and above the individual resonance. Some particular examples are shown later.
 
