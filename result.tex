@@ -4,19 +4,19 @@
 	%thin wires [8], [28], Swiss rolls [9], SRRs [9], electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
 
 
-\label{section_result}
+\label{chapter_results}
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}
 \begin{figure}[t] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
-\textbf{a)}	\includegraphics[width=8cm]{img/Slab_eps001_PWEM.pdf}
-\textbf{b)}	\includegraphics[width=8cm]{img/Slab_eps012_d15.pdf}
+	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_n.pdf} \put (-1,27) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_n.pdf} \put (-1,37) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
 \end{tabular}
 \end{figure}
 
@@ -64,8 +64,7 @@ The reflection amplitude of a lossless dielectric slab can become zero under a  
 \begin{equation} \phi_{1} = d_1 n_1 \frac{\omega}{c} = \pi m \text{\quad or \quad} \phi_{2} = d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_fpcond}\end{equation}
 Unlike the Bragg resonance, this effect can be observed even in a single isolated unit cell; in fact it is the well known \textit{Fabry-Pérot resonance}. 
 
-A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other just as they were in vacuum (Fig. \ref{fg_1dbd}a). A simplest example of a structure that exhibits a zero-width band gap is the 1-D PhC with equal optical thickness of both slabs $d_1 n_1 = d_2 n_2$. The 
-
+A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (Fig. \ref{fg_1dbd}a). A simplest example of a structure that exhibits a zero-width band gap is the 1-D PhC with equal optical thickness of both slabs $d_1 n_1 = d_2 n_2$. 
 
 % NOTE that PWEM gives results in natural units. The natural unit of frequency is defined as that at which exactly one wavelength fits into the unit cell size if it contains empty vacuum.
 
@@ -104,7 +103,7 @@ Note that with the correct branch retrieval, the index of refraction never drops
 %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
 \paragraph{High-frequency behaviour}
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\ 
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
@@ -116,7 +115,9 @@ Note that with the correct branch retrieval, the index of refraction never drops
 
 The structure formed from a regular square lattice of conductive wires exhibits the most interesting properties when the electric field is parallel to the wires. This polarisation will be the one assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is qualitatively different and is discussed later (see Section \ref{section_eot}).
 
-In the part of the spectrum where more than a half wave fits into the unit cell, i.e. above the first band, the 
+
+In the part of the spectrum where more than a half wave fits into the unit cell, i.e. above the first band, the  % todo
+
 
 \paragraph{Low-frequency behaviour}
 \begin{figure}[th]
@@ -125,10 +126,11 @@ In the part of the spectrum where more than a half wave fits into the unit cell,
 \begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
   \end{minipage}
   \begin{minipage}[c]{0.3\textwidth}
-	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_ifc_dc}
+	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_omegap_a}
   \end{minipage}  
 \end{figure} \clearpage
 
+% todo \ref{fg_Slab_fillfraction015_wireradius_scan}
 
 \mdf{
 ref Homogenisation of nonlocal media such as wires 
@@ -154,13 +156,13 @@ What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)?
 
 
 Pendry \textit{et al.} 1996 \cite{pendry1996extremely}: 
-\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \log(\frac{a}{r})}} \label{eq_fp_pendry}\end{equation}
+\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln(\frac{a}{r})}} \label{eq_fp_pendry}\end{equation}
 
 \cite{pendry1996extremely}
 %CITE J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  \\
 
 Maslovski \textit{et al.} 2003 \cite{maslovski2002wire}: 
-\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \log\left(\frac{a^2}{4r (a-r)}\right)}} \label{eq_fp_maslovski}\end{equation}
+\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln\left(\frac{a^2}{4r (a-r)}\right)}} \label{eq_fp_maslovski}\end{equation}
 \cite{maslovski2002wire}
 %CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
 
@@ -172,7 +174,6 @@ Why does the transmission of a dense wire array oriented along the electric fiel
 In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
 \begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
 The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on wire radius $r$ and grid spacing of $a>r$, is predicted by the analytic model\cite{maslovski2002wire} as:
-\begin{equation} f_{p}^{2} = \frac{c^{2}}{2\pi \cdot a^{2} \cdot \ln\left(\frac{a^{2}}{4r \cdot (a-r)}\right)} \label{eq_fp_maslovski}\end{equation}
 The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
 Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
 
@@ -193,7 +194,7 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest wire $r_w = 2$ $\upmu$m.. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest wire $r_w = 2$ $\upmu$m.. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
@@ -203,7 +204,7 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 \end{tabular}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
@@ -215,7 +216,7 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 \end{figure}
 %%% TODO this plot is too dense! make a contour plot instead?
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
@@ -226,8 +227,10 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 \end{figure}
 
 
-
-
+%TODO refto:
+%\ref{fg_CutWires_wireradius1u_cutwidth_comparison}
+%\ref{fg_CutWires_wirecut2um_wireradiusscan}
+%\ref{fg_Spheres_lossscan}
 
 
 
@@ -267,13 +270,15 @@ The scattering of a single sphere can be computed analytically: from mie.m, see 
 \add{
 Dielectric spheres are delimited in all three dimensions, but they have much in common with the dielectric rods. Their behaviour is closer to that of the rods with orientation parallel to the \textit{magnetic field}. The reason is that the lowest-frequency resonance of both structures is generally the magnetic one, whose circulating electric field is localised in the high-permittivity volume of the particle. Higher resonances require a significant part of the electric field to pass through surrounding air.
 
-In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m  and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. \ref{fg_spheres_fdtd}a. A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
+In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m  and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
+A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
 For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
 The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
 
 An important property of the periodic sphere array is its \textit{isotropic} electromagnetic behaviour. It trivially follows from symmetry under any orthogonal rotation, and it also holds almost exactly under any other orientation (unless the spheres are not touching or too high frequencies are studied).
 
-The right plot in Fig. \ref{fg_spheres_fdtd}b shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section. %% which one?
+The right plot in Fig. % \ref{fg_spheres_fdtd}b XXX
+shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section. %% which one?
 
 The magnetic resonance introduces narrow regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
 %In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
@@ -358,7 +363,7 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 %TODO Bitzer2011-Babinet_principle_SRR.pdf
 
 %}}}
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_SphereWire_principles} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
@@ -369,7 +374,8 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 \end{figure}
 \clearpage
 
-
+% TODO
+%\ref{fg_SphereWire_principles}
 
 
 %====================================================================================================
@@ -385,8 +391,8 @@ analytic shape of the Mie resonance, \cite{obrien2002photonic}
 % Note that in 1-D dielectric PhC, all fields are propagating, none evanesecnt
 % Big question: Can one approximate a metamaterial by ENG/DNG/MNG/DPS 1-D PhC??
 \begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
-\textbf{(a)}	\includegraphics[width=8cm]{img/HRods_eps012_R12_PWEM.pdf}
-\textbf{(b)}	\includegraphics[width=8cm]{img/HRods_eps100_R12_PWEM.pdf}
+\textbf{(a)}	\includegraphics[width=.45\textwidth]{img/HRods_eps012_R12_PWEM.pdf}
+\textbf{(b)}	\includegraphics[width=.45\textwidth]{img/HRods_eps100_R12_PWEM.pdf}
 \end{figure}
 
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!

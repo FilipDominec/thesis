@@ -433,7 +433,7 @@ one can easily compute the transmission $t$ and reflection $r$ from a slab of an
 Mathematically, this can always be done (see Appendix \ref{app_fresnel_inv}), and this method yields some \textit{effective} parameters, $\Neff$ and $\Zeff$, even when the homogeneous sample is replaced with an inhomogeneous structure, such as a layer of a metamaterial. As a great advantage of this approach, there is no requirement to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of $r(f)$ and $t(f)$ outside the material. Thanks to its ease to realize both experimentally and numerically, with FDTD or other algorithms \cite{terao2011},
 it has become a popular way to retrieve the effective metamaterial parameters. 
 
-The most often mentioned issue of this method is that the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this chapter we describe that this can, in fact, be solved relatively easily, and in the Section \ref{section_result} it is shown that the outcomes may be quite surprising.
+The most often mentioned issue of this method is that the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this section we describe that this can, in fact, be solved relatively easily, and in the Chapter \ref{chapter_results} it is shown that the outcomes may be quite surprising.
 Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
 \paragraph{Simulation setup} %{{{
@@ -555,13 +555,9 @@ The complex reflectance $r_{s}$ and transmittance $t_{s}$ of a homogeneous slab 
 \todo{add infinite sums for Fabry-Pérot resonances in a slab; develop expressions from Fresnel to effparam, and put into appendix?}
 Knowing the complex $r(f)$ and $t(f)$ along with the sample thickness $d$, we may use the
 classical algorithm \cite{smith2002determination}\cite[pp. 51-55]{shalaev2010book} to retrieve the effective index of refraction:
-\begin{equation}
-	N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k d},
-\end{equation}
+\begin{equation} N_{\rm eff} = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k d} \label{eq_slab_index_retrieval} \end{equation}
 and the effective impedance:
-\begin{equation}
-	Z_{\rm eff}~= \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}} \label{eq_Z}
-\end{equation}
+\begin{equation} Z_{\rm eff}~= \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}} \label{eq_Z} \end{equation}
 where $k = 2\pi f/c$ is the wave vector in vacuum and $c$ is the speed of light.
 
 %}}}
