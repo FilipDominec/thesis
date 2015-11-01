@@ -7,7 +7,8 @@
 \label{chapter_results}
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}
-\begin{figure}[t] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
+The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly in the previous century and found its major application in dielectric mirrors. It is the simplest representative of periodic structures, since due to its continuous translational symmetry in the transverse direction, it exhibits only a subset of different phenomena that can be observed in other periodic structures. Most importantly, no \textit{individual resonances} can occur in 1-D PhC; all interaction with the wave happens through electromagnetic wave reflection (or, scattering) on the interfaces of the layers. The only type of the band gap observed is thus of the Bragg type.
+\begin{figure}[h] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
@@ -20,56 +21,54 @@
 \end{tabular}
 \end{figure}
 
-The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly in the previous century and found its major application in dielectric mirrors. It is the simplest representative of periodic structures, since due to its continuous translational symmetry in the transverse direction, it exhibits only a subset of different phenomena that can be observed in other periodic structures. Most importantly, no \textit{individual resonances} can occur in 1-D PhC; all interaction with the wave happens through electromagnetic wave reflection (or, scattering) on the interfaces of the layers. The only type of the band gap observed is thus of the Bragg type.
 
-Dispersion curves for a one-dimensional photonic crystal, computed using PWEM, are shown in Fig. \ref{fg_1dbd}. The side plots show the shapes of the electric field $E_x$ in the $y-z$ plane at the frequencies of the band edges indicated by the blue arrows. For better readability, each field plot spans two unit cells. 
+Dispersion curves for two examples of one-dimensional photonic crystals were computed using PWEM and are shown in Fig. \ref{fg_1dbd}. 
 %The electric field was chosen to be polarized along the $x$-axis and is plotted as a color map (white corresponding to zero).
-Fig. \ref{fg_1dbd}a shows the folded dispersion curves for a plane wave propagating in vacuum on which we imposed virtual periodicity. To save space the dispersion curves were plotted as \textit{folded}, but one can easily imagine how the curve unfolds into a linear dispersion of vacuum, known as the \textit{light line}. No scattering occurs for homogeneous vacuum, thus for any frequency $f$ exists a real wavenumber $k$ corresponding to a propagating wave and there are no band gaps of finite width. 
+Its left panel shows the folded dispersion curves for a plane wave propagating in vacuum on which we imposed virtual periodicity. To save space the dispersion curves were plotted as \textit{folded}, but one can easily imagine how the curve unfolds into a linear dispersion of vacuum, known as the \textit{light line}. No scattering occurs for homogeneous vacuum, thus for any frequency $f$ exists a real wavenumber $k$ corresponding to a propagating wave and there are no band gaps of finite width. 
 
-The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic dielectric layers of permittivity 12 and 15\% filling fraction, outlined by thin black lines. Band gaps of nonzero width corespond to frequency ranges where the wave can not propagate through the structure. The first photonic band gap starts at the frequency, at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
+The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic dielectric layers of permittivity 12 and 15\% filling fraction. The dielectric is outlined by thin black lines. Band gaps of nonzero width corespond to frequency ranges where the wave can not propagate through the structure. %The first photonic band gap starts at the frequency, at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
 
 \paragraph{Characteristics of Bragg-type band gaps}
-At the edge between a photonic band and a band gap, the electric and magnetic fields are strictly periodic, and thus can be easily visualized. An important characteristic of each field pattern is the shape of all points where the field amplitude is constantly zero. Such sets will be denoted as \textit{nodal planes}, or also, more accurately, \textit{nodal surfaces}.
-For the Bragg resonances shown in the subplots of \ref{fg_1dbd}b, we can generally conclude that across each photonic band one nodal plane per unit cell is added. 
-Equivalently, between the lower and upper edges of the Bragg band gap, the phase increase across an unit cell does not change and thus $K$ remains constant. The different field shape can however be always found in the location of the \textit{nodal planes}. 
+Typically, although not always, the extremal points of the photonic bands start and end in the high-symmetry points of the Brillouin zone, such as $\mathbf{\Gamma}$ or $\mathbf{X}$, which are equivalent to wavenumber $K=m\pi/a$ for $m\in\mathbb{Z}$ in the one-dimensional case discussed. Whenever $K$ is in one of these points, the electric and magnetic fields are periodic in space, and can be easily visualized. The side plots of \ref{fg_1dbd} show the shapes of the electric field $E_x$ in the $(y,z)$ plane at respective frequencies of the band edges. To stress the fact that the field is periodic even in the $\mathbf{X}$ point, each of the side plots spans over 2$\times$2 unit cells. 
 
-Such a behaviour at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} band gaps; individual resonances in other types of structures result in change of $K$ and	introduce more complex differences between the field shape. 
+An important characteristic of each field pattern is the set of all points where the field amplitude remains zero over the evolution of time. Such sets will be denoted as \textit{nodal planes}, or also, more accurately, \textit{nodal surfaces}.
+
+From all pairs of field plots that are connected by a photonic band (i.e. X2-$\Gamma2$, $\Gamma3$-X3 etc.), it can be deduced that one nodal plane dividing the unit cell in perpendicular orientation to the wave vector is always added when the frequency increases from the lower band edge to the upper one. This rule is more general and is satisfied by other structures, too. 
+
+Typical for all Bragg band gaps (i.e. X1-X2, $\Gamma2$-$\Gamma3$, etc. in \ref{fg_1dbd}) is that between the lower and upper edges of each Bragg, the phase increase across an unit cell does not change and thus $K$ remains constant, as does the number of the nodal planes. The field does change between these points, however, and the change is in the location of the \textit{nodal planes} such that the upper band-gap edge concentrates the field energy in mostly lower-permittivity regions. 
 
 \paragraph{Bragg and Fabry-Pérot resonances}
-\begin{figure}[t] \caption{Slab fillfraction015 epsilon scan} \label{fg_Slab_fillfraction015_epsilon_scan} \centering 
-\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}
+\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15\%, as a function of frequency and dielectric permittivity} \label{fg_Slab_fillfraction015_epsilon_scan} \centering 
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}\put (1,95) {\textbf{(a)}}\end{overpic}
 %Slab_fillfraction015_epsilon_scan_r.pdf
 %Slab_fillfraction015_epsilon_scan_t.pdf
-\includegraphics[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}  TODO rm voids
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}\put (1,95) {\textbf{(b)}}\end{overpic}  % TODO rm voids
 %Slab_epsilon4_fillfraction_scan_r.pdf
 %Slab_epsilon4_fillfraction_scan_t.pdf
 \end{figure}
 
-\begin{figure}[t] \caption{Slab fillfraction015 epsilon scan} \label{fg_Slab} \centering 
-\includegraphics[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf} TODO  lower number of contours
+\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with dielectric permittivity of 4, as a function of frequency and filling fraction} \label{fg_Slab} \centering 
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put (-1,27) {\textbf{(a)}}\end{overpic} % TODO  lower number of contours
 %Slab_fillfraction015_epsilon_scan_r.pdf
 %Slab_fillfraction015_epsilon_scan_t.pdf
-\includegraphics[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf} TODO rm voids
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf}\put (-1,27) {\textbf{(b)}}\end{overpic} % TODO rm voids
 %Slab_epsilon4_fillfraction_scan_r.pdf
 %Slab_epsilon4_fillfraction_scan_t.pdf
 \end{figure}
-
 
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
 where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of the two layers.
 
-The width of the band gap grows with the amplitude of the wave scattered from the unit cell; this amplitude however also depends on frequency.
-The reflection amplitude of a lossless dielectric slab can become zero under a  condition for  states that if an integer number of the halfwaves fits into either of the dielectric layers, that is
+The width of the band gap grows with the amplitude of the wave scattered from the unit cell. This amplitude however also depends on frequency and, in the case of a lossless dielectric slab, it vanishes whenever an integer number of the half-waves fits into either of the dielectric layers. For comparison with Eq. \ref{eq_braggcond}, this condition is
 \begin{equation} \phi_{1} = d_1 n_1 \frac{\omega}{c} = \pi m \text{\quad or \quad} \phi_{2} = d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_fpcond}\end{equation}
-Unlike the Bragg resonance, this effect can be observed even in a single isolated unit cell; in fact it is the well known \textit{Fabry-Pérot resonance}. 
+Note that unlike the Bragg resonance, this effect can be observed even in a single isolated unit cell; in fact it is the well known \textit{Fabry-Pérot resonance}. 
 
-A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (Fig. \ref{fg_1dbd}a). A simplest example of a structure that exhibits a zero-width band gap is the 1-D PhC with equal optical thickness of both slabs $d_1 n_1 = d_2 n_2$. 
+The vicinity of a Fabry-Pérot resonance influences the position and width the neighbouring band gap, which can be found for different dielectric permittivity of the slab $\epsrl\in\{4,12,20\}$ in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}.
 
-% NOTE that PWEM gives results in natural units. The natural unit of frequency is defined as that at which exactly one wavelength fits into the unit cell size if it contains empty vacuum.
+A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs $d_1 n_1 = d_2 n_2$. 
 
-%\footnote{Note that the band gaps do not have the same width on the frequency scale. For a certain thickness of the high-dielectric layer that corresponds to the Fabry-Pérot resonance, no frequency difference at all results from shifting the wave. In this case the band gap attains zero thickness, as is illustrated in Fig. \ref{fg_ebar_radiusscan}a for $r\approx20\,\upmu$m and $f\approx1.6$ THz. In other words, there may be }}
-% TODO scan of spectra for unit cell filling fraction
+
 
 \paragraph{Effective parameters of a 1-D PhC}
 Employing the \textit{s-parameter} method based on FDTD simulation, as described in Chapter \ref{chapter_sparam}, one can obtain the scattering parameters (complex reflectance and transmittance) of a finite layer of the periodic structure, and eventually retrieve the dispersion curves. 
@@ -381,6 +380,7 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 %====================================================================================================
 \section{Dielectric rods parallel to magnetic field} % references to ->
 \label{sect_diel_rods_mag}
+\add{Such a behaviour at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} band gaps; individual resonances in other types of structures result in change of $K$ and	introduce more complex differences between the field shape.}
 %{{{
 
 analytic shape of the Mie resonance, \cite{obrien2002photonic} 
