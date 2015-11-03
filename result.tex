@@ -13,7 +13,7 @@ The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly 
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 \begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
@@ -42,7 +42,7 @@ The \textit{Bragg condition} for the formation of a band gap in a periodic struc
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
 where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of the two layers.
 
-\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15\%, as a function of frequency and dielectric permittivity. On the right panel, the Fabry-Pérot condition from Eq. \ref{eq_fpcond} are marked by a thin dash-dotted line.} \label{fg_slab_eps_scan} \centering 
+\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15\% in a 300 $\upmu$m unit cell, as a function of frequency and dielectric permittivity. On the right panel, the Fabry-Pérot condition from Eq. \ref{eq_fpcond} are marked by a thin dash-dotted line.} \label{fg_slab_eps_scan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}
 %Slab_fillfraction015_epsilon_scan_r.pdf
 %Slab_fillfraction015_epsilon_scan_t.pdf
@@ -51,7 +51,7 @@ where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of 
 %Slab_epsilon4_fillfraction_scan_t.pdf
 \end{figure}
 
-\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with dielectric permittivity of 4, as a function of frequency and filling fraction} \label{fg_slab_ff_scan} \centering 
+\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with dielectric permittivity of 4, as a function of frequency and filling fraction in a 300 $\upmu$m unit cell} \label{fg_slab_ff_scan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put (-1,80) {\textbf{(a)}}\end{overpic} % TODO  lower number of contours
 %Slab_fillfraction015_epsilon_scan_r.pdf
 %Slab_fillfraction015_epsilon_scan_t.pdf
@@ -82,10 +82,10 @@ In the low frequency limit of 1-D PhC, it was always observed that
 	\begin{equation} \left.\Neff\right|_{K\ll 2\pi/a} =\left. \sqrt{\eeff}\right|_{K\ll 2\pi/a} \approx \sqrt{\frac{d_1 n_1^{2} + d_2 n_2^{2}}{d_1+d_2}} \label{eq_phc_eeff}\end{equation}
 	}
 \end{enumerate}
-Notice that $\Neff$ at higher frequencies converges towards its asymptotic value $\left.\Neff\right|_{K\rightarrow +\infty}$, which differs from the value obtained by Eq. \ref{eq_phc_eeff}:
+Notice in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}c that $\Neff$ at higher frequencies converges towards its asymptotic value $\left.\Neff\right|_{K\rightarrow +\infty}$, which differs from the value obtained by Eq. \ref{eq_phc_eeff}:
 \begin{equation} \left.\Neff\right|_{K\rightarrow +\infty} \approx \frac{d_1 n_1 + d_2 n_2}{d_1+d_2} \label{eq_phc_neff}\end{equation}
 The difference comes from that in the low-frequency limit, the electromagnetic energy concentration is higher in the areas of higher permittivity, whereas in the high-frequency limit it appears to be distributed evenly.
-Note that with the correct branch retrieval, the index of refraction never drops with frequency, except for the photonic band gaps; this would otherwise imply the group velocity would be higher than the phase velocity which was never observed in 1-D PhC.
+Note that with the correct branch retrieval procedure, the index of refraction never drops with frequency except for the photonic band gaps. Negative derivative of $\Neff(f)$ would otherwise imply the group velocity would be higher than the phase velocity \cite{mikki2009electromagnetic} which was never observed in 1-D PhC.
 
 % TODO \paragraph{Transmission through a finite number of unit cells}
 % illustrate the band-gap formation \cite{laktionov2008}
@@ -99,17 +99,16 @@ Note that with the correct branch retrieval, the index of refraction never drops
                %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 
-
 \clearpage
 
 %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
 \paragraph{High-frequency behaviour}
-The structure formed from a regular square lattice of conductive wires exhibits the most interesting properties when the electric field is parallel to the wires. This polarisation will be the one assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is qualitatively different and is discussed later (see Section \ref{section_eot}).
+The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case behaves in a substantially different way and is discussed later (see Section \ref{section_eot}).
 
-In the high-frequency part of the spectrum where more than a half wave fits into the unit cell, i.e. above the first band, the interaction with the wave can be approximated by a thin scattering layer, which leads to photonic bands interlaced with Bragg band gaps.
+In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layer of metallic rods can be approximated as a thin scattering slab from the previous section. The high-frequency part of the spectrum consists of photonic bands interlaced with Bragg band gaps. In contrast with the dielectric PhC described aboveno Fabry-Pérot resonances are observed and the band-gap width reduces monotonously with growing frequency.
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of wires made of gold, depending on the wire radius $r_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m} \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
+\begin{figure}[b] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for the array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m with a fixed unit cell size $a 100 \upmu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
@@ -118,21 +117,27 @@ In the high-frequency part of the spectrum where more than a half wave fits into
 \end{tabular}
 \end{figure}
 
+\paragraph{Inductive behaviour at low-frequencies}
+The low-frequency behaviour of wire array, differs from that of a 1-D PhC by that, from zero frequency up to some \textit{effective plasma frequency} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary. As a result of $K\approx 0$, in the low-frequency part of the spectrum, the effective permittivity is a physically meaningful quantity and follows the 
+\begin{equation} \eeff(f) = 1 - \frac{f^{2}}{f_p^{2}}\label{eq_eeff_plasma}\end{equation}
+law typical of inductive media, such as metals or plasma. The physical origin of $\eeff<0$ is however different than in continuous media, where it is due to the effective mass of electrons. In contrast, the negative effective permittivity in wire arrays is mostly due to the magnetic field circulating around the conductor, and therefore does not substantially depend on the internal plasma frequency of the constituent metal.
 
+It does, however, depend on the geometry described by two parameters, the wire radius $\rho_w$ and the unit cell size $a$. The former dependence is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the freqeuncy where $\eeff'(f)$ crosses zero, which coincides with the lower edge of the first photonic band. From the plots, it can be also deduced that $f_p$ is approximately proportional to the logarithm of $\rho_w$.
 
-
-
-\paragraph{Low-frequency behaviour}
 \begin{figure}[th]
   \begin{minipage}[c]{0.69\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/EWire_plasmaF_spacingscan.pdf} \put (-1,60) {\textbf{(a)}} \end{overpic}\\
 \begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
   \end{minipage}
   \begin{minipage}[c]{0.3\textwidth}
-	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius.}\vfill \label{fg_omegap_a}
+	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius $\rho_w$.}\vfill \label{fg_omegap_a}
+
   \end{minipage}  
 \end{figure} \clearpage
 
+\paragraph{Plasma frequency as a function of wire radius and unit cell size}
+\label{fg_omegap_a}a
+\label{fg_omegap_a}b
 % todo \ref{fg_Slab_fillfraction015_wireradius_scan}
 
 \mdf{
@@ -176,7 +181,7 @@ Why does the transmission of a dense wire array oriented along the electric fiel
 
 In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
 \begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
-The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on wire radius $r$ and grid spacing of $a>r$, is predicted by the analytic model\cite{maslovski2002wire} as:
+The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on the wire radius $\rho_w$ and the grid spacing of $a>2\rho_w$, is predicted by the analytic model\cite{maslovski2002wire} as:
 The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
 Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
 
