@@ -29,7 +29,7 @@ Its left panel shows the folded dispersion curves for a plane wave propagating i
 The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic dielectric layers of permittivity 12 and 15\% filling fraction. The dielectric is outlined by thin black lines. Band gaps of nonzero width corespond to frequency ranges where the wave can not propagate through the structure. %The first photonic band gap starts at the frequency, at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
 
 \paragraph{Characteristics of Bragg-type band gaps}
-Typically, although not always, the extremal points of the photonic bands start and end in the high-symmetry points of the Brillouin zone, such as $\mathbf{\Gamma}$ or $\mathbf{X}$, which are equivalent to wavenumber $K=m\pi/a$ for $m\in\mathbb{Z}$ in the one-dimensional case discussed. Whenever $K$ is in one of these points, the electric and magnetic fields are periodic in space, and can be easily visualized. The side plots of \ref{fg_1dbd} show the shapes of the electric field $E_x$ in the $(y,z)$ plane at respective frequencies of the band edges. To stress the fact that the field is periodic even in the $\mathbf{X}$ point, each of the side plots spans over 2$\times$2 unit cells. 
+Typically, although not always, the extremal points of the photonic bands start and end in the high-symmetry points of the Brillouin zone, such as $\mathbf{\Gamma}$ or $\mathbf{X}$, which are equivalent to the wavenumber $K=m\pi/a$ for $m\in\mathbb{Z}$ in the one-dimensional case discussed. Whenever $K$ is in one of these points, the electric and magnetic fields are periodic in space, and can be easily visualized. The side plots of \ref{fg_1dbd} show the shapes of the electric field $E_x$ in the $(y,z)$ plane at respective frequencies of the band edges. To stress the fact that the field is periodic even in the $\mathbf{X}$ point, each of the side plots spans over 2$\times$2 unit cells. 
 
 An important characteristic of each field pattern is the set of all points where the field amplitude remains zero over the evolution of time. Such sets will be denoted as \textit{nodal planes}, or also, more accurately, \textit{nodal surfaces}.
 
@@ -104,11 +104,11 @@ Note that with the correct branch retrieval procedure, the index of refraction n
 %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
 \paragraph{High-frequency behaviour}
-The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case behaves in a substantially different way and is discussed later (see Section \ref{section_eot}).
+The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is discussed in another Section \ref{section_eot}.
 
-In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layer of metallic rods can be approximated as a thin scattering slab from the previous section. The high-frequency part of the spectrum consists of photonic bands interlaced with Bragg band gaps. In contrast with the dielectric PhC described aboveno Fabry-Pérot resonances are observed and the band-gap width reduces monotonously with growing frequency.
+In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layers of metallic rods can be approximated by thin scattering slabs from the previous section, since the high-frequency interaction of the wave can be described of photonic bands alternating with Bragg band gaps. In contrast with the dielectric PhC described above, no Fabry-Pérot resonances are observed and the scattering strength of the wire layers reduces monotonously with growing frequency.
 
-\begin{figure}[b] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for the array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m with a fixed unit cell size $a 100 \upmu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
+\begin{figure}[bh] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for the array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m with a fixed unit cell size $a = 100 \upmu$m and grid resolution of 1 $\upmu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
@@ -118,11 +118,23 @@ In the high-frequency part of the spectrum above the first photonic band, where 
 \end{figure}
 
 \paragraph{Inductive behaviour at low-frequencies}
-The low-frequency behaviour of wire array, differs from that of a 1-D PhC by that, from zero frequency up to some \textit{effective plasma frequency} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary. As a result of $K\approx 0$, in the low-frequency part of the spectrum, the effective permittivity is a physically meaningful quantity and follows the 
+At low frequencies, in contrast, the interaction of the conductive wires with the electromagnetic wave becomes very strong and leads to completely different behaviour than that described above. For a frequency range from zero up to the \textit{effective plasma frequency} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary and $k'\approx 0$. Therefore, in the low-frequency part of the spectrum, the local effective permittivity $\eeff$ is a physically meaningful quantity and follows the law typical of inductive media:
 \begin{equation} \eeff(f) = 1 - \frac{f^{2}}{f_p^{2}}\label{eq_eeff_plasma}\end{equation}
-law typical of inductive media, such as metals or plasma. The physical origin of $\eeff<0$ is however different than in continuous media, where it is due to the effective mass of electrons. In contrast, the negative effective permittivity in wire arrays is mostly due to the magnetic field circulating around the conductor, and therefore does not substantially depend on the internal plasma frequency of the constituent metal.
+Such a dependence of $\epsrl$ was already used in the Drude model in Eq. (\ref{eq_drude_eps}), and plotted in Fig. \label{fg_Au_models}. Owing to this similarity to metals or plasma, wire arrays are denoted also as \textit{diluted metal} or \textit{artificial plasma} since 1950s \cite{merkel1973simulation, rotman1962plasma}, or as \textit{metallic delay dielectrics}, owing to the possibility to manipulate the phase and group velocities  \cite[p. 54]{brown1953artificial}.
 
-It does, however, depend on the geometry described by two parameters, the wire radius $\rho_w$ and the unit cell size $a$. The former dependence is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the freqeuncy where $\eeff'(f)$ crosses zero, which coincides with the lower edge of the first photonic band. From the plots, it can be also deduced that $f_p$ is approximately proportional to the logarithm of $\rho_w$.
+The physical origin of $\eeff<0$ is different than in continuous media, where it is \textit{kinetic}, i.e., due to the effective mass of electrons. In contrast, the negative effective permittivity in wire arrays is the result of the \textit{self inductance} due to the magnetic field circulating around the conductor. 
+
+Except for optical frequencies, $f_p$ does not substantially depend on the internal plasma frequency of the constituent metal, and such behaviour can be obtained even if wires are thought to be made of a perfect electric conductor (PEC).
+The plasma frequency does, however, depend on the geometry described by two parameters, the wire radius $\rho_w$ and the unit cell size $a$. 
+
+\paragraph{Behaviour close to the effective plasma frequency}
+The dependence of $f_p$ on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the point where $\eeff'(f)$ crosses zero  in the plot \ref{fg_Slab_fillfraction015_wireradius_scan}d. This coincides with the lower edge of the first photonic band in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}c. 
+
+For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$ becomes very high and proportional to $(f-f_p)^{-1/2}$, while the group velocity $v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
+
+Exactly at $f=f_p$, the wire array medium can support the longitudinal oscillations of the charge, oriented parallel to the wires. They bear a close resemblance to plasmons in bulk media \cite{pendry1996extremely}.
+
+Notice that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
 
 \begin{figure}[th]
   \begin{minipage}[c]{0.69\textwidth}
@@ -131,64 +143,51 @@ It does, however, depend on the geometry described by two parameters, the wire r
   \end{minipage}
   \begin{minipage}[c]{0.3\textwidth}
 	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius $\rho_w$.}\vfill \label{fg_omegap_a}
-
   \end{minipage}  
 \end{figure} \clearpage
 
 \paragraph{Plasma frequency as a function of wire radius and unit cell size}
-\label{fg_omegap_a}a
-\label{fg_omegap_a}b
+From Fig.  \ref{fg_Slab_fillfraction015_wireradius_scan}, it can be also deduced that $f_p$ is approximately proportional to the logarithm of $\rho_w$ if $\rho_w \ll a$. This is related to that a thicker wire should have slightly lower self-inductance per unit length. 
+
+The effect of wire spacing $a$ is the opposite; with $a$ growing, the magnetic field has more space to circulate around the wir and $f_p$ reduces. 
+
+Different analytic models were proposed for description of both effects. The early model by Pendry \textit{et al.} from 1996 \cite{pendry1996extremely} works well for thin wires: 
+\begin{equation} f_p(\rho_w,a) \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln(\frac{a}{\rho_w})}} \label{eq_fp_pendry}\end{equation}
+Its refinement by Maslovski \textit{et al.} from 2003 \cite{maslovski2002wire} should be valid also for wires with relatively high fill fraction:
+\begin{equation} f_p(\rho_w,a) \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln\left(\frac{a^2}{4\rho_w (a-\rho_w)}\right)}} \label{eq_fp_maslovski}\end{equation}
+
+We ran two series of wire array simulations as a simple verification of both the FDTD algorithm against the mentioned analytic models. In the first series plotted in Fig. \ref{fg_omegap_a}a, we kept the wire radius constant $r = 16\,\upmu$m  and changed the wire spacing $a$ (red points). For comparison, we plot in the plasma frequency predicted by both analytic models from Eqs. (\ref{eq_fp_maslovski}, \ref{eq_fp_pendry}) as full and dotted lines, respectively. 
+
+To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m. %%todo rewrite?
+
+In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.%%todo rewrite?
+
+\ref{fg_omegap_a}b
 % todo \ref{fg_Slab_fillfraction015_wireradius_scan}
 
-\mdf{
-ref Homogenisation of nonlocal media such as wires 
-\cite{capolino2009book}
-\cite{silveirinha2007metamaterial}
-\cite{belov2003strong}
-\cite{belov2002dispersion}
-\cite{lindell2001bw}
-\cite{silveirinha2005homogenization}
+
+\paragraph{Oblique propagation of the wave}
+%ref Homogenisation of nonlocal media such as wires 
+%\cite{capolino2009book}
+%\cite{silveirinha2007metamaterial}
+%\cite{belov2003strong}
+%\cite{belov2002dispersion}
+%\cite{lindell2001bw}
+%\cite{silveirinha2005homogenization}
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
-This type of metamaterial has been historically denoted also as \textit{metallic delay dielectrics}, owing to the possibility to reduce the phase or group velocities in the proper part of spectrum.
-\cite{brown1953artificial} as  % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
-}
 
-We assume the medium is inductive $\quad \Rightarrow \quad  \epsrl(\omega) = 1 - \frac{(2\pi f_p)^2}{\omega^2}$. 
-
-Discussed 40 years earlier \cite[p. 54]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
-
-also know as \textit{diluted metal}
-
-What is the plasma frequency $f_p$ for wires (with radius $r$ and spacing $a$)? 
+%A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, at nonzero frequency, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
+%
+%Why does the transmission of a dense wire array oriented along the electric field differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
+%
+%In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
+%\begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
+%The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on the wire radius $\rho_w$ and the grid spacing of $a>2\rho_w$, is predicted by the analytic model\cite{maslovski2002wire} as:
+%The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
 
 
-Pendry \textit{et al.} 1996 \cite{pendry1996extremely}: 
-\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln(\frac{a}{r})}} \label{eq_fp_pendry}\end{equation}
 
-\cite{pendry1996extremely}
-%CITE J. B. Pendry, A. J. Holden, W. J. Stewart, and I. Youngs, \textit{"Extremely low frequency plasmons in metallic meso structures,"} phys. rev. lett., vol. 76, pp. 4773–4776, 1996.  \\
-
-Maslovski \textit{et al.} 2003 \cite{maslovski2002wire}: 
-\begin{equation} f_p \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln\left(\frac{a^2}{4r (a-r)}\right)}} \label{eq_fp_maslovski}\end{equation}
-\cite{maslovski2002wire}
-%CITE Maslovski, S. I., Tretyakov, S. A. and Belov, P. A. (2002), \textit{Wire media with negative effective permittivity: A quasi-static model.} Microw. Opt. Technol. Lett., 35: 47–51. doi: 10.1002/mop.10512
-
-\add{
-A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, at nonzero frequency, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
-
-Why does the transmission of a dense wire array oriented along the electric field differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
-
-In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
-\begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
-The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on the wire radius $\rho_w$ and the grid spacing of $a>2\rho_w$, is predicted by the analytic model\cite{maslovski2002wire} as:
-The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
-Note that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
-
-We ran two series of wire array simulations (Fig. \ref{fg_omegap_a}) as a simple verification of both the FDTD algorithm and the mentioned analytic model. In the first series we kept the wire radius constant $r = 16\,\upmu$m  and changed the wire spacing $a$ (red points). For comparison, we plot in Fig. \ref{fg_omegap_a} the plasma frequency predicted by the Maslovski's analytic model\cite{maslovski2002wire} from Eq. (\ref{eq_fp_maslovski}) and by the older Pendry's model \cite{pendry1996extremely} (full and dotted lines, respectively). To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m.
-
-In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model\cite{maslovski2002wire} and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.
-}
 %}}}
 	
 
@@ -411,7 +410,6 @@ and a purely \textit{circulating} part, that induces a magnetic flux near the ro
 % discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
 This new type of resonance is known as a \textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}. Unlike the Bragg gaps, it can be observed also in a single rod in free space. Being a function of the frequency of the incident wave, the magnetic dipole moment of the free-standing dielectric rod follows the characteristic Lorentzian shape of its \textit{resonance curve}. Below the resonance the magnetic dipole moment of the resonator goes to strongly positive values, while in a narrow region above the resonance it is strongly negative. How does this behaviour change if we arrange the rods in an infinite periodic array? 
 
-\add{
 
 The results from a PWEM computation are plot in Fig. \ref{fg_rodh}. To obtain comparable dispersion curves in Fig. \ref{fg_rodh_fdtd}, we employed the FDTD simulation and the effective parameter retrieval described above. The main differences are that in Fig. \ref{fg_rodh_fdtd} we plot the frequency $f$ on the horizontal axis and we also use the effective index of refraction $N_{\text{eff}} := K\cdot \frac{c}{2\pi\,f}$ instead of the wavenumber $K$. One advantage of this representation is that $N_{\text{eff}}$ should be compliant with the Kramers-Kronig relations. This criterion always gives \textit{only one} correct solution on how to unfold $K$ to obtain realistic $N_{\text{eff}}$. 
 In the simulation, the rod spacing (or, lattice constant) $a$ was 100 $\upmu$m, so the normalised frequency unit is $c/a = 3$ THz. The frequency range from 0 to 1.8 THz was therefore chosen the same as in Fig. \ref{fg_rodh}b. 
@@ -438,7 +436,6 @@ The frequency of the Mie resonances is not significantly influenced by the photo
 The photonic crystals composed of square lattice of dielectric rods have been examinated thoroughly since early 90s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was rather low, corresponding to the optical or near-infrared frequencies, where the suitable materials usually have permittivity $\varepsilon < 12$. By parametric scans we could prove that for rod permittivity below 60 or even 80, the individual resonance is always located at higher frequency than the Bragg gap. Little, if any, attention was therefore paid to different nature of the higher resonances and most publications focused on properties and applications of the Bragg band gap.
 
 The situation is different in the terahertz range, as the lattice of the crystalline solids often exhibits optical phonons at frequencies between 5 and 20 THz. The permittivity of many materials turns out to be much higher for frequencies below these resonances. This enables to conceive structures composed e.g. of titanium dioxide \cite{baumard1977_epsilon_TiO2} with $\varepsilon^{\text{THz}} \approx 92$ or of ferroelectrics with $\varepsilon^{\text{THz}}$ even orders of magnitude higher \cite{skoromets2011tuning}. The price to be paid for this advantage in the THz range are the relatively high losses caused by the lattice vibrations.
-}
 
 \begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.\\
 \textbf{a)} Band diagram and modes from PWEM. 
@@ -467,8 +464,8 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 %}}}
 
-
-\mdf{%{{{ FROM SHORT.pdf
+%{{{ FROM SHORT.pdf
+\mdf{  
 \begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
 \textbf{a)}	\includegraphics[width=8cm]{img/old/ERods_eps012_radiusscan.pdf}
 \textbf{b)}	\includegraphics[width=8cm]{img/old/ERods_eps100_radiusscan.pdf}
