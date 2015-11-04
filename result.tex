@@ -190,11 +190,30 @@ The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wir
 
 In contrast, the transmittance approaches 100 \% farther from the resonance, both towards higher or lower frequencies (see Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}b).
 
-\paragraph{Index of refraction near an individual resonance}
-The impact of an individual resonance in a periodic structure to its spectrum of effective index of refraction is characteristic similar among other resonant structures, too. 
+\paragraph{Dispersion near an individual resonance}
+Each individual resonance in a periodic structure forms a characteristic shape in the spectrum of effective index of refraction $\Neff(f)$. The following description will therefore be applicable to individual resonances in other resonant structures, too. 
 
+At frequencies under the resonance, the electric dipole of the antenna oscillates in phase with the driving field and the resonance \textit{increases} the effective index of refraction $\Neff'(f)$. 
+Similar in-phase oscillation, causing an increase in the permittivity, was already described at the Lorentzian resonance curve in Fig. \label{fg_oscillator_spectrum}b. 
+At some frequency $f \lesssim f_r$ below the resonance, the index of refraction $\Neff'(f)$ becomes high enough to join the closest Brillouin zone boundary which was above it. From this point up to $f_r$, $\Neff(f)$ has nonzero imaginary part, and the medium exhibits a band gap.
 
-\paragraph{Effects of cut distance $d_c$ and wire radius $\rho_w$}
+Exactly at the frequency of the individual resonance, the interaction of the dipole with the field abruptly changes its sign, since the resonance, the dipole is oriented \textit{opposite} to the driving field. The band gap continues up to some frequency $f > f_c$, where another photonic band begins. 
+
+The most important observation is that the resonance curve of $\Neff(f)$ in periodic structures is constrained between the closest two Brillouin zone boundaries, which can be understood as the "floor" and "ceiling" for the dispersion curve. Equivalently, it can be viewed as that a single individual resonance can not shift the transmittance phase by more than $\pi$ per each layer of unit cells. 
+
+The impact which the individual resonances  have on the effective parameters $\eeff(f)$ and $\meff(f)$, will be discussed in the later section focused on the dielectric resonators.
+
+\paragraph{Effects of the cut distance $d_c$}
+An increase of the cut distance $d_c$ clearly leads to increase of the resonance frequency $f_c$. The reason is twofold: for small cut width $d_c\ll a$ it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance plays major role.
+
+Both the individual and Bragg-type resonances can be identified in the plot for different $d_c$ in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c. When $d_c \sim 16$  $\upmu$m, the individual resonance shifts above 1.5 THz and exchanges its order with the Bragg band gap. 
+For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to those for a $d_c\sim 2$ $\upmu$m, but are shifted by one Brillouin zone up.
+
+\paragraph{Effects of the wire radius $\rho_w$}
+The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \label{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
+For high enough $\rho_w$ a competing mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire self-inductance.
+
+While the change of the cut-wire radius $\rho_w$ only slowly changes the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \label{fg_CutWires_wirecut2um_wireradiusscan}c.
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
@@ -204,9 +223,6 @@ The impact of an individual resonance in a periodic structure to its spectrum of
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
-
-Single resonance manipulates the phase by not more than $\pi$. Thus the resonance curve always has its "ceiling" and "floor" in the closest two Brillouin zone boundaries.
-
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
@@ -218,24 +234,6 @@ Single resonance manipulates the phase by not more than $\pi$. Thus the resonanc
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
-%%% TODO this plot is too dense! make a contour plot instead?
-
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
-\begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
-\end{tabular}
-\end{figure}
-
-
-%TODO refto:
-%\ref{fg_CutWires_wireradius1u_cutwidth_comparison}
-%\ref{fg_CutWires_wirecut2um_wireradiusscan}
-%\ref{fg_Spheres_lossscan}
-
 
 
 
@@ -262,6 +260,19 @@ Metallic strip pair
 
 %====================================================================================================
 \section{Dielectric sphere} % references to ->				%{{{
+
+%\ref{fg_Spheres_lossscan}
+
+
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
 \add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
