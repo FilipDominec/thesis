@@ -35,7 +35,7 @@ An important characteristic of each field pattern is the set of all points where
 
 From all pairs of field plots that are connected by a photonic band (i.e. X2-$\Gamma2$, $\Gamma3$-X3 etc.), it can be deduced that one nodal plane dividing the unit cell in perpendicular orientation to the wave vector is always added when the frequency increases from the lower band edge to the upper one. This rule is more general and is satisfied by other structures, too. 
 
-Typical for all Bragg band gaps (i.e. X1-X2, $\Gamma2$-$\Gamma3$, etc. in \ref{fg_1dbd}) is that between the lower and upper edges of each Bragg, the phase increase across an unit cell does not change and thus $K$ remains constant, as does the number of the nodal planes. The field does change between these points, however, and the change is in the location of the \textit{nodal planes} such that the upper band-gap edge concentrates the field energy in mostly lower-permittivity regions. 
+Typical for all Bragg band gaps (i.e. X1-X2, $\Gamma2$-$\Gamma3$, etc. in \ref{fg_1dbd}) is that between the lower and upper edges of each band gap, the phase increase across an unit cell does not change and thus $K$ remains constant, as does the number of the nodal planes. The field does change between these points, however, and the change is in the location of the \textit{nodal planes} such that the upper band-gap edge concentrates the field energy in mostly lower-permittivity regions. 
 
 \paragraph{Bragg and Fabry-Pérot resonances}
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
@@ -78,14 +78,14 @@ The question is to what extent the three remaining local parameters, $\Zeff$, $\
 In the low frequency limit of 1-D PhC, it was always observed that
 \begin{enumerate}
 \item{$\Zeff \approx 1/\Neff$, thus the effective permeability is $\meff = \sqrt{\Neff\Zeff} \approx 1$.} 
-\item{The effective permittivity $\eeff$ is the weighted average of the constituent media, which determines the refractive index:
+\item{The effective permittivity $\eeff$ is the weighted average of the constituent media, which determines the low-frequency limit for the refractive index:
 	\begin{equation} \left.\Neff\right|_{K\ll 2\pi/a} =\left. \sqrt{\eeff}\right|_{K\ll 2\pi/a} \approx \sqrt{\frac{d_1 n_1^{2} + d_2 n_2^{2}}{d_1+d_2}} \label{eq_phc_eeff}\end{equation}
 	}
 \end{enumerate}
 Notice in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}c that $\Neff$ at higher frequencies converges towards its asymptotic value $\left.\Neff\right|_{K\rightarrow +\infty}$, which differs from the value obtained by Eq. \ref{eq_phc_eeff}:
 \begin{equation} \left.\Neff\right|_{K\rightarrow +\infty} \approx \frac{d_1 n_1 + d_2 n_2}{d_1+d_2} \label{eq_phc_neff}\end{equation}
 The difference comes from that in the low-frequency limit, the electromagnetic energy concentration is higher in the areas of higher permittivity, whereas in the high-frequency limit it appears to be distributed evenly.
-Note that with the correct branch retrieval procedure, the index of refraction never drops with frequency except for the photonic band gaps. Negative derivative of $\Neff(f)$ would otherwise imply the group velocity would be higher than the phase velocity \cite{mikki2009electromagnetic} which was never observed in 1-D PhC.
+Note that with the correct branch retrieval procedure, the index of refraction never drops with frequency except for the photonic band gaps. Negative derivative of $\Neff(f)$ would otherwise imply that the group velocity would be higher than the phase velocity \cite{mikki2009electromagnetic}, which was never observed in 1-D PhC.
 
 % TODO \paragraph{Transmission through a finite number of unit cells}
 % illustrate the band-gap formation \cite{laktionov2008}
@@ -134,7 +134,7 @@ For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$
 
 Exactly at $f=f_p$, the wire array medium can support the longitudinal oscillations of the charge, oriented parallel to the wires. They bear a close resemblance to plasmons in bulk media \cite{pendry1996extremely}.
 
-Notice that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. 
+Notice that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. Except for the zero frequency, a layer of wires has always nonzero transmittance that increases with frequency. Independent of the wire conductivity, it is not possible to build a 100\% efficient wire polarizer.
 
 \begin{figure}[th]
   \begin{minipage}[c]{0.69\textwidth}
@@ -160,13 +160,9 @@ We ran two series of wire array simulations as a simple verification of both the
 
 To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m. %%todo rewrite?
 
-In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.%%todo rewrite?
+In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.%%todo rewrite?
 
-\ref{fg_omegap_a}b
-% todo \ref{fg_Slab_fillfraction015_wireradius_scan}
-
-
-\paragraph{Oblique propagation of the wave}
+%TODO \paragraph{Oblique propagation of the wave}
 %ref Homogenisation of nonlocal media such as wires 
 %\cite{capolino2009book}
 %\cite{silveirinha2007metamaterial}
@@ -176,59 +172,60 @@ In the second series of simulations, we kept the spacing $a = 100\,\upmu$m and c
 %\cite{silveirinha2005homogenization}
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
-
-%A dense array of thin, perfectly conductive (PEC) wires oriented along the electric field is somewhat similar to the dielectric rods of the same orientation. It might be incorrectly expected that such an array would reflect all incident radiation, i.e. it would behave just as a metallic sheet or bulk metallic block does. The simulation proves that this expectation is wrong, even when the wire density is order of magnitude higher than that would allow diffraction. The wire array allows a part of the radiation to pass through -- in other words, at nonzero frequency, no wire polarizer is 100 \% perfect no matter how conductive the constituent material is.
-%
-%Why does the transmission of a dense wire array oriented along the electric field differ from a metallic sheet? The key mechanism is that the current required to reflect the wave also causes the magnetic field to circulate around the wire. (This is similar to the difference between the dielectric rods $||\mathbf E$ and a homogeneous dielectric slab.) Each wire therefore behaves as a distributed inductor so it can no more entirely screen the incident electric field \cite{pendry1996extremely}. As a result, for any alternating field, always some nonzero amplitude is transmitted.
-%
-%In terms of homogenized effective parameters, such a medium composed of infinite wires behaves as a "diluted metal" or plasma and its effective permittivity is finite at any nonzero frequency. The Drude model holds for low enough frequencies:
-%\begin{equation} \varepsilon_{\text{eff}} = 1 - \frac{f_{p}^{2}}{f^{2}} \label{eq_metaleps}\end{equation}
-%The permittivity is negative for frequencies below its plasma frequency $f_p$, at which $\varepsilon$ gets positive. The value of effective plasma frequency $f_p$ of the wire medium, depending on the wire radius $\rho_w$ and the grid spacing of $a>2\rho_w$, is predicted by the analytic model\cite{maslovski2002wire} as:
-%The more space is left around each wire and the smaller radius the wire has, the larger is its self-inductance and the lower lies the effective plasma frequency. 
-
-
-
 %}}}
+\FloatBarrier
 	
 
 
-
-
 %====================================================================================================
-\FloatBarrier
-\section{Cut-wires} \label{section_cutwires} % references to -> % note about plasmonic particles 
+\section{Cut wires} \label{section_cutwires} % references to -> % note about plasmonic particles 
 %% (I guess the spatial dispersion will be visible in the CDH plots)
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires made of gold of radius $r_w = 1$ $\upmu$m, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest wire $r_w = 2$ $\upmu$m.. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
+\paragraph{Individual resonances}
+The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of conductive antennas is formed. Its important parameters are not only the inductance of the wire stub, but also the capacitance across the gap between wires. In an analogy with a series L-C circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $f_r$. These resonances couple to the electromagnetic field through their electric dipole.
+
+The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance at 1200 GHz as the point where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. 
+
+In contrast, the transmittance approaches 100 \% farther from the resonance, both towards higher or lower frequencies (see Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}b).
+
+\paragraph{Index of refraction near an individual resonance}
+The impact of an individual resonance in a periodic structure to its spectrum of effective index of refraction is characteristic similar among other resonant structures, too. 
+
+
+\paragraph{Effects of cut distance $d_c$ and wire radius $\rho_w$}
+
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.059\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.056\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
 
+Single resonance manipulates the phase by not more than $\pi$. Thus the resonance curve always has its "ceiling" and "floor" in the closest two Brillouin zone boundaries.
+
+
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-10.5mm}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-10.5mm}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
 %%% TODO this plot is too dense! make a contour plot instead?
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
