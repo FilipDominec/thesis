@@ -19,7 +19,7 @@ simulations of a wave propagating in any periodic structure can make use of the 
 %}}}
 \paragraph{Spatial discretisation} %{{{ %% TODO add references
 The discretisation of the grid and of the time stepping introduces an error that obviously manifests itself in an imprecise description of the structure being simulated (\textit{staircasing}) and also in the \textit{numerical dispersion} \cite{taflove2005book}, that is, in appreciable deviation of the light speed from the correct one at higher frequencies.  % todo is something missing?
-\begin{figure}[ht] \caption{\textbf{a)}, \textbf{b)} Different two-dimensional grids are used for different polarizations of the fields. \textbf{c)} The three-dimensional Yee grid. The electric field components are expressed in the centers of the cube edges which they are parallel to, whereas the magnetic components are expressed in the centers of the cube which they are perpendicular to. Note the electric and magnetic fields are completely equal in this scheme; the description in terms of edges and faces could be interchanged if the brown cube was taken as the elementary one.} \label{fg_fdtd_yee} \centering 
+\begin{figure}[ht] \caption{\textbf{(a)}, \textbf{(b)} Different two-dimensional grids are used for different polarizations of the fields. \textbf{(c)} The three-dimensional Yee grid. The electric field components are expressed in the centers of the cube edges which they are parallel to, whereas the magnetic components are expressed in the centers of the cube which they are perpendicular to. Note the electric and magnetic fields are completely equal in this scheme; the description in terms of edges and faces could be interchanged if the brown cube was taken as the elementary one.} \label{fg_fdtd_yee} \centering 
 	\includegraphics[width=12cm]{img/FDTD_Yee_grid_2d-3d.pdf}
 \end{figure}
 
@@ -519,10 +519,10 @@ Finally, one can easily compute the complex scattering parameters $r(f)$ and $t(
 %}}}
 \paragraph{Experimental verification of reflection and transmission} %{{{
 \begin{figure} 
-\caption{\textbf{a)} Electron microphotograph of the STO array (from \cite{nemec2009tunable}), 
-\textbf{b)} dimensions of one unit cell thereof, with the orientation of the $\E$, $\HH$ and $\kk$ vectors}  \centering 
-\textbf{a)} \mbox{\vspace{3cm} \includegraphics[width=9cm]{img/STOBar_photo.pdf}}  % \includegraphics[width=5cm]{img/STOBar_photo_narrow.pdf}
-\mbox{\textbf{b)} \mbox{\vspace{3cm}\includegraphics[width=5cm]{img/EBars_STO_sketch.pdf}} }
+\caption{\textbf{(a)} Electron microphotograph of the STO array (from \cite{nemec2009tunable}), 
+\textbf{(b)} dimensions of one unit cell thereof, with the orientation of the $\E$, $\HH$ and $\kk$ vectors}  \centering 
+\textbf{(a)} \mbox{\vspace{3cm} \includegraphics[width=9cm]{img/STOBar_photo.pdf}}  % \includegraphics[width=5cm]{img/STOBar_photo_narrow.pdf}
+\mbox{\textbf{(b)} \mbox{\vspace{3cm}\includegraphics[width=5cm]{img/EBars_STO_sketch.pdf}} }
 \label{fg_STO_bar_geom} \end{figure} 
 To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that was measured previously in our terahertz laboratory.
 It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser % todo{what was the laser power and other parameters?

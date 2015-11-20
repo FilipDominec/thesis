@@ -10,7 +10,7 @@
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}
 The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly in the previous century and found its major application in dielectric mirrors. It is the simplest representative of periodic structures, since due to its continuous translational symmetry in the transverse direction, it exhibits only a subset of different phenomena that can be observed in other periodic structures. Most importantly, no \textit{individual resonances} can occur in 1-D PhC; all interaction with the wave happens through electromagnetic wave reflection (or, scattering) on the interfaces of the layers. The only type of the band gap observed is thus of the Bragg type.
-\begin{figure}[h] \caption{ \textbf{a)} In free space, \textbf{b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% thickness (outlined by black lines); side plots show the electric field in $2\times 2$ unit cells} \label{fg_1dbd} \centering 
+\begin{figure}[h] \caption{Dispersion curves \textbf{(a)} in free space with virtual periodicity $a$, \textbf{(b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% fill fraction. Side plots show the electric field in $2\times 2$ unit cells, with dielectric outlined by thin black lines.} \label{fg_1dbd} \centering 
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
@@ -247,7 +247,6 @@ A viable way to shift the resonance frequency much lower, without changing the u
 
 
 
-
 %====================================================================================================
 \section{Split-ring resonator} \label{section_srr} % references to -> 
 % todo note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
@@ -278,7 +277,7 @@ Metallic strip pair
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
 The scattering of a single sphere can be computed analytically: from mie.m, see http://atol.ucsd.edu/scatlib/index.htm, Bohren and Huffman originally published the code in their book on light scattering }
 
-\begin{figure} \caption{\textbf{a)} The electric and \textbf{b)} magnetic Mie resonance in a dielectric sphere}  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_electric.pdf} 
+\begin{figure} \caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_electric.pdf} 
  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_magnetic.pdf} \end{figure}
 
 
@@ -406,10 +405,10 @@ analytic shape of the Mie resonance, \cite{obrien2002photonic}
 % Todo elaborate the idea of nonBragg gap <-> nonradiative fields in structure <-> permittivity/permeability resonance
 % Note that in 1-D dielectric PhC, all fields are propagating, none evanesecnt
 % Big question: Can one approximate a metamaterial by ENG/DNG/MNG/DPS 1-D PhC??
-\begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
+\begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{(a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{(b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
 \textbf{(a)}	\includegraphics[width=.45\textwidth]{img/HRods_eps012_R12_PWEM.pdf}
 \textbf{(b)}	\includegraphics[width=.45\textwidth]{img/HRods_eps100_R12_PWEM.pdf}
-\end{figure}
+\end{figure} %% TODO OVERPIC
 
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
 The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, %% TODO which one?
@@ -436,9 +435,9 @@ Apart from $N_{\text{eff}}$, the FDTD computation gives also the effective wave 
 Other Mie resonances are located at higher frequencies. As a general rule for similar structures, the odd-numbered resonances have magnetic dipole moment (along the rod axis), whereas the even-numbered resonances have electric dipole moment (perpendicular to the rod axis). The reason is that electric dipole moments in odd resonances are suppressed due to antisymmetric shape of the mode; naturally the same holds for the magnetic moments in the even resonances.
 
 The frequency of the Mie resonances is not significantly influenced by the photonic bands. Therefore, in order to understand the resulting band structure and its dependence on parameters, one has to disentangle which band gaps are due to Bragg reflection and which correspond to magnetic or electric Mie resonances. This is much easier knowing the spectra of $\varepsilon_{\text{eff}}$ and $\mu_{\text{eff}}$, as provided by FDTD in Fig. \ref{fg_rodh_fdtd}.
-\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities. The wavenumber plot is folded so it ranges from 0 to 0.5, where $K\approx 0$ and $K\approx 0.5$ correspond to band gaps. \textbf{a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_hbar_radiusscan} \centering 
-\textbf{a)}\includegraphics[width=8cm]{img/old/HRods_eps012_radiusscan.pdf}
-\textbf{b)}\includegraphics[width=8cm]{img/old/HRods_eps100_radiusscan.pdf}
+\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities. The wavenumber plot is folded so it ranges from 0 to 0.5, where $K\approx 0$ and $K\approx 0.5$ correspond to band gaps. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_hbar_radiusscan} \centering 
+\textbf{(a)}\includegraphics[width=8cm]{img/old/HRods_eps012_radiusscan.pdf}
+\textbf{(b)}\includegraphics[width=8cm]{img/old/HRods_eps100_radiusscan.pdf}
 \end{figure}
 
 The photonic crystals composed of square lattice of dielectric rods have been examinated thoroughly since early 90s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was rather low, corresponding to the optical or near-infrared frequencies, where the suitable materials usually have permittivity $\varepsilon < 12$. By parametric scans we could prove that for rod permittivity below 60 or even 80, the individual resonance is always located at higher frequency than the Bragg gap. Little, if any, attention was therefore paid to different nature of the higher resonances and most publications focused on properties and applications of the Bragg band gap.
@@ -446,9 +445,9 @@ The photonic crystals composed of square lattice of dielectric rods have been ex
 The situation is different in the terahertz range, as the lattice of the crystalline solids often exhibits optical phonons at frequencies between 5 and 20 THz. The permittivity of many materials turns out to be much higher for frequencies below these resonances. This enables to conceive structures composed e.g. of titanium dioxide \cite{baumard1977_epsilon_TiO2} with $\varepsilon^{\text{THz}} \approx 92$ or of ferroelectrics with $\varepsilon^{\text{THz}}$ even orders of magnitude higher \cite{skoromets2011tuning}. The price to be paid for this advantage in the THz range are the relatively high losses caused by the lattice vibrations.
 
 \begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.\\
-\textbf{a)} Band diagram and modes from PWEM. 
+\textbf{(a)} Band diagram and modes from PWEM. 
 } \label{fg_erod_radius11} \centering 
-\textbf{a)}	\includegraphics[width=8.5cm]{img/ERods_eps100_R11_PWEM.pdf}
+\textbf{(a)}	\includegraphics[width=8.5cm]{img/ERods_eps100_R11_PWEM.pdf}
 \end{figure}
 
 }
@@ -474,9 +473,9 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 %{{{ FROM SHORT.pdf
 \mdf{  
-\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
-\textbf{a)}	\includegraphics[width=8cm]{img/old/ERods_eps012_radiusscan.pdf}
-\textbf{b)}	\includegraphics[width=8cm]{img/old/ERods_eps100_radiusscan.pdf}
+\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
+\textbf{(a)}	\includegraphics[width=8cm]{img/old/ERods_eps012_radiusscan.pdf}
+\textbf{(b)}	\includegraphics[width=8cm]{img/old/ERods_eps100_radiusscan.pdf}
 \end{figure}
 
 
