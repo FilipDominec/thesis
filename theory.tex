@@ -189,7 +189,7 @@ At the same time, $f_{even}(t)$ and $f_{odd}(t)$ are related to each other by ha
 \begin{equation} f_{even}(t) = \mbox{sign}(t)\,f_{odd}(t). \label{eq_kkfeven}\end{equation}
 The multiplication in the time domain translates into a convolution in the frequency domain
 \begin{equation} 
-F_{even}(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F_{odd}(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F_{odd}(\omega),
+F'(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F''(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F''(\omega),
 \label{eq_kkresult}\end{equation} 
 where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the Hilbert transform. % tODO cite
 
@@ -776,7 +776,7 @@ This theorem is essential for understanding the electromagnetic behaviour of per
 $$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi.$$ 
 }
 \end{enumerate}
- The physical consequence is that when the Hamiltonian operator is invariant to discrete translation, its eigenfunctions are also \textit{almost unchanged} upon this particular discrete translation and differing only by a phase shift of $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
+ The physical consequence is that when the Hamiltonian operator is invariant to discrete translation, its eigenfunctions are also \textit{almost unchanged} upon this particular discrete translation, since they may differ only by a phase shift of $-Ka$. Setting $a$ to be the unit cell size, $K$ becomes the wavenumber of the Bloch wave envelope.
 %
 %Two commuting operators share the same eigenstates, which means that the electron wave function at a given energy (i.e. Hamiltonian eigenfunction) must also have a discrete translational symmetry provided its phase can change between atoms (i.e. it is an eigenfunction of the non-hermitian translation operator).
 
