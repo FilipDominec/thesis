@@ -562,32 +562,34 @@ We identified the following criteria for selection of exactly one of infinitely 
 	 \item{Causal response of the sample requires specific relation between the real and imaginary parts of $r$, $t$ and all effective parameters $\Neff$, $\Zeff$, $\eeff$ and $\meff$, when substituted for the function $F(\omega)$:
 		 \begin{equation} 
 F'(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F''(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F''(\omega). \tag{(\ref{eq_kkresult} \again}\end{equation} 
-Perhaps more familiar consequence of this criterion translates into the requirement of continuity of all curves whenever the structure has nonzero losses.
+Perhaps the most familiar consequence of this criterion is the requirement of continuity for $\Neff(f)$ in all structures with nonzero losses.
 		 } 
 \end{enumerate}
-Note that in the literature which uses different complex convention, i.e. $e^{-\ii\omega t}$, both passivity conditions use the opposite sign.
+Note that in the papers that use different complex convention, i.e. $e^{-\ii\omega t}$, both passivity conditions use the opposite sign.
 
-We have written routines that select the correct solution automatically after each simulation is run. Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
+Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
 so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} of the dispersion curves. This task appears to be often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting to avoid abrupt skips has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$ (e.g. Fig\ref{fg_CutWires_wireradius1u_cutwidth_comparison}). Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
 
 A much more elegant method, published in 2010 by Szabo et al. \cite{szabo2010unique}, relies on the inherently unambiguous knowledge of $\Neff''(f)$, and uses the Hilbert transform introduced in Eq. (\ref{eq_kkresult}) to recover $\Neff'(f)$ from $\Neff''(f)$. 
-However, from our own application of Hilbert transforms on computed effective parameters, this method is rather sensitive to small numerical errors, which caused slow continuous distortion of the curves which would have to be somehow corrected. 
-
+However, from our own experience with application of Hilbert transforms on computed effective parameters, this method is rather sensitive to small numerical errors, which caused slow continuous distortion of the $\Neff'(f)$ curves needing a nontrivial compensation.
 
 \paragraph{Effective parameter retrieval based on unambiguous complex arccosine}
 \begin{figure} \centering \caption{\textbf{(a)} Real and \textbf{(b)} imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L.\\ \textbf{(c)} From top to bottom: example function  $\upsilon(f)$, its ordinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
 
-To our knowledge, we adopted an approach different from earlier published papers which works on pure mathematical basis. 
-The ambiguity of Eqs. (\ref{eq_Neff},\ref{eq_Zeff}) results from the fact that the arccosine and square root are ambiguous functions \cite{simovski2009material} on their own.
+We wrote custom procedure to select the correct solution automatically on pure mathematical basis. To our knowledge, its approach is different from previously published papers.
+The ambiguity of Eqs. (\ref{eq_Neff},\ref{eq_Zeff}) results from the fact that the arccosine and square root are ambiguous functions \cite{simovski2009material} on their own. Since the temporal records of the fields are exponentially decaying functions, the reflectance  $r(f)$ and transmittance spectra $t(f)$ are continuous functions, and so is the arccosine argument from Eq. (\ref{eq_Neff}):
+\begin{equation} \upsilon(f) = \frac{1-r^2+t^2}{2t},   \label{eq_upsilon}\end{equation}
+as it is assumed empirically that for any realistic structure transmission never passes exactly through the complex zero.
+Any abrupt skips in the retrieved spectra of $\Neff'(f)$ may therefore only arise at the discontinuities, or, \textit{branch cuts}, of the arccosine function in the complex plane.
 
-Thus, the algorithm identifies the branch cuts of arccosine in the complex plane (Fig.\ \ref{fg_arccos}a,b). 
+Thus, it is necessary to identify where the branch cuts of arccosine are located in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. They are two, covering the real axis anywhere outside the domain of real arccosine, and different measures must be taken for the sign and branch index $m(f)$ to ensure continuity.
 \begin{enumerate}
 \item{
-If, by increasing the frequency, the arccos argument, $v = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut [i.e.  for $v= u+i 0$ where $u>1$], the real part of arccos$(v)$ touches zero, whereas the imaginary part is non-zero and changes its sign. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
+		If, by increasing the frequency, the arccos argument, $\upsilon = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
 } 
 \item{
-The situation is slightly more complicated at the left branch cut [i.e. for $v = u+i 0$ with $u<-1$], where the imaginary part of $\arccos(v)$ experiences again a step-like change of the sign and the real part reaches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
+	The situation is slightly more complicated at the left branch cut, i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign and the real part reaches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change,  illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
 } 
  \end{enumerate}
 The correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch along with the sign, both being functions of frequency. The sign of the square root function is similarly chosen such than $Z$ is a continuous function of frequency.  
