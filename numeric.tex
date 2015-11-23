@@ -445,7 +445,6 @@ Aside from yielding multiple branches, the physical interpretation of the data c
 The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with a direction parallel to the $z$-axis. The temporal shape of the wave was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
 
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab was simulated. On both faces perpendicular to the $z$ axis we added regions denoted as \textit{perfectly matched layers} \cite{oskooi2011distinguishing} to absorb all radiation (pink blocks). The implementation used is based on gradually introducing imaginary part into the unit cell dimensions to prevent reflections under arbitrary incidence angle, polarisation or frequency of the wave.
-
 The average electric and magnetic fields in each of the monitor planes (blue rectangles) are recorded  in each simulation step.  
 
 Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. A part of its energy is reflected back, a part passes through and part may be dissipated if the structure was lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to a small enough level, the FDTD simulation was terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t(f)$ as functions of frequency $f$. Before this procedure is described, a modification important for the accuracy of this setup is discussed below.
@@ -457,36 +456,32 @@ Passing through the first monitor plane, the wave enters the volume of the unit 
 \paragraph{Avoiding the near-field response in monitor planes} %{{{
 \label{par_nearfield}
 %% Hynek's trick
-With the obvious exception of an effectively one-dimensional structure of layers perpendicular to the wave propagation, any other structure will change the orientation of the electric and magnetic fields. Such a perturbation of the field will be localized around the structure, and exponentially decaying with the distance in the form of an \textit{evanescent wave}.
+With the obvious exception of an effectively one-dimensional structure of layers perpendicular to the wave propagation, all other structures will change also the orientation of the electric and magnetic fields. Such a perturbation of the field will be localized around the structure, and exponentially decaying with the distance in the form of an \textit{evanescent wave}.
 
-An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it. As a result, the energy can be transmitted to another structure if it approaches the zone of the evanescent wave, or, even if no energy is propagating by this means, the electromagnetic behaviour of a structure generally can be altered by its surroundings. Commonly this manifests itself e.g. as resonances shifting up or down in frequency.
+An evanescent wave does not transport energy out of the structure into free space. However, some energy is stored in it, which can be transmitted to another structure if it approaches the zone of the evanescent wave. Aside of this, even if no energy is transferred by this means, the electromagnetic behaviour of a structure is always slightly influenced by its surroundings, which manifests itself most often as resonances shifting up or down in frequency.
 
-The impact of the near-field reaching out of a structure to the s-parameters method is twofold:
+The impact of the evanescent wave partially reaching the unit cell boundaries in the s-parameters method is twofold:
 \begin{enumerate}
- \item{First, computing a single layer of a metamaterial obviously more or less changes its behaviour. In the ideal case, a cell is surrounded by an infinite, periodic 3-D lattice of uniform cells.  Instead, in the scattering parameter method, % FK: nebyly zavedeny?
-the near-field spreads into free vacuum at the front and rear sides. 
+ \item{First, computing a single layer of a metamaterial unit cells, with free space in front and behind it, obviously more or less changes its behaviour compared to the periodic lattice. 
 
-This issue seems to be inherent to the method, but its impact can be assessed by simulating more than one unit cell. Generally, the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells result in a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can supply intermediate results unsuitable to the retrieval method.
+This issue is inherent to the simulation setup, but its impact can be assessed by simulating more than one unit cell, since the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells result in a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can yield confusing results unsuitable to the retrieval method.
  } 
- \item{Second, the monitor planes can not distinguish between the evanescent or radiated waves, but only the latter are desired for the s-parameter computations. At very low frequencies or at frequencies around resonances, the near-field can significantly distort the retrieved parameters.
+ \item{Second, the monitor planes can not distinguish between the evanescent or radiated electromagnetic field, but only the latter are desired for the s-parameter computations. At very low frequencies or at frequencies close to resonances, it was observed that the near field can significantly distort the retrieved parameters.
 
-This can be resolved by adding \textit{padding} between the metamaterial cell and the monitor plane. As the evanescent field decays exponentially, usually a padding of less than half of the unit cell size is sufficient to suppress all artifacts due to near-field components. In contrast, the propagating waves only gain an additional phase offset that can be easily compensated after the simulation. } 
+This can be resolved by shifting both monitor planes away from the metamaterial cell by a distance denoted as \textit{padding}. As the evanescent field decays exponentially, padding of less than half of the unit cell size is sufficient to suppress all artifacts due to near-field components. In contrast, propagating waves only gain an additional phase offset that can be easily compensated after the simulation. } 
  \end{enumerate}
-To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the second issue, and it does so at an acceptable expense of moderately extending the simulation volume.
-% TODO figure here a-b-c of different padding near a dielectric rod
+To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the issue , and it does so at an acceptable expense of moderately extending the simulation volume. % (todo? figure here a-b-c of different padding near a dielectric rod)
+
 %}}}
 \paragraph{Scattering-parameter retrieval procedure} %{{{
-The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown in a logarithmic scale in Fig. \ref{fg_sparam_timedomain}. 
+The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown and commented in a logarithmic scale in Fig. \ref{fg_sparam_timedomain}.  
+\begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the complex recorded fields at the first $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$ and second $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$ monitor plane.  The excitation pulse ca. 2 ps long excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as is outlined by thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time  was $t_{sim} =$ 150 ps.} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
-The excitation pulse ca. 2 ps long excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as is outlined by thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time  was $t_{sim} =$ 150 ps.
-\begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the (complex) fields} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
+The spectral resolution is determined by the length of the time record. The higher quality of resonance, the sharper its spectral features. %is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. 
+From the Fourier-Plancherel theorem %% TODO ref
+it follows that the energy part stored in the resonance at the end of the time record will be missing in the spectra in the frequency domain, too. When a time record too short significantly truncates a resonance ringdown, characteristic ringing in the spectra occurs which is very detrimental to further visual and numerical evaluation. 
 
-%% Skutečný optimismus není věřit, že bude dobře, ale že budu mít v~každé situaci možnost, sílu a odhodlání učinit všechno k~tomu, aby lépe bylo. 
-
-The spectral resolution is determined by the length of the time record. As a general rule, the higher quality of resonance, the sharper its spectral features. The case of a short time record significantly clipping a resonance ringdown is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. From the Fourier-Plancherel theorem %% TODO ref
-it follows that the energy part stored in the clipped resonance will disappear from the frequency domain, too. As a result, characteristic ringing in the spectra will occur. Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that applying a rectangular window in time domain results in a convolution with the sinc function in the spectrum. 
-
-Using a time window that has smooth shape does not improve spectral resolution, but, in general, it suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
+Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that applying a rectangular window in time domain results in a convolution with the sinc function in the spectrum. While multiplication of the records a  smooth window function (\textit{apodization}) does not improve spectral resolution, but, in general, it suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
@@ -541,8 +536,8 @@ It can also be seen from Fig. \ref{fg_STO_bar_modes} that around the bar width o
 A more elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or thee magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 %}}}
 \paragraph{Retrieval of effective parameters} %{{{
-So far, we computed the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metameterial cell layers. 
-These data, if supplied with the cell thickness $d$, are also sufficient to deduce the behaviour of a periodic structure composed of an infinity of such unit cells, i.e., to retrieve the effective parameters of the structure by means of the Fresnel inversion \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. The expression for the effective index of refraction is
+So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metameterial cell layers were determined. 
+These data, if supplied with the cell thickness $d$, are also sufficient to deduce the behaviour of an infinite periodic structure composed of such unit cells, i.e., to retrieve the effective parameters of the structure by means of the Fresnel inversion \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. The expression for the effective index of refraction is
 \begin{equation} \Neff = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi \cdot m}{k d}, \label{eq_N} \end{equation}
 where nor branch index $m\in \mathbb{Z}$, nor the sign of the solution are a priori known. For the effective impedance, the sign has also to be determined: 
 \begin{equation} \Zeff = \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}}. \label{eq_Z} \end{equation}
