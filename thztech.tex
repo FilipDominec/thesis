@@ -52,20 +52,23 @@ Harmonic frequency multipliers and mixers often employ varactor diodes or Schott
 %}}}
 \paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
 The opposite approach, also known as \textit{optical rectification}, generates THz radiation as the difference frequency between two or more detuned optical waves.
-The radiation may come from two lasers or laser modes [CCap7], mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
+The radiation may come from two lasers or laser modes, % [CCap7], 
+mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
 Other possibility is to use the \textit{terahertz parametric generation} where a single wave enters the nonlinear crystal as the \textit{pump} and the second wave, \textit{idler}, is generated during the nonlinear process. The \textit{idler} wave is kept in an optical resonator; the terahertz output can be tuned by changing parameters of the resonator. 
 For nonlinear generation of pulses in the THz range, usually a mode-locked laser is used that emits pulses that intrinsically cover a broad spectrum of frequencies (e.g. typically over 360-390 THz for a titanium-sapphire laser). The difference-frequencies are generated from all optical frequency components simultaneously, which results in a terahertz pulse with a very broad spectrum given by the type of nonlinear medium. 
 
 The classical process of nonlinear optical conversion involves transparent electro-optic crystals, where some measures are taken to account for the generally different velocity of all interacting waves.
 \begin{itemize}
-\item{For the difference-frequency generation between optical waves of close frequency, the classical condition of \textit{phase synchronization} is equivalent to ensure similar \textit{group} velocity at the optical and terahertz frequency. Of the materials satisfying these requirements, zinc telluride (ZnTe), gallium selenide (GaSe), and lithium niobate (LiNbO$_{3}$, [CCap19]) have found widest application in the frequency range up to 3--5 THz. } 
+	\item{For the difference-frequency generation between optical waves of close frequency, the classical condition of \textit{phase synchronization} is equivalent to ensure similar \textit{group} velocity at the optical and terahertz frequency. Of the materials satisfying these requirements, zinc telluride (ZnTe), gallium selenide (GaSe), and lithium niobate (LiNbO$_{3}$) % [CCap19]) 
+found widest application in the frequency range up to 3--5 THz. } 
 \item{The \textit{quasi-phase-matching} technique allows to compensate the difference of the group velocity of the optical wave and the terahertz wave by periodically altering the nonlinear coefficients of a crystal so that the nonlinear contribution to the resulting wave never reverses its sign. Crystals of \textit{periodically poled lithium niobate} (PPLN) are often used for this, with the possibility of shaping the poled regions as wedges (\textit{fanned-out PPLN}), which allows to change the effective poling pitch. This method is suitable for continuous-wave or narrow-band pulse terahertz generation.  }  % TODO cite 
 \item{A sufficiently strong nonlinear interaction, on a length less than the coherence length, alleviates both requirements of phase matching and low absorption of the waves \cite{leitenstorfer1999detectors}. Organic crystals, e.g. made of DAST,\footnote{DAST is a shortcut for 4-dimethylamino-N-methylstilbazolium tosylate}
 %% and derivatives of MNA (2-methyl-4-nitroaniline) [CCap25]
-have been reported \cite{han2000use}[CCap24]
+have been reported \cite{han2000use} %[CCap24]
 to have two orders of magnitude higher electrooptic coefficients than the materials usual in nonlinear optics, making them suitable for operation up to 20 THz. 
 
-Nonlinear interaction is semiconductors is enhanced when the incident photon energy is above their band gap. Common crystals used for \textit{resonant THz emission} are GaAs[CCap22], InP  or CdTe (with band-gaps of 1.42, 1.34 and 1.5 eV, respectively), which can be illuminated by a titanium-sapphire laser (with an average photon energy $hc/\lambda \approx$ 1.5 eV).} 
+Nonlinear interaction is semiconductors is enhanced when the incident photon energy is above their band gap. Common crystals used for \textit{resonant THz emission} are GaAs, %[CCap22] 
+InP  or CdTe (with band-gaps of 1.42, 1.34 and 1.5 eV, respectively), which can be illuminated by a titanium-sapphire laser (with an average photon energy $hc/\lambda \approx$ 1.5 eV).} 
 \item{With a proper spatio-temporal optical pulse geometry and choice of materials,\cite{auston1984cherenkov} a THz pulse can be generated in the form of Čerenkov cone even if the optical group velocity is higher than the terahertz one.}
 \item{Finally, plasma generated by high optical intensity of an optical pulse can serve as a nonlinear medium, with a low dispersion and thus a very broad bandwith of tens of THz \cite{loffler2000generation,chen2007terahertz,tong2012}. }
  \end{itemize}
@@ -73,7 +76,7 @@ Nonlinear interaction is semiconductors is enhanced when the incident photon ene
 %% TODO and also http://www.nature.com/srep/2014/140605/srep05045/full/srep05045.html#close
 
 %}}}
-\paragraph{Photoconductivity sources}%{{{ ================================================================================
+\paragraph{Photoconductive sources}%{{{ ================================================================================
 Terahertz waves can be generated by \textit{photoconductivity}, i.e. by transient acceleration of charges upon optical illumination.
 %In a non-saturated regime, the change of conductivity is roughly proportional to the light intensity, and thus to the square of the electric field amplitude. In this respect, the photoconductivity is similar to the aforementioned mechanism of the second-harmonic nonlinear interaction. 
 In the photoconductive devices, the major part of the energy is supplied by the external quasi-static electric field, which limits the maximum emitted power and requires less intense laser illumination. The light sources can be again two detuned lasers or laser modes \cite{gu1999generation}, or a pulse from a mode-locked laser oscillator. Obviously, this method requires the photon energy to exceed the band-gap of the selected semiconductor.
