@@ -72,7 +72,7 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
 	where we defined the \textit{speed of light} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular triplet $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed} media.
 } 
- \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. \ref{eq_wavek} to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
+ \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. (\ref{eq_wavek}) to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
 
  \begin{figure}[t] \caption{Left panel shows the permittivity $\epsrl'$ and permeability $\murl'$ of vacuum being equal to 1; as a result, the dispersion curve for a transverse wave in vacuum forms a straight line in the right panel. As in the case of similar plots later, both axes of the right panel are normalized to an arbitrary frequency of $\omega_0$, because the characteristic curve shapes are independent of the scale.} \label{fg_dcvac} \centering 
@@ -209,7 +209,7 @@ Returning to the derivation of dispersion relations, we start with modifying the
 with the relative permittivity $\epsrl(\omega)$ and permeability $\mu_r(\omega)$ being two dimensionless functions of frequency, defined in Eq. (\ref{eq_lorentz_eps}, \ref{eq_lorentz_mu}). 
 The wave equation (\ref{eq_wavek}) then changes to
 \begin{equation}  \TT\E = \varepsilon_0 \mu_0  \epsrl(\omega) \murl(\omega) \, \frac{ \omega^{2}}{k^2} \E.  \label{eq_wavek_disp}\end{equation}
-For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($\TT\E = \E$), and Eq. \ref{eq_wavek_disp} can be simplified to  
+	For transverse waves in isotropic media, the electric field is perpendicular to the wave vector ($\TT\E = \E$), and Eq. (\ref{eq_wavek_disp}) can be simplified to  
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of the curve in Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
@@ -263,7 +263,7 @@ An elaborate discussion on all possible forms of this tensor and their physical 
 
 %}}}
 \paragraph{Dispersion relations in anisotropic local media}  %{{{
-If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. \ref{eq_dispeq_loc}.
+If the medium response depends on the direction of the field, the dispersion relations can not be directly obtained by substitution into the wave equation as in Eq. (\ref{eq_dispeq_loc}).
 % a linear transformation of the vector $\E$, which can be expressed by the tensor
 %$$ - \kk (\kk \cdot \E) \equiv 
 	%-\left(\begin{array}{c} k_x \\ k_y \\ k_z \end{array} \right) \cdot
@@ -289,7 +289,7 @@ The dispersion relation can however still be solved \cite[pp. 667]{born1999book}
 	%-k_z k_x 		& -k_z k_y		& k_x^2+k_y^2-\mu_0\varepsilon_0\omega^{2}
 	%\end{array} \right| = 0, \label{eq_dispdet}\end{equation}
 For simplicity, we assume here that the relative permeability $\murl = 1$; the extension to other cases is possible, too. %% TODO Do epsilon and mu commute, if they are both tensors??
-A solution of Eq. \ref{eq_wavek} can exist with nonzero $\E$ if and only if the determinant of the set of three linear equations is zero:
+A solution of Eq. (\ref{eq_wavek}) can exist with nonzero $\E$ if and only if the determinant of the set of three linear equations is zero:
 \begin{equation} 
 \det\left[
 \TT -
@@ -318,12 +318,12 @@ frequency $\omega$ as the function of \textit{wave vector} $\kk$. In three dimen
   \end{minipage}
 \end{figure}
 
-Such plots are known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC), and they allow intuitive geometrical analysis of various phenomena such as light refraction, beam walk-off, total internal reflection etc. 
+Such plots are known as \textit{isofrequency contours} (IFC), or also \textit{equifrequency contours} (EFC), and they allow intuitive geometrical analysis \cite{lindell2001bw} of various phenomena such as light refraction, beam walk-off, total internal reflection etc. 
 The relation between a dispersion curve for one photonic branch and the corresponding isofrequency contours in an isotropic medium is illustrated in Fig. \ref{fg_ifc_dc}.
 
 The limitation is, however, that IFC plots do not show the imaginary part and thus are applicable to plot the dispersion in media with no or negligible losses only.  
 Each photonic branch also has to be plotted in a separate plot to prevent the contours from overlapping (see the right panel of Fig. \ref{fg_dcsimpleel}). 
-Moreover, in every single photonic band, Eq. \ref{eq_dispdet} yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
+Moreover, in every single photonic band, Eq. (\ref{eq_dispdet}) yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
 \begin{figure}[ht] \caption{Isofrequency contours for three different frequencies: \textbf{(a)} IFCs in the isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. Note that for clarity, the plots (b) (c) show the IFCs only for one wave polarisation. %%% XXX XXX XXX todo what is the orientation of the group velocity??
@@ -367,7 +367,7 @@ We will show in the following that the prediction of \textit{beam} propagation i
 \paragraph{Group velocity}  %{{{  
 So far, only the propagation and refraction of a plane harmonic wave was discussed, and it was shown that it is determined by the shape of IFC at the given frequency.
 Temporal modulation of the wave 
-% can be expressed by a complex vector function $\E_0(t)$ that replaces the constant vector $\E_0$ in Eq. \ref{eq_pw}. This 
+% can be expressed by a complex vector function $\E_0(t)$ that replaces the constant vector $\E_0$ in Eq. (\ref{eq_pw}). This 
 is equivalent to the wave being formed by superposition of multiple frequency components in the frequency domain, with their respective amplitudes given by the Fourier transform of the field envelope. The temporal position of the envelope in is determined by their \textit{mutual phase difference}, not by the absolute wave phase. 
 %redund As a special case, when all components propagate with the same velocity, the envelope does not shift against the wave phase. 
 
@@ -510,7 +510,7 @@ because for reasonably shaped functions the temporal and spatial derivatives com
 
 %% todo how this transform is denoted?
 With the freedom of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in spatial-dispersive theory, the constitutive equation 
-for magnetic induction is defined the same as in vacuum, c.f. Eq. \ref{eq_ce}:
+for magnetic induction is defined the same as in vacuum, c.f. Eq. (\ref{eq_ce}):
 \begin{equation} \mu_0 \HHsd := \mu_0 \murl(\omega) \HH = \B. \label{eq_mu_sd}\end{equation}
 When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obtain a prescription for the sought $\mathbf{X}$: 
 $$ \HHsd = \HH + (\murl(\omega) -1)\HH = \HH + \underbrace{\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B}_{=:\,\partial\mathbf{X}/\partial t}$$
@@ -611,7 +611,7 @@ However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proporti
 \textbf{(a)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupp.pdf}
 \textbf{(b)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
 \end{figure}
-Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. \ref{eq_epsmusd3} make the dispersion curves deviate from those predicted for local media. This corresponds to the black contours deviating from the green lines in Fig. \ref{fg_dcll_nl}.
+Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. (\ref{eq_epsmusd3}) make the dispersion curves deviate from those predicted for local media. This corresponds to the black contours deviating from the green lines in Fig. \ref{fg_dcll_nl}.
 As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
 
 \label{chap_sd}
@@ -642,24 +642,28 @@ Thus, the two plots in the right column of Fig. \ref{fg_dcllactivity} can also b
 
 %}}}
 
-\subsection{Amplitudes of the refraction and reflection}
-\paragraph{Interface between two local media} %{{{ 
-In the previous text, only the phase-related phenomena were discussed and the dependence of the dispersion curves and IFCs were computed as a result of the local or nonlocal response of the medium. Geometrical arguments were then used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur, that the beam may refract in a different direction than the wave vector, and that, in some cases, the notion of index of refraction can be used to simplify the problem to a mere substitution into the Snell law.
+\subsection{Reflectance and transmittance at an interface of two local media}
+\paragraph{Continuity requirements} %{{{ 
+In the previous text, only the phase-related phenomena were discussed. The dependence of the dispersion curves and IFCs were computed as a result of the local or nonlocal response of the medium. Geometrical arguments were then used to infer the angle of refraction at the interface of two media, showing e.g. that a positive or negative refraction may occur. It was also shown that the beam may refract in a different direction than the wave vector, and that, in some cases, the notion of index of refraction can be used to simplify the problem to an application of the Snell law.
 
-The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that both media are local, the components of the fields $\E$, $\HH$ \textit{parallel} with regards to the interface must be continuous. Additionally, the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be deduced from the Maxwell equations [Eq.  (\ref{eq_me1}--\ref{eq_me4})], integrating them over infinitesimally thin loops or surfaces, respectively, that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
+The conservation of the wave phase at the interface is, however, not the only constraint to the refraction and reflection problem. Assuming there is no surface current nor surface charge, and that both media are local, the components of the fields $\E$, $\HH$ \textit{parallel} with regards to the interface must be continuous, whereas the \textit{perpendicular} component of the displacements $\D$, $\B$ is continuous, too. This rule can be derived from the Maxwell equations in Eqs. (\ref{eq_me1}--\ref{eq_me4}) by integrating them over infinitesimally thin loops or surfaces that are symmetrically placed on the interface \cite[pp. 26-29]{klingshirn2007semiconductor}. 
 
-The reflection and refraction (i.e. transmission) coefficients for the \textit{amplitudes} of the waves are derived in many textbooks  with different levels of generalisation.  
-In the particular case where wave perpendicularly impinges the interface of two isotropic local media, described by their \textit{impedances} $Z_1, Z_2$, respectively, the (complex) reflection $r$ and transmission $t$ are
+%}}}
+\paragraph{Impedance} %{{{ 
+The continuity requirement determines the \textit{amplitudes} of the waves reflected and transmitted at the interface. Corresponding complex coefficients of \textit{reflectance} $r$ and \textit{transmittance} $t$ depend on the incidence angle and the polarisation of the wave \cite[p. 38]{born1999book}. They are derived in many textbooks with different levels of generalisation, but in all cases they depend only on the ratio of permeability to permittivity, denoted as the \textit{impedance} of each medium $Z = \sqrt{\murl/\epsrl}$. 
+
+It shall be noted that most optics textbooks assume the medium to have no response to the magnetic field, $\murl=1$, in which case $Z = 1/N = \sqrt{1/\epsrl}$ and the reflection/transmission then can be expressed also as functions of $N$. This assumption is however not applicable for this thesis.
+
+%}}}
+\paragraph{Perpendicular incidence of two local media} %{{{ 
+In the simplest case where the wave perpendicularly impinges a single interface of two isotropic local media, described by their respective \textit{impedances} $Z_1, Z_2$, the reflectance $r$ and transmittance $t$ of the interface are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
-with the impedance of each medium $Z_{1} = \sqrt{\murl/\epsrl}$.
-Eq. (\ref{eq_reflection}) is analogous to the reflection in a one-dimensional transmission line, known from the microwave engineering, although the impedance of a transmission line is defined in a more complicated way than in a continuous medium.
-The complex amplitudes of the reflected and transmitted wave depend on the angle of incidence, and splits into the TE and TM polarisation \cite[p. 38]{born1999book}.  % todo add analytic eqs.?
 
 %}}}
 \paragraph{Refraction on interface with a nonlocal medium}   %{{{ TODO
-The task to compute the amplitudes of reflection and transmission for nonlocal media is substantially more complicated than for the local media. The fundamental reason is related to the fact that the definition of the medium response (\ref{eq_chi_convol_nonloc}) contains a convolution over an infinite space, which naturally does not account for the interface. For the problem to be better formulated, the integral would have to be modified, either with the nonlocal response of medium to extend also behind the interface, or with the medium response sharply truncated at the interface.
+The task to compute the amplitudes of reflection and transmission for nonlocal media is substantially more complicated than for the local media. The principial reason is related to the fact that the definition of the medium response (\ref{eq_chi_convol_nonloc}) contains a convolution over an infinite space, which naturally does not account for the interface. For the problem to be better formulated, the integral would have to be modified, either with the nonlocal response of medium to extend also behind the interface, or with the medium response sharply truncated at the interface. For a weak spatial dispersion, different approaches to the problem are discussed in \cite{golubkov1995boundary}.
 
-For a weak spatial dispersion, different approaches to the problem are discussed (and corrected) in \cite{golubkov1995boundary}. %Extending the notion of impedance to spatial-dispersive media to compute the amplitudes. 
+Strong enough spatial dispersion can also allow the plane wave to refract into a superposition of two independent plane waves, which differ by their component of the wavevector perpendicular to the interface. The respective amplitudes of these components depend on the \textit{additional boundary conditions}\index{additional boundary conditions} \cite{agranovich2006spatial}.
 
 %}}}
 

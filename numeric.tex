@@ -358,12 +358,13 @@ For FDFD, the permittivities and conductivities of all media can be freely chose
 \subsection{Plane-wave expansion method} % TODO
 \paragraph{Principles of PWEM} %{{{
 Another algorithm used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, its use is similar to the frequency-domain finite-difference solver (FDFD) described above, though it is based on directly solving a linear algebraic problem in contrast with the somewhat inefficient optimisation used in FDFD.
-PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
 
+PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
 
 For the given wavevector, PWEM also gives the shape of the fields for each mode. This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
 As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, implemented by the same group as MEEP.
 % Todo comments on MPB
+% todo cite mpb-plotting project on github
 %}}}
 %  \paragraph{Comparison of PWEM to FDTD} %{{{ WTF
 %  While the time-domain methods are very general, allowing to compute both periodic and non-periodic structures with losses or nonlinearity, some tasks may be better solved by more specialized methods. An example is the \textit{plane-wave expansion method} (PWEM), which is superior for efficient search of dispersion curves in periodic structures, and for the mode shapes at the band edges.
