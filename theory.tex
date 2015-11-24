@@ -650,13 +650,14 @@ The conservation of the wave phase at the interface is, however, not the only co
 
 %}}}
 \paragraph{Impedance} %{{{ 
-The continuity requirement determines the \textit{amplitudes} of the waves reflected and transmitted at the interface. Corresponding complex coefficients of \textit{reflectance} $r$ and \textit{transmittance} $t$ depend on the incidence angle and the polarisation of the wave \cite[p. 38]{born1999book}. They are derived in many textbooks with different levels of generalisation, but in all cases they depend only on the ratio of permeability to permittivity, denoted as the \textit{impedance} of each medium $Z = \sqrt{\murl/\epsrl}$. 
+The continuity requirement determines the \textit{amplitudes} of the waves reflected and transmitted at the interface. Corresponding complex \textit{Fresnel coefficients} of \textit{reflectance} $r$ and \textit{transmittance} $t$ depend on the incidence angle and the polarisation of the wave \cite[p. 38]{born1999book}. They are derived in many textbooks with different levels of generalisation. 
 
-It shall be noted that most optics textbooks assume the medium to have no response to the magnetic field, $\murl=1$, in which case $Z = 1/N = \sqrt{1/\epsrl}$ and the reflection/transmission then can be expressed also as functions of $N$. This assumption is however not applicable for this thesis.
+In the case of isotropic media, the medium is sufficiently described by the ratio of permeability to permittivity, whose square root is denoted as the \textit{impedance} of each medium $Z = \sqrt{\murl/\epsrl}$. 
+It shall be noted that most optics textbooks assume the media not to respond to the magnetic field, $\murl=1$, in which case $Z = 1/N = \sqrt{1/\epsrl}$ and the Fresnel coefficients then are be expressed as functions of $N$. This assumption is however not applicable for this thesis.
 
 %}}}
 \paragraph{Perpendicular incidence of two local media} %{{{ 
-In the simplest case where the wave perpendicularly impinges a single interface of two isotropic local media, described by their respective \textit{impedances} $Z_1, Z_2$, the reflectance $r$ and transmittance $t$ of the interface are
+In the simplest case where the wave perpendicularly impinges a single interface of two isotropic local media, described by their respective impedances $Z_1, Z_2$, the reflectance $r$ and transmittance $t$ of the interface are
 \begin{equation} r = \frac{Z_2 - Z_1}{Z_2+Z_1}, \quad t = \frac{2 Z_2}{Z_2 + Z_1}, \label{eq_reflection}\end{equation}
 
 %}}}
@@ -1081,7 +1082,6 @@ This chapter can in no way cover all relevant papers and ideas over the last cen
 %}}}
 
 \subsection{Photonic band-gap structures} 
-
 \paragraph{One-dimensional band gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
 Both effects are due to a presence of a Bragg band gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
@@ -1325,8 +1325,9 @@ In the author's belief, it is necessary to adopt the full theory of spatial-disp
 %}}}
 
 \section{The boundary between photonic crystals and metamaterials} 
-In the light of the previous historical review, it appears that MMs and PhCs are divided by historical reasons as different paradigms which have developed separately for most of the 20th century. It was however argued above that these paradigms and research comumnities are undergoing the process of unification, which incites the question whether there exist any objective rules to tell apart MMs from PhCs.
-
+In the light of the previous%{{{
+historical review, it appears that MMs and PhCs are divided by historical reasons as different paradigms which have developed separately for most of the 20th century. It was however argued above that these paradigms and research comumnities are undergoing the process of unification, which incites the question whether there exist any objective rules to tell apart MMs from PhCs.
+%}}}
 \paragraph{The wavelength criterion} %{{{
 Originally, the determining parameter was surely the ratio of the unit cell size to the wavelength of the electromagnetic wave (at the given frequency of operation).
 Even some modern recent papers \cite{tsukerman2011nonlocal} define MMs as \textit{(...) artificial periodic structures with features smaller than the vacuum wavelength}.
@@ -1498,53 +1499,4 @@ Anti-resonant response of resonant inclusions : "antiresonance "may not" come fr
 Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 }
 
-
-
-
-
-
-
-
-
-
-%% finish this? or leave this out?
-%%      \section{Materials available for metamaterial construction}
-%%      \subsection{General notes}
-%%       complete it in the rest of the document!!
-%%      \subsection{Dielectrics}
-%%      \subsection{Metals}
-%%      % and oxides for optical: Naik2011.pdf
-%%      \subsection{Superconductors}
-%%      \subsection{Tunable and switchable materials}
-%%      \subsection{Specifics of the terahertz range}
-
-%putting two resonances of the same type near to each other annihilates their “wings”
-%→ hard to make a broadband-operating passive MM
-%Metal eps spectra
-%different models: Drude, lossy Drude
-%spatial view of E+M wave propagation  (propagating/standing wave)
-%in free space
-%in arbitrary electromagnetic material 
-%reflection on metal surface (PEC) and on PMC
-%surface plasmons, standing/propagating
-%non-lossy and lossy metal (-> quasi-bound states)
-%Capacitive, inductive, resistive coupling?
-%a “fast” and a “slow” resonance superposed?
-%Two oscillators with nearly the same frequency:
-%electric+electric or magnetic+magnetic → strong coupling, leads to twice curled curve in polar plot
-%electric+magnetic → weak or no coupling (magnetic dipole: H field even, Efield odd; electric dipole: H field odd, E field even → may be regarded as zero inner product of the field functions)
-%interpreting resonance (and Fano-resonance) curves
-	%wave in free space → s12 ampli constant, phase constantly growing; (s11 zero)
-	%→  in polar plot: a clockwise rotating unit vector
-	%reflective surface → s11 ampli constant, phase constantly growing; (s12 zero)
-	%simple resonance (in SRR?) 
-	%→  reflectance peak
-	%if fres1 < fres2 → …
-	%find out the difference between:
-	%two coupled broad resonances with interaction inbetween?
-
-%Scaling and non-scaling properties [Zhou PRL 2005]
-%Babinet principle
-%diluted metal → Pendry1996's low frequency plasmons
-%Bianisotropy and chirality
 
