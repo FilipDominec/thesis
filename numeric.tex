@@ -12,7 +12,7 @@ Most of the computational time is thus occupied by a simple and unconditional lo
 % \end{figure}
 
 The time-stepping routine needs the same computing power in empty vacuum as inside a complex structure. Grid-based methods such as FDTD are therefore the most efficient when a structure has relatively complex shape, but its smallest features are no more than two or three orders of magnitude smaller than the simulation size. In contrast, an accurate-enough simulation of a structure that has some few very fine features surrounded by big empty space would require an excessively high resolution, often resulting in the great majority of the voxels being inefficiently used in space where the high resolution is not needed. Other methods, % TODO discussed below
-such as Finite-element method or Boundary-element method, would be preferable for such cases.
+such as the finite-element method (FEM) or boundary-element method (BEM), would be preferable for such cases.
 
 As widely used in the later chapters,  %% TODO illustrate it below!
 simulations of a wave propagating in any periodic structure can make use of the periodic boundaries of the simulated volume, so that only one unit cell has to be computed to get result of an infinite structure. The unit cells of periodic structures discussed in this thesis have smallest features not less than two orders of magnitude smaller than the unit cell size, and besides one is often interested in obtaining the whole spectrum information, so FDTD was an optimal tool for this task.
@@ -417,7 +417,7 @@ Finite-element methods (FEM) approximate the structure with a custom mesh of tri
 % \end{verbatim}
 
 \section{Simulation setups for metamaterial homogenization} % TODO
-% TODO theoretically shown in works [12,13,14,15] and experimentally confirmed in [16] this techniqueis not applicable when the sample material experiences the resonance
+% TODO theoretically shown in works [12,13,14,15] and experimentally confirmed in [16] this technique is not applicable when the sample material experiences the resonance
 %		[12] C.R. Simovski, S.A. Tretyakov, Phys. Rev. B 75 (2007)195111
 %		[13] C.R. Simovski, Metamaterials 1 (2007)62
 %		[14] C.R. Simovski, Metamaterials 2 (2008)169
@@ -440,7 +440,7 @@ The most often mentioned issue of this method is that the solutions have infinit
 Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
 \paragraph{Simulation setup} %{{{
-\begin{figure}[ht] \centering \caption{The setup of the FDTD simulation for the scattering parameter method
+\begin{figure}[ht] \centering \caption{The simulation setup for the scattering parameter method. All simulation elements are described in the text.
 % TODO REWRITE, and add the X-Y-Z arrows to the figure}
 } \includegraphics[width=12cm]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
 The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with a direction parallel to the $z$-axis. The temporal shape of the wave was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
@@ -629,6 +629,7 @@ this method makes several assumptions that may not always hold. One of them is t
 \paragraph{Simulation setup}
 \paragraph{Retrieving the structure response}
 \paragraph{Identification of dispersion curves}
+Harmonic inversion was used based on the FDM algorithm \cite{mandelshtam1997harmonic}.
 \paragraph{Retrieval of effective permittivity out of dispersion curves}
 \paragraph{Comparison with the scattering-parameters method}
 }

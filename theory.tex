@@ -37,13 +37,13 @@ Starting with Eq. (\ref{eq_me4}) instead of (\ref{eq_me3}), an analogous result 
 
 %}}}
 \paragraph{Plane wave} %{{{
-The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\ii \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector \textit{} and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
+The solutions of the linear wave equation (\ref{eq_wave}) can be decomposed into a sum of \textit{harmonic plane waves}, where \textit{harmonic} means that the amplitude depends on the time $t$ as a harmonic function (e.g. $\sin(\omega t)$ or $e^{\ii \omega t}$). As a \textit{plane wave} we denote a spatial shape of the fields that is a function of a single scalar parameter $\kk\cdot\rr$, where $\kk$ is an arbitrary vector and $\rr$ is the position vector. Assuming the wave propagates with a nonzero constant velocity, it follows that also the spatial dependence of the fields is harmonic. Any other complicated shape of the fields can be decomposed into a linear superposition of more such waves and treated separately \cite{jackson1962book}. 
 
-The electromagnetic field can be described as a complex exponential, i.e. as a superposition of two waves differing by a quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, namely, it allows to easily identify the \textit{phase of a wave as} the exponent, when multiplied by $\ii$. 
+The electromagnetic field can be described as a complex exponential, i.e. as a superposition of two waves differing by a quarter-period phase shift, one defining the real part, one the imaginary part of the field. In comparison with the intuitive description of a plane wave in terms of a cosine (or sine) function, the complex notation formally simplifies some mathematical operations, namely, it allows to easily identify the \textit{phase of a wave} as the exponent, when multiplied by $\ii$. 
 
 We define the electric field as a function of time $t$ and position in space $\rr$, corresponding to a plane wave in the complex notation:
 \begin{equation} \E(t, \rr) := \E_0\, e^{\ii\omega t - \ii\kk\cdot\rr} \label{eq_pw}\end{equation}
-The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega$ and \textit{wave vector} $\kk$. Note that no restrictions were put to the amplitude vector $\E_0$ so far, thus Eq. (\ref{eq_pw}) can describe both \textit{transverse} wave of any polarization, with $\E_0 \perp \kk$, and \textit{longitudinal wave} with $\E_0 || \kk$.  As discussed in the introduction, the time dependence of complex fields with positive evolution in time ($e^{+\ii\omega t}$)  was chosen without any impact on the physical conclusions.
+The plane wave is fully characterised by its \textit{amplitude vector} $\E_0$, \textit{angular frequency} $\omega = 2\pi f$ and \textit{wave vector} $\kk$. Note that no restrictions were put to the amplitude vector $\E_0$ so far, thus Eq. (\ref{eq_pw}) can describe both \textit{transverse} wave of any polarization, with $\E_0 \perp \kk$, and \textit{longitudinal wave} with $\E_0 || \kk$.  As discussed in the introduction, the time dependence of complex fields with positive evolution in time ($e^{+\ii\omega t}$)  was chosen without any impact on the physical conclusions.
 
 %}}}
 \paragraph{Dispersion relations in vacuum} %{{{
@@ -57,7 +57,7 @@ $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon
 \begin{equation}  \TT\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
 The linear operation $\TT$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
 \begin{equation} \TT\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_transverse1}\end{equation}
-Rewriting it explicitly, we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
+Rewriting it explicitly, in this thesis we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
 \begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
@@ -135,12 +135,15 @@ A sample time- and frequency-domain response of a medium with one harmonic oscil
 % Note this is also the way how one communicates the material definition to the numerical simulation software, as described later (in Chap. \ref{chap_fdtd}). 
 
 One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at very high frequencies $\omega \gg \omega_0$, the system can not respond to the driving force.
+
 The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 
 A more detailed treatment of the permittivity spectra $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
+%TODO add that putting two resonances of the same type near to each other annihilates their “wings”
+%TODO ==> hard to make a broadband-operating passive MM
 
-We will return to the Lorentz oscillator model also in Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical FDTD simulations. The chapter also describes in more detail how the overdamped molecular rotation and the unbound motion of free charges can be easily represented using correct parameters of an oscillator.
+We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical simulations. The chapter also describes how a Debye relaxator (e.g. from overdamped molecular rotation) and the Drude term (from unbound motion of free charges) can be represented using correct parameters of an oscillator.
 %}}}
 \paragraph{Permeability}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability} can be introduced by means of a response of the medium to the magnetic field:
@@ -326,7 +329,7 @@ Each photonic branch also has to be plotted in a separate plot to prevent the co
 Moreover, in every single photonic band, Eq. (\ref{eq_dispdet}) yields two solutions for two possible polarisations of transverse waves \cite[p. 46]{klingshirn2007semiconductor}. The IFCs for these solutions are in general different in anisotropic media, but we always restrict the discussion only to one polarisation in the following figures for simplicity. 
 % discuss this further? In uniaxial media, where two diagonal components ...
 
-\begin{figure}[ht] \caption{Isofrequency contours for three different frequencies: \textbf{(a)} IFCs in the isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. Note that for clarity, the plots (b) (c) show the IFCs only for one wave polarisation. %%% XXX XXX XXX todo what is the orientation of the group velocity??
+\begin{figure}[ht] \caption{Isofrequency contours for three different frequencies: \textbf{(a)} IFCs in the isotropic medium are circular and centered in the $k=0$ point. \textbf{(b)} An anisotropic medium with the optical axis perpendicular to the interface, where IFCs take the form of ellipses. \textbf{(c)} A similar case of another anisotropic medium, with the orientation of the optical axis (drawn as the dashed black line) that enables to introduce the index of refraction for the shown direction of the wave vector $\kk$. Note that for clarity, the plots (b) and (c) show the IFCs only for one wave polarisation. %%% XXX XXX XXX todo what is the orientation of the group velocity??
 %% FIXME \textbf{(d)} A dispersive \textit{hyperbolic medium}, with one component being a function of frequency and crossing zero.
 } \label{fg_ifc} \centering  %% TODO verify in Belov that local media may be used as hyperbolic
 	\includegraphics[width=.8\textwidth]{img/ifc_freqdispersion.pdf} 
@@ -777,7 +780,8 @@ This theorem is essential for understanding the electromagnetic behaviour of per
  \item{We assume $\psi$ is an eigenfunction of the Hamiltonian: $\exists h\in \mathbb{C}: \hat H\psi = h\psi$.} 
  \item{We also assume that the Hamiltonian operator $\hat H$ commutes with the operator of discrete translation $\hat T$ by the inter-atomic distance: $\forall \psi: \hat H\hat T\psi = \hat T\hat H\psi$. } 
  \item{Then $(\hat T\psi)$ is an eigenfunction of $H$, because obviously $\hat H(\hat T\psi) \stackrel{1.}{=} \hat T\hat H\psi \stackrel{2.}{=} \hat Th\psi = h(\hat T\psi)$. }
- \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ and $\hat T\psi$ must either represent the very same physical eigenstate of $\hat H$ that is uniquely related to its eigenvalue $h$, or that there otherwise must exist more different \textit{degenerate} states $\psi_1\neq \psi_2$ with the same eigenvalue $h$. The second case of \textit{degeneracy} is proven in many textbooks not to change the conclusion that $\psi$ must be also an eigenfunction of the translation operator, that is,
+ \item{From two eigenfunction relations, $\hat H\psi\stackrel{2.}{=} h\psi$ and $\hat H(\hat T\psi) \stackrel{3.}{=} h(\hat T\psi)$, it also follows that $\psi$ and $\hat T\psi$ must either represent the very same physical eigenstate of $\hat H$ that is uniquely related to its eigenvalue $h$, or that there otherwise must exist more different \textit{degenerate} states $\psi_1\neq \psi_2$ with the same eigenvalue $h$.\\ 
+		 The latter case of \textit{degeneracy} is proven in many textbooks not to change the conclusion that $\psi$ must be also an eigenfunction of the translation operator, that is,
 $$\exists K\in \mathbb{C}: \hat T\psi = e^{-\ii Ka}\psi.$$ 
 }
 \end{enumerate}
@@ -998,15 +1002,24 @@ They could be observed for a local dielectric (Figs. \ref{fg_dcsimpleel} and \re
 While the wave propagation received due attention in the above, also the wave "non-propagation" deserves to be commented.
 %It is essential to point out the similarities and eventual differences between them.
 
-The band-gap behaviour is the simplest to be described in isotropic media, analogous to the one-dimensional case: for a frequency within the band gap, no wavevector $\KK$ can be found with which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band gap for one polarisation and only in some set of wave vector orientations.
+The band-gap behaviour is the simplest to be described in isotropic media, analogous to the one-dimensional case: for a frequency within the band gap, no wavevector $\KK$ can be found with which the electromagnetic wave would propagate, or more precisely, there is no real wavevector for which the (Bloch) wave would be a solution of Maxwell equations. 
 
-A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges upon an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations however require that the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential manner with the distance below the interface.
+In the more complicated cases of a harmonic plane wave in anisotropic homogeneous media, or of a Bloch wave in any periodic structure, the band-gap properties depend on the field polarisation and on the direction under which the wave propagates. Many such media, for example, exhibit a band gap for one polarisation and only in some set of wave vector orientations.
 
-If losses are present, a part of the impinging wave energy may be also dissipated. Nonetheless, the exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law in absorbing media.
+%}}}
+\paragraph{Reflection from an interface with a band-gap medium} %{{{
+A familiar scenario is that a wave propagates through a transparent medium (e.g. glass) and impinges upon an interface with a band-gap medium (e.g. metal). In the latter, it is not allowed to propagate, and all its energy reflects back into the first medium. The Maxwell equations however require that the fields do not end abruptly at the interface; in particular, it follows from the linearity of the medium that the \textit{evanescent} wave amplitude decays in the second medium in an exponential manner with the distance below the interface. % TODO unclear: make a distinction between plasma-like medium, PBG and absorptive media
 
-A less usual, but equally instructive, scenario is when a dipole source is embedded in the infinite medium and is forced by some external mechanism to oscillate at some frequency within the band gap. Intuitively, one could expect such a "hard" dipole could inevitably radiate energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole act, with regards the driving force, as a purely elastic or inertial load. In particular, if the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. Thus, for continuous oscillations, all energy will be returned to the driving mechanism. 
+If losses are present, a part of the impinging wave energy may be also dissipated. Nonetheless, the exponential decay of the evanescent wave should not be confused with the exponential nature of the Lambert-Beer law in absorbing media. 
+% todo this is not true--  The distinguishing property of the lossless evanescent wave is zero phase change in the direction perpendicular to the interface, corresponding pure imaginary projection of $\KK$ to the interface normal.
+% todo discuss that in PBG of a PhC, there can be  also the phase shift...
 
-To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole completely disappears. However, the nature of the band gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad spectrum and it would radiate the energy in the neighbouring allowed bands. 
+
+%}}}
+\paragraph{Radiating dipole inside a band-gap medium} %{{{
+A less usual, but equally instructive, scenario is when a dipole source is embedded in an infinite medium and is forced by some external mechanism to oscillate at some frequency inside the band gap. Intuitively, one could expect such a forced dipole must inevitably radiate energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole act, with regards the driving force, as a purely elastic or inertial load. In particular, if the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. Thus, for continuous oscillations, all energy will be returned to the driving mechanism. This way, the environment can substantially accelerate or, in turn, suppress the radiation from an excited atom or molecule, which is known as the \textit{Purcell effect}.
+
+To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole completely disappearing, which can be achieved e.g. by nonlinear optics. However the nature of the band gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad enough spectrum to radiate the energy in the neighbouring allowed bands. 
 
 % }}}
 \paragraph{Band gaps stemming from individual resonances}%{{{
@@ -1019,8 +1032,8 @@ every possible shape formed from a dielectric or metal has multiple resonance mo
 characteristic by a relatively high localisation of energy close to the structure. %% ... More specific rules will be given in the Results.
 Arranging such resonant elements into the lattice is a fundamental step in building a periodic structure with resonant behaviour. When such a structure is viewed as a homogeneous medium, its dispersion for the Bloch wave follows a resonance curve similar (but not exactly the same) to that in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory}, while the word \textit{microscopic} is left for the much finer fields in the constituent atoms or molecules.
 
-Another important characteristic of individual resonances consists in a \textit{qualitative} change in the field shape between the lower and upper edge of the band gap. This is true for natural media as well as for lattices of individual resonators. Typically, at the lower band-gap edge, the dipoles are \textit{in-phase} with the wave, whereas at the upper edge, they are \textit{in counter-phase}.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
-Inside the bandgap, usually closer to the lower frequency edge, a resonance frequency is located (c.f. Fig. \ref{fg_oscillator_spectrum}).
+Another important characteristic of individual resonances consists in a \textit{qualitative} change in the field shape between the lower and upper edge of the band gap. This is true for natural media as well as for lattices of individual resonators. Typically, at the lower band-gap edge, the dipoles are in phase with the wave, whereas at the upper edge, they are in opposite phase.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
+The resonance frequency is located inside the bandgap, as will be shown on the examples of simple individual resonators, e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c.
 
 Yet another characteristic is whether the resonant field shape in the structure unit cell can be approximated as a point dipole or multipole. Depending on the symmetry of the field, the dipole moment may be electric, magnetic, zero or both simultaneously. Most types of structures exhibit multiple resonances at different frequencies, each of them having usually either an electric or a magnetic dipole. In structures of lower symmetry, one resonant mode may have both nonzero dipole moments simultaneously; this leads to optical activity. 
 
@@ -1067,7 +1080,7 @@ The scientific progress rarely follows a straightforward, efficient way. Making 
 Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
 
 A split in terminology is apparently not only a formal issue, as it psychologically divides the scientific community and thus directs the future research.
-Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes a mere change in terminology apparently lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
+Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes a mere change in terminology seems to have lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
 
 
 Following the author's personal view,
@@ -1181,13 +1194,16 @@ The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however 
 %}}}
 
 \subsection{Artificial dielectrics and metamaterials} 
-\paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== OK
+\paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== 3x cite
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
 Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interactions are not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
 
-Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) and Bruggemann (1935) are most known. Their common assumption is that the wavelength is much larger than the particles; furthermore, they suppose there are no internal resonances in the embedded particles. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
+Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) % TODO  cite
+and Bruggemann (1935) % TODO cite
+are most known among multiple approaches. 
 % todo cite http://www.mpia.de/homes/henning/Dust_opacities/Opacities/Ralf/Eff/rules.html
+Their common assumption is that the wavelength is much larger than the particles; furthermore, they suppose there are no internal resonances in the embedded particles. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
@@ -1223,12 +1239,12 @@ The research of artificial dielectrics, or newly, metamaterials, gained on signi
 
 %}}}
 \paragraph{Imaging beyond diffraction limit with metamaterials} %{{{ ===================== cite fn
-Arguably the most excitement was caused by another Pendry's paper \cite{pendry2000negative} from 2000, stating that a flat lens made of a local, lossless medium with a negative refractive index should enable imaging with a resolution better than is allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves at its rear surface. The resulting extremely sharp image would then be composed not only of negatively refracted propagating waves, also of the amplified evanescent waves.
+Arguably the most excitement was caused by another Pendry's paper \cite{pendry2000negative} from 2000. It stated that a flat lens made of a lossless local medium with a negative refractive index should enable imaging with a resolution better than that allowed for any usual lens by the diffraction limit, theoretically down to infinitely small details. This device for \textit{subdiffraction imaging}, denoted as the \textit{superlens}, gains this extraordinary feature through the formation of high-amplitude evanescent waves at its rear surface. The resulting extremely sharp image in some distance behind the superlens would then be composed not only of negatively refracted propagating waves, but also of the evanescent waves.
 
 If a metamaterial is used as a negative-index medium, subwavelength imaging requires the unit cells being \textit{finer} than the finest details to be imaged. The requirement is in fact even stricter, as also the spatial dispersion has to be negligible for all wavenumbers needed for the desired resolution. % which could be achieved either with sophisticated engineering of the dispersion, or with massive reduction of the unit cell size, so that all wave vectors are near the center of Brillouin zone. % refer to some Fig. of the PHC BZ
 % Aside from spatial dispersion, a great challenge are the dissipative losses. 
 %If the wave components with high spatial frequency are to be resolved, they also may not be significantly damped. 
-For the proportional amplification of evanescent waves, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
+For the formation of highly concentrated evanescent waves at the rear surface, the small energy flow-through and simultaneous high energy concentration require extremely low losses. In contrast, down-scaling of the unit cells inherently requires higher energy localisation, and this is usually at the expense of the losses growing.
 
 A related concept is the \textit{hyperlens}, an inhomogeneous structure which employs anisotropic negative-index media to couple near fields to waves radiated in the air, thus enabling subdiffractive imaging in the far field. Again, the ultimate resolution of the hyperlens is determined by the spatial dispersion of the metamaterial used.
 
