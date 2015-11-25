@@ -400,7 +400,7 @@ In the first plot, \ref{fg_ifc2}a, the case of an isotropic medium is illustrate
 this is also known as the spatial \textit{walk-off}.
 \begin{figure}[ht] \caption{Examples of IFCs similar to Fig. \ref{fg_ifc}, but now at a single frequency and different wavevectors, corresponding to a monochromatic beam refracting on the interface. \textbf{(a)} The wavevectors in the isotropic medium lie on a circle.
 		\textbf{(b)} Generally, anisotropic media exhibit different orientations of the wave vector $\kk$ and the beam propagation. \textbf{(c)} For the special cases of propagation along the optical axis, the beam refracts similarly as in isotropic media.
- \textbf{(d)} In anisotropic media with hyperbolic shape of the IFC, the beam refracts to the opposite direction than the wave vector. } \label{fg_ifc2} \centering 
+	\textbf{(d)} In anisotropic media with hyperbolic shape of the IFC, the beam refracts to the opposite direction than the wave vector \cite{lindell2001bw}. } \label{fg_ifc2} \centering 
 	\includegraphics[width=\textwidth]{img/ifc_kdispersion_hyp.pdf} 
 \end{figure}
 
@@ -1150,6 +1150,28 @@ the term of \textit{left-handed media} and speculated to what extent they might 
 % Or in an extra paragraph later, under 2nd unification?
 
 %}}}
+\paragraph{Terminology of media with unusual parameters}  %{{{
+In the literature, different terms are used for media  \todo{+}
+
+\textit{Negative-refraction} %% TODO accumulate literature
+
+--- are superset of ---
+
+\textit{negative-index}, \textit{backward-wave} \cite{lindell2001bw}
+%% TODO accumulate literature
+
+Media with a negative index of refraction are a subset of negative refraction, for which the notion of index of refraction makes sense, as discussed above.
+\add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
+\begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
+The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
+
+--- are superset of ---
+
+\textit{left-handed} or \textit{doubly-negative}
+%% TODO accumulate literature
+\todo{add the comments from http://www.wave-scattering.com/negative.html}
+}
+%}}}
 \paragraph{Prediction of focusing by a negative-index slab} %{{{  ================== OK? (readpaper, +img)
 As also discussed by Veselago \cite[p. 511]{veselago1968} and a decade later by Silin \cite{silin1978possibility},  %: Silin in 1978  %% TODO READPAPER, does not discuss amplification of evanescent waves?
 a plane-parallel slab with an isotropic negative index of refraction and sufficient thickness would refract waves emanated from a point source towards a new focus in its volume, and similar negative refraction forms a second focus behind the slab. It is thus often referred to as a \textit{negative-index lens}, although neither its focal point nor optical axis are defined as in classical lenses.
@@ -1374,21 +1396,24 @@ On the contrary, a Bragg band gap exhibits open surfaces, transversally intercon
 The difference between the topology of a sphere and of two parallel planes can be interpreted as the boundary between MMs and PhCs. However, this well-defined difference practically manifests as a $2\pi$-skip of the phase across each unit cell without any obvious impact on the wave energy. In more details this is demonstrated in Chapter \ref{chap_results} %TODO point to the diel array
 by numerical studies of the transition cases.
 
-With this criterion it is also clear that its decision is frequency-dependent; as a matter of fact, all structures fall into the PhC class in the high-frequency limit.
+Under this criterion, the decision is frequency-dependent. All structures fall into the PhC class in the high-frequency limit.
 
 %}}}
 \paragraph{Less fortunate criteria} %{{{
 Some sources include the "unusual parameters" into the MM definition, but this is hardly acceptable since it would obviously exclude some established MMs out of the definition; the previous historical chapter attempts to give several examples. 
 
-Also the demand for "artificiality" in some other definitions appears to be somewhat artificial on its own, provided that one is interested in the structure properties rather than history.
+Also the demand for "artificiality" in some other definitions appears to be somewhat artificial on its own, provided that one is interested in the actual structure properties rather than in its origin:
+\begin{displayquote}
+\textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}  (the introductory page of the ECONAM project)
+\end{displayquote}
  
-Confusion may arise from that some authors seem to overly broaden the applicability of the popular term of metamaterials. Two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and should be denoted as \textit{metasurfaces}.
+Confusion may arise from that some authors seem to overly broaden the applicability of the popular term of metamaterials. Two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and in the author's view should be denoted as \textit{metasurfaces}.
 
 Even more unfortunate is to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can be a metamaterial made by attaching single split-ring resonator to a microwave transmission line. As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
 to a topic such as longitudinally modulated waveguide filters.
 
 %}}}
-\paragraph{Metamaterials as all periodic structures treated as homogeneous} %{{{
+\paragraph{Metamaterials as all structures treated as homogeneous} %{{{
 With the criteria of wavelength or energy localisation leaving many structures in the "grey zone", and the phase-advance criterion being rigorous, but of little practical use, the author proposes to adopt another criterion based solely on one's subjective decision on how each structure is characterized. 
 
 The unifying concept of virtually all MM studies is to describe \textit{how} the wave propagates though them. Their overwhelmingly complicated electromagnetic interaction is approximated by \textit{homogenization}, i.e. by finding such properties of a homogeneous medium that would behave in similar way.
@@ -1403,10 +1428,9 @@ An important question arises as to what extent the homogenization is applicable,
 %todo read Sihvola2009-MM_a_personal_view.pdf
 %todo read Sihvola-emergence_in_mms.pdf
 
-%   The \textit{For Beginners} page of the ECONAM project states
-%   \textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}
 %   whatis.com (http://whatis.techtarget.com/definition/metamaterial):
 %  \begin{displayquote}
+%  \end{displayquote}
 %  A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves.
 %  \end{displayquote}
 %  %and this continues with description of neg refr as the typical application
@@ -1491,28 +1515,8 @@ Homogenization is not a search for an existing truth, but rather a somewhat arbi
 %			[2] D. E. Aspnes, Thin Solid Films 89, 249 (1982).
 %			[3] W. Cai and V. Shalaev, Optical Metamaterials: Fundamentals and Applications (Springer, New York, 2010).
 
-%% Many MMs do not bring negative refraction, other (composites) do, but not by means of resonances: 
+%% Many MMs do not bring negative refraction, other (composites) do, but not by means of electromagnetic resonances: 
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
-%% Negative index may arise from resonances
 
 %}}}
-\paragraph{"Negative-refraction", "negative-index", "left-handed" or "doubly-negative" media?}  %{{{
-Media with a negative index of refraction are a subset of negative refraction, where the notion of index of refraction makes sense, as discussed above.
-
-\add{When the index of refraction $N = \sqrt{\epsrl\murl}$ and the impedance $Z = \sqrt{\frac{\murl}{\epsrl}}$ are both defined, one may easily deduce that 
-\begin{equation} \epsrl = \pm\frac{N}{Z}, \quad \murl = \pm N\,Z. \label{eq_nzepsmu}\end{equation}
-The question of indefinite sign can be decided using the assumption of medium \textit{passivity}, that is, of the medium absorbing the wave rather than amplifying it. \todo{describe further}
-
-
-\todo{add the comments from http://www.wave-scattering.com/negative.html}
-}
-%}}}
-\add{
-	\paragraph{Antiresonances and problems with local effective parameters}
-%% TODO add to the first Mie resonance discussed
-Anti-resonant response of resonant inclusions : "antiresonance "may not" come from periodicity, as it is also observed in random structures"; %% \cite{wallen2010}
-% -- but this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
-Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
-}
-
 
