@@ -2,7 +2,7 @@
  * [/] acknowledgements
  * [ ] mm-phc boundary add refs, add some quotations from papers, (and review again)
  * [ ] metamaterial homogenization! write or delete? Note about antiresonances
- * [ ] "negative-index", "left-handed" or "doubly-negative" media?
+ * [X] "negative-index", "left-handed" or "doubly-negative" media?
  * [ ] FDFD
  * [ ] PWEM principle
  * [ ] initial effparam branch, weaknesses of the method
@@ -25,6 +25,7 @@
  * [/] Conclusion
  * [ ] attach the list of own publications
  * [ ] ... abstract + its translation
+ * [ ] comment on tunability of various structures - parametric scans of results etc.
  * [ ] Use correct citation style!
 
 
