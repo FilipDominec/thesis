@@ -1,6 +1,6 @@
 ===== BIG LIST OF all TODOs as of 2015-11-23 =====
  * [X] acknowledgements
- * [/] ... abstract + its translation
+ * [X] ... abstract + its translation
  * [ ] mm-phc boundary add refs, add some quotations from papers, (and review again)
  * [ ] metamaterial homogenization! write or delete? Note about antiresonances
  * [X] "negative-index", "left-handed" or "doubly-negative" media?
