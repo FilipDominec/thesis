@@ -32,6 +32,7 @@
 ==== Finally ====
  * [ ] make list of figures, adding short caption to each of them?
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
+ * [ ] ...ize ---> ...ise 
  * [ ] go through all TODOs 
  * [ ] make index of kwords https://en.wikibooks.org/wiki/LaTeX/Indexing?
  * [ ] aa [a-z]-[a-z] *tex
@@ -58,3 +59,6 @@
 	%→  reflectance peak
 	%if fres1 < fres2 → …
 
+Wikipedia:
+https://en.wikipedia.org/wiki/Metamaterial
+Metamaterials derive their properties not from the properties of the base materials, but from their newly designed structures.

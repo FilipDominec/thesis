@@ -335,7 +335,7 @@ Free	    & Negligible				& Resistive medium						& \shortstack{doped semiconduct
 %}}}
 
 \subsection{Finite-difference frequency-domain method (FDFD)} % TODO
-\paragraph{Principle} 
+\paragraph{Principle}  %{{{
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
 where the function $\psi$ represents either of the electric or magnetic fields. 
@@ -343,9 +343,9 @@ where the function $\psi$ represents either of the electric or magnetic fields.
 % TODO maybe not! The Hamiltonian might be SQUARE of the "Maxwellian"!
 
 Both time- and frequency-domain simulations used for this thesis use complex numbers to represent all field components.
-Whole frequency-domain problem thus can be expressed as a simultaneous optimization of the $\E, \HH$ fields shape, so that one time-step of FDTD is identical to phase rotation of the field at the given angular frequency $\omega$. For the optimization to be as efficient as possible, the \textit{stabilized biconjugate gradient} algorithm \cite{oskooi2010meep} is used. More information on the frequency-domain solver is on the project's website \cite{ab-initio}. 
+Whole frequency-domain problem thus can be expressed as a simultaneous optimization of the $\E(\rr), \HH(\rr)$ fields, so that one time-step of FDTD is as similar as possible to the phase rotation of the functions. The angle of the phase rotation is given by the user-defined angular frequency $\omega$. For the optimization to be as efficient as possible, the \textit{stabilized biconjugate gradient} algorithm \cite{oskooi2010meep} is used. More information on the frequency-domain solver is on the project's website \cite{ab-initio}. 
 
-The modes obtained by frequency-domain simulation can have arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+The modes obtained by frequency-domain simulation can be output with arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
 
 %}}}
 \paragraph{Comparison to the time-domain computation} %{{{
@@ -353,21 +353,35 @@ To verify their reliability, the results of the frequency domain simulation with
 
 The advantage of the frequency-domain (FDFD) method over the time-domain (FDTD) is greater efficiency for obtaining the field shape at a single frequency, where the computational time of the time-domain methods grows proportionally with the desired spectral resolution. Having both algorithms packed in one library enables extremely easy switching between them. 
 
-For FDFD, the permittivities and conductivities of all media can be freely chosen, including negative values. A frequency scan of FDFD simulations can thus be needed, if one needs to specify arbitrary frequency dependence of the materials (which does not have to conform to Kramers-Kronig relations as required by FDTD). It was, however, observed by the author that the FDFD solver often fails to converge for plasmonics at the optical frequencies; in such cases, one has to return to the FDTD algorithm with a narrow frequency source.
+While the spectra of all material properties in FDTD have to conform to the Kramers-Kronig relations, in FDFD the permittivity and conductivity of each medium can be chosen without any limitations.
+A frequency scan of multiple FDFD simulations can thus be more efficient for simulation of superconductors or materials with too many resonances.  
+
+It was observed by the author that the FDFD solver in the MEEP program often fails to converge when plasmonic effects at the optical frequencies. In such cases, one has to replace it the FDTD algorithm with a narrow frequency source.
+
 %}}}
+
 \subsection{Plane-wave expansion method} % TODO
 \paragraph{Principles of PWEM} %{{{
-Another algorithm used is the plane-wave expansion method (PWEM). This method works in the frequency domain and, being based on the eigenmode problem, its use is similar to the frequency-domain finite-difference solver (FDFD) described above, though it is based on directly solving a linear algebraic problem in contrast with the somewhat inefficient optimisation used in FDFD.
+%% + it is another eigenvalue solver
+Another algorithm used in this thesis is the \textit{plane-wave expansion method} (PWEM). Whereas FDTD and FDFD are very general algorithms that can be applied for different choices of simulation setups and for virtually any structure, PWEM is specialised for periodic structures only. 
 
-PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transformation. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
+Each PWEM computation is always performed for one given value of the wavevector $\KK$ only.
+For the given wavevector, PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. 
 
-For the given wavevector, PWEM also gives the shape of the fields for each mode. This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
-As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, implemented by the same group as MEEP.
-% Todo comments on MPB
+As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group as MEEP \cite{ab-initio}.
 % todo cite mpb-plotting project on github
+
 %}}}
-%  \paragraph{Comparison of PWEM to FDTD} %{{{ WTF
-%  While the time-domain methods are very general, allowing to compute both periodic and non-periodic structures with losses or nonlinearity, some tasks may be better solved by more specialized methods. An example is the \textit{plane-wave expansion method} (PWEM), which is superior for efficient search of dispersion curves in periodic structures, and for the mode shapes at the band edges.
+\paragraph{Principles of PWEM} %{{{
+Unlike FDFD, PWEM is based on direct and more efficient solution of a linear algebraic problem:
+\begin{equation} 
+	{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \tag{\label{eq_eigen_e} \again}
+\end{equation}
+where ${\epsrl}^{-1}(\omega,\rr)$ and $\left[{\murl}^{-1 }(\omega,\rr)$ are user-defined with a known periodicity, and  but $\omega$ is unknown.
+
+The first step of PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transform. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
+
+%% TODO This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
 %}}}
 
 %% \subsection{Transfer-matrix method} % TODO??
