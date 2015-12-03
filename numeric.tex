@@ -361,12 +361,11 @@ It was observed by the author that the FDFD solver in the MEEP program often fai
 %}}}
 
 \subsection{Plane-wave expansion method} % TODO
-\paragraph{Principles of PWEM} %{{{
+\paragraph{Description} %{{{
 %% + it is another eigenvalue solver
 Another algorithm used in this thesis is the \textit{plane-wave expansion method} (PWEM). Whereas FDTD and FDFD are very general algorithms that can be applied for different choices of simulation setups and for virtually any structure, PWEM is specialised for periodic structures only. 
 
-Each PWEM computation is always performed for one given value of the wavevector $\KK$ only.
-For the given wavevector, PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. 
+Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. 
 
 As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group as MEEP \cite{ab-initio}.
 % todo cite mpb-plotting project on github
@@ -377,11 +376,10 @@ Unlike FDFD, PWEM is based on direct and more efficient solution of a linear alg
 \begin{equation} 
 	{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \tag{\label{eq_eigen_e} \again}
 \end{equation}
-where ${\epsrl}^{-1}(\omega,\rr)$ and $\left[{\murl}^{-1 }(\omega,\rr)$ are user-defined with a known periodicity, and  but $\omega$ is unknown.
+where ${\epsrl}^{-1}(\omega,\rr)$ and $\left[{\murl}^{-1 }(\omega,\rr)$ are user-defined with a known periodicity, but $\omega$ nor $\E(\rr)$ are not known.
 
-The first step of PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transform. For any given wavevector, an eigenvalue problem can be solved, with boundary conditions fully determined by the wavevector as sketched in Chapter \ref{tight-binding}. The resulting eigenvalues are the frequencies of different modes in the folded dispersion curves.  
+The first step of PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transform. 
 
-%% TODO This approach turns out to be easier and more reliable than running the frequency-domain solver in FDTD selecting the approximate frequencies of the band edges, so we mostly used PWEM to get an insight into the field distribution. 
 %}}}
 
 %% \subsection{Transfer-matrix method} % TODO??
@@ -447,9 +445,11 @@ The scattering parameter retrieval, also known as the \textit{s-parameter}, \tex
 The first step to its derivation is that by means of the Fresnel-Airy formulas \cite[p. 329]{born1999book},
 one can easily compute the transmission $t(f)$ and reflection $r(f)$ spectra from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material the slab consists of. The actual computation is thus denoted also as \textit{Fresnel inversion}.
 
-Mathematically, this can always be done, and this method yields some \textit{effective} parameters, $\Neff(f)$ and $\Zeff(f)$, even when the homogeneous sample is replaced with an inhomogeneous structure, such as a layer of a metamaterial. As a great advantage of this approach, there is no requirement to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of the  $r(f)$ and $t(f)$ outside the material. It has become a popular way to retrieve the effective metamaterial parameters thanks to its ease to realize both experimentally and numerically, with FDTD or other algorithms \cite{terao2011},
+Mathematically, this can always be done. When the homogeneous sample is replaced by an inhomogeneous structure, such as a layer of a metamaterial unit cells, this method still yields some \textit{effective} parameters, $\Neff(f)$ and $\Zeff(f)$, the relevance of which is discussed later. 
 
-The most often mentioned issue of this method is that the solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this section we describe that this can, in fact, be solved relatively easily, and in the Chapter \ref{chapter_results} it is shown that there are nontrivial rules for the choice of the branch.
+As a great advantage of this approach, there is no requirement to inspect the fields inside the tested structure, as the retrieval is based only on the amplitude and phase of the  $r(f)$ and $t(f)$ outside the material. It has become a popular way to retrieve the effective metamaterial parameters thanks to its ease to realize both experimentally and numerically, with FDTD or other algorithms \cite{terao2011},
+
+The most often mentioned downside of this method is that its solutions have infinitely many branches, and it is necessary to establish which one should be chosen, and why. In this section we describe that this can, in fact, be solved by a relatively simple extension of the algorithm, and in the Results chapter it is shown that there are nontrivial rules for the choice of the branch.
 
 Aside from yielding multiple branches, the physical interpretation of the data can get even more intricate when effective parameters are to be assigned to an inhomogeneous slab of a metamaterial. Due attention has to be paid to minimize the intrinsic imprecision of this method, as well as to establish the limits of its applicability. 
 %}}}
@@ -462,7 +462,7 @@ The setup of the simulation is depicted in Fig. \ref{fg_fdtd_sparam}. The wave i
 The periodic boundary conditions were set on the $x$- and $y$-axes, so that effectively an infinite metamaterial slab was simulated. On both faces perpendicular to the $z$ axis we added regions denoted as \textit{perfectly matched layers} \cite{oskooi2011distinguishing} to absorb all radiation (pink blocks). The implementation used is based on gradually introducing imaginary part into the unit cell dimensions to prevent reflections under arbitrary incidence angle, polarisation or frequency of the wave.
 The average electric and magnetic fields in each of the monitor planes (blue rectangles) are recorded  in each simulation step.  
 
-Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. A part of its energy is reflected back, a part passes through and part may be dissipated if the structure was lossy. The fields that passed through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to a small enough level, the FDTD simulation was terminated and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t(f)$ as functions of frequency $f$. Before this procedure is described, a modification important for the accuracy of this setup is discussed below.
+Passing through the first monitor plane, the wave enters the volume of the unit cell (delimited by empty rectangles) and interacts with the structure. A part of its energy is reflected back, a part passes through and the rest may be dissipated if the structure is lossy. The fields that pass through the structure are recorded by the second monitor plane. After the energy stored in the structure drops to a small enough level, the FDTD simulation terminates and the recorded fields are processed to obtain the complex-valued reflection $r(f)$ and transmission $t(f)$ as functions of frequency $f$. % Before this procedure is described, a modification important for the accuracy of this setup is discussed below.
 % todo convert frequency f to omega? Why not?
 
 %\begin{figure}[ht] \caption{An example result of a FDTD simulation (visualised using the \textit{Paraview} program). A dielectric sphere, shown in grey, was placed in a less usual, but equivalent position, across the periodic boundaries. The electric field amplitude was shown in one quarter of the simulation volume, with a clear enhancement near the dielectric surface (pink-red). % todo{replace this with a better one}
