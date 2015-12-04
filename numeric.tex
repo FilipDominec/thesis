@@ -2,7 +2,7 @@
 %% todo - IR: uvod v numerickych metodach?
 \subsection{Finite-difference time-domain method}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
-Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six real numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
+Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six complex numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
 %Two-dimensional computations can reduce the number of arrays thanks to symmetry.??
 
 The actual computation is realized in consecutive time steps as an explicit arithmetic operation on each voxel, taking into account only the field values in the neighboring voxels and in the previous time step. This corresponds to iterating equations (\ref{eq_me3}), (\ref{eq_me4}) and (\ref{eq_ce}). % unclear - specify the field update routine exactly
@@ -365,41 +365,20 @@ It was observed by the author that the FDFD solver in the MEEP program often fai
 %% + it is another eigenvalue solver
 Another algorithm used in this thesis is the \textit{plane-wave expansion method} (PWEM). Whereas FDTD and FDFD are very general algorithms that can be applied for different choices of simulation setups and for virtually any structure, PWEM is specialised for periodic structures only. 
 
-Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. 
+Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. The algorithm is described in detail, e.g., in Ref. \cite[pp. 24-28]{pazoutova2011dp}.
 
-As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group as MEEP \cite{ab-initio}.
+As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group as MEEP \cite{ab-initio}. Graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
 % todo cite mpb-plotting project on github
-
-%}}}
-\paragraph{Principles of PWEM} %{{{
-Unlike FDFD, PWEM is based on direct and more efficient solution of a linear algebraic problem:
-\begin{equation} 
-	{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \tag{\label{eq_eigen_e} \again}
-\end{equation}
-where ${\epsrl}^{-1}(\omega,\rr)$ and $\left[{\murl}^{-1 }(\omega,\rr)$ are user-defined with a known periodicity, but $\omega$ nor $\E(\rr)$ are not known.
-
-The first step of PWEM consists in expressing the structure permittivity in the inverse space, using spatial Fourier transform. 
-
 %}}}
 
-%% \subsection{Transfer-matrix method} % TODO??
+\paragraph{Comparison to FDTD and FDFD} %{{{
+The electric and magnetic field shapes at the edges of each photonic band are important for understanding the physics of periodic structures. Note that the fields inside a photonic band do not usually share the periodicity with the lattice, which makes them harder to interpret. Finding the band edges is an intrinsic feature of PWEM, whereas the same task is only approximate in FDTD and requires previous search for the band edge frequencies. 
 
-%% \paragraph{Principles of TMM} %{{{
-%% \add{
-%% The \textit{transfer-matrix method} (TMM, or also \textit{Abelès formalism} %% ref Abeles1950: recherche sur la propagation des ondes electromagnetiques...
-%% ) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, \cite[pp. 71--77]{nemec2006phd}, enabling to compute,  in frequency-domain, e.g. the reflection and transmission of structures discretized in a grid. For simplicity, we describe the one-dimensional method.
-%% 
-%% The method is on dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has a wave impedance $Z_m$, refractive index $N_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
-%% \begin{equation} \mathbb M^{(m)} := \left(\begin{array}{cc} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{array}\right), \quad\text{ where }\gamma:=1/Z_m\text{ and }\delta := k~N_m d_m.\label{eq_tmm1}\end{equation}
-%% Multiplication of such matrices gives the overall transfer matrix of the layered structure, 
-%% \begin{equation} \mathbb M^{(tot)} \equiv \left(\begin{array}{cc} m_{11} & m_{12} \\ m_{21} & m_{22} \end{array}\right) = \ldots \cdot \mathbb M^{(2)} \cdot \mathbb M^{(1)}. \label{eq_tmm2}\end{equation}
-%% The overall reflection $r^{(tot)}$ and transmission $t^{(tot)}$ are then 
-%% \begin{equation} r^{(tot)} = \frac{m_{11} + m_{12} - m_{21} - m_{22}}{m_{11} + m_{12} + m_{21} + m_{22}}, \quad\quad t^{(tot)}= \frac{2}{m_{11} + m_{12} + m_{21} + m_{22}}, \label{eq_rt_tmm}\end{equation}
-%% if perpendicular only incidence is assumed and if the surrounding medium consists of air.
-%% 
-%% The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
-%% }
-%% %}}}
+Scaling of the computational time with the resolution may present a disadvantage compared to FDTD/FDFD, since in a simple implementation it scales with second power of the resolution for one-dimensional problems, fourth power in 2-D problems and ninth power for 3-D problems. Application of more sophisticated algebra of sparse matrices can however partially remedy this.
+
+Perhaps the greatest limitation of the implementation of PWEM in the MPB program is that it can not cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
+
+%}}}
 
 \subsection{Summary of numerical methods used} %{{{
 This section describes several fundamentally different numerical methods for electromagnetic simulations. 
