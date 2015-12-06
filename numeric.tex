@@ -72,7 +72,7 @@ An illustration of a complex permittivity spectrum for titanium dioxide in its r
 
 
 % TODO add a spectrum + table for SiO2?
-%			or exp(-i omega t)					-> FFT has to be conjugated (??)
+%			or exp(-i omega t)					-> fourier transform has to be conjugated (??)
 
 
 %A rough list of the most important phenomena follows. 
@@ -104,7 +104,6 @@ An illustration of a complex permittivity spectrum for titanium dioxide in its r
 
 %The critical frequency may be viewed as the upper limit where an FDTD simulation gives plausible data. 
 
-% TODO write that this holds only for a nonmagnetic medium
 The author observed that $f_c$ determines the constraints for the simulation stability simultaneously in two ways:
 \begin{enumerate}
  \item{The resonance frequencies must be lower than the critical frequency,  %% TODO get a proof, or some citation, or cite MEEP sources where S.G.Johnson wrote a routine about this
@@ -115,10 +114,11 @@ independent of what the strength $F_m$ or damping rate $\gamma_m$ of the oscilla
 } 
  \item{For all frequencies higher than the critical frequency $f_c$, the real part of the permittivity, as given by Eq. (\ref{eq_lorentz_eps_fdtd}), must exceed a minimum value given by the Courant factor $\cour$,
 \begin{equation} \varepsilon_r'(2\pi\,f) > 3 \cour^{2} \equiv 3 \left( \frac{c \Delta t}{\Delta x} \right)^{2} \text{ for } \forall f \geq f_c. \label{eq_fdtd_stability_realp}\end{equation}  } % TODO verify whether the limit is eps>0 or e.g. eps>0.5 or whatever 
-A geometrical interpretation of this rule is that an instability is introduced when any wave with a frequency above $f_c$, can travel more than $1/\sqrt{3}$ of one FDTD cell size within one time step. 
+A geometrical interpretation of this rule is that an instability is introduced when any wave with a frequency above $f_c$ can travel more than $1/\sqrt{3}$ of one FDTD cell size within one time step. 
 Note that in a nonmagnetic medium, the traveled distance is $$\frac{c\Delta t}{\sqrt{\varepsilon_r'}}.$$
 \end{enumerate}
-The FDTD simulation will become unstable if any of these rules is broken. The error from the instability initially arises from an inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the field snapshot. Later, the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
+Both rules were observed to hold in media with $\murl = 1$ only; in media with magnetic response they would be probably more complex.
+The FDTD simulation will become unstable if one of these rules is broken. The error from the instability initially arises from an inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the field snapshot. Later, the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
 
 \paragraph{Choice of the Courant factor}%{{{
 Provided that a part of the simulation volume is empty vacuum ($\varepsilon_r'=1$), Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of Courant factor} 
@@ -334,7 +334,7 @@ Free	    & Negligible				& Resistive medium						& \shortstack{doped semiconduct
 %MEEP, OpenEMS, B-Calm, gSvit, EMTL, ..
 %}}}
 
-\subsection{Finite-difference frequency-domain method (FDFD)} % TODO
+\subsection{Finite-difference frequency-domain method} % TODO
 \paragraph{Principle}  %{{{
 When the procedure for one time-step in FDTD is defined, it can serve as the linear operator $\mathcal L$ in the generic formulation of the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
@@ -475,7 +475,7 @@ The spectral resolution is determined by the length of the time record. The high
 From the Fourier-Plancherel theorem %% TODO ref
 it follows that the energy part stored in the resonance at the end of the time record will be missing in the spectra in the frequency domain, too. When a time record too short significantly truncates a resonance ringdown, characteristic ringing in the spectra occurs which is very detrimental to further visual and numerical evaluation. 
 
-Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that applying a rectangular window in time domain results in a convolution with the sinc function in the spectrum. While multiplication of the records a  smooth window function (\textit{apodization}) does not improve spectral resolution, but, in general, it suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
+Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that applying a rectangular window in time domain results in a convolution with the sinc function in the spectrum. While multiplication of the records a  smooth window function (\textit{apodization}) does not improve spectral resolution, it suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
@@ -484,7 +484,7 @@ Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be
 \label{eq_envelope}\end{equation}
 which ensured that after 80 \% of the overall simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing. % TODO REF Hann window
 
-By means of the Fourier transform, the fields can be converted to the frequency domain, which is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. The results are shown in Fig. \ref{fg_sparam_timedomain}. 
+By means of the Fourier transform, the fields can be converted to the frequency domain, which is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. 
 \begin{figure}[ht] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
 
 The monitor planes are assumed to be located in vacuum, and at a sufficient distance to eliminate the evanescent waves of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must a form right-handed triplet. %% TODO reference the M. E. solution
@@ -496,11 +496,11 @@ At both monitor planes, the forward and backward wave are linearly superposed as
 	\end{split} 
 \label{eq_separate_ampli}\end{equation}
 The constant $Z_0$ stands for the \textit{vacuum impedance}, i.e. ratio of the electric and magnetic field of a freely propagating wave. Its physical value is $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 4\pi c \cdot 10^{-7} \approx 376.7$ $\Upomega$, but in the actual FDTD simulations, the built-in convention of $Z_0 = 1$ was used.
+The wave separation result is plotted in Fig. \ref{fg_ampli}.  
+\begin{figure}[ht] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes 
+allow to assess the validity of the results: the incident wave $A^{\text{(in1)}}(f)$ should have smooth spectrum (blue curve), as it is directly generated by the broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green curve) and the transmitted one $A^{\text{(out2)}}(f)$ (red curve) should be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. The fourth wave $A^{\text{(in2)}}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the perfectly matched layers at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field components of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
-The wave separation result is plotted in Fig. \ref{fg_ampli}, and it allows a rough verification of the computation validity: the incident wave $A^{\text{(in1)}}(f)$ should have smooth spectrum (blue), as it is directly generated by the broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green) and the transmitted one $A^{\text{(out2)}}(f)$ (red) should be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. The fourth wave $A^{\text{(in2)}}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the perfectly matched layers at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field components of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.
-\begin{figure}[ht] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
-
-Finally, one can easily compute the complex scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitudes to the incident wave, respectively:
+Finally, one can easily compute the complex-valued scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitudes to the incident wave, respectively:
 \begin{equation} 
 	\begin{split}
 		s_{11}(f) \equiv r(f) := \frac{A^{\text{(out1)}}(f)}{A^{\text{(in1)}}(f)},\\
@@ -520,15 +520,15 @@ Finally, one can easily compute the complex scattering parameters $r(f)$ and $t(
 
 To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that had been measured in our terahertz laboratory.
 It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser % todo{what was the laser power and other parameters?
-from a 26 $\upmu$m thick strontium titanate (STO) slab \cite{nemec2009tunable}. The periodicity was 96 $\upmu$m and the laser cut width was 30 $\upmu$m, resulting in 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}a,b. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match the experimental spectra.
+from a 26 $\upmu$m thick strontium titanate (STO) slab \cite{nemec2009tunable}. The periodicity was 96 $\upmu$m and the laser cut width 30 $\upmu$m, resulting in the 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match the experimental spectra.
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared to numerical reflection $r(f)$ and transmission $t(f)$ for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
 The curves computed using the FDTD simulations are compared to the experimental ones in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in the high reflectivity ($|r| > 0.9$) in most of the spectrum which is caused by a great impedance mismatch between the dielectric and the surrounding air.
 
-\begin{figure}[ht] \centering \caption{Parametric scan through the strontium titanate bar width, loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by thin white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
+\begin{figure}[ht] \centering \caption{Parametric scan through the strontium titanate bar width (in micrometers), loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by the white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
 To briefly illustrate further possibilities of the numerical simulations, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as shown in Fig. \ref{fg_STO_bar_modes}. The two-dimensional scan can reveal rich information about the underlying physics. Most importantly, we see that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so this exponent can be directly estimated from the slope of the line. Only modes with a mirror symmetry in the transverse direction ($y$-axis) couple to the wave.
 
 It can also be seen from Fig. \ref{fg_STO_bar_modes} that around the bar width of 66 $\upmu$m, as denoted by the horizontal white line, there is actually a frequency cross-over of two modes, a narrow transverse one and a broader longitudinal one. This explains why the first resonance in Fig. \ref{fg_STO_bar_rt} has an obviously asymmetric shape in the simulated and experimental spectra. (This would form a typical \textit{Fano resonance} shape if the losses were lower.)
-A more elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or thee magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
+A more elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or the magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 %}}}
 
 \paragraph{Retrieval of the effective parameters} %{{{
@@ -538,17 +538,17 @@ The expression for the effective index of refraction is
 \begin{equation} \Neff = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi\,m}{k d}, \label{eq_Neff} \end{equation}
 where nor branch index $m\in \mathbb{Z}$, nor the sign of the solution are a priori known. For the effective impedance, the sign has also to be determined: 
 \begin{equation} \Zeff = \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}}. \label{eq_Zeff} \end{equation}
-	The discussion in this thesis is restricted to near-perpendicular wave propagation, however, in Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff},\ref{eq_Zeff}) have been generalized also for oblique incidence.
+The discussion in this thesis is restricted to the near-perpendicular wave propagation. In Ref. \cite{menzel2008retrieving}, the retrieval algorithm in Eqs. (\ref{eq_Neff},\ref{eq_Zeff}) was generalized also for oblique incidence.
 
 %}}}
 \paragraph{Search of the correct solution} %{{{
 The correct solution is thus determined by three discrete-valued functions of frequency, i.e. the signs of $\Neff(f)$, $\Zeff(f)$ and the branch index $m$, which have to be determined during computation. 
 We identified the following criteria for selection of exactly one of infinitely many solutions:
 \begin{enumerate}
-	\item{Passivity with regards to the wave propagating through the medium requires the \textit{imaginary} part of refractive index be non-positive: 
+	\item{Passivity with regards to the wave propagating through the structure requires the \textit{imaginary} part of refractive index be non-positive: 
 		 \begin{equation} \Neff''(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Neff_pass}\end{equation}
 		 } 
-	 \item{Passivity with regards to the wave reflected from the medium interface requires the \textit{real} part of refractive index be non-positive, too: 
+	 \item{Passivity with regards to the wave reflected from the structure interface requires the \textit{real} part of refractive index be non-positive, too: 
 		 \begin{equation} \Zeff'(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Zeff_pass}\end{equation}
 		 } 
 	 \item{Causal response of the sample requires specific relation between the real and imaginary parts of $r$, $t$ and all effective parameters $\Neff$, $\Zeff$, $\eeff$ and $\meff$, when substituted for the function $F(\omega)$:

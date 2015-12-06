@@ -836,7 +836,7 @@ The three constants $K_{1,2,3}$ then define the \textit{Bloch wave vector} $\KK$
 \frac{2\pi K_3(\ava\times\avb)}{\avc\cdot(\ava\times\avb)}.
 \label{eq_reciprocalK}\end{equation}
 Each of three addends in Eq. (\ref{eq_reciprocalK}) relates to one of the lattice vectors and is orthogonal to the two remaining lattice vectors. %In contrast, inner product of $\KK$ with any of the three elementary lattice vectors is equal to $2\pi$. % elementary translation by 
-If the lattice vectors $\avabc$ are orthogonal, Eq. (\ref{eq_reciprocalK}) simplifies to
+If the lattice vectors $\avabc$ form an orthogonal triplet, Eq. (\ref{eq_reciprocalK}) simplifies to
 % $K_{1,2,3}$ directly define the projection of the $\KK$:
 \begin{equation} \KK := 
 	\frac{2\pi K_1 \ava}{a_1^{2}} +  
@@ -1019,12 +1019,12 @@ If losses are present, a part of the impinging wave energy may be also dissipate
 \paragraph{Radiating dipole inside a band-gap medium} %{{{
 A less usual, but equally instructive, scenario is when a dipole source is embedded in an infinite medium and is forced by some external mechanism to oscillate at some frequency inside the band gap. Intuitively, one could expect such a forced dipole must inevitably radiate energy into the medium. In reality, the effect of the medium surrounding the dipole will make the dipole act, with regards the driving force, as a purely elastic or inertial load. In particular, if the dipole is realized as an antenna driven by a high-frequency circuit, it will appear to the circuit as purely capacitive or inductive load. Thus, for continuous oscillations, all energy will be returned to the driving mechanism. This way, the environment can substantially accelerate or, in turn, suppress the radiation from an excited atom or molecule, which is known as the \textit{Purcell effect}.
 
-To prevent the energy from being returned to the source, one can further imagine the energy is pushed into the dipole in a very short pulse, and then the dipole completely disappearing, which can be achieved e.g. by nonlinear optics. However the nature of the band gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad enough spectrum to radiate the energy in the neighbouring allowed bands. 
+To prevent the energy from being returned to the source, one can further imagine the energy is fed into the dipole in a very short pulse, and then the dipole completely disappears. However, the nature of the band gap can not be overcome: from the convolution-multiplication theorem, such a pulsed source would have a broad enough spectrum to radiate the energy in the neighbouring allowed bands. 
 
 % }}}
 \paragraph{Band gaps stemming from individual resonances}%{{{
 One common class of band gaps is based on \textit{individual resonances} in the medium or structure. These band gaps are often observed in realistic natural media, where the resonances arise the vibrations of electrons, atoms or molecules, as described above. 
-Although realistic crystalline media are composed of a lattice of individual atoms, which would suggest that even here the wave has the Bloch form of Eqs. (\ref{eq_bloch},\ref{eq_blochh}), the atoms are roughly $10^{4}$ times smaller than the wavelength, and in Eq. (\ref{eq_pw}) the electromagnetic wave can be satisfactorily approximated as a harmonic wave with a well-defined wavelength. To make this harmonic approximation, it is important that these particles are small and close to each other compared to the wavelength. % ; otherwise  % 
+Although realistic crystalline media are composed of a lattice of individual atoms, which would suggest that even here the wave has the Bloch form of Eqs. (\ref{eq_bloch}) and (\ref{eq_blochh}), the atoms are roughly $10^{4}$ times smaller than the wavelength, and in Eq. (\ref{eq_pw}) the electromagnetic wave can be satisfactorily approximated as a harmonic wave with a well-defined wavelength. To make this harmonic approximation, it is important that these particles are small and close to each other compared to the wavelength. % ; otherwise  % 
 
 Periodic structures can similarly exhibit a resonance confined in the unit cell. 
 To the author's knowledge,  %% XX?
@@ -1037,7 +1037,7 @@ The resonance frequency is located inside the bandgap, as will be shown on the e
 
 Yet another characteristic is whether the resonant field shape in the structure unit cell can be approximated as a point dipole or multipole. Depending on the symmetry of the field, the dipole moment may be electric, magnetic, zero or both simultaneously. Most types of structures exhibit multiple resonances at different frequencies, each of them having usually either an electric or a magnetic dipole. In structures of lower symmetry, one resonant mode may have both nonzero dipole moments simultaneously; this leads to optical activity. 
 
-Other resonances have both dipole moments zero, which in general results from higher rotational symmetry of the fields. Their interaction with the electromagnetic waves is mediated by the electric or magnetic \textit{quadrupole} (or even higher \textit{multipole} \cite{merlin2009metamaterials}) moment. This interaction is usually weak, however it grows with the wavenumber $k$. Such multipole moments often complement dipole resonances, and are responsible for the spatial dispersion, see Chapter \ref{chap_sd}. %% TODO this should be moved elsewhere...
+Other resonances have both dipole moments zero, due to higher-order rotational symmetry of the fields. Their interaction with the electromagnetic waves is mediated by the electric or magnetic \textit{quadrupole} (or even higher \textit{multipole} \cite{merlin2009metamaterials}) moment. This interaction is usually weak, however it grows with the wavenumber $k$. Such multipole moments often complement dipole resonances, and are responsible for the spatial dispersion, see Chapter \ref{chap_sd}. %% TODO this should be moved elsewhere...
 %% TODO how much should be "predicted" here, and nhow much should be left for the Results section?
 
 %}}}
@@ -1045,8 +1045,8 @@ Other resonances have both dipole moments zero, which in general results from hi
 Band gaps of a different type, denoted as Bragg band gaps or also as \textit{photonic band gaps} (PBG), are observed exclusively in periodic structures when an integer number of half-waves fits into the unit cell. 
 In the above mentioned periodic lattice of isolated particles, the Bragg band gap can therefore be understood as a resonance of the electromagnetic wave in the space \textit{between} the particles, in contrast with the individual resonances where most of the energy is localised \textit{inside} the particles -- or at least very close to them.
 
-For a wave propagating parallel to any axis of a square or cubic lattice with unit cell size $a$, the rule for the Bragg band gaps to be observed is particularly simple:
-\begin{equation} K= \frac{\pi m}{a}, m\in\mathbb{Z}. \label{eq_braggbg}\end{equation}
+For a wave propagating parallel to any axis of a square or cubic lattice with unit cell size $a$, the rule for the Bragg band gaps is particularly simple:
+\begin{equation} K= \frac{\pi m}{a},\quad m\in\mathbb{Z}. \label{eq_braggbg}\end{equation}
 The first Bragg band gap is observed in a periodic structure when the wavenumber $K$ reaches the $\mathbf X$, $\mathbf Y$ or $\mathbf Z$ points of the Brillouin zone.
 %Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
 
@@ -1161,14 +1161,14 @@ It can occur due a range of phenomena, for example,  under proper incidence angl
 Isotropy also implies the phase and group velocities are parallel or anti-parallel, which legitimates to call this group as \textit{backward-wave} \cite{lindell2001bw}.} 
 
 \item{
-Yet narrower group is defined by the terms of \textit{left-handed} \cite{veselago1968} or \textit{doubly-negative} media. Their etymology is based on the spatial orientation of the vector triplet $(\E, \HH, \KK)$. In ordinary media with $\epsrl > 0$, $\murl > 0$, the pseudovector $\HH$ is chosen so that the triplet can be associated to the thumb, index and middle finger of the right hand. 
+		Yet narrower group is defined by the terms of \textit{left-handed} \cite{veselago1968} or \textit{doubly-negative} (DNG) media. Their etymology is based on the spatial orientation of the vector triplet $(\E, \HH, \KK)$. In ordinary media with $\epsrl > 0$, $\murl > 0$, the pseudovector $\HH$ is chosen so that the triplet can be associated to the thumb, index and middle finger of the right hand. 
 
-By simultaneous reversal the sign of both $\epsrl$ and $\murl$, the electric and magnetic induction change their sign to be antiparallel to the fields and the wavevector $\KK$ is reversed, associating the triplet with the left hand. 
+By simultaneous reversal the sign of both $\epsrl$ and $\murl$, the electric and magnetic induction change their sign to be antiparallel to the fields. The wavevector $\KK$ is reversed, associating the triplet with the left hand. 
 
-In the author's view, both terms can therefore be associated exclusively with a proper subset of the \textit{negative-index} media, namely to those where the local parameters of $\eeff$ and $\meff$ exist.
+In the author's view, both terms can therefore be associated exclusively to only a subset of the \textit{negative-index} media, for which the local parameters of $\eeff$ and $\meff$ make physical sense.
 }
 \end{enumerate}
-%% TODO accumulate literature
+% TODO? add about "plasmonic" and epsilon-negative (ENG), or single-negative (SNG) MMs
 
 %}}}
 \paragraph{Prediction of focusing effects by a negative-index slab} %{{{  ================== OK? (readpaper, +img)
@@ -1362,8 +1362,7 @@ In the author's belief, it is necessary to adopt the full theory of spatially di
 
 %}}}
 %}}}
-
-\section{The boundary between photonic crystals and metamaterials} 
+\section{The boundary between photonic crystals and metamaterials} %{{{
 In the light of the previous %{{{
 historical review, it appears that MMs and PhCs are divided by historical reasons as different paradigms which have developed separately for most of the 20th century. It was however argued above that these paradigms and research comumnities are undergoing the process of unification, which incites the question whether there exist any objective rules to tell apart MMs from PhCs.
 %}}}
@@ -1424,9 +1423,10 @@ In contrast, the PhC research focuses on \textit{whether} the wave can propagate
 This also justifies denoting MMs and PhCs as two different \textit{paradigms} rather than two distinct \textit{classes} of periodic structures, and it is the reason why the neutral term of \textit{periodic structure} is used in this thesis. 
 
 With this criterion, the author believes, there is no strict rule for classification. Some structures are only more useful to be subject to homogenization, and with some other it is more interesting to focus on their band and band-gap structure. 
-
 % emergent phenomena
 % Wikipedia: https://en.wikipedia.org/wiki/Metamaterial
 % "Metamaterials derive their properties not from the properties of the base materials, but from their newly designed structures."
 
+%}}}
+%}}}
 
