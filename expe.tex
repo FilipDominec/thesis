@@ -50,7 +50,7 @@ We used the electrooptic sampling mentioned in the previous chapter: The electri
 
 %}}}
 \paragraph{Signal processing and acquisition}%{{{
-To reduce the noise, synchronous detection with the \textit{Stanford SRS360} lock-in amplifier was used, based on that the polarity of THz waveforms was modulated by the voltage at the TeraSED emitter. The difference signal at the two photodiodes, PD1 and PD2, was first fed to an analogue filter (with center frequency 91.3 kHz and 3 dB drop at $\pm$ 7 kHz), sampled by the lock-in amplifier and digitally normalized against the signal measured by the auxiliary photodiode PD3, as the difference signal is proportional not only to the terahertz field, but also to the laser intensity which may fluctuate over time. 
+To reduce the noise, synchronous detection with the \textit{Stanford SRS360} lock-in amplifier was used and the polarity of THz waveforms was modulated by the voltage at the TeraSED emitter. The difference signal at the two photodiodes, PD1 and PD2, was first fed to an analogue filter (with center frequency 91.3 kHz and 3 dB drop at $\pm$ 7 kHz), sampled by the lock-in amplifier and digitally normalized against the signal measured by the auxiliary photodiode PD3. The normalisation was necessary due to the fact that the difference signal is proportional not only to the terahertz field, but also to the laser intensity which may fluctuate over time. 
 
 The time constant of the lock-in acquisition was comparable to the time which was needed by the delay lines to introduce a picosecond delay. As a result, the speed of delay lines movement suppressed the high-frequency components of the detected signal. Precise control of the delay line speed and timing, along with software compensation for this, was needed.
 

@@ -469,22 +469,24 @@ To the knowledge of the author, such a shift of monitor planes has not been empl
 %}}}
 \paragraph{Scattering-parameter retrieval procedure} %{{{
 The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown and commented in a logarithmic scale in Fig. \ref{fg_sparam_timedomain}.  
-\begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the complex recorded fields at the first $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$ and second $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$ monitor plane.  The excitation pulse ca. 2 ps long excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as is outlined by thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time  was $t_{sim} =$ 150 ps.} \includegraphics[width=9.5cm]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
+\begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the complex recorded fields at the first $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$ and second $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$ monitor plane.\\
+The excitation pulse ca. 2 ps long excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as is outlined by thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time  was $t_{sim} =$ 150 ps. \\
+After 80 \% of the time record length, the field is multiplied by the smooth envelope function described by Eq. (\ref{eq_envelope}).} \includegraphics[width=.7\textwidth]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
 The spectral resolution is determined by the length of the time record. The higher quality of resonance, the sharper its spectral features. %is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. 
-From the Fourier-Plancherel theorem %% TODO ref
-it follows that the energy part stored in the resonance at the end of the time record will be missing in the spectra in the frequency domain, too. When a time record too short significantly truncates a resonance ringdown, characteristic ringing in the spectra occurs which is very detrimental to further visual and numerical evaluation. 
+From the \textit{Fourier-Plancherel theorem} %% TODO ref
+it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
-Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that applying a rectangular window in time domain results in a convolution with the sinc function in the spectrum. While multiplication of the records a  smooth window function (\textit{apodization}) does not improve spectral resolution, it suppresses the visually distracting ringing. Before further processing, all four time records were multiplied by the envelope function $g(t)$:
+Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the sinc function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}, does not improve spectral resolution, but it suppresses the visually distracting artifacts. Therefore, all four time records were multiplied by the envelope function $g(t)$ before further processing:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
 	g(t)    & = \frac{1 + \cos\left(\pi \frac{t/t_{sim}-0.8}{1-0.8}\right)}{2}  \text{ for } t > 0.8 t_{sim},
 \end{split}
 \label{eq_envelope}\end{equation}
-which ensured that after 80 \% of the overall simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing. % TODO REF Hann window
+which ensured that after 80 \% of the overall simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing. 
 
-By means of the Fourier transform, the fields can be converted to the frequency domain, which is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. 
+By means of the Fourier transform, the fields were converted to the frequency domain. This operation is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. 
 \begin{figure}[ht] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
 
 The monitor planes are assumed to be located in vacuum, and at a sufficient distance to eliminate the evanescent waves of the structure simulated. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and wave vector $\kk$ must a form right-handed triplet. %% TODO reference the M. E. solution
@@ -498,7 +500,9 @@ At both monitor planes, the forward and backward wave are linearly superposed as
 The constant $Z_0$ stands for the \textit{vacuum impedance}, i.e. ratio of the electric and magnetic field of a freely propagating wave. Its physical value is $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 4\pi c \cdot 10^{-7} \approx 376.7$ $\Upomega$, but in the actual FDTD simulations, the built-in convention of $Z_0 = 1$ was used.
 The wave separation result is plotted in Fig. \ref{fg_ampli}.  
 \begin{figure}[ht] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes 
-allow to assess the validity of the results: the incident wave $A^{\text{(in1)}}(f)$ should have smooth spectrum (blue curve), as it is directly generated by the broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green curve) and the transmitted one $A^{\text{(out2)}}(f)$ (red curve) should be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. The fourth wave $A^{\text{(in2)}}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the perfectly matched layers at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field components of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
+allow to assess the validity of the results.\\
+The incident wave $A^{\text{(in1)}}(f)$ should have smooth spectrum (blue curve), as it is directly generated by the broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green curve) and the transmitted one $A^{\text{(out2)}}(f)$ (red curve) should be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. \\
+The fourth wave $A^{\text{(in2)}}(f)$ should be negligible, as almost all wave energy is expected to be absorbed by the perfectly matched layers at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field components of the structure. In Fig. \ref{fg_separating_wave}, this relative error in amplitude is less than $10^{-3}$.}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
 Finally, one can easily compute the complex-valued scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitudes to the incident wave, respectively:
 \begin{equation} 
@@ -512,8 +516,8 @@ Finally, one can easily compute the complex-valued scattering parameters $r(f)$ 
 \paragraph{Comparison of simulated and experimental spectra} %{{{
 
 \begin{figure} 
-\caption{\textbf{(a)} Electron microphotograph of the STO array (from \cite{nemec2009tunable}), frontal view, 
-\textbf{(b)} dimensions of one unit cell thereof, viewed from the side}  \centering 
+\caption{\textbf{(a)} Electron microphotograph of the STO array (from \cite{nemec2009tunable}), front view, 
+\textbf{(b)} dimensions of one unit cell thereof, drawn as the side view}  \centering 
 \begin{overpic}[width=.6\textwidth]{img/STOBar_photo.pdf}     \put(0,67) {\textbf{(a)}} \end{overpic}\quad
 \begin{overpic}[width=.3\textwidth]{img/EBars_STO_sketch.pdf} \put(1,95) {\textbf{(b)}} \end{overpic}
 \label{fg_STO_bar_geom} \end{figure} 
@@ -542,17 +546,19 @@ A more elaborate discussion of periodic structures composed of dielectric bars/r
 %}}}
 
 \paragraph{Retrieval of the effective parameters} %{{{
-So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metameterial cell layers were determined. 
-These data, if supplied with the cell thickness $d$, are also sufficient to deduce the behaviour of an infinite periodic structure composed of such unit cells, i.e., to retrieve the effective parameters of the structure by means of the Fresnel inversion \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. 
+%So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metamaterial cell layers were determined. 
+Complemented with the cell thickness $d$, the spectra of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. 
+Let us note that the discussion in this thesis is restricted to the near-perpendicular wave propagation. In Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) were generalized also for oblique incidence.
+
 The expression for the effective index of refraction is
 \begin{equation} \Neff = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi\,m}{k d}, \label{eq_Neff} \end{equation}
-where nor branch index $m\in \mathbb{Z}$, nor the sign of the solution are a priori known. For the effective impedance, the sign has also to be determined: 
+where nor the integer-valued branch index $m\in \mathbb{Z}$, nor the sign of the solution are a priori known. For the effective impedance, the sign is also ambiguous: 
 \begin{equation} \Zeff = \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}}. \label{eq_Zeff} \end{equation}
-The discussion in this thesis is restricted to the near-perpendicular wave propagation. In Ref. \cite{menzel2008retrieving}, the retrieval algorithm in Eqs. (\ref{eq_Neff},\ref{eq_Zeff}) was generalized also for oblique incidence.
 
 %}}}
 \paragraph{Search of the correct solution} %{{{
-The correct solution is thus determined by three discrete-valued functions of frequency, i.e. the signs of $\Neff(f)$, $\Zeff(f)$ and the branch index $m$, which have to be determined during computation. 
+The correct solution is thus determined by three discrete-valued functions of frequency, i.e. the sign of $\Neff(f)$, the sign of $\Zeff(f)$ and the branch index $m(f)$, which have to be determined during computation. 
+
 We identified the following criteria for selection of exactly one of infinitely many solutions:
 \begin{enumerate}
 	\item{Passivity with regards to the wave propagating through the structure requires the \textit{imaginary} part of refractive index be non-positive: 
@@ -561,7 +567,7 @@ We identified the following criteria for selection of exactly one of infinitely 
 	 \item{Passivity with regards to the wave reflected from the structure interface requires the \textit{real} part of refractive index be non-positive, too: 
 		 \begin{equation} \Zeff'(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Zeff_pass}\end{equation}
 		 } 
-	 \item{Causal response of the sample requires specific relation between the real and imaginary parts of $r$, $t$ and all effective parameters $\Neff$, $\Zeff$, $\eeff$ and $\meff$, when substituted for the function $F(\omega)$:
+	 \item{Causal response of the sample requires specific relation between the real and imaginary parts of $r(f)$, $t(f)$ and of effective parameters $\Neff(f)$ and $\Zeff(f)$, when substituted for the function $F(\omega)$:
 		 \begin{equation} 
 F'(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F''(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F''(\omega). \tag{\ref{eq_kkresult} \again}\end{equation} 
 Perhaps the most familiar consequence of this criterion is the requirement of continuity for $\Neff(f)$ in all structures with nonzero losses.
@@ -570,7 +576,7 @@ Perhaps the most familiar consequence of this criterion is the requirement of co
 Note that in the papers that use different complex convention, i.e. $e^{-\ii\omega t}$, both passivity conditions use the opposite sign. This does not apply to the kernels of the Fourier nor Hilbert transforms.
 
 Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
-so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt discontinuities in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$ (e.g. Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}). Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
+so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt discontinuities in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$, which can be found e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}. Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
 
 A more elegant method was published in 2010 by Szabo et al. \cite{szabo2010unique} and relies on the inherently unambiguous knowledge of $\Neff''(f)$. It uses the Hilbert transform introduced in Eq. (\ref{eq_kkresult}) to recover $\Neff'(f)$ from $\Neff''(f)$. 
 However, from our own experience, applying this integral transform to a finite part of spectrum introduces not only an arbitrary constant offset, but also slow continuous distortion of the $\Neff'(f)$ curves, thus needing a nontrivial compensation.
@@ -583,25 +589,23 @@ However, from our own experience, applying this integral transform to a finite p
 We wrote a custom procedure to select the correct solution automatically on pure mathematical basis. To our knowledge, it was not described in any of previously published papers.
 
 The ambiguity in Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) results from the fact that the inverse functions of arccosine and square root are not injective mappings \cite{simovski2009material}:
-\begin{equation} \cos \upsilon = \cos \upsilon = \cos(\upsilon+2\pi) \quad  \forall \upsilon\in\mathbb{C} \label{eq_}\end{equation}
-\begin{equation} \upsilon^2 = (-\upsilon)^2 \quad \forall \upsilon\in\mathbb{C} \label{eq_}\end{equation}
-Although arccosine and square root are defined clearly and uniquely in mathematics, physical interpretation of data requires one to determine 
-
+\begin{equation} \cos x = \cos (-x) = \cos(x+2\pi) \quad  \forall x\in\mathbb{C} \label{eq_noninjN}\end{equation}
+\begin{equation} x^2 = (-x)^2 \quad \forall x\in\mathbb{C} \label{eq_noninjZ}\end{equation}
+%Although the range of values for arccosine and square root are defined uniquely in mathematics, the retrieval algorithm described here extends these functions to yield different values to ensure continuity.
 Since the temporal records of the fields are exponentially decaying functions, the reflectance  $r(f)$ and transmittance spectra $t(f)$ must be continuous. 
-It is assumed that for any realistic structure of nonzero losses, the transmission never passes exactly through the complex zero, and the arccosine argument from Eq. (\ref{eq_Neff})
+It is assumed that for any realistic structure with nonzero losses, the transmission never passes exactly through the complex zero, and the arccosine argument from Eq. (\ref{eq_Neff})
 \begin{equation} \upsilon(f) = \frac{1-r^2+t^2}{2t},   \label{eq_upsilon}\end{equation}
-is a continuous complex function. Any discontinuities in the retrieved spectra of $\Neff'(f)$ may therefore only arise at the discontinuities of the arccosine function in the complex plane.
+is also a continuous complex function. Any discontinuities in the retrieved spectra of $\Neff'(f)$ may therefore arise exclusively at the discontinuities of the arccosine function in the complex plane.
 
-To remove these mathematical artifacts it is necessary to identify the \textit{branch cuts} of arccosine in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. They are two, on the left and right rays at the real axis. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
+To ensure overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore necessary to identify the two \textit{branch cuts} of arccosine in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
 \begin{enumerate}
 \item{
-		If, by increasing the frequency, the arccos argument, $\upsilon = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The sign of $d\upsilon/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
+If, by increasing the frequency, the arccos argument $\upsilon$, passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The sign of $d\upsilon/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
 } 
 \item{
 	The situation is slightly more complicated at the left branch cut, i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change, illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
 } 
  \end{enumerate}
-The correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch along with the sign, both being functions of frequency. 
 
 %}}}
 \paragraph{Effective impedance retrieval} %{{{
@@ -609,7 +613,7 @@ The sign of the square root function is similarly chosen such than $Z$ is a cont
 
 Using the \textit{Moivre theorem}, the square root is then computed by halving the angle of the argument, and computing the square root of its real-valued modulus. Both operations are safe in terms of maintaining the continuity.
 
-Continuous computation of arccosine and square root are implemented in Ref. \cite[effparam.py file]{dominec2014_meep_metamaterials}.
+Continuous computation of arccosine and square root are implemented in Ref. \cite[effparam.py]{dominec2014_meep_metamaterials}.
 
 %}}}
 \paragraph{Initial branch and sign choices}
