@@ -6,7 +6,7 @@
  * [X] "negative-index", "left-handed" or "doubly-negative" media?
  * [X] FDFD
  * [o] xxx PWEM principle
- * [ ] initial effparam branch, weaknesses of the method
+ * [/] initial effparam branch, weaknesses of the method
  * [ ] CDH: full
  * [ ] other effparam retrieval methods
  * [ ] sieving: add statistics of spheres

@@ -600,7 +600,7 @@ is also a continuous complex function. Any discontinuities in the retrieved spec
 To ensure overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore necessary to identify the two \textit{branch cuts} of arccosine in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
 \begin{enumerate}
 \item{
-If, by increasing the frequency, the arccos argument $\upsilon$, passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The sign of $d\upsilon/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
+	If, by increasing the frequency, the arccos argument $\upsilon$ passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The direction given by the sign of $d\upsilon'/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
 } 
 \item{
 	The situation is slightly more complicated at the left branch cut, i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change, illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
@@ -616,11 +616,19 @@ Using the \textit{Moivre theorem}, the square root is then computed by halving t
 Continuous computation of arccosine and square root are implemented in Ref. \cite[effparam.py]{dominec2014_meep_metamaterials}.
 
 %}}}
-\paragraph{Initial branch and sign choices}
-By using 
-\paragraph{Weakness of the method used}
+\paragraph{Initial branch and sign choices}%{{{
+Next, it is necessary to establish the sign and branch index of $\Neff$ and the sign of $\Zeff$ at the starting point of the spectrum. One can assume that for very low frequencies below any individual resonance, also the Bloch wave vector tends to zero $K\rightarrow 0$. In case of conductive structures, the spectrum starts with a plasma-like band gap at low frequencies, leading to evanescent wave with vanishing wavenumber as well.
+
+Whenever the spectra of $r(f)$ and $t(f)$ are computed using the Fourier transform, they are known for very low frequencies  nd the selection of the branch is thus easy.
+
+The remaining step is to establish the signs of $\Neff$ and $\Zeff$, using the aforementioned rules of the metamaterial passivity.
 
 %}}}
+\paragraph{Weakness of the method used}%{{{
+While the %% XXX XXX XXX
+
+%}}}
+
 \paragraph{Applicability of the method}%{{{
 \add{
 this method makes several assumptions that may not always hold. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
