@@ -54,7 +54,7 @@ than the frequency of time-stepping cycles is. It is however the value of $f_c$,
 \paragraph{Definition of materials for the FDTD method} %{{{
 \label{def_of_mat}
 
-\begin{figure}[t] \caption{Plots of complex permittivity ${\epsrl}_o(\omega)$ of titanium dioxide (rutile), for an ordinary ray. The above plot has a linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-10<\varepsilon_r<10$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach is more suitable for plotting permittivity in the following discussion.} \label{fg_tio2eps} \centering 
+\begin{figure}[t] \caption{Plots of complex permittivity ${\epsrl}_o(\omega)$ of titanium dioxide (rutile), for an ordinary ray. The above plot has a linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-10<\varepsilon_r<10$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach better shows different orders of magnitude in the permittivity function.} \label{fg_tio2eps} \centering 
 	\includegraphics[width=14cm]{img/epsilon_TiO2_linear.pdf}
 	\includegraphics[width=14cm]{img/epsilon_TiO2_symlog.pdf}
 \end{figure}
@@ -345,7 +345,7 @@ where the function $\psi$ represents either of the electric or magnetic fields.
 Both time- and frequency-domain simulations used for this thesis use complex numbers to represent all field components.
 Whole frequency-domain problem thus can be expressed as a simultaneous optimization of the $\E(\rr), \HH(\rr)$ fields, so that one time-step of FDTD is as similar as possible to the phase rotation of the functions. The angle of the phase rotation is given by the user-defined angular frequency $\omega$. For the optimization to be as efficient as possible, the \textit{stabilized biconjugate gradient} algorithm \cite{oskooi2010meep} is used. More information on the frequency-domain solver is on the project's website \cite{ab-initio}. 
 
-The modes obtained by frequency-domain simulation can be output with arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plot accurately.
+The modes obtained by frequency-domain simulation can be output with arbitrary phase; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives sufficient amplitude to be plotted accurately.
 
 %}}}
 \paragraph{Comparison to the time-domain computation} %{{{
@@ -376,7 +376,7 @@ The electric and magnetic field shapes at the edges of each photonic band are im
 
 Scaling of the computational time with the resolution may present a disadvantage compared to FDTD/FDFD, since in a simple implementation it scales with second power of the resolution for one-dimensional problems, fourth power in 2-D problems and ninth power for 3-D problems. Application of more sophisticated algebra of sparse matrices can however partially remedy this.
 
-Perhaps the greatest limitation of the implementation of PWEM in the MPB program is that it can not cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
+Perhaps the greatest limitation of the MPB program is that it can not cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
 
 %}}}
 
@@ -520,14 +520,24 @@ Finally, one can easily compute the complex-valued scattering parameters $r(f)$ 
 
 To verify the simulation results against experimental data, we computed $r(f)$ and $t(f)$ for a structure that had been measured in our terahertz laboratory.
 It consisted of an array of high-permittivity dielectric bars, cut using a femtosecond laser % todo{what was the laser power and other parameters?
-from a 26 $\upmu$m thick strontium titanate (STO) slab \cite{nemec2009tunable}. The periodicity was 96 $\upmu$m and the laser cut width 30 $\upmu$m, resulting in the 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}. The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match the experimental spectra.
+from a 26 $\upmu$m thick strontium titanate (STO) slab \cite{nemec2009tunable}. The periodicity was 96 $\upmu$m and the laser cut width 30 $\upmu$m, resulting in the 66 $\upmu$m width of each rectangular bar as shown in Fig. \ref{fg_STO_bar_geom}. 
+
+The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match the experimental spectra.
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared to numerical reflection $r(f)$ and transmission $t(f)$ for strontium titanate bars $||\mathbf E$ of rectangular cross-section $26 \times 66\;\upmu$m. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
-The curves computed using the FDTD simulations are compared to the experimental ones in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in the high reflectivity ($|r| > 0.9$) in most of the spectrum which is caused by a great impedance mismatch between the dielectric and the surrounding air.
+
+	The curves computed using the FDTD simulations are compared to the experimental ones in Fig. \ref{fg_STO_bar_rt}, with a very good match in three well-resolved resonance peaks, and also in the high reflectivity ($|r| > 0.9$) in most of the spectrum which is caused by a great impedance mismatch between the dielectric and the surrounding air.
 
 \begin{figure}[ht] \centering \caption{Parametric scan through the strontium titanate bar width (in micrometers), loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by the white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
-To briefly illustrate further possibilities of the numerical simulations, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure as $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as shown in Fig. \ref{fg_STO_bar_modes}. The two-dimensional scan can reveal rich information about the underlying physics. Most importantly, we see that the frequency at which different modes resonate has a different power dependence on the bar width. Note that both vertical and horizontal axes are logarithmic, so this exponent can be directly estimated from the slope of the line. Only modes with a mirror symmetry in the transverse direction ($y$-axis) couple to the wave.
+%}}}
 
-It can also be seen from Fig. \ref{fg_STO_bar_modes} that around the bar width of 66 $\upmu$m, as denoted by the horizontal white line, there is actually a frequency cross-over of two modes, a narrow transverse one and a broader longitudinal one. This explains why the first resonance in Fig. \ref{fg_STO_bar_rt} has an obviously asymmetric shape in the simulated and experimental spectra. (This would form a typical \textit{Fano resonance} shape if the losses were lower.)
+\paragraph{Example of a parametric scan with FDTD simulations} %{{{
+To briefly illustrate further possibilities of the numerical simulations, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure given by $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as shown in Fig. \ref{fg_STO_bar_modes}. Only modes with a mirror symmetry in the transverse direction ($y$-axis) couple to the wave; the remaining antisymmetric modes would manifest themselves at oblique incidence only.
+
+The two-dimensional scan can reveal further information about the underlying physics. Most importantly, it is clear that the resonance frequency of the modes has a different sensitivity to the bar width. Note that both vertical and horizontal axes are logarithmic, so the power dependence can be directly estimated from the slope of the line. 
+
+It can also be seen from Fig. \ref{fg_STO_bar_modes} that for the bar width close to 66 $\upmu$m, which is indicated by the horizontal white line, two modes cross-over in frequency. Namely, one of these is a narrow mode with nodal planes almost parallel to the wave propagation, while the second is much broader one with one nodal plane centered inside the dielectric slab volume. This explains why the first resonance in Fig. \ref{fg_STO_bar_rt} has an obviously asymmetric shape, both in the simulated and experimental spectra. 
+
+The overlap of two modes differing by both spectral width and resonance frequency forms a typical \textit{Fano resonance} shape, which would be probably experimentally observed if the losses were lower.
 A more elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or the magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 %}}}
 
@@ -560,21 +570,29 @@ Perhaps the most familiar consequence of this criterion is the requirement of co
 Note that in the papers that use different complex convention, i.e. $e^{-\ii\omega t}$, both passivity conditions use the opposite sign. This does not apply to the kernels of the Fourier nor Hilbert transforms.
 
 Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
-so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt skips in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$ (e.g. Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}). Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
+so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt discontinuities in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$ (e.g. Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}). Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
 
 A more elegant method was published in 2010 by Szabo et al. \cite{szabo2010unique} and relies on the inherently unambiguous knowledge of $\Neff''(f)$. It uses the Hilbert transform introduced in Eq. (\ref{eq_kkresult}) to recover $\Neff'(f)$ from $\Neff''(f)$. 
 However, from our own experience, applying this integral transform to a finite part of spectrum introduces not only an arbitrary constant offset, but also slow continuous distortion of the $\Neff'(f)$ curves, thus needing a nontrivial compensation.
 
-\paragraph{Effective $\Neff'$ retrieval based on unambiguous complex arccosine}
+%}}}
+\paragraph{Effective $\Neff'$ retrieval based on unambiguous complex arccosine} %{{{
 \begin{figure} \centering \caption{\textbf{(a)} Real and \textbf{(b)} imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L.\\ \textbf{(c)} From top to bottom: example function  $\upsilon(f)$, its ordinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
 
 We wrote a custom procedure to select the correct solution automatically on pure mathematical basis. To our knowledge, it was not described in any of previously published papers.
-The ambiguity of Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) results from the fact that the arccosine and square root are ambiguous functions \cite{simovski2009material} on their own. Since the temporal records of the fields are exponentially decaying functions, the reflectance  $r(f)$ and transmittance spectra $t(f)$ have to be continuous, and so has the arccosine argument from Eq. (\ref{eq_Neff}):
-\begin{equation} \upsilon(f) = \frac{1-r^2+t^2}{2t},   \label{eq_upsilon}\end{equation}
-as it is assumed empirically that for any realistic structure of nonzero losses, the transmission never passes exactly through the complex zero. Any abrupt skips in the retrieved spectra of $\Neff'(f)$ may therefore only arise at the discontinuities, or, \textit{branch cuts}, of the arccosine function in the complex plane.
 
-Thus, it is necessary to identify where the branch cuts of arccosine are located in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. They are two, covering the real axis anywhere outside the domain of real arccosine, and different measures must be taken for the sign and branch index $m(f)$ to ensure continuity.
+The ambiguity in Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) results from the fact that the inverse functions of arccosine and square root are not injective mappings \cite{simovski2009material}:
+\begin{equation} \cos \upsilon = \cos \upsilon = \cos(\upsilon+2\pi) \quad  \forall \upsilon\in\mathbb{C} \label{eq_}\end{equation}
+\begin{equation} \upsilon^2 = (-\upsilon)^2 \quad \forall \upsilon\in\mathbb{C} \label{eq_}\end{equation}
+Although arccosine and square root are defined clearly and uniquely in mathematics, physical interpretation of data requires one to determine 
+
+Since the temporal records of the fields are exponentially decaying functions, the reflectance  $r(f)$ and transmittance spectra $t(f)$ must be continuous. 
+It is assumed that for any realistic structure of nonzero losses, the transmission never passes exactly through the complex zero, and the arccosine argument from Eq. (\ref{eq_Neff})
+\begin{equation} \upsilon(f) = \frac{1-r^2+t^2}{2t},   \label{eq_upsilon}\end{equation}
+is a continuous complex function. Any discontinuities in the retrieved spectra of $\Neff'(f)$ may therefore only arise at the discontinuities of the arccosine function in the complex plane.
+
+To remove these mathematical artifacts it is necessary to identify the \textit{branch cuts} of arccosine in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. They are two, on the left and right rays at the real axis. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
 \begin{enumerate}
 \item{
 		If, by increasing the frequency, the arccos argument, $\upsilon = (1 - r^2+t^2)/(2 t)$, passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The sign of $d\upsilon/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
@@ -583,8 +601,17 @@ Thus, it is necessary to identify where the branch cuts of arccosine are located
 	The situation is slightly more complicated at the left branch cut, i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change, illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
 } 
  \end{enumerate}
-\paragraph{Effective impedance retrieval}
-The correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch along with the sign, both being functions of frequency. The sign of the square root function is similarly chosen such than $Z$ is a continuous function of frequency.  
+The correct reconstruction of the arccosine therefore only requires to compute the integer-valued branch along with the sign, both being functions of frequency. 
+
+%}}}
+\paragraph{Effective impedance retrieval} %{{{
+The sign of the square root function is similarly chosen such than $Z$ is a continuous function of frequency. Probably the simplest approach is to express the square root argument in Eq. (\ref{eq_Zeff}) in polar base, i.e., as its real-valued modulus and its angle in the complex plane. The angle can be easily ensured to be a continuous function by shifting it by $2\pi$ at any discontinuity.
+
+Using the \textit{Moivre theorem}, the square root is then computed by halving the angle of the argument, and computing the square root of its real-valued modulus. Both operations are safe in terms of maintaining the continuity.
+
+Continuous computation of arccosine and square root are implemented in Ref. \cite[effparam.py file]{dominec2014_meep_metamaterials}.
+
+%}}}
 \paragraph{Initial branch and sign choices}
 By using 
 \paragraph{Weakness of the method used}
