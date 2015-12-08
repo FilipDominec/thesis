@@ -14,14 +14,19 @@
  * [X] 1	Dielectric slab
  * [X] 2	Wire medium
  * [/] 3	Cut wires: rev
+ * [ ]		prepare THz-TDTS data for Bousek samples?
  * [/] 4	Electric resonators: rev
  * [ ] 5	Split-ring resonator: comment double-strip
  * [ ] 6	Dielectric sphere: introduce Mie resonances
+ * [ ]		prepare THz-TDTS data for diffeernt size fractions
  * [ ] 7	SRRs and spheres in a wire array or grid
  * [/] 8	Dielectric rods parallel to magnetic field
  * [/] 9	Dielectric rods parallel to the electric field
+ * [ ]		compare the OpEx2014 results with CDH?
  * [ ] 10	Metallic sheet with slits
  * [ ] 11	Fishnet - metallic sheet with holes
+ * [ ]		prepare THz-TDTS data from the laser-machined sample
+ * [ ]		prepare THz-TDTS data from the drilled sample?
  * [ ] 12	Other structures
  * [/] Conclusion
  * [ ] attach the list of own publications
@@ -133,4 +138,14 @@ A serious applicant will lists the following items separately, when applying for
 %% The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
 %% }
 %% %}}}
+
+
+%% \subsection{Simulation of refraction on a wedge} % ... shall I write this?
+%% \mdf{
+%% \paragraph{Simulation setup}
+%% \paragraph{Derivation of the beam deflection angle}
+%% \paragraph{Why the beam deflection angle depends on beam direction}
+%% \paragraph{Analysis of spatio-temporal spectrum}
+%% \paragraph{Limitations of this method}
+%% }
 

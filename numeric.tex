@@ -408,15 +408,18 @@ Finite-element methods (FEM) approximate the structure with a custom mesh of tri
 % \end{verbatim}
 
 \section{Simulation setups for metamaterial homogenization} % TODO
+The general electromagnetic algorithms,%{{{
+such as FDTD, FDFD or FEM, can be employed to find the electromagnetic field behaviour in a wide variety of problems. These algorithms, however, tell nothing about the effective parameters of a metamaterial, unless they are employed in a particular simulation setup. 
+
+This section describes two different setups we have implemented, the retrieval of scattering parameters and the current-driven homogenisation. Other setups can be found in the literature, too, and are briefly mentioned at the end of this section.
 % TODO theoretically shown in works [12,13,14,15] and experimentally confirmed in [16] this technique is not applicable when the sample material experiences the resonance
 %		[12] C.R. Simovski, S.A. Tretyakov, Phys. Rev. B 75 (2007)195111
 %		[13] C.R. Simovski, Metamaterials 1 (2007)62
 %		[14] C.R. Simovski, Metamaterials 2 (2008)169
 %		[15] C.R. Simovski, Optics and Spectroscopy 107 (2008)726
 %		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
-The general electromagnetic algorithms, such as FDTD, FDFD or FEM, can be employed to find the electromagnetic field behaviour in a wide variety of problems. These algorithms, however, tell nothing about the effective parameters of a metamaterial, unless they are complemented by one of the setups to retrieve effective parameters of metamaterials. We implemented two of these setups, which are described here. Other setups can be found in the literature, too, and are briefly mentioned at the end of this section.
-
-\subsection{Scattering parameters method}
+%}}}
+\subsection{Scattering parameters retrieval}
 \label{chapter_sparam}
 \paragraph{Principle} %{{{
 The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample, originally in the microwave range.
@@ -458,17 +461,17 @@ The impact of the evanescent wave partially reaching the unit cell boundaries in
 \begin{enumerate}
  \item{First, computing a single layer of a metamaterial unit cells, with free space in front and behind it, obviously more or less changes its behaviour compared to the periodic lattice. 
 
-This issue is inherent to the simulation setup, but its impact can be assessed by simulating more than one unit cell, since the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells result in a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can yield confusing results unsuitable to the retrieval method.
+This issue is inherent to the simulation setup, but its impact can be assessed by simulating more than one unit cell, since the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells suffer from a different behaviour of the cells at the surface and inside, which possibly broadens the resonance frequency and can yield confusing results unsuitable to the retrieval method.
  } 
  \item{Second, the monitor planes can not distinguish between the evanescent or radiated electromagnetic field, but only the radiated waves are relevant for the s-parameter computations. At very low frequencies or at frequencies close to resonances, it was observed that the near field can significantly distort the retrieved parameters.
 
 This can be resolved by shifting both monitor planes away from the metamaterial cell by a distance denoted as \textit{padding}. As the evanescent field decays exponentially, padding of less than half of the unit cell size is sufficient to suppress all artifacts due to near-field components. In contrast, propagating waves only gain an additional phase offset that can be easily compensated after the simulation. } 
  \end{enumerate}
-To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the issue , and it does so at an acceptable expense of moderately extending the simulation volume. % (todo? figure here a-b-c of different padding near a dielectric rod)
+To the knowledge of the author, such a shift of monitor planes has not been employed in any related paper. It efficiently resolves the issue, and it does so at an acceptable expense of moderately extending the simulation volume. % (todo? figure here a-b-c of different padding near a dielectric rod)
 
 %}}}
 \paragraph{Scattering-parameter retrieval procedure} %{{{
-The averaged electric and magnetic field recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown and commented in a logarithmic scale in Fig. \ref{fg_sparam_timedomain}.  
+The averaged electric and magnetic fields recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown and commented in a logarithmic scale in Fig. \ref{fg_sparam_timedomain}.  
 \begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the complex recorded fields at the first $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$ and second $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$ monitor plane.\\
 The excitation pulse ca. 2 ps long excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as is outlined by thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation time  was $t_{sim} =$ 150 ps. \\
 After 80 \% of the time record length, the field is multiplied by the smooth envelope function described by Eq. (\ref{eq_envelope}).} \includegraphics[width=.7\textwidth]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
@@ -533,7 +536,6 @@ The permittivity of STO strongly depends on the temperature, and was not known a
 
 \begin{figure}[ht] \centering \caption{Parametric scan through the strontium titanate bar width (in micrometers), loss spectra computed as $1-|r^2|-|t^2|$. The bar width of 66 $\upmu$m is denoted by the white line. Different modes are joined by black curves and their electric field shapes are drawn above the plot.} \includegraphics[width=\textwidth]{img/STOBarC_modes2.pdf} \label{fg_STO_bar_modes} \end{figure}
 %}}}
-
 \paragraph{Example of a parametric scan with FDTD simulations} %{{{
 To briefly illustrate further possibilities of the numerical simulations, we scanned the relative width of the STO bar, and computed the relative energetic loss in the structure given by $1-|r^2|-|t^2|$. Each loss peak can be clearly associated with one resonant mode in the dielectric, as shown in Fig. \ref{fg_STO_bar_modes}. Only modes with a mirror symmetry in the transverse direction ($y$-axis) couple to the wave; the remaining antisymmetric modes would manifest themselves at oblique incidence only.
 
@@ -544,7 +546,6 @@ It can also be seen from Fig. \ref{fg_STO_bar_modes} that for the bar width clos
 The overlap of two modes differing by both spectral width and resonance frequency forms a typical \textit{Fano resonance} shape, which would be probably experimentally observed if the losses were lower.
 A more elaborate discussion of periodic structures composed of dielectric bars/rods oriented either along the electric or the magnetic field will follow in the Sections \ref{sect_diel_rods_mag} and \ref{sect_diel_rods_el}.
 %}}}
-
 \paragraph{Retrieval of the effective parameters} %{{{
 %So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metamaterial cell layers were determined. 
 Complemented with the cell thickness $d$, the spectra of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. 
@@ -603,7 +604,7 @@ To ensure overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore 
 If, by increasing the frequency, the arccos argument $\upsilon$ passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$ (point "R" in Fig. \ref{fg_arccos}c), the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The direction given by the sign of $d\upsilon'/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term . 
 } 
 \item{
-		At the left branch cut (the "L" point in Fig. \ref{fg_arccos}c), i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. To restore the continuit, the sign reversal must be also accompanied by a change of the branch index. . 
+		At the left branch cut (the "L" point in Fig. \ref{fg_arccos}c), i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. To restore the continuity, the sign reversal must be also accompanied by a change of the branch index. . 
 } 
  \end{enumerate}
 
@@ -613,7 +614,7 @@ The sign of the square root function is similarly chosen such than $Z$ is a cont
 
 Using the \textit{Moivre theorem}, the square root is then computed by halving the angle of the argument, and computing the square root of its real-valued modulus. Both operations are safe in terms of maintaining the continuity.
 
-The particular implementation of continuous arccosine and square root retrieval can be found online in Ref. \cite[effparam.py]{dominec2014_meep_metamaterials}.
+The particular implementation of continuous arccosine and square root retrieval can be found online in Ref. \cite[\texttt{effparam.py} file]{dominec2014_meep_metamaterials}.
 
 %}}}
 \paragraph{Initial branch and sign choices}%{{{
@@ -625,33 +626,18 @@ The remaining step is to establish the signs of $\Neff$ and $\Zeff$, using the a
 
 %}}}
 \paragraph{Limitations of the method used}%{{{
-The described algorithm was proven to work reliably. Its only known weakness lies in high sensitivity to coarse sampling in the spectrum, or numerical errors as well, near the points $-1+0\ii$ and $1+0\ii$ where the branch cuts of the complex arccosine start. 
+The described algorithm was proven to work reliably, however, it is sensitive to numerical errors 
+when the arccosine argument $\upsilon(f)$ from Eqs. (\ref{eq_Neff}, \ref{eq_upsilon}) passes 
+near the points $(-1+0\ii)$ and $(1+0\ii)$, that is, near the ends of the branch cuts of the complex arccosine.
 
-Unfortunately, it was observed that the arccosine argument $\upsilon$ from Eqs. (\ref{eq_Neff}, \ref{eq_upsilon}) passes exactly through these points at particular frequencies in the spectra of planar slabs of lossless dielectric. Correct retrieval of spectra requires that even in this case, the curve is treated as if it crossed the branch cut. Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but it becomes unphysical at higher frequencies: Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Moreover, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion.
+Unfortunately, it was observed that $\upsilon(f)$ touches these points in the spectra of planar slabs of lossless dielectric. Correct retrieval of spectra for this particular structure requires that even in these points, the curve is processed as if it had crossed the branch cut. 
+
+Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but at higher frequencies it ceases to make physical sense. Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Simultaneously, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion. Thus, this error can be easily notified.
 
 This is the only issue of this effective-index retrieval algorithm known to the author. It has proven to be efficiently resolved by introducing moderate losses into the structure and/or artificially shifting the branch-cut detection points to be slightly closer to the complex zero, e.g. to $-0.999+0\ii$ and $0.999+0\ii$. In many cases, the wrong detection of branch was resolved simply by multiplying the recorded fields by the smooth window function from Eq. (\ref{eq_envelope}).
 
-%}}}
-\paragraph{Applicability of the method}%{{{
-\add{
-this method makes several assumptions that may not always hold. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
-}
+% TODO this method makes several assumptions that may not always hold. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
 
-%%% It is also known that the phase of the reflectance depends on the surface termination for noncontinuous materials. In the cases where the wavelength of the radiation in the material is much larger than the unit cell dimensions this ambiguity becomes small. A useful control of the effective sample properties can be made by changing the thickness of the sample (number of unit cells along the wave vector). We have chosen a symmetric geometry where the dielectric rod is positioned in the center of a square unit cell and the overall thickness of the sample is an integer multiple of the unit cell size. In this geometry the retrieved effective parameters of our structure depend only negligibly on the number of unit cells that we put in the $z$-direction.
-%%% 
-%%% \cite{menzel2008retrieving} s-param methdo extended under oblique incidence
-
-% TODO add    A review of the scattering parameter extraction method with clarification of ambiguity issues in relation to metamaterial homogenization
-
-%}}}
-\paragraph{Summary of the scattering parameters retrieval method} %{{{
-% TODO In many works cited here, the multiplicity of the branches is mentioned as a major obstacle, however we devised a 
-% relatively simple and mathematically straightforward method to find the correct solution, that works reliably for 
-% structures with nonzero losses.
-% As a much more important issue we should mention this method can never exactly simulate the metamaterial cell in its infinitely periodic lattice, and that   %% as is discussed above.
-
-
-% Numerous modifications of this method have been made \cite{Hasar2009, Arslanagic2012}
 %}}}
 
 \subsection{Current-driven homogenisation} % TODO
@@ -666,18 +652,6 @@ Harmonic inversion was used based on the FDM algorithm \cite{mandelshtam1997harm
 \paragraph{Retrieval of effective permittivity out of dispersion curves}
 \paragraph{Comparison with the scattering-parameters method}
 }
-%\begin{figure} \caption{img/cdh\_srrwire\_structure.pdf}  \centering \includegraphics[width=8cm]{img/cdh_srrwire_structure.pdf} \end{figure} 
-%\begin{figure} \caption{img/cdh\_srrwirethick.pdf}  \centering \includegraphics[width=6cm]{img/cdh_srrwirethick.pdf} \end{figure} 
-
-%% \subsection{Simulation of refraction on a wedge} % ... shall I write this?
-%% \mdf{
-%% \paragraph{Simulation setup}
-%% \paragraph{Derivation of the beam deflection angle}
-%% \paragraph{Why the beam deflection angle depends on beam direction}
-%% \paragraph{Analysis of spatio-temporal spectrum}
-%% \paragraph{Limitations of this method}
-%% }
-
 
 \subsection{Other effective parameter retrieval methods} % TODO
 \mdf{TODO
