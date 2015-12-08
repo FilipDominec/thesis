@@ -600,10 +600,10 @@ is also a continuous complex function. Any discontinuities in the retrieved spec
 To ensure overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore necessary to identify the two \textit{branch cuts} of arccosine in the complex plane, as illustrated in the left subplots of Fig. \ref{fg_arccos}a,b. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
 \begin{enumerate}
 \item{
-	If, by increasing the frequency, the arccos argument $\upsilon$ passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$, the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The direction given by the sign of $d\upsilon'/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term (point "R" in Fig. \ref{fg_arccos}c). 
+If, by increasing the frequency, the arccos argument $\upsilon$ passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$ (point "R" in Fig. \ref{fg_arccos}c), the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The direction given by the sign of $d\upsilon'/df$ does not play role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term . 
 } 
 \item{
-	The situation is slightly more complicated at the left branch cut, i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. The continuity is then restored upon a sign reversal accompanied by a branch index change, illustrated by the point "L" in Fig. \ref{fg_arccos}c. 
+		At the left branch cut (the "L" point in Fig. \ref{fg_arccos}c), i.e., for $\upsilon' < -1, \upsilon''=0$, where the imaginary part of $\arccos(\upsilon)$ experiences again a step-like change of the sign, but the real part touches the value of $\pi$. To restore the continuit, the sign reversal must be also accompanied by a change of the branch index. . 
 } 
  \end{enumerate}
 
@@ -613,7 +613,7 @@ The sign of the square root function is similarly chosen such than $Z$ is a cont
 
 Using the \textit{Moivre theorem}, the square root is then computed by halving the angle of the argument, and computing the square root of its real-valued modulus. Both operations are safe in terms of maintaining the continuity.
 
-Continuous computation of arccosine and square root are implemented in Ref. \cite[effparam.py]{dominec2014_meep_metamaterials}.
+The particular implementation of continuous arccosine and square root retrieval can be found online in Ref. \cite[effparam.py]{dominec2014_meep_metamaterials}.
 
 %}}}
 \paragraph{Initial branch and sign choices}%{{{
@@ -624,17 +624,18 @@ Whenever the spectra of $r(f)$ and $t(f)$ are computed using the Fourier transfo
 The remaining step is to establish the signs of $\Neff$ and $\Zeff$, using the aforementioned rules of the metamaterial passivity.
 
 %}}}
-\paragraph{Weakness of the method used}%{{{
-While the %% XXX XXX XXX
+\paragraph{Limitations of the method used}%{{{
+The described algorithm was proven to work reliably. Its only known weakness lies in high sensitivity to coarse sampling in the spectrum, or numerical errors as well, near the points $-1+0\ii$ and $1+0\ii$ where the branch cuts of the complex arccosine start. 
+
+Unfortunately, it was observed that the arccosine argument $\upsilon$ from Eqs. (\ref{eq_Neff}, \ref{eq_upsilon}) passes exactly through these points at particular frequencies in the spectra of planar slabs of lossless dielectric. Correct retrieval of spectra requires that even in this case, the curve is treated as if it crossed the branch cut. Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but it becomes unphysical at higher frequencies: Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Moreover, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion.
+
+This is the only issue of this effective-index retrieval algorithm known to the author. It has proven to be efficiently resolved by introducing moderate losses into the structure and/or artificially shifting the branch-cut detection points to be slightly closer to the complex zero, e.g. to $-0.999+0\ii$ and $0.999+0\ii$. In many cases, the wrong detection of branch was resolved simply by multiplying the recorded fields by the smooth window function from Eq. (\ref{eq_envelope}).
 
 %}}}
-
 \paragraph{Applicability of the method}%{{{
 \add{
 this method makes several assumptions that may not always hold. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
 }
-
-% TODO add when the parameter $v$ passes too close to the ends of branch cuts ... 
 
 %%% It is also known that the phase of the reflectance depends on the surface termination for noncontinuous materials. In the cases where the wavelength of the radiation in the material is much larger than the unit cell dimensions this ambiguity becomes small. A useful control of the effective sample properties can be made by changing the thickness of the sample (number of unit cells along the wave vector). We have chosen a symmetric geometry where the dielectric rod is positioned in the center of a square unit cell and the overall thickness of the sample is an integer multiple of the unit cell size. In this geometry the retrieved effective parameters of our structure depend only negligibly on the number of unit cells that we put in the $z$-direction.
 %%% 
