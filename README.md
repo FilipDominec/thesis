@@ -6,7 +6,7 @@
  * [X] "negative-index", "left-handed" or "doubly-negative" media?
  * [X] FDFD
  * [o] xxx PWEM principle
- * [/] initial effparam branch, weaknesses of the method
+ * [X] initial effparam branch, weaknesses of the method
  * [ ] CDH: full
  * [ ] other effparam retrieval methods
  * [ ] sieving: add statistics of spheres
@@ -36,6 +36,7 @@
  * [ ] go through all TODOs 
  * [ ] make index of kwords https://en.wikibooks.org/wiki/LaTeX/Indexing?
  * [ ] aa [a-z]-[a-z] *tex
+ * [ ] aa transmi[^t]
  * [ ] some figures should change from a)  to  (a) etc.
  * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances
 
