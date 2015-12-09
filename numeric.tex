@@ -1,4 +1,9 @@
 \section{Numerical simulation algorithms} \label{chapter_numerical}
+Other numerical methods than described above are used in the literature.
+Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation of the tetrahedral mesh is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
+
+%% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
+%% discontinuous Galerkin method
 %% todo - IR: uvod v numerickych metodach?
 \subsection{Finite-difference time-domain method}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
@@ -362,15 +367,13 @@ It was observed by the author that the FDFD solver in the MEEP program often fai
 
 \subsection{Plane-wave expansion method} % TODO
 \paragraph{Description} %{{{
-%% + it is another eigenvalue solver
 Another algorithm used in this thesis is the \textit{plane-wave expansion method} (PWEM). Whereas FDTD and FDFD are very general algorithms that can be applied for different choices of simulation setups and for virtually any structure, PWEM is specialised for periodic structures only. 
 
 Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also output the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. The algorithm is described in detail, e.g., in Ref. \cite[pp. 24-28]{pazoutova2011dp}.
 
-As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group as MEEP \cite{ab-initio}. Graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
-% todo cite mpb-plotting project on github
-%}}}
+As a convenient implementation of PWEM, we used the freely available program \textit{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group \cite{ab-initio} as MEEP. Graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
 
+%}}}
 \paragraph{Comparison to FDTD and FDFD} %{{{
 The electric and magnetic field shapes at the edges of each photonic band are important for understanding the physics of periodic structures. Note that the fields inside a photonic band do not usually share the periodicity with the lattice, which makes them harder to interpret. Finding the band edges is an intrinsic feature of PWEM, whereas the same task is only approximate in FDTD and requires previous search for the band edge frequencies. 
 
@@ -380,22 +383,16 @@ Perhaps the greatest limitation of the MPB program is that it can not cope with 
 
 %}}}
 
-\subsection{Summary of numerical methods used} %{{{
-This section describes several fundamentally different numerical methods for electromagnetic simulations. 
-\begin{enumerate}
-\item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve a broad spectrum at once by Fourier transform. In the following chapter, two fundamentally different setups for FDTD are described that provide similar information on the metamaterial.} 
-\item{The finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching and Fourier transforming the result, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is useful e.g. for mode analysis in complicated structures.} 
-\item{The plane-wave expansion method (PWEM) reformulates the problem of a wave propagating in a periodic structure by means of linear algebra. At a given wave vector, it allows to find eigenmodes and eigenfrequencies in the structure. This can be in turn employed to efficiently retrieve the dispersion curves.} 
-\item{The transfer-matrix method (TMM) also allows to find dispersion curves and field distribution. Although it can be extended to two or three dimensions, its one-dimensional implementation is most popular. Thanks to its simplicity, it can even give an analytical insight into the behaviour of planar structures.} 
-\end{enumerate}
-
+%\subsection{Summary of numerical methods used} %{{{
+%This section describes several fundamentally different numerical methods for electromagnetic simulations. 
+%\begin{enumerate}
+%\item{Finite-difference time-domain (FDTD) is a time-marching method that describes the structure on an uniform grid, allowing to compute very general electromagnetic problems. Usually a short-time, broadband pulse excitation is used, which allows to resolve a broad spectrum at once by Fourier transform. In the following chapter, two fundamentally different setups for FDTD are described that provide similar information on the metamaterial.} 
+%\item{The finite-difference frequency-domain (FDFD) method uses the same discretisation as FDTD, but instead of time-marching and Fourier transforming the result, it searches for the field eigenmode at one given frequency by means of numerical optimisation. It is useful e.g. for mode analysis in complicated structures.} 
+%\item{The plane-wave expansion method (PWEM) reformulates the problem of a wave propagating in a periodic structure by means of linear algebra. At a given wave vector, it allows to find eigenmodes and eigenfrequencies in the structure. This can be in turn employed to efficiently retrieve the dispersion curves.} 
+%\item{The transfer-matrix method (TMM) also allows to find dispersion curves and field distribution. Although it can be extended to two or three dimensions, its one-dimensional implementation is most popular. Thanks to its simplicity, it can even give an analytical insight into the behaviour of planar structures.} 
+%\end{enumerate}
 %}}}
-\paragraph{Overview of other numerical methods} %{{{
-Other numerical methods than described above are used in the literature.
-Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation of the tetrahedral mesh is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
-%% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
-%% discontinuous Galerkin method
-
+%\paragraph{Other numerical methods} %{{{
 %}}}
 
 % \begin{verbatim}
@@ -422,7 +419,7 @@ This section describes two different setups we have implemented, the retrieval o
 \subsection{Scattering parameters retrieval}
 \label{chapter_sparam}
 \paragraph{Principle} %{{{
-The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample, originally in the microwave range.
+The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
 
 The first step to its derivation is that by means of the Fresnel-Airy formulas \cite[p. 329]{born1999book},
 one can easily compute the transmission $t(f)$ and reflection $r(f)$ spectra from a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material the slab consists of. The actual computation is thus denoted also as \textit{Fresnel inversion}.
@@ -610,7 +607,7 @@ If, by increasing the frequency, the arccos argument $\upsilon$ passes through t
 
 %}}}
 \paragraph{Effective impedance retrieval} %{{{
-The sign of the square root function is similarly chosen such than $Z$ is a continuous function of frequency. Probably the simplest approach is to express the square root argument in Eq. (\ref{eq_Zeff}) in polar base, i.e., as its real-valued modulus and its angle in the complex plane. The angle can be easily ensured to be a continuous function by shifting it by $2\pi$ at any discontinuity.
+The sign of the square root function is similarly chosen such than $Z$ is a continuous function of frequency. Probably the simplest approach is to express the square root argument in Eq. (\ref{eq_Zeff}) in polar nonation, i.e., as its real-valued modulus and its angle in the complex plane. The angle can be easily ensured to be a continuous function by shifting it by $\pm 2\pi$ at any discontinuity.
 
 Using the \textit{Moivre theorem}, the square root is then computed by halving the angle of the argument, and computing the square root of its real-valued modulus. Both operations are safe in terms of maintaining the continuity.
 
@@ -625,22 +622,40 @@ Whenever the spectra of $r(f)$ and $t(f)$ are computed using the Fourier transfo
 The remaining step is to establish the signs of $\Neff$ and $\Zeff$, using the aforementioned rules of the metamaterial passivity.
 
 %}}}
-\paragraph{Limitations of the method used}%{{{
-The described algorithm was proven to work reliably, however, it is sensitive to numerical errors 
+\paragraph{Limitations of the computation of continuous effective parameters}%{{{
+The described algorithm was proven to work reliably with most structures. However, it is sensitive to numerical errors 
 when the arccosine argument $\upsilon(f)$ from Eqs. (\ref{eq_Neff}, \ref{eq_upsilon}) passes 
 near the points $(-1+0\ii)$ and $(1+0\ii)$, that is, near the ends of the branch cuts of the complex arccosine.
 
 Unfortunately, it was observed that $\upsilon(f)$ touches these points in the spectra of planar slabs of lossless dielectric. Correct retrieval of spectra for this particular structure requires that even in these points, the curve is processed as if it had crossed the branch cut. 
 
-Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but at higher frequencies it ceases to make physical sense. Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Simultaneously, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion. Thus, this error can be easily notified.
+Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but at higher frequencies it ceases to make physical sense. Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Simultaneously, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion. Thus, this error can be easily notified, and with further programming it cold be 
 
-This is the only issue of this effective-index retrieval algorithm known to the author. It has proven to be efficiently resolved by introducing moderate losses into the structure and/or artificially shifting the branch-cut detection points to be slightly closer to the complex zero, e.g. to $-0.999+0\ii$ and $0.999+0\ii$. In many cases, the wrong detection of branch was resolved simply by multiplying the recorded fields by the smooth window function from Eq. (\ref{eq_envelope}).
+This is the only issue which arises from the described effective-index retrieval algorithm known to the author. It has proven to be efficiently resolved by introducing moderate losses into the structure and/or artificially shifting the branch-cut detection points to be slightly closer to the complex zero, e.g. to $(-0.999+0\ii)$ and $(0.999+0\ii)$. In many cases, the wrong detection of the branch was resolved simply by multiplying the recorded fields by the smooth window function from Eq. (\ref{eq_envelope}).
 
-% TODO this method makes several assumptions that may not always hold. One of them is that nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
+%}}}
+\paragraph{Summary of the scattering-parameter method}%{{{
+The scattering-parameter method is the most widely used approach for the effective parameter retrieval. It stands out among other methods using the amplitudes of the reflected and transmitted waves only, without any inspection of the fields inside the unit cell. It is also efficient, since it requires single time-domain simulation to retrieve the full spectrum of effective parameters: 
+the wave is let to freely propagate through the structure, from which the algorithm determines the wavenumber at each frequency component of the incident wide-band pulse. Thus it can be viewed that the frequency $\omega$ is the input, and the wavenumber $K(\omega)$ is its output.
+
+However, it also has its weaknesses, as was mentioned above:
+\begin{enumerate}
+		 \item{It is intrinsically imprecise, because the evanescent fields of most structures are influenced by the free space in front the unit cell and behind it. This issue is  nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In some cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
+			 } 
+		 \item{Another source of the imprecision is the fact that the monitor planes detect also the near field, requiring to add a distance between the structure and the monitor planes.} 
+		 \item{Although we devised a relatively robust computation of effective parameters, the current implementation is still sensitive to numerical errors when spectra of lossless dielectric slabs are computed.} 
+			 % it does not efficiently cope with oblique incidence
+\end{enumerate}
+
+Its most important limitation, however, comes from the very principle of "letting the structure choose the wavenumber". For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion.
 
 %}}}
 
 \subsection{Current-driven homogenisation} % TODO
+When more than one wavenumber $K$ corresponds to a given frequency, a fundamentally different retrieval method must be used, for which the wavenumber $K$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output.
+
+This section describes how a simulation can be forced to accept a single wavenumber $K$ only, and an efficient way of reconstructing the dispersion curves from a scan through different wavenumbers. 
+
 \begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_cdh} \end{figure} %% 
 %% Markel2013: Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally intro- duced for a Bloch wave.
 
