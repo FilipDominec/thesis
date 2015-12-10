@@ -1,10 +1,20 @@
 \section{Numerical simulation algorithms} \label{chapter_numerical}
-Other numerical methods than described above are used in the literature.
-Finite-element methods (FEM) approximate the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the downside is that the mesh introduces additional entropy and the computation of the tetrahedral mesh is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
+This section describes the numerical methods used for preparation of this thesis. Major accent is put on the finite-difference time-domain method, since it was used for most simulations. Several important observations are discussed which are probably not found elsewhere.
 
-%% TODO Boundary-element methods, Fourier modal method, rigorous coupled-wave analysis (RCWA), ... 
+%% XXX
+Second, this chapter briefly mentions the plane-wave expansion method. 
+
+The time-stepping routine needs the same computing power in empty vacuum as inside a complex structure. Grid-based methods such as FDTD are therefore the most efficient when a structure has relatively complex shape, but its smallest features are no more than two or three orders of magnitude smaller than the simulation size. In contrast, an accurate-enough simulation of a structure that has some few very fine features surrounded by big empty space would require an excessively high resolution, often resulting in the great majority of the voxels being inefficiently used in space where the high resolution is not needed. Other methods, % TODO discussed below
+
+Other numerical methods than these two are used in the literature and should be briefly listed.  
+
+such as the finite-element method (FEM) or boundary-element method (BEM), would be preferable for such cases.
+The finite-element method (FEM) appears to be the most widely used in computational electromagnetism today. It approximates the structure with a custom mesh of triangles or tetrahedra. The advantage consists in describing the structure smoothly with a relatively low number of elements of variable density; the disadwantage is in the fact that the computation of the tetrahedral mesh is significantly slower compared to straightforward arithmetics in FDTD. FEM is usually used as a frequency-domain solver, though time-domain computations are possible, too. The efficiency of the FEM mesh is superior to the FDTD/FDFD uniform grid particularly for structures with great differences between scale, that is, when important tiny structures are surrounded by large free space. This was however not the case of the structures studied in this thesis.
+
+Some methods are specific for partially periodic structures such as gratings, namely the \textit{rigorous coupled-wave analysis} (RCWA).
+
+%% TODO Boundary-element methods, Fourier modal method, 
 %% discontinuous Galerkin method
-%% todo - IR: uvod v numerickych metodach?
 \subsection{Finite-difference time-domain method}
 \paragraph{Algorithm desciption} %{{{ %% TODO add references
 Finite-difference time-domain (FDTD) is one of the simplest methods for solving partial differential equations. The simulation volume is initialized as an array in the computer memory, each element of which corresponds to a \textit{voxel} in an orthogonal grid. When the FDTD method is applied to solve the Maxwell equations in three dimensions, six complex numbers per voxel describe the electric and magnetic vector fields, another static scalar arrays describe the permittivity and permeability of the structure and additional arrays may be used, corresponding to other physical quantities, such as material conductivity, polarizabilities and polarizations etc. 
@@ -16,8 +26,6 @@ Most of the computational time is thus occupied by a simple and unconditional lo
 % 	\includegraphics[width=5cm]{img/Parental_Advisory_label.pdf}
 % \end{figure}
 
-The time-stepping routine needs the same computing power in empty vacuum as inside a complex structure. Grid-based methods such as FDTD are therefore the most efficient when a structure has relatively complex shape, but its smallest features are no more than two or three orders of magnitude smaller than the simulation size. In contrast, an accurate-enough simulation of a structure that has some few very fine features surrounded by big empty space would require an excessively high resolution, often resulting in the great majority of the voxels being inefficiently used in space where the high resolution is not needed. Other methods, % TODO discussed below
-such as the finite-element method (FEM) or boundary-element method (BEM), would be preferable for such cases.
 
 As widely used in the later chapters,  %% TODO illustrate it below!
 simulations of a wave propagating in any periodic structure can make use of the periodic boundaries of the simulated volume, so that only one unit cell has to be computed to get result of an infinite structure. The unit cells of periodic structures discussed in this thesis have smallest features not less than two orders of magnitude smaller than the unit cell size, and besides one is often interested in obtaining the whole spectrum information, so FDTD was an optimal tool for this task.

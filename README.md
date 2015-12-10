@@ -7,8 +7,8 @@
  * [X] FDFD
  * [o] xxx PWEM principle
  * [X] initial effparam branch, weaknesses of the method
- * [ ] CDH: full
- * [ ] other effparam retrieval methods
+ * [X] CDH: full
+ * [/] other effparam retrieval methods
  * [ ] sieving: add statistics of spheres
  * [ ] 'Mechanical drilling of fishnets'
  * [X] 1	Dielectric slab
