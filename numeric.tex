@@ -477,7 +477,7 @@ The spectral resolution is determined by the length of the time record. The high
 From the \textit{Fourier-Plancherel theorem} %% TODO ref
 it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
-\pageref{convolringing}
+\label{convolringing}
 Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the sinc function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}, does not improve spectral resolution, but it suppresses the visually distracting artifacts. Therefore, all four time records were multiplied by the envelope function $g(t)$ before further processing:
 \begin{equation} 
 \begin{split}
@@ -623,14 +623,14 @@ Whenever the spectra of $r(f)$ and $t(f)$ are computed using the Fourier transfo
 The remaining step is to establish the signs of $\Neff$ and $\Zeff$, using the aforementioned rules of the metamaterial passivity.
 
 %}}}
-\paragraph{Limitations of the computation of continuous effective parameters}%{{{
+\paragraph{Computing effective parameters for a 1-D photonic crystal}%{{{
 The described algorithm was proven to work reliably with most structures. However, it is sensitive to numerical errors 
 when the arccosine argument $\upsilon(f)$ from Eqs. (\ref{eq_Neff}, \ref{eq_upsilon}) passes 
 near the points $(-1+0\ii)$ and $(1+0\ii)$, that is, near the ends of the branch cuts of the complex arccosine.
 
 Unfortunately, it was observed that $\upsilon(f)$ touches these points in the spectra of planar slabs of lossless dielectric. Correct retrieval of spectra for this particular structure requires that even in these points, the curve is processed as if it had crossed the branch cut. 
 
-Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but at higher frequencies it ceases to make physical sense. Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Simultaneously, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion. Thus, this error can be easily notified, and with further programming it cold be 
+Otherwise, the retrieved spectrum of $\Neff(f)$ remains continuous, but at higher frequencies it ceases to make physical sense. Its imaginary part acquires the wrong sign in the band gaps, breaking the passivity criterion. Simultaneously, its real part decreases with frequency in the next photonic band, which breaks the Kramers-Kronig relations of Eq. (\ref{eq_kkresult}) and would be a sign of negative group velocity occurring without significant dispersion. Thus, this error can be easily notified, and with further programming it cold be combined with the verification against the Kramers-Kronig relations.
 
 This is the only issue which arises from the described effective-index retrieval algorithm known to the author. It has proven to be efficiently resolved by introducing moderate losses into the structure and/or artificially shifting the branch-cut detection points to be slightly closer to the complex zero, e.g. to $(-0.999+0\ii)$ and $(0.999+0\ii)$. In many cases, the wrong detection of the branch was resolved simply by multiplying the recorded fields by the smooth window function from Eq. (\ref{eq_envelope}).
 
@@ -648,19 +648,21 @@ Great care must be paid whether the retrieved values of effective parameters mak
 		 \item{Although we devised a relatively robust computation of effective parameters, the current implementation is still sensitive to numerical errors when spectra of lossless dielectric slabs are computed.} 
 		 \item{The method requires the structure to be symmetric with regards to the wavevector $\KK$, since it attempts to approximate it by effective parameters that leave no degree of freedom for possible asymmetry. An example of an asymmetric structure was discussed in Ref. \cite{smith2005electromagnetic}, where it was concluded that
  \begin{quote} \textit{ so different are the two solutions for $\Zeff$ for the asymmetric structure that in general the assignment of values of $\eeff$ and $\meff$ to the composite becomes counterproductive} \end{quote}
- In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \ref[p. 036617-9]{smith2005electromagnetic} allows reasonable interpretation if and only if the structure is symmetric. 
+ In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \cite[p. 036617-9]{smith2005electromagnetic} allows reasonable interpretation if and only if the structure is symmetric. 
+			 }
+	     \item{Perhaps the most fundamental limitation of this method comes from its principle of retrieving the wavenumber at a given frequency. For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion. This effect is illustrated in the Results section (e.g. in Fig. \ref{fg_cdh2}).
 			 }
 \end{enumerate}
-
-Another important limitation of this method, however, comes from its principle of retrieving the wavenumber at a given frequency. For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion. This effect is illustrated in the Results section (e.g. in Fig. \ref{fg_cdh2}).
 
 %}}}
 
 \subsection{Current-driven homogenisation} 
-When more than one wavevector $\KK$ corresponds to a given frequency,  %{{{
-a fundamentally different retrieval method must be used, for which the wavevector $\KK$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output. 
+\paragraph{Principle} %{{{
+When more than one wavevector $\KK$ corresponds to a given frequency,  
+a different approach to the effective-parameter retrieval must be used, for which the wavevector $\KK$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output. 
 
-This section describes how a simulation can be setup to use a single wavevector $\KK$ only, and an efficient way of reconstructing the dispersion curves from a scan through different wavevector magnitudes. 
+This section describes how a simulation can be setup to enforce a given wavevector $\KK$ only, and an efficient way of reconstructing the dispersion curves from a scan through different wavevector magnitudes. For this thesis it was implemented in its simplest form. Its more elaborate implementation is described in Refs. \cite{silveirinha2007metamaterial}, \cite{fietz2010current} and \cite{fietz2011homogenization} and enables to recover all 36 parameters that describe the influence of the fields ($E_x$, $E_y$, $E_z$, $H_x$, $H_y$, $H_z$) to the displacements ($D_x$, $D_y$, $D_z$, $B_x$, $B_y$, $B_z$), including anisotropy and bianisotropy.
+
 %}}}
 \paragraph{Bloch-periodic boundaries for arbitrary wave vector} %{{{
 In the method described here, the unit cell is simulated as being placed in an infinite lattice, neighbouring with the same cells of size $a$ in all three dimensions. To emulate the infinite lattice in a simulation of a single cell, all the faces of the unit cell are set to copy the field from the opposite face.
@@ -693,7 +695,7 @@ where the transcendent sine-integral function introduces the flat-top rectangula
 \begin{equation} \mathrm{Si}(t) = \int_0^t \frac{\sin \tau}{\tau} d\tau, \label{eq_Si}\end{equation}
 	The electric field radiated by a source is a temporal derivative of the current $\mathbf{j}(t)$ \cite{ab-initio}, therefore the sine-integral must be used.
 
-If the source amplitude had an infinite duration in time, it would form a perfect rectangle-like function in its spectrum. However, clipping the temporal profile of the source, results in artifacts in the spectrum by the same mechanism as described on page \ref{convolringing}.
+If the source amplitude had an infinite duration in time, it would form a perfect rectangle-like function in its spectrum. However, clipping the temporal profile of the source, results in artifacts in the spectrum by the same mechanism as described on page \pageref{convolringing}.
 The artifacts can be very efficiently suppressed by multiplying the source by the \textit{Blackmann-Nutall window}  function
 \begin{equation} 
 \begin{split} 
@@ -704,15 +706,47 @@ The artifacts can be very efficiently suppressed by multiplying the source by th
 	w_{BN} :=\;& 0 \quad \text{otherwise.}
 \end{split} 
 \label{eq_wBN}\end{equation} %% TODO verify again
-Since it has a finite support, but particularly fast decaying wings in its spectrum, it ensures relatively steep edges of the nearly-rectangular spectral profile of the source.
+Since it has a finite support, but particularly fast decaying wings in its spectrum, it ensures relatively steep edges of the nearly rectangular spectral profile of the source.
 
 %}}}
-\paragraph{Volume-averaging monitor and identification of the dispersion curves}%{{{
+\paragraph{Field monitor and identification of the dispersion curves}%{{{
+The detection of the fields was defined in a way similar to the definition of the source. In each timestep, the electric field $E_x(\rr,t)$ was sampled in multiple points through the unit cell. As each of the points could have a different phase, the values were divided by $e^{-\ii \KK\cdot \rr}$ before they were averaged.
+
+After the simulation ends, the single record of cell-averaged $E_x$ is processed to identify the set of frequencies $\omega_m(\KK)$at which $E_x$ exhibited a ringdown. If the cell is empty vacuum, the source with wavevector $\KK$ can only excite a wave at the frequency $\omega = Kc$. All other frequencies are off the dispersion curve (known also as the light line in vacuum) and although the source can create temporary evanescent fields at these frequencies, their energy is returned back to the source since there is no solution of the Maxwell equations for  
+
+The same holds for any kind of structure placed in the unit cell: the energy persists to the end of the simulation only at frequencies $\omega_m(\KK)$ that lie at one of corresponding dispersion curves. 
+
+% TODO
 
 Harmonic inversion was used based on the FDM algorithm \cite{mandelshtam1997harmonic}.
 
 %}}}
-\paragraph{Comparison with the scattering-parameters method}%{{{
+\paragraph{Advantages over the scattering-parameters method}%{{{
+Using CDH resolves some of the issues of the s-parameters method, namely 
+\begin{enumerate}
+\item{It simulates the unit cell embedded from all sides in the lattice, and there is no problem with the evanescent fields sensing free space as it was in the s-parameter method.} 
+\item{Retrieval of the dispersion curves is not much sensitive to the actual field amplitude, but rather to the frequencies detected in its ringdown. The shape of dispersion curves is less distorted by wrong field averaging.} 
+\item{Since the wavevector is given before each simulation, no issues with wrong branch detection can flip or otherwise distort the dispersion curves.} 
+\item{Also the requirements to the structure symmetry are weaker. In general, the structure is not required to have any symmetry plane perpendicular to the wavevector. Other kinds of lower symmetry may lead to bianisotropic behaviour, which would require more sophisticated detection of the waves, though.}
+\item{Last but not least, CDH in comparison with the s-parameters method inherently takes into account even a very strong spatial dispersion. All additional waves are detected correctly.}
+\end{enumerate}
+
+CDH also has more general applicability. It can easily operate with arbitrary orientation of the wavevector $\KK$. It can even excite longitudinal waves in the structure, and naturally retrieve their dispersion curves which can also depend on $\KK$ due to the spatial dispersion. 
+
+%}}}
+\paragraph{Weaknesses compared to the scattering-parameters method}%{{{
+The downside of CDH, as implemented in this thesis, is mainly in the fact that it provides less information than the s-parameter method: 
+\begin{enumerate}
+\item{It does not compute the effective impedance $\Zeff$ at all, and it is questionable whether $\Zeff$ could be computed if also the averaged magnetic field $H_y(\rr, t)$ was recorded. } 
+\item{On the one hand, CDH reliably computes the dispersion curves, and the corresponding set of $\omega_m(\KK)$ functions could be inverted into $\KK(\omega)$ and, for propagation along an optical axis (c.f. page \pageref{indexofrefraction}), also into $\Neff(\omega)$. On the other hand, it does not give any information on the topology of nodal planes, and which branch of $\Neff(\omega)$ would be selected by the s-parameter method. } 
+\item{We did not manage to obtain any useful information related to the imaginary part of $\Neff$ -- about the structure losses, field decay in photonic band gaps, and its behaviour outside the dispersion curves in general.}
+\end{enumerate}
+Other downsides relate to the practical implementation, and arguably are the reason for its rarer use in the literature.
+\begin{enumerate}
+\item{A comparable task in CDH is more computationally intensive than in the s-parameters method. For a single set of dispersion curves, several tens of simulations with different $\KK$ are needed. After they are run, a postprocessing script must analyze all recorded fields and assemble the dispersion curves. }
+\item{Naturally, CDH can hardly be employed in an experiment, since it inspects the field in multiple points inside the structure simultaneously. }
+\end{enumerate}
+In spite of these limitations, own simplified implementation of CDH remains an important complement to the s-parameter method. For selected structures, the numerical results are compared later.
 
 %}}}
 \subsection{Other effective parameter retrieval methods} % TODO

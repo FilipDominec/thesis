@@ -340,6 +340,7 @@ In Fig. \ref{fg_ifc}, we provide examples of IFCs for one isotropic and two anis
 
 %}}}
 \paragraph{Index of refraction and its applicability}  %{{{
+\label{indexofrefraction}
 With the background of the theory developed above, the notion of the \textit{index of refraction} $N$ can be properly introduced and discussed. 
 In the strictest sense, the index of refraction is defined only for \textit{isotropic} media. Then it is equivalent to the ratio of the wavenumber $k(\omega) \equiv |\kk|$ to the wavenumber in vacuum at the same frequency: 
 \begin{equation} N(\omega) := k(\omega) \, \frac{c}{\omega} \equiv \sqrt{\epsrl(\omega)\murl(\omega)}, \label{eq_dispeqN}\end{equation}
@@ -483,7 +484,8 @@ which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media
 
 %}}}
 \paragraph{Magnetic effects can be described by nonlocal permittivity} %{{{
-Here, we will follow the approach of Landau and Lifshitz (see \cite{landau1984electrodynamics}, and also \cite{krowne2007book_agran, agranovich2006spatial}) to show that the magnetic response of any medium can be fully expressed by a certain form of permittivity dependence on $\kk$. This leads to introducing new \textit{Landau-Lifshitz} permittivity $\epsLL$ and permeability $\muLL$, which are, in general, different from those used in the more customary symmetric model:
+Here, we will follow the approach of Landau and Lifshitz (see \cite{landau1984electrodynamics, krowne2007book_agran, agranovich2006spatial} and \cite[p. 19]{fietz2011homogenization})
+) to show that the magnetic response of any medium can be fully expressed by a certain form of permittivity dependence on $\kk$. This leads to introducing new \textit{Landau-Lifshitz} permittivity $\epsLL$ and permeability $\muLL$, which are, in general, different from those used in the more customary symmetric model:
 $$\epsLL(\omega, \kk) \not\equiv \epsrn(\omega, \kk),\quad\quad\quad 1 = \muLL(\omega, \kk) \not\equiv \murn(\omega, \kk).$$
 The Maxwell equations (\ref{eq_me1}-\ref{eq_me4}) however still hold when these new parameters are substituted for the original ones. Requiring the relative permeability to be unity implies a trivial dependence of the magnetic field on the magnetic induction in this model:
 $$ \mu_0 \HHsd = \B. $$
