@@ -477,6 +477,7 @@ The spectral resolution is determined by the length of the time record. The high
 From the \textit{Fourier-Plancherel theorem} %% TODO ref
 it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
+\pageref{convolringing}
 Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the sinc function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}, does not improve spectral resolution, but it suppresses the visually distracting artifacts. Therefore, all four time records were multiplied by the envelope function $g(t)$ before further processing:
 \begin{equation} 
 \begin{split}
@@ -545,8 +546,8 @@ A more elaborate discussion of periodic structures composed of dielectric bars/r
 %}}}
 \paragraph{Retrieval of the effective parameters} %{{{
 %So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metamaterial cell layers were determined. 
-Complemented with the cell thickness $d$, the spectra of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method \cite{smith2002determination} \cite[pp. 51-55]{shalaev2010book}. 
-Let us note that the discussion in this thesis is restricted to the near-perpendicular wave propagation. In Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) were generalized also for oblique incidence.
+Complemented with the cell thickness $d$, the spectra of the frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method,  \cite{smith2002determination, smith2005electromagnetic} \cite[pp. 51-55]{shalaev2010book}. 
+The discussion in this thesis is restricted to the near-perpendicular wave propagation, since it is assumed the optical axis is also perpendicular to the interface. In Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) were generalized also for oblique incidence, but for inhomogeneous structures one must establish whether at all the effective index of refraction is defined.
 
 The expression for the effective index of refraction is
 \begin{equation} \Neff = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi\,m}{k d}, \label{eq_Neff} \end{equation}
@@ -635,39 +636,85 @@ This is the only issue which arises from the described effective-index retrieval
 
 %}}}
 \paragraph{Summary of the scattering-parameter method}%{{{
-The scattering-parameter method is the most widely used approach for the effective parameter retrieval. It stands out among other methods using the amplitudes of the reflected and transmitted waves only, without any inspection of the fields inside the unit cell. It is also efficient, since it requires single time-domain simulation to retrieve the full spectrum of effective parameters: 
-the wave is let to freely propagate through the structure, from which the algorithm determines the wavenumber at each frequency component of the incident wide-band pulse. Thus it can be viewed that the frequency $\omega$ is the input, and the wavenumber $K(\omega)$ is its output.
+The scattering-parameter method is the most widely used setup for the effective parameter retrieval. It stands out among other setups by relying on the amplitudes of the reflected and transmitted waves only, without any inspection of the fields inside the unit cell. It is also efficient, since it requires single time-domain simulation to retrieve the full spectrum of effective parameters. The wave is let to freely propagate through the structure, and afterwards the retrieval algorithm determines the wavenumber at each frequency component of the incident wide-band pulse. The frequency $\omega$ represents the input, and the wavenumber $K(\omega)$ is one of the outputs.
 
-However, it also has its weaknesses, as was mentioned above:
+However, the scattering-parameter method also has its weaknesses. Perhaps its greatest weakness is that it does not explicitly fail in cases it is not supposed for; or, as stated in Ref. \cite{markel2013current}:
+\begin{cite} \textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.} \end{cite}
+Great care must be paid whether the retrieved values of effective parameters make any physical sense whatsoever, or are just a confusing output of an algorithm used outside its scope. The majority of the possible issues was mentioned above:
 \begin{enumerate}
-		 \item{It is intrinsically imprecise, because the evanescent fields of most structures are influenced by the free space in front the unit cell and behind it. This issue is  nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In some cases, usually in dense and particularly in metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
+		 \item{It is intrinsically imprecise, because the evanescent fields of most structures are influenced by the free space in front the unit cell and behind it. This issue can be neglected if nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense or metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
 			 } 
-		 \item{Another source of the imprecision is the fact that the monitor planes detect also the near field, requiring to add a distance between the structure and the monitor planes.} 
+		 \item{Another source of the error is the fact that the monitor planes detect also the near field, requiring to add a distance between the structure and the monitor planes.} 
 		 \item{Although we devised a relatively robust computation of effective parameters, the current implementation is still sensitive to numerical errors when spectra of lossless dielectric slabs are computed.} 
-			 % it does not efficiently cope with oblique incidence
+		 \item{The method requires the structure to be symmetric with regards to the wavevector $\KK$, since it attempts to approximate it by effective parameters that leave no degree of freedom for possible asymmetry. An example of an asymmetric structure was discussed in Ref. \cite{smith2005electromagnetic}, where it was concluded that
+ \begin{quote} \textit{ so different are the two solutions for $\Zeff$ for the asymmetric structure that in general the assignment of values of $\eeff$ and $\meff$ to the composite becomes counterproductive} \end{quote}
+ In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \ref[p. 036617-9]{smith2005electromagnetic} allows reasonable interpretation if and only if the structure is symmetric. 
+			 }
 \end{enumerate}
 
-Its most important limitation, however, comes from the very principle of "letting the structure choose the wavenumber". For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion.
+Another important limitation of this method, however, comes from its principle of retrieving the wavenumber at a given frequency. For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion. This effect is illustrated in the Results section (e.g. in Fig. \ref{fg_cdh2}).
 
 %}}}
 
-\subsection{Current-driven homogenisation} % TODO
-When more than one wavenumber $K$ corresponds to a given frequency, a fundamentally different retrieval method must be used, for which the wavenumber $K$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output.
+\subsection{Current-driven homogenisation} 
+When more than one wavevector $\KK$ corresponds to a given frequency,  %{{{
+a fundamentally different retrieval method must be used, for which the wavevector $\KK$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output. 
 
-This section describes how a simulation can be forced to accept a single wavenumber $K$ only, and an efficient way of reconstructing the dispersion curves from a scan through different wavenumbers. 
+This section describes how a simulation can be setup to use a single wavevector $\KK$ only, and an efficient way of reconstructing the dispersion curves from a scan through different wavevector magnitudes. 
+%}}}
+\paragraph{Bloch-periodic boundaries for arbitrary wave vector} %{{{
+In the method described here, the unit cell is simulated as being placed in an infinite lattice, neighbouring with the same cells of size $a$ in all three dimensions. To emulate the infinite lattice in a simulation of a single cell, all the faces of the unit cell are set to copy the field from the opposite face.
 
-\begin{figure}[ht] \centering \caption{CDH \todo{+CAPT, MOVE, and add the X-Y-Z arrows to the figure}} \includegraphics[width=12cm]{img/cdh_geometry.pdf}  \label{fg_fdtd_cdh} \end{figure} %% 
-%% Markel2013: Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally intro- duced for a Bloch wave.
+Exact copying of the fields from one side to another would require the wavevector of the Bloch wave to be strictly $K_{xyz} \in 2\pi m/a_{xyz}$, which is, however, the known condition for a photonic band gap. Since we are also interested in computing the wavenumber inside photonic bands, the periodic boundaries have to allow for an arbitrary phase shift, before the fields are copied:
+\begin{equation} E(\rr + a_x\mathbf{x}/2) \quad\rightarrow\quad  e^{-\ii K_x a_x}\; E( \rr - a_x\mathbf{x}/2), \label{eq_phaseshiftp}\end{equation}
+	where $\mathbf{x}$ is the unit vector along the x-axis, and $a_x$ are the unit cell size along this axis. The unit cell is assumed to be centered around the $x=0$ point, thus $x=\pm a_x/2$ denotes the point at the boundary, and similarly for other axes.
 
-\add{
-\paragraph{Simulation setup}
-\paragraph{Retrieving the structure response}
-\paragraph{Identification of dispersion curves}
+Positive phase advance is applied when copying the fields parallel to the x-axis, and negative phase retardation when simultaneously copying the fields in the opposite direction:
+\begin{equation} E(\rr - a_x\mathbf{x}/2)  \quad\rightarrow\quad  e^{+\ii K_x a_x}\; E(\rr + a_x\mathbf{x}/2). \label{eq_phaseshiftn}\end{equation}
+A similar field-copying procedure is repeated in each simulation step for all remaining axes, $\mathbf{y}$ and $\mathbf{z}$, in the case of a 3-D simulation. 
+
+%}}}
+\paragraph{Single-wavevector source}%{{{
+In order to excite the simulation volume with a single wavevector $\KK$ which complies to the Bloch-periodic boundary conditions imposed, the source volume must expand over the whole unit cell and acquire the same harmonic modulation of its complex amplitude. While this task appears impossible by experimental techniques, it is straightforward in the FDTD simulation. The source is typically designed to be a complex-valued electric current with a given amplitude:
+\begin{equation} \mathbf{J}(\rr, t) := \mathbf{x} \, e^{-\ii \KK\cdot \rr} \,j(t), \label{eq_}\end{equation}
+	where $\mathbf{x}$ determines the default polarisation of the electric field and $j(t)$ is the temporal profile of the source.
+
+Excitation of the structure with this kind of the source gave the \textit{current-driven homogenisation} (CDH) its name. Unlike the scattering-parameters method, in CDH the source volume coincides with the entire unit cell volume. An attempt of visualisation of this minimalistic simulation setup is in Fig. \ref{fg_fdtd_cdh}. One example of the real part of the source amplitude is sketched along the unit cell edge, as the green-filled curve.
+\begin{figure}[h] \centering \caption{Current-driven homogenisation setup consists of a single unit cell with all faces set to be Bloch-periodic.} \includegraphics[width=.6\textwidth]{img/cdh_geometry.pdf}  \label{fg_fdtd_cdh} \end{figure} %% 
+%}}}
+\paragraph{Temporal profile of the source}%{{{
+With the wavevector restricted to a single given value, it is necessary to excite and detect as many corresponding modes of the structure as possible. Therefore, a short and broadband temporal source profile could be copied from the scattering parameter method.. 
+
+Unlike the scattering-parameters method, CDH can not easily detect the spectral profile of the exciting field, and the retrieved fields can not be normalized against it. To maintain an approximately flat source amplitude over a wide part of the specturm, a nontrivial temporal shape of the source was designed, tested and submitted to the MEEP simulation developer site online.
+\begin{equation} 
+	j(t) := w_{BN}(t)\, \left[\mathrm{Si}(2\pi f_1 t) - \mathrm{Si}(2\pi f_2 t) \right]
+\label{eq_}\end{equation}
+where the transcendent sine-integral function introduces the flat-top rectangular spectrum of the wave radiated from the source:
+\begin{equation} \mathrm{Si}(t) = \int_0^t \frac{\sin \tau}{\tau} d\tau, \label{eq_Si}\end{equation}
+	The electric field radiated by a source is a temporal derivative of the current $\mathbf{j}(t)$ \cite{ab-initio}, therefore the sine-integral must be used.
+
+If the source amplitude had an infinite duration in time, it would form a perfect rectangle-like function in its spectrum. However, clipping the temporal profile of the source, results in artifacts in the spectrum by the same mechanism as described on page \ref{convolringing}.
+The artifacts can be very efficiently suppressed by multiplying the source by the \textit{Blackmann-Nutall window}  function
+\begin{equation} 
+\begin{split} 
+	w_{BN} :=\; & 0.3635819 + \\
+			 &+ 0.4891775\,\cos\frac{2\pi(t-t_c/2)}{t_c} + \\
+			&+ 0.1365995\,\cos\frac{4\pi(t-t_c/2)}{t_c} + \\
+			&+ 0.0106411\,\cos\frac{6\pi(t-t_c/2)}{t_c} \quad \text{for } t\in\langle0, t_c\rangle, \\
+	w_{BN} :=\;& 0 \quad \text{otherwise.}
+\end{split} 
+\label{eq_wBN}\end{equation} %% TODO verify again
+Since it has a finite support, but particularly fast decaying wings in its spectrum, it ensures relatively steep edges of the nearly-rectangular spectral profile of the source.
+
+%}}}
+\paragraph{Volume-averaging monitor and identification of the dispersion curves}%{{{
+
 Harmonic inversion was used based on the FDM algorithm \cite{mandelshtam1997harmonic}.
-\paragraph{Retrieval of effective permittivity out of dispersion curves}
-\paragraph{Comparison with the scattering-parameters method}
-}
 
+%}}}
+\paragraph{Comparison with the scattering-parameters method}%{{{
+
+%}}}
 \subsection{Other effective parameter retrieval methods} % TODO
 \mdf{TODO
 % TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
