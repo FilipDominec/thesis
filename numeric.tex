@@ -638,7 +638,8 @@ Great care must be paid whether the retrieved values of effective parameters mak
 		 \item{Another source of the error is the fact that the monitor planes detect also the near field, requiring to add a distance between the structure and the monitor planes.} 
 		 \item{Although we devised a relatively robust computation of effective parameters, the current implementation is still sensitive to numerical errors when spectra of lossless dielectric slabs are computed.} 
 		 \item{The method requires the structure to be symmetric with regards to the wavevector $\KK$, since it attempts to approximate it by effective parameters that leave no degree of freedom for possible asymmetry. An example of an asymmetric structure was discussed in Ref. \cite{smith2005electromagnetic}, where it was concluded that
- \begin{quote} \textit{ so different are the two solutions for $\Zeff$ for the asymmetric structure that in general the assignment of values of $\eeff$ and $\meff$ to the composite becomes counterproductive} \end{quote}
+ \begin{displayquote} \textit{ so different are the two solutions for $\Zeff$ for the asymmetric structure that in general the assignment of values of $\eeff$ and $\meff$ to the composite becomes counterproductive} 
+ \end{displayquote}
  In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \cite[p. 036617-9]{smith2005electromagnetic} allows reasonable interpretation if and only if the structure is symmetric. 
 			 }
 	     \item{Perhaps the most fundamental limitation of this method comes from its principle of retrieving the wavenumber at a given frequency. For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion. This effect is illustrated in the Results section (e.g. in Fig. \ref{fg_cdh2}).
@@ -708,9 +709,7 @@ After the simulation ends, the single record of cell-averaged $E_x$ is processed
 
 The same holds for any kind of structure placed in the unit cell: the energy persists to the end of the simulation only at frequencies $\omega_m(\KK)$ that lie at one of corresponding dispersion curves. An intuitive way of detecting such frequencies would be to compute the Fourier transform of the recorded averaged field $E_x$ and identify the peaks in the resulting spectrum. The resolution of the Fourier transform is nonetheless proportional to the time record, and it is inefficient for the task of accurately recognizing the frequencies of a small number of damped oscillations.
 
-A more advantageous algorithm for recognition of oscillations is the \textit{filter diagonalisation method} (FDM), originally  developed in 1990 for analysis of experimental spectra and the nuclear magnetic resonance waveforms in particular. Unlike Fourier transform, FDM does not require the oscillators to decay before the temporal record ends; on the contrary, it appears to work even more reliably when supplied with several tens of the oscillation periods at most.
-
-Harmonic inversion was used based on the FDM algorithm \cite{mandelshtam1997harmonic}.
+A more advantageous algorithm for recognition of oscillations is the \textit{filter diagonalisation method} (FDM), originally  developed in 1990 for analysis of experimental spectra and the nuclear magnetic resonance waveforms in particular \cite{mandelshtam1997harmonic, chao2002comparative}. Unlike Fourier transform, FDM does not require the oscillators to decay before the temporal record ends; on the contrary, it appears to work even more reliably when supplied with several tens of the oscillation periods at most. Using FDM, the simulation time could be shortened several times.
 
 %}}}
 \paragraph{Advantages over the scattering-parameters method}%{{{
@@ -738,7 +737,7 @@ Other downsides relate to the practical implementation, and arguably are the rea
 \item{A comparable task in CDH is more computationally intensive than in the s-parameters method. For a single set of dispersion curves, several tens of simulations with different $\KK$ are needed. After they are run, a postprocessing script must analyze all recorded fields and assemble the dispersion curves. }
 \item{Naturally, CDH can hardly be employed in an experiment, since it inspects the field in multiple points inside the structure simultaneously. }
 \end{enumerate}
-In spite of these limitations, own simplified implementation of CDH remains an important complement to the s-parameter method. 
+In spite of these limitations, the simplified implementation of CDH for this thesis remains an important complement to the s-parameter method. 
 
 %}}}
 \subsection{Other effective parameter retrieval methods} % TODO
@@ -746,6 +745,9 @@ In spite of these limitations, own simplified implementation of CDH remains an i
 % TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
 
 WPRM (Wave Propagation Retrieval Method), \cite{andryieuski2010homogenization}: review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena")
+% classifies homog approaches into 1) s-parameters, 2) field averaging, 3) quasimode[17], 4) wave phenomena
+% elaborates no. 4 to unambiguously retrieve bulk parameters; but there is still one interface and the simulation volume is large
+% it also requires in-structure inspeciton
 
 only reflection (single-interface) problem, \cite{yang2010retrieving} 
 

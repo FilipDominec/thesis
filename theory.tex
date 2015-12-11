@@ -1081,7 +1081,7 @@ The scientific progress rarely follows a straightforward, efficient way. Making 
 Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
 
 A split in terminology is apparently not only a formal issue, as it psychologically divides the scientific community and thus directs the future research.
-Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago, as indicated in the following. Sometimes a mere change in terminology seems to have lead the community to disregard, and later re-invent concepts that were already known \cite[p. 5]{klingshirn2007semiconductor}. 
+Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago , as indicated in the following. Sometimes a mere change in terminology seems to have lead the community to disregard, and later re-invent concepts that were already known \cite{sihvola2002electromagnetic},\cite[p. 5]{klingshirn2007semiconductor}. 
 
 
 Following the author's personal view,
@@ -1224,7 +1224,6 @@ Its original source of inspiration can be traced to the late 19th century, when 
 Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) % TODO  cite
 and Bruggemann (1935) % TODO cite
 are most known among multiple approaches. 
-% todo cite http://www.mpia.de/homes/henning/Dust_opacities/Opacities/Ralf/Eff/rules.html
 Their common assumption is that the wavelength is much larger than the particles; furthermore, they suppose there are no internal resonances in the embedded particles. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
 
 %}}}
@@ -1278,7 +1277,7 @@ The question remains whether the significant progress of technology required to 
 
 %}}}
 \paragraph{Metamaterials without negative or near-zero parameters} %{{{ ============== 
-In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not involve negative nor close-to-zero effective parameters. Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}.
+In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not have to involve negative nor close-to-zero effective parameters \cite[p. 15]{sihvola2002electromagnetic}. Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}.
 
 An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application with strong chirality at its core is in reversing the Casimir force between two close matematerial surfaces to become repulsive.
 
@@ -1407,15 +1406,27 @@ Also the demand for "artificiality" in some other definitions appears to be some
 \begin{displayquote}
 \textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties}  (the introductory page of the ECONAM project)
 \end{displayquote}
- 
+
 Confusion may arise from that some authors seem to overly broaden the applicability of the popular term of metamaterials. Two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and in the author's view should be denoted as \textit{metasurfaces}.
 
 Even more unfortunate is to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can be a metamaterial made by attaching single split-ring resonator to a microwave transmission line. As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
 to a topic such as longitudinally modulated waveguide filters.
 
+Some of other definitions realize an important trait of metamaterials, which is \textit{emergence} \cite{sihvola2002electromagnetic}. While the complexity of the electromagnetic field grows proportionally to the number of unit cells stacked together, new kinds of relatively simple and understandable behaviour can be observed for a large enough system. The introduction of effective parameters, an behaviour emergent from the structure of each unit cell, is one of the best examples.
+\begin{displayquote}
+\textit{A metamaterial is a (\ldots) substance whose properties depend on its inter-atomic structure rather than on the composition of atoms themselves,}  (whatis.com)
+\end{displayquote}
+%    (http://whatis.techtarget.com/definition/metamaterial):
+or, in more words,
+\begin{displayquote}
+\textit{metamaterials are artificially structured materials used to control light, sound and many other physical phenomena. The properties of metamaterials are derived from the inherent properties of their constituent materials, as well as from the geometrical arrangement of these (\ldots)}  (website of the Duke university) % TODO cite
+\end{displayquote}
+%http://metamaterials.duke.edu/research/metamaterials
+In the author's view, such quotes represent brilliant observations of emergence in physics, but they still fail to point out  any difference: In fact, they apply to photonic crystals as well as to metamaterials.
+
 %}}}
 \paragraph{Metamaterials as all structures treated as homogeneous} %{{{
-The criteria of wavelength or energy localisation leave many structures on the indefinite boundary. The phase-advance criterion is rigorous, but of little practical use. Thus the author proposes to adopt another criterion based solely on one's subjective decision on how each structure is characterized. 
+The criteria of wavelength or energy localisation leave many structures on the indefinite boundary. The phase-advance criterion is rigorous, but of little practical use. There are other criteria proposed that appear to fail in some way. This leads the author to propose a rather subjective criterion, based solely on one's decision on how each structure is characterized. 
 
 The unifying concept of virtually all MM studies is to describe \textit{how} the wave propagates though them. Their overwhelmingly complicated electromagnetic interaction is approximated by \textit{homogenization}, i.e. by finding such properties of a homogeneous medium that would behave in similar way.
 
@@ -1424,6 +1435,9 @@ In contrast, the PhC research focuses on \textit{whether} the wave can propagate
 This also justifies denoting MMs and PhCs as two different \textit{paradigms} rather than two distinct \textit{classes} of periodic structures, and it is the reason why the neutral term of \textit{periodic structure} is used in this thesis. 
 
 With this criterion, the author believes, there is no strict rule for classification. Some structures are only more useful to be subject to homogenization, and with some other it is more interesting to focus on their band and band-gap structure. 
+%anything that is subject to homogenisation - i.e. a structure for which we can apply the Bloch-Floquet theorem
+%and determine the K-vector.
+
 % emergent phenomena
 % Wikipedia: https://en.wikipedia.org/wiki/Metamaterial
 % "Metamaterials derive their properties not from the properties of the base materials, but from their newly designed structures."
