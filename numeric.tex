@@ -383,17 +383,6 @@ Perhaps the greatest limitation of the MPB program is that it can not cope with 
 %\item{The transfer-matrix method (TMM) also allows to find dispersion curves and field distribution. Although it can be extended to two or three dimensions, its one-dimensional implementation is most popular. Thanks to its simplicity, it can even give an analytical insight into the behaviour of planar structures.} 
 %\end{enumerate}
 %}}}
-%\paragraph{Other numerical methods} %{{{
-%}}}
-
-% \begin{verbatim}
-% 										FDTD				FDFD				PWEM				TMM
-% nonperiodic structures					yes					yes					no					yes
-% dispersive and lossy media				yes					yes					no					yes
-% nonlinear media							yes					no					no					no
-% computation of dispersion curves		yes*				yes*				yes+				(yes)
-% mode analysis							(yes)				yes					yes					yes
-% \end{verbatim}
 
 \section{Simulation setups for metamaterial homogenization} % TODO
 The general electromagnetic algorithms,%{{{
@@ -537,19 +526,14 @@ A more elaborate discussion of periodic structures composed of dielectric bars/r
 %}}}
 \paragraph{Retrieval of the effective parameters} %{{{
 %So far, only the amplitude and phase of frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ for a finite number of metamaterial cell layers were determined. 
-Complemented with the cell thickness $d$, the spectra of the frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method,  \cite{smith2002determination, smith2005electromagnetic} \cite[pp. 51-55]{shalaev2010book}. 
-The discussion in this thesis is restricted to the near-perpendicular wave propagation, since it is assumed the optical axis is also perpendicular to the interface. In Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) were generalized also for oblique incidence, but for inhomogeneous structures one must establish whether at all the effective index of refraction is defined.
-
-The expression for the effective index of refraction is
+Complemented with the cell thickness $d$, the spectra of the frequency-dependent reflectance $r(f)$ and transmittance $t(f)$ can serve as inputs for the s-parameter method,  \cite{smith2002determination, smith2005electromagnetic} \cite[pp. 51-55]{shalaev2010book}. The expression for the effective index of refraction is
 \begin{equation} \Neff = \frac{\pm \arccos\left(\frac{1 - r^2+t^2}{2 t}\right) + 2\pi\,m}{k d}, \label{eq_Neff} \end{equation}
 where nor the integer-valued branch index $m\in \mathbb{Z}$, nor the sign of the solution are a priori known. For the effective impedance, the sign is also ambiguous: 
 \begin{equation} \Zeff = \pm \sqrt{\frac{(1+r)^2 - t^2}{(1-r)^2 - t^2}}. \label{eq_Zeff} \end{equation}
 
 %}}}
-\paragraph{Search of the correct solution} %{{{
-The correct solution is thus determined by three discrete-valued functions of frequency, i.e. the sign of $\Neff(f)$, the sign of $\Zeff(f)$ and the branch index $m(f)$, which have to be determined during computation. 
-
-We identified the following criteria for selection of exactly one of infinitely many solutions:
+\paragraph{Search for the correct solution} %{{{
+From Eqs. (\ref{eq_Neff}) and (\ref{eq_Zeff}) it follows that the correct solution depends on three discrete-valued functions of frequency, i.e. the sign of $\Neff(f)$, the sign of $\Zeff(f)$ and the branch index $m(f)$, which have to be determined during computation.  We identified the following criteria for selection of exactly one of infinitely many solutions:
 \begin{enumerate}
 	\item{Passivity with regards to the wave propagating through the structure requires the \textit{imaginary} part of refractive index be non-positive: 
 		 \begin{equation} \Neff''(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Neff_pass}\end{equation}
@@ -565,18 +549,12 @@ Perhaps the most familiar consequence of this criterion is the requirement of co
 \end{enumerate}
 Note that in the papers that use different complex convention, i.e. $e^{-\ii\omega t}$, both passivity conditions use the opposite sign. This does not apply to the kernels of the Fourier nor Hilbert transforms.
 
-Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
-so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt discontinuities in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$, which can be found e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}. Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
-
-A more elegant method was published in 2010 by Szabo et al. \cite{szabo2010unique} and relies on the inherently unambiguous knowledge of $\Neff''(f)$. It uses the Hilbert transform introduced in Eq. (\ref{eq_kkresult}) to recover $\Neff'(f)$ from $\Neff''(f)$. 
-However, from our own experience, applying this integral transform to a finite part of spectrum introduces not only an arbitrary constant offset, but also slow continuous distortion of the $\Neff'(f)$ curves, thus needing a nontrivial compensation.
-
 %}}}
 \paragraph{Effective $\Neff'$ retrieval based on unambiguous complex arccosine} %{{{
 \begin{figure} \centering \caption{\textbf{(a)} Real and \textbf{(b)} imaginary parts of the arccosine of complex argument $\upsilon$. Branch cuts are denoted with thick lines. The thick curve shows a possible trajectory of  $\upsilon(f)$ (upon a frequency variation), which intersects the branch cuts in points marked as R, L.\\ \textbf{(c)} From top to bottom: example function  $\upsilon(f)$, its ordinary arccosine, example branch and sign choices ensuring the continuity of the arccosine function, and the continuous version of $\arccos_{\mathrm{c}}(\upsilon)$, as determined by the algorithm described.} \includegraphics[width=16cm]{img/continuous_arccos/continuous_arccos_new.pdf} \label{fg_arccos}
 \end{figure}
 
-We wrote a custom procedure to select the correct solution automatically on pure mathematical basis. To our knowledge, it was not described in any of previously published papers.
+We wrote a custom procedure to select the correct solution automatically on pure mathematical basis. To our knowledge, it was not described in any of previously published papers. Alternative approaches are briefly discussed in the following section.
 
 The ambiguity in Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) results from the fact that the inverse functions of arccosine and square root are not injective mappings \cite{simovski2009material}:
 \begin{equation} \cos x = \cos (-x) = \cos(x+2\pi) \quad  \forall x\in\mathbb{C} \label{eq_noninjN}\end{equation}
@@ -640,7 +618,7 @@ Great care must be paid whether the retrieved values of effective parameters mak
 		 \item{The method requires the structure to be symmetric with regards to the wavevector $\KK$, since it attempts to approximate it by effective parameters that leave no degree of freedom for possible asymmetry. An example of an asymmetric structure was discussed in Ref. \cite{smith2005electromagnetic}, where it was concluded that
  \begin{displayquote} \textit{ so different are the two solutions for $\Zeff$ for the asymmetric structure that in general the assignment of values of $\eeff$ and $\meff$ to the composite becomes counterproductive} 
  \end{displayquote}
- In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \cite[p. 036617-9]{smith2005electromagnetic} allows reasonable interpretation if and only if the structure is symmetric. 
+ In the view of the author of this thesis, also the retrieved $\Neff$ in Fig. 7c of Ref. \cite[p. 036617-9]{smith2005electromagnetic} can be reasonably interpreted if and only if the structure is symmetric. 
 			 }
 	     \item{Perhaps the most fundamental limitation of this method comes from its principle of retrieving the wavenumber at a given frequency. For periodic structure which exhibits strong enough spatial dispersion, more than one wavenumber exist at a single frequency as shown in Figs. \ref{fg_dcll_nl}. For any frequency from such a problematic range, the detected effective parameters depend on the unknown ratio of energy coupled to either of the waves. Therefore, the method is inapplicable for structures with a strong spatial dispersion. This effect is illustrated in the Results section (e.g. in Fig. \ref{fg_cdh2}).
 			 }
@@ -741,17 +719,115 @@ In spite of these limitations, the simplified implementation of CDH for this the
 
 %}}}
 \subsection{Other effective parameter retrieval methods} % TODO
-\mdf{TODO
+
+
+\paragraph{Extensions of the scattering parameters method} 
+Various modifications to the scattering parameters method were proposed, in particular with connection to the homogenisation of metamaterials. One modification makes it robust against the experimental error in the reflectance phase \cite{chalapat2009wideband}. % Wideband reference-plane invariant method for measuring electromagnetic parameters of materials
+Another solution to the issues connected with experimental measurement of the reflectance was employed during the preparation of this thesis \cite{nemec2012resonant}. It involved a slight modification to the experimental setup, and thus it is described in the experimental chapter (pp. \pageref{srtm}--\pageref{srtm2}).
+
+Some of the modifications apply to the effective parameters retrieval only, and no change is made to the way how  the scattering parameters $r(f)$ and $t(f)$ are obtained.
+Not knowing the correct branch of the index of refraction is equivalent to using the folded dispersion curves (cf. Par. \ref{par_disp_curv_per}), %% TODO refer to the theory
+so the postprocesing of FDTD data can also be viewed as a specific, nontrivial way of \textit{unfolding} the dispersion curves. This task appears to have been often done manually, particularly in earlier papers \cite{smith2002determination}. An approach based on iterative fitting which avoids abrupt discontinuities in $\Neff'(f)$ has been published \cite{chen2004robust}, but the author conjectures that, from its very nature, it would become unstable whenever a localized resonance introduces fast changes of $\Neff'(f)$, which can be found e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}. Such approaches present the risk of affecting the resulting effective parameters with unjustified subjective expectations.
+
+A more elegant method was published in 2010 by Szabo et al. \cite{szabo2010unique} and relies on the inherently unambiguous knowledge of $\Neff''(f)$. It uses the Hilbert transform introduced in Eq. (\ref{eq_kkresult}) to recover $\Neff'(f)$ from $\Neff''(f)$. 
+However, from our own experience, applying this integral transform to a finite part of spectrum introduces not only an arbitrary constant offset, but also slow continuous distortion of the $\Neff'(f)$ curves, thus needing a nontrivial compensation.
+
+The discussion in this thesis is restricted to the near-perpendicular wave propagation, since it is assumed the optical axis is also perpendicular to the interface. In Ref. \cite{menzel2008retrieving}, Eqs. (\ref{eq_Neff}, \ref{eq_Zeff}) were generalized also for oblique incidence. Note that for retrieving the effective index of refraction one must establish whether it makes any physical sense at all, i.e., whether the structure is either isotropic, or at least whether the angle of refraction is parallel to its optical axis (see page \pageref{indexofrefraction}).
+
+In Ref. \cite{li2009determination}, % Determination of the effective constitutive parameters of bianisotropic metamaterials from reflection and transmission coefficients 
+the scattering parameter method was extended also to the bianisotropic behaviour of structures with reduced symmetry, and other approaches can be found \cite{andryieuski2010homogenization} in the recent literature.
+
+% LIST: 1) averaging of the fields, 2) 
+
+\paragraph{Averaging of the fields} 
+%%% Andriy2010: "Field averaging [15-16]. In this case the fields (E, D, H, B) in a unit cell are averaged on some surfaces and lines and the effective properties are found according to material relations D = İ 0 İE and B = μ 0 μH.  Determining appropriate surfaces and contours is a non-trivial problem especially when optimizing 3D MTM structures."
+%D.R. Smith and J.B. Pendry, Homogenization of metamaterials by field averaging (invited paper), Journal
+%of the Optical Society of America B, vol. 23, pp. 391-403, Mar. 2006.
+%J. Lerat, N. Malléjac, and O. Acher, Determination of the effective parameters of a metamaterial by field
+%summation method, Journal of Applied Physics, vol. 100, p. 084908, 2006.
+
 % TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
 
-WPRM (Wave Propagation Retrieval Method), \cite{andryieuski2010homogenization}: review of restoration methods ("standard method, field averaging, quasimode theory, wave phenomena")
-% classifies homog approaches into 1) s-parameters, 2) field averaging, 3) quasimode[17], 4) wave phenomena
-% elaborates no. 4 to unambiguously retrieve bulk parameters; but there is still one interface and the simulation volume is large
+
+\cite{smith2006homogenization}
+
+
+
+\paragraph{Multipole expansion}
+%multipole expansion, 11,12 
+\cite{petschulat2008multipole} % PDF? Multipole approach to metamaterials
+\cite{vynck2009all} % All-dielectric rod-type metamaterials at optical frequencies
+\cite{chipouline2012metamaterials}
+
+
+
+
+% todo \paragraph{Approximate analytical models} ==? multipole expansion?
+
+\paragraph{Quasimode theory} 
+%%% Andriy2010: Quasimode theory ...  is based on the maximization of optical density of states for a metamaterial while changing İ and μ of the ambient medium. The method is computationally demanding as it requires 4-parameters optimization for each frequency.
+\cite{sun2009effective} % Effective-medium properties of metamaterials: a quasimode theory
+
+
+
+\paragraph{Bloch-mode analysis} 
+A \textit{single-interface} method has been proposed \cite{yang2010retrieving} %Retrieving the effective parameters of metamaterials from the single interface scattering problem
+that analyzes only the field behaviour at the interface of a semi-infinite structure.  
+The fields in the structure are computed and decomposed into discrete modes of the Bloch wave. The method attempts to recognize a dominant Bloch mode for which the wavevector $\KK(\omega)$ is deduced.
+%\cite{yang2010retrieving}LISTS: "various numerical techniques have been developed, including field averaging, 7 Bloch mode approaches, 8–10 multipole
+%expansion, 11,12 and inversion of scattering parameters."
+
+When no mode is clearly dominant, this method naturally can not be used. In such a case, even the scattering parameter method fails, but its limitations of applicability are less obvious than with the \textit{single-interface} method. Failure of the scattering parameter method can be observed as contradictory results \cite{rockstuhl2008transition} from simulations of different numbers of unit cells.
+In Ref. \cite{paul2011reflection} %Reflection and transmission of light at periodic layered metamaterial films
+it is argued that the existence of one dominant mode is the prerequisite necessary for the structure to be viewed as homogeneous. Refs. \cite{paul2011reflection,andryieuski2012bloch} apply the Bloch-mode analysis approach is applied to particular structures. A direct numeric evaluation of amplitudes of the different modes in 1-D photonic crystals can be found in 
+\cite{mortensen2010unambiguous}. % On the unambiguous determination of effective optical properties of periodic metamaterials: a one-dimensional case study
+
+
+
+\cite{zhang2006optical} % Optical negative-index bulk metamaterials consisting of 2D perforated metal-dielectric stacks
+\cite{rockstuhl2008light} %Light propagation in a fishnet metamaterial
+\cite{smigaj2008validity} %PDF? Validity of the effective-medium approximation of photonic crystals
+
+
+
+
+
+\paragraph{Wave phenomena} 
+% (skip this?) B. Popa and S.A. Cummer, Determining the effective electromagnetic properties of negative-refractive-index metamaterials from internal fields, Physical Review B, vol. 72, p. 165102, Oct. 2005
+
+In the \textit{Wave propagation retrieval method}, proposed in Ref. \cite{andryieuski2010homogenization},
+the wave impinges a thick, ideally semi-infinite, volume of the periodic structure. Since there are no repeated reflections from the second interface, the averaged field amplitude is assumed to have an exponential nature: $E(z) \propto e^{-2\pi i f \Neff/c}$, and thus $Neff$ can be reconstructed using a complex logarithm.
+Like in the s-parameters method, the function of $K(\omega)$ can be resolved in a single run by using a broad band pulse. Like in the current-driven homogenisation,  the fields need to be sampled inside the structure. 
+% unambiguously retrieves bulk parameters; but there is still one interface and the simulation volume is large
 % it also requires in-structure inspeciton
 
-only reflection (single-interface) problem, \cite{yang2010retrieving} 
+\paragraph{Concluding remarks}
 
-only transmission? \cite{hasar2009new} 
+
+% smith2006homogenization: "Homogenization theories are typically valid when the unit-cell size is in-
+%significant with respect to the wavelength (the zero-
+%frequency limit) and thus might be expected to result in a
+%poor description of metamaterials."
+
 %%% /home/filip/PhD/Sources\_MM\_theory/120626\_Homogenisation\_approaches
-}
 
+% --------------------------------
+
+\cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic} 
+%\cite{simovski2007bloch} Bloch material parameters of magneto-dielectric metamaterials and the concept of Bloch lattices
+%\cite{simovski2009material}Material parameters of metamaterials (a review)
+%\cite{simovski2011electromagnetic} On electromagnetic characterization and homogenization of nanostructured metamaterials
+
+% Homogenization is not a search for an existing truth, but rather a somewhat arbitrary decision.
+% An important question arises as to what extent each homogenization procedure is applicable, and when its theory can fail.
+
+%}}}
+
+
+
+
+
+%\cite{sjoberg2005floquet}
+% Elaborate mathematical treatise on this topic: 
+% A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
+%\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials

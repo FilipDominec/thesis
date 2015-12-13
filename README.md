@@ -40,6 +40,7 @@
  * [ ] ...ize ---> ...ise 
  * [ ] go through all TODOs 
  * [ ] make index of kwords https://en.wikibooks.org/wiki/LaTeX/Indexing?
+ * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
  * [ ] some figures should change from a)  to  (a) etc.

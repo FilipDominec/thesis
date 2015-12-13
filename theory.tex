@@ -84,7 +84,7 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be
 \paragraph{Local response definition} \label{subsection_local_resp} %{{{
 In the whole chapter, we expect the medium properties to be time-invariant, linear, and homogeneous (i.e. independent of time, field amplitude and position in space, respectively). 
 In this section, we focus on the special case when the response of the medium in point $\rr$ is not influenced by the electric field in any other point $\brho \neq \rr$. The medium is then said to be \textit{local}. 
-For most media found in nature, this approximation is very close to reality and thus numerous electrodynamics textbooks tend to omit the nonlocal effects. 
+For most media found in nature, this approximation is very close to reality. Most electrodynamics textbooks seem omit the nonlocal effects. 
 However using this local theory to a wave propagating through periodic structures has a priori no justification and may lead to completely wrong results. The local theory presented here will serve as a basis for the nonlocal theory developed in following chapters.
 % Applying the more familiar local electrodynamics to these structures is a mistake common to many papers. While the local theory is mathematically consistent, it predicts unusual spectral shapes and does not allow their further physical interpretation.
 
@@ -443,8 +443,8 @@ The refraction between ordinary media and two examples involving negative-index 
 \subsection{Nonlocal response} 
 \paragraph{Definition of nonlocal media}%{{{
 The previous two chapters that concerned local media can be generalized into the theory of \textit{nonlocal} (or, \textit{spatially dispersive}) media.  The downside of the spatial-dispersive model of media is that it is more complicated, leading e.g. to an implicit dispersion equation. Its great advantage is however that it provides a necessary level of generality for the description of periodic structures discussed below. 
-Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics}, which is the case, for example, of the Doppler broadening of resonance lines in gases \cite{makarov2004permittivity}. 
-These phenomena are primarily dependent on the wave vector $\kk$, and the apparent broadening on the \textit{frequency} axis is only due to the dispersion curve defining a simple relation between  frequency and wave vector.  
+
+Some phenomena observed in the frequency spectrum are in fact consequences of the spatial dispersion \cite[p. 359]{landau1984electrodynamics}, which is the case, for example, of the Doppler broadening of resonance lines in gases \cite{makarov2004permittivity}. These phenomena are primarily dependent on the wave vector $\kk$, and the apparent broadening on the frequency axis is only due to the dispersion curve defining a simple relation between the frequency broadening and wavevector broadening.  
 
 In this section, a general class of media is discussed, where the medium response explicitly depends on the history of $\E(\tau, \brho)$ in previous time $\tau < t$ and in all surrounding points $\brho$, and therefore it is described by a spatio-temporal convolution:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0\int_{V} \int_{-\infty}^{t} \chi_e(t-\tau, \rr-\brho) \, \E(\tau,\brho) \,\mbox{d}\tau \,\mbox{d}^3\brho. \label{eq_chi_convol_nonloc}\end{equation}
@@ -458,7 +458,7 @@ The response of the medium to the electric field of any harmonic plane wave can 
 Converting the problem from the spatio-temporal domain into the wavenumber-frequency domain allows to express the relation between $\D$ and $\E$ by the \textit{permittivity} function $\epsrn(\omega, \kk)$ and completely avoid the convolution from Eq. (\ref{eq_chi_convol_harm_nonloc}). Note that both the response function $\chi_e$ and the permittivity $\epsrn$ 
 may be either scalar functions, or rank-2 tensor functions; the latter case accounts for possible anisotropy of the medium.
 
-The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc})], \textit{spatial dispersion} derives from that the response is not a constant function in the reciprocal $\kk$-space. In the author's view, the term \textit{spatial dispersion} is therefore of a slightly narrower meaning, as it implies that an infinite plane wave of a defined wavevector is being considered.
+The terms of \textit{nonlocality} and of \textit{spatial dispersion} are used interchangeably in the literature. The difference seems to be related to the way one thinks about the medium -- while \textit{nonlocality} is obviously related to the description in the real space [cf. Eq. (\ref{eq_chi_convol_nonloc}), \textit{spatial dispersion}, in contrast, derives from that the response is not a constant function in the reciprocal $\kk$-space. The term \textit{spatial dispersion} is therefore of a slightly narrower meaning, as it implies that an infinite plane wave of a defined wavevector is being considered.
 
 %}}}
 \paragraph{Power expansion of the medium parameters} %{{{
@@ -484,8 +484,7 @@ which allows to simplify Eq. (\ref{eq_chi_convol_nonloc}) so that in local media
 
 %}}}
 \paragraph{Magnetic effects can be described by nonlocal permittivity} %{{{
-Here, we will follow the approach of Landau and Lifshitz (see \cite{landau1984electrodynamics, krowne2007book_agran, agranovich2006spatial} and \cite[p. 19]{fietz2011homogenization})
-) to show that the magnetic response of any medium can be fully expressed by a certain form of permittivity dependence on $\kk$. This leads to introducing new \textit{Landau-Lifshitz} permittivity $\epsLL$ and permeability $\muLL$, which are, in general, different from those used in the more customary symmetric model:
+Here, we will follow the approach of Landau and Lifshitz (see Refs. \cite{landau1984electrodynamics, krowne2007book_agran, agranovich2006spatial} and \cite[p. 19]{fietz2011homogenization}) to show that the magnetic response of any medium can be fully expressed by a certain form of permittivity dependence on $\kk$. This leads to introducing new \textit{Landau-Lifshitz} permittivity $\epsLL$ and permeability $\muLL$, which are, in general, different from those used in the more customary symmetric model:
 $$\epsLL(\omega, \kk) \not\equiv \epsrn(\omega, \kk),\quad\quad\quad 1 = \muLL(\omega, \kk) \not\equiv \murn(\omega, \kk).$$
 The Maxwell equations (\ref{eq_me1}-\ref{eq_me4}) however still hold when these new parameters are substituted for the original ones. Requiring the relative permeability to be unity implies a trivial dependence of the magnetic field on the magnetic induction in this model:
 $$ \mu_0 \HHsd = \B. $$
@@ -620,7 +619,7 @@ Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. (\ref{eq
 As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
 
 \label{chap_sd}
-The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole. The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
+The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole.  The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form}, \cite{fietz2011homogenization} and \cite{chipouline2012metamaterials}.
 
 The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have typical impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
 
@@ -1078,7 +1077,7 @@ In the Results section, it is also shown that for a particular choice of paramet
 \subsection{One history of three paradigms} %{{{
 The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review and following the development is therefore important to understand the current state of research, and possibly also the actual physical theory. 
 
-Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not overlap in their meaning. 
+Moreover, the field covered by this thesis is also burdened by confusion of the terminology: objects falling under the definition of \textit{periodic structures} have been denoted in the literature also as \textit{metamaterials}, \textit{photonic crystals}, \textit{nanostructured electromagnetic materials} or \textit{composites}, \textit{photonic band-gap materials}, \textit{artificial dielectrics} etc. Typically, these terms are used without a proper definition, and may or may not \cite{smith2006homogenization} overlap in their meaning. 
 
 A split in terminology is apparently not only a formal issue, as it psychologically divides the scientific community and thus directs the future research.
 Physics, and the field under discussion in particular, have developed rapidly in the recent decades. Some of the seemingly novel concepts were in fact conceived much longer ago , as indicated in the following. Sometimes a mere change in terminology seems to have lead the community to disregard, and later re-invent concepts that were already known \cite{sihvola2002electromagnetic},\cite[p. 5]{klingshirn2007semiconductor}. 
@@ -1098,7 +1097,7 @@ This chapter can in no way cover all relevant papers and ideas over the last cen
 \subsection{Photonic band-gap structures} 
 \paragraph{One-dimensional band gaps and dielectric mirrors}%{{{ ======================== 1 cite "diel mirr"
 In 1887, Lord Rayleigh \cite{johnson2003introduction} noticed the light reflecting in the volume of a transparent crystal composed of thin periodic layers of slightly different optical properties. X-ray scattering on crystals was observed by Max von Laue \cite{friedrich1913interferenzerscheinungen} and explained by W. H. and W. L. Bragg in 1910s \cite{bragg1913reflection}. 
-Both effects are due to a presence of a Bragg band gap, that is, enabled by the constructive interference of the wave reflected from the layers, either of different optical properties in the Rayleigh's experiment, or composed of the atomic lattice in the X-ray case. 
+Both effects are enabled by the constructive interference of the waves reflected from the macroscopic interfaces in the Rayleigh's crystal, or directly from the atomic layers in the X-ray case. This phenomenon became known as the \textit{Bragg band gap}.
 
 The very same principle was later %% who was the first?
 employed for the design and fabrication of \textit{dielectric mirrors}, which are made by stacking multiple layers of two alternating dielectrics with different wave impedances and quarter-wavelength thicknesses. They find a wide variety of applications, owing to their advantages over classical metallic mirrors such as higher reflectance and spectral selectivity.  %% this is related to the \textit{structural colours} found in nature -- who and when did it explain?
@@ -1144,7 +1143,7 @@ The same mechanism causing the radio wave reflection from the dilute plasma in t
 
 Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}, or in particular, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1950s by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
-It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that received later a significantly wider attention. Veselago used % is he first?
+It was the Veselago's review of the negative-index homogeneous media \cite{veselago1968} from 1968 that received later a significantly wider attention in the later literature. Veselago used % is he first?
 the term of \textit{left-handed media} and speculated to what extent they might exist in the nature, but he did not discuss the way of achieving such media, nor the more general theory of the spatial dispersion which may lead to natural negative refraction.
 % add a note about negative index and spatial dispersion in homogeneous media? 
 % (todo) The electrodynamics of spatially-dispersive media ...
@@ -1199,7 +1198,7 @@ A feature typical of this class of media is a very small wavevector $K\sim 0$, w
 
 %}}}
 \paragraph{Transformation optics and electromagnetic cloaks} %{{{ ================= OK (cites)
-Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a curved space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
+Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a particularly curved (transformed) space filled with homogeneous medium. This is the basis of \textit{transformation optics}.
 
 The \textit{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
 The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations \cite{eleftheriades2012transforming}.
@@ -1219,12 +1218,17 @@ The carpet cloak may be built with $N<1$ media as in full-angle cloaks, however 
 \paragraph{Analysis of nonresonant sub-wavelength structures} %{{{ ================== 3x cite
 The third independent paradigm was based on arranging sub-wavelength particles into an optically dense lattice to obtain some desired macroscopic behaviour of the light. 
 
-Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interactions are not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
+Its original source of inspiration can be traced to the late 19th century, when the scientific community resolved the question of how the polarizability of individual atoms in matter affects the macroscopic permittivity. Except for gases, the inter-atomic interactions are not negligible and the answer formulated as the \textit{Lorentz-Lorenz}, or, \textit{Clausius-Mossoti}, formula is not as trivial than might be expected. %todo put here
+However, thanks to the atomic size being negligible compared to the optical wavelength, all optically transparent natural media are successfully approximated as homogeneous. 
 
-Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) % TODO  cite
-and Bruggemann (1935) % TODO cite
-are most known among multiple approaches. 
+Theories of dielectric behaviour of nonhomogeneous composites have been developed throughout the 20th century, among which the Maxwell-Garnett (1904) and Bruggemann (1935) are most known among multiple approaches. 
 Their common assumption is that the wavelength is much larger than the particles; furthermore, they suppose there are no internal resonances in the embedded particles. More elaborate theories are needed when the particle have unusual shapes, particularly near the percolation threshold when they become connected.
+%% "process of replacing a complex structure of subwavelength sized components with an “effective medium” with uni-
+%% form properties. It is a fundamentally important notion which can be traced back to the earliest days of electro-
+%% magnetic theory, to the Lorentz-Lorenz and Maxwell-Garnet effective medium models [1–3]
+%			[1] J. C. M. Garnett, Phil Trans. R. Soc. A 203, 385 (1904).
+%			[2] D. E. Aspnes, Thin Solid Films 89, 249 (1982).
+%			[3] W. Cai and V. Shalaev, Optical Metamaterials: Fundamentals and Applications (Springer, New York, 2010).
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
@@ -1278,6 +1282,8 @@ The question remains whether the significant progress of technology required to 
 %}}}
 \paragraph{Metamaterials without negative or near-zero parameters} %{{{ ============== 
 In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not have to involve negative nor close-to-zero effective parameters \cite[p. 15]{sihvola2002electromagnetic}. Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}.
+%% Many MMs do not bring negative refraction, other (composites) do, but not by means of electromagnetic resonances: 
+%% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 
 An example of a recent \cite{zhao2009repulsive}, but somewhat controversial \cite{silveirinha2010comment}, metamaterial application with strong chirality at its core is in reversing the Casimir force between two close matematerial surfaces to become repulsive.
 
@@ -1309,7 +1315,7 @@ For both reasons,  a compromise is usually made at the near-infrared and optical
 where the unit cell size compared to the wavelength $2\pi a/K \approx $, %todo
 or %todo
 or %todo
-. Such a structure can no more be viewed as deeply subwavelength, and classifies at the boundary of metamaterials and photonic crystals. This second unification of paradigms is sketched in Fig. \ref{fg_history}. 
+. Such structures can no more be viewed as deeply subwavelength \cite{paul2011reflection}, and classifies at the boundary of metamaterials and photonic crystals. This second unification of paradigms is sketched in Fig. \ref{fg_history}. 
 
 %}}}
 \paragraph{Theoretical investigation of the structures on the MM-PhC boundary}%{{{
@@ -1357,8 +1363,7 @@ Another type of a band gap with different field pattern were predicted \cite{wan
 %
 %Depine2006-ENG_and_MNG_band_gaps_in_1D_PhC.pdf todo
 
-The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \gtrsim 0.2$) is the strong manifestation of the spatial dispersion. Except for special cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight, and in the contrary, it leads to confusing deviation from the expected Lorentz oscillator curves, namely \textit{antiresonances} \cite{koschny2003resonant}  and complex values of $\eeff$ and $\meff$ even in lossless media \cite{li2003photonic}.
-In the author's belief, it is necessary to adopt the full theory of spatially dispersive media, as sketched in Chapter \ref{chap_nonloc} of this thesis.
+The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \gtrsim 0.2$) is the strong manifestation of the spatial dispersion. The effective index of refraction then forms a typical resonance curve clipped by the closest pair of Brillouin zone boundaries. In most such cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight. On the contrary, it leads to a deviation from the expected Lorentz oscillator curves in $\eeff(\omega)$ and $\meff(\omega)$ and formation of \textit{antiresonances} \cite{koschny2003resonant,wallen2011anti} and complex values of $\eeff$ and $\meff$ even in lossless media \cite{li2003photonic}. These problems, however, appear to be only artifacts of using the local theory outside its applicability. Instead it is necessary to adopt the full theory of spatially dispersive media, as sketched in Chapter \ref{chap_nonloc} of this thesis.
 
 %}}}
 %}}}
