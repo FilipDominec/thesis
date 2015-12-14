@@ -8,7 +8,7 @@
  * [o] xxx PWEM principle
  * [X] initial effparam branch, weaknesses of the method
  * [X] CDH: full
- * [/] other effparam retrieval methods
+ * [X] other effparam retrieval methods (TODO review)
  * [ ] sieving: add statistics of spheres
  * [ ] 'Mechanical drilling of fishnets'
  * [X] 1	Dielectric slab
@@ -32,6 +32,7 @@
  * [ ] attach the list of own publications
  * [ ] comment on tunability of various structures - parametric scans of results etc.
  * [ ] Use correct citation style!
+ * [ ] Write a correct definition of effective eps and mu
 
 
 ==== Finally ====

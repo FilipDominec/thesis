@@ -105,7 +105,7 @@ In general, the function $\epsrl(\omega)$ is complex to account for possible pha
 Let us note that the definition of the Fourier transform is never subject to the sign change, even when the convention of $e^{\ii \omega t}$ is exchanged for $e^{-\ii \omega t}$.
 %}}}
 \paragraph{Response of a harmonic oscillator} \label{chap_lorentzmedia} %{{{
-\begin{figure}[t] \caption{\textbf{(a)} Illustration of how a simplified medium respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{(b)} The corresponding local permittivity $\epsrl(\omega)$, computed by Fourier transform of the response. Note that the imaginary part of permittivity is negative due to the fact that the material is lossy (absorbs energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
+\begin{figure}[t] \caption{\textbf{(a)} Illustration of how a simplified medium respond to an electric field impulse in the shape of Dirac delta function  $E(t) = \delta(t)$. The response is composed from an instantaneous part from vacuum, $\delta(t)$, and from a delayed ringdown of one damped harmonic oscillator, described by $\chi_e(t) := 2\pi \sin(2\pi t)\,e^{-x/2}$; \textbf{(b)} The corresponding local permittivity $\epsrl(\omega)$, computed by the Fourier transform of the response. Note that the imaginary part of permittivity is negative due to the fact that the material is lossy (it dissipates energy) and that the $e^{\ii\omega t}$ convention is used.} \label{fg_oscillator_spectrum} \centering 
 	\includegraphics[width=\textwidth]{img/oscillator_spectrum.pdf}
 \end{figure}
 The response function $\chi_e(T, \mathbf{R})$ of usual media is composed of different phenomena.  Each of them may react on a different time scale, thus the response of the medium usually has a relatively complicated shape in the time domain.  However, to a reasonable degree of approximation, each of the contributions can be treated separately, as is demonstrated in the following.
@@ -352,7 +352,7 @@ where $\alpha^{(1)}$ is the angle between the wavevector in the first medium $\k
 \begin{equation} \alpha^{(2)} = \arcsin\left( \frac{k^{(1)}}{k^{(2)}} \,\sin \alpha^{(1)} \right) = \arcsin\left( \frac{N_1}{N_2} \,\sin \alpha^{(1)} \right), \label{eq_snell}\end{equation}
 which is known as the \textit{Snell} (or also \textit{Snell-Descartes}) law.
 
-The majority of (effective) media discussed in this thesis are, however, more or less anisotropic, and somewhat surprisingly, the notion of \textit{index of refraction} $N$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for a conscientious extension of $N$ for anisotropic cases, too. An extremely loose definition of $N$ could be based on computing the ratio $N(\omega, \kk) := kc/\omega$  for any medium. This can be formally done, but then the wavenumber $k$ would also depend on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its original purpose of making the computation explicit and notably simple.
+The majority of (effective) media discussed in this thesis are, however, more or less anisotropic, and somewhat surprisingly, the notion of \textit{effective index of refraction} $\Neff$ seems to be widely used for them in the literature anyway. The author thus feels there is a need for a conscientious extension of $\Neff$ for anisotropic cases, too. An extremely loose definition of $\Neff$ could be based on computing the ratio $\Neff(\omega, \kk) := kc/\omega$  for any medium. This could be formally done, but then the wavenumber $k$ would also depend on the direction $\alpha$, and the Snell law in Eq. (\ref{eq_snell}) would become an implicit equation, losing its original purpose of making the computation explicit and notably simple.
 
 The author proposes instead to restrict the term \textit{index of refraction} to all cases where IFCs are perpendicular to $\kk$. This covers not only all isotropic media, but also those cases when the waves propagate close the optical axis of any anisotropic media. An example of an anisotropic medium with its optical axis oriented in such a way that the refraction can be computed using Snell law provided the $k_x$ component is shared with \ref{fg_ifc}a, is shown in Fig. \ref{fg_ifc}c. For small deviations from this angle, where the IFC can be approximated by an osculating circle, 
 \begin{equation} \frac{\partial k}{\partial \alpha} \ll k,\label{eq_osculating}\end{equation}
@@ -656,8 +656,9 @@ The conservation of the wave phase at the interface is, however, not the only co
 \paragraph{Impedance} %{{{ 
 The continuity requirement determines the \textit{amplitudes} of the waves reflected and transmitted at the interface. Corresponding complex \textit{Fresnel coefficients} of \textit{reflectance} $r$ and \textit{transmittance} $t$ depend on the incidence angle and the polarisation of the wave \cite[p. 38]{born1999book}. They are derived in many textbooks with different levels of generalisation. 
 
-In the case of isotropic media, the medium is sufficiently described by the ratio of permeability to permittivity, whose square root is denoted as the \textit{impedance} of each medium $Z = \sqrt{\murl/\epsrl}$. 
-It shall be noted that most optics textbooks assume the media not to respond to the magnetic field, $\murl=1$, in which case $Z = 1/N = \sqrt{1/\epsrl}$ and the Fresnel coefficients then are be expressed as functions of $N$. This assumption is however not applicable for this thesis.
+In the case of isotropic media, the medium is sufficiently described by the ratio of permeability $\murl$ to permittivity $\epsrl$, whose square root is denoted as the \textit{impedance} of each medium 
+\begin{equation} Z = \sqrt{\murl/\epsrl}. \label{eq_Z}\end{equation}
+It shall be noted that most optics textbooks assume the media not to respond to the magnetic field, $\murl=1$, in which case $Z = 1/N = \sqrt{1/\epsrl}$ and the Fresnel coefficients then are be expressed as functions of $N$. This assumption is however not applicable to most structures studied in this thesis.
 
 %}}}
 \paragraph{Perpendicular incidence of two local media} %{{{ 
@@ -1050,28 +1051,16 @@ The first Bragg band gap is observed in a periodic structure when the wavenumber
 \begin{equation} K= \frac{\pi m}{a},\quad m\in\mathbb{Z}.  \label{eq_braggbg}\end{equation}
 	The Bragg band gaps are characteristic by $m$ being constant over whole band gap, without any resonance-like shape of the $\Neff(f) = \KK(f)c/(2\pi f)$ curve observed for individual resonances. 
 
-In analogy with the solid-state physics the Bragg band gaps can be called \textit{direct} if the dispersion curves at the lower and upper band gap edges are at the same wavenumber $K$.  In contrast, the individual resonances are analogous to the \textit{indirect} band gaps, as the of phase increase over an unit cell is different  for frequencies below and above the individual resonance. Some particular examples are shown later.
-
-%Intuitively it might appear that the requirement of exact equality in the expression (\ref{eq_braggbg}) should cause the Bragg band gap to have zero width, but in fact the dispersion curves bend towards the high-symmetry point, so the band gap can cover a range of frequencies as in Figs. \ref{fg_phcfolding}b and \ref{fg_phcfolding}d.
-
-% The waves between the cells in a Bragg band gap are more-or-less transverse electromagnetic, thus radiative. They are  scattered by the structure. This is a difference from the evanescent fields around the MM cells!
-The width of the band gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
+In analogy with the solid-state physics the Bragg band gaps can be called \textit{direct} if the dispersion curves at the lower and upper band gap edges have the same wavenumber $K$.  In contrast, the individual resonances are analogous to the \textit{indirect} band gaps, as the of phase increase over an unit cell is different  for frequencies below and above the individual resonance. Some particular examples are shown later.
 % TODO 2 cos(K d) = Tr(M)    -- \cite Y. Fink, J.N. Winn, S. Fan, C. Chen, J. Michel, J.D. Joannopoulos, E.L.  Thomas, Science 282 (1998) 1679
-In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band gap can vanish. 
-% -> zero-width case (it is a transition between a mode traversing from one photonic band to another --- TODO put into Results)
-
-% -> Field shape: concept of nodal planes (or, more precisely, surfaces)
-% -> exponential wave decay with phase difference across the cell
-
-%}}}
-%% TODO \paragraph{Other types of band gaps}%{{{
+%% Other types of band gaps
 %% In the literature, also other types of band gaps were identified.  zero-average-index band gaps?
-
 % a) the zero averaged refractive index, b) the zero average permeability and c) the zero permittivity gaps
-% in
 % Interaction between non-Bragg band gaps in 1D metamaterial photonic crystals
 
-%% %}}}
+The width of the band gap depends on the scattering strength of the particles; it can be analytically computed for a one-dimensional layered system \cite{laktionov2008} described by the transfer-matrix formalism. 
+In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band gap can vanish. 
+
 %}}}
 \section{Historical notes on metamaterials and photonic crystals}%{{{
 \subsection{One history of three paradigms} %{{{
@@ -1165,7 +1154,7 @@ Isotropy also implies the phase and group velocities are parallel or anti-parall
 
 By simultaneous reversal the sign of both $\epsrl$ and $\murl$, the electric and magnetic induction change their sign to be antiparallel to the fields. The wavevector $\KK$ is reversed, associating the triplet with the left hand. 
 
-In the author's view, both terms can therefore be associated exclusively to only a subset of the \textit{negative-index} media, for which the local parameters of $\eeff$ and $\meff$ make physical sense.
+In the author's view, both terms can therefore be associated exclusively to only a subset of the \textit{negative-index} media, for which the local \textit{effective permittivity} $\eeff(f)$ and \textit{effective permeability} $\meff(f)$ make physical sense. % todo definition of eeff and meff here?
 }
 \end{enumerate}
 % TODO? add about "plasmonic" and epsilon-negative (ENG), or single-negative (SNG) MMs
