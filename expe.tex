@@ -90,15 +90,15 @@ from the numerically predicted results, which were moreover sensitive to subtle 
 
 %}}}
 
-\section{Fabrication of the titanium dioxide microspheres}
-\paragraph{The spray-dry technique}%{{{
+\section{Preaparation of the titanium dioxide microspheres}
+\paragraph{Fabrication through the spray-dry technique}%{{{
 The collaboration with the laboratory of Dr. Patrick Mounaix in France %% Todo reference to Patrick's group somehow, and mention Oleg Mitrofanow (here, or later)
 provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 100 $\upmu$m, which were examined by the terahertz spectroscopy as dielectric resonators, and possible constituents of a metamaterial with a negative effective permeability.
 \begin{figure}[ht] \caption{Microphotograph of the TiO$_{2}$ spheres after preliminary sieving} \label{fg_microphoto} \centering 
 \includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
 \end{figure}
 
-Compared to most metamaterial designs, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying} technique. In contrast with the expensive and time consuming \textit{top-down} processes such as laser machining, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. 
+Compared to most metamaterial designs, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying} technique. In contrast with the expensive and time consuming \textit{top-down} processes such as laser cutting, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. 
 As a first step, rutile (TiO$_{2}$) was ground to a sub-microscopic powder. A suspension of this powder in ethanol was sprayed into flame. It immediately formed spherical droplets, which dried up and sintered in the hot air. Rutile concentration in the suspension, feed rate and gas flow in the flame determined the average size of the sintered particles.
 
 The resulting particles were annealed in a furnace to further solidify. The degree of recrystallization could be controlled  from microscopic grains to the microsphere consisting of few crystalline domains, by the temperature of the furnace from 1200 to 1400 $^{\circ}$C. Note these temperatures used are still far below the melting temperature of rutile, which exceeds 1800 $^{\circ}$C.
@@ -167,64 +167,81 @@ With the acoustic power and frequency correctly adjusted, the particles formed a
 
 The amount of particles in one batch was limited to ca. 10--20 mm$^{3}$, otherwise the sieve would be covered with a layer too thick, which could not be efficiently lifted by the acoustic pressure.
 It could however be slightly remedied by tilting the apparatus. With a tilt of 5--10 degrees, the bulk of particles then accumulated near one side, leaving most of the sieve surface free for sieving the moving fraction of particles. According to the small amount of particles required for the terahertz spectroscopy measurements, it is however advisable to sort a batch in order of 1--3 mm$^{3}$.
-%}}}
 
+%}}}
 \section{Optical determination of microparticle statistics}
-%{{{
+\paragraph{Image preparation} %{{{
 Accurate characterisation of the particle statistics was necessary not only to assess the efficacy of sieving, but also to explain possible difference between the measured terahertz spectra and the computed ones on a quantitative basis. To obtain reliable statistics, thousands of particles needed to be evaluated, repeatedly for every sample. This, along with the small dimensions of particles, indicated that the most viable way to do so would be the optical microphotography with computer image processing automatically resolving each particle.
 
-Computer granulometry
-%, identification and measurement of photographed particles
-is a well-established technique, and is implemented in several advanced image processing programs, of which \textit{ImageJ} was selected \cite{abramoff2004image}. 
-The transmission microphotographs were acquired either with the lowest magnification on a laboratory microscope, or with a portable microscopic digital camera, yielding similar results.
-The first operation on the somewhat blurred photographs [see Fig. \ref{fg_sievingstats}(a)] was to establish the intermediate brightness level between the image's bright and dark areas, and apply a threshold so that the image was a binary function. Then the \textit{ImageJ}'s \textit{watershed} algorithm was applied to relatively reliably resolve two or more touching particles, and a particle outline was found [cyan lines in \ref{fg_sievingstats}(b)]. Finally, the particle outlines were fitted by ellipses. 
-\begin{figure}[ht] \caption{\textbf{(a)} A small section of a microphotograph of a pre-sieved sample before applying the described double-sieve method, \textbf{(b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
-\textbf{(a)}\includegraphics[height=5cm]{img/technology/imagej_photo.pdf}
-\textbf{(b)}\includegraphics[height=5cm]{img/technology/imagej_found.pdf}
-\end{figure}
-We accompanied the built-in granulometric algorithm of \textit{ImageJ} with a script enabling to process multiple photographs in a batch, and to plot the resulting histograms of the ellipse axes distribution. The script has also been published online \cite{dominec2014_imagej}. The microphotograph scale was determined from a separate photograph of a ruler.
+Computer \textit{granulometry}, identification and measurement of photographed particles from a digital image,
+is a well-established technique. It is implemented in several advanced image processing programs, of which \textit{ImageJ} was selected \cite{abramoff2004image} since it is free of charge and allows its use for large batches of images through the use of macros. 
 
-An intrinsic deficiency of this method results from that it was not possible to resolve the third dimension of particles. 
-It can be however estimated that if % TiO$_{2}$ 
-ellipsoidal particles were randomly sprinkled on the glass, they would lie on their flat side -- i.e. their orientation would enable to measure the \textit{medium} $\rho_b$ and \textit{major} axis $\rho_c$ of the ellipsoid. This is in contrast with the process of sieving, as described above, where the particles were discriminated according to their and \textit{minor} $\rho_a$ and \textit{medium} $\rho_b$ axes. 
-The error is however somewhat reduced by the non-ellipsoidal shape of the particles, which presumably prevented them from free overturning. %% NOTE this again when showing sphere experimental spectra
+The transmission microphotographs were acquired either with the lowest magnification on a laboratory microscope, or with a portable microscopic digital camera on its highest magnification, yielding similar results.
+
+The first operation on the somewhat blurred photographs, as shown in Fig. \ref{fg_sievingstats}a, was to establish the intermediate brightness level between the image's bright and dark areas, and apply a threshold so that the image was a binary function. Then the \textit{ImageJ}'s \textit{watershed} algorithm was applied to relatively reliably resolve two or more touching particles, and a particle outline was found. An example is depicted as cyan lines in Fig. \ref{fg_sievingstats}b. Finally, the particle outlines were approximated by best matching ellipses, and the major and minor axes of the ellipse were added into the statistics. 
+\begin{figure}[ht] \caption{\textbf{(a)} A small section of a microphotograph of a pre-sieved sample before applying the described double-sieve method, \textbf{(b)} the corresponding identification of particles in ImageJ} \label{fg_sievingstats} \centering 
+	\begin{overpic}[height=.30\textwidth]{img/technology/imagej_photo.pdf} \put(-9,72) {\textbf{(a)}} \end{overpic}\quad\quad
+	\begin{overpic}[height=.30\textwidth]{img/technology/imagej_found.pdf} \put(-9,72) {\textbf{(b)}} \end{overpic}\quad\quad
+\end{figure}
+We accompanied the \textit{ImageJ} macro with a Python script enabling to process multiple photographs in a batch, and to plot the resulting histograms of the ellipse axes distribution. The script has also been published online \cite{dominec2014_imagej}. The scale for each batch of images had to be determined from a separate photograph of a ruler.
+
+%}}}
+\paragraph{Imprecision of the method} %{{{
+An intrinsic deficiency of this method is that it was not possible to resolve the third dimension of particles. 
+It can be however estimated that when % TiO$_{2}$ 
+ellipsoidal particles were randomly sprinkled on the glass, they would lie mostly on their flat side -- i.e. their orientation would enable to measure the \textit{medium} $\rho_b$ and \textit{major} axes $\rho_c$ of the ellipsoid. This is in contrast with the process of sieving, as described above, where the particles were discriminated according to their and \textit{minor} $\rho_a$ and \textit{medium} $\rho_b$ axes. 
+
+This source of error is probably similarly important as another one, arising from rough shapes of the particles which could not always be well approximated by an ellipsoid. 
 \todo{add the previous and resulting statistics? the THz spectra should better go to the Results }
 %}}}
 
-\section{Laser micromachining}
+\section{Laser cutting}
 \paragraph{Fabrication of dielectric bars}%{{{
-Dielectric or metallic structures can be made by cutting a thin polished slab of the given material. For instance, metamaterials designed to operate around 1 THz, which corresponds to the free-space wavelength of 0.3 mm, have their unit cells of a similar size or less, and the finest features are usually an order of magnitude smaller. 
-A similar sample used in experiment consisted of bars from strontium titanate (SrTiO$_{3}$) with a rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}), 
-where a structure with 10--30 $\upmu$m resolution was written into a thin slab of the dielectric of a similar thickness \cite{yahiaoui2011tunable}.
+Dielectric or metallic structures can be made by cutting a thin polished slab of the given material. Electromagnetic waves with 1 THz frequency have a free-space wavelength of 0.3 mm. Periodic structures designed to operate in this range have their unit cells of a similar size or less, and their finest features are usually in the order of 10-20 $\upmu$m. 
 
-If the slab is made of a monocrystal or a ceramic, it is usually extremely brittle and also sensitive to breaking due to thermal stresses. Femtosecond laser micro-machining can alleviate both problems thanks to evaporating most of the heated material before the heat can spread by thermal conduction. Fabrication of the strontium titanate bars was accomplished by the  Alphanov facility in France.
-% should make some conclusion
+The sample already shown in Fig. \ref{fg_STO_bar_rt} consisted of bars from strontium titanate (SrTiO$_{3}$) with a rectangular cross-section (see Fig. \ref{fg_STO_bar_geom}), where a structure with 10--30 $\upmu$m resolution was written into a thin slab of the dielectric of a similar thickness \cite{yahiaoui2011tunable}.
+
+If the slab consists of a monocrystal or a ceramic, it is usually extremely brittle and also sensitive to breaking due to thermal stresses. Femtosecond laser cutting (or, micro-machining) is suitable for such a task thanks to delivering the energy so fast that most of the heated material evaporates before the heat can diffuse into the rest of the structure. 
+The strontium titanate bars were fabricated by the \textit{Alphanov} facility in France.
+
 %}}}
-\paragraph{Fabrication of sieves and fishnet metamaterial layers}%{{{
-Compared to the dielectrics, femtosecond machining of metallic sheets into meshes is relatively easy and was implemented in our laboratory. Machining of free-standing wire media was not succesfull and no such sample was finished, as the resulting thin wires were bent out of their original plane and their spacing was uneven.
+\paragraph{Fabrication of sieves and fishnets}%{{{
+Femtosecond cutting of metallic sheets into two-dimensional meshes is relatively easy,   
+compared to the dielectrics, 
+and was implemented in our laboratory. To achieve the required precision, we used 20 or 30 $\upmu$m thick high-quality stainless steel foils. Cutting the foil into free-standing wire array was however not successful since the resulting thin wires bent out of their original plane due to the thermal expansion. Their spacing was so uneven that no usable sample of wires was made.
 
-The meshes had two purposes -- either as sieves used in the second sieving apparatus described above, or as metamaterial samples known as \textit{fishnets}, which are predicted to possibly have negative index of refraction (see Sect. \ref{section_fishnet}). 
-The femtosecond laser used was different from that serving as the femtosecond source for terahertz spectroscopy (Sect. \ref{sect_tdts}). More than sufficient power was provided by the \textit{Spectra Physics Spitfire Ace} multipass titanium-sapphire amplifier, with 1 mJ in ca. 50 fs impulses, at 5 kHz repetition rate; its output beam had to be attenuated to obtain finer cut at the expense of slightly slower speed. The mechanical part consisted of two crossed \textit{Owis} stepper-motor controlled linear stages, and a fast mechanical shutter allowed to control the beam with a sufficient resolution of ca. 100 ms. 
-\begin{figure}[ht] \caption{\textbf{(a)} Laser micromachining of the steel sheet with a moving four-sample holder, metal vapour ventilation, and the focusing lens. Bright plasma spot is visible at the focus. \textbf{(b)} The resulting sieves made from 30 $\mu$m stainless sheet with 10 mm patterned diameter.} \label{fg_microfab} \centering 
-\textbf{(a)}\includegraphics[height=5cm]{img/technology/sieve2_drilling_m.pdf}
-\textbf{(b)}\includegraphics[height=5cm]{img/technology/steel_sieve_on_paper.pdf}
+The femtosecond laser used was different from that serving as the femtosecond source for terahertz spectroscopy (Sect. \ref{sect_tdts}). More than sufficient power was provided by the \textit{Spectra Physics Spitfire Ace} multipass titanium-sapphire amplifier, with 1 mJ of energy per impulse, duration of $\sim$50 fs, and 5 kHz repetition rate. Its output beam had to be attenuated to obtain finer cut at the expense of slightly slower speed. The mechanical part consisted of two crossed \textit{Owis} stepper-motor controlled linear stages, and a fast mechanical shutter allowed to control the beam with a sufficient resolution of ca. 100 ms. 
+\begin{figure}[ht] \caption{\textbf{(a)} Laser cutting the steel foil with a moving holder for four samples, metal vapour ventilation, and the focusing lens. Bright plasma spot is visible at the focus. \textbf{(b)} The resulting sieves made from 30 $\mu$m stainless steel foil with 10 mm overall diameter.} \label{fg_microfab} \centering 
+	\begin{overpic}[height=.35\textwidth]{img/technology/sieve2_drilling_m.pdf} \put(-8,82) {\textbf{(a)}} \end{overpic}\quad\quad
+	\begin{overpic}[height=.35\textwidth]{img/technology/steel_sieve_on_paper.pdf} \put(-8,80) {\textbf{(b)}} \end{overpic}
 \end{figure}
 
-The 3 mm wide beam was focused by an anti-reflexed lens with a focal length of 10 mm or 50 mm, with the tighter focusing giving slightly better results. Particularly with the focal length of 10 mm, it was important to accurately focus the beam. To this end, we made use of back-collimation of the reflected beam as follows: When the metal sheet was exactly in focus, the reflection of the (focused) beam was again collimated by the lens into a non-diverging beam. Separating a part of the reflected beam energy sideways by a skewed glass in front of the lens, one could fine-tune the lens position seeking for the smallest spot diameter on a distant screen.
+The 3 mm wide beam was focused by a lens with a focal length of 10 mm or 50 mm (Fig. \ref{fg_microfab}a). The tighter focusing lead to slightly better resolution, but had tighter requirements for accurate focusing of the beam. To facilitate it, we devised a focusing-collimating setup. Only when the  steel foil was exactly in the lens focus, it reflected the light like from a point source. Only then the reflected light would be collimated again by the very same lens into a beam returning to the laser. 
+%the reflection would not be collimated if the reflection occurred in front of the focal plane or behind it. 
+A part of the reflected beam energy was reflected sideways by a skewed glass in front of the lens, so that one could finely align the lens seeking for the smallest spot diameter on a distant screen.
 
-A compact stepper-motor controller of a custom design \cite{dominec2015_triostepper} facilitated the operation by the means of Python scripting, which allowed to compose the shutter opening, movement and shutter closing into one hole-drilling sequence, which could be composed to cut out the whole mesh structure. Finally, multiple different meshes with different parameters could be made on one metal sheet in a batch, without user interaction.
+A compact stepper motor controller of a custom design \cite{dominec2015_triostepper} facilitated to automate the sample movement by the means of Python scripting. The sequences of shutter opening, movement and shutter closing, could be assembled into a program for fabrication of a whole mesh which took about 30 minutes to finish. Multiple different meshes with different parameters could be cut out from one steel foil in a batch, without user interaction.
 
 %}}}
-\paragraph{Mechanical drilling of fishnets}%{{{
-\begin{figure}[ht] \caption{Mechanically drilled fishnet}  \centering \includegraphics[width=10cm]{img/fishnet.pdf} \end{figure}
+\paragraph{Laser cutting issues}%{{{
+Metal vapors created by laser cutting immediately oxidise in the air. Although only few milligrams of the stainles steel foil were evaporated in total, the microscopic particles could gradually sediment on fine optics. We built a miniature ventilation and filtering system out of a tube filled with cotton wool and fine synthetic fibers. After few meshes were cut, the cotton changed its colour from white to pale brown, indicating that at least part of the particles were filtered out.
 
-To achieve the required precision of sieving, we fabricated the sieves by femtosecond laser drilling of 20--30 $\upmu$m thick stainless steel sheets (Fig. \ref{fg_microfab}). 
-%These sieves then were employed in a device that subjected the microsphere sample to acoustic vibrations, improving the speed of the demanding sieving process to acceptable level (Fig. \ref{fg_microfab}b,c).
+A greater challenge arose from thermal expansion of the foil. When a reasonable utilisation of the valuable laser beam time was desired, the speed of cutting was high enough to  %TODO XXX XXX
 
-\todo{make a figure from a photo of a laser-machined metallic fishnet (or, mesh)}
+%}}}
+\paragraph{Difference between the sieves and fishnets}%{{{
+The meshes had two purposes -- either as sieves used in the second sieving apparatus described above, or as metamaterial samples known as \textit{fishnets}, which are predicted to exhibit a negative index of refraction (see Sect. \ref{section_fishnet}). 
+% TODO
+%To achieve the required precision of sieving, we fabricated the sieves by femtosecond laser drilling of 20--30 $\upmu$m thick stainless steel steel foil
+%These sieves then were employed in a device that subjected the microsphere sample to acoustic vibrations, improving the speed of the demanding sieving process to acceptable level
 
-\todo{comment on the drilled fishnet}
-\todo{}
-\todo{}
+\begin{figure}[ht] \caption{Microscopic photographs of fishnets cut from a 20 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m.  } \label{fg_sieving2} \centering 
+	\begin{overpic}[height=.35\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch.pdf}  \put(0,71) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[height=.35\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch.pdf}  \put(0,67) {\textbf{(b)}} \end{overpic}
+\end{figure}
+
+Let us note that our group received another fishnet sample made by automated mechanical drilling (Fig. \ref{fg_fishnet_mechanical}) into a . The sample was measured by the terahertz spectroscopy yielding relatively complicated spectra, which could not be reasonably matched by any of the simulations. We assume that the clash between the measured and simulated values comes from the imprecision in the sample itself, namely from the burrs due to 
+\begin{figure}[ht] \caption{A drilled fishnet with $500\times 500$ $\mu$m periodicity. The inclined view from the bottom side shows the burrs that were probably responsible for the large difference of the measured and simulated spectra.}  \centering \includegraphics[width=.8\textwidth]{img/fishnet.pdf} \label{fg_fishnet_mechanical} \end{figure}
+
 %}}}
 
