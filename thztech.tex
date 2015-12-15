@@ -6,12 +6,12 @@ and many of them are also, with more or less detail, discussed in previous docto
 
 Electromagnetic waves in the terahertz range are radiated whenever charged particles are subject to fast-enough acceleration at the picosecond scale.  The generation processes may be sorted with regards to the medium in which the emission occurs and to the origin of the force causing the acceleration.  In the following paragraphs, we try to briefly review the terahertz technology in a systematic manner.
 
-Firstly, let us remind why thermal sources are rarely used in the THz range, although they are otherwise widely used at higher frequencies. The blackbody radiation is governed by the Planck law % TODO cite
+Firstly, let us remind why thermal sources are rarely used in the THz range, although they are otherwise widely used at higher frequencies. The black body radiation is governed by the Planck law \cite[p. 23]{klingshirn2007semiconductor}
 \begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
 from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=$ 300~K).  Furthermore, all Planck oscillators at the frequency of e.g. $f =$ 1~THz are already fully saturated:
 %  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
 $$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
-and therefore the power radiated in the THz range can not be significantly improved by increasing the blackbody temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast, the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Therefore, sources other than thermal are preferred for measurements in the THz range.
+and therefore the power radiated in the THz range can not be significantly improved by increasing the black body temperature. Particularly, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast, the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Therefore, sources other than thermal are preferred for measurements in the THz range.
 
 \subsection{Terahertz sources}
 \paragraph{Kinetic energy of an electron beam} %{{{ ================================================================================
@@ -118,7 +118,7 @@ The \textit{Smith-Purcell} effect is observed when relativistic electron beam pa
 \paragraph{Thermal detection}%{{{
 A broad class of detectors, applicable also to the terahertz range, measures the energy of the radiation. 
 Classical bolometers use elements that change resistivity (thermistors, thermocouples) when they are heated by radiation.
-Pyroelectric detectors convert the heat directly to the electric signal by means of a crystal that changes its polarisation with temperature. In Golay cells, an incident terahertz pulse heats the air, whose thermal expansion is detected. Such devices usually operate at room temperature.
+Pyroelectric detectors convert the heat directly to the electric signal by means of a crystal that changes its polarisation with temperature. In the Golay cells, an incident terahertz pulse heats the air, whose thermal expansion is detected. Such devices usually operate at room temperature.
 
 The concept of a bolometer can be greatly improved, in terms of sensitivity or speed, at cryogenic temperatures when a superconductor near its critical temperature or a doped semiconductor are used as the temperature detector. In the \textit{hot-electron} bolometers, the superconductor forms a narrow bridge between two contacts so that the changes in resistance are more pronounced. The changes in the superconductor behaviour can also be detected by a superconducting quantum interference device (SQUID).  
 
