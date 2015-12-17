@@ -2,19 +2,20 @@
  * [X] acknowledgements
  * [X] ... abstract + its translation
  * [ ] mm-phc boundary add refs, add some quotations from papers, (and review again)
- * [o] xxx metamaterial homogenization! write or delete? Note about antiresonances
+ * [X] metamaterial homogenization
  * [X] "negative-index", "left-handed" or "doubly-negative" media?
  * [X] FDFD
- * [o] xxx PWEM principle
+ * [o] SKIPPED - PWEM principle
  * [X] initial effparam branch, weaknesses of the method
  * [X] CDH: full
  * [X] other effparam retrieval methods (TODO review)
  * [ ] sieving: add statistics of spheres
- * [ ] 'Mechanical drilling of fishnets'
+ * [X] 'Mechanical drilling of fishnets'
  * [X] 1	Dielectric slab
  * [X] 2	Wire medium
  * [/] 3	Cut wires: rev
- * [ ]		prepare THz-TDTS data for Bousek samples?
+ * [X]		prepare THz-TDTS data for Bousek samples?
+ * [ ]		compare them with a FDTD simulation
  * [/] 4	Electric resonators: rev
  * [ ] 5	Split-ring resonator: comment double-strip
  * [ ] 6	Dielectric sphere: introduce Mie resonances
@@ -30,7 +31,7 @@
  * [ ] 12	Other structures
  * [/] Conclusion
  * [ ] attach the list of own publications
- * [ ] comment on tunability of various structures - parametric scans of results etc.
+ * [ ] comment on the tunability of various structures - parametric scans of results etc.
  * [ ] Use correct citation style!
  * [ ] Write a correct definition of effective eps and mu
 
@@ -39,7 +40,7 @@
  * [ ] make list of figures, adding short caption to each of them?
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
  * [ ] ...ize ---> ...ise 
- * [ ] go through all TODOs 
+ * [ ] go through all TODOs, Note about antiresonances?
  * [ ] make index of kwords https://en.wikibooks.org/wiki/LaTeX/Indexing?
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
@@ -48,14 +49,6 @@
  * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances
 
 ==== Ideas =====
-%% finish this? or leave this out?
-%%      \section{Materials available for metamaterial construction}
-%%      \subsection{Dielectrics}
-%%      \subsection{Metals}
-%%      \subsection{Superconductors}
-%%      \subsection{Tunable and switchable materials}
-%%      \subsection{Specifics of the terahertz range}
-
 %Two oscillators with nearly the same frequency:
 %electric+electric or magnetic+magnetic → strong coupling, leads to twice curled curve in polar plot
 %electric+magnetic → weak or no coupling (magnetic dipole: H field even, Efield odd; electric dipole: H field odd, E field even → may be regarded as zero inner product of the field functions)

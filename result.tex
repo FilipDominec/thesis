@@ -1,11 +1,3 @@
-
-%% TODO remaining topics to be added or checked: 
-% 
-
-%%	* PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
-	%thin wires [8], [28], Swiss rolls [9], SRRs [9], electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
-
-
 \label{chapter_results}
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}
@@ -104,7 +96,7 @@ Note that with the correct branch retrieval procedure, the index of refraction n
 \clearpage
 
 %====================================================================================================
-\section{Wire medium} \label{chap_wiremedium} % references to -> %{{{ \label{section_
+\section{Wire medium} \label{chap_wiremedium}
 \paragraph{High-frequency behaviour}
 The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is discussed in another Section \ref{section_eot}.
 
@@ -154,7 +146,7 @@ From Fig.  \ref{fg_Slab_fillfraction015_wireradius_scan}, it can be also deduced
 The effect of wire spacing $a$ is the opposite; with $a$ growing, the magnetic field has more space to circulate around the wir and $f_p$ reduces. 
 
 Different analytic models were proposed for description of both effects. The early model by Pendry \textit{et al.} from 1996 \cite{pendry1996extremely} works well for thin wires: 
-\begin{equation} f_p(\rho_w,a) \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln(\frac{a}{\rho_w})}} \label{eq_fp_pendry}\end{equation}
+\begin{equation} f_p(\rho_w,a) \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln(\frac{a}{\rho_w})}}. \label{eq_fp_pendry}\end{equation}
 Its refinement by Maslovski \textit{et al.} from 2003 \cite{maslovski2002wire} should be valid also for wires with relatively high fill fraction:
 \begin{equation} f_p(\rho_w,a) \approx \sqrt{\frac{c^2}{2\pi \, a^2 \, \ln\left(\frac{a^2}{4\rho_w (a-\rho_w)}\right)}} \label{eq_fp_maslovski}\end{equation}
 
@@ -162,7 +154,7 @@ We ran two series of wire array simulations as a simple verification of both the
 
 To test the possible error introduced by the FDTD algorithm, we ran the simulation with different resolution - results with fine $1$ $\upmu$m grid are denoted by full circles, results with coarse $4$ $\upmu$m grid with empty squares. Finally we also repeated this plot for thinner wire with $r = 8$ $\upmu$m. %%todo rewrite?
 
-In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of permittivity is desired.%%todo rewrite?
+In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of effective permittivity is desired.%%todo rewrite?
 
 %TODO \paragraph{Oblique propagation of the wave}
 %ref Homogenisation of nonlocal media such as wires 
@@ -174,41 +166,54 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
 %}}}
-\FloatBarrier
 	
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Cut wires} \label{section_cutwires} % references to -> % note about plasmonic particles 
 %% (I guess the spatial dispersion will be visible in the CDH plots)
 %% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
 %% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
 
-\paragraph{Individual resonances}
-The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of conductive antennas is formed. Its important parameters are not only the inductance of the wire stub, but also the capacitance across the gap between wires. In an analogy with a series L-C circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $f_r$. These resonances couple to the electromagnetic field through their electric dipole.
+\paragraph{Individual resonances}%{{{
+The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. These resonances couple to the electromagnetic field through their electric dipole.
 
-The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance at 1200 GHz as the point where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. Towards higher or lower frequencies from the resonance, the transmittance is relatively high.
+The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance as the point close to  1200 GHz where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. Towards higher or lower frequencies from the resonance, the transmittance is relatively high.
 
-\paragraph{Dispersion near an individual resonance}
-Each individual resonance in a periodic structure forms a characteristic shape in the spectrum of effective index of refraction $\Neff(f)$. The following description will therefore be applicable to individual resonances in other resonant structures, too. 
+%}}}
+\paragraph{Dispersion near an individual resonance}%{{{
+Each individual resonance in a periodic structure forms a characteristic shape in the spectrum of effective index of refraction $\Neff(f)$. The following description will therefore be applicable to individual resonances in other resonant structures, as well. 
 
-At frequencies under the resonance, the electric dipole of the antenna oscillates in phase with the driving field and the resonance \textit{increases} the effective index of refraction $\Neff'(f)$. 
-Similar in-phase oscillation, causing an increase in the permittivity, was already described at the Lorentzian resonance curve in Fig. \ref{fg_oscillator_spectrum}b. 
-At some frequency $f \lesssim f_r$ below the resonance, the index of refraction $\Neff'(f)$ becomes high enough to join the closest Brillouin zone boundary which was above it. From this point up to $f_r$, $\Neff(f)$ has nonzero imaginary part, and the medium exhibits a band gap.
 
-Exactly at the frequency of the individual resonance, the interaction of the dipole with the field abruptly changes its sign, since the resonance, the dipole is oriented \textit{opposite} to the driving field. The band gap continues up to some frequency $f > f_c$, where another photonic band begins. 
+\begin{enumerate}
+\item{At frequencies under the resonance, the electric dipole of the antenna oscillates in phase with the driving field and the resonance contributes the effective index of refraction $\Neff'(f)$. 
+The spectrum of a periodic structure with an individual resonance differs from the spectrum of a homogeneous medium that was already described at the Lorentzian resonance curve in Fig. \ref{fg_oscillator_spectrum}b.
+At some frequency $f \lesssim f_r$ below the resonance, the index of refraction $\Neff'(f)$ becomes high enough to join the closest Brillouin zone boundary which was above it. From this point up to the resonance frequency $f_r$, $\Neff(f)$ has nonzero imaginary part, and the medium exhibits a band gap.
+} 
+\item{Exactly at the resonance frequency, the interaction of the dipole with the field changes its sign, since above the resonance, the dipole starts to be oriented opposite to the driving field. 
+The real part of the refractive index $\Neff'(f)$ ceases to follow one Brillouin zone and transitions to another Brillouin zone below it. In local media, individual resonances appears to be the only occasions for $\Neff'(f)$ to transition downwards.
 
-The most important observation is that the resonance curve of $\Neff(f)$ in periodic structures is constrained between the closest two Brillouin zone boundaries, which can be understood as the "floor" and "ceiling" for the dispersion curve. Equivalently, it can be viewed as that a single individual resonance can not shift the transmittance phase by more than $\pi$ per each layer of unit cells. 
+The imaginary part of the refractive index, $\Neff''(f)$, is required by the Kramers-Kronig relations to exhibit a sharp peak at the resonance frequency, which is superposed over the broader background stemming from the band gap (see Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c). 
 
-The impact which the individual resonances  have on the effective parameters $\eeff(f)$ and $\meff(f)$, will be discussed in the later section focused on the dielectric resonators.
+The spectral width of the transition and peak is inversely proportional to the quality of the resonance. Whenever the structure is built from realistic materials with nonzero losses and its spatial dispersion can be neglected, $\Neff(f)$ is a continuous complex function.
+} 
+\item{The band gap continues up to some frequency $f > f_r$, where another photonic band begins between the same pair of Brillouin zones.  
+} 
+\end{enumerate}
 
-\paragraph{Effects of the cut distance $d_c$}
-An increase of the cut distance $d_c$ clearly leads to increase of the resonance frequency $f_c$. The reason is twofold: for small cut width $d_c\ll a$ it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance plays major role.
+The most important observation is that the resonance curve of $\Neff(f)$ in periodic structures is constrained between the closest two Brillouin zone boundaries, which can be understood as the "floor" and "ceiling" for the dispersion curve. Apparently a single individual resonance can not shift the transmittance phase by more than $\pi$ per each layer of unit cells. It can therefore introduce a band of imaginary $\Neff$, but for $\Neff$ to reach negative values, two resonances must be combined.
+
+The impact of the individual resonances on the effective parameters $\eeff(f)$ and $\meff(f)$ will be discussed in the later section focused on the dielectric resonators. % TODO verify that I have done this
+
+%}}}
+\paragraph{Effects of the cut distance $d_c$}%{{{
+An increase of the cut distance $d_c$ clearly leads to increase of the resonance frequency $f_c$. The reason is twofold: for a cut width small relative to the unit cell size, $d_c\ll a$, it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance plays major role.
 
 Both the individual and Bragg-type resonances can be identified in the plot for different $d_c$ in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c. When $d_c \sim 16$  $\upmu$m, the individual resonance shifts above 1.5 THz and exchanges its order with the Bragg band gap. 
 For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to those for a $d_c\sim 2$ $\upmu$m, but are shifted by one Brillouin zone up.
 
-\paragraph{Effects of the wire radius $\rho_w$}
+%}}}
+\paragraph{Effects of the wire radius $\rho_w$}%{{{
 The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
 For high enough $\rho_w$ a competing mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire self-inductance.
 
@@ -223,7 +228,7 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 \end{tabular}
 \end{figure}
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  Wire cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for a metamaterial made of cut wires. Cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
@@ -234,19 +239,65 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 \end{tabular}
 \end{figure}
 
-\paragraph{Experimental measurement of cut wire spectra}
-\todo{origin of samples, semi-conductive si substrate, todo compute spectra, plot graphs and compare with experiment}
-\begin{figure}[ht] \caption{The sample of cut wires (pale yellow) on silicon (cyan) substrate. \textbf{(a)} Natural-colour photograph from an optical microscope,  \textbf{(b)} Geometry of the wires in micrometers. They were measured to be $6.5$ $\mu$m wide and $30$ $\mu$m long. The periodicity of cut-wires was $30\times 50$ $\mu$m.  } \label{fg_sieving2} \centering 
-	\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_microphoto.pdf}  \put(0,78) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_drawing.pdf}  \put(0,95) {\textbf{(b)}} \end{overpic}
+% TODO
+% \paragraph{Experimental measurement of cut wire spectra}
+% \todo{origin of samples, semi-conductive si substrate, compute spectra, plot graphs and compare with experiment}
+% \begin{figure}[ht] \caption{The sample of cut wires (pale yellow) on silicon (cyan) substrate. \textbf{(a)} Natural-colour photograph from an optical microscope,  \textbf{(b)} Geometry of the wires in micrometers. They were measured to be $6.5$ $\mu$m wide and $30$ $\mu$m long. The periodicity of cut-wires was $30\times 50$ $\mu$m.  } \label{fg_sieving2} \centering 
+% 	\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_microphoto.pdf}  \put(0,78) {\textbf{(a)}} \end{overpic}
+% 	\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_drawing.pdf}  \put(0,95) {\textbf{(b)}} \end{overpic}
+% \end{figure}
+%}}}
+
+%     \FloatBarrier %====================================================================================================
+%     \section{Electric resonators} \label{section_esrr} % references to -> % note about plasmonic particles 
+%     \paragraph{Comparison of spectra to the cut wires}
+%     From Figs. \ref{fg_CutWires_wirecut2um_wireradiusscan} and \ref{fg_CutWires_wireradius1u_cutwidth_comparison} it follows that for any practically attainable geometry, the frequency of the first individual resonance in cut-wire arrays is always relatively close to the first Bragg band gap. 
+%     
+%     A viable way to shift the resonance frequency much lower, without changing the unit cell size nor resorting to submicrometre cut distances, is to replace straight wire antennas by \textit{electric split-ring resonators}, % TODO cite 
+%     depicted in Fig. \ref{fg_eSRR}.
+
+
+\FloatBarrier %====================================================================================================
+\section{Split-ring resonator} \label{section_srr} % references to -> 
+\paragraph{Magnetic dipole moment}
+
+\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
+Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
+Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
 \end{figure}
 
-%====================================================================================================
-\section{Electric resonators} \label{section_esrr} % references to -> % note about plasmonic particles 
-From Figs. \ref{fg_CutWires_wirecut2um_wireradiusscan} and \ref{fg_CutWires_wireradius1u_cutwidth_comparison} it follows that for any practically attainable geometry, the frequency of the first individual resonance in cut-wire arrays is always relatively close to the first Bragg band gap. 
 
-A viable way to shift the resonance frequency much lower, without changing the unit cell size nor resorting to nanometric inter-wire gaps, is to replace straight wire antennas by \textit{electric split-ring resonators}, % TODO cite 
-depicted in Fig. \ref{fg_eSRR}.
+\paragraph{Variations of the ring resonator}
+single- and double-split 
+% todo A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
+%vol. 11, p. 114010, 2009.
+% Modifications with higher symmetry
+
+% todo note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
+
+
+Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
+% different orientations - some leading to chirality i.e. linear dependence of f(K)
+% when not failing due to chirality, s-param yields beautifully similar results to our simulations!
+% "CMM = Composite MetaMaterial"
+
+\paragraph{Electric split-ring resonator}
+
+\paragraph{Metallic strip pair}
+
+
+
+
+\FloatBarrier %====================================================================================================
+\section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
 
 \begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh1} \centering 
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
@@ -281,26 +332,8 @@ depicted in Fig. \ref{fg_eSRR}.
 %img-cdh/cdh_sSRR.pdf
 %img-cdh/cdh_Wire.pdf
 
-%====================================================================================================
-\section{Split-ring resonator} \label{section_srr} % references to -> 
-% todo note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
 
-simple, double-split, co-axial and spiral SRRs
-
-
-Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
-% different orientations - some leading to chirality i.e. linear dependence of f(K)
-% when not failing due to chirality, s-param yields beautifully similar results to our simulations!
-% "CMM = Composite MetaMaterial"
-
-
-\paragraph{Metallic strip pair}
-
-\paragraph{Modifications with higher symmetry}
-% todo A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
-%vol. 11, p. 114010, 2009.
-
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Dielectric sphere} % references to ->				%{{{
 %% TODO back reference to expe.tex:74
 
@@ -316,7 +349,7 @@ Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eef
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
-\add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the crossection of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
+\add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the cross-section of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross-section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
 The scattering of a single sphere can be computed analytically: from mie.m, see http://atol.ucsd.edu/scatlib/index.htm, Bohren and Huffman originally published the code in their book on light scattering }
@@ -336,7 +369,7 @@ The main difference compared to the lossless resonances discussed above (cf. Fig
 An important property of the periodic sphere array is its \textit{isotropic} electromagnetic behaviour. It trivially follows from symmetry under any orthogonal rotation, and it also holds almost exactly under any other orientation (unless the spheres are not touching or too high frequencies are studied).
 
 The right plot in Fig. % \ref{fg_spheres_fdtd}b XXX
-shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. More detailed study of this phenomenon is in the following section. %% which one?
+shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. 
 
 The magnetic resonance introduces narrow regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
 %In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
@@ -410,7 +443,7 @@ Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{SRRs and spheres in a wire array or grid} % references to ->
 % Cai_Zhu2008-Diel_resonators_wires.pdf
 %{{{
@@ -438,7 +471,7 @@ An elaborate comparison of resonant metallic structures, with clear effect of ad
 %\ref{fg_SphereWire_principles}
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Dielectric rods parallel to magnetic field} % references to ->
 \label{sect_diel_rods_mag}
 \add{Such a behaviour at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} band gaps; individual resonances in other types of structures result in change of $K$ and	introduce more complex differences between the field shape.}
@@ -457,8 +490,7 @@ analytic shape of the Mie resonance, \cite{obrien2002photonic}
 \end{figure} %% TODO OVERPIC
 
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
-The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part known from the previous section, %% TODO which one?
-and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
+The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
 
 % discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
 This new type of resonance is known as a \textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}. Unlike the Bragg gaps, it can be observed also in a single rod in free space. Being a function of the frequency of the incident wave, the magnetic dipole moment of the free-standing dielectric rod follows the characteristic Lorentzian shape of its \textit{resonance curve}. Below the resonance the magnetic dipole moment of the resonator goes to strongly positive values, while in a narrow region above the resonance it is strongly negative. How does this behaviour change if we arrange the rods in an infinite periodic array? 
@@ -504,7 +536,7 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Dielectric rods parallel to the electric field} % references to ->
 
 \label{sect_diel_rods_el}
@@ -672,7 +704,7 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Metallic sheet with slits} \label{section_eot} % references to ->
 Wood anomaly in hole arrays
 Standing SPP wave
@@ -682,21 +714,23 @@ Standing SPP wave
 
 
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Fishnet -- metallic sheet with holes} \label{section_fishnet} % references to ->
 %{{{
 %Aperture-array transmission
-%Wood anomaly in slit arrays
-%% TODO asymmetric cladding --> back reference to expe.tex:79
+Perforated plates \cite[p. 58]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+%Wood anomaly in slit arrays; wave propagation can be also understood through the "hopping model"
 
 % fishnet achieves relatively low losses, since it is optimised for thick and short conduction paths 
+
+%% TODO asymmetric cladding --> back reference to expe.tex:79
+
 
 %Babinet principle
 % for nearly flat structures, where most of the fields are confined within a slab perpendicular to $\KK$, a
 
 %surface plasmons, standing/propagating
 
-Perforated plates \cite[p. 58]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 \cite{yahiaoui2012metallo,rockstuhl2008light}
 
 The resonance in the metallic mesh has been used as a filter 
@@ -705,7 +739,7 @@ The resonance in the metallic mesh has been used as a filter
 
 Improved cross-shaped pattern for better spectral selectivity \cite{porterfield1994resonant}
 
-Let us note that our group received another fishnet sample made by automated mechanical drilling (Fig. \ref{fg_fishnet_mechanical}) into a . The sample was measured by the terahertz spectroscopy yielding relatively complicated spectra, which could not be reasonably matched by any of the simulations. We assume that the clash between the measured and simulated values comes from the imprecision in the sample itself, namely from the burrs due to 
+Let us note that our group received another fishnet sample made by automated mechanical drilling (Fig. \ref{fg_fishnet_mechanical}) into a double-sided circuit board blank, consisting of two 30 $\upmu$m copper foils glued to a plastic. The sample was measured by the terahertz spectroscopy yielding relatively complicated spectra, which could not be reasonably matched by any of the simulations. We assume that the clash between the measured and simulated values comes from the imprecision in the sample itself, namely from the burrs due to 
 \begin{figure}[ht] \caption{A drilled fishnet with $500\times 500$ $\mu$m periodicity. The inclined view from the bottom side shows the burrs that were probably responsible for the large difference of the measured and simulated spectra.}  \centering \includegraphics[width=.8\textwidth]{img/fishnet.pdf} \label{fg_fishnet_mechanical} \end{figure}
 
 Part of the fishnets were made of two foils as a metal-insulator-metal structure, but their spectra were also hard to interpret.
@@ -718,8 +752,16 @@ Part of the fishnets were made of two foils as a metal-insulator-metal structure
 
 
 
-
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Other structures} % plasmonic spheres (note: resonance width determined by gamma of the metal?)
 \cite{croenne2009controle}
+
+
+
+%% TODO remaining topics to be added or checked: 
+% 
+
+%%	* PhCs with metallic/metamaterial inclusios, [Monsoriu, Lina Shi and friends]
+	%thin wires [8], [28], Swiss rolls [9], SRRs [9], electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
+
 
