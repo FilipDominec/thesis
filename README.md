@@ -37,6 +37,7 @@
 
 
 ==== Finally ====
+ * [ ] results: make sure that |r| are |t| marked as modulus, not the actual complex value
  * [ ] make list of figures, adding short caption to each of them?
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
  * [ ] ...ize ---> ...ise 

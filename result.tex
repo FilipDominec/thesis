@@ -124,7 +124,7 @@ The plasma frequency does, however, depend on the geometry described by two para
 \paragraph{Behaviour close to the effective plasma frequency}
 The dependence of $f_p$ on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the point where $\eeff'(f)$ crosses zero  in the plot \ref{fg_Slab_fillfraction015_wireradius_scan}d. This coincides with the lower edge of the first photonic band in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}c. 
 
-For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$ becomes very high and proportional to $(f-f_p)^{-1/2}$, while the group velocity $v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
+For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$ is proportional to $(f-f_p)^{-1/2}$ and thus very high. Conversely, the group velocity $v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
 
 Exactly at $f=f_p$, the wire array medium can support the longitudinal oscillations of the charge, oriented parallel to the wires. They bear a close resemblance to plasmons in bulk media \cite{pendry1996extremely}.
 
@@ -261,18 +261,34 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 \section{Split-ring resonator} \label{section_srr} % references to -> 
 \paragraph{Magnetic dipole moment}
 
-\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
+\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction, .   %% todo check params
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
+
+
+\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} a wire mesh.} \label{fg_cdh5} \centering  % todo add params
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_Wire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\end{figure}
+%
+%\begin{figure}[h] \caption{Current-driven homogenization results for the split-ring resonator \textbf{(a)} without the wire mesh and \textbf{(b)} with the wire mesh. 
+	%} \label{fg_cdh4} \centering 
+	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+%\end{figure}
+
+
 
 
 \paragraph{Variations of the ring resonator}
@@ -299,33 +315,39 @@ Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eef
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
 
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh1} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\begin{figure}[t] \caption{Combined electric-magnetic resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
+%Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
+%Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method.  %TODO params and comment 
+The frequency of the electric resonance is influenced by the radius $\rho_c$ of the capacitor on the central spoke.
+} \label{fg_SRR_principles} \centering \vspace{-3mm} 
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
+%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
+\end{tabular}
+\end{figure}
+
+
 	%TODO \cite{rockstuhl2008transition}Transition from thin-film to bulk properties of metamaterials
 	%     --> fine changing of some parameter switches between the structure being homogenizable and not
+\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_i = 6$ $\mu$m, \textbf{(b)} $\rho_i = 8$ $\mu$m.} \label{fg_cdh1} \centering 
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
-
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh2} \centering 
+\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_i = 10$ $\mu$m, \textbf{(b)} $\rho_i = 18$ $\mu$m.} \label{fg_cdh2} \centering 
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap10.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap14.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap18.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh3} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-\end{figure}
-
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh4} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-\end{figure}
+%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap12.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap14.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap16.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap20.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 
 
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} \textbf{(b)} .} \label{fg_cdh5} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_Wire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-\end{figure}
 
 %img-cdh/cdh_emcSRRcap14.pdf
 %
@@ -338,6 +360,12 @@ Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eef
 %% TODO back reference to expe.tex:74
 
 %\ref{fg_Spheres_lossscan}
+\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres 
+	%of  
+\textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\end{figure}
 
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
@@ -739,7 +767,7 @@ The resonance in the metallic mesh has been used as a filter
 
 Improved cross-shaped pattern for better spectral selectivity \cite{porterfield1994resonant}
 
-Let us note that our group received another fishnet sample made by automated mechanical drilling (Fig. \ref{fg_fishnet_mechanical}) into a double-sided circuit board blank, consisting of two 30 $\upmu$m copper foils glued to a plastic. The sample was measured by the terahertz spectroscopy yielding relatively complicated spectra, which could not be reasonably matched by any of the simulations. We assume that the clash between the measured and simulated values comes from the imprecision in the sample itself, namely from the burrs due to 
+Let us note that our group received another fishnet sample made by automated mechanical drilling (Fig. \ref{fg_fishnet_mechanical}) into a double-sided circuit board blank, consisting of two 30 $\upmu$m copper foils glued to a plastic. The sample was measured by the terahertz spectroscopy yielding relatively complicated spectra, which could not be reasonably matched by any of the simulations. We assume that the clash between the measured and simulated values comes from the imprecision in the sample itself, namely from the burrs from drilling.
 \begin{figure}[ht] \caption{A drilled fishnet with $500\times 500$ $\mu$m periodicity. The inclined view from the bottom side shows the burrs that were probably responsible for the large difference of the measured and simulated spectra.}  \centering \includegraphics[width=.8\textwidth]{img/fishnet.pdf} \label{fg_fishnet_mechanical} \end{figure}
 
 Part of the fishnets were made of two foils as a metal-insulator-metal structure, but their spectra were also hard to interpret.
