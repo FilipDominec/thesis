@@ -1,6 +1,6 @@
 \label{chapter_results}
 \section{Dielectric slab} \label{section_Dielectric slab}
-\paragraph{Dispersion curves of a one-dimensional photonic crystal}
+\paragraph{Dispersion curves of a one-dimensional photonic crystal}%{{{
 \begin{figure}[h] \caption{Dispersion curves \textbf{(a)} in free space with virtual periodicity $a$, \textbf{(b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% fill fraction. \\
 Side plots show the electric field in $2\times 2$ unit cells, with dielectric outlined by thin black lines. The electric field was chosen to be polarized along the $x$-axis and is plotted as a color map (white corresponding to zero).} \label{fg_1dbd} \centering 
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
@@ -22,7 +22,8 @@ Its left panel shows the folded dispersion curves for a plane wave propagating i
 
 The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic layers of dielectric with permittivity 12\% and 15\% filling fraction. The dielectric is outlined by thin black lines. Band gaps of nonzero width corespond to frequency ranges where the wave can not propagate through the structure. %TODO The first photonic band gap starts at the frequency, TODO at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
 
-\paragraph{Characteristics of Bragg-type band gaps}
+%}}}
+\paragraph{Characteristics of Bragg-type band gaps}%{{{
 The lower and upper edge of the photonic bands are located the high-symmetry points of the Brillouin zone, such as $\mathbf{\Gamma}$ or $\mathbf{X}$, which are equivalent to the wavenumber $K=m\pi/a$ for $m\in\mathbb{Z}$ in the one-dimensional case discussed. Whenever $K$ is in one of these points, the electric and magnetic fields are periodic in space, and can be easily visualized. The side plots of \ref{fg_1dbd} show the shapes of the electric field $E_x$ in the $(y,z)$ plane at respective frequencies of the band edges. To stress the fact that the field is periodic even in the $\mathbf{X}$ point, each of the side plots spans over 2$\times$2 unit cells. 
 
 An important characteristic of each field pattern is the set of all points where the field amplitude remains zero over the evolution of time. Such sets will be denoted as \textit{nodal planes}, or also, more accurately, \textit{nodal surfaces}.
@@ -31,7 +32,8 @@ From all pairs of field plots that are connected by a photonic band (i.e. X2-$\G
 
 Typical for all Bragg band gaps (i.e. X1-X2, $\Gamma2$-$\Gamma3$, etc. in \ref{fg_1dbd}) is that between the lower and upper edges of each band gap, the phase increase across an unit cell does not change and thus $K$ remains constant, as does the number of the nodal planes. The field does change between these points, however, and the change is in the location of the \textit{nodal planes} such that the upper band-gap edge concentrates the field energy in mostly lower-permittivity regions. 
 
-\paragraph{Bragg and Fabry-Pérot resonances}
+%}}}
+\paragraph{Bragg and Fabry-Pérot resonances}%{{{
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
 where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of the two layers.
@@ -63,11 +65,11 @@ The vicinity of a Fabry-Pérot resonance influences the position and width the n
 
 A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points can be found when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
-\paragraph{Local effective parameters of a 1-D PhC}
+%}}}
+\paragraph{Local effective parameters of a 1-D PhC}%{{{
 Employing the \textit{s-parameter} method based on FDTD simulation, as described in Chapter \ref{chapter_sparam}, one can obtain the scattering parameters (i.e. complex reflectance and transmittance) of a finite layer of the periodic structure, and eventually retrieve its local effective parameters: the index of refraction $\Neff(f)$, impedance $\Zeff(f)$, permittivity $\eeff(f)$ and permeability $\meff(f)$. The first one is plotted in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}c, allowing to clearly identify the Bragg band gaps as regions where $\Neff'$ follows one of the Brillouin zone boundaries and $\Neff'' < 0$.
 
 The question is to what extent the three remaining local parameters, $\Zeff$, $\eeff$ and $\meff$, have any physical meaning. As a generally accepted approach, they will be considered meaningful only for the long wavelength limit, i.e. $K$ close to the $\mathbb{\Gamma}$ where the effects of the spatial dispersion should be negligible. According to Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}c, this is for frequencies up to 100 or 200 GHz only. At any higher frequency, the retrieved wavenumber $K$ approaches the Brillouin zone boundary, marked by the dash-dotted line, and grows further.
-
 
 In the low frequency limit of 1-D PhC, it was always observed that
 \begin{enumerate}
@@ -93,11 +95,11 @@ Note that with the correct branch retrieval procedure, the index of refraction n
                %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
 
-\clearpage
+%}}}
 
-%====================================================================================================
+\FloatBarrier %====================================================================================================
 \section{Wire medium} \label{chap_wiremedium}
-\paragraph{High-frequency behaviour}
+\paragraph{High-frequency behaviour}%{{{
 The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is discussed in another Section \ref{section_eot}.
 
 In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layers of metallic rods can be approximated by thin scattering slabs from the previous section, since the high-frequency interaction of the wave can be described of photonic bands alternating with Bragg band gaps. In contrast with the dielectric PhC described above, no Fabry-Pérot resonances are observed and the scattering strength of the wire layers reduces monotonously with growing frequency.
@@ -111,7 +113,8 @@ In the high-frequency part of the spectrum above the first photonic band, where 
 \end{tabular}
 \end{figure}
 
-\paragraph{Inductive behaviour at low-frequencies}
+%}}}
+\paragraph{Inductive behaviour at low-frequencies}%{{{
 At low frequencies, in contrast, the interaction of the conductive wires with the electromagnetic wave becomes very strong and leads to completely different behaviour than that described above. For a frequency range from zero up to the \textit{effective plasma frequency} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary and $k'\approx 0$. Therefore, in the low-frequency part of the spectrum, the local effective permittivity $\eeff$ is a physically meaningful quantity and follows the law typical of inductive media:
 \begin{equation} \eeff(f) = 1 - \frac{f^{2}}{f_p^{2}}\label{eq_eeff_plasma}\end{equation}
 Such a dependence of $\epsrl$ was already used in the Drude model in Eq. (\ref{eq_drude_eps}), and plotted in Fig. \ref{fg_Au_models}. Owing to this similarity to metals or plasma, wire arrays are denoted also as \textit{diluted metal} or \textit{artificial plasma} since 1950s \cite{merkel1973simulation, rotman1962plasma}, or as \textit{metallic delay dielectrics}, owing to the possibility to manipulate the phase and group velocities  \cite[p. 54]{brown1953artificial}.
@@ -121,7 +124,8 @@ The physical origin of $\eeff<0$ is different than in continuous media, where it
 Except for optical frequencies, $f_p$ does not substantially depend on the internal plasma frequency of the constituent metal, and such behaviour can be obtained even if wires are thought to be made of a perfect electric conductor (PEC).
 The plasma frequency does, however, depend on the geometry described by two parameters, the wire radius $\rho_w$ and the unit cell size $a$. 
 
-\paragraph{Behaviour close to the effective plasma frequency}
+%}}}
+\paragraph{Behaviour close to the effective plasma frequency}%{{{
 The dependence of $f_p$ on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the point where $\eeff'(f)$ crosses zero  in the plot \ref{fg_Slab_fillfraction015_wireradius_scan}d. This coincides with the lower edge of the first photonic band in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}c. 
 
 For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$ is proportional to $(f-f_p)^{-1/2}$ and thus very high. Conversely, the group velocity $v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
@@ -138,10 +142,11 @@ Notice that for a single cell, the transition from negative to positive permitti
   \begin{minipage}[c]{0.3\textwidth}
 	  \caption{Comparison of numerical results and analytic models for plasma frequency $f_p$ of a wire medium.\\ \textbf{(a)} $f_p$ as a function of wire spacing. \\ \textbf{(b)} $f_p$ as a function of wire radius $\rho_w$.}\vfill \label{fg_omegap_a}
   \end{minipage}  
-\end{figure} \clearpage
+\end{figure} 
 
-\paragraph{Plasma frequency as a function of wire radius and unit cell size}
-From Fig.  \ref{fg_Slab_fillfraction015_wireradius_scan}, it can be also deduced that $f_p$ is approximately proportional to the logarithm of $\rho_w$ if $\rho_w \ll a$. This is related to that a thicker wire should have slightly lower self-inductance per unit length. 
+%}}}
+\paragraph{Plasma frequency as a function of wire radius and unit cell size}%{{{
+From Fig.  \ref{fg_Slab_fillfraction015_wireradius_scan}, it can be also deduced that $f_p$ is approximately proportional to the logarithm of $\rho_w$ if $\rho_w \ll a$. This is related to that a thicker wire should have slightly lower inductance per unit length (sometimes denoted as its \textit{self-inductance}). 
 
 The effect of wire spacing $a$ is the opposite; with $a$ growing, the magnetic field has more space to circulate around the wir and $f_p$ reduces. 
 
@@ -156,7 +161,8 @@ To test the possible error introduced by the FDTD algorithm, we ran the simulati
 
 In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept the spacing $a = 100\,\upmu$m and changed the wire radius $r$. The analytic model and FDTD simulation give similar results (up to 5 \%) even for wire radii approaching roughly $a/4$. For thicker wires, the analytic model predicts higher plasma frequency than FDTD.  To conclude, the results of the model presented by Maslovski match the FDTD simulation with good accuracy for thin wires (where $r \lesssim a/5$). One possible application of the wire medium is in the construction of negative refractive index metamaterials, where a small negative real value of effective permittivity is desired.%%todo rewrite?
 
-%TODO \paragraph{Oblique propagation of the wave}
+%}}}
+%TODO \paragraph{Oblique propagation of the wave} % {{{
 %ref Homogenisation of nonlocal media such as wires 
 %\cite{capolino2009book}
 %\cite{silveirinha2007metamaterial}
@@ -166,24 +172,21 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
 %}}}
-	
-
 
 \FloatBarrier %====================================================================================================
-\section{Cut wires} \label{section_cutwires} % references to -> % note about plasmonic particles 
-%% (I guess the spatial dispersion will be visible in the CDH plots)
-%% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
-%% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
-
+\section{Cut wires} \label{section_cutwires}
 \paragraph{Individual resonances}%{{{
 The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. These resonances couple to the electromagnetic field through their electric dipole.
 
 The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance as the point close to  1200 GHz where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. Towards higher or lower frequencies from the resonance, the transmittance is relatively high.
 
+%% TODO check if the spatial dispersion would be visible in the CDH plots
+%% ...even here, with particles infinitesimally thin along the wave-vector, the spatial dispersion may be significant; arguably it was observed in 1970s by Merkel \cite{merkel1973simulation}, who remarks that
+%% "It is interesting that the more exact expressions for the dielectric constant of the artificial dielectric, which considered both the effect of the capacitive dipole impedance and the dipole-dipole interaction, did not model the behavior of a Lorentzian plasma as well as the original simplified approach"
+%% TODO note about plasmonic particles 
 %}}}
 \paragraph{Dispersion near an individual resonance}%{{{
 Each individual resonance in a periodic structure forms a characteristic shape in the spectrum of effective index of refraction $\Neff(f)$. The following description will therefore be applicable to individual resonances in other resonant structures, as well. 
-
 
 \begin{enumerate}
 \item{At frequencies under the resonance, the electric dipole of the antenna oscillates in phase with the driving field and the resonance contributes the effective index of refraction $\Neff'(f)$. 
@@ -207,7 +210,7 @@ The impact of the individual resonances on the effective parameters $\eeff(f)$ a
 
 %}}}
 \paragraph{Effects of the cut distance $d_c$}%{{{
-An increase of the cut distance $d_c$ clearly leads to increase of the resonance frequency $f_c$. The reason is twofold: for a cut width small relative to the unit cell size, $d_c\ll a$, it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance plays major role.
+An increase of the cut distance $d_c$ clearly increases the resonance frequency $f_c$. The reason is twofold: for a cut width small relative to the unit cell size, $d_c\ll a$, it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance is more important.
 
 Both the individual and Bragg-type resonances can be identified in the plot for different $d_c$ in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c. When $d_c \sim 16$  $\upmu$m, the individual resonance shifts above 1.5 THz and exchanges its order with the Bragg band gap. 
 For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to those for a $d_c\sim 2$ $\upmu$m, but are shifted by one Brillouin zone up.
@@ -215,7 +218,7 @@ For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to thos
 %}}}
 \paragraph{Effects of the wire radius $\rho_w$}%{{{
 The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
-For high enough $\rho_w$ a competing mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire self-inductance.
+For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire inductance.
 
 While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
@@ -250,25 +253,25 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 
 %     \FloatBarrier %====================================================================================================
 %     \section{Electric resonators} \label{section_esrr} % references to -> % note about plasmonic particles 
-%     \paragraph{Comparison of spectra to the cut wires}
+%     \paragraph{Comparison of spectra to the cut wires}%{{{
 %     From Figs. \ref{fg_CutWires_wirecut2um_wireradiusscan} and \ref{fg_CutWires_wireradius1u_cutwidth_comparison} it follows that for any practically attainable geometry, the frequency of the first individual resonance in cut-wire arrays is always relatively close to the first Bragg band gap. 
 %     
 %     A viable way to shift the resonance frequency much lower, without changing the unit cell size nor resorting to submicrometre cut distances, is to replace straight wire antennas by \textit{electric split-ring resonators}, % TODO cite 
 %     depicted in Fig. \ref{fg_eSRR}.
-
+%}}}
 
 \FloatBarrier %====================================================================================================
 \section{Split-ring resonator} \label{section_srr} % references to -> 
 \paragraph{Magnetic dipole moment}
 
-\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction, .   %% todo check params
+\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction, .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
@@ -314,6 +317,9 @@ Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eef
 
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
+\paragraph{}
+
+\paragraph{}
 
 \begin{figure}[t] \caption{Combined electric-magnetic resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
 %Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
@@ -356,17 +362,20 @@ The frequency of the electric resonance is influenced by the radius $\rho_c$ of 
 
 
 \FloatBarrier %====================================================================================================
-\section{Dielectric sphere} % references to ->				%{{{
+\section{Dielectric resonators} % references to ->			
+\paragraph{Mie resonances}%{{{
+Electric and magnetic resonances % TODO
 %% TODO back reference to expe.tex:74
+%% todo resonators used in microwave technology for decades, find cite?
+%% todo cite vendik, Zhao etc. from the directory
+\begin{figure} \caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering 
+	\begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+    \begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\label{fg_Spheres_lossscan}  \end{figure}
 
-%\ref{fg_Spheres_lossscan}
-\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres 
-	%of  
-\textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-\end{figure}
-
+%}}}
+\paragraph{Dielectric losses}%{{{
+Fig. \ref{fg_Spheres_lossscan}
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
 \begin{tabular}{r}
@@ -377,13 +386,20 @@ The frequency of the electric resonance is influenced by the radius $\rho_c$ of 
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
+%}}}
+\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres 
+\textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\end{figure}
+
+
+
 \add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the cross-section of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross-section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
 The scattering of a single sphere can be computed analytically: from mie.m, see http://atol.ucsd.edu/scatlib/index.htm, Bohren and Huffman originally published the code in their book on light scattering }
 
-\begin{figure} \caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_electric.pdf} 
- \centering \includegraphics[width=6cm]{img/sphere_Mie_mode_magnetic.pdf} \end{figure}
 
 
 \add{
@@ -423,48 +439,18 @@ Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 %> On 19 Mar 2014, at 15:57, <dominecf@fzu.cz>
 %> wrote:
 %>
-%>> Dear Oleg and all,
-%>> the frequency dependence of the Mie modes in an ellipsoid is
-%>> nontrivial.
-%>> Maybe some skilled mathematician could find the analytic expression,
-%>> but I
-%>> guess its evaluation would require a computer anyway. As an interesting
-%>> numerical experiment with FDTD, I ran three scans over the X-, Y- and
-%>> Z-
-%>> semiaxes of a TiO2 ellipsoid, fixing the remaining semiaxes to 15 um.
-%>> The
-%>> ellipsoid's X-axis was oriented parallel to the electric field, the
-%>> Z-axis
-%>> pointed in the wave propagation direction.
-%>>
-%>> The results attached, best expressed by the dielectric loss spectra in
-%>> bilogarithmic plot, show that the first (magnetic) mode is roughly
-%>> proportional to X**(-0.4) and Z**(-0.4), while the dependence on the
-%>> Y-size is even slower, similar to Y**(-0.2).
-%>>
-%>> The second Mie mode is more sensitive to the Z-size as Z**(-0.7), while
-%>> the other sizes scale very slowly, X**(-0.15), Y**(-0.15).
-%>>
-%>> In all cases, the exponents of X, Y and Z~dependencies should sum up to
-%>> -1, which is the obvious rule for the frequency dependence when all
-%>> axes
-%>> are scaled simultaneously!
-%>>
-%>> Note that these estimated exponents are roughly valid only near the
-%>> spherical shape, ie. when X~Y~Z. As a matter of fact, the tuning curves
-%>> are not straight in the log-log plots. Naturally when one ellipsoid
-%>> dimension is much lower than the other two, its role becomes more
-%>> pronounced.
-%>>
-%>> Now we are coming to the big conclusion: Near the spherical shape, the
-%>> difference of exponential slope between X- and Y- elongation is
-%>> (0.4-0.2)=0.2. Therefore, (15./12.)**(0.4-0.2) gives a reasonable
-%>> factor
-%>> of 1.0456 difference for the resonant frequencies of the magnetic mode.%}}}
+I ran three scans over the X-, Y- and Z- semiaxes of a TiO2 ellipsoid, fixing the remaining semiaxes to 15 um.  The ellipsoid's X-axis was oriented parallel to the electric field, the Z-axis pointed in the wave propagation direction.
+
+The results attached, best expressed by the dielectric loss spectra in bilogarithmic plot, show that the first (magnetic) mode is roughly proportional to X**(-0.4) and Z**(-0.4), while the dependence on the Y-size is even slower, similar to Y**(-0.2).
+
+The second Mie mode is more sensitive to the Z-size as Z**(-0.7), while the other sizes scale very slowly, X**(-0.15), Y**(-0.15).  
+
+In all cases, the exponents of X, Y and Z~dependencies should sum up to -1, which is the obvious rule for the frequency dependence when all axes are scaled simultaneously.
+Note that these estimated exponents are roughly valid only near the
+spherical shape, ie. when X~Y~Z. 
 
 %TODO Note that the effect of mm-phc transition can be also observed in silicon microcubes (thz operation)
-%Planar all-silicon metamaterial for terahertz applications
-\cite{prosvirnin2015planar}
+%Planar all-silicon metamaterial for terahertz applications \cite{prosvirnin2015planar}
 %}}}
 
 
