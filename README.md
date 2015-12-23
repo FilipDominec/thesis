@@ -37,17 +37,18 @@
 
 
 ==== Finally ====
- * [ ] results: make sure that |r| are |t| marked as modulus, not the actual complex value
- * [ ] make list of figures, adding short caption to each of them?
+ * [ ] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
+ * [ ] make list of figures, adding short caption to each of them? -- and link to the simulation directory
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
  * [ ] ...ize ---> ...ise 
- * [ ] go through all TODOs, Note about antiresonances?
+ * [ ] go through all TODOs
  * [ ] make index of kwords https://en.wikibooks.org/wiki/LaTeX/Indexing?
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
  * [ ] some figures should change from a)  to  (a) etc.
  * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances
+ * [ ] review the abstract
 
 ==== Ideas =====
 %Two oscillators with nearly the same frequency:

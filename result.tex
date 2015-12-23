@@ -262,9 +262,51 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 
 \FloatBarrier %====================================================================================================
 \section{Split-ring resonator} \label{section_srr} % references to -> 
-\paragraph{Magnetic dipole moment}
+\paragraph{Magnetic dipole moment}%{{{
+The fundamental resonance in a cut wire has an electric dipole moment only. The resonant magnetic field circulates around the wire and due to its rotational symmetry along the $x$-axis, the magnetic dipole moment is zero. Other structures can support resonances of lower symmetry with regards to the $x$-axis, thus having a magnetic dipole moment.
 
-\begin{figure}[t] \caption{Split-ring resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction, .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
+One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). The first resonance in its spectrum has a dominant magnetic dipole moment. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
+
+The second resonance would be observed at much higher frequency only, and has an electric dipole moment similar to the resonance in cut wires.
+%}}}
+\paragraph{Symmetry of the split-ring}%{{{
+The orientation of the splitting of a SRR determines the coupling between its electric and magnetic moment. In particular, when the splitting is on the front or rear side of the ring relative to the wave propagation direction, the resonant fields create also an electric moment, leading to the optical activity.
+
+Reduced symmetry with regards to the wave propagation may even break the homogenisation based on scattering parameters retrieval, as this procedure assumes that the structure is symmetric, i.e., its reflectivity is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
+
+The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR), which has two splittings at opposing position on the ring. 
+% todo Modifications with higher symmetry
+% A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
+%vol. 11, p. 114010, 2009.
+%, or also \textit{double-split ring resonators},  
+This is documented by the results in \ref{fg_SRR_principles}. The SRR with a single splitting is represented by red lines; while its magnitude of reflectance and transmittance in Fig. \ref{fg_SRR_principles}a,b appear similar to these of a cut wire, the computation of the refractive index yields a spectrum (Fig. \ref{fg_SRR_principles}c) which has no reasonable interpretation near the resonance at 500 GHz and above it. 
+
+The symmetric resonator is represented by green curves. In Fig. \ref{fg_SRR_principles}c, the refractive index follows a resonance pattern that was already described on the example of the cut wires: the curve grows up to the upper Brillouin zone boundary, follows it for a span of frequencies, drops to the Brillouin zone boundary below, follows it again and then a next band starts. 
+
+%}}}
+\paragraph{Antiresonances in local effective parameters}
+In the case of symmetric split-ring resonators, the first resonance possesses only the magnetic dipole moment. This fact can be intuitively deduced from a strong resonant behaviour of the permeability $\meff(f)$ (green curve in Fig. \ref{fg_SRR_principles}e, between 600 and 700 GHz). 
+
+The permittivity spectrum $\eeff(f)$ (Fig. \ref{fg_SRR_principles}d) is, however, also affected by the magnetic dipole resonance. Its impact on $\eeff(f)$ is several times weaker, and more importantly, it has a different sign than with $\meff(f)$. The real part of $\eeff'(f)$ is reduced at frequencies below the resonance, and increased above it. Simultaneously, the sign of the imaginary part $\eeff''(f)$ would imply amplification of the electric field oscillating around 650 GHz, which is impossible in a structure composed of lossy materials only.
+
+%Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
+% different orientations - some leading to chirality i.e. linear dependence of f(K)
+% when not failing due to chirality, s-param yields beautifully similar results to our simulations!
+% "CMM = Composite MetaMaterial"
+
+\paragraph{Physical relevance of effective parameters in their local approximation}
+%\begin{displayquote}
+%\textit{The periodicity cannot, however, be the only explanation since qualitatively similar antiresonances have been reported using the measured data for a disordered high permittivity composite} (Ref. \cite{wallen2010})
+%\end{displayquote}
+%Anti-resonant curve  of resonant inclusions : ""; %% 
+% -- but this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
+Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
+% 
+%An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
+
+
+\begin{figure}[t] \caption{Split-ring resonator: %{{{
+		amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction,  \textbf{(d)} effective permittivity $\eeff$ and \textbf{(e)} effective permeability $\meff$  .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
@@ -278,42 +320,30 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
+%}}}
 
 
-\begin{figure}[h] \caption{Current-driven homogenization results for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} a wire mesh.} \label{fg_cdh5} \centering  % todo add params
+
+
+\begin{figure}[h] \caption{Current-driven homogenization results  % for SRR%{{{
+	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} a wire mesh.} \label{fg_cdh5} \centering  % todo add params
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_Wire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
-%
+
+% todo possibly recalculate CDH for the SRR as in \ref{fg_SRR_principles}
 %\begin{figure}[h] \caption{Current-driven homogenization results for the split-ring resonator \textbf{(a)} without the wire mesh and \textbf{(b)} with the wire mesh. 
 	%} \label{fg_cdh4} \centering 
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 %\end{figure}
+%}}}
+% TODO \paragraph{Practical realisations of conductive magnetic resonators}%{{{
+% note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
+% Metallic strip pair
+% clusters of metallic microspheres
 
-
-
-
-\paragraph{Variations of the ring resonator}
-single- and double-split 
-% todo A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
-%vol. 11, p. 114010, 2009.
-% Modifications with higher symmetry
-
-% todo note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
-
-
-Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
-% different orientations - some leading to chirality i.e. linear dependence of f(K)
-% when not failing due to chirality, s-param yields beautifully similar results to our simulations!
-% "CMM = Composite MetaMaterial"
-
-\paragraph{Electric split-ring resonator}
-
-\paragraph{Metallic strip pair}
-
-
-
+%}}}
 
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
@@ -424,15 +454,7 @@ We performed series of experiments to measure the effective permeability  $\mu_{
 \includegraphics[width=12cm]{img/Spheres_FDTD_experimentalConv.pdf}
 \end{figure}
 }
-\paragraph{Antiresonances and problems with local effective parameters}
-% todo refer to the loss scan here
 
-\begin{displayquote}
-\textit{The periodicity cannot, however, be the only explanation since qualitatively similar antiresonances have been reported using the measured data for a disordered high permittivity composite} (Ref. \cite{wallen2010})
-\end{displayquote}
-Anti-resonant curve  of resonant inclusions : ""; %% 
-% -- but this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
-Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
 
 %}}}
 %% TODO? E-mail: Add the x, y, z, size scans of the ellipsoids%
@@ -465,8 +487,6 @@ spherical shape, ie. when X~Y~Z.
 
 % approximation for frequency well below the grid-resonance  
 
-% 
-An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
 %TODO Bitzer2011-Babinet_principle_SRR.pdf
 
 %}}}
