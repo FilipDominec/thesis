@@ -2,7 +2,6 @@
 %% *  fix that f is used as frequency (replace with omega) and also as arbitrary function f(t) 
 %% *  ensure more consistent usage of "dispersion curve", "dispersion relation" and "solution of Maxwell equations"
 % TODO 2015-01-23: 
-% 1) note that zero PBG width = dirac point = zero effective photon mass 
 % 2) investigate how mode anticrossing relates to the significant spatial dispersion
 % 3) find out why in effparam.py the data need to be conjugated, when MEEP seems to use the exp(-iwt) convention
 % 4) possibly write into the numeric.tex about using the Debye model, with a scan for the damping coefficient (0.1 omega0 ... 100 omega0)
@@ -437,7 +436,7 @@ The refraction between ordinary media and two examples involving negative-index 
 %% maybe?? the propagation velocities are more complicated 
 
 %}}}
-%}}}
+%}}} /section
 \section{Electrodynamics of nonlocal homogeneous media} %{{{
 \label{chap_nonloc}
 \subsection{Nonlocal response} 
@@ -729,7 +728,7 @@ To conclude, the author is convinced that the notion of \textit{information velo
 %% \cite{bruleanalysis}
 %% \cite{makarov2013kramers}
 %% }%}}}
-%}}}
+%}}} /section
 \section{Electromagnetic waves in periodic structures}%{{{
 \subsection{Periodic structures and the Bloch theorem}
 \paragraph{Inhomogeneity}%{{{
@@ -1062,6 +1061,7 @@ The width of the band gap depends on the scattering strength of the particles; i
 In the Results section, it is also shown that for a particular choice of parameters the width of the Bragg band gap can vanish. 
 
 %}}}
+%}}} /section
 \section{Historical notes on metamaterials and photonic crystals}%{{{
 \subsection{One history of three paradigms} %{{{
 The scientific progress rarely follows a straightforward, efficient way. Making a brief historical review and following the development is therefore important to understand the current state of research, and possibly also the actual physical theory. 
@@ -1355,7 +1355,7 @@ Another type of a band gap with different field pattern were predicted \cite{wan
 The common property of structures operating at Bloch wavelengths of comparable magnitude to the cell spacing (i.e. $2\pi a/K \gtrsim 0.2$) is the strong manifestation of the spatial dispersion. The effective index of refraction then forms a typical resonance curve clipped by the closest pair of Brillouin zone boundaries. In most such cases, forcing the use of the local effective parameters $\eeff(\omega)$ and $\meff(\omega)$ ceases to give much physical insight. On the contrary, it leads to a deviation from the expected Lorentz oscillator curves in $\eeff(\omega)$ and $\meff(\omega)$ and formation of \textit{antiresonances} \cite{koschny2003resonant,wallen2011anti} and complex values of $\eeff$ and $\meff$ even in lossless media \cite{li2003photonic}. These problems, however, appear to be only artifacts of using the local theory outside its applicability. Instead it is necessary to adopt the full theory of spatially dispersive media, as sketched in Chapter \ref{chap_nonloc} of this thesis.
 
 %}}}
-%}}}
+%}}} /section
 \section{The boundary between photonic crystals and metamaterials} %{{{
 In the light of the previous %{{{
 historical review, it appears that MMs and PhCs are divided by historical reasons as different paradigms which have developed separately for most of the 20th century. It was however argued above that these paradigms and research comumnities are undergoing the process of unification, which incites the question whether there exist any objective rules to tell apart MMs from PhCs.
@@ -1437,5 +1437,5 @@ With this criterion, the author believes, there is no strict rule for classifica
 % "Metamaterials derive their properties not from the properties of the base materials, but from their newly designed structures."
 
 %}}}
-%}}}
+%}}} /section
 

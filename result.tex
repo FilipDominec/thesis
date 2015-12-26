@@ -63,7 +63,9 @@ Note that unlike the Bragg resonance, this effect can be observed even in a sing
 
 The vicinity of a Fabry-Pérot resonance influences the position and width the neighbouring band gap, which can be found for different dielectric permittivity of the slab $\epsrl\in\{4,12,20\}$ in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}.
 
-A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points can be found when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
+A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves approached boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass.
+
+An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points can be found when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
 %}}}
 \paragraph{Local effective parameters of a 1-D PhC}%{{{
@@ -284,51 +286,54 @@ This is documented by the results in \ref{fg_SRR_principles}. The SRR with a sin
 The symmetric resonator is represented by green curves. In Fig. \ref{fg_SRR_principles}c, the refractive index follows a resonance pattern that was already described on the example of the cut wires: the curve grows up to the upper Brillouin zone boundary, follows it for a span of frequencies, drops to the Brillouin zone boundary below, follows it again and then a next band starts. 
 
 %}}}
-\paragraph{Antiresonances in local effective parameters}
+\paragraph{Antiresonances in local effective parameters}%{{{
 In the case of symmetric split-ring resonators, the first resonance possesses only the magnetic dipole moment, as follows from the symmetry of the resonant fields. This fact reflects in a strong resonant behaviour of the permeability $\meff(f)$ (green curve in Fig. \ref{fg_SRR_principles}e, between 600 and 700 GHz). 
 
-The permittivity spectrum $\eeff(f)$ (Fig. \ref{fg_SRR_principles}d) is, however, also affected by the magnetic dipole resonance. Its impact on $\eeff(f)$ is several times weaker, and more importantly, it has an opposite sign with regards to the resonance of $\meff(f)$, which is sometimes described as the \textit{antiresonance} in the literature \cite{wallen2011anti}. The real part of $\eeff'(f)$ is reduced at frequencies below the resonance, and increased above it. Simultaneously, the sign of the imaginary part $\eeff''(f)$ would imply amplification of the electric field oscillating around 650 GHz, which is impossible in a structure composed of lossy materials only.
+The permittivity spectrum $\eeff(f)$ is, however, also affected by the magnetic dipole resonance  (Fig. \ref{fg_SRR_principles}d). The impact of the magnetic resonance on $\eeff(f)$ is several times weaker than on $\meff(f)$, and more importantly, it has an opposite sign: The real part of $\eeff'(f)$ is reduced at frequencies below the resonance, and increased above it. Simultaneously, the sign of the imaginary part $\eeff''(f)$ would imply amplification of the electric field oscillating around 650 GHz, which is impossible in a structure composed of lossy materials only. This feature in the spectrum is sometimes described as an \textit{antiresonance} and has incited much discussion in the literature \cite{koschny2003resonant, wallen2011anti}. 
+%}}}
+\paragraph{Physical relevance of effective parameters in their local approximation}%{{{
+We believe that the influence of a magnetic resonance on $\eeff(f)$, or conversely, of an electric resonance of $\meff(f)$, is a mere artifact of approximating a strongly nonlocal structure with a concept of local effective parameters. It can be shown antiresonances become stronger at higher frequencies, as the wavelength $2\pi/K$ becomes similar to the unit cell size $a$. 
+In Ref. \cite{wallen2011anti}, it is argued that % against this interpretation with
+\begin{displayquote}
+\textit{the periodicity cannot \ldots be the only explanation since qualitatively similar antiresonances have been reported using the measured data for a disordered high permittivity composite.}
+\end{displayquote}
+The true origin of antiresonances and other deviations of $\eeff(f)$ and $\meff(f)$ from the Lorentzian resonance curve can however be attributed to the presence of photonic band gaps and nonlocal response of the structure. These effects are, to some extent, maintained also under randomizing the unit cell positions \cite{peng2007},   
+thus there is probably no need to seek for another explanation. %%TODO rewiew, rewrite?
+% -- this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
+
+% \cite{alu2010} "Restoring the physical meaning of MM cosstitutive parameters"
+
+%An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
 
 %Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
 % different orientations - some leading to chirality i.e. linear dependence of f(K)
 % when not failing due to chirality, s-param yields beautifully similar results to our simulations!
 % "CMM = Composite MetaMaterial"
+%}}}
+\paragraph{Comparison of the s-parameters method and CDH}%{{{
+With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, a question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ is applicable. While Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be found for any periodic structure using the Bloch theorem, the s-parameter method might return invalid values.
 
-\paragraph{Physical relevance of effective parameters in their local approximation}
-%\begin{displayquote}
-%\textit{The periodicity cannot, however, be the only explanation since qualitatively similar antiresonances have been reported using the measured data for a disordered high permittivity composite} (Ref. \cite{wallen2011anti})
-%\end{displayquote}
-%Anti-resonant curve  of resonant inclusions : ""; %% 
-% -- but this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
-Restoring the physical meaning of MM cosstitutive parameters %%  \cite{alu2010}
-% 
-%An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
-
-
+The comparison of the dispersion curves obtained by the s-parameters method and by current-driven homogenisation (CDH) is in Fig. \ref{fg_cdh5}. The results obtained by these fundamentally different methods overlap, and thus one can conclude that the array of symmetric split-ring resonators can be treated as homogeneous with well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances whenever the Bloch wavelength is similar to the unit cell length. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
+%}}}
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
 		amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction,  \textbf{(d)} effective permittivity $\eeff$ and \textbf{(e)} effective permeability $\meff$  .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
-	%% TODO ! Package pdftex.def Error: File `img-meep/SRR_principles_r.pdf' not found.
-%\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
-
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
 %}}}
-
-
-
-
 \begin{figure}[h] \caption{Current-driven homogenization results  % for SRR%{{{
-	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} a wire mesh.} \label{fg_cdh5} \centering  % todo add params
+	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} a wire mesh.} \label{fg_cdh5} \centering  % todo add params SRRArray_comment=symmetric SRR_simtime=2.000e-10_wirethick=0.000e+00_splitting2=1.600e-05_radius=3.000e-05_model=SRRArray.pdf
+	% TODO recalculate and update
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_Wire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
@@ -346,10 +351,20 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 % clusters of metallic microspheres
 
 %}}}
+% TODO \paragraph{Fano resonances}%{{{
+%}}}
+
 
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
-\paragraph{}
+\paragraph{Effect of the }
+The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around the circumference of the SRR. At higher frequencies, the SRR exhibits also the electric resonance, where the current flows symmetrically along whole SRR.
+
+By adding a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not significantly change due to the symmetry. However, a new kind of an electric resonance is introduced this way, in which the current conducted by the central bar has opposite direction than that conducted by both SRR arms. Like the original electric one, this resonance has an electric dipole, but its frequency is lower and similar to the frequency of the magnetic resonance.
+
+\paragraph{Reducing the frequency of the asymmetric electric resonance}
+It was demonstrated in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} that the electric resonance introduces a region in spectrum where the local effective permittivity has a physically meaningful negative value. Likewise, Fig. \ref{} $\meff(f)$
+By optimizing the structure geometry, the  
 
 \paragraph{}
 
@@ -359,10 +374,9 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 The frequency of the electric resonance is influenced by the radius $\rho_c$ of the capacitor on the central spoke.
 } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
-%\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
-	%%% TODO add 
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
 
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
