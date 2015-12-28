@@ -269,7 +269,13 @@ In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnes
 \paragraph{Magnetic dipole moment}%{{{
 The fundamental resonance in a cut wire has an electric dipole moment only. The resonant magnetic field circulates around the wire and due to its rotational symmetry along the $x$-axis, the magnetic dipole moment is zero. Other structures can support resonances of lower symmetry with regards to the $x$-axis, thus having a magnetic dipole moment.
 
-One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). The first resonance in its spectrum has a dominant magnetic dipole moment. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
+One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). To reduce the resonant frequency, capacitor pads can be added to the cut, as shown in Fig. \ref{fg_SRR_types}a. The first resonance in its spectrum has a dominant magnetic dipole moment. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
+\begin{figure}[h] \caption{Variants of the split-ring resonators, viewed from the side perpendicular to the magnetic field: \textbf{(a)} classical SRR, \textbf{(b)} symmetric SRR with two splits, \textbf{(c)} one of the designs of an electric SRRs having a central bar, \textbf{(d)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types} \centering 
+\begin{overpic}[height=0.22\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_eSRRpad.pdf}\put (1,80) {\textbf{(c)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(d)}}\end{overpic}
+\end{figure}
 
 The second resonance would be observed at much higher frequency only, and has an electric dipole moment similar to the resonance in cut wires.
 %}}}
@@ -278,7 +284,7 @@ The orientation of the splitting of a SRR determines the coupling between its el
 
 Reduced symmetry with regards to the wave propagation may even break the homogenisation based on scattering parameters retrieval, as this procedure assumes that the structure is symmetric, i.e., its reflectivity is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
 
-The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR), which has two splittings at opposing position on the ring. 
+The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR) depicted in Fig. \ref{fg_SRR_types}b, which has two splittings at opposing position on the ring. 
 % todo Modifications with higher symmetry
 % A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
 %vol. 11, p. 114010, 2009.
@@ -361,21 +367,13 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
 \paragraph{Effect of the central bar in SRR}
 The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around the circumference of the SRR. At higher frequencies, outside the range of Fig. \ref{fg_SRR_principles}, the SRR exhibits also the electric resonance where the current flows symmetrically along whole SRR.
-\begin{figure}[t] \caption{\textbf{(a)} \textbf{(b)} } \label{fg_slab_eps_scan} \centering 
-\begin{overpic}[height=0.2\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad
-\begin{overpic}[height=0.2\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad
-\begin{overpic}[height=0.2\textwidth]{img/drawing_eSRRpad.pdf}\put (1,80) {\textbf{(c)}}\end{overpic}\quad
-\begin{overpic}[height=0.2\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(d)}}\end{overpic}
+
+When one adds a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar is antiparallel to that conducted by both SRR arms. The corresponding frequency is lower compared to the original parallel electric resonance, and similar to the frequency of the magnetic resonance.
+\begin{figure}[h] \caption{Three low-frequency resonances in the combined SRR: \textbf{(a)} magnetic resonance, \textbf{(b)} antiparallel electric resonance, \textbf{(c)} parallel electric resonance.\\ The actual order of the first two resonances in the spectrum is determined by the inner capacitor radius $\rho_c$ or other parameters of the structure.} \label{fg_emcSRR_resonances} \centering 
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (1,52) {\textbf{(c)}}\end{overpic}
 \end{figure}
-
-\begin{figure}[t] \caption{\textbf{(a)} \textbf{(b)} } \label{fg_slab_eps_scan} \centering 
-\begin{overpic}[height=0.2\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
-\begin{overpic}[height=0.2\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad\quad
-\begin{overpic}[height=0.2\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (1,52) {\textbf{(c)}}\end{overpic}
-\end{figure}
-
-
-When one adds a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar has opposite direction than that conducted by both SRR arms. The corresponding frequency is lower compared to the original electric resonance, and similar to the frequency of the magnetic resonance.
 
 \paragraph{Reducing the frequency of the asymmetric electric resonance}
 It was demonstrated in the spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) that an electric resonance, if not preceded by a Bragg band gap, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Likewise, the magnetic resonance introduces a region of $\meff(f) < 0$, as shown in Fig. \ref{fg_SRR_principles}.
