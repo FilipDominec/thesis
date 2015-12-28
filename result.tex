@@ -33,29 +33,20 @@ From all pairs of field plots that are connected by a photonic band (i.e. X2-$\G
 Typical for all Bragg band gaps (i.e. X1-X2, $\Gamma2$-$\Gamma3$, etc. in \ref{fg_1dbd}) is that between the lower and upper edges of each band gap, the phase increase across an unit cell does not change and thus $K$ remains constant, as does the number of the nodal planes. The field does change between these points, however, and the change is in the location of the \textit{nodal planes} such that the upper band-gap edge concentrates the field energy in mostly lower-permittivity regions. 
 
 %}}}
-\paragraph{Bragg and Fabry-Pérot resonances}%{{{
+\paragraph{Bragg and Fabry-Pérot resonances} %{{{
 The \textit{Bragg condition} for the formation of a band gap in a periodic structure is that an integer number of half waves fits into the unit cell; i.e. that the phase difference $\phi_{1+2}$ of the wave along the unit cell is 
 \begin{equation} \phi_{1+2} = d_1 n_1 \frac{\omega}{c} + d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_braggcond}\end{equation}
 where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of the two layers.
 
-\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15\% in a 300 $\upmu$m unit cell, as a function of frequency and dielectric permittivity. On the right panel, the Fabry-Pérot condition from Eq. (\ref{eq_fpcond}) are marked by a thin dash-dotted line.} \label{fg_slab_eps_scan} \centering 
-\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}
-%Slab_fillfraction015_epsilon_scan_r.pdf
-%Slab_fillfraction015_epsilon_scan_t.pdf
-\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}  % TODO rm voids
-%Slab_epsilon4_fillfraction_scan_r.pdf
-%Slab_epsilon4_fillfraction_scan_t.pdf
+\begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15~\% in a 300~$\mu$m unit cell, as a function of frequency and dielectric permittivity. On the right panel, the Fabry-Pérot condition from Eq. (\ref{eq_fpcond}) are marked by a thin dash-dotted line.} \label{fg_slab_eps_scan} \centering 
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}
 \end{figure}
 
-\begin{figure}[t] \caption{\textbf{(a)} Reflectivity and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with dielectric permittivity of 4, as a function of frequency and filling fraction in a 300 $\upmu$m unit cell} \label{fg_slab_ff_scan} \centering 
-\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put (-1,80) {\textbf{(a)}}\end{overpic} % TODO  lower number of contours
-%Slab_fillfraction015_epsilon_scan_r.pdf
-%Slab_fillfraction015_epsilon_scan_t.pdf
-\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf}\put (-1,80) {\textbf{(b)}}\end{overpic} % TODO rm voids
-%Slab_epsilon4_fillfraction_scan_r.pdf
-%Slab_epsilon4_fillfraction_scan_t.pdf
+\begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with relative dielectric permittivity of 4, as a function of frequency and filling fraction in a 300~$\mu$m unit cell} \label{fg_slab_ff_scan} \centering 
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic} 
+\begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}
 \end{figure}
-%\clearpage
 
 The width of the band gap grows with the amplitude of the wave scattered from the unit cell. This amplitude however also depends on frequency and, in the case of a lossless dielectric slab, it vanishes whenever an integer number of the half-waves fits into either of the dielectric layers. For comparison with Eq. (\ref{eq_braggcond}), this condition is
 \begin{equation} \phi_{1} = d_1 n_1 \frac{\omega}{c} = \pi m \text{\quad or \quad} \phi_{2} = d_2 n_2 \frac{\omega}{c} = \pi m, \text{ where } m\in \mathbb{Z}. \label{eq_fpcond}\end{equation}
@@ -63,7 +54,7 @@ Note that unlike the Bragg resonance, this effect can be observed even in a sing
 
 The vicinity of a Fabry-Pérot resonance influences the position and width the neighbouring band gap, which can be found for different dielectric permittivity of the slab $\epsrl\in\{4,12,20\}$ in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}.
 
-A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves approached boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass.
+A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves approached boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \label{indexofrefraction}.
 
 An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points can be found when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
@@ -271,18 +262,15 @@ The fundamental resonance in a cut wire has an electric dipole moment only. The 
 
 One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). To reduce the resonant frequency, capacitor pads can be added to the cut, as shown in Fig. \ref{fg_SRR_types}a. The first resonance in its spectrum has a dominant magnetic dipole moment. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
 \begin{figure}[h] \caption{Variants of the split-ring resonators, viewed from the side perpendicular to the magnetic field: \textbf{(a)} classical SRR, \textbf{(b)} symmetric SRR with two splits, \textbf{(c)} one of the designs of an electric SRRs having a central bar, \textbf{(d)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types} \centering 
-\begin{overpic}[height=0.22\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_eSRRpad.pdf}\put (1,80) {\textbf{(c)}}\end{overpic}\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(d)}}\end{overpic}
+\begin{overpic}[height=0.25\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
+\begin{overpic}[height=0.25\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}
 \end{figure}
 
-The second resonance would be observed at much higher frequency only, and has an electric dipole moment similar to the resonance in cut wires.
 %}}}
 \paragraph{Symmetry of the split-ring}%{{{
 The orientation of the splitting of a SRR determines the coupling between its electric and magnetic moment. In particular, when the splitting is on the front or rear side of the ring relative to the wave propagation direction, the resonant fields create also an electric moment, leading to the optical activity.
 
-Reduced symmetry with regards to the wave propagation may even break the homogenisation based on scattering parameters retrieval, as this procedure assumes that the structure is symmetric, i.e., its reflectivity is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
+Reduced symmetry with regards to the wave propagation may even break the homogenisation based on scattering parameters retrieval, as this procedure assumes that the structure is symmetric, i.e., its reflectance is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
 
 The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR) depicted in Fig. \ref{fg_SRR_types}b, which has two splittings at opposing position on the ring. 
 % todo Modifications with higher symmetry
@@ -293,6 +281,7 @@ This is documented by the results in \ref{fg_SRR_principles}. The SRR with a sin
 
 The symmetric resonator is represented by green curves. In Fig. \ref{fg_SRR_principles}c, the refractive index follows a resonance pattern that was already described on the example of the cut wires: the curve grows up to the upper Brillouin zone boundary, follows it for a span of frequencies, drops to the Brillouin zone boundary below, follows it again and then a next band starts. 
 
+At higher frequencies, outside the range of Fig. \ref{fg_SRR_principles}, the SRR exhibits also the electric resonance where the current flows symmetrically along both its arms. It is assumed that any structure should support infinite number of resonances, of which only the lowest few are usually of any interest.
 %}}}
 \paragraph{Antiresonances in local effective parameters}%{{{
 In the case of symmetric split-ring resonators, the first resonance possesses only the magnetic dipole moment, as follows from the symmetry of the resonant fields. This fact reflects in a strong resonant behaviour of the permeability $\meff(f)$ (green curve in Fig. \ref{fg_SRR_principles}e, between 600 and 700 GHz). 
@@ -333,17 +322,22 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
-%}}}
-\begin{figure}[h] \caption{Current-driven homogenization results, shown as bubbles,  indicating the dispersion curves %{{{
+\begin{figure}[h] \caption{Current-driven homogenization results, shown as bubbles,  indicating the dispersion curves 
 	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} the same a wire mesh.\\The results of the scattering-parameter method are overlayed as curves; these show the same data as the green and blue solid curves from Fig. \ref{fg_SRR_principles}c.} \label{fg_cdh5} \centering  % todo add params SRRArray_comment=symmetric SRR_simtime=2.000e-10_wirethick=0.000e+00_splitting2=1.600e-05_radius=3.000e-05_model=SRRArray.pdf
 	% TODO recalculate and update
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR_wire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+	\vspace{.1\textwidth}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  
+	\put(1,96) {\textbf{(a)}} 
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad.pdf}}
+	\put(31,105){sSRR}
+	\end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR_wire.pdf}  
+	\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}}
+	\put(29,105){sSRR + wire}
+	\put(1,96) {\textbf{(b)}} 
+	\end{overpic}
 \end{figure}
 
 % todo possibly recalculate CDH for the SRR as in \ref{fg_SRR_principles}
@@ -365,62 +359,74 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
-\paragraph{Effect of the central bar in SRR}
-The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around the circumference of the SRR. At higher frequencies, outside the range of Fig. \ref{fg_SRR_principles}, the SRR exhibits also the electric resonance where the current flows symmetrically along whole SRR.
-
-When one adds a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar is antiparallel to that conducted by both SRR arms. The corresponding frequency is lower compared to the original parallel electric resonance, and similar to the frequency of the magnetic resonance.
+\paragraph{Effect of the central bar in SRR}%{{{
+The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around its circumference. 
+When one adds a central bar parallel to the electric field and the $x$-axis, as in Fig. \ref{fg_SRR_types2}a, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar is antiparallel to the current conducted by both SRR arms. 
+The corresponding frequency is lower compared to the original parallel electric resonance, and similar to the frequency of the magnetic resonance.
+\begin{figure}[h] \caption{\textbf{(a)} A modification of a split-ring resonator with a central bar, \textbf{(b)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types2} \centering 
+\begin{overpic}[height=0.25\textwidth]{img/drawing_eSRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
+\begin{overpic}[height=0.25\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}
+\end{figure}
 \begin{figure}[h] \caption{Three low-frequency resonances in the combined SRR: \textbf{(a)} magnetic resonance, \textbf{(b)} antiparallel electric resonance, \textbf{(c)} parallel electric resonance.\\ The actual order of the first two resonances in the spectrum is determined by the inner capacitor radius $\rho_c$ or other parameters of the structure.} \label{fg_emcSRR_resonances} \centering 
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}\quad\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (1,52) {\textbf{(c)}}\end{overpic}
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,81) {\textbf{(a)}}\end{overpic}\quad\quad\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,81) {\textbf{(b)}}\end{overpic}\quad\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (5,54) {\textbf{(c)}}\end{overpic}
 \end{figure}
 
-\paragraph{Reducing the frequency of the asymmetric electric resonance}
-It was demonstrated in the spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) that an electric resonance, if not preceded by a Bragg band gap, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Likewise, the magnetic resonance introduces a region of $\meff(f) < 0$, as shown in Fig. \ref{fg_SRR_principles}.
-
-By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. %% TODO XXX 
-
-\paragraph{}
-
+%}}}
+\paragraph{Tuning the frequency of the asymmetric electric resonance}%{{{
+The spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) suggest that an electric resonance, if not preceded by a Bragg band gap, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Under the same condition in Fig. \ref{fg_SRR_principles}, the magnetic resonance introduces a region of $\meff(f) < 0$.
 \begin{figure}[t] \caption{Combined electric-magnetic resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
 %Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 %Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method.  %TODO params and comment 
 The frequency of the electric resonance is influenced by the radius $\rho_c$ of the capacitor on the central spoke.
-} \label{fg_SRR_principles} \centering \vspace{-3mm} 
+} \label{fg_emSRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
-
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
 
+By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. A convenient means of tuning the antiparallel electric resonance is to divide the central bar by an \textit{inner} capacitor as shown in Fig. \ref{fg_SRR_types2}. For inner capacitor radius  large enough $\rho_c = 18$ $\upmu$m, the antiparallel electric resonance is found at lower frequency ( than the magnetic one 
 
+\begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the refractive index, as questionably retrieved by the scattering parameter method, for the electro-magnetic split-ring resonator} \label{fg_slab_eps_scan} \centering 
+\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
+\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  % TODO rm voids
+\end{figure}
+
+%}}}
+\paragraph{Current-driven homogenization and spatial dispersion}%{{{
 	%TODO \cite{rockstuhl2008transition}Transition from thin-film to bulk properties of metamaterials
 	%     --> fine changing of some parameter switches between the structure being homogenizable and not
-\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_i = 6$ $\mu$m, \textbf{(b)} $\rho_i = 8$ $\mu$m.} \label{fg_cdh1} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering 
+	\vspace{.1\textwidth}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  
+	\put(1,96) {\textbf{(a)}} 
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 6$ $\upmu$m}
+	\end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 8$ $\upmu$m}
+	\put(1,96) {\textbf{(b)}} 
+\end{overpic}
 \end{figure}
-\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_i = 10$ $\mu$m, \textbf{(b)} $\rho_i = 18$ $\mu$m.} \label{fg_cdh2} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap10.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap18.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+\begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering 
+	\vspace{.1\textwidth}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap10.pdf}  
+	\put(1,96) {\textbf{(a)}} 
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 10$ $\upmu$m}
+	\end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap18.pdf}  
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 18$ $\upmu$m}
+	\put(1,96) {\textbf{(b)}} 
+	\end{overpic}
 \end{figure}
 
-%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap12.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap14.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap16.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-%   	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap20.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-
-
-
-%img-cdh/cdh_emcSRRcap14.pdf
-%
-%img-cdh/cdh_sSRR.pdf
-%img-cdh/cdh_Wire.pdf
+%}}}
 
 
 \FloatBarrier %====================================================================================================
