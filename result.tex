@@ -224,11 +224,13 @@ For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then star
 
 While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.\\
+In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. Although retrieved for the entire spectrum, the local effective parameters have physical meaning only when the wavelength is much larger than $a$, i.e. roughly from 0 to 500 GHz and from 1220 to 1280 GHz.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.059\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.056\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.056\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -318,7 +320,7 @@ The comparison of the dispersion curves obtained by the s-parameters method and 
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
 		amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction,  \textbf{(d)} effective permittivity $\eeff$ and \textbf{(e)} effective permeability $\meff$  .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
-Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
+Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The dispersion curves nor effective parameters for the asymmetric SRR could not be determined by the scattering parameters method. } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
@@ -358,12 +360,13 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
 \paragraph{Effect of the central bar in SRR}
-The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around the circumference of the SRR. At higher frequencies, the SRR exhibits also the electric resonance, where the current flows symmetrically along whole SRR.
+The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around the circumference of the SRR. At higher frequencies, outside the range of Fig. \ref{fg_SRR_principles}, the SRR exhibits also the electric resonance where the current flows symmetrically along whole SRR.
 
-When one adds a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new kind of an resonance is introduced this way, in which the current conducted by the central bar has opposite direction than that conducted by both SRR arms. This is another electric resonance, but  its frequency is lower compared to the original electric resonance, and similar to the frequency of the magnetic resonance.
+
+When one adds a central bar parallel to the electric field, i.e. along the $x$-axis, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar has opposite direction than that conducted by both SRR arms. The corresponding frequency is lower compared to the original electric resonance, and similar to the frequency of the magnetic resonance.
 
 \paragraph{Reducing the frequency of the asymmetric electric resonance}
-It was demonstrated in the spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) that the electric resonances introduce a region in spectrum where the local effective permittivity has a physically meaningful negative value. Likewise, the magnetic resonance introduces a region of $\meff(f) < 0$, as shown in the spectra in Fig. \ref{fg_SRR_principles}.
+It was demonstrated in the spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) that an electric resonance, if not preceded by a Bragg band gap, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Likewise, the magnetic resonance introduces a region of $\meff(f) < 0$, as shown in Fig. \ref{fg_SRR_principles}.
 
 By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. %% TODO XXX 
 
