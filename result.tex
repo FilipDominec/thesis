@@ -56,7 +56,7 @@ The vicinity of a Fabry-Pérot resonance influences the position and width the n
 
 A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves approached boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \label{indexofrefraction}.
 
-An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points can be found when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
+An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points exist when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
 %}}}
 \paragraph{Local effective parameters of a 1-D PhC}%{{{
@@ -86,7 +86,7 @@ Note that with the correct branch retrieval procedure, the index of refraction n
                %\caption{2gn.pdf}   \includegraphics[width=3cm]{img/multilay_2gn.pdf}
                %\caption{3bu.pdf}   \includegraphics[width=3cm]{img/multilay_3bu.pdf}
                %\caption{3grey.pdf} \includegraphics[width=3cm]{img/multilay_3grey.pdf}
-               %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} \clearpage
+               %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} 
 
 %}}}
 
@@ -210,12 +210,7 @@ For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to thos
 
 %}}}
 \paragraph{Effects of the wire radius $\rho_w$}%{{{
-The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
-For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire inductance.
-
-While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
-
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.\\
+\begin{figure}[b] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.\\
 In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. Although retrieved for the entire spectrum, the local effective parameters have physical meaning only when the wavelength is much larger than $a$, i.e. roughly from 0 to 500 GHz and from 1220 to 1280 GHz.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.059\textwidth}\\
@@ -225,6 +220,11 @@ In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnes
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
+The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
+For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire inductance.
+
+While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
+
 
 \begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for a metamaterial made of cut wires. Cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} 
 \begin{tabular}{r}
@@ -307,6 +307,7 @@ thus there is probably no need to seek for another explanation. %%TODO rewiew, r
 % when not failing due to chirality, s-param yields beautifully similar results to our simulations!
 % "CMM = Composite MetaMaterial"
 %}}}
+% todo negative index structure, ref to Fig. 2.11
 \paragraph{Comparison of the s-parameters method and CDH}%{{{
 With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, a question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ is applicable. While Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be found for any periodic structure using the Bloch theorem, the s-parameter method might return invalid values.
 
@@ -325,7 +326,7 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 \end{tabular}
 \end{figure}
 \begin{figure}[h] \caption{Current-driven homogenization results, shown as bubbles,  indicating the dispersion curves 
-	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} the same a wire mesh.\\The results of the scattering-parameter method are overlayed as curves; these show the same data as the green and blue solid curves from Fig. \ref{fg_SRR_principles}c.} \label{fg_cdh5} \centering  % todo add params SRRArray_comment=symmetric SRR_simtime=2.000e-10_wirethick=0.000e+00_splitting2=1.600e-05_radius=3.000e-05_model=SRRArray.pdf
+	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} the same with a wire mesh. The results of the scattering-parameter method are overlayed as green lines; these show the same data as the green and blue solid lines from Fig. \ref{fg_SRR_principles}c. In the right panel, the negative-index range of frequencies between 630 and 670 GHz was mirrored against the $K=0$ vertical axis and plotted by a dashed green line.} \label{fg_cdh5} \centering  % todo add params SRRArray_comment=symmetric SRR_simtime=2.000e-10_wirethick=0.000e+00_splitting2=1.600e-05_radius=3.000e-05_model=SRRArray.pdf
 	% TODO recalculate and update
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR.pdf}  
@@ -360,27 +361,28 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 \FloatBarrier %====================================================================================================
 \section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
 \paragraph{Effect of the central bar in SRR}%{{{
-The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around its circumference. 
-When one adds a central bar parallel to the electric field and the $x$-axis, as in Fig. \ref{fg_SRR_types2}a, the frequency of the magnetic resonance does not change significantly. The reason is in that zero net current flows through the central bar due to the symmetry of magnetic resonance. However, a new electric resonance is introduced this way, in which the current conducted by the central bar is antiparallel to the current conducted by both SRR arms. 
-The corresponding frequency is lower compared to the original parallel electric resonance, and similar to the frequency of the magnetic resonance.
-\begin{figure}[h] \caption{\textbf{(a)} A modification of a split-ring resonator with a central bar, \textbf{(b)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types2} \centering 
+The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around its circumference. When one adds a central bar parallel to the electric field and the $x$-axis, as in Fig. \ref{fg_SRR_types2}a, the frequency of the magnetic resonance does not change significantly. The reason comes from the symmetry thereof, which stipulates that that zero net current flows through the central bar. 
+
+However, a new electric resonance (Fig. \ref{fg_emcSRR_resonances}b) is introduced by adding the bar, characteristic by that the current conducted by the central bar is antiparallel to the current conducted by both SRR arms. The corresponding frequency is lower compared to the original parallel electric resonance (Fig. \ref{fg_emcSRR_resonances}c), and similar to the frequency of the magnetic resonance (Fig. \ref{fg_emcSRR_resonances}a).  
+\begin{figure}[h] \caption{\textbf{(a)} A modification of a split-ring resonator with a central bar, \textbf{(b)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the antiparallel electric resonance} \label{fg_SRR_types2} \centering 
 \begin{overpic}[height=0.25\textwidth]{img/drawing_eSRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
 \begin{overpic}[height=0.25\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}
 \end{figure}
-\begin{figure}[h] \caption{Three low-frequency resonances in the combined SRR: \textbf{(a)} magnetic resonance, \textbf{(b)} antiparallel electric resonance, \textbf{(c)} parallel electric resonance.\\ The actual order of the first two resonances in the spectrum is determined by the inner capacitor radius $\rho_c$ or other parameters of the structure.} \label{fg_emcSRR_resonances} \centering 
+\begin{figure}[b] \caption{Three low-frequency resonances in the combined SRR: \textbf{(a)} magnetic resonance, \textbf{(b)} antiparallel electric resonance, \textbf{(c)} parallel electric resonance.\\ The actual order of the first two resonances in the spectrum is determined by the inner capacitor radius $\rho_c$ or other parameters of the structure.} \label{fg_emcSRR_resonances} \centering 
 \begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,81) {\textbf{(a)}}\end{overpic}\quad\quad\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,81) {\textbf{(b)}}\end{overpic}\quad\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (5,54) {\textbf{(c)}}\end{overpic}
 \end{figure}
 
 %}}}
-\paragraph{Tuning the frequency of the asymmetric electric resonance}%{{{
-The spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) suggest that an electric resonance, if not preceded by a Bragg band gap, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Under the same condition in Fig. \ref{fg_SRR_principles}, the magnetic resonance introduces a region of $\meff(f) < 0$.
+\paragraph{Tuning the frequency of the antiparallel electric resonance}%{{{
+The spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}) suggest that each electric resonance, if not preceded by a Bragg band gap or excessively lossy, introduces a region in spectrum where the local effective permittivity has a physically meaningful and negative value. Under the same condition in Fig. \ref{fg_SRR_principles}, the magnetic resonance introduces a region of $\meff(f) < 0$.
 \begin{figure}[t] \caption{Combined electric-magnetic resonator: amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$.  
+% todo check the structure parameters
 %Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
 %Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a symmetric SRR (double split width $d=2$ $\mu$m) and the same symmetric SRR with wire grid added.  The effective parameters for the asymmetric SRR could not be determined by the scattering parameters method.  %TODO params and comment 
 The frequency of the electric resonance is influenced by the radius $\rho_c$ of the capacitor on the central spoke.
-} \label{fg_emSRR_principles} \centering \vspace{-3mm} 
+} \label{fg_emSRR_icr} \centering \vspace{-3mm} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
@@ -388,15 +390,30 @@ The frequency of the electric resonance is influenced by the radius $\rho_c$ of 
 \end{tabular}
 \end{figure}
 
-By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. A convenient means of tuning the antiparallel electric resonance is to divide the central bar by an \textit{inner} capacitor as shown in Fig. \ref{fg_SRR_types2}. For inner capacitor radius  large enough $\rho_c = 18$ $\upmu$m, the antiparallel electric resonance is found at lower frequency ( than the magnetic one 
+By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. This is the conventional approach to design a metamaterial with a negative index of refraction. One of the means of tuning the  antiparallel electric resonance frequency is to divide the central bar by an \textit{inner} capacitor as shown in Fig. \ref{fg_SRR_types2}b. 
 
-\begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the refractive index, as questionably retrieved by the scattering parameter method, for the electro-magnetic split-ring resonator} \label{fg_slab_eps_scan} \centering 
+For the inner capacitor being relatively small, with radius $\rho_c = 6$ $\upmu$m, the electric resonance is located around 1150 GHz, and it shifts down to 940 GHz when $\rho_c$ is increased to 8 $\upmu$m. On the contrary, the magnetic resonance is virtually independent of $\rho_c$ and remains close to 800 GHz. Both individual resonances can be clearly identified as points of zero transmission and as corresponding steep, but still continuous, drops in the refractive index (red and light green curves in Fig. \ref{fg_emSRR_icr}).  For $\rho_c \leq 8$ $\upmu$m, the resonances are separated by a photonic band, indicating that the regions of  $\eeff(f) < 0$ and $\meff(f) < 0$ do not overlap. 
+
+An attempt to further reduce the frequency of the electric resonance to obtain negative index of refraction $\Neff'<0$ in the region of overlap, however, leads to confusing results (cyan curves in Fig. \ref{fg_emSRR_icr}). 
+For $\rho_c \in \langle10, 16\rangle$ $\upmu$m, the scattering parameters method retrieves apparently erroneous spectra with two disticnct band gaps, but without any individual resonance.
+A more detailed parametric scan through these problematic values of $\rho_c$ can be found in Fig. \ref{fg_emSRR_icrscan}.
+
+\begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the refractive index, as questionably retrieved by the scattering parameter method, for the electro-magnetic split-ring resonator} \label{fg_emSRR_icrscan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
 \begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  % TODO rm voids
 \end{figure}
 
+The effective parameters retrieved by the s-parameter method become easy to interpret for $\rho_c \geq 18$ $\upmu$m. The antiparallel resonance at 690 GHz is again well separated from the magnetic one, which remains near its original frequency (dark blue curves in Fig. \ref{fg_emcSRR_icr}). Further explanation of these results is beyond the capabilities of the scattering parameter method, and necessitate the more expensive computation using the current-driven homogenisation (CDH).
+
 %}}}
 \paragraph{Current-driven homogenization and spatial dispersion}%{{{
+The CDH results for the same structure parameters, $\rho_c\in\{6,8,10,18\}$ $\upmu$m are presented in Figs. \ref{fg_cdh1} and \ref{fg_cdh2}. For comparison, the dispersion curves corresponding to the $\Neff'(f)$ retrieved by the scattering parameter method are shown as green curves.
+
+For $\rho_c=6$ $\upmu$m, both retrieval methods give relatively similar results, and they correctly identify two indirect band gaps corresponding to the magnetic and antiparallel electric resonances, respectively. The match is not as good as in Fig. \ref{fg_cdh5}, though -- namely the magnetic resonance around 800 GHz appears somewhat wider when retrieved by the s-parameters method, compared to CDH. The deviation can be attributed to the structure being surrounded by vacuum instead of sensing the near fields of the surrounding cells (c.f. page \pageref{cdhadvantages}).
+
+The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this inner capacitor radius, the CDH dispersion curves start to bend downwards near the $\mathbf X$ point of the second photonic band.
+
+
 	%TODO \cite{rockstuhl2008transition}Transition from thin-film to bulk properties of metamaterials
 	%     --> fine changing of some parameter switches between the structure being homogenizable and not
 \begin{figure}[h] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering 
@@ -521,7 +538,7 @@ spherical shape, ie. when X~Y~Z.
 \section{SRRs and spheres in a wire array or grid} % references to ->
 % Cai_Zhu2008-Diel_resonators_wires.pdf
 %{{{
-\begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} \clearpage
+\begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} 
 
 % approximation for frequency well below the grid-resonance  
 
@@ -537,7 +554,6 @@ spherical shape, ie. when X~Y~Z.
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
-\clearpage
 
 % TODO
 %\ref{fg_SphereWire_principles}
@@ -737,7 +753,7 @@ For an easier interpretation of the results, we draw the most prominent features
 
 The Mie resonances are caused by the field confinement near the high permittivity elements. They always manifest themselves as sharp peaks in the imaginary part of the index of refraction ($\Neff''$), and in Fig.~\ref{fg_drawn100} they are denoted by thick solid curves. Their electric- or magnetic-dipole character is identified by the letters "E" or "M" above the plot, respectively.
 
-As it can be seen in Figs.~\ref{fg_spacingscan100} and \ref{fg_drawn100}, the pairs of electric and magnetic Mie resonances form U-shaped curves, at the bottom of which the resonances come closer in frequency to each other and eventually they disappear when the unit-cell size $a$ is further reduced. The resonances influence the whole spectra of the refractive index $\Neff'$, so the position of this U-curve delimits the range of $a$ for which a photonic band with $\Neff' < 0$ and $\Neff'' \approx 0$ can be found. This negative-index band is shown in black in Fig.~\ref{fg_drawn100}.
+As it can be seen in Figs.~\ref{fg_spacingscan100} and \ref{fg_drawn100}, the pairs of electric and magnetic Mie resonances form U-shaped curves, at the bottom of which the resonances come closer in frequency to each other and eventually they disappear when the unit-cell size $a$ is further reduced. The resonances influence the whole spectra of the refractive index $\Neff'$, so the position of this U-curve delimits the range of $a$ for which a photonic band with $\Neff' < 0$ and $\Neff'' \approx 0$ is found. This negative-index band is shown in black in Fig.~\ref{fg_drawn100}.
 
 \begin{figure}
 	\centering
@@ -762,13 +778,13 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 
 
-\begin{figure} \caption{img/ERods\_eps100\_R11\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R11_PWEM.pdf} \end{figure} \clearpage
-%  \begin{figure} \caption{img/ERods\_eps100\_single\_a120\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_single_a120_FDTD.pdf} \end{figure} \clearpage
-%  \begin{figure} \caption{img/ERods\_eps100\_triple\_a150a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf} \end{figure} \clearpage
-%  \begin{figure} \caption{img/ERods\_forSeefeld\_sparserN\_denserN\_DrawnBands.pdf}  \centering \includegraphics[width=10cm]{img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf} \end{figure} \clearpage
+\begin{figure} \caption{img/ERods\_eps100\_R11\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R11_PWEM.pdf} \end{figure} 
+%  \begin{figure} \caption{img/ERods\_eps100\_single\_a120\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_single_a120_FDTD.pdf} \end{figure} 
+%  \begin{figure} \caption{img/ERods\_eps100\_triple\_a150a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf} \end{figure} 
+%  \begin{figure} \caption{img/ERods\_forSeefeld\_sparserN\_denserN\_DrawnBands.pdf}  \centering \includegraphics[width=10cm]{img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf} \end{figure} 
 
-\begin{figure} \caption{img/ERods\_sketch\_recordedline.pdf}  \centering  \includegraphics[width=10cm]{img/ERods_sketch_recordedline.pdf} \end{figure} \clearpage
-\begin{figure} \caption{img/ERods\_eps100\_R10u5\_FXplot.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R10u5_FXplot.pdf} \end{figure} \clearpage
+\begin{figure} \caption{img/ERods\_sketch\_recordedline.pdf}  \centering  \includegraphics[width=10cm]{img/ERods_sketch_recordedline.pdf} \end{figure} 
+\begin{figure} \caption{img/ERods\_eps100\_R10u5\_FXplot.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R10u5_FXplot.pdf} \end{figure} 
 
 
 
