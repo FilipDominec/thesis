@@ -313,6 +313,31 @@ With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose thei
 
 The comparison of the dispersion curves obtained by the s-parameters method and by current-driven homogenisation (CDH) is in Fig. \ref{fg_cdh5}. The results obtained by these fundamentally different methods overlap, and thus one can conclude that the array of symmetric split-ring resonators can be treated as homogeneous with well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances whenever the Bloch wavelength is similar to the unit cell length. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
 %}}}
+\paragraph{Variants of split-ring resonators}%{{{
+\begin{figure}[b] \caption{Other variants of split-ring resonators: \textbf{(a)} double SRR, \textbf{(b)} symmetric version thereof, \textbf{(c)} double SRR with cross-connection between the inner and outer rings, \textbf{(d)} illustration of a square resonator} \label{fg_emcSRR_resonances} \centering 
+\begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRpad.pdf}    \put (1,81) {\textbf{(a)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_dsSRRpad.pdf}   \put (1,81) {\textbf{(b)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRcrossed.pdf}\put (1,81) {\textbf{(c)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRsquare.pdf} \put (-6,81) {\textbf{(d)}}\end{overpic}
+\end{figure}
+Diverse metamaterial designs based on the SRR principle were developed since the apparently original publication from Pendry et al. from 1999 \cite{pendry1999magnetism}.
+Many SRR designs involve a smaller ring nested inside the original one, as shown in Fig. \ref{fg_dSRR}a,b in the asymmetric and symmetric variants. The long narrow gap between the inner and outer split ring enhances their capacitive coupling. This way, the frequency of the magnetic resonance can be reduced without increase of the overall SRR dimensions. Such designs usually do not need capacitor pads, and can be made by etching on microlitography. 
+
+A modification of this \textit{double split-ring} design includes cross-connection between the inner and outer conductors as in Fig. \ref{fg_dSRR}c; this version also breaks mirror symmetry. 
+
+The square "ring" resonator (Fig. \ref{fg_dSRR}d) is also widely used, without any substantial difference from the round SRR.
+
+
+All SRR structures in Fig. \ref{fg_dSRR} can be made flat in the plane perpendicular to the magnetic field, which facilitates their fabrication. At terahertz and higher frequencies, using a thin metal film should not be much detrimental to the SRR conductivity, since the skin depth caused by eddy currents is often submicroscopic \cite{gibbons2010scalable}.
+
+On the contrary, a similar way of operation is achieved by structures infinite in the direction of the magnetic field. This allows to fabricate magnetic resonators by rolling stripes of a semi-metallised plastic foil, producing a \textit{swiss-roll} metamaterial \cite{gibbons2010scalable}, or by partially sputter-coating a nonconductive fibre by metal. Such structures however seem to exhibit relatively high losses when applied above the microwave range.
+
+Metallic \textit{cut-wire pair}, or also \textit{strip pair}, metamaterial was designed for operation in the infrared or optical range. It can be understood as a split-ring resonator elongated in the direction of the electric field with splittings 
+
+clusters of metallic microspheres
+ %note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
+
+%}}}
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
 		amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction,  \textbf{(d)} effective permittivity $\eeff$ and \textbf{(e)} effective permeability $\meff$  .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
 Outer ring radius $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m, unit cell size $a=100$ $\mu$m. \\
@@ -347,12 +372,6 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 %\end{figure}
-%}}}
-% TODO \paragraph{Practical realisations of conductive magnetic resonators}%{{{
-% note swissroll metamaterial: Gibbons2009 , Wang2010-Fiber_MMs_with_negative_permeability.pdf
-% Metallic strip pair
-% clusters of metallic microspheres
-
 %}}}
 % TODO \paragraph{Fano resonances}%{{{
 %}}}
@@ -400,7 +419,7 @@ A more detailed parametric scan through these problematic values of $\rho_c$ can
 
 \begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the refractive index, as questionably retrieved by the scattering parameters method, for the electro-magnetic split-ring resonator} \label{fg_emSRR_icrscan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
-\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  % TODO rm voids
+\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  
 \end{figure}
 
 The effective parameters retrieved by the s-parameters method become easy to interpret for $\rho_c \geq 18$ $\upmu$m. The antiparallel resonance at 690 GHz is again well separated from the magnetic one, which remains near its original frequency (dark blue curves in Fig. \ref{fg_emcSRR_icr}). Further explanation of these results is beyond the capabilities of the scattering parameters method, and necessitate the more expensive computation using the current-driven homogenisation (CDH).
@@ -446,11 +465,12 @@ Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequenc
 These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
 
 %}}}
-\paragraph{Does negative refraction occur?}%{{{
+\paragraph{Is this a negative-refraction structure?}%{{{
 The electro-magnetic resonator was examined as an example structure which, particularly in its magnetic resonance, exhibits strong electric quadrupole, leading to prominent spatial dispersion. Figures \ref{fg_cdh1} and \ref{fg_cdh2} illustrated that not only the s-parameters retrieval algorithm fails, but also the very idea of describing the structure behaviour in terms of refractive index $\Neff(f)$ does not guarantee enough degrees of freedom to express the physical reality.
 Similar failure of the s-parameters method in homogenization of an array of SRRs in a wire lattice was reported previously, \cite{rockstuhl2008transition}, showing that $Neff(f)$ can be determined only for relatively big spacing between the metallic  elements.
 
-For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rangle$ $\upmu$m, the second photonic band supports simultaneously a wave of group velocity collinear with the phase velocity, and an \textit{additional wave} with higher wavenumber with opposite direction of these velocities. 
+For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rangle$ $\upmu$m, the second photonic band supports simultaneously a wave of group velocity collinear with the phase velocity, and an \textit{additional wave} with higher wavenumber and opposite direction of these velocities. 
+
 Provided the auxiliary boundary conditions favor the energy coupling to this additional wave and prevent exciting the another solution, the additional wave should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this structure.
 
 %}}}
@@ -503,7 +523,7 @@ Dielectric spheres are delimited in all three dimensions, but they have much in 
 In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m  and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
 A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
 For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
-The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
+The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $\Neff'(f)$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
 
 An important property of the periodic sphere array is its \textit{isotropic} electromagnetic behaviour. It trivially follows from symmetry under any orthogonal rotation, and it also holds almost exactly under any other orientation (unless the spheres are not touching or too high frequencies are studied).
 
@@ -747,7 +767,7 @@ The reason of this behavior is related to the change of the nodal plane topology
 %}}}
 
 \paragraph{Continuous scan of the unit-cell size}%{{{
-The behavior described above is confirmed by the plots of the complex index of refraction $\Neff',\: \Neff''$ for a continuously varying unit cell size $a$ from 20 to 200~$\upmu$m (Fig.~\ref{fg_spacingscan100}). Here, again, the constant values of the dielectric permittivity $\varepsilon_r=100$ and the rod radius $\rho=10$ $\upmu$m are used. In the upper-right corner of both plots, for $a>c/f$, an empty area is left where the diffraction prevents the determination of effective parameters. 
+The behavior described above is confirmed by the plots of the complex index of refraction $\Neff',\: \Neff''$ for a continuously varying unit cell size $a$ from 20 to 200~$\upmu$m (Fig.~\ref{fg_spacingscan100}). Here, again, the constant values of the dielectric permittivity $\varepsilon_r=100$ and the rod radius $\rho=10$ $\upmu$m are used. In the upper-right corner of both plots, for $a>c/f$, an empty area is left where the diffraction precludes the determination of effective parameters. 
 
 For an easier interpretation of the results, we draw the most prominent features schematically in Fig.~\ref{fg_drawn100}. Some of them are common in ordinary one-dimensional photonic crystals, namely, the photonic (Bragg) band gaps which are painted in color in Fig.~\ref{fg_drawn100}.
 
