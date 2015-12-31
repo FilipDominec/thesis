@@ -41,11 +41,14 @@ where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of 
 \begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with filling fraction of 15~\% in a 300~$\mu$m unit cell, as a function of frequency and dielectric permittivity. On the right panel, the Fabry-Pérot condition from Eq. (\ref{eq_fpcond}) are marked by a thin dash-dotted line.} \label{fg_slab_eps_scan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_fillfraction015_epsilon_scan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}
+	% TODO GIT ADD - update pic 
 \end{figure}
 
 \begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with relative dielectric permittivity of 4, as a function of frequency and filling fraction in a 300~$\mu$m unit cell} \label{fg_slab_ff_scan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic} 
+	% TODO GIT ADD - update pic 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}
+	% TODO GIT ADD - update pic 
 \end{figure}
 
 The width of the band gap grows with the amplitude of the wave scattered from the unit cell. This amplitude however also depends on frequency and, in the case of a lossless dielectric slab, it vanishes whenever an integer number of the half-waves fits into either of the dielectric layers. For comparison with Eq. (\ref{eq_braggcond}), this condition is
@@ -54,7 +57,7 @@ Note that unlike the Bragg resonance, this effect can be observed even in a sing
 
 The vicinity of a Fabry-Pérot resonance influences the position and width the neighbouring band gap, which can be found for different dielectric permittivity of the slab $\epsrl\in\{4,12,20\}$ in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}.
 
-A special case can occur when the conditions for both Bragg and Fabry-Pérot resonances are fulfilled simultaneously: a \textit{zero-width band gap} is obtained and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves approached boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \label{indexofrefraction}.
+As special case, the conditions for both Bragg and Fabry-Pérot resonances can be fulfilled simultaneously: a \textit{zero-width band gap} results and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves appear to approach the boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The corresponding isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \label{indexofrefraction}.
 
 An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points exist when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
@@ -202,15 +205,7 @@ The most important observation is that the resonance curve of $\Neff(f)$ in peri
 The impact of the individual resonances on the effective parameters $\eeff(f)$ and $\meff(f)$ will be discussed in the later section focused on the dielectric resonators. % TODO verify that I have done this
 
 %}}}
-\paragraph{Effects of the cut distance $d_c$}%{{{
-An increase of the cut distance $d_c$ clearly increases the resonance frequency $f_c$. The reason is twofold: for a cut width small relative to the unit cell size, $d_c\ll a$, it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance is more important.
-
-Both the individual and Bragg-type resonances can be identified in the plot for different $d_c$ in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c. When $d_c \sim 16$  $\upmu$m, the individual resonance shifts above 1.5 THz and exchanges its order with the Bragg band gap. 
-For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to those for a $d_c\sim 2$ $\upmu$m, but are shifted by one Brillouin zone up.
-
-%}}}
-\paragraph{Effects of the wire radius $\rho_w$}%{{{
-\begin{figure}[b] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.\\
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for the array of cut wires of radius $r_w = 1$ $\upmu$m made of gold, depending on cut distance $r_w\in \{2, 4, 8, 16, 32, 64\}$ $\upmu$m. The unit cell is cubic and its size is $a=100$ $\upmu$m.\\%{{{
 In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\upmu$m. Although retrieved for the entire spectrum, the local effective parameters have physical meaning only when the wavelength is much larger than $a$, i.e. roughly from 0 to 500 GHz and from 1220 to 1280 GHz.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.059\textwidth}\\
@@ -220,22 +215,29 @@ In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnes
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
+%}}}
+\paragraph{Effects of the cut distance $d_c$}%{{{
+An increase of the cut distance $d_c$ clearly increases the resonance frequency $f_c$. The reason is twofold: for a cut width small relative to the unit cell size, $d_c\ll a$, it is mostly due to reduced capacitive coupling between the cut wires; for cut width comparable or greater than the unit cell size, $d_c \gtrsim a$, reduction of the cut-wire inductance is more important.
+
+Both the individual and Bragg-type resonances can be identified in the plot for different $d_c$ in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c. When $d_c \sim 16$  $\upmu$m, the individual resonance shifts above 1.5 THz and exchanges its order with the Bragg band gap. 
+For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to those for a $d_c\sim 2$ $\upmu$m, but are shifted by one Brillouin zone up.
+
+%}}}
+\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for a metamaterial made of cut wires. Cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} %{{{
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.050\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
+	% TODO GIT ADD - update pic 
+\end{tabular}
+\end{figure}
+%}}}
+\paragraph{Effects of the wire radius $\rho_w$}%{{{
 The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
 For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire inductance.
 
 While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
-
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ for a metamaterial made of cut wires. Cut distance $d_c = 2$ $\upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_CutWires_wirecut2um_wireradiusscan} \centering \vspace{-3mm} 
-\begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_eps_wt1.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.060\textwidth}\\
-%\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wirecut2um_wireradiusscan_.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-8mm}\\
-\end{tabular}
-\end{figure}
 
 % TODO
 % \paragraph{Experimental measurement of cut wire spectra}
@@ -307,11 +309,16 @@ thus there is probably no need to seek for another explanation. %%TODO rewiew, r
 % when not failing due to chirality, s-param yields beautifully similar results to our simulations!
 % "CMM = Composite MetaMaterial"
 %}}}
-% todo negative index structure, ref to Fig. 2.11
 \paragraph{Comparison of the s-parameters method and CDH}%{{{
-With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, a question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ is applicable. While Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be found for any periodic structure using the Bloch theorem, the s-parameter method might return invalid values.
+With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, a question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ is applicable. While the Bloch theorem in Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be determined for any periodic structure, the s-parameter method might return invalid values.
 
-The comparison of the dispersion curves obtained by the s-parameters method and by current-driven homogenisation (CDH) is in Fig. \ref{fg_cdh5}. The results obtained by these fundamentally different methods overlap, and thus one can conclude that the array of symmetric split-ring resonators can be treated as homogeneous with well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances whenever the Bloch wavelength is similar to the unit cell length. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
+Dispersion curves obtained by the s-parameters method and by the current-driven homogenisation (CDH) are compared in Fig. \ref{fg_cdh5}. Although these methods are fundamentally different, their results overlap, and thus one can assume that the array of symmetric split-ring resonators can be treated as homogeneous with well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances, where the Bloch wavelength is similar to the unit cell size. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
+
+%}}}
+\paragraph{SRR in a wire array} %{{{
+% todo negative index structure, ref to Fig. 2.11
+
+
 %}}}
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
 		amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance, \textbf{(c)} effective index of refraction,  \textbf{(d)} effective permittivity $\eeff$ and \textbf{(e)} effective permeability $\meff$  .   %% todo check params comment=sSRR with wire_resolution=2.000e-06_capacitorr=1.000e-05_splitting=4.000e-06_wirethick=4.000e-06_splitting2=4.000e-06_radius=3.000e-05_simtime=2.000e-10
@@ -335,7 +342,7 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 	\put(31,105){sSRR}
 	\end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR_wire.pdf}  
-	\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}}
+	%\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}} TODO GIT ADD!!
 	\put(29,105){sSRR + wire}
 	\put(1,96) {\textbf{(b)}} 
 	\end{overpic}
@@ -355,6 +362,7 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with a s
 
 %}}}
 % TODO \paragraph{Fano resonances}%{{{
+%TODO Bitzer2011-Babinet_principle_SRR.pdf
 %}}}
 
 
@@ -390,7 +398,7 @@ The frequency of the electric resonance is influenced by the radius $\rho_c$ of 
 \end{tabular}
 \end{figure}
 
-By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. This is the conventional approach to design a metamaterial with a negative index of refraction. One of the means of tuning the  antiparallel electric resonance frequency is to divide the central bar by an \textit{inner} capacitor as shown in Fig. \ref{fg_SRR_types2}b. 
+By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. This is the conventional approach to design a metamaterial with a negative index of refraction; applying it to the electro-magnetic resonator leads to an array of independent, nonconnected elements, which may be an advantage over embedding SRRs in a  wire array. One of the means of tuning the  antiparallel electric resonance frequency is to divide the central bar by an \textit{inner} capacitor as shown in Fig. \ref{fg_SRR_types2}b. 
 
 For the inner capacitor being relatively small, with radius $\rho_c = 6$ $\upmu$m, the electric resonance is located around 1150 GHz, and it shifts down to 940 GHz when $\rho_c$ is increased to 8 $\upmu$m. On the contrary, the magnetic resonance is virtually independent of $\rho_c$ and remains close to 800 GHz. Both individual resonances can be clearly identified as points of zero transmission and as corresponding steep, but still continuous, drops in the refractive index (red and light green curves in Fig. \ref{fg_emSRR_icr}).  For $\rho_c \leq 8$ $\upmu$m, the resonances are separated by a photonic band, indicating that the regions of  $\eeff(f) < 0$ and $\meff(f) < 0$ do not overlap. 
 
@@ -399,8 +407,8 @@ For $\rho_c \in \langle10, 16\rangle$ $\upmu$m, the scattering parameters method
 A more detailed parametric scan through these problematic values of $\rho_c$ can be found in Fig. \ref{fg_emSRR_icrscan}.
 
 \begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the refractive index, as questionably retrieved by the scattering parameter method, for the electro-magnetic split-ring resonator} \label{fg_emSRR_icrscan} \centering 
-\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
-\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  % TODO rm voids
+%\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}   % TODO GIT ADD
+%\begin{overpic}[width=0.48\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}  % TODO GIT ADD
 \end{figure}
 
 The effective parameters retrieved by the s-parameter method become easy to interpret for $\rho_c \geq 18$ $\upmu$m. The antiparallel resonance at 690 GHz is again well separated from the magnetic one, which remains near its original frequency (dark blue curves in Fig. \ref{fg_emcSRR_icr}). Further explanation of these results is beyond the capabilities of the scattering parameter method, and necessitate the more expensive computation using the current-driven homogenisation (CDH).
@@ -447,18 +455,21 @@ The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this in
 
 
 \FloatBarrier %====================================================================================================
-\section{Dielectric resonators} % references to ->			
+\section{Dielectric spheres} % references to ->			
 \paragraph{Mie resonances}%{{{
 Electric and magnetic resonances % TODO
 %% TODO back reference to expe.tex:74
 %% todo resonators used in microwave technology for decades, find cite?
 %% todo cite vendik, Zhao etc. from the directory
-\begin{figure} \caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering 
+
+%}}}
+\begin{figure}  %% fg_Spheres_lossscan%{{{
+	\caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering 
 	\begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
     \begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \label{fg_Spheres_lossscan}  \end{figure}
-
 %}}}
+
 \paragraph{Dielectric losses}%{{{
 Fig. \ref{fg_Spheres_lossscan}
 
@@ -472,25 +483,26 @@ Fig. \ref{fg_Spheres_lossscan}
 \end{tabular}
 \end{figure}
 %}}}
-\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres 
+\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
 \textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 
-
-
-\add{ Note: The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the cross-section of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross-section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
+%}}}
+%% FROM PhD_DOC
+\add{ \paragraph{Electromagnetic cross-section} %% RM?%{{{
+The reflection amplitude easily reaches 0.75 for the first resonance in a 40 um sphere in 70x70 um cell. This is obviously in contrast to the fact that its cross-section is only 1250 um2, whereas the cross-section of the cell is 4900 um2. How is it possible? The explanation lies in that it is the sphere's near field that covers most of the cell's cross-section. This also means that in the aforementioned geometry the resonant fields have to couple to fields in neighbouring spheres in the virtual periodic array. In the detailed view in Mayavi one can easily see that this indeed happens, but fortunately not too much to distort the spectra. (However, for a periodic array the mode splitting cannot be observed because also the fields are periodic in the cells.)
 }
 \add{The electromagnetic cross-section, given as the ratio of scattered power to the incident power density of an uniform plane wave, can be in the resonance much larger than the geometric cross-section of the sphere.  
 The scattering of a single sphere can be computed analytically: from mie.m, see http://atol.ucsd.edu/scatlib/index.htm, Bohren and Huffman originally published the code in their book on light scattering }
 
-
+%}}}
 
 \add{
 Dielectric spheres are delimited in all three dimensions, but they have much in common with the dielectric rods. Their behaviour is closer to that of the rods with orientation parallel to the \textit{magnetic field}. The reason is that the lowest-frequency resonance of both structures is generally the magnetic one, whose circulating electric field is localised in the high-permittivity volume of the particle. Higher resonances require a significant part of the electric field to pass through surrounding air.
 
-In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m  and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
+In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
 A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
 For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
 The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
@@ -512,10 +524,8 @@ We performed series of experiments to measure the effective permeability  $\mu_{
 
 
 %}}}
-%% TODO? E-mail: Add the x, y, z, size scans of the ellipsoids%
-%> On 19 Mar 2014, at 15:57, <dominecf@fzu.cz>
-%> wrote:
-%>
+\paragraph{Effect of elliptic shape}%{{{
+\add{
 I ran three scans over the X-, Y- and Z- semiaxes of a TiO2 ellipsoid, fixing the remaining semiaxes to 15 um.  The ellipsoid's X-axis was oriented parallel to the electric field, the Z-axis pointed in the wave propagation direction.
 
 The results attached, best expressed by the dielectric loss spectra in bilogarithmic plot, show that the first (magnetic) mode is roughly proportional to X**(-0.4) and Z**(-0.4), while the dependence on the Y-size is even slower, similar to Y**(-0.2).
@@ -525,27 +535,28 @@ The second Mie mode is more sensitive to the Z-size as Z**(-0.7), while the othe
 In all cases, the exponents of X, Y and Z~dependencies should sum up to -1, which is the obvious rule for the frequency dependence when all axes are scaled simultaneously.
 Note that these estimated exponents are roughly valid only near the
 spherical shape, ie. when X~Y~Z. 
+%% add: the mode frequencies are almost independent of the rotation; therefore, in an array of oblique ellipsoidal resonators, the resonances split into two. Such a structure behaves usually  in a highly anisotropic way.
+}
 
+%}}}
 %TODO Note that the effect of mm-phc transition can be also observed in silicon microcubes (thz operation)
 %Planar all-silicon metamaterial for terahertz applications \cite{prosvirnin2015planar}
 %}}}
 
 
+Dielectric rods along the magnetic field
 
 
+\paragraph{Spheres in a wire grid} %{{{
+%TODO remake? \begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} 
 
-\FloatBarrier %====================================================================================================
-\section{SRRs and spheres in a wire array or grid} % references to ->
 % Cai_Zhu2008-Diel_resonators_wires.pdf
-%{{{
-\begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} 
 
-% approximation for frequency well below the grid-resonance  
-
-%TODO Bitzer2011-Babinet_principle_SRR.pdf
+% approximation for frequency well below the grid resonance  
 
 %}}}
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_SphereWire_principles} \centering \vspace{-3mm} %% TODO
+\begin{figure}[t] %% SphereWire_principles %{{{
+	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_SphereWire_principles} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
@@ -555,6 +566,7 @@ spherical shape, ie. when X~Y~Z.
 \end{tabular}
 \end{figure}
 
+%}}}
 % TODO
 %\ref{fg_SphereWire_principles}
 
