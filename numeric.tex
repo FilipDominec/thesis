@@ -384,7 +384,7 @@ Perhaps the greatest limitation of the MPB program is that it can not cope with 
 %\end{enumerate}
 %}}}
 
-\section{Simulation setups for metamaterial homogenization} % TODO
+\section{Simulation setups for metamaterial homogenization} 
 The general electromagnetic algorithms,%{{{
 such as FDTD, FDFD or FEM, can be employed to find the electromagnetic field behaviour in a wide variety of problems. These algorithms, however, tell nothing about the effective parameters of a metamaterial, unless they are employed in a particular simulation setup. 
 
@@ -396,8 +396,7 @@ This section describes two different setups we have implemented, the retrieval o
 %		[15] C.R. Simovski, Optics and Spectroscopy 107 (2008)726
 %		[16] Kh.Chalapat, K.Sarvala, J.Li, G.S.Paraoanu, IEEE Transactions on Microwave Theory and Techniques 57 (2009)2257
 %}}}
-\subsection{Scattering parameters retrieval}
-\label{chapter_sparam}
+\subsection{Scattering parameters retrieval} \label{chapter_sparam}
 \paragraph{Principle} %{{{
 The scattering parameter retrieval, also known as the \textit{s-parameter}, \textit{distributed impedance} or \textit{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
 
@@ -719,8 +718,9 @@ Other downsides relate to the practical implementation, and arguably are the rea
 In spite of these limitations, the simplified implementation of CDH for this thesis remains an important complement to the s-parameter method. 
 
 %}}}
+
 \subsection{Other effective parameter retrieval methods}      % complement?
-\paragraph{Extensions of the scattering parameters method} 
+\paragraph{Extensions of the scattering parameters method} %{{{
 Various modifications to the scattering parameters method were proposed, in particular with connection to the homogenisation of metamaterials. One modification makes it robust against the experimental error in the reflectance phase \cite{chalapat2009wideband}. % Wideband reference-plane invariant method for measuring electromagnetic parameters of materials
 Another solution to the issues connected with experimental measurement of the reflectance was employed during the preparation of this thesis \cite{nemec2012resonant}. It involved a slight modification to the experimental setup, and thus it is described in the experimental chapter (pp. \pageref{srtm}--\pageref{srtm2}).
 
@@ -736,9 +736,8 @@ The discussion in this thesis is restricted to the near-perpendicular wave propa
 In Ref. \cite{li2009determination}, % Determination of the effective constitutive parameters of bianisotropic metamaterials from reflection and transmission coefficients 
 the scattering parameter method was extended also to the bianisotropic behaviour of structures with reduced symmetry, and other approaches can be found \cite{andryieuski2010homogenization} in the recent literature.
 
-% LIST: 1) averaging of the fields, 2) 
-
-\paragraph{Averaging of the fields} 
+%}}}
+\paragraph{Averaging of the fields} %{{{
 With the scattering parameters method, $\Neff(f)$ and $\Zeff(f)$ are retrieved first using the amplitudes of the reflectance and transmittance.  were computed later. The  local effective permittivity $\eeff(f)$ and permeability $\meff(f)$ can be  computed using  Eqs. (\ref{eq_dispeqN}) and (\ref{eq_Z}), but are considered valid only when $|\Neff'| \ll 2\pi/a$, i.e., when the unit cell size $a$ is much less than the Bloch wavelength.
 
 The effective parameters $\eeff(f)$ and $\meff(f)$ can however be computed directly by exciting a unit cell of the structure, averaging both the fields ($\E$, $\HH$) and the displacements ($\D$ and $\B$), and dividing the respective displacement by the field. The method is described in Ref. \cite{smith2006homogenization}, where also numerical examples are given. 
@@ -753,9 +752,8 @@ The effective parameters $\eeff(f)$ and $\meff(f)$ can however be computed direc
 
 % TODO read: http://scholar.google.cz/scholar?q=Tsukerman+2011++of+metamaterial+Rigorous+Whithey+interpolation&btnG=&hl=cs&as_sdt=0%2C5
 
-
-
-\paragraph{Bloch-mode analysis} 
+%}}}
+\paragraph{Bloch-mode analysis} %{{{
 A \textit{single-interface} method has been proposed \cite{yang2010retrieving} %Retrieving the effective parameters of metamaterials from the single interface scattering problem
 that analyzes only the field behaviour at the interface of a semi-infinite structure.  
 The fields in the structure are computed and decomposed into discrete modes of the Bloch wave. The method attempts to recognize a dominant Bloch mode for which the wavevector $\KK(\omega)$ is deduced.
@@ -771,28 +769,25 @@ it is argued that the existence of one dominant mode is the prerequisite necessa
 
 %\cite{smigaj2008validity} %PDF? Validity of the effective-medium approximation of photonic crystals
 
-
-
-
-
-
-
-\paragraph{Wave phenomena} 
+%}}}
+\paragraph{Wave phenomena} %{{{
 % (skip this?) B. Popa and S.A. Cummer, Determining the effective electromagnetic properties of negative-refractive-index metamaterials from internal fields, Physical Review B, vol. 72, p. 165102, Oct. 2005
 
 In the \textit{Wave propagation retrieval method}, proposed in Ref. \cite{andryieuski2010homogenization},
 the wave impinges a thick, ideally semi-infinite, volume of the periodic structure. Since there are no repeated reflections from the second interface, the averaged field amplitude is assumed to have an exponential nature: $E(z) \propto e^{-2\pi i f \Neff/c}$, and thus $\Neff$ can be reconstructed using a complex logarithm.
+
 Like in the s-parameters method, the function of $K(\omega)$ can be resolved in a single run by using a broad band pulse. Like in the current-driven homogenisation,  the fields need to be sampled inside the structure. 
 % unambiguously retrieves bulk parameters; but there is still one interface and the simulation volume is large
 % it also requires in-structure inspeciton
 
-%    \paragraph{Multipole expansion}
+%}}}
+%   \paragraph{Multipole expansion}%{{{
 %    \cite{vynck2009all} % All-dielectric rod-type metamaterials at optical frequencies
 %    \cite{chipouline2012metamaterials}
 %    % limited only to lateral interaction -> spatial dispersion towards the orientation of \KK (not magnitude)
 %    % "there is no established consensus about how the averaging procedure has to be performed"
-%    \cite{petschulat2008multipole} % PDF? Multipole approach to metamaterials
-%    % todo \paragraph{Approximate analytical models} ==? multipole expansion?
+%    \cite{petschulat2008multipole} % PDF? Multipole approach to metamaterials%}}}
+%    % todo \paragraph{Approximate analytical models} ==? multipole expansion?%{{{
 %    \paragraph{Quasimode theory} 
 %    %%% Andriy2010: Quasimode theory ...  is based on the maximization of optical density of states for a metamaterial while changing İ and μ of the ambient medium. The method is computationally demanding as it requires 4-parameters optimization for each frequency.
 %    \cite{sun2009effective} % Effective-medium properties of metamaterials: a quasimode theory
@@ -805,11 +800,8 @@ Like in the s-parameters method, the function of $K(\omega)$ can be resolved in 
 % Elaborate mathematical treatise on this topic: 
 % A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
 %\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials
-
-
-
-
-\paragraph{Concluding remarks}
+%}}}
+\paragraph{Concluding remarks}%{{{
 Other homogenisation methods include the \textit{multipole expansion} \cite{vynck2009all, chipouline2012metamaterials, petschulat2008multipole}, \textit{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
 Without much exaggeration it can be concluded that there are roughly as many homogenisation methods as authors involved in the research of periodic structures. All such methods work reliably in the easy cases:
 \begin{displayquote}
@@ -823,14 +815,10 @@ and that they even seem to break fundamental physical postulates \cite{koschny20
 
 As a matter of fact, the mistake might have been made already during the \textit{choice} of the method.
 
-Keeping in mind that his knowledge is inevitably limited, the author of this thesis conjectures that systematic homogenisation in terms of the spatially dispersive (Landau-Lifshitz) permittivity $\epsLL(\omega,\KK)$ should prevent most striking quirks arising in the local homogenisation methods. All problems involving an interface would also need to be complemented by the additional boundary conditions \cite{agranovich2006spatial}.
+From the literature available, the author of this thesis conjectures that systematic homogenisation in terms of the spatially dispersive (Landau-Lifshitz) permittivity $\epsLL(\omega,\KK)$ should prevent most striking quirks arising in the local homogenisation methods. All problems involving an interface would also need to be complemented by the additional boundary conditions \cite{agranovich2006spatial}.
 However, computations and the application are more complex for the medium described by the spatially-dispersive effective parameter, than for a medium described by local parameters. This is the price that would have to be paid for its more general validity.
 
 In this thesis, we restrict the discussion to the scattering parameters method, pointing out where it is applicable, and where its result cease to make any sense. The current-driven homogenization then remains as a good reference to compare the results with.
 
 %}}}
-
-
-
-
 
