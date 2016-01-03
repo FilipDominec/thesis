@@ -461,11 +461,12 @@ Already in Eq. (\ref{}) it was assumed that at higher frequencies, there is no d
 
 The second resonance has an electric dipole moment. It is similar to the magnetic one except for that now the magnetic field circulates around the axis of the sphere, and the polarisation current forms a dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field pass through the surrounding air
 
-Infinite number of the higher-order resonances exist, corresponding to a subset of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments, and do not couple to the electromagnetic wave. The theory of electromagnetic resonances in dielectric spheres was developed by Mie % in 
+Infinite number of the higher-order resonances exist, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments, and do not couple to the electromagnetic wave. Dipole moments of many others exist, but are not oriented parallel to the fields of the incident wave. In the spectrum of an array of dielectric spheres, one can clearly identify the remaining resonances as the most prominent magnetic one, electric one, the second magnetic, second electric etc.. The first three resonances from this alternating series are shown in Fig. \ref{fg_Spheres_lossscan}, each manifesting as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance in $\meff(f)$, or vice versa.
 
+An analytic theory of electromagnetic resonances in dielectric spheres and cylinders was developed by Mie. % in 1908? TODO cite
+and therefore they are denoted as \textit{Mie resonances}. 
+The Mie theory was developed for single particles in vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$ the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
 
-%% TODO back reference to expe.tex:74
-%% todo resonators used in microwave technology for decades, find cite?
 %% todo cite vendik, Zhao etc. from the directory
 
 %}}}
@@ -475,15 +476,16 @@ Infinite number of the higher-order resonances exist, corresponding to a subset 
     \begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 \label{fg_Spheres_lossscan}  \end{figure}
 %}}}
-
 \paragraph{Dielectric losses}%{{{
-\add{
-In contrast with the previous treatment, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) for the FDTD simulations presented here to illustrate the effect of losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$, their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
-A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
+%The fundamental Mie resonance
+Dielectric resonators were used in microwave technology for decades.
 
+
+\add{
+For FDTD simulations of the dielectric spheres, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) in order to illustrate the effect of dissipative losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$ \cite{baumard1977_epsilon_TiO2}, their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
+A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
 For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
 The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
-
 Fig. \ref{fg_Spheres_lossscan}
 }
 
@@ -554,11 +556,13 @@ spherical shape, ie. when X~Y~Z.
 %}}}
 
 
-Dielectric rods along the magnetic field
 
 
 \paragraph{Spheres in a wire grid} %{{{
+%\ref{fg_SphereWire_principles}
+
 %TODO remake? \begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} 
+
 
 % Cai_Zhu2008-Diel_resonators_wires.pdf
 
@@ -577,12 +581,12 @@ Dielectric rods along the magnetic field
 \end{figure}
 
 %}}}
-% TODO
-%\ref{fg_SphereWire_principles}
+
+
 
 
 \FloatBarrier %====================================================================================================
-\section{Dielectric rods parallel to magnetic field} % references to ->
+\section{Dielectric rods parallel to the magnetic field} % references to ->
 \label{sect_diel_rods_mag}
 \add{Such a behaviour at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} band gaps; individual resonances in other types of structures result in change of $K$ and	introduce more complex differences between the field shape.}
 %{{{
@@ -620,7 +624,6 @@ Apart from $N_{\text{eff}}$, the FDTD computation gives also the effective wave 
 \includegraphics[width=4.5cm]{img/HRods_sketch.pdf}
 \end{figure}
 
-Other Mie resonances are located at higher frequencies. As a general rule for similar structures, the odd-numbered resonances have magnetic dipole moment (along the rod axis), whereas the even-numbered resonances have electric dipole moment (perpendicular to the rod axis). The reason is that electric dipole moments in odd resonances are suppressed due to antisymmetric shape of the mode; naturally the same holds for the magnetic moments in the even resonances.
 
 The frequency of the Mie resonances is not significantly influenced by the photonic bands. Therefore, in order to understand the resulting band structure and its dependence on parameters, one has to disentangle which band gaps are due to Bragg reflection and which correspond to magnetic or electric Mie resonances. This is much easier knowing the spectra of $\varepsilon_{\text{eff}}$ and $\mu_{\text{eff}}$, as provided by FDTD in Fig. \ref{fg_rodh_fdtd}.
 \begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities. The wavenumber plot is folded so it ranges from 0 to 0.5, where $K\approx 0$ and $K\approx 0.5$ correspond to band gaps. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_hbar_radiusscan} \centering 
