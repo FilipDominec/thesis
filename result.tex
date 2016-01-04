@@ -266,9 +266,10 @@ The fundamental resonance in a cut wire has an electric dipole moment only. The 
 
 One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). To reduce the resonant frequency, capacitor pads can be added to the cut, as shown in Fig. \ref{fg_SRR_types}a. The first resonance in its spectrum has a dominant magnetic dipole moment, and will be denoted simply as a \textit{magnetic resonance}. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
 
-%TODO history: Apparently the first metamaterial design embedding the SRR was by Pendry et al. from 1999 \cite{pendry1999magnetism}, although
+The very concept of SRR is at least as old as the Hertz's experiments with the spark-gap transmitter from 1880s.
+As described in the historical review of Ref. \cite[pp. 120--126]{solymar2009waves}, first SRR arrays were built in early 1980s with the aim to build an effective medium with highly lossy complex permeability; a decade later asymmetric SRRs were used to achieve strong bianisotropy. Many publications cite Refs. \cite{pendry1999magnetism,pendry2000negative} from Pentdry et al. as the first application of SRR array for achieving negative effective permeability and index of refraction, respectively. Since then, the number of SRR-related publications has grown rapidly. 
+\pageref{negn_srr}
 
-The term of split-ring resonator can be traced decades earlier. The very concept of SRR is at least as old as the Hertz's experiments with the spark-gap transmitter from 1880s.
 \begin{figure}[h] \caption{Variants of the split-ring resonators, viewed from the side perpendicular to the magnetic field: \textbf{(a)} classical SRR, \textbf{(b)} symmetric SRR with two splits, \textbf{(c)} one of the designs of an electric SRRs having a central bar, \textbf{(d)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types} \centering 
 \begin{overpic}[height=0.25\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\quad\quad\quad
 \begin{overpic}[height=0.25\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}
@@ -276,15 +277,13 @@ The term of split-ring resonator can be traced decades earlier. The very concept
 
 %}}}
 \paragraph{Symmetry of the split-ring}%{{{
-The orientation of the splitting in the SRR determines the possible coupling between its electric and magnetic dipoles. In particular, when the splitting is on the front or rear side of the ring relative to the  direction of wave propagation, the magnetic resonance creates also an electric dipole, leading to the optical activity.
+The orientation of the splitting in the SRR determines the possible coupling between its electric and magnetic dipoles. In particular, when the splitting is on the front or rear side of the ring relative to the  direction of wave propagation, the predominantly magnetic resonance creates also a weak electric dipole, leading to the optical activity.
 
 Reduced symmetry with regards to the wave propagation may even break the homogenisation based on scattering parameters retrieval, as this procedure assumes that the structure is symmetric, i.e., its reflectance is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
 
-The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR) depicted in Fig. \ref{fg_SRR_types}b, which has two splittings at opposing position on the ring. 
-% todo Modifications with higher symmetry
+The symmetry is restored again by considering a \textit{symmetric split ring resonator} (sSRR), depicted in Fig. \ref{fg_SRR_types}b, which has two splittings at opposing position on the ring. 
 % A. Andryieuski, C. Menzel, C. Rockstuhl, R. Malureanu, and A.V. Lavrinenko, The split cube in a cage: %bulk negative-index material for infrared applications, Journal of Optics A: Pure and Applied Optics,
 %vol. 11, p. 114010, 2009.
-%, or also \textit{double-split ring resonators},  
 This is documented by the results in \ref{fg_SRR_principles}. The SRR with a single splitting is represented by red lines; while its magnitude of reflectance and transmittance in Fig. \ref{fg_SRR_principles}a,b appear similar to these of a cut wire, the computation of the refractive index yields a spectrum (Fig. \ref{fg_SRR_principles}c) which has no reasonable interpretation near the resonance at 500 GHz and above it. 
 
 The symmetric resonator is represented by green curves. In Fig. \ref{fg_SRR_principles}c, the refractive index follows a resonance pattern that was already described on the example of the cut wires: the curve grows up to the upper Brillouin zone boundary, follows it for a span of frequencies, drops to the Brillouin zone boundary below, follows it again and then a next band starts. 
@@ -304,9 +303,7 @@ In Ref. \cite{wallen2011anti}, it is argued that % against this interpretation w
 \end{displayquote}
 The true origin of antiresonances and other deviations of $\eeff(f)$ and $\meff(f)$ from the Lorentzian resonance curve can however be attributed to the presence of photonic band gaps and nonlocal response of the structure. These effects are, to some extent, maintained also under randomizing the unit cell positions \cite{peng2007},   
 thus there is probably no need to seek for another explanation. %%TODO rewiew, rewrite?
-% -- this argument assumes that aperiodicity  will always prohibit antiresonance; in fact it may just broaden it in spectra
-
-% \cite{alu2010} "Restoring the physical meaning of MM cosstitutive parameters"
+% \cite{alu2010} "Restoring the physical meaning of MM constitutive parameters"
 
 %An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
 
@@ -515,9 +512,9 @@ Provided the auxiliary boundary conditions are arranged to couple all energy exc
 \FloatBarrier %====================================================================================================
 \section{Dielectric spheres} % references to ->			
 \paragraph{Mie resonances}%{{{
-Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
+Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
 
-The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have pass through the surrounding air.
+The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have to pass through the surrounding air.
 
 \begin{figure}[h]  %% fg_Spheres_lossscan
 	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y-z$ mirror plane, so the fields have no other nonzero components than shown here. Illustrative snapshot from a FDTD simulation of a titanium dioxide sphere of 15 $\mu$m radius. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
@@ -527,7 +524,12 @@ The second resonance has an electric dipole moment. It is similar to the magneti
 	\end{overpic}
 \label{fg_Mie}  \end{figure}
 
-An analytic theory of electromagnetic resonances in dielectric spheres (and cylinders) was developed by Mie in 1908, and correspondingly they are denoted as \textit{Mie resonances}. The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
+An analytic theory of electromagnetic resonances in dielectric spheres (and cylinders) was developed by Mie in 1908 \cite{mie1908beitrage}, and correspondingly they are denoted as \textit{Mie resonances}. 
+Dielectric resonators operate in a similar way to a series L-C circuit, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. Few decades later, the dielectric resonator found its use in the developing microwave technology; usually it takes the form of a millimeter-sized ceramics disc glued to the microstrip circuits. 
+The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
+An artificial dielectric consisting of dielectric particles with effective permeability differing from unity was considered by Lewin in 1947 \cite{lewin1947electrical}; apparently it was not until 2002 when O'Brien et al. computed \cite{obrien2002photonic} that the effective permeability of such a structure may be negative.
+\pageref{negn_diel}
+
 
 Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908beitrage}, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments. Dipole moments of many others exist, but are not oriented parallel to the fields of the incident wave, and do not couple to the electromagnetic wave. In the spectrum of an array of dielectric spheres, one can clearly identify the remaining resonances as the most prominent magnetic one, electric one, the second magnetic, second electric etc. The first three resonances from this alternating series are shown in Fig. \ref{fg_Spheres_lossscan}, each manifesting as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance in $\meff(f)$, or vice versa.
 
@@ -546,12 +548,13 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \end{figure}
 %}}}
 \paragraph{Dielectric losses}%{{{
-%The fundamental Mie resonance
-Dielectric resonators were used in microwave technology for decades.
+Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents (skin effect) and fine sample preparation, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
 
+We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres at $f = 1$ THz was $\epsrl(f) = 94.2-2.43\text{i}$. Its real part depends on the sample preparation and the percentage of microscopic voids, but it can be determined from the experimental spectra. The imaginary part then scales proportionally and can be determined.
+
+their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
 
 \add{
-For FDTD simulations of the dielectric spheres, we used a realistic model \cite{baumard1977_epsilon_TiO2} of rutile (TiO$_{2}$) in order to illustrate the effect of dissipative losses. The permittivity of the spheres was $\varepsilon^{\text{(1 THz)}} = 94.2+2.43\text{i}$ \cite{baumard1977_epsilon_TiO2}, their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
 A strong magnetic resonance is apparent at 330 GHz, followed by a weaker electric one at 480 GHz and another magnetic one at 670 GHz. Further resonances are gradually less visible due to lower dipole moment and also due to dielectric losses that increase with frequency. 
 For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, where the first Brillouin zone is reached and a classical Bragg band gap is formed.
 The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
@@ -777,21 +780,21 @@ Another case of interest where evanescent waves are obtained is that of $\Neff' 
 The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 %}}}
 
-
 \todo{FIGURE: Results of the FDTD simulations for a single layer of dielectric rods with $\varepsilon_{\rm r}= 100$, $\rho=10$\,$\upmu$m. The spectra of reflection $|r|$ and transmission $|t|$ amplitudes share their frequency axes with the retrieved complex effective index of refraction $\Neff$, permittivity $\eeff$ and permeability $\meff$, whose imaginary parts are denoted by dashed lines. The frequency ranges where $\eeff$ and $\meff$ have no physical interpretation (Bragg band gaps or higher order photonic bands) are gray shaded.  } 
 
 In the following, we first describe in detail three characteristic cases: we compare the effective parameters computed for three slightly different unit-cell sizes while the rod radius and the dielectric permittivity are fixed. The comparison of these cases reveals quite remarkable changes in the optical behavior of the structure. We then complement this comparison by a continuous scan of the unit-cell sizes in order to obtain an overview of all possible types of the response for the rod-based geometry.  
 
 In Fig.~\ref{fg_spec}, we show the calculated reflectance and transmittance amplitude spectra, as well as the effective parameters of three representative structures which have the same rod radii $\rho = 10$~$\upmu$m, but they differ by the unit-cell size $a =$ 120, 100 and 80 $\upmu$m. These values of $a$ were selected to illustrate three qualitatively different regimes of behavior.  The dielectric was defined by a simple lossy model with one high-frequency oscillator, its  permittivity was $\varepsilon_r = 100.1 + 0.5\mathrm{i}$ at 500 GHz.
 
-\paragraph{Sparse array}
+%}}}
+\paragraph{Sparse array} %{{{
 In Fig.~\ref{fg_spec}(a), where the unit-cell size $a=120$~$\upmu$m, we can see two well separated Mie resonances: the electric one at 680 GHz and the magnetic one at 1030 GHz.  The field distribution of the corresponding modes is sketched in Fig.~\ref{fg_sketchfield}. The resonance frequencies can be easily identified by an abrupt drop in the real part of the effective index of refraction $\Neff'$, accompanied by a sharp peak in its imaginary part $\Neff''$. The Mie resonances in periodic media without losses must always be adjacent to a Bragg band gap. For instance, in Fig.~\ref{fg_spec}(a) at frequencies below the first Bragg gap, the electric dipoles within each rod are directed along the electric field in the rest of the unit cell. The rods thus positively contribute to the refractive index $\Neff'$ which progressively grows until it reaches the first Brillouin zone boundary. At this point, the Bragg condition for a photonic band-gap is fulfilled and each unit cell is intersected by one nodal plane. This is reflected by the dispersion of $\Neff'(f)$ which follows the first Brillouin-zone boundary in the first Bragg band gap between 400 and 680\,GHz [equivalent to $q=1$ in Eq. (\ref{eq_BZN})]: $$	\Neff'(f) = \frac{c}{2af}\,. $$ At 680\,GHz, the electric Mie resonance occurs which dramatically changes the near-field photonic properties of the structure. The observed drop in $\Neff'(f)$ and the slope change in $\Neff''(f)$ mark the plasma-like character of the adjacent part of the band gap which extends up to the plasma frequency of the Mie resonance (940\,GHz). In this frequency range the electric dipoles in the rods change their direction and induce an electric field opposite to the incident one.
 
 For this sparse array of dielectric rods, the first magnetic Mie resonance lies at 1030\,GHz, above the plasma frequency of the electric mode.  The second Bragg band-gap opens at 1010 GHz and, due to the Mie resonance, it is transformed to a plasma band gap at 1030 GHz. The next allowed photonic band starts above magnetic plasma frequencies at 1070 GHz. Therefore we observe a very analogous behavior near the magnetic resonance. 
 
 For completeness we note that at 1350 GHz, a third Bragg band gap starts which, unlike the lower-frequency ones, does not contain any Mie resonances [see Fig.\ \ref{fg_spec}(a)].
 
-The resonances in the effective permittivity $\eeff=\Neff/\Zeff$ and permeability $\meff = \Neff\cdot \Zeff$ of a periodic array obviously exhibit shapes very different from the well-known resonance curves of a damped oscillator\cite{koschny2003resonant}. In the two separate plasma band gaps we obtain either $\eeff < 0$ or $\meff<0$, i.e. the usual behavior observed in the reststrahlen bands of resonances. However, in the Bragg band gaps occurring just below these spectral ranges the behavior of $\eeff$ and $\meff$ does not have any useful physical interpretation and it can be understood as a purely formal frequency dependence: we shaded these ranges with light gray in Fig.~\ref{fg_spec}.
+The resonances in the effective permittivity $\eeff=\Neff/\Zeff$ and permeability $\meff = \Neff\cdot \Zeff$ of a periodic array obviously exhibit shapes very different from the well-known resonance curves of a damped oscillator \cite{koschny2003resonant}. In the two separate plasma band gaps we obtain either $\eeff < 0$ or $\meff<0$, i.e. the usual behavior observed in the reststrahlen bands of resonances. However, in the Bragg band gaps occurring just below these spectral ranges the behavior of $\eeff$ and $\meff$ does not have any useful physical interpretation and it can be understood as a purely formal frequency dependence: we shaded these ranges with light gray in Fig.~\ref{fg_spec}.
 %}}}
 \paragraph{Medium array}%{{{
 When the unit cell size is reduced to $a=100$~$\upmu$m, as depicted in Fig.~\ref{fg_spec}(b), the Mie resonances shift slightly. Interestingly, in comparison with the sparse array, the electric resonance frequency increases from 680 to 780 GHz, and that of the magnetic resonance decreases from 1030 to 980 GHz. This can be explained by the inter-cell coupling: the circulating magnetic field of the first resonance is compressed when the rods get closer, whereas the magnetic dipoles of the second resonance can couple more easily to each other in the same situation (see Fig.~\ref{fg_sketchfield}).
