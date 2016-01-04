@@ -320,13 +320,15 @@ Dispersion curves obtained by the s-parameters method and by the current-driven 
 
 %}}}
 \paragraph{Variants of split-ring resonators}%{{{
-\begin{figure}[b] \caption{Other variants of split-ring resonators: \textbf{(a)} double SRR, \textbf{(b)} symmetric version thereof, \textbf{(c)} double SRR with cross-connection between the inner and outer rings, \textbf{(d)} illustration of a square variant of the double SRR, \textbf{(e)} the "omega" structure aimed to introduce $\Neff'<0$, \textbf{(f)} the cut-wire-pair} \label{fg_SRRtypes} \centering 
+\begin{figure}[t] \caption{Other variants of split-ring resonators: \textbf{(a)} double SRR, \textbf{(b)} symmetric version thereof, \textbf{(c)} double SRR with cross-connection between the inner and outer rings, \textbf{(d)} illustration of a square variant of the double SRR, \textbf{(e)} the "omega" structure aimed to introduce $\Neff'<0$, \textbf{(f)} the cut-wire-pair} \label{fg_SRRtypes} \centering 
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRpad.pdf}    \put (1,81) {\textbf{(a)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dsSRRpad.pdf}   \put (1,81) {\textbf{(b)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRcrossed.pdf}\put (1,81) {\textbf{(c)}}\end{overpic}\\
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRsquare.pdf} \put (-7,81) {\textbf{(d)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_SRRomega.pdf} \put (-6,81) {\textbf{(e)}}\end{overpic}\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_strippair.pdf} \put (1,81) {\textbf{(f)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_strippair.pdf} \put (1,81) {\textbf{(f)}}
+		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEHK.pdf}}
+\end{overpic}\quad
 \end{figure}
 Diverse metamaterial designs based on the SRR principle were developed.
 Many SRR designs involve a smaller ring nested inside the original one, as shown in Fig. \ref{fg_SRRtypes}a,b in the asymmetric and symmetric variants. The long narrow gap between the inner and outer split ring enhances their capacitive coupling. This way, the frequency of the magnetic resonance can be reduced without increase of the overall SRR dimensions. Such designs usually do not need capacitor pads, and can be made by etching or microlitography. 
@@ -345,17 +347,29 @@ Metallic \textit{cut-wire pair}, or also \textit{strip pair}, metamaterial depic
 
 %}}}
 \paragraph{SRR in a wire array} %{{{
-The analysis of the wire array has shown that at low frequencies, its effective permittivity is physically valid and has a negative value. Likewise, the symmetric SRR has a narrow region in the spectrum above its magnetic resonance where its effective permeability is negative, too.
+The analysis of the wire array has shown that at low frequencies, its effective permittivity is physically valid and has a negative value. Likewise, the symmetric SRR has a region in the spectrum above its magnetic resonance where its effective permeability is negative, too.
 
 A synthesis of these two structures yields a region of negative index of refraction, probably the first \cite{pendry2000negative} and most prominent metamaterial design to achieve this. The resulting effective parameters are represented by the blue line in Fig. \ref{fg_SRR_principles}. Its spectrum of the effective index of refraction resembles that of the wire array up to 630 GHz, where it drops by one Brillouin zone down as a result of the magnetic resonance. 
 
 Notice that the magnetic resonance has a similar effect also without the wire array (green curve in Fig. \ref{fg_SRR_principles}c), but in the previous case it only caused a drop from the first Brillouin zone boundary to zero, and could not reach negative values.
 
 As a general rule observed in all correctly retrieved spectra, a single individual resonance always causes $\Neff'(f)$ to drop from one Brillouin zone boundary to another. The magnetic resonance in the SRR-wire structure thus introduces a narrow region, still within the photonic band gap, where 
-\begin{equation} \Neff(f) = -\frac{c}{af}, \label{eq_}\end{equation}
+\begin{equation} \Neff(f) = -\frac{c}{2 a f}, \label{eq_BZN2}\end{equation}
 with $a$ being the unit cell size. 
 
-The photonic band spanning from 635 to 670 GHz thus has $\Neff'<0$. Only when $\Neff'$ comes closer to zero, roughly from 650 to 670 GHz, also the effective permittivity and permeability can be attributed with physical meaning. This can be indeed seen from the blue curves in Figs. \ref{fg_SRR_principles}d,e
+The photonic band spanning from 635 to 670 GHz thus has $\Neff'<0$. Only when $\Neff'$ comes closer to zero, roughly from 650 to 670 GHz, also the effective permittivity and permeability can be attributed with physical meaning. They are correctly retrieved as both negative, as can be indeed seen from in Figs. \ref{fg_SRR_principles}d,e (blue lines).
+
+%}}}
+\paragraph{Fano resonance} %{{{
+The spectrum of reflectance magnitude $|r(f)|$ for the sSRR-wire structure (blue line in Fig. \ref{fg_SRR_principles}a) has a relatively complex shape -- starting from a high reflectance introduced by the wire array, it grows below the magnetic resonance, then it drops to zero around 660 GHz, and it grows until its local maximum on 750 GHz is reached.
+
+It differs significantly from the arguably simpler spectrum of the cut wires (Figs. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}a and \ref{fg_CutWires_wirecut2um_wireradiusscan}a), where the resonance was accompanied by a single peak in reflectance. Since the structures have negligible lossess, complementary observations can be made with the transmission spectrum.
+
+The reason is in that with the sSRR-wire structure, $|r(f)|$ is a linear superposition of the wave scattered by the interaction of the structure with the electric field, which has relatively large amplitude $r_{1}(f)$ over broad spectral range, and another wave $r_{2}(f)$ scattered by the magnetic dipole which is prominent only close to the magnetic resonance, between 550 and 750 GHz.
+
+Both scattered components, $r_1(f)$ and $r_2(f)$, are complex functions. The phase of a wave scattered by a resonant element differs almost by $\pi$ for $f$ below and above the resonance. The impact on the plot of the overall reflectance is in a change from a constructive to destructive interference between the two components. 
+
+Such typical spectral features, observed whenever a narrower resonance overlaps with another broader one, are known as \textit{Fano resonances}, and can be found on most following plots of $|r(f)|$ or $|t(f)|$. On the contrary, when the Fano lineshape is missing in the spectrum of a structure that obviously possesses a magnetic dipole, it suggests the homogenization would have failed (see, e.g., the spectra of the asymmetric SRR in \ref{fg_SRR_principles}).  
 
 %}}}
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
@@ -380,7 +394,7 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with its
 	\put(31,105){sSRR}
 	\end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR_wire.pdf}  
-	\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}} TODO GIT ADD!!
+	\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}}
 	\put(29,105){sSRR + wire}
 	\put(1,96) {\textbf{(b)}} 
 	\end{overpic}
@@ -461,7 +475,7 @@ CDH results for the same structure parameters, $\rho_c\in\{6,8,10,18\}$ $\upmu$m
 
 For $\rho_c=6$ $\upmu$m, both retrieval methods give relatively similar results, and they correctly identify two indirect band gaps corresponding to the magnetic and antiparallel electric resonances, respectively. The match is not as good as in Fig. \ref{fg_cdh5}, though -- namely the magnetic resonance around 800 GHz appears somewhat wider when retrieved by the s-parameters method, compared to CDH. The deviation can be attributed to the structure being surrounded by vacuum instead of sensing the near fields of the surrounding cells (c.f. page \pageref{cdhadvantages}).
 
-The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this inner capacitor radius, the spatial dispersion starts to substantially affect the dispersion curve of the second photonic band. It starts in the $\mathbb \Gamma$ point at 794 GHz with a positive group velocity, reaches its maximum of 890 GHz, then the group velocity changes its sign and the band ends in the $\mathbf X$ point at ca. 887 GHz. At a given frequency between 887 and 890 GHz, two solutions of the wave equation exist that differ merely by the wavevector. The s-parameters method has no means of distinguishing them, and accordingly the retrieved dispersion curve deviates from that retrieved by CDH.
+The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this inner capacitor radius, the spatial dispersion starts to substantially affect the dispersion curve of the second photonic band. It starts in the $\mathbf \Gamma$ point at 794 GHz with a positive group velocity, reaches its maximum of 890 GHz, then the group velocity changes its sign and the band ends in the $\mathbf X$ point at ca. 887 GHz. At a given frequency between 887 and 890 GHz, two solutions of the wave equation exist that differ merely by the wavevector. The s-parameters method has no means of distinguishing them, and accordingly the retrieved dispersion curve deviates from that retrieved by CDH.
 
 
 \begin{figure}[t] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering 
@@ -478,7 +492,7 @@ The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this in
 	\end{overpic}
 \end{figure}
 
-Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequencies of the $\mathbb \Gamma$ and $\mathbf X$ points come close to each other, i.e. 784 and 795 GHz, respectively. The central maximum of the band is on 828 GHz, which explains why the s-parameters	method no longer determines the dispersion curve shape correctly, nor it identifies any of the resonances.
+Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequencies of the $\mathbf \Gamma$ and $\mathbf X$ points come close to each other, i.e. 784 and 795 GHz, respectively. The central maximum of the band is on 828 GHz, which explains why the s-parameters	method no longer determines the dispersion curve shape correctly, nor it identifies any of the resonances.
 
 These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
 
@@ -491,7 +505,7 @@ Similar failure of the s-parameters method in homogenization of an array of SRRs
 
 For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rangle$ $\upmu$m, the second photonic band supports simultaneously a wave of group velocity collinear with the phase velocity, and an \textit{additional wave} with higher wavenumber and opposite direction of these velocities. 
 
-Provided the auxiliary boundary conditions favor the energy coupling to this additional wave and prevent exciting the another solution, the additional wave should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this structure.
+Provided the auxiliary boundary conditions are arranged to couple all energy exclusively to this additional wave, with the relatively high Bloch wavevector, the interface of the metamaterial with vacuum should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this kind of metamaterial -- even for propagation parallel to the optical axis.
 
 %}}}
 
@@ -499,25 +513,35 @@ Provided the auxiliary boundary conditions favor the energy coupling to this add
 \FloatBarrier %====================================================================================================
 \section{Dielectric spheres} % references to ->			
 \paragraph{Mie resonances}%{{{
-Already in Eq. (\ref{}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. The capacitor in the SRR is then replaced by the distributed capacitance of the whole dielectric. For spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
+Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
 
 The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have pass through the surrounding air.
 
-An analytic theory of electromagnetic resonances in dielectric spheres and cylinders was developed by Mie. % in 1908? TODO cite
-and therefore they are denoted as \textit{Mie resonances}. 
-The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
+\begin{figure}[h]  %% fg_Spheres_lossscan
+	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y-z$ mirror plane, so the fields have no other nonzero components than shown here. Illustrative snapshot from a FDTD simulation of a titanium dioxide sphere of 15 $\mu$m radius. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
+	\begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,93) {\textbf{(a)}} \end{overpic}
+    \begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,93) {\textbf{(b)}} 
+		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletHEK.pdf}}
+	\end{overpic}
+\label{fg_Mie}  \end{figure}
 
-Infinite number of the higher-order resonances exist, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments, and do not couple to the electromagnetic wave. Dipole moments of many others exist, but are not oriented parallel to the fields of the incident wave. In the spectrum of an array of dielectric spheres, one can clearly identify the remaining resonances as the most prominent magnetic one, electric one, the second magnetic, second electric etc. The first three resonances from this alternating series are shown in Fig. \ref{fg_Spheres_lossscan}, each manifesting as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance in $\meff(f)$, or vice versa.
+An analytic theory of electromagnetic resonances in dielectric spheres (and cylinders) was developed by Mie in 1908, and correspondingly they are denoted as \textit{Mie resonances}. The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
 
+Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908beitrage}, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments. Dipole moments of many others exist, but are not oriented parallel to the fields of the incident wave, and do not couple to the electromagnetic wave. In the spectrum of an array of dielectric spheres, one can clearly identify the remaining resonances as the most prominent magnetic one, electric one, the second magnetic, second electric etc. The first three resonances from this alternating series are shown in Fig. \ref{fg_Spheres_lossscan}, each manifesting as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance in $\meff(f)$, or vice versa.
 
 %% todo cite vendik, Zhao etc. from the directory
 
 %}}}
-\begin{figure}  %% fg_Spheres_lossscan%{{{
-	\caption{\textbf{(a)} The electric and \textbf{(b)} magnetic Mie resonance in a dielectric sphere}  \centering 
-	\begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-    \begin{overpic}[width=.4\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
-\label{fg_Spheres_lossscan}  \end{figure}
+\begin{figure}[t] %fg_Spheres_lossscan %{{{
+	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
+\begin{tabular}{r}
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\ % git add TODO
+\end{tabular}
+\end{figure}
 %}}}
 \paragraph{Dielectric losses}%{{{
 %The fundamental Mie resonance
@@ -531,16 +555,6 @@ For completeness, we extend the frequency axis near $a/(2c) \approx 1.5$ THz, wh
 The main difference compared to the lossless resonances discussed above (cf. Fig.~\ref{fg_rodh_fdtd}) is the continuous index of refraction, that prevents the index of refraction $N'$ near individual resonances to reach the Brillouin zone boundaries and to form clear edges of the bands. As a result, all effective parameters are continuous even near resonances and do not form separate branches.
 Fig. \ref{fg_Spheres_lossscan}
 }
-
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.030\textwidth} %% TODO
-\begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\ % git add TODO
-\end{tabular}
-\end{figure}
 %}}}
 \begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
 \textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
@@ -566,7 +580,7 @@ An important property of the periodic sphere array is its \textit{isotropic} ele
 The right plot in Fig. % \ref{fg_spheres_fdtd}b XXX
 shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a great impact on the spectra. Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. 
 
-The magnetic resonance introduces narrow regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
+The magnetic resonance introduces regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
 %In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
 
 We performed series of experiments to measure the effective permeability  $\mu_{\text{eff}}$ spectrum in a real sample with mean sphere radius of ca. $42\;\upmu$m. The statistical deviation of the resonators size $\sigma \approx 5\;\upmu$m in the sample was unfortunately relatively broad, as was determined by means of microscopy and digital image processing. In contrast to simulations, we were able to constraint the spheres' positions to a plane only, while arranging them in a square array appeared unrealistic. We could anyway compute the single-cell permeability spectra (i. e. the yellow curve in Fig. \ref{fg_experimentalConv}) for many different resonator sizes and add them up. The resulting weighted average (blue curve) then matches the experimental data (red dots) nearly exactly. It shall be however noted that the averaged real part of $\mu_{\text{eff}}$ remained positive even with the best sieving results obtained so far.
