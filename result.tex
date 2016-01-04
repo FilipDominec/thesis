@@ -549,29 +549,33 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\ % git add TODO
+\begin{overpic}[width=0.87\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\ % git add TODO
+\begin{overpic}[width=0.87\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\ % git add TODO
 \end{tabular}
 \end{figure}
 %}}}
 \paragraph{Dielectric losses}%{{{
-Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents (skin effect) and fine sample preparation, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
+Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents (skin effect) and details in the geometry, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
 
-We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres at $f = 1$ THz was 
-$$\epsrl(f) = 94.2-2.43\text{i}.$$ 
-Its real part depends on the sample preparation and the volume fraction of microscopic voids, but it could be determined from the experimental spectra. The imaginary part was then scaled proportionally to the real part.
+We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres was 
+$$\epsrl(f = 1\text{ THz}) = 94.2-2.43\text{i}.$$ 
+The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. The model in \cite{baumard1977_epsilon_TiO2} gave the ratio of $\epsrl''/\epsrl'$ only, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, the corresponding imaginary part could be easily computed.
 
-The spectra of rutile spheres with radius $\rho=15\;\upmu$m is shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses are shown, with the realistic value represented as 100 \%. The losses reduce the effects of individual resonances, this applies both to the magnetic resonance at 530 GHz and the electric one at 790 GHz, as well to the higher ones. At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the structure reaches a Bragg band gap, which is obviously not much affected by the amount of losses.
+The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m is shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses are shown, with the realistic value represented as 100 \%, and accompanied with a hypothetic dielectric with 10\% and 1\% losses. 
+
+Most importantly, the losses smoothen the spectra of all individual resonances. The magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance is at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency.
+
+At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the structure reaches a Bragg band gap, which is not appreciably affected by the amount of losses since most of the field energy in the Bragg resonance is concentrated in free space between the particles.
 
 %}}}
 \begin{figure}[h!] %% SphereWire_principles %{{{
 	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $r = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_SphereWire_principles} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-10.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.050\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.050\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.050\textwidth}\\
 \end{tabular}
 \end{figure}
 
@@ -583,7 +587,7 @@ An important property of the periodic sphere array is its nearly \textit{isotrop
 \add{
 
 Fig. \ref{fg_SphereWire_principles}
-XXX
+%XXX
  shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a similar impact on the spectra as they had with the SRR array. 
 	
 %The magnetic resonance introduces regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
