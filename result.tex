@@ -320,32 +320,42 @@ Dispersion curves obtained by the s-parameters method and by the current-driven 
 
 %}}}
 \paragraph{Variants of split-ring resonators}%{{{
-\begin{figure}[b] \caption{Other variants of split-ring resonators: \textbf{(a)} double SRR, \textbf{(b)} symmetric version thereof, \textbf{(c)} double SRR with cross-connection between the inner and outer rings, \textbf{(d)} illustration of a square variant of the double SRR, \textbf{(e)} the "omega" structure aimed to introduce $\Neff'<0$, \textbf{(f)} the cut-wire-pair} \label{fg_emcSRR_resonances} \centering 
+\begin{figure}[b] \caption{Other variants of split-ring resonators: \textbf{(a)} double SRR, \textbf{(b)} symmetric version thereof, \textbf{(c)} double SRR with cross-connection between the inner and outer rings, \textbf{(d)} illustration of a square variant of the double SRR, \textbf{(e)} the "omega" structure aimed to introduce $\Neff'<0$, \textbf{(f)} the cut-wire-pair} \label{fg_SRRtypes} \centering 
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRpad.pdf}    \put (1,81) {\textbf{(a)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dsSRRpad.pdf}   \put (1,81) {\textbf{(b)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRcrossed.pdf}\put (1,81) {\textbf{(c)}}\end{overpic}\\
-\begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRsquare.pdf} \put (-6,81) {\textbf{(d)}}\end{overpic}\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_SRRomega.pdf} \put (1,81) {\textbf{(e)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_dSRRsquare.pdf} \put (-7,81) {\textbf{(d)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_SRRomega.pdf} \put (-6,81) {\textbf{(e)}}\end{overpic}\quad
 \begin{overpic}[height=0.22\textwidth]{img/drawing_strippair.pdf} \put (1,81) {\textbf{(f)}}\end{overpic}\quad
 \end{figure}
 Diverse metamaterial designs based on the SRR principle were developed.
-Many SRR designs involve a smaller ring nested inside the original one, as shown in Fig. \ref{fg_dSRR}a,b in the asymmetric and symmetric variants. The long narrow gap between the inner and outer split ring enhances their capacitive coupling. This way, the frequency of the magnetic resonance can be reduced without increase of the overall SRR dimensions. Such designs usually do not need capacitor pads, and can be made by etching or microlitography. 
+Many SRR designs involve a smaller ring nested inside the original one, as shown in Fig. \ref{fg_SRRtypes}a,b in the asymmetric and symmetric variants. The long narrow gap between the inner and outer split ring enhances their capacitive coupling. This way, the frequency of the magnetic resonance can be reduced without increase of the overall SRR dimensions. Such designs usually do not need capacitor pads, and can be made by etching or microlitography. 
 
-A modification of this \textit{double split-ring} design includes cross-connection between the inner and outer conductors as in Fig. \ref{fg_dSRR}c; this version also breaks mirror symmetry. 
+A modification of this \textit{double split-ring} design includes cross-connection between the inner and outer conductors as in Fig. \ref{fg_SRRtypes}c; this version also breaks mirror symmetry. 
 
-The square "ring" resonator (Fig. \ref{fg_dSRR}d) is also widely used, without any substantial difference from the round SRR.
+The square "ring" resonator (Fig. \ref{fg_SRRtypes}d) is also widely used, without any substantial difference from the round SRR.
 
-The \textit{omega structure} was designed to emulate the operation of a SRR and a wire simultaneously, by interconnecting the ends of a SRR along the $x$-axis (Fig. \ref{fg_dSRR}e).
+The \textit{omega structure} was designed to emulate the operation of a SRR and a wire simultaneously, by interconnecting the ends of a SRR along the $x$-axis (Fig. \ref{fg_SRRtypes}e).
 
-All SRR structures in Fig. \ref{fg_dSRR} can be made flat in the plane perpendicular to the magnetic field, which facilitates their fabrication. At terahertz and higher frequencies, using a thin metal film should not be much detrimental to the SRR conductivity, since the skin depth caused by eddy currents is often submicroscopic \cite{gibbons2010scalable}.
+All SRR structures in Fig. \ref{fg_SRRtypes} can be made flat in the plane perpendicular to the magnetic field, which facilitates their fabrication. At terahertz and higher frequencies, using a thin metal film should not be much detrimental to the SRR conductivity, since the skin depth caused by eddy currents is often submicroscopic \cite{gibbons2010scalable}.
 
 On the contrary, a similar way of operation is achieved by structures infinite in the direction of the magnetic field. This allows to fabricate magnetic resonators by rolling stripes of a semi-metallised plastic foil, producing a \textit{swiss-roll} metamaterial \cite{gibbons2010scalable}, or by partially sputter-coating a polymer fibre by metal \cite{wang2011fiber}. Such structures however seem to exhibit relatively high losses when applied above the microwave range.
 
-Metallic \textit{cut-wire pair}, or also \textit{strip pair}, metamaterial depicted in Fig. \ref{fg_dSRR}f, was designed for operation in the infrared or optical range. It can be understood as a split-ring resonator flattened in the direction of the wave vector. The geometry is tuned so that the electric and magnetic resonances overlap.	
+Metallic \textit{cut-wire pair}, or also \textit{strip pair}, metamaterial depicted in Fig. \ref{fg_SRRtypes}f, was designed for operation in the infrared or optical range. It can be understood as a split-ring resonator flattened along the direction of the wave vector. The geometry is tuned so that the electric and magnetic resonances overlap.	
 
 %}}}
 \paragraph{SRR in a wire array} %{{{
-% todo negative index structure, ref to Fig. 2.11
+The analysis of the wire array has shown that at low frequencies, its effective permittivity is physically valid and has a negative value. Likewise, the symmetric SRR has a narrow region in the spectrum above its magnetic resonance where its effective permeability is negative, too.
+
+A synthesis of these two structures yields a region of negative index of refraction, probably the first \cite{pendry2000negative} and most prominent metamaterial design to achieve this. The resulting effective parameters are represented by the blue line in Fig. \ref{fg_SRR_principles}. Its spectrum of the effective index of refraction resembles that of the wire array up to 630 GHz, where it drops by one Brillouin zone down as a result of the magnetic resonance. 
+
+Notice that the magnetic resonance has a similar effect also without the wire array (green curve in Fig. \ref{fg_SRR_principles}c), but in the previous case it only caused a drop from the first Brillouin zone boundary to zero, and could not reach negative values.
+
+As a general rule observed in all correctly retrieved spectra, a single individual resonance always causes $\Neff'(f)$ to drop from one Brillouin zone boundary to another. The magnetic resonance in the SRR-wire structure thus introduces a narrow region, still within the photonic band gap, where 
+\begin{equation} \Neff(f) = -\frac{c}{af}, \label{eq_}\end{equation}
+with $a$ being the unit cell size. 
+
+The photonic band spanning from 635 to 670 GHz thus has $\Neff'<0$. Only when $\Neff'$ comes closer to zero, roughly from 650 to 670 GHz, also the effective permittivity and permeability can be attributed with physical meaning. This can be indeed seen from the blue curves in Figs. \ref{fg_SRR_principles}d,e
 
 %}}}
 \begin{figure}[t] \caption{Split-ring resonator: %{{{
@@ -370,7 +380,7 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with its
 	\put(31,105){sSRR}
 	\end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_sSRR_wire.pdf}  
-	%\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}} TODO GIT ADD!!
+	\put(16,100){\includegraphics[width=.1\textwidth]{img/drawing_sSRRpad_wire.pdf}} TODO GIT ADD!!
 	\put(29,105){sSRR + wire}
 	\put(1,96) {\textbf{(b)}} 
 	\end{overpic}
@@ -382,9 +392,6 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with its
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 %\end{figure}
-%}}}
-% TODO \paragraph{Fano resonances}%{{{
-%TODO Bitzer2011-Babinet_principle_SRR.pdf
 %}}}
 
 
