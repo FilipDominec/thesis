@@ -579,49 +579,38 @@ The spectra of rutile spheres with radius $\rho=15\;\upmu$m is shown in Fig. \re
 \paragraph{Negative-index metamaterial based on dielectric spheres}%{{{
 An important property of the periodic sphere array is its nearly \textit{isotropic} electromagnetic behaviour, i.e. independence of properties on the wave polarisation. It follows from the symmetry of the unit cell, and  it is approximately maintained even for a periodic lattice of these, thanks to the low inter-cell coupling. 
 
+
+\add{
+
 Fig. \ref{fg_SphereWire_principles}
 XXX
  shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a similar impact on the spectra as they had with the SRR array. 
 	
+%The magnetic resonance introduces regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
 Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. 
 % Cai_Zhu2008-Diel_resonators_wires.pdf
 
 Taking realistic losses into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}
 \begin{equation} \text{FOM} := \frac{\Neff'(f)}{\Neff''(f)} \lesssim 10. \label{eq_}\end{equation}
+}
 
-
-
-\begin{figure} \caption{SphereWire sketch}  \centering  \includegraphics[width=10cm]{img/SphereWire_sketch.pdf} \end{figure} 
-
-
+%}}}
+\paragraph{Matching experimental results for sphere array}%{{{
+%}}}
+\paragraph{Matching experimental results for sphere-wire array}%{{{
 % approximation for frequency well below the grid resonance  
 
-% todo? 
-
-% todo? The magnetic resonance introduces regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
-
-% todo? %In practice the resonances are highly lossy, so only the first magnetic resonance introduces a band where the wave can propagate through several cells without being too damped. 
-
-
-%}}}
-\begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
-\textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+	\begin{figure}[t] \caption{Sketch of the sphere array embedded in a wire grid. \texttt{(a)} Front view of the simulated structure, \texttt{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \texttt{(c)} and \texttt{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
+\begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xy.pdf} \put (1,81) {\textbf{(a)}}\end{overpic}\quad
+\begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xy.pdf}  \put (1,81) {\textbf{(b)}}
+		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}} % todo
+\end{overpic}\quad \\
+\begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xz.pdf} \put (1,61) {\textbf{(c)}}\end{overpic}\quad
+\begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xz.pdf}  \put (1,61) {\textbf{(d)}}
+		\put(100,10){\includegraphics[width=.12\textwidth]{img/tripletKEH.pdf}} % todo
+\end{overpic}\quad
 \end{figure}
 
-%}}}
-\paragraph{Experimental spectra}
-We performed series of experiments to measure the effective permeability spectrum $\meff(f)$ for a real sample with mean sphere radius of ca. $42\;\upmu$m. The statistical deviation of the resonators size $\sigma \approx 5\;\upmu$m in the sample was determined by means of microscopy and digital image processing. 
-	
-In contrast to simulations, we were able to constraint the spheres' positions to a plane only, while arranging them in a square array appeared unrealistic. 
-
-\begin{figure}[ht]  \caption{Comparison of the effective permeability of ideal monodisperse sphere array (yellow), weighted average according to the size distribution (blue) and experimental data (red dots).}
-\label{fg_experimentalConv} \centering 
-\includegraphics[width=12cm]{img/Spheres_FDTD_experimentalConv.pdf}
-\end{figure}
-
-We could compute the single-cell permeability spectra (i. e. the yellow curve in Fig. \ref{fg_experimentalConv}) for many different resonator sizes and add them up. The resulting weighted average (blue curve) then matches the experimental data (red dots) nearly exactly. It shall be however noted that the averaged real part of $\mu_{\text{eff}}$ remained positive even with the best sieving results obtained so far. %TODO
 
 %}}}
 \paragraph{Effect of elliptic shape}%{{{
@@ -639,11 +628,31 @@ spherical shape, ie. when X~Y~Z.
 }
 
 %}}}
-\paragraph{Tunable dielectric resonators}
-%TODO Note that the effect of mm-phc transition can be also observed in silicon microcubes (thz operation)
-%Planar all-silicon metamaterial for terahertz applications \cite{prosvirnin2015planar}
+\paragraph{Experimental spectra} %{{{
+We performed series of experiments to measure the effective permeability spectrum $\meff(f)$ for a real sample with mean sphere radius of ca. $42\;\upmu$m. The statistical deviation of the resonators size $\sigma \approx 5\;\upmu$m in the sample was determined by means of microscopy and digital image processing. 
+%In contrast to simulations, we were able to constraint the spheres' positions to a plane only, while arranging them in a square array appeared unrealistic. 
+
+\begin{figure}[ht]  \caption{Comparison of the effective permeability of ideal monodisperse sphere array (yellow), weighted average according to the size distribution (blue) and experimental data (red dots).}
+\label{fg_experimentalConv} \centering 
+\includegraphics[width=12cm]{img/Spheres_FDTD_experimentalConv.pdf}
+\end{figure}
+
+We computed the single-cell permeability spectra (i. e. the yellow curve in Fig. \ref{fg_experimentalConv}) for many different resonator sizes and add them up. The resulting weighted average (blue curve) then matches the experimental data (red dots) nearly exactly. It shall be however noted that the averaged real part of $\mu_{\text{eff}}$ remained positive even with the best sieving results obtained so far. %TODO
+
 
 %}}}
+%   SKIP  \begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
+%    \textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
+%    	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+%    	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
+%    \end{figure}
+%    
+%    %}}}
+%   SKIP \paragraph{Tunable dielectric resonators} %{{{
+%   %TODO Note that the effect of mm-phc transition can be also observed in silicon microcubes (thz operation)
+%   %Planar all-silicon metamaterial for terahertz applications \cite{prosvirnin2015planar}
+%   
+%   %}}}
 
 
 \FloatBarrier %====================================================================================================
