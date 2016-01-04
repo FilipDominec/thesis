@@ -172,7 +172,9 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 \FloatBarrier %====================================================================================================
 \section{Cut wires} \label{section_cutwires}
 \paragraph{Individual resonances}%{{{
-The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. These resonances couple to the electromagnetic field through their electric dipole.
+The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. 
+
+These resonances couple to the electromagnetic field by means of their electric dipole, and are thus denoted shortly as \textit{electric resonances}. This does not mean that no magnetic field is involved; in fact, the energy is exchanged between the resonant electric and magnetic fields each quarter-period. The situation partially changes with decreasing size of the particles. At optical frequencies, the energy is exchanged between the electric field and the kinetic energy of the electrons, while the magnetic field circulating around the metallic particle plays a minor role only. Such regime is known as \textit{plasmonic resonances} and was described by Mie in 1908 \cite{mie1908beitrage}.
 
 The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance as the point close to  1200 GHz where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. Towards higher or lower frequencies from the resonance, the transmittance is relatively high.
 
@@ -259,12 +261,12 @@ While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in t
 
 \FloatBarrier %====================================================================================================
 \section{Split-ring resonator} \label{section_srr} % references to -> 
-\paragraph{Magnetic dipole moment}%{{{
+\paragraph{Resonances with magnetic dipole moment}%{{{
 The fundamental resonance in a cut wire has an electric dipole moment only. The resonant magnetic field circulates around the wire and due to its rotational symmetry along the $x$-axis, the magnetic dipole moment is zero. Other structures can support resonances of lower symmetry with regards to the $x$-axis, thus having a magnetic dipole moment.
 
-One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). To reduce the resonant frequency, capacitor pads can be added to the cut, as shown in Fig. \ref{fg_SRR_types}a. The first resonance in its spectrum has a dominant magnetic dipole moment. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
+One of the simplest examples is formed by bending the wire into a "C"-shaped \textit{split-ring resonator} (SRR). To reduce the resonant frequency, capacitor pads can be added to the cut, as shown in Fig. \ref{fg_SRR_types}a. The first resonance in its spectrum has a dominant magnetic dipole moment, and will be denoted simply as a \textit{magnetic resonance}. The electric current flows through the wire along a circular path, while the magnetic field has a toroidal shape around the wire.   
 
-Apparently the first metamaterial design embedding the SRR was by Pendry et al. from 1999 \cite{pendry1999magnetism}, although
+%TODO history: Apparently the first metamaterial design embedding the SRR was by Pendry et al. from 1999 \cite{pendry1999magnetism}, although
 
 The term of split-ring resonator can be traced decades earlier. The very concept of SRR is at least as old as the Hertz's experiments with the spark-gap transmitter from 1880s.
 \begin{figure}[h] \caption{Variants of the split-ring resonators, viewed from the side perpendicular to the magnetic field: \textbf{(a)} classical SRR, \textbf{(b)} symmetric SRR with two splits, \textbf{(c)} one of the designs of an electric SRRs having a central bar, \textbf{(d)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types} \centering 
