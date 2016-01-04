@@ -419,9 +419,11 @@ However, a new electric resonance (Fig. \ref{fg_emcSRR_resonances}b) is introduc
 \begin{overpic}[height=0.25\textwidth]{img/drawing_emcSRRpad_sizes.pdf}\put (1,80) {\textbf{(b)}}\end{overpic}
 \end{figure}
 \begin{figure}[b] \caption{Three low-frequency resonances in the combined SRR: \textbf{(a)} magnetic resonance, \textbf{(b)} antiparallel electric resonance, \textbf{(c)} parallel electric resonance.\\ The actual order of the first two resonances in the spectrum is determined by the inner capacitor radius $\rho_c$ or other parameters of the structure.} \label{fg_emcSRR_resonances} \centering 
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,81) {\textbf{(a)}}\end{overpic}\quad\quad\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,81) {\textbf{(b)}}\end{overpic}\quad\quad
-\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (5,54) {\textbf{(c)}}\end{overpic}
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resM.pdf}\put (1,81) {\textbf{(a)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2.pdf}\put (1,81) {\textbf{(b)}}\end{overpic}\quad
+\begin{overpic}[height=0.22\textwidth]{img/drawing_emcSRRpad_resE2b.pdf}\put (5,54) {\textbf{(c)}}
+		\put(100,10){\includegraphics[width=.1\textwidth]{img/tripletEHK.pdf}}
+\end{overpic}\qquad\quad
 \end{figure}
 
 %}}}
@@ -517,7 +519,7 @@ Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher 
 The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have to pass through the surrounding air.
 
 \begin{figure}[h]  %% fg_Spheres_lossscan
-	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y-z$ mirror plane, so the fields have no other nonzero components than shown here. Illustrative snapshot from a FDTD simulation of a titanium dioxide sphere of 15 $\mu$m radius. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
+	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y$-$z$ plane of mirror symmetry, so the fields have no other nonzero components than shown here. Illustrative snapshot from a FDTD simulation of a titanium dioxide sphere of 15 $\mu$m radius. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
 	\begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,93) {\textbf{(a)}} \end{overpic}
     \begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,93) {\textbf{(b)}} 
 		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletHEK.pdf}}
@@ -550,7 +552,7 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \paragraph{Dielectric losses}%{{{
 Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents (skin effect) and fine sample preparation, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
 
-We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres at $f = 1$ THz was $\epsrl(f) = 94.2-2.43\text{i}$. Its real part depends on the sample preparation and the percentage of microscopic voids, but it can be determined from the experimental spectra. The imaginary part then scales proportionally and can be determined.
+We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres at $f = 1$ THz was $\epsrl(f) = 94.2-2.43\text{i}$. Its real part depends on the sample preparation and the percentage of microscopic voids, but it can be determined from the experimental spectra. The imaginary part then scales proportionally and can be determined. %TODO
 
 their diameter was set to $r=30\;\upmu$m and their spacing along each axis was $a =100$ $\upmu$m. The resulting spectra of reflection, transmission and effective parameters are in Fig. %\ref{fg_spheres_fdtd}a.  XXX
 
