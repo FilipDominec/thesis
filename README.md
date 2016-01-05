@@ -13,14 +13,14 @@
  * [X] 'Mechanical drilling of fishnets'
  * [X] 1	Dielectric slab
  * [X] 2	Wire medium
- * [/] 3	Cut wires: rev
+ * [X] 3	Cut wires: rev
  * [X]		prepare THz-TDTS data for Bousek samples?
  * [ ]		compare them with a FDTD simulation
- * [/] 4	Electric resonators: rev
- * [ ] 5	Split-ring resonator: comment double-strip
- * [ ] 6	Dielectric sphere: introduce Mie resonances
+ * [X] 4	Electric-magnetic resonators
+ * [X] 5	Split-ring resonator: comment double-strip
+ * [X] 6	Dielectric sphere: introduce Mie resonances
  * [ ]		prepare THz-TDTS data for diffeernt size fractions
- * [ ] 7	SRRs and spheres in a wire array or grid
+ * [X] 7	SRRs and spheres in a wire array or grid
  * [/] 8	Dielectric rods parallel to magnetic field
  * [/] 9	Dielectric rods parallel to the electric field
  * [ ]		compare the OpEx2014 results with CDH?
@@ -33,7 +33,7 @@
  * [ ] attach the list of own publications
  * [ ] comment on the tunability of various structures - parametric scans of results etc.
  * [ ] Use correct citation style!
- * [ ] Write a correct definition of effective eps and mu
+ * [ ] Write a correct definition of effective eps and mu??
 
 
 ==== Finally ====
