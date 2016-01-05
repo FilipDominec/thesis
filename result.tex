@@ -555,17 +555,21 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \end{figure}
 %}}}
 \paragraph{Dielectric losses}%{{{
-Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents (skin effect) and details in the geometry, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
+Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents and details in the geometry, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
 
 We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres was 
 $$\epsrl(f = 1\text{ THz}) = 94.2-2.43\text{i}.$$ 
-The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. The model in \cite{baumard1977_epsilon_TiO2} gave the ratio of $\epsrl''/\epsrl'$ only, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, the corresponding imaginary part could be easily computed.
+The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. The model in \cite{baumard1977_epsilon_TiO2} gave the ratio of $\epsrl''/\epsrl'$ only, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
 
-The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m is shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses are shown, with the realistic value represented as 100 \%, and accompanied with a hypothetic dielectric with 10\% and 1\% losses. 
+The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered, with the realistic value represented as 100 \%, and accompanied with a hypothetic low-loss dielectric with 10 \% and 1 \% of original losses. 
 
-Most importantly, the losses smoothen the spectra of all individual resonances. The magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance is at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency.
+The magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmission grows with losses.
 
-At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the structure reaches a Bragg band gap, which is not appreciably affected by the amount of losses since most of the field energy in the Bragg resonance is concentrated in free space between the particles.
+Taking realistic losses into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}
+\begin{equation} \text{FOM} := \frac{\Neff'(f)}{\Neff''(f)} \lesssim 10. \label{eq_}\end{equation}
+
+At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the structure reaches a Bragg band gap. This kind of resonance is not appreciably affected by the losses, since most of the field energy in the Bragg resonance is concentrated in free space between the particles.
+
 
 %}}}
 \begin{figure}[h!] %% SphereWire_principles %{{{
@@ -581,22 +585,19 @@ At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the str
 
 %}}}
 \paragraph{Negative-index metamaterial based on dielectric spheres}%{{{
-An important property of the periodic sphere array is its nearly \textit{isotropic} electromagnetic behaviour, i.e. independence of properties on the wave polarisation. It follows from the symmetry of the unit cell, and  it is approximately maintained even for a periodic lattice of these, thanks to the low inter-cell coupling. 
+An important property of the periodic sphere array is its nearly \textit{isotropic} electromagnetic behaviour, i.e. independence of its behaviour on the wave polarisation. Its roots are in high symmetry of the dielectric sphere, and it is approximately maintained even when the spheres are arranged into a periodic lattice, provided that low frequencies are considered and that the spheres are too close. 
+% todo Cai_Zhu2008-Diel_resonators_wires.pdf
+
+Following the approach used to build a metamaterial with a negative refractive index from SRRs, it is possible to interlace the sphere array with the lattice of wires, which introduce negative permittivity. In order to maintain the approximate isotropy of the resulting structure, the wires may be parallel to the $x$- and $y$-axes to form a two-dimensional square mesh. This modification does not make any appreciable change in the low-frequency behaviour. % todo link to the wire mesh simulation
+
+Fig. \ref{fg_SphereWire_principles} compares the already commented spectra for the sphere lattice (red line), and wire grid (blue line) with the spectra for the compound structure, which is sketched in Fig. \ref{fg_spherewire_sketch}a,c. At $f>0$, the wire grid does not reflect all energy, leading again to formation of the Fano resonance lineshapes. 
+
+Notice in \ref{fg_SphereWire_principles} that the Fano resonances of structures with and without the wire mesh have a peculiar complementary shape. The wave reflected from the electric dipole of the wire mesh has an opposite sign than that reflected from the electric dipole of dielectric particles. Its sign determines whether the interference with the second component, scattered by the Mie resonances, would be constructive, or destructive. 
+
+A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band.
 
 
-\add{
-
-Fig. \ref{fg_SphereWire_principles}
-%XXX
- shows simulation results for the sphere array interlaced with a wire mesh. The wires are directed along the $x$-axis and $y$-axis, the latter orientation being included only to maintain isotropy of the structure. The wires along the $x$-axis, i.e. parallel to the electric field, have a similar impact on the spectra as they had with the SRR array. 
-	
-%The magnetic resonance introduces regions where $\mu_{\text{eff}} < 0$, thus leading to $N'_{\text{eff}} < 0$ and a propagation mode would occur \cite{dominec2013resonant}. The electric resonance can, on the other hand, overpower the effect of wires so that $\varepsilon_{\text{eff}} > 0$, forming a narrow band with $N'_{\text{eff}} > 0$.
-Most importantly, the structure is now highly reflective at low frequencies, and the resonances introduce transmission windows. (Note the previously discussed sphere array acted in opposite way!) The explanation is contained in the effective permittivity plot, where the wires introduce a region of $\varepsilon_{\text{eff}} < 0$  ranging from 0 to ca 900 GHz. 
-% Cai_Zhu2008-Diel_resonators_wires.pdf
-
-Taking realistic losses into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}
-\begin{equation} \text{FOM} := \frac{\Neff'(f)}{\Neff''(f)} \lesssim 10. \label{eq_}\end{equation}
-}
+% another way of achieving negative refractive index is in overlapping the electric and magnetic resonances \cite{holloway2003double} - similar to the el mag resonator above, has low spatial dispersion - but: tight requirements, double losses
 
 %}}}
 \paragraph{Matching experimental results for sphere array}%{{{
