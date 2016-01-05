@@ -522,6 +522,7 @@ Provided the auxiliary boundary conditions are arranged to couple all energy exc
 Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
 
 The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have to pass through the surrounding air.
+%merlin2009metamaterials
 
 \begin{figure}[h]  %% fg_Spheres_lossscan
 	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y$-$z$ plane of mirror symmetry, so the fields have no other nonzero components than shown here. Illustrative snapshot from a FDTD simulation of a titanium dioxide sphere of 15 $\mu$m radius. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
@@ -559,7 +560,7 @@ Unlike split-ring resonators, where the high-frequency dissipative losses depend
 
 We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres was 
 $$\epsrl(f = 1\text{ THz}) = 94.2-2.43\text{i}.$$ 
-The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. The model in \cite{baumard1977_epsilon_TiO2} gave the ratio of $\epsrl''/\epsrl'$ only, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
+The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. For such composites, Ref. \cite{baumard1977_epsilon_TiO2} gives only the ratio of $\epsrl''/\epsrl'$, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
 
 The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered, with the realistic value represented as 100 \%, and accompanied with a hypothetic low-loss dielectric with 10 \% and 1 \% of original losses. 
 
@@ -593,17 +594,30 @@ Fig. \ref{fg_SphereWire_principles} compares the already commented spectra for t
 
 Notice in \ref{fg_SphereWire_principles} that the Fano resonances of structures with and without the wire mesh have a peculiar complementary shape. The wave reflected from the electric dipole of the wire mesh has an opposite sign than that reflected from the electric dipole of dielectric particles. Its sign determines whether the interference with the second component, scattered by the Mie resonances, would be constructive, or destructive. 
 
-A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band.
+A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band. This means that the metamaterial, in the optimum of the negative-index band, reduces the wave amplitude to $e^{1/6} \approx 0.84$ within one wavelength. 
 
-%Another way of achieving negative refractive index is in overlapping the electric and magnetic resonances \cite{holloway2003double} - similar to the el mag resonator above, has low spatial dispersion - but: tight requirements, double losses
+After ca. 40 wavelengths, the amplitude drops to $10^{-3}$ and the wave energy to $10^{-6}$. The applicability of such a metamaterial for building a macroscopic optical device is questionable. % todo \cite{zhao2009mie}
+
+%Another way of achieving negative refractive index is in overlapping the electric and magnetic resonances \cite{holloway2003double} - similar to the el mag resonator above, has low spatial dispersion - but: tight requirements, double losses \cite{zhao2009mie}
 
 %}}}
-\paragraph{Matching experimental results for sphere array} %{{{
-%}}}
-\paragraph{Matching experimental results for sphere-wire array} %{{{
-% approximation for frequency well below the grid resonance  
+\paragraph{Effect of elliptic shape}%{{{
+For a spherical dielectric particle, the frequencies of the magnetic and electric resonances, $f_{\text{M1}}$ and $f_{\text{E1}}$, respectively, scale inversely proportional to the radius $\rho$:
+\begin{equation} f_{\text{M1}} \propto \rho^{-1}, \quad f_{\text{E1}} \propto \rho^{-1}. \label{eq_freq_rho}\end{equation}
 
-	\begin{figure}[t] \caption{Sketch of the sphere array embedded in a wire grid. \texttt{(a)} Front view of the simulated structure, \texttt{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \texttt{(c)} and \texttt{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
+When the particle is an ellipsoid with three independent semiaxes $\rho_x$, $\rho_y$ and $\rho_z$ aligned parallel to the $x$-, $y$- and $z$-axes, the resonance frequencies $f_{\text{M1}}$ and $f_{\text{E1}}$ become certain functions of these three ellipsoid parameters. For a nearly spherical shape, 
+$$\rho_x \sim \rho_y \sim \rho_z,$$
+both frequencies can be approximated as 
+\begin{equation}  f_{\text{M1}} \propto \rho_x^{-0.4}  \rho_y^{-0.2} \rho_z^{-0.4}, \label{eq_freqM1_rhoxyz}\end{equation}
+\begin{equation}  f_{\text{E1}} \propto \rho_x^{-0.15}  \rho_y^{-0.15} \rho_z^{-0.7}. \label{eq_freqE1_rhoxyz}\end{equation}
+Obviously,  in both Eqs. (\ref{eq_freqM1_rhoxyz}) and (\ref{eq_freqE1_rhoxyz}), the three exponents must sum to -1 so that they are compatible with the scaling rule for a sphere in Eq. (\label{eq_freq_rho}). 
+These values are approximate only, and were interpolated from batches of simulations which scanned through the ellipsoid parameters.
+
+When the ellipsoid axes are oriented randomly, the resonance frequencies remain almost the same; also the resonant modes are  preserved with respect to the ellipsoid orientation. An incident wave in such a case can excite multiple non-degenerate magnetic or electric Mie resonances at once. The structure then changes the polarisation state of the wave, which is beyond the scope of this analysis.
+
+%}}}
+\begin{figure}[t]  % fg_spherewire_sketch%{{{
+	\caption{Sketch of the sphere array embedded in a wire grid. \texttt{(a)} Front view of the simulated structure, \texttt{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \texttt{(c)} and \texttt{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xy.pdf} \put (1,81) {\textbf{(a)}}\end{overpic}\quad
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xy.pdf}  \put (1,81) {\textbf{(b)}}
 		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}} % todo
@@ -614,21 +628,9 @@ A band of negative index of refraction is formed above the magnetic Mie resonanc
 \end{overpic}\quad
 \end{figure}
 
-
 %}}}
-\paragraph{Effect of elliptic shape}%{{{
-\add{
-I ran three scans over the X-, Y- and Z- semiaxes of a TiO2 ellipsoid, fixing the remaining semiaxes to 15 um.  The ellipsoid's X-axis was oriented parallel to the electric field, the Z-axis pointed in the wave propagation direction.
-
-The results attached, best expressed by the dielectric loss spectra in bilogarithmic plot, show that the first (magnetic) mode is roughly proportional to X**(-0.4) and Z**(-0.4), while the dependence on the Y-size is even slower, similar to Y**(-0.2).
-
-The second Mie mode is more sensitive to the Z-size as Z**(-0.7), while the other sizes scale very slowly, X**(-0.15), Y**(-0.15).  
-
-In all cases, the exponents of X, Y and Z~dependencies should sum up to -1, which is the obvious rule for the frequency dependence when all axes are scaled simultaneously.
-Note that these estimated exponents are roughly valid only near the
-spherical shape, ie. when X~Y~Z. 
-%% add: the mode frequencies are almost independent of the rotation; therefore, in an array of oblique ellipsoidal resonators, the resonances split into two. Such a structure behaves usually  in a highly anisotropic way.
-}
+\paragraph{Matching simulations and experimental results} %{{{
+% approximation for frequency well below the grid resonance  
 
 %}}}
 \paragraph{Experimental spectra} %{{{
