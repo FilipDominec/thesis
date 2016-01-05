@@ -558,11 +558,11 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \paragraph{Dielectric losses}%{{{
 Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents and details in the geometry, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
 
-We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$), according to which the relative permittivity of the spheres was 
-$$\epsrl(f = 1\text{ THz}) = 94.2-2.43\text{i}.$$ 
+We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$). The relative permittivity of rutile was already plotted in Fig. \ref{fg_tio2eps}; in the terahertz range it classifies as a high-permittivity dielectric with a relatively low losses, compared to other similar materials:
+$$\epsrl(f=1\text{ THz}) = 94.2-2.43\text{i}.$$ 
 The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. For such composites, Ref. \cite{baumard1977_epsilon_TiO2} gives only the ratio of $\epsrl''/\epsrl'$, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
 
-The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered, with the realistic value represented as 100 \%, and accompanied with a hypothetic low-loss dielectric with 10 \% and 1 \% of original losses. 
+The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered, with the realistic value represented as 100 \%, and accompanied with a hypothetic low-loss dielectric with the same real part $\epsrl'$, but the imaginary part $\epsrl''$ artificially reduced to  10 \% and 1 \%. 
 
 The magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmission grows with losses.
 
@@ -604,6 +604,7 @@ After ca. 40 wavelengths, the amplitude drops to $10^{-3}$ and the wave energy t
 \paragraph{Effect of elliptic shape}%{{{
 For a spherical dielectric particle, the frequencies of the magnetic and electric resonances, $f_{\text{M1}}$ and $f_{\text{E1}}$, respectively, scale inversely proportional to the radius $\rho$:
 \begin{equation} f_{\text{M1}} \propto \rho^{-1}, \quad f_{\text{E1}} \propto \rho^{-1}. \label{eq_freq_rho}\end{equation}
+A deviation from this rule may result from the inter-particle coupling in a very dense lattice, or from dispersion of the constituent dielectric.
 
 When the particle is an ellipsoid with three independent semiaxes $\rho_x$, $\rho_y$ and $\rho_z$ aligned parallel to the $x$-, $y$- and $z$-axes, the resonance frequencies $f_{\text{M1}}$ and $f_{\text{E1}}$ become certain functions of these three ellipsoid parameters. For a nearly spherical shape, 
 $$\rho_x \sim \rho_y \sim \rho_z,$$
