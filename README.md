@@ -5,7 +5,7 @@
  * [X] metamaterial homogenization
  * [X] "negative-index", "left-handed" or "doubly-negative" media?
  * [X] FDFD
- * [o] SKIPPED - PWEM principle
+ * [-] SKIPPED - PWEM principle
  * [X] initial effparam branch, weaknesses of the method
  * [X] CDH: full
  * [X] other effparam retrieval methods (TODO review)
@@ -30,10 +30,21 @@
  * [ ]		prepare THz-TDTS data from the drilled sample?
  * [ ] 12	Other structures
  * [/] Conclusion
+ * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
  * [ ] attach the list of own publications
- * [ ] comment on the tunability of various structures - parametric scans of results etc.
  * [ ] Use correct citation style!
- * [ ] Write a correct definition of effective eps and mu??
+ * [-] SKIP Write a correct definition of effective eps and mu??
+
+==== Experimental data ====
+ * [ ] Fishnet: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
+ * [ ] Spheres: compare three sieved samples, (do they have granulometry?)
+		(source /home/filip/PhD/Granulometry/120531_mikrofoto_trepacka/2012.05.31.ts1)
+ * [ ] SKIP drilled fishnet (
+
+		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
+ * [ ] Spheres - permeability spectra convolution; 
+		somewhere is the granulometry, see PNG figure /home/filip/PhD/Output_web/img
+ * [ ] Experimental data: fishnet 28c, 28d (
 
 
 ==== Finally ====

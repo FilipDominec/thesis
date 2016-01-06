@@ -175,6 +175,7 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. 
 
 These resonances couple to the electromagnetic field by means of their electric dipole, and are thus denoted shortly as \textit{electric resonances}. This does not mean that no magnetic field is involved; in fact, the energy is exchanged between the resonant electric and magnetic fields each quarter-period. The situation partially changes with decreasing size of the particles. At optical frequencies, the energy is exchanged between the electric field and the kinetic energy of the electrons, while the magnetic field circulating around the metallic particle plays a minor role only. Such regime is known as \textit{plasmonic resonances} and was described by Mie in 1908 \cite{mie1908beitrage}.
+% note the Bohren and Huffman implementation is in /home/filip/PhD/Misc/120400_analytic_Mie_scattering/
 
 The spectra for the cut-wire structure are depicted in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison} for different cut distances $d_c$. Starting with the thinnest wire of $\rho_w = 2$ $\upmu$m (red curve), we can identify the individual resonance as the point close to  1200 GHz where even a single layer of unit cells reflects full wave amplitude and the transmittance drops to zero. Towards higher or lower frequencies from the resonance, the transmittance is relatively high.
 
@@ -500,7 +501,7 @@ The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this in
 
 Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequencies of the $\mathbf \Gamma$ and $\mathbf X$ points come close to each other, i.e. 784 and 795 GHz, respectively. The central maximum of the band is on 828 GHz, which explains why the s-parameters	method no longer determines the dispersion curve shape correctly, nor it identifies any of the resonances.
 
-These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
+These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in the frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
 
 %}}}
 \paragraph{Is this a negative-refraction structure?}%{{{
@@ -594,9 +595,9 @@ Fig. \ref{fg_SphereWire_principles} compares the already commented spectra for t
 
 Notice in \ref{fg_SphereWire_principles} that the Fano resonances of structures with and without the wire mesh have a peculiar complementary shape. The wave reflected from the electric dipole of the wire mesh has an opposite sign than that reflected from the electric dipole of dielectric particles. Its sign determines whether the interference with the second component, scattered by the Mie resonances, would be constructive, or destructive. 
 
-A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band. This means that the metamaterial, in the optimum of the negative-index band, reduces the wave amplitude to $e^{1/6} \approx 0.84$ within one wavelength. 
+A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band. This means that the metamaterial, in the optimum of the negative-index band, reduces the wave amplitude to $e^{1/6} \approx 0.84$ within one wavelength $\lambda$. 
 
-After ca. 40 wavelengths, the amplitude drops to $10^{-3}$ and the wave energy to $10^{-6}$. The applicability of such a metamaterial for building a macroscopic optical device is questionable. % todo \cite{zhao2009mie}
+After propagating over a distance of ca. $40\lambda$ in the metamaterial, the amplitude drops to $10^{-3}$ and the wave energy to $10^{-6}$ of the incident value. The applicability of such a metamaterial for building a macroscopic optical device is questionable. % todo \cite{zhao2009mie}
 
 %Another way of achieving negative refractive index is in overlapping the electric and magnetic resonances \cite{holloway2003double} - similar to the el mag resonator above, has low spatial dispersion - but: tight requirements, double losses \cite{zhao2009mie}
 
@@ -613,11 +614,11 @@ both frequencies can be approximated as
 \begin{equation}  f_{\text{E1}} \propto \rho_x^{-0.15}  \rho_y^{-0.15} \rho_z^{-0.7}. \label{eq_freqE1_rhoxyz}\end{equation}
 Obviously,  in both Eqs. (\ref{eq_freqM1_rhoxyz}) and (\ref{eq_freqE1_rhoxyz}), all three exponents must sum exactly to -1 so that they are compatible with the scaling rule for a sphere in Eq. (\ref{eq_freq_rho}). Their values are approximate only, as they were interpolated from batches of simulations which scanned through the ellipsoid parameters.
 
-When the ellipsoid axes have general orientation, the resonance frequencies remain almost the same; also the resonant modes are  preserved with respect to the ellipsoid orientation. An incident wave in such a case can excite multiple magnetic or electric Mie resonances of the same topology but different orientation, which differ slightly by their frequencies. The structure then may change the polarisation state of the wave, which is beyond the scope of this analysis.
+When the ellipsoid axes have a general orientation, the resonance frequencies remain almost the same; also the resonant modes are  preserved with respect to the ellipsoid orientation. An incident wave in such a case can excite multiple magnetic or electric Mie resonances of the same topology but different orientation, which differ slightly by their frequencies. The structure then may change the polarisation state of the wave, which is beyond the scope of this analysis.
 
 %}}}
 \begin{figure}[t]  % fg_spherewire_sketch%{{{
-	\caption{Sketch of the sphere array embedded in a wire grid. \texttt{(a)} Front view of the simulated structure, \texttt{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \texttt{(c)} and \texttt{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
+	\caption{Sketch of the sphere array embedded in a wire grid. \textbf{(a)} Front view of the simulated structure, \textbf{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \textbf{(c)} and \textbf{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xy.pdf} \put (1,81) {\textbf{(a)}}\end{overpic}\quad
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xy.pdf}  \put (1,81) {\textbf{(b)}}
 		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}} % todo
@@ -631,6 +632,10 @@ When the ellipsoid axes have general orientation, the resonance frequencies rema
 %}}}
 \paragraph{Matching simulations and experimental results} %{{{
 % approximation for frequency well below the grid resonance  
+
+%TODO figure 
+
+%TODO /home/filip/PhD/Software/120905_spectra_convolution -- replot, comment
 
 %}}}
 \paragraph{Experimental spectra} %{{{
