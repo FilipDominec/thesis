@@ -23,31 +23,32 @@
  * [X] 7	SRRs and spheres in a wire array or grid
  * [/] 8	Dielectric rods parallel to magnetic field
  * [/] 9	Dielectric rods parallel to the electric field
- * [ ]		compare the OpEx2014 results with CDH?
+ * [X]		compare the OpEx2014 results with CDH? 
  * [ ] 10	Metallic sheet with slits
  * [ ] 11	Fishnet - metallic sheet with holes
- * [ ]		prepare THz-TDTS data from the laser-machined sample
- * [ ]		prepare THz-TDTS data from the drilled sample?
+ * [X]		prepare THz-TDTS data from the laser-machined sample
+ * [-]		prepare THz-TDTS data from the drilled sample?
  * [ ] 12	Other structures
  * [/] Conclusion
  * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
- * [ ] attach the list of own publications
- * [ ] Use correct citation style!
  * [-] SKIP Write a correct definition of effective eps and mu??
 
 ==== Experimental data ====
- * [ ] Fishnet: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
- * [ ] Spheres: compare three sieved samples, (do they have granulometry?)
+ * [X] Experimental data: fishnet 28a, 28c
+ * [/] Spheres: compare N for three sieved samples, (do they have granulometry?)
 		(source /home/filip/PhD/Granulometry/120531_mikrofoto_trepacka/2012.05.31.ts1)
- * [ ] SKIP drilled fishnet (
-
-		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
- * [ ] Spheres - permeability spectra convolution; 
+ * [ ] Cut-wires: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
+ * [ ] Spheres - permeability spectra convolution - replot 
 		somewhere is the granulometry, see PNG figure /home/filip/PhD/Output_web/img
- * [ ] Experimental data: fishnet 28c, 28d (
+ * [ ] Au-Mylar-Au fishnet? Decide if reasonable.
+ * [-] SKIP drilled fishnet (
+		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
+ * [ ] find some sieving histograms and statistics?
 
 
 ==== Finally ====
+ * [ ] attach the list of own publications
+ * [ ] Use correct citation style!
  * [ ] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
  * [ ] make list of figures, adding short caption to each of them? -- and link to the simulation directory
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
@@ -57,8 +58,9 @@
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
+ * [ ] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
  * [ ] some figures should change from a)  to  (a) etc.
- * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances
+ * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances?
  * [ ] review the abstract
 
 ==== Ideas =====
