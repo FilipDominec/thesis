@@ -46,9 +46,7 @@ where $d_{1,2}$ are the thicknesses and $n_{1,2}$ are the refractive indices of 
 
 \begin{figure}[t] \caption{\textbf{(a)} Reflectance and \textbf{(b)} the imaginary part of the retrieved refractive index for a 1-D PhC, with relative dielectric permittivity of 4, as a function of frequency and filling fraction in a 300~$\mu$m unit cell} \label{fg_slab_ff_scan} \centering 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic} 
-	% TODO GIT ADD - update pic 
 \begin{overpic}[width=0.48\textwidth]{img-meep/Slab_epsilon4_fillfraction_scan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}
-	% TODO GIT ADD - update pic 
 \end{figure}
 
 The width of the band gap grows with the amplitude of the wave scattered from the unit cell. This amplitude however also depends on frequency and, in the case of a lossless dielectric slab, it vanishes whenever an integer number of the half-waves fits into either of the dielectric layers. For comparison with Eq. (\ref{eq_braggcond}), this condition is
@@ -273,7 +271,7 @@ As described in the historical review of Ref. \cite[pp. 120--126]{solymar2009wav
 
 \begin{figure}[h] \caption{Variants of the split-ring resonators, viewed from the side perpendicular to the magnetic field: \textbf{(a)} classical SRR, \textbf{(b)} symmetric SRR with two splits, \textbf{(c)} one of the designs of an electric SRRs having a central bar, \textbf{(d)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the electric resonance} \label{fg_SRR_types} \centering 
 \begin{overpic}[height=0.25\textwidth]{img/drawing_SRRpad.pdf}\put (1,80) {\textbf{(a)}}\end{overpic}\qquad
-\begin{overpic}[height=0.25\textwidth]{img/drawing_sSRRpad.pdf}\put (1,80) {\textbf{(b)}}
+\begin{overpic}[height=0.25\textwidth]{img/drawing_sSRRpad.pdf}\put (-2,80) {\textbf{(b)}}
 		\put(110,30){\includegraphics[width=.12\textwidth]{img/tripletEHK.pdf}}
 \end{overpic}\qquad
 \end{figure}
@@ -731,6 +729,7 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 \FloatBarrier %====================================================================================================
 \section{Dielectric rods parallel to the electric field} % references to ->
+% note the spatial dispersion is negligible, as verified against CDH (but not plotted here)
 
 \label{sect_diel_rods_el}
 %{{{
@@ -909,6 +908,31 @@ Standing SPP wave
 
 \FloatBarrier %====================================================================================================
 \section{Fishnet -- metallic sheet with holes} \label{section_fishnet} % references to ->
+
+\begin{figure}[th] % fg_fnquadrup%{{{
+  \begin{minipage}[c]{0.49\textwidth}
+\begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
+\end{overpic}\\
+  \end{minipage}
+  \begin{minipage}[c]{0.5\textwidth}
+	  \caption{Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero.\\The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.}\vfill \label{fg_fnquadrup}
+  \end{minipage}  
+\end{figure} 
+%}}}
+\begin{figure}[t] %fg_expe_fishnets%{{{
+	\caption{Experimental and simulated amplitude of reflectance, for fishnets
+		%todo \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} 
+		\label{fg_expe_fishnets} 
+		\centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_ap.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cp.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+%\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cs.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+%\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_as.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\end{tabular}
+\end{figure}
+%}}}
+
 %{{{
 \paragraph{Extraordinary transmission}
 \add{
