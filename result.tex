@@ -655,7 +655,7 @@ This expression is based on the expectation that the ellipsoids will orient hori
 The correct procedure would be to determine all three axes of the three-dimensional particle and express $\rho_{\text{eff}}$ using Eqs. (\ref{eq_freqM1_rhoxyz}), (\ref{eq_freqE1_rhoxyz}), and similar for higher resonances. It would however require to know all three ellipsoid axes. Changes in these coefficients did not cause a substantial change in the results.
 
 We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$ sphere is inversely proportional to its effective radius $\rho_{\text{eff}}^{(m)}$, and its scattering cross-section to the square thereof. Once a reference permeability spectrum $\meff^{\text{(ref)}}(f)$ was computed for a reference radius $\rho^{\text{ref}}$, the experimental spectra could be estimated as the following sum over all $M$ photographed particles:
-\begin{equation} \meff^{\text{(simulated)}}(f) := 1 + \frac{\sum\limits_{m=0}^{m=M} \left[(\rho_{\text{eff}}^{(m)})^{-2} \meff^{\text{(ref)}}\left(\frac{f \rho_{\text{eff}}^{(m)}}{\rho^{\text{ref}} }\right) - 1 \right]}{\sum\limits_{m=0}^{m=M} (\rho_{\text{eff}}^{(m)})^{-2}}. \label{eq_sumconvol}\end{equation}
+\begin{equation} \meff^{\text{(simulated)}}(f) := 1 + \frac{\sum\limits_{m=0}^{M} \left[(\rho_{\text{eff}}^{(m)})^{-2} \meff^{\text{(ref)}}\left(\frac{f \rho_{\text{eff}}^{(m)}}{\rho^{\text{ref}} }\right) - 1 \right]}{\sum\limits_{m=0}^{M} (\rho_{\text{eff}}^{(m)})^{-2}}. \label{eq_sumconvol}\end{equation}
 
 	The result, plotted by thick black curves in Fig. \ref{fg_mm2012_convolution}, corresponds to a weighted average through the particle statistics, with the weight proportional to the scattering cross-section of each particle. The averaged simulation results are relatively close to the experimental data at frequencies around the first magnetic Mie resonance (around 600 and 480 GHz, respectively). 
 	
@@ -678,7 +678,12 @@ We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$
 \paragraph{Narrowing the resonance by sieving} %{{{
 The broad dispersion of the microsphere sizes leads to broadening of the Mie resonance, in particular it precludes $\meff'(f)$ from reaching negative values, and also it distributes the very strong dissipative losses into all frequencies close to the resonance, including the region where the FDTD simulations in Fig. \ref{fg_Spheres_lossscan} would predict relatively low losses and $\meff'(f) < 0$.
 
-/
+With the aim to resolve this issue which affected all microsphere samples, we developed the novel sieving technique described in the experimental section of this thesis. Fig. \ref{fg_sphere_sieving} compares the independently measured spectra of $\Neff(f)$, $\eeff(f)$ and $\meff(f)$ for three different fractions of one sample. The blue line corresponds to the oversized fraction that remained above the first sieve, the red line to the correctly sized fraction that passed the first sieve but remained above the second one, and the green line to the remaining fraction that passed both sieves.
+
+Moderate narrowing of the resonance spectral shape can be observed for the correctly sized fraction, with the remaining fractions being shifted in the frequency as predicted. The intermediate fraction consistently exhibits more pronounced resonance in the permeability. %The results of the sieving, however, remain inconclusive.
+Simultaneously all spectra measured are burdened with one or more severe errors of the characterisation method. Namely in Fig. \ref{fg_sphere_sieving}, the Mie theory can not explain the pronounced resonance in retrieved effective permittivity, which appears as an artifact coming from the asymmetry of the sample between two sapphire plates. This may be also the cause of the spectra of $\eeff(f)$ and $\meff$ usually deviating from the expected values at higher frequencies.
+
+The truly fundamental issue are the dissipative losses in TiO$_{2}$, already shown in Fig. \ref{fg_SphereWire_principles}.  They impose a tight limit for the figure of merit of any terahetrz metamaterial based on TiO$_{2}$ resonators. can not be 
 
 %}}}
 \begin{figure}[h!]  %fg_sphere_sieving									 TODO comment {{{
