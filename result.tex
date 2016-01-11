@@ -630,7 +630,7 @@ When the ellipsoid axes have a general orientation, the resonance frequencies re
 
 %}}}
  \begin{figure}[ht]   % fg_mm2012_convolution %{{{
-	\caption{Comparison of the effective permeability of ideal monodisperse sphere array (solid black line), weighted average according to the size distribution (dashed blue line) and experimental data (green dots).}
+	 \caption{Comparison of the effective permeability $\meff(f)$ of ideal monodisperse sphere array (dashed red line), weighted average according to the size distribution (solid black line) and experimental data (green dots). \textbf{(a)} Real part of effective permeability for a sample denoted as having the "40-50" $\mu$m diameter, \textbf{(b)} for another sample with slightly larger average diameter, also depicted in Fig. \ref{fg_microphoto}. \textbf{(c)}, \textbf{(d)} corresponding imaginary parts of $\meff(f)$}
 \label{fg_mm2012_convolution} \centering 
 \includegraphics[width=\textwidth]{img-expe/mm2012_convolution.pdf}
 \end{figure}
@@ -649,13 +649,17 @@ The effective permeability for two samples of different average sphere sizes is 
 %}}}
 \paragraph{Comparison of experimental and simulated spectra}%{{{
 To enable a direct comparison, we used the granulometric data obtained by digital processing of the microscopic images. For each sphere, its effective radius $\rho_{\text{eff}}$ was estimated from the major $\rho_1$ and minor axes $\rho_2$ retrieved from the granulometric data for the $m$-th particle: 
-\begin{equation} \rho_{\text{eff}}^{(m)} := \left[\frac{1}{3\left(\rho_1^{(m)}\right)^2} + \frac{2}{3\left(\rho_2^{(m)}\right)^2}\right]^{-0.5} \label{eq_}\end{equation}
+\begin{equation} \rho_{\text{eff}}^{(m)} := \left[\frac{1}{3\left(\rho_1^{(m)}\right)^2} + \frac{2}{3\left(\rho_2^{(m)}\right)^2}\right]^{-0.5} \label{eq_rhoconvol}\end{equation}
             %bin_particle_size = (1./3*bin_major**-2 + 1./3*bin_minor**-2 + 1./3*bin_minor**-2)**-.5 
-This expression is based on the expectation that the ellipsoids will orient their shorter axis vertically, thus making it hidden from the statistical processing. Obviously, it is arbitrary to assume the shortest and medium ellipsoid axis will be both equal to $\rho_2$. 
+This expression is based on the expectation that the ellipsoids will orient horizontally when sprinkled on the microscope slide, thus making the shortest axis vertical and hidden from the statistical processing. Obviously, it is arbitrary to assume the shortest and medium ellipsoid axis will be both equal to $\rho_2$. 
 The correct procedure would be to determine all three axes of the three-dimensional particle and express $\rho_{\text{eff}}$ using Eqs. (\ref{eq_freqM1_rhoxyz}), (\ref{eq_freqE1_rhoxyz}), and similar for higher resonances. It would however require to know all three ellipsoid axes. Changes in these coefficients did not cause a substantial change in the results.
 
-We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$ sphere is inversely proportional to its effective radius $\rho_{\text{eff}}$, and its scattering cross-section to the square thereof. Once a reference permeability spectrum $\meff^{\text{(ref)}}(f)$ was computed for a reference radius $\rho^{\text{ref}}$, the experimental spectra could be estimated as the following sum over all $M$ photographed particles:
-\begin{equation} \meff^{\Sigma}(f) = \frac{\sum_{m=0}^{m=M} (\rho_{\text{eff}})^{-2} }{x} \label{eq_}\end{equation}
+We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$ sphere is inversely proportional to its effective radius $\rho_{\text{eff}}^{(m)}$, and its scattering cross-section to the square thereof. Once a reference permeability spectrum $\meff^{\text{(ref)}}(f)$ was computed for a reference radius $\rho^{\text{ref}}$, the experimental spectra could be estimated as the following sum over all $M$ photographed particles:
+\begin{equation} \meff^{\text{(simulated)}}(f) := 1 + \frac{\sum\limits_{m=0}^{m=M} \left[(\rho_{\text{eff}}^{(m)})^{-2} \meff^{\text{(ref)}}\left(\frac{f \rho_{\text{eff}}^{(m)}}{\rho^{\text{ref}} }\right) - 1 \right]}{\sum\limits_{m=0}^{m=M} (\rho_{\text{eff}}^{(m)})^{-2}}. \label{eq_sumconvol}\end{equation}
+
+	The result, plotted by thick black curves in Fig. \ref{fg_mm2012_convolution}, corresponds to a weighted average through the particle statistics, with the weight proportional to the scattering cross-section of each particle. The averaged simulation results are relatively close to the experimental data at frequencies around the first magnetic Mie resonance (around 600 and 480 GHz, respectively). 
+	
+	At higher frequencies, the experimental data deviate substantially from the predictions. This can be attributed to one or more sources of imprecision in the experimental setup for effective-parameter retrieval.
 
 			%bin_weight_coef = (bin_particle_size/sim_particle_size)**filling_factor_power 
             %bin_weight = bin_particle_count[n] * bin_weight_coef
@@ -670,35 +674,30 @@ We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$
             %## Calculate which particle size is the average
             %average_particle_totalsize += bin_particle_size * bin_weight
             %average_particle_totalweight += bin_weight
+%}}}
+\paragraph{Narrowing the resonance by sieving} %{{{
+The broad dispersion of the microsphere sizes leads to broadening of the Mie resonance, in particular it precludes $\meff'(f)$ from reaching negative values, and also it distributes the very strong dissipative losses into all frequencies close to the resonance, including the region where the FDTD simulations in Fig. \ref{fg_Spheres_lossscan} would predict relatively low losses and $\meff'(f) < 0$.
 
-
-
-%We performed series of experiments to measure the effective permeability spectrum $\meff(f)$ for a real sample with mean sphere radius of ca. $42\;\upmu$m. The statistical deviation of the resonators size $\sigma \approx 5\;\upmu$m in the sample was determined by means of microscopy and digital image processing. 
-%In contrast to simulations, we were able to constraint the spheres' positions to a plane only, while arranging them in a square array appeared unrealistic. 
-
-%We computed the single-cell permeability spectra (i. e. the yellow curve in Fig. \ref{fg_experimentalConv}) for many different resonator sizes and add them up. The resulting weighted average (blue curve) then matches the experimental data (red dots) nearly exactly. It shall be however noted that the averaged real part of $\mu_{\text{eff}}$ remained positive even with the best sieving results obtained so far. %TODO
+/
 
 %}}}
-\paragraph{Improvement of spectra by sieving} %{{{
-%}}}
-
 \begin{figure}[h!]  %fg_sphere_sieving									 TODO comment {{{
 	\caption{ \textbf{(a)} \textbf{(b)} \textbf{(c)}  $\mu$m.\\
 } \label{fg_sphere_sieving} \centering \vspace{-3mm}
-\begin{overpic}[width=0.84\textwidth]{img-expe/sphere_sieving/sphere_sieving_n.pdf}\put(-1,38){\textbf{(a)}} \end{overpic}\vspace{-0.049\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_eps.pdf} \put(-1,38){\textbf{(b)}} \end{overpic}\vspace{-0.046\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_mu.pdf}  \put(-1,38){\textbf{(c)}} \end{overpic}\vspace{-0.036\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_n.pdf}\put(-1,38){\textbf{(a)}} \end{overpic}\vspace{-0.046\textwidth}\\
+\hspace{1.7mm}\begin{overpic}[width=0.85\textwidth]{img-expe/sphere_sieving/sphere_sieving_eps.pdf}\put(-1,38){\textbf{(b)}} \end{overpic}\vspace{-0.046\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_mu.pdf}\put(-1,38){\textbf{(c)}} \end{overpic}\vspace{-0.036\textwidth}\\
 \end{figure}
 %}}}
-\paragraph{Experiments with spheres in wire array} %{{{
+\paragraph{Spheres in a metallic mesh} %{{{
+We attempted to fabricate one layer of a metamaterial by embedding resonant particles into the holes of a metallic sieve. This kind of structures is predicted to have a negative index of refraction above the first Mie resonance of the spheres (see the green curve in Fig. \ref{fg_SphereWire_principles}). 
 
-% approximation for frequency well below the grid resonance  
+The issues in our case were mostly mechanical; although it was possible to manufacture a sieve with proper size of holes which would stick during sieving, the spheres did not hold in it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, possibly dramatically increasing losses in the terahertz range.
 
-%TODO figure 
+A measurement of a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmission, with inconclusive result as regards to the negative phase advance through the structure. This structure is asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m from geometrical reasons, and thus the effective parameter retrieval yields unphysical values.
 
-%TODO /home/filip/PhD/Software/120905_spectra_convolution -- replot, comment
+% todo add some links to Zhao etc.?
 %}}}
-
 %   SKIP  \begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
 %    \textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
 %    	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
