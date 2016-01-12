@@ -6,7 +6,7 @@ Side plots show the electric field in $2\times 2$ unit cells, with dielectric ou
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
-\begin{figure}[t] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
+\begin{figure}[ht] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 \begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
@@ -98,7 +98,7 @@ The structure formed of a regular square lattice of conductive wires exhibits mo
 
 In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layers of metallic rods can be approximated by thin scattering slabs from the previous section, since the high-frequency interaction of the wave can be described of photonic bands alternating with Bragg band gaps. In contrast with the dielectric PhC described above, no Fabry-Pérot resonances are observed and the scattering strength of the wire layers reduces monotonously with growing frequency.
 
-\begin{figure}[bh] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for the array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\mu$m with a fixed unit cell size $a = 100$ $\mu$m and grid resolution of 1 $\mu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
+\begin{figure}[ht] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for the array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\mu$m with a fixed unit cell size $a = 100$ $\mu$m and grid resolution of 1 $\mu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
 \begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
@@ -122,7 +122,7 @@ The plasma frequency does, however, depend on the geometry described by two para
 \paragraph{Behaviour close to the effective plasma frequency}%{{{
 The dependence of $f_p$ on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\upmu$m is illustrated by the spectra of reflectance, transmittance, refractive index and effective permittivity in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}. The effective plasma frequency $f_p$ can be easily determined as the point where $\eeff'(f)$ crosses zero  in the plot \ref{fg_Slab_fillfraction015_wireradius_scan}d. This coincides with the lower edge of the first photonic band in Fig. \ref{fg_Slab_fillfraction015_wireradius_scan}c. 
 
-For the limit $f \rightarrow f_p+$, the phase velocity $c/n = c/\sqrt{\eeff(f)}$ is proportional to $(f-f_p)^{-1/2}$ and thus very high. Conversely, the group velocity $v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
+For the limit $f \rightarrow f_p+$, the \textit{phase velocity} $$c/n = c/\sqrt{\eeff(f)}$$ is proportional to $(f-f_p)^{-1/2}$ and thus very high. Conversely, the \textit{group velocity} $$v_g \approx 2\pi \mathrm{d}f/\mathrm{d}k = \mathrm{d}f/\mathrm{d}n$$ vanishes, being proportional to $(f-f_p)^{+1/2}$. The product of the phase and group velocities close to $f_p$ thus remains nearly constant $c^2$, which is a phenomenon commonly encountered also near the \textit{cut-off frequency} of metallic waveguides.
 
 Exactly at $f=f_p$, the wire array medium can support the longitudinal oscillations of the charge, oriented parallel to the wires. They bear a close resemblance to plasmons in bulk media \cite{pendry1996extremely}.
 
@@ -239,14 +239,30 @@ For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then star
 
 While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
+%}}}
 
-\paragraph{Experimental measurement of cut wire spectra}
-\todo{origin of samples, semi-conductive si substrate, compute spectra, plot graphs and compare with experiment}
-
-\begin{figure}[ht] \caption{The sample of cut wires (pale yellow) on silicon (cyan) substrate. \textbf{(a)} Natural-colour photograph from an optical microscope,  \textbf{(b)} Geometry of the wires in micrometers. They were measured to be $6.5$ $\mu$m wide and $30$ $\mu$m long. The periodicity of cut-wires was $30\times 50$ $\mu$m.  } \label{fg_sieving2} \centering 
-\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_microphoto.pdf}  \put(0,78) {\textbf{(a)}} \end{overpic}
-\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_drawing.pdf}  \put(0,95) {\textbf{(b)}} \end{overpic}
+\paragraph{Experimental measurement of cut wire spectra}%{{{ 
+Although we did not fabricate any cut-wire metamaterial, we used the terahertz time-domain spectroscopy to characterise cut-wire-on-silicon structures, one representative of which is photographed and sketched in Fig. \ref{fg_bousek}. The metallic wires were deposited on a silicon substrate, and at their ends, the silicon was doped to form diode-like transitions. 
+\begin{figure}[ht] \caption{The sample of cut wires (pale yellow) on silicon (cyan) substrate. \textbf{(a)} Natural-colour photograph from an optical microscope,  \textbf{(b)} Geometry of the wires in micrometers. They were measured to be $6.5$ $\mu$m wide and $30$ $\mu$m long. The periodicity of cut-wires was $30\times 50$ $\mu$m.  } \label{fg_bousek} \centering 
+\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_microphoto.pdf}  \put(0,78) {\textbf{(a)}} \end{overpic}\quad
+\begin{overpic}[height=.40\textwidth]{img/bousek_splitwires_drawing.pdf}  \put(0,95) {\textbf{(b)}} 
+		\put(55,0){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}} % todo
+\end{overpic}
 \end{figure}
+
+This kind of structure was designed to operate as a switch for the terahertz radiation, controlled by the current flowing along the orientation of the wires and modulating the conductivity of semiconductor transitions at the ends of each cut wire. For an unknown reason, the modulation of the terahertz signal was very weak, if any, in all of 7 supplied samples. The only observed kind of systematic modulation manifested as a temporal advance of the transmitted terahertz waveform by no more than 18 fs. This maximum value required feeding the structure with a maximum modulation signal, dissipating roughly 10 watt peak thermal power.
+
+The sample presented above in Fig. \ref{fg_bousek}, though not applicable as a modulator, exhibits a clear electric resonance around 1550 GHz. This resonance is substantially broadened and weakened by the losses of the structure (red line in Fig. \ref{fg_bousekspectra}). A FDTD simulation of thin metallic stripes 30 $\upmu$m long and 6.5 $\upmu$m wide on a silicon substrate did not match the experimental spectra very well (green line in Fig. \ref{fg_bousekspectra}). 
+
+\begin{figure}[ht]  % fg_bousekspectra%{{{
+	\caption{Comparison of experimental (red line) and simulated spectra (green and blue lines) for the cut-wire on silicon structure. The green line corresponds to the original geometry from Fig. \ref{fg_bousek}b; a better match with the experiment is obtained by changing the length of stripes from 30 to 40 $\mu$m (blue line).} \label{fg_bousekspectra} \centering 
+\begin{overpic}[width=.85\textwidth]{img-expe/bousek.pdf}\end{overpic}
+\end{figure}
+Much better match was obtained by simple elongation of the conductive stripes to 40 $\upmu$m (blue line in Fig. \ref{fg_bousekspectra}). This may reflect the fact that the wires were surrounded by a highly doped, conductive zones of silicon.
+Although not taking into account the dissipative losses, such a simulation correctly identifies the resonance freqeuncy of the stripes. It also, at least quantitatively, matches the asymmetric spectral shape, which is caused by the onset of diffraction into the silicon substrate at $f_c = c/(50\;$ $\upmu$m$)/N_{\text{Si}} \approx 1730$ GHz. 
+
+The presented simulations were not optimized for the dissipative losses in silicon, which could be modeled with more detailed knowledge of the structure preparation.
+
 %}}}
 
 %     \FloatBarrier %====================================================================================================
@@ -360,7 +376,7 @@ By contrast, a magnetic resonance in the combined SRR-wire structure introduces 
 \begin{equation} \Neff(f) = -\frac{c}{2 a f}, \label{eq_BZN2}\end{equation}
 with $a$ being the unit cell size.	
 
-The photonic band spanning from 635 to 670 GHz thus has $\Neff'<0$, but only when $\Neff'$ comes closer to zero, roughly from 650 to 670 GHz, also the effective permittivity and permeability can be attributed with physical meaning. They are correctly retrieved as both negative, as can be indeed seen from in Figs. \ref{fg_SRR_principles}d,e (blue lines).
+The photonic band spanning from 635 to 670 GHz thus has $\Neff'<0$, but the effective permittivity and permeability can be attributed with physical meaning only when $\Neff'$ comes closer to zero, roughly from 650 to 670 GHz. They are correctly retrieved as both negative, as can be indeed seen from in Figs. \ref{fg_SRR_principles}d,e (blue lines).
 
 %}}}
 \paragraph{Fano resonance} %{{{
@@ -633,6 +649,7 @@ When the ellipsoid axes have a general orientation, the resonance frequencies re
 	 \caption{Comparison of the effective permeability $\meff(f)$ of ideal monodisperse sphere array (dashed red line), weighted average according to the size distribution (solid black line) and experimental data (green dots). \textbf{(a)} Real part of effective permeability for a sample denoted as having the "40-50" $\mu$m diameter, \textbf{(b)} for another sample with slightly larger average diameter, also depicted in Fig. \ref{fg_microphoto}. \textbf{(c)}, \textbf{(d)} corresponding imaginary parts of $\meff(f)$}
 \label{fg_mm2012_convolution} \centering 
 \includegraphics[width=\textwidth]{img-expe/mm2012_convolution.pdf}
+%/home/sklad/Zalohy/p120528-fzu/p/PhD_TiO2/120118_TiO2_mikrofoto_a_Riadova_simulace
 \end{figure}
 %}}}
 \paragraph{Experimental spectra of spheres} %{{{
@@ -683,7 +700,7 @@ With the aim to resolve this issue which affected all microsphere samples, we de
 Moderate narrowing of the resonance spectral shape can be observed for the correctly sized fraction, with the remaining fractions being shifted in the frequency as predicted. The intermediate fraction consistently exhibits more pronounced resonance in the permeability. %The results of the sieving, however, remain inconclusive.
 Simultaneously all spectra measured are burdened with one or more severe errors of the characterisation method. Namely in Fig. \ref{fg_sphere_sieving}, the Mie theory can not explain the pronounced resonance in retrieved effective permittivity, which appears as an artifact coming from the asymmetry of the sample between two sapphire plates. This may be also the cause of the spectra of $\eeff(f)$ and $\meff$ usually deviating from the expected values at higher frequencies.
 
-The truly fundamental issue are the dissipative losses in TiO$_{2}$, already shown in Fig. \ref{fg_SphereWire_principles}.  They impose a tight limit for the figure of merit of any terahetrz metamaterial based on TiO$_{2}$ resonators. can not be 
+However, the truly fundamental limitation are the dissipative losses in TiO$_{2}$, already shown in Fig. \ref{fg_SphereWire_principles}.  They impose a tight upper bound for the figure of merit of any terahetrz metamaterial based on TiO$_{2}$ resonators. 
 
 %}}}
 \begin{figure}[h!]  %fg_sphere_sieving									 TODO comment {{{
@@ -697,7 +714,7 @@ The truly fundamental issue are the dissipative losses in TiO$_{2}$, already sho
 \paragraph{Spheres in a metallic mesh} %{{{
 We attempted to fabricate one layer of a metamaterial by embedding resonant particles into the holes of a metallic sieve. This kind of structures is predicted to have a negative index of refraction above the first Mie resonance of the spheres (see the green curve in Fig. \ref{fg_SphereWire_principles}). 
 
-The issues in our case were mostly mechanical; although it was possible to manufacture a sieve with proper size of holes which would stick during sieving, the spheres did not hold in it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, possibly dramatically increasing losses in the terahertz range.
+The issues in our case were mostly mechanical. Although it was possible to manufacture a sieve with proper size of holes which would hold microspheres during sieving, the spheres randomly fell out of it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, possibly dramatically increasing losses in the terahertz range.
 
 A measurement of a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmission, with inconclusive result as regards to the negative phase advance through the structure. This structure is asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m from geometrical reasons, and thus the effective parameter retrieval yields unphysical values.
 
@@ -719,7 +736,19 @@ A measurement of a similar sample was published previously \cite{yakiyama2012ter
 
 \FloatBarrier %====================================================================================================
 \section{Dielectric rods parallel to the magnetic field} % references to ->
+\paragraph{Mie resonances}%{{{
 \label{sect_diel_rods_mag}
+When aligned parallel to the magnetic field, dielectric cylinders, or, rods, exhibit spectra  similar to the sphere arrays. % TODO
+
+%}}}
+\begin{figure}[ht]  %{{{ fg_rodh
+	\caption{Dispersion curves for an array of dielectric rods parallel to the magnetic field. The side plots show the shapes of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as orange-violet color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{(a)} On the left, a relatively low permittivity $\epsrl = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{(b)} For high permittivity dielectric $\epsrl = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering
+\begin{overpic}[width=.48\textwidth]{img/HRods_eps012_R12_PWEM.pdf}\put(1,96) {\textbf{(a)}} \end{overpic}
+\begin{overpic}[width=.48\textwidth]{img/HRods_eps100_R12_PWEM.pdf}\put(1,96) {\textbf{(b)}} \end{overpic}
+\end{figure}
+%}}}
+
+
 \add{Such a behaviour at the lower and upper boundaries of the band gap is typical of classical \textit{Bragg} band gaps; individual resonances in other types of structures result in change of $K$ and	introduce more complex differences between the field shape.}
 
 analytic shape of the Mie resonance, \cite{obrien2002photonic} 
@@ -729,11 +758,6 @@ analytic shape of the Mie resonance, \cite{obrien2002photonic}
 % Todo elaborate the idea of nonBragg gap <-> nonradiative fields in structure <-> permittivity/permeability resonance
 % Note that in 1-D dielectric PhC, all fields are propagating, none evanesecnt
 % Big question: Can one approximate a metamaterial by ENG/DNG/MNG/DPS 1-D PhC??
-\begin{figure}[ht] \caption{Dispersion curves for dielectric rods aligned parallel to magnetic field. The side plots show the shape of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{(a)} On the left, a relatively low permittivity $\varepsilon = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{(b)} For high permittivity dielectric $\varepsilon = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering 
-\textbf{(a)}	\includegraphics[width=.45\textwidth]{img/HRods_eps012_R12_PWEM.pdf}
-\textbf{(b)}	\includegraphics[width=.45\textwidth]{img/HRods_eps100_R12_PWEM.pdf}
-\end{figure} %% TODO OVERPIC
-
 Probably the simplest example of such structures is a periodic array of high-permittivity dielectric rods, aligned parallel to the $y$-axis. (We use the convention that the structure is excited by a plane wave source with $\mathbf E || \mathbf x$, $\mathbf H || \mathbf y$ and the wave propagates along the $z$-axis). % dubious - the E, H have many directions in the unit cell; better  to write "TM"/"TE"? But this would confuse with nonperp incidence!
 The inhomogeneity of the structure along the $x$-axis allows the electric field to circulate along the rod -- or, more precisely, the $\mathbf E$ field can now be decomposed into purely \textit{planar} part and a purely \textit{circulating} part, that induces a magnetic flux near the rod axis. The circulating electric field is clearly visible on both plots in Fig. \ref{fg_rodh}, where all nonzero components of the fields ($H_y$, $E_x$ and $E_z$) are depicted. 
 
