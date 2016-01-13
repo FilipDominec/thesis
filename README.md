@@ -39,6 +39,7 @@
  * [X] Cut-wires: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
  * [X] Spheres - permeability spectra convolution - replot 
  * [ ]	somewhere is the granulometry histogram, see the PNG figure /home/filip/PhD/Output_web/img
+				and ~/PhD/Publications/120912_Konference_Petrohrad_Poster
  * [ ] Au-Mylar-Au fishnet? Decide if reasonable.
  * [-] SKIP drilled fishnet (
 		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)

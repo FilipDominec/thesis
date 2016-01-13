@@ -1044,8 +1044,11 @@ Standing SPP wave
 \end{figure}
 %}}}
 
+For the preparation of the fishnet spectra and this plot,
+the resolution in the FDTD simulation was set to be very coarse with a voxel dimension of 10 $\mu$m. The discretisation error has broken the mirror symmetry of the fishnet hole (see Fig. \ref{fg_expe_fishnets}), and allowed a nonzero coupling of the predominantly quadrupole mode to the propagating wave, thus enabling to explain the experimentally observed resonances around 880 and 710 GHz in Fig. \ref{fg_expe_fishnets}.  
+
 \begin{figure}[th] % fg_fnquadrup%{{{
-  \begin{minipage}[c]{0.39\textwidth}
+  \begin{minipage}[b]{0.39\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
 \put(105,-0){\includegraphics[width=.27\textwidth]{img/tripletEKH.pdf}}
 \end{overpic}\\
@@ -1053,7 +1056,8 @@ Standing SPP wave
 	  \vspace{1cm}
   \begin{minipage}[b]{0.6\textwidth}
 	  \caption{
-	  Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero.\\The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.}\vfill \label{fg_fnquadrup}
+	  Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero. The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.\\
+}\vfill \label{fg_fnquadrup}
   \end{minipage}  
 \end{figure} 
 %}}}
