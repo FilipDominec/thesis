@@ -9,19 +9,18 @@
  * [X] initial effparam branch, weaknesses of the method
  * [X] CDH: full
  * [X] other effparam retrieval methods (TODO review)
- * [ ] sieving: add statistics of spheres
  * [X] 'Mechanical drilling of fishnets'
  * [X] 1	Dielectric slab
  * [X] 2	Wire medium
  * [X] 3	Cut wires: rev
  * [X]		prepare THz-TDTS data for Bousek samples?
- * [ ]		compare them with a FDTD simulation
+ * [X]		compare them with a FDTD simulation
  * [X] 4	Electric-magnetic resonators
  * [X] 5	Split-ring resonator: comment double-strip
  * [X] 6	Dielectric sphere: introduce Mie resonances
- * [ ]		prepare THz-TDTS data for diffeernt size fractions
+ * [X]		prepare THz-TDTS data for diffeernt size fractions
  * [X] 7	SRRs and spheres in a wire array or grid
- * [/] 8	Dielectric rods parallel to magnetic field
+ * [/] 8	Dielectric rods parallel to the magnetic field
  * [/] 9	Dielectric rods parallel to the electric field
  * [X]		compare the OpEx2014 results with CDH? 
  * [ ] 10	Metallic sheet with slits
@@ -35,16 +34,14 @@
 
 ==== Experimental data ====
  * [X] Experimental data: fishnet 28a, 28c
- * [/] Spheres: compare N for three sieved samples, (do they have granulometry?)
+ * [X] Spheres: compare N for three sieved samples, (do they have granulometry?)
 		(source /home/filip/PhD/Granulometry/120531_mikrofoto_trepacka/2012.05.31.ts1)
- * [ ] Cut-wires: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
- * [ ] Spheres - permeability spectra convolution - replot 
-		somewhere is the granulometry, see PNG figure /home/filip/PhD/Output_web/img
+ * [X] Cut-wires: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
+ * [X] Spheres - permeability spectra convolution - replot 
+ * [ ]	somewhere is the granulometry histogram, see the PNG figure /home/filip/PhD/Output_web/img
  * [ ] Au-Mylar-Au fishnet? Decide if reasonable.
  * [-] SKIP drilled fishnet (
 		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
- * [ ] find some sieving histograms and statistics?
-
 
 ==== Finally ====
  * [ ] attach the list of own publications
