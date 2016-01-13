@@ -2,9 +2,12 @@
 \section{Dielectric slab} \label{section_Dielectric slab}
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}%{{{
 \begin{figure}[h] \caption{Dispersion curves \textbf{(a)} in free space with virtual periodicity $a$, \textbf{(b)} in dielectric layers with permittivity $\varepsilon = 12$ and 15 \% fill fraction. \\
-Side plots show the electric field in $2\times 2$ unit cells, with dielectric outlined by thin black lines. The electric field was chosen to be polarized along the $x$-axis and is plotted as a color map (white corresponding to zero).} \label{fg_1dbd} \centering 
-	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
+Side plots show the electric field in $2\times 2$ unit cells, with dielectric outlined by thin black lines. The triplet of the electric $\E$ and magnetic $\HH$ fields and the wave vector $\KK$ for the incident wave is indicated in the lower left. The electric field is plotted as a blue-white-red color map.} \label{fg_1dbd} \centering 
+	\begin{overpic}[width=.48\textwidth]{img/Slab_eps001_PWEM.pdf}  \put(1,96) {\textbf{(a)}} 
+		\put(0,1){\includegraphics[width=.12\textwidth]{img/tripletKEH.pdf}}
+	\end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img/Slab_eps012_d15.pdf}   \put(1,96) {\textbf{(b)}} \end{overpic}
+
 \end{figure}
 \begin{figure}[ht] \caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
@@ -250,9 +253,10 @@ Although we did not fabricate any cut-wire metamaterial, we used the terahertz t
 \end{overpic}
 \end{figure}
 
-This kind of structure was designed to operate as a switch for the terahertz radiation, controlled by the current flowing along the orientation of the wires and modulating the conductivity of semiconductor transitions at the ends of each cut wire. For an unknown reason, the modulation of the terahertz signal was very weak, if any, in all of 7 supplied samples. The only observed kind of systematic modulation manifested as a temporal advance of the transmitted terahertz waveform by no more than 18 fs. This maximum value required feeding the structure with a maximum modulation signal, dissipating roughly 10 watt peak thermal power.
+This kind of structure was designed to operate as a switch for the terahertz radiation, controlled by the current flowing along the orientation of the wires and modulating the conductivity of semiconductor transitions at the ends of each cut wire. For an unknown reason, the modulation of the terahertz signal was very weak, if any, in all of 7 supplied samples. The only observed kind of systematic modulation manifested as 2.2\% drop in amplitude of the transmitted terahertz waveform, and its temporal advance by no more than 18 fs. These values required to feed the structure with a maximum modulation signal, dissipating roughly 10 watt peak thermal power.
 
 The sample presented above in Fig. \ref{fg_bousek}, though not applicable as a modulator, exhibits a clear electric resonance around 1550 GHz. This resonance is substantially broadened and weakened by the losses of the structure (red line in Fig. \ref{fg_bousekspectra}). A FDTD simulation of thin metallic stripes 30 $\upmu$m long and 6.5 $\upmu$m wide on a silicon substrate did not match the experimental spectra very well (green line in Fig. \ref{fg_bousekspectra}). 
+%}}}
 
 \begin{figure}[ht]  % fg_bousekspectra%{{{
 	\caption{Comparison of experimental (red line) and simulated spectra (green and blue lines) for the cut-wire on silicon structure. The green line corresponds to the original geometry from Fig. \ref{fg_bousek}b; a better match with the experiment is obtained by changing the length of stripes from 30 to 40 $\mu$m (blue line).} \label{fg_bousekspectra} \centering 
@@ -636,11 +640,11 @@ When the ellipsoid axes have a general orientation, the resonance frequencies re
 	\caption{Sketch of the sphere array embedded in a wire grid. \textbf{(a)} Front view of the simulated structure, \textbf{(b)} the experimental structure used in Ref. \cite{yakiyama2012terahertz}, measures are in micrometers. \textbf{(c)} and \textbf{(d)} top views of the corresponding structures} \label{fg_spherewire_sketch} \centering 
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xy.pdf} \put (1,81) {\textbf{(a)}}\end{overpic}\quad
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xy.pdf}  \put (1,81) {\textbf{(b)}}
-		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}} % todo
+		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}}
 \end{overpic}\quad \\
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_num_xz.pdf} \put (1,61) {\textbf{(c)}}\end{overpic}\quad
 \begin{overpic}[width=0.30\textwidth]{img/SphereWire_expe_xz.pdf}  \put (1,61) {\textbf{(d)}}
-		\put(100,10){\includegraphics[width=.12\textwidth]{img/tripletKEH.pdf}} % todo
+		\put(100,10){\includegraphics[width=.12\textwidth]{img/tripletKEH.pdf}}
 \end{overpic}\quad
 \end{figure}
 
@@ -703,9 +707,8 @@ Simultaneously all spectra measured are burdened with one or more severe errors 
 However, the truly fundamental limitation are the dissipative losses in TiO$_{2}$, already shown in Fig. \ref{fg_SphereWire_principles}.  They impose a tight upper bound for the figure of merit of any terahetrz metamaterial based on TiO$_{2}$ resonators. 
 
 %}}}
-\begin{figure}[h!]  %fg_sphere_sieving									 TODO comment {{{
-	\caption{ \textbf{(a)} \textbf{(b)} \textbf{(c)}  $\mu$m.\\
-} \label{fg_sphere_sieving} \centering \vspace{-3mm}
+\begin{figure}[h!] %{{{  fg_sphere_sieving
+	\caption{Comparison of retrieved effective parameters for three fractions of a microspheres sample: \textbf{(a)} effective index of refraction, \textbf{(b)} permittivity and \textbf{(c)} permeability. } \label{fg_sphere_sieving} \centering \vspace{-3mm}
 \begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_n.pdf}\put(-1,38){\textbf{(a)}} \end{overpic}\vspace{-0.046\textwidth}\\
 \hspace{1.7mm}\begin{overpic}[width=0.85\textwidth]{img-expe/sphere_sieving/sphere_sieving_eps.pdf}\put(-1,38){\textbf{(b)}} \end{overpic}\vspace{-0.046\textwidth}\\
 \begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_mu.pdf}\put(-1,38){\textbf{(c)}} \end{overpic}\vspace{-0.036\textwidth}\\
@@ -738,12 +741,15 @@ A measurement of a similar sample was published previously \cite{yakiyama2012ter
 \section{Dielectric rods parallel to the magnetic field} % references to ->
 \paragraph{Mie resonances}%{{{
 \label{sect_diel_rods_mag}
-When aligned parallel to the magnetic field, dielectric cylinders, or, rods, exhibit spectra  similar to the sphere arrays. % TODO
+When aligned parallel to the magnetic field, dielectric cylinders, or, rods, exhibit spectra  similar to the sphere arrays. % TODO ref fig
+Unlike sphere arrays, this structure can be characterised by a two-dimensional computation.
 
 %}}}
 \begin{figure}[ht]  %{{{ fg_rodh
 	\caption{Dispersion curves for an array of dielectric rods parallel to the magnetic field. The side plots show the shapes of the fields in the $(x,z)$ plane, at the frequencies of the band edges. The magnetic field is plotted as orange-violet color map and the electric field is represented by vectors. The rod radius was chosen to 12 \% of the period. \textbf{(a)} On the left, a relatively low permittivity $\epsrl = 12$ places the magnetic resonance above the first Bragg band gap. \textbf{(b)} For high permittivity dielectric $\epsrl = 100$, the magnetic resonance forms the first band gap. } \label{fg_rodh} \centering
-\begin{overpic}[width=.48\textwidth]{img/HRods_eps012_R12_PWEM.pdf}\put(1,96) {\textbf{(a)}} \end{overpic}
+\begin{overpic}[width=.48\textwidth]{img/HRods_eps012_R12_PWEM.pdf}\put(1,96) {\textbf{(a)}} 
+\put(0,1){\includegraphics[width=.12\textwidth]{img/tripletKHE.pdf}}
+\end{overpic}
 \begin{overpic}[width=.48\textwidth]{img/HRods_eps100_R12_PWEM.pdf}\put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 %}}}
@@ -790,10 +796,15 @@ The photonic crystals composed of square lattice of dielectric rods have been ex
 
 The situation is different in the terahertz range, as the lattice of the crystalline solids often exhibits optical phonons at frequencies between 5 and 20 THz. The permittivity of many materials turns out to be much higher for frequencies below these resonances. This enables to conceive structures composed e.g. of titanium dioxide \cite{baumard1977_epsilon_TiO2} with $\varepsilon^{\text{THz}} \approx 92$ or of ferroelectrics with $\varepsilon^{\text{THz}}$ even orders of magnitude higher \cite{skoromets2011tuning}. The price to be paid for this advantage in the THz range are the relatively high losses caused by the lattice vibrations.
 
-\begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.\\
-\textbf{(a)} Band diagram and modes from PWEM. 
+\begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.
 } \label{fg_erod_radius11} \centering 
-\textbf{(a)}	\includegraphics[width=8.5cm]{img/ERods_eps100_R11_PWEM.pdf}
+\begin{overpic}[width=.48\textwidth]{img/ERods_eps100_R11_PWEM.pdf}\put(1,96) {\textbf{(a)}} 
+\put(0,1){\includegraphics[width=.12\textwidth]{img/tripletKEH.pdf}}
+\end{overpic}
+%  \begin{figure} \caption{img/ERods\_eps100\_single\_a120\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_single_a120_FDTD.pdf} \end{figure} 
+%  \begin{figure} \caption{img/ERods\_eps100\_triple\_a150a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf} \end{figure} 
+%  \begin{figure} \caption{img/ERods\_forSeefeld\_sparserN\_denserN\_DrawnBands.pdf}  \centering \includegraphics[width=10cm]{img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf} \end{figure} 
+
 \end{figure}
 
 }
@@ -879,7 +890,6 @@ In the following, we first describe in detail three characteristic cases: we com
 
 In Fig.~\ref{fg_spec}, we show the calculated reflectance and transmittance amplitude spectra, as well as the effective parameters of three representative structures which have the same rod radii $\rho = 10$~$\upmu$m, but they differ by the unit-cell size $a =$ 120, 100 and 80 $\upmu$m. These values of $a$ were selected to illustrate three qualitatively different regimes of behavior.  The dielectric was defined by a simple lossy model with one high-frequency oscillator, its  permittivity was $\varepsilon_r = 100.1 + 0.5\mathrm{i}$ at 500 GHz.
 
-%}}}
 \paragraph{Sparse array} %{{{
 In Fig.~\ref{fg_spec}(a), where the unit-cell size $a=120$~$\upmu$m, we can see two well separated Mie resonances: the electric one at 680 GHz and the magnetic one at 1030 GHz.  The field distribution of the corresponding modes is sketched in Fig.~\ref{fg_sketchfield}. The resonance frequencies can be easily identified by an abrupt drop in the real part of the effective index of refraction $\Neff'$, accompanied by a sharp peak in its imaginary part $\Neff''$. The Mie resonances in periodic media without losses must always be adjacent to a Bragg band gap. For instance, in Fig.~\ref{fg_spec}(a) at frequencies below the first Bragg gap, the electric dipoles within each rod are directed along the electric field in the rest of the unit cell. The rods thus positively contribute to the refractive index $\Neff'$ which progressively grows until it reaches the first Brillouin zone boundary. At this point, the Bragg condition for a photonic band-gap is fulfilled and each unit cell is intersected by one nodal plane. This is reflected by the dispersion of $\Neff'(f)$ which follows the first Brillouin-zone boundary in the first Bragg band gap between 400 and 680\,GHz [equivalent to $q=1$ in Eq. (\ref{eq_BZN})]: $$	\Neff'(f) = \frac{c}{2af}\,. $$ At 680\,GHz, the electric Mie resonance occurs which dramatically changes the near-field photonic properties of the structure. The observed drop in $\Neff'(f)$ and the slope change in $\Neff''(f)$ mark the plasma-like character of the adjacent part of the band gap which extends up to the plasma frequency of the Mie resonance (940\,GHz). In this frequency range the electric dipoles in the rods change their direction and induce an electric field opposite to the incident one.
 
@@ -957,10 +967,6 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 
 
 
-\begin{figure} \caption{img/ERods\_eps100\_R11\_PWEM.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_R11_PWEM.pdf} \end{figure} 
-%  \begin{figure} \caption{img/ERods\_eps100\_single\_a120\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_single_a120_FDTD.pdf} \end{figure} 
-%  \begin{figure} \caption{img/ERods\_eps100\_triple\_a150a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf} \end{figure} 
-%  \begin{figure} \caption{img/ERods\_forSeefeld\_sparserN\_denserN\_DrawnBands.pdf}  \centering \includegraphics[width=10cm]{img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf} \end{figure} 
 
 %   \begin{figure}[th] % OFF fg_fxplot %{{{
 % TODO if fxplot used, Nimag must be flipped! And redraw in vector if possible.
@@ -983,13 +989,9 @@ This structure lies at the boundary between the criteria for MMs and PhCs descri
 Wood anomaly in hole arrays
 Standing SPP wave
 
-
-
-
 \FloatBarrier %====================================================================================================
 \section{Fishnet -- metallic sheet with holes} \label{section_fishnet} % references to ->
-\texttt{}
-%{{{
+%{{{ TODO notes
 \paragraph{Extraordinary transmission}
 \add{
 	... EOT transmission --- Aperture-array transmission --- Wood anomaly --- standing surface plasmons
@@ -1034,20 +1036,26 @@ Standing SPP wave
 
 
 %}}}
-
-
-\begin{figure}[ht] \caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_mesh} \centering 
-	\begin{overpic}[height=.35\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch.pdf}  \put(0,71) {\textbf{(a)}} \end{overpic}
-	\begin{overpic}[height=.35\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch.pdf}  \put(0,67) {\textbf{(b)}} \end{overpic}
+\begin{figure}[ht] %{{{ fg_mesh
+	\caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_mesh} \centering 
+	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(a)}} 
+	\end{overpic}
+	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(b)}} 
+	\put(80,-0){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}}
+	\end{overpic}
 \end{figure}
+%}}}
 
 \begin{figure}[th] % fg_fnquadrup%{{{
-  \begin{minipage}[c]{0.49\textwidth}
+  \begin{minipage}[c]{0.39\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
+\put(105,-0){\includegraphics[width=.27\textwidth]{img/tripletEKH.pdf}}
 \end{overpic}\\
   \end{minipage}
-  \begin{minipage}[c]{0.5\textwidth}
-	  \caption{Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero.\\The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.}\vfill \label{fg_fnquadrup}
+	  \vspace{1cm}
+  \begin{minipage}[b]{0.6\textwidth}
+	  \caption{
+	  Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero.\\The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.}\vfill \label{fg_fnquadrup}
   \end{minipage}  
 \end{figure} 
 %}}}
