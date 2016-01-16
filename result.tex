@@ -799,13 +799,14 @@ Fig. \ref{fg_erods_acomparison}
 
 %}}}
 \begin{figure}[ht]  %{{{ erods_acomparison
-	\caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for a rod array  $a = 100$ $\mu$m and grid resolution of 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm}
+	\caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for a rod array  $a = 100$ $\mu$m and grid resolution of 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm} 
+%% NOTE: if realistic materials are needed, erods_acomparison-loLoss_r.pdf can be substituted for  erods_acomparison_r.pdf etc.
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
 \begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/erods_acomparison-loLoss_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/erods_acomparison-loLoss_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/erods_acomparison-loLoss_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
 
@@ -823,12 +824,6 @@ Fig. \ref{fg_erods_acomparison}
 %}}}
 
 %{{{ FROM SHORT.pdf
-\add{  
-\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
-\textbf{(a)}	\includegraphics[width=8cm]{img/old/ERods_eps012_radiusscan.pdf}
-\textbf{(b)}	\includegraphics[width=8cm]{img/old/ERods_eps100_radiusscan.pdf}
-\end{figure}
-
 
 The dielectric bars parallel to the electric field represent the same structure as previously discussed, except that it is orthogonally rotated. There is however a qualitative difference in that the high-permittivity dielectric is continuous along the direction of the electric field, so the effect of the dielectric is expected to be much stronger. This results in that the first Mie resonance is the \textit{electric} one. Its overlap with the next magnetic resonance can eventually lead to negative index of refraction in such a structure \cite{peng2007, vynck2009all}. If the permittivity of the rods is chosen to be $\varepsilon = 100$ and the periodicity of the lattice $a = 100\;\upmu$m, the negative index of refraction occurs in a narrow range of radii from 9 to 12 $\upmu$m. The behaviour of this structure with the desired radius is depicted in Fig. \ref{fg_erod_radius11}a,b.
 
@@ -913,11 +908,6 @@ The reason of this behavior is related to the change of the nodal plane topology
 
 
 
-\begin{figure}\centering  %% TODO rename Re<--->Im
-\includegraphics[width=0.5\textwidth]{img/ERods_eps100_spacingscan_Nim.pdf}\includegraphics[width=0.5\textwidth]{img/ERods_eps100_spacingscan_Nre.pdf}
-\caption{Real ($\Neff'$, left panel) and imaginary ($\Neff''$, right panel) parts of the refractive index for a dielectric rod array with permittivity $\varepsilon_r =100$, radius $\rho = 10$ $\upmu$m and a variable unit cell size $20\:\upmu$m $<a<200\:\upmu$m.  The three solid horizontal lines correspond to the values used in Fig.~\ref{fg_spec}.}
-\label{fg_spacingscan100}. 
-\end{figure}
 %}}}
 
 \paragraph{Continuous scan of the unit-cell size}%{{{
