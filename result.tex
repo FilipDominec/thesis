@@ -57,7 +57,7 @@ Note that unlike the Bragg resonance, this effect can be observed even in a sing
 
 The vicinity of a Fabry-Pérot resonance influences the position and width the neighbouring band gap, which can be found for different dielectric permittivity of the slab $\epsrl\in\{4,12,20\}$ in Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison}.
 
-As special case, the conditions for both Bragg and Fabry-Pérot resonances can be fulfilled simultaneously: a \textit{zero-width band gap} results and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves appear to approach the boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The corresponding isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \label{indexofrefraction}.
+As special case, the conditions for both Bragg and Fabry-Pérot resonances can be fulfilled simultaneously: a \textit{zero-width band gap} results and two photonic bands are adjacent to each other in the same way as they were in vacuum (c. f. Fig. \ref{fg_1dbd}a). In all cases of zero-width PBGs, the dispersion curves appear to approach the boundary of photonic bands (located in a high-symmetry point in the Brillouin zone) as lines with nonzero slope. In the analogy with the dispersion of electrons in a solid, this can be viewed as a \textit{Dirac point for photons-polaritons}, where the photons-polaritons have zero effective mass. The corresponding isofrequency contour may have a cusp in this point, rendering invalid even the generalised notion of the refractive index as elaborated in Section \ref{indexofrefraction}.
 
 An example of a structure that exhibits multiple zero-width band gaps is the 1-D PhC with equal optical thickness of both slabs ($d_1 n_1 = d_2 n_2$), but multiple such points exist when the dielectric permittivity or the dielectric filling fraction is changed, as depicted in Figs. \ref{fg_slab_eps_scan} and \ref{fg_slab_ff_scan}, respectively. These plots are also the simplest examples of the interplay between the individual resonance contained in the dielectric structure and the overall band-gap structure, a topic that will be discussed later in more detail.
 
@@ -550,7 +550,7 @@ The second resonance has an electric dipole moment. It is similar to the magneti
 	\end{overpic}
 \label{fg_Mie}  \end{figure}
 
-An analytic theory of electromagnetic resonances in dielectric spheres (and cylinders) was developed by Mie in 1908 \cite{mie1908beitrage}, and correspondingly they are denoted as \textit{Mie resonances}. 
+An analytic theory of electromagnetic resonances in dielectric spheres (or rods) was developed by Mie in 1908 \cite{mie1908beitrage}, and correspondingly they are denoted as \textit{Mie resonances}. 
 Dielectric resonators operate in a similar way to a series L-C circuit, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. Few decades later, the dielectric resonator found its use in the developing microwave technology; usually it takes the form of a millimeter-sized ceramics disc glued to the microstrip circuits. 
 The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
 An artificial dielectric consisting of dielectric particles with effective permeability differing from unity was considered by Lewin in 1947 \cite{lewin1947electrical}; apparently it was not until 2002 when O'Brien et al. computed \cite{obrien2002photonic} that the effective permeability of such a structure may be negative.
@@ -737,19 +737,31 @@ A measurement of a similar sample was published previously \cite{yakiyama2012ter
 
 
 \FloatBarrier %====================================================================================================
-\section{Dielectric rods parallel to the magnetic field} % references to ->
-\paragraph{Mie resonances}%{{{
-\label{sect_diel_rods_mag}
-Dielectric cylinders (or, rods) aligned parallel to the magnetic field exhibit spectra similar to the sphere arrays. % TODO ref fig
+\section{Dielectric rods parallel to the magnetic field} % TODO review
+\paragraph{Resonances in a low-permittivity array}	\label{sect_diel_rods_mag}	%{{{
+Dielectric rods aligned parallel to the magnetic field exhibit spectra similar to the sphere arrays. % TODO ref fig
 Unlike sphere arrays, the computation of the rod array behaviour under near-perpendicular incidence is a two-dimensional problem. 
 
-analytic shape of the Mie resonance, \cite{obrien2002photonic} 
+Photonic crystals composed of dielectric rods in a square lattice have been examined thoroughly since early 1990s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was usually rather low, typically up to the permittivity of silicon $\varepsilon \leq 12$, assuming the structure would operate at optical or near-infrared frequencies. 
+In the left panel of Fig. \ref{fg_rodh}, the relatively low permittivity in the structure causes its low-frequency behaviour to be similar to the one-dimensional photonic crystal. At the lower edge of the Bragg band gap ($X1$ subplot of \ref{fg_rodh}a), the electromagnetic wave concentrates the electric field in the layer of dielectric rods, as indicated by tiny arrows. The magnetic field energy is roughly complementary, located predominantly in the air between them. As already described on the example of 1-D PhC, the upper edge of the band reverts the situation. The number of nodal planes of the electric or magnetic field does not change between the lower and upper edges of a Bragg band gap.
 
-\textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}
+%}}}
+\begin{figure}[ht] %{{{ rodsphere_comparison
+	\caption{Comparison of \textbf{(a)} transmittance and \textbf{(b)}  effective index of refraction $\Neff$ for arrays of dielectric spheres (with radius $\rho_s=30$ $\mu$m) and of dielectric rods (with radius $\rho_r=19$ $\mu$m) in a 100 $\upmu$m unit cell, both made of TiO$_2$. The choice of radii used ensures the same volume filling fraction. } \label{fg_rodsphere_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.95\textwidth]{img-meep/rodsphere_comparison_t.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.96\textwidth]{img-meep/rodsphere_comparison_n.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.\textwidth}\\
+\end{tabular}
+\end{figure}
+%}}}
+\paragraph{Resonances in the high-permittivity array} %{{{
+In the microwave and terahertz ranges, the permittivity of many materials turns out to be much higher, the consequences of which make the main difference between the panels in Fig. \ref{fg_rodh}. In the right panel, the dielectric permittivity of 100 forms a distinct Mie resonance \cite{obrien2002photonic}. 
 
-The photonic crystals composed of square lattice of dielectric rods have been examined thoroughly since early 90s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was rather low, corresponding to the optical or near-infrared frequencies, where the suitable materials usually have permittivity $\varepsilon < 12$. By parametric scans we could prove that for rod permittivity below roughly 60, the individual resonance is always located at higher frequency than the Bragg gap. Little, if any, attention was therefore paid to different nature of the higher resonances and most publications focused on properties and applications of the Bragg band gap. %todo
+In the $X1$ point each unit cell is divided by one nodal plane of the magnetic field, whereas the next photonic band starts in the $\Gamma2$ point where no nodal plane remains. This corresponds to a drop in the real part of effective index of refraction - a behaviour that is typical for all individual resonances.
 
-The situation is different in the terahertz range, as the lattice of the crystalline solids often exhibits optical phonons at frequencies between 5 and 20 THz. The permittivity of many materials turns out to be much higher for frequencies below these resonances. This enables to conceive structures composed e.g. of titanium dioxide \cite{baumard1977_epsilon_TiO2} with $\varepsilon^{\text{THz}} \approx 92$ or of ferroelectrics with $\varepsilon^{\text{THz}}$ even orders of magnitude higher \cite{skoromets2011tuning}. The price to be paid for this advantage in the THz range are the relatively high losses caused by the lattice vibrations. %todo
+%\textit{magnetic Mie resonance}, \cite{obrien2002photonic, nemec2009tunable, yahiaoui2009broadband, yahiaoui2011tunable}
+
+% note the spatial dispersion is negligible
 
 %}}}
 \begin{figure}[ht]  %{{{ fg_rodh
@@ -775,11 +787,17 @@ The situation is different in the terahertz range, as the lattice of the crystal
 
 \FloatBarrier %====================================================================================================
 \section{Dielectric rods parallel to the electric field} \label{sect_diel_rods_el} % references to ->
+\paragraph{} %{{{
+The discussion of the previous structure has shown that the choice of permittivity and geometry obviously leads to a qualitative change in the structure behaviour. This becomes even more important in the case of dielectric rods parallel to the electric field. This structure can behave in several different ways. Not all differences may be directly seen from the PWEM results, as was the case in Fig. \ref{fg_rodh}.  % todo rewrite?
 
-% note the spatial dispersion is negligible, as verified against CDH (but not plotted here)
+
 
 % TODO refereence  also to \cite{valdivia2012} and \cite{shi2007}
-\cite{yang2015}
+%low-loss dielectrics discussed in http://www.nature.com/nnano/journal/v11/n1/full/nnano.2015.304.html??
+%\cite{yang2015}
+
+%}}}
+
 
 \begin{figure}[ht] \caption{Behaviour of the rods $||\mathbf E$, with permittivity $\varepsilon = 100$ and radius $r=11\;\upmu$m.} \label{fg_erod_radius11} \centering %{{{
 \begin{overpic}[width=.48\textwidth]{img/ERods_eps100_R11_PWEM.pdf}\put(1,96) {\textbf{(a)}} 
@@ -789,10 +807,9 @@ The situation is different in the terahertz range, as the lattice of the crystal
 %  \begin{figure} \caption{img/ERods\_eps100\_triple\_a150a100a080\_FDTD.pdf}  \centering \includegraphics[width=10cm]{img/ERods_eps100_triple_a150a100a080_FDTD.pdf} \end{figure} 
 %  \begin{figure} \caption{img/ERods\_forSeefeld\_sparserN\_denserN\_DrawnBands.pdf}  \centering \includegraphics[width=10cm]{img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf} \end{figure} 
 \end{figure}
-%}}}
 
 %{{{ FROM SHORT.pdf
-\mdf{  
+\add{  
 \begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities, analogical to Fig. \ref{fg_hbar_radiusscan} except for different orientation. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_ebar_radiusscan} \centering 
 \textbf{(a)}	\includegraphics[width=8cm]{img/old/ERods_eps012_radiusscan.pdf}
 \textbf{(b)}	\includegraphics[width=8cm]{img/old/ERods_eps100_radiusscan.pdf}
