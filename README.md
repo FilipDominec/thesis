@@ -56,6 +56,7 @@
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
+ * [ ] [0-9] GHz -> [0-9]~GHz
  * [ ] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
  * [ ] some figures should change from a)  to  (a) etc.
  * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances?
@@ -72,6 +73,7 @@
 	%simple resonance (in SRR?) 
 	%→  reflectance peak
 	%if fres1 < fres2 → …
+% discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
 
 
 

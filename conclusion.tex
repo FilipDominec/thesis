@@ -25,6 +25,16 @@
 %    historical review suggests formal unification of MM and PhC concepts, attempt for clarification of these two terms
 %  * filled the demand for some starting overview of the common structures, in a level of detail and
 %    didactic approach that the author was missing in the available literature
+%	  sum up all  structures
+%	  some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
+%		to regions of |Neff'|~0
+%	  some others have well-defined electric and magnetic individual resonances, yet Neff is not applicable when
+%		the resonances are close enough in frequency, requiring the use of spatial-dispersive theory
+%	  in general, Neff can only be used in isotropic media, or for propagation nearly parallel to the optical axis;
+%		a special exception is when approaching a Dirac point of isofrequency contours
+%	  (the choice of branch for Neff is unambiguous by our retrieval procedure based on FDTD; yet it deserves
+%		proper physical interpretation in some structures)
+%	  
 %  * pointed out the fundamental problems: 
 %      1) losses in available materials, 
 %      2) excessive spatial dispersion in known structures; i.e. the eff-param spectra often 'stick' to the BZ boundary
@@ -39,7 +49,7 @@
 %  * provide the simulation environment which facilitates correct computations,  and solves 
 %	  1) the artifacts from the near field around the structure being recorded by the monitor planes (--reformulate)
 %	  2) by mathematical means, the phase-ambiguity of the retrieved effective index by the s-parameter method 
-%  * proposes a novel time dependence for a wave source in FDTD that yields a flat-top spectrum in a well-defined 
+%  * proposes a novel temporal shape for a wave source in FDTD that yields a flat-top spectrum in a well-defined 
 %		interval of frequencies
 %  * we developed an original apparatus for accurate sieving
 %	 for the fabrication of sieves, we constructed a laser micro-machining setup in the laboratory, 
@@ -59,11 +69,9 @@
 %+ Kramers-Kronig check of the RodArray spectrum (or some other?)
 
 
-
-
 %% NOTES: What WAS NOT discussed in the thesis -- Things that could be pursued further on the basis of the presented work:
 %% * quasicrystals and disorder, 
-%  * other (photonic) crystal families than cubic
+%  * other (photonic) crystal families than square/cubic
 %  * plasmonic nanoparticles (and related MMs at optical frequencies?)
 %% * chiral media, bianisotropy, circular dichroism
 %			"Further, also the effects of more general properties of the constituent materials could be investigated, but this would require expanding the source code of the FDTD simulation library used (i.e., MEEP). While anisotropy and optical activity would be welcome, the particularly interesting option is gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors  that breaks time-reversal symmetry. This would open the wide research possibilies of non-reciprocal metamaterial devices."
