@@ -56,7 +56,7 @@ $$   - \kk (\kk \cdot \E)      +          k^2 \E            = +\mu_0 \varepsilon
 \begin{equation}  \TT\E            = \frac{\mu_0 \varepsilon_0 \omega^{2}}{k^2} \E.  \label{eq_wavek}\end{equation}
 The linear operation $\TT$ of the left hand side can be geometrically interpreted as taking the transverse component of the field $\E$, that is, perpendicular to the wavevector $\kk$. 
 \begin{equation} \TT\E :=  -\frac{\kk (\kk \cdot \E)}{k^2} + \E     \equiv     - \frac{\kk\times(\kk\times\E)}{k^2} \label{eq_transverse1}\end{equation}
-Rewriting it explicitly, in this thesis we define the \textit{wave-plane projection tensor} that will be useful in the following chapters, too:
+Rewriting it explicitly, in this thesis we define the \textit{wavefront projection tensor} that will be useful in the following chapters, too:
 \begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2  	& -k_x k_y 		& -k_x k_z \\ 
@@ -523,7 +523,7 @@ The new electric displacement $\Dsd$ in the  Landau-Lifshitz model, that also ac
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
-Double vector multiplication on the right hand side can be identified with the wave-plane projection tensor $\TT$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
+Double vector multiplication on the right hand side can be identified with the wavefront projection tensor $\TT$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
 \begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, \TT \E,  \label{eq_Dsd4}\end{equation} 
 
 %}}}
@@ -536,7 +536,7 @@ From Eq. (\ref{eq_Dsd3}) we can derive the tensor form of spatial-dispersive per
 \muLL(\omega,\kk) = 1, 
 \end{array} \quad \right\} \quad \text{(in local media)}
 \label{eq_epsmusd3} \end{equation} 
-where we make use of the wave-plane projection tensor defined as
+where we make use of the wavefront projection tensor defined as
 \begin{equation} \TT = \frac{1}{k^2} 
 \left(\begin{array}{ccc} 
 	k_y^2+k_z^2		& -k_x k_y		& -k_x k_z \\ 
@@ -1270,8 +1270,8 @@ To the author's knowledge, all demonstrations of metamaterial sub-wavelength ima
 The question remains whether the significant progress of technology required to fabricate suitable deeply sub-wavelength structures does not also eliminate their need, by simultaneously providing much better detectors operating in the near field.
 
 %}}}
-\paragraph{Metamaterials without negative or near-zero parameters} %{{{ ============== 
-In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not have to involve negative nor close-to-zero effective parameters \cite[p. 15]{sihvola2002electromagnetic}. Among these are highly sensitive sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}.
+\paragraph{Metamaterials without unusual parameters and metasurfaces} %{{{ ============== 
+In spite of the metamaterials being the most often associated with superlenses and cloaks, many MM applications \cite{zheludev2010road} do not have to involve negative nor close-to-zero effective parameters \cite[p. 15]{sihvola2002electromagnetic}. Among these are novel antenna designs, sensors, light modulators or devices making use of the enhanced nonlinear interaction. Strong interaction of resonant structures with electromagnetic waves enables to efficiently manipulate the surface impedance by two-dimensional periodic layers, so called \textit{metasurfaces}. 
 %% Many MMs do not bring negative refraction, other (composites) do, but not by means of electromagnetic resonances: 
 %% The tunable negative permittivity and negative permeability of percolative Fe/Al2O3 composites in radio frequency range with
 
