@@ -26,21 +26,25 @@
 %  * filled the demand for some starting overview of the common structures, in a level of detail and
 %    didactic approach that the author was missing in the available literature
 %	  sum up all  structures
-%	  some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
+%	- some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
 %		to regions of |Neff'|~0
-%	  some others have well-defined electric and magnetic individual resonances, yet Neff is not applicable when
+%	- some others have well-defined electric and magnetic individual resonances, yet Neff is not applicable when
 %		the resonances are close enough in frequency, requiring the use of spatial-dispersive theory
-%	  in general, Neff can only be used in isotropic media, or for propagation nearly parallel to the optical axis;
+%	- in general, Neff can only be used in isotropic media, or for propagation nearly parallel to the optical axis;
 %		a special exception is when approaching a Dirac point of isofrequency contours
-%	  (the choice of branch for Neff is unambiguous by our retrieval procedure based on FDTD; yet it deserves
+%	- (the choice of branch for Neff is unambiguous by our retrieval procedure based on FDTD; yet it deserves
 %		proper physical interpretation in some structures)
+%  * the Results section has shown that for the idealized lattice of resonant elements, denoted as a Bloch lattice in \ref{simovski2007bloch}, the spectra of effective index of refraction would have a form of alternating photonic bands, with always growing Neff(f), and photonic band gaps, where $Neff'(f)$ follows a Brillouin zone boundary, except for well-defined individual resonances of the electric or magnetic dipole. The results have, nonetheless, also proven that this interpretation is only approximate, due to evanescent inter-cell coupling and the resulting spatial dispersion. In particular, some structures made of metal preclude to use the $Neff'(f)$
 %	  
 %  * pointed out the fundamental problems: 
 %      1) losses in available materials, 
 %      2) excessive spatial dispersion in known structures; i.e. the eff-param spectra often 'stick' to the BZ boundary
 %		  without this interpretation, various papers fail to explain the typical "antiresonance" in effective parameters, that seems to cause confusion 
 %		  (http://onlinelibrary.wiley.com/doi/10.1002/adma.201502298/full etc.)
-%         stress the importance of taking the spatial dispersion into account
+%         stress the importance of taking the spatial dispersion into account; omission thereof is in some case a fundamental misconception, rather 
+%			than a mere inaccuracy
+%			(papers sometimes claim that negative refraction may not occur at NIR/optical frequencies due to the lack of magnetic activity; however
+%			this relies on the local eff. param paradigm)
 %      3) the s-parameter method, although widely used, does not always give correct results for diverse reasons
 %		  notice that e.g. 1-D PhC allows to determine Neff, but not eeff,meff, whereas
 %		  the electro-magnetic resonator exhibits independent el and mag resonances, but its Neff can not always 
@@ -67,6 +71,7 @@
 %       5) origin of antiresonance observed in effective $\eeff(f)$ or $\meff(f)$, and its persistence in random structures
 
 %+ Kramers-Kronig check of the RodArray spectrum (or some other?)
+
 
 
 %% NOTES: What WAS NOT discussed in the thesis -- Things that could be pursued further on the basis of the presented work:
