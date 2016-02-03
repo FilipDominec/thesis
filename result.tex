@@ -927,17 +927,26 @@ The reason behind the two Mie resonances vanishing is in the change of the nodal
 
 Upon reducing the unit-cell size ($a\lesssim 88$~$\upmu$m), the regions of opposite fields start to overlap with those from the neighboring cells and the corresponding nodal surfaces interconnect and open. This pair of open nodal surfaces dividing the unit cell manifests itself by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
 
-\begin{figure}[h!] % fg_fxplot %% TODO if fxplot used, Nimag must be flipped! And redraw in vector if possible.
-\begin{minipage}[c]{0.65\textwidth}
-  \begin{overpic}[width=.98\textwidth]{img/ERods_eps100_R10u5_FXplot.pdf} 
-  \end{overpic}\\
-    \end{minipage}
-    \begin{minipage}[c]{0.34\textwidth}
+\begin{figure}[h!] % fg_fxplot 
+\begin{minipage}[c]{0.51\textwidth}
+	\hspace{-2mm}\begin{overpic}[width=.99\textwidth]{img-meep/erods_fxplot_cs120e-6.pdf} 
+		\put(110,0){\includegraphics[width=.6\textwidth]{img/ERods_sketch_recordedline.pdf}}
+		\put(0,90) {\textbf{(a)}} 
+	\end{overpic}\\
+\end{minipage}
+\begin{minipage}[c]{0.49\textwidth}
   	  \caption{}\vfill \label{fg_fnquadrup}
-    \end{minipage}  
-  \end{figure} 
-\begin{figure} \caption{img/ERods\_sketch\_recordedline.pdf}  \centering  \includegraphics[width=10cm]{img/ERods_sketch_recordedline.pdf} \end{figure} 
-% 
+\end{minipage}  
+\end{figure} 
+
+\begin{figure}[h!] % fg_fxplot 
+\hspace{-2mm}\begin{overpic}[width=.51\textwidth]{img-meep/erods_fxplot_cs95e-6.pdf}  
+	\put(0,90) {\textbf{(b)}} 
+\end{overpic}
+\hspace{-1mm}\begin{overpic}[width=.51\textwidth]{img-meep/erods_fxplot_cs80e-6.pdf}  
+	\put(0,94) {\textbf{(c)}} 
+\end{overpic}
+\end{figure} 
 
 The main observation is that the dielectric rods do not have to be geometrically touching to form $\Neff'$ spectra similar to the 1-D PhC; strong enough near-field interaction is sufficient for this. The critical ratio of the radius to the unit cell size, $\rho/a$, depends on the dielectric permittivity. This kind of behaviour, mediated by the near-field, is particularly important in the structure discussed. We however conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours.
 
