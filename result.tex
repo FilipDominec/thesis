@@ -483,8 +483,7 @@ A more detailed parametric scan through these problematic values of $\rho_c$ can
 The effective parameters retrieved by the s-parameters method become easy to interpret for $\rho_c \geq 18$ $\upmu$m. The antiparallel resonance at 690 GHz is again well separated from the magnetic one, which remains near its original frequency (dark blue curves in Fig. \ref{fg_emSRR_icr}). Further explanation of these results is beyond the capabilities of the scattering parameters method, and necessitate the more expensive computation using the current-driven homogenisation (CDH).
 
 %}}}
-\paragraph{Current-driven homogenization and spatial dispersion}%{{{
-\begin{figure}[t] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering 
+\begin{figure}[t] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering %{{{
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  
 	\put(1,96) {\textbf{(a)}} 
@@ -497,14 +496,20 @@ The effective parameters retrieved by the s-parameters method become easy to int
 	\put(1,96) {\textbf{(b)}} 
 \end{overpic}
 \end{figure}
+%}}}
+\paragraph{Current-driven homogenization and spatial dispersion}%{{{
 CDH results for the same structure parameters, $\rho_c\in\{6,8,10,18\}$ $\upmu$m are presented in Figs. \ref{fg_cdh1} and \ref{fg_cdh2}. For comparison, the dispersion curves corresponding to the $\Neff'(f)$ retrieved by the scattering parameters method are shown as green curves.
 
 For $\rho_c=6$ $\upmu$m, both retrieval methods give relatively similar results, and they correctly identify two indirect band gaps corresponding to the magnetic and antiparallel electric resonances, respectively. The match is not as good as in Fig. \ref{fg_cdh5}, though -- namely the magnetic resonance around 800 GHz appears somewhat wider when retrieved by the s-parameters method, compared to CDH. The deviation can be attributed to the structure being surrounded by vacuum instead of sensing the near fields of the surrounding cells (c.f. page \pageref{cdhadvantages}).
 
 The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this inner capacitor radius, the spatial dispersion starts to substantially affect the dispersion curve of the second photonic band. It starts in the $\mathbf \Gamma$ point at 794 GHz with a positive group velocity, reaches its maximum of 890 GHz, then the group velocity changes its sign and the band ends in the $\mathbf X$ point at ca. 887 GHz. At a given frequency between 887 and 890 GHz, two solutions of the wave equation exist that differ merely by the wavevector. The s-parameters method has no means of distinguishing them, and accordingly the retrieved dispersion curve deviates from that retrieved by CDH.
 
+Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequencies of the $\mathbf \Gamma$ and $\mathbf X$ points come close to each other, i.e. 784 and 795 GHz, respectively. The central maximum of the band is on 828 GHz, which explains why the s-parameters	method no longer determines the dispersion curve shape correctly, nor it identifies any of the resonances.
 
-\begin{figure}[t] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering 
+These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in the frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
+
+%}}}
+\begin{figure}[t] \caption{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering %{{{
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap10.pdf}  
 	\put(1,96) {\textbf{(a)}} 
@@ -517,11 +522,6 @@ The next plot for $\rho_c=8$ $\upmu$m was not chosen randomly, since for this in
 	\put(1,96) {\textbf{(b)}} 
 	\end{overpic}
 \end{figure}
-
-Spatial dispersion is even more evident in Fig. \ref{fg_cdh2} where the frequencies of the $\mathbf \Gamma$ and $\mathbf X$ points come close to each other, i.e. 784 and 795 GHz, respectively. The central maximum of the band is on 828 GHz, which explains why the s-parameters	method no longer determines the dispersion curve shape correctly, nor it identifies any of the resonances.
-
-These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then again retrieved correctly, except for a systematic error in the frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
-
 %}}}
 \paragraph{Is this a negative-refraction structure?}%{{{
 The electro-magnetic resonator was examined as an example structure which, particularly in its magnetic resonance, exhibits strong electric quadrupole, leading to prominent spatial dispersion. Figures \ref{fg_cdh1} and \ref{fg_cdh2} illustrated that not only the s-parameters retrieval algorithm fails, but also the very idea of describing the structure behaviour in terms of refractive index $\Neff(f)$ does not guarantee enough degrees of freedom to express the physical reality.
@@ -893,12 +893,12 @@ The colours and numbering from 1 to 6 denote the band gaps. Mie resonances are o
 \begin{figure}%{{{ fg_drawn50_12
   \begin{minipage}[c]{0.48\textwidth}
 \hfill
-	\begin{overpic}[width=\textwidth]{img/erods-ascan_drawn.pdf}\put(-1,80){\textbf{(a)}}\end{overpic} % todo
-	\begin{overpic}[width=\textwidth]{img/erods-ascan_drawn.pdf}\put(-1,80){\textbf{(b)}}\end{overpic} % todo
+	\begin{overpic}[width=\textwidth]{img/erods-ascan_eps50_drawn.pdf}\put(-1,80){\textbf{(a)}}\end{overpic} % todo
+	\begin{overpic}[width=\textwidth]{img/erods-ascan_eps12_drawn.pdf}\put(-1,80){\textbf{(b)}}\end{overpic} % todo
   \end{minipage}
   \begin{minipage}[c]{0.5\textwidth}
     \caption{ 
-	Scheme of band gaps and Mie resonances similar to Fig. \ref{fg_drawn100}, but for \textbf{(a)} halved dielectric permittivity  $\epsrl = 50$ and \textbf{(b)} the permittivity of silicon $\epsrl = 12$. \\
+	Scheme of band gaps and Mie resonances similar to Fig. \ref{fg_drawn100}, but for \textbf{(a)} halved dielectric permittivity  $\epsrl = 50$ and \textbf{(b)} further reduced permittivity to that of silicon $\epsrl = 12$. \\
 The Mie resonances shift to higher frequencies relative to the band gaps and no $\Neff'<0$ region is formed for any unit cell size. % todo add description
 } \label{fg_drawn50_12}
   \end{minipage}
