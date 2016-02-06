@@ -374,7 +374,7 @@ The analysis of the wire array has shown that at low frequencies, its effective 
 A synthesis of these two structures yields a region of negative index of refraction, probably the first \cite{pendry2000negative} and most prominent metamaterial design to achieve this. The effect of combining structures that interact exclusively with magnetic and electric field is discussed in Ref. \cite{koschny2004effective} in more detail.
 
 The resulting effective parameters are represented by the blue line in Fig. \ref{fg_SRR_principles}. Its spectrum of the effective index of refraction resembles that of the wire array up to 630 GHz, where it drops by one Brillouin zone down at the resonant frequency.
-As a general rule observed in all correctly retrieved spectra, a single individual resonance always causes $\Neff'(f)$ to drop from one Brillouin zone boundary to another. 
+By rule, a single individual resonance always causes $\Neff'(f)$ to drop from one Brillouin zone boundary to another, which should be observed in all correctly retrieved spectra. 
 
 Notice that the magnetic resonance causes a drop in $\Neff'(f)$ even without the wire array (green curve in Fig. \ref{fg_SRR_principles}c), but in such a case it happens between the first Brillouin zone boundary and zero. Without wires, $\Neff'$ does not reach negative values.
 
@@ -892,7 +892,7 @@ The colours and numbering from 1 to 6 denote the band gaps. Mie resonances are o
 \paragraph{Continuous scan through the unit cell sizes}%{{{
 For illustration, we add a high-resolution continuous scan through the unit cell size $a$ in Fig. \ref{fg_spacingscan100}, with other parameters shared with the previous plots in Fig. \ref{fg_erods_acomparison}. The individual Mie resonances can be identified as the sets of points where transmittance $|t|$ comes close to zero, real part of effective index of refraction $\Neff'$ drops and its imaginary part $\Neff''$ has a sharp peak. The photonic band gaps are all areas where $\Neff'' \not\approx 0$ in Fig. \ref{fg_spacingscan100}d.
 
-For easier interpretation, the peculiar interplay of the individual resonances and the band gaps is redrawn in Fig. \ref{fg_drawn100}, where each photonic band gap is represented as a coloured area and the individual resonances as thick black lines. The small black patch between the first and second band gaps covers the range conditions necessary for reaching $\Neff'<0$, provided that the dielectric is titanium dioxide with permittivity $\epsrl \approx 92$. 
+For easier interpretation, the interplay of the individual resonances and the band gaps is redrawn in Fig. \ref{fg_drawn100}, where each photonic band gap is represented as a coloured area and the individual resonances as thick black lines. The small black patch between the first and second band gaps covers the range conditions necessary for reaching $\Neff'<0$, provided that the dielectric is titanium dioxide with permittivity $\epsrl \approx 92$. 
 
 In accordance with the previous discussion, the electric and magnetic Mie resonances approach each other when the unit cell size $a$ decreases from 120 to 90 $\upmu$m, and eventually they meet and vanish for $a \lesssim 85$ $\upmu$m, forming an "U"-shaped curve. Using $a$ as the scanning parameter enables to clearly illustrate the shift of individual resonances. With this choice, the frequencies of the band gaps roughly follow the $1/a$ curves, but they are strongly influenced by the individual resonances. Each individual resonance is always contained inside a band gap.
 
@@ -904,12 +904,12 @@ This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any hig
 \begin{figure}[h!] % fg_fxplot %{{{
 \begin{minipage}[c]{0.51\textwidth}
 	\hspace{-2mm}\begin{overpic}[width=.99\textwidth]{img-meep/erods_fxplot_cs120e-6.pdf} 
-		\put(110,8){\includegraphics[width=.5\textwidth]{img/ERods_sketch_recordedline.pdf}}
+		\put(117,8){\includegraphics[width=.5\textwidth]{img/ERods_sketch_recordedline.pdf}}
 		\put(7,90) {\textbf{(a)}} 
 	\end{overpic}\\
 \end{minipage}
 \begin{minipage}[c]{0.49\textwidth}
-	\caption{Spatially resolved spectra of the electric field for the unit cell cell sizes \textbf{(a)} $a=120$  }\vspace{3cm} \label{fg_fnquadrup}
+	\caption{Spatially resolved spectra of the electric field for the unit cell cell sizes \textbf{(a)} $a=120$  }\vspace{3cm} \label{fg_fxplot}
 \end{minipage}  
 \vspace{-12mm}
 \end{figure} 
@@ -923,13 +923,19 @@ This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any hig
 \end{figure} 
 %}}}
 \paragraph{Inspection of the frequency-dependent shape of the field}%{{{
-To explain the disappearance of Mie resonances, we needed to inspect the fields inside the structure. This required a new kind of plots showing how the electric field amplitude depends simultaneously on the position along the wave vector (i.e. $z$-axis) and on the frequency (Fig. \ref{fg_fxplot}).  The electric field was recorded along the line between the dielectric rods arranged in three layers; the field amplitude was stored in each simulation step. At the end of the simulation, for each point in space, the spectrum was computed and the magnitude of $|E_x(z, f)|$ was plotted on the horizontal axis. The color map was chosen as logarithmic with dark blue representing lowest field magnitude and white highest, differing by 5 orders of magnitude. 
-To the author's knowledge, such kind of plots have not been published in any paper yet. 
+The PWEM plot gives full information about the field at the band edges (Fig. \ref{fg_erod_radius11}), does not compute the field shape at frequencies lying in the band gap, which is exactly what we need to explain the physical reason behind the peculiar disappearance of Mie resonances. Inspection the fields within a band gap requires a new kind of plots based on time-domain simulations, which show how the electric field amplitude depends simultaneously on the position along the wave vector, i.e., the $z$-axis, and on the frequency (Fig. \ref{fg_fxplot}). 
+%, since the wave amplitude decays exponentially and the field is not eigenfunction of the  
 
-The case of sparse rods (Fig. \ref{fg_fxplot}a) clearly illustrates that from the lower edge of the first band gap, at 0.42 THz, to the electric resonance at 0.745 THz, one nodal plane exists in each unit cell, introducing a $+\pi$ shift of the field phase between adjacent cells. At a nodal plane, the field intensity drops to very low values. 
-While the field pattern close to the resonant frequency is confused by finite dimensions of the three-cell layer, above the resonance it clearly demonstrates the exponential decay of the evanescent wave. In this region, the electric dipole of the rods is opposite to the surrounding field, but the nodal planes form closed surfaces around each rod, and the phase difference between the unit cells is zero. From 0.97 THz, the second photonic band starts which allows the electromagnetic energy propagate through the structure.
+A structure of dielectric rods arranged in three layers was used as a sufficiently thick sample to illustrate the metamaterial behaviour. Since we are interested in the phase advance of the wave across a cell, we may focus on the central line between the rods only.
 
-The second case of medium-density rod array (Fig. \ref{fg_fxplot}b) is known to bring both resonances into the first band gap. At the frequency of the first resonance, the nodal plane in each unit cell is removed. In contrast to the previous plot, the second resonance further reduces the phase difference between the unit cells to negative value $-\pi$. Faint nodal planes can be observed again in the upper part of the first band gap. 
+The electric field amplitude was stored in each simulation step for each point along the line.
+At the end of the simulation, the temporal spectra of the record were computed and the magnitude of $|E_x(z, f)|$ was plotted. A logarithmic color map spanning over 5 orders of magnitude was used, with dark blue representing lowest field magnitude and white highest. For easier comparison, the effective index of refraction was added below each plot of the fields, with a shared frequency axis.
+To the author's knowledge, such kind of plots has not been published in any paper yet. 
+
+The case of sparse rods (Fig. \ref{fg_fxplot}a) clearly illustrates that beginning from the lower edge of the first band gap, at 0.42 THz, up to the electric resonance at 0.745 THz, one nodal plane exists in each unit cell, introducing a $+\pi$ shift of the field phase between adjacent cells. The nodal plane can be detected as sets of points where the field intensity drops to very low values. 
+Unfortunately, the field pattern close to the resonant frequency is hard to interpret due to boundary effects on the structure, but above the resonance one can clearly see that no nodal planes are present. This is in accordance with the predicted exponential decay of the evanescent wave whenever $\Neff' = 0$ and $\Neff' < 0$. The electric dipole of the rods is opposite to the surrounding field in this region, but the nodal planes form closed surfaces around each rod, and the phase difference between the unit cells is zero. Finally, from 0.97 THz on, the second photonic band starts which allows the electromagnetic energy propagate through the structure.
+
+The second case of the medium-density rod array (Fig. \ref{fg_fxplot}b) is known to bring both resonances into the first band gap. At the frequency of the first resonance, one nodal plane in each unit cell is removed and the phase advance across a cell is reduced from $+\pi$ to $0$. The second resonance further reduces this phase difference, from $0$ to $-\pi$, which involves formation of one nodal plane per unit cell. Accordingly faint nodal planes can be observed again in the upper part of the first band gap. 
 
 Finally, 
 
@@ -1067,7 +1073,7 @@ Standing SPP wave
 \end{figure}
 %}}}
 
-For simulation of the fishnet, the resolution in the FDTD simulation was set to very coarse, with a voxel dimension of 10 $\mu$m. The discretisation error has broken the mirror symmetry of the fishnet hole (see Fig. \ref{fg_fnquadrup}), and introduced a slight electric dipole into the predominantly quadrupole mode, leading to its nonzero coupling of to the propagating wave. This resulted in narrow resonances emerging at 880 and 710 GHz in Fig. \ref{fg_expe_fishnets}, which explains the experimentally observed resonance notches close to these frequencies.  
+For simulation of the fishnet, the resolution in the FDTD simulation was deliberately set to very coarse, with a voxel dimension of 10 $\mu$m. The discretisation error has broken the mirror symmetry of the fishnet hole (see Fig. \ref{fg_fnquadrup}), and introduced a slight electric dipole into the predominantly quadrupole mode, leading to its nonzero coupling of to the propagating wave. This resulted in narrow resonances emerging at 880 and 710 GHz in Fig. \ref{fg_expe_fishnets}, which explains the experimentally observed resonance notches close to these frequencies.  
 
 %% Dual vs. single fishnets: \cite{valentine2011development} -- todo
 %% THz fishnet design \cite{navarro2011dual} -- todo 
