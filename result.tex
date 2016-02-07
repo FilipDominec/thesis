@@ -923,10 +923,10 @@ This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any hig
 \end{figure} 
 %}}}
 \paragraph{Inspection of the frequency-dependent shape of the field}%{{{
-The PWEM plot gives full information about the field at the band edges (Fig. \ref{fg_erod_radius11}), does not compute the field shape at frequencies lying in the band gap, which is exactly what we need to explain the physical reason behind the peculiar disappearance of Mie resonances. Inspection the fields within a band gap requires a new kind of plots based on time-domain simulations, which show how the electric field amplitude depends simultaneously on the position along the wave vector, i.e., the $z$-axis, and on the frequency (Fig. \ref{fg_fxplot}). 
+While the PWEM plot gives full information about the field at the band edges (Fig. \ref{fg_erod_radius11}), it does not compute the field shape at frequencies lying in the band gap, which is exactly what we need to explain the physical reason behind the peculiar disappearance of Mie resonances. Inspection the fields within a band gap requires a new kind of plots based on time-domain simulations, which show how the electric field amplitude depends simultaneously on the position along the wave vector, i.e., the $z$-axis, and on the frequency (Fig. \ref{fg_fxplot}). 
 %, since the wave amplitude decays exponentially and the field is not eigenfunction of the  
 
-A structure of dielectric rods arranged in three layers was used as a sufficiently thick sample to illustrate the metamaterial behaviour. Since we are interested in the phase advance of the wave across a cell, we may focus on the central line between the rods only.
+A structure of dielectric rods arranged in three layers was used as a sufficiently thick sample to illustrate the metamaterial behaviour. Since the discussion is based on the phase advance of the wave across a cell, it is sufficient to observe the fields at the central line between the rods only (see drawing in \ref{fg_fxplot}).
 
 The electric field amplitude was stored in each simulation step for each point along the line.
 At the end of the simulation, the temporal spectra of the record were computed and the magnitude of $|E_x(z, f)|$ was plotted. A logarithmic color map spanning over 5 orders of magnitude was used, with dark blue representing lowest field magnitude and white highest. For easier comparison, the effective index of refraction was added below each plot of the fields, with a shared frequency axis.
@@ -935,28 +935,27 @@ To the author's knowledge, such kind of plots has not been published in any pape
 The case of sparse rods (Fig. \ref{fg_fxplot}a) clearly illustrates that beginning from the lower edge of the first band gap, at 0.42 THz, up to the electric resonance at 0.745 THz, one nodal plane exists in each unit cell, introducing a $+\pi$ shift of the field phase between adjacent cells. The nodal plane can be detected as sets of points where the field intensity drops to very low values. 
 Unfortunately, the field pattern close to the resonant frequency is hard to interpret due to boundary effects on the structure, but above the resonance one can clearly see that no nodal planes are present. This is in accordance with the predicted exponential decay of the evanescent wave whenever $\Neff' = 0$ and $\Neff' < 0$. The electric dipole of the rods is opposite to the surrounding field in this region, but the nodal planes form closed surfaces around each rod, and the phase difference between the unit cells is zero. Finally, from 0.97 THz on, the second photonic band starts which allows the electromagnetic energy propagate through the structure.
 
-The second case of the medium-density rod array (Fig. \ref{fg_fxplot}b) is known to bring both resonances into the first band gap. At the frequency of the first resonance, one nodal plane in each unit cell is removed and the phase advance across a cell is reduced from $+\pi$ to $0$. The second resonance further reduces this phase difference, from $0$ to $-\pi$, which involves formation of one nodal plane per unit cell. Accordingly faint nodal planes can be observed again in the upper part of the first band gap. 
+The second case of the medium-density rod array (Fig. \ref{fg_fxplot}b) is known to bring both resonances into the first band gap. At the frequency of the first resonance, one nodal plane in each unit cell is removed and the phase advance across a cell is reduced from $+\pi$ to $0$. The second resonance further reduces this phase difference, from $0$ to $-\pi$, which involves formation of one nodal plane per unit cell. Accordingly, faint nodal planes can be observed again in the upper part of the first band gap. 
 
-Finally, 
+Finally, upon reduction of the unit cell size to $80$ $\upmu_m$ (Fig. \ref{fg_fxplot}c), the nodal planes obviously continue through the first photonic band gap. % This means that .. ?
 
 %}}}
 \paragraph{The cause of the Mie resonances vanishing}%{{{
-The reason behind the two Mie resonances vanishing is in the change of the nodal surface topology. When the rods are far from each other ($a\gtrsim 88$~$\upmu$m), the individual Mie resonances create closed regions delimited by a nearly circular nodal surface, dominated by the near field of the resonance dominates. 
+It can be deduced that the reason why two Mie resonances can no longer be observed for $a\lesssim 85$ $\upmu$m is in the change of the nodal surface topology. When the rods are far from each other ($a\gtrsim 88$~$\upmu$m), the individual Mie resonances create closed regions dominated by the near field of the resonance, which are delimited by roughly elliptical nodal surface. Thus between 930 and 1100 GHz,  %% todo verify 
+no nodal plane is intersected by the field-recording line in Fig.  \ref{fg_fxplot}b.
 
-Upon reducing the unit-cell size ($a\lesssim 85$~$\upmu$m), the regions of opposite fields start to overlap with those from the neighboring cells and the nodal surfaces interconnect with each other. The wave propagating through an unit cell then changes  its sign twice, which manifests itself as a $2\pi$ phase change.  % TODO reformulate
+Upon reducing the unit-cell size ($a\lesssim 85$~$\upmu$m) at the same frequency, the regions of opposite fields start to overlap with those from the neighboring cells and the nodal surfaces interconnect with each other. The wave propagating through an unit cell then changes its sign twice, which manifests itself as a $2\pi$ phase change compared to the $a=90$ $\upmu$m case.
 %This pair of open nodal surfaces dividing the unit cell manifests itself by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
 
-The main observation is that the dielectric rods do not have to be geometrically touching to form $\Neff'$ spectra similar to the 1-D PhC; strong enough near-field interaction is sufficient for this. The critical ratio of the radius to the unit cell size, $\rho/a$, depends on the dielectric permittivity. This kind of behaviour, mediated by the near-field, is particularly important in the structure discussed. We however conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours.
+The main observation is that the dielectric rods do not have to be geometrically touching behave in a similar to the 1-D PhC. Strong enough near-field interaction is sufficient for this. The critical ratio of the radius to the unit cell size, $\rho/a$, depends on the dielectric permittivity. 
 
+This kind of qualitative change, mediated by the near-field, is particularly important in the structure discussed. We however conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours.
 
-% from our paper:    Another case of interest where evanescent waves are obtained is that of $\Neff' = 0$ (center of the first Brillouin zone, $q=0$) and $\Neff''>0$. Here the waves exponentially decay in the medium without any phase change. However, this behavior has a different origin: it is connected to a plasma-like response of the material ($\varepsilon<0$ or $\mu<0$) and in this paper we use the term \textit{plasma band gap} to refer to it.
 % The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 
 
 
 % todo \cite{peng2007, vynck2009all}
-
-%todo discuss from short.pdf: "In photonic bands, no matter if $N_{\text{eff}} > 0$  or $N_{\text{eff}} < 0$, the real part of $N_{\text{eff}}$ always grows in accordance with the Foster theorem:
 
 %todo discuss from short.pdf: "...confirmed by the FDTD results and by their compliance to Kramers-Kronig relations. To illustrate this, the Hilbert transform of the refractive index is plotted as the thin pink line and it nearly perfectly follows the green curve over whole spectrum, except for an additive constant. There is  only one acceptable physical solution that is compatible with the Kramers-Kronig relations."
 
@@ -978,6 +977,13 @@ The Mie resonances shift to higher frequencies relative to the band gaps and no 
 
 %}}}
 \paragraph{Lower dielectric permittivity}%{{{
+When the dielectric permittivity contrast is reduced, 
+both individual Mie resonances and Bragg-type band gaps shift to higher frequencies. Mie resonances are more sensitive to $\epsrl$, and when it is reduced from that of Titanium dioxide in the terahertz range ($\epsrl = 92$) to a lower value $\epsrl = 50$, the point of the first and second Mie resonances merging shifts to the upper edge of the first gap (Fig. \ref{fg_drawn50_12}a). 
+
+This value of dielectric permittivity contrast appears to be critical for obtaining negative refractive index from any rod-array metamaterial. For lower values of $\epsrl$, no photonic band with $\Neff'<0$ can be found at any frequency, for any $\rho/a$ ratio.
+
+Construction of an optical or near-infrared metamaterial restricts the choice of transparent dielectrics. The highest available permittivity is roughly 12 in the optical range,  % TODO  silicon 12 or 16?
+
 % todo Comparing the low-permittivity and high-permittivity cases in Fig. \ref{fg_ebar_radiusscan}a,b, one can see there exists some minimum limit for the permittivity contrast that is necessary for both electric and magnetic resonances to be located in the first gap simultaneously. We determined this scale-invariant value to be roughly 80.
 
 %}}}
