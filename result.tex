@@ -946,9 +946,9 @@ It can be deduced that the reason why two Mie resonances can no longer be observ
 no nodal plane is intersected by the inter-cell axis, where the electric field is recorded.
 
 Upon reducing the unit-cell size ($a\lesssim 85$~$\upmu$m) at the same frequency, the regions of opposite fields start to overlap with those from the neighboring cells and the nodal surfaces interconnect with each other. The wave propagating through an unit cell then changes its sign twice, which manifests itself as a $2\pi$ phase change compared to the $a=90$ $\upmu$m case. 
+
 This pair of open nodal surfaces dividing the unit cell manifests itself by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
 
-Figs. \ref{fg_drawn100} and \refs{fg_fxplot} shows that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. The described kind of qualitative change, is particularly important in the structure discussed. We however conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours.
 
 % The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 
@@ -979,12 +979,22 @@ both individual Mie resonances and Bragg-type band gaps shift to higher frequenc
 
 The dielectric permittivity contrast of at least 50 appears to be crucial for obtaining negative refractive index from any rod-array metamaterial. For lower values of $\epsrl$, no photonic band with $\Neff'<0$ can be found at any frequency, for any $\rho/a$ ratio.
 
-Construction of an optical or near-infrared metamaterial restricts the choice of transparent dielectrics. The highest available permittivity is roughly 12 in the optical range,  % TODO  silicon 12 or 16?
-
-% todo Comparing the low-permittivity and high-permittivity cases in Fig. \ref{fg_ebar_radiusscan}a,b, one can see there exists some minimum limit for the permittivity contrast that is necessary for both electric and magnetic resonances to be located in the first gap simultaneously. We determined this scale-invariant value to be roughly 80.
+Construction of an optical or near-infrared metamaterial restricts the choice of permittivity of transparent dielectrics to roughly 12, typical for silicon in near-infrared. The particularly simple drawing of the resulting band structure (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array is always preceded by a Bragg band gap. 
 
 %}}}
 \paragraph{Discussion}%{{{
+Figs. \ref{fg_drawn100} and \refs{fg_fxplot} shows that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. 
+
+
+In the array of rods parallel to the electric field, this qualitative change occurs for a particularly low filling fraction.
+%% References:
+%% Ref. \cite{peng2007} uses $\epsrl=600$ and $a/\rho \sim 3$ (square bars)
+%% Ref. \cite{vynck2009all}
+%% Ref. \cite{shi2007}
+%% 
+, similar to 
+We conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours. %% TODO rewrite
+
 \add{
 %which imposes strict limits on the geometry, 
 Having analyzed the case of high dielectric ($\varepsilon_r=100$) permittivity rods, we will draw below implications for building a negative-index MM from available dielectrics.  Another series of simulations implies that reducing the dielectric permittivity has the main effect to shift all the Mie resonances to higher frequencies (also with respect to the photonic bands). As a result, the band with $\Neff'<0$ gets gradually narrower and, for the rod permittivity below about 50, we do not find any cell size $a$ that would imply the first and second Mie resonances in the first photonic band as illustrated for $\varepsilon_r = 30$ in Fig. \ref{fg_drawn030}. This means that the value of $\varepsilon_{r} \approx 50$ is the minimum for obtaining a negative index of refraction in any square array of cylindrical rods. Note that one would come to a very similar value of minimum permittivity for the case of a square array of bars with a slightly different shape, e.g. a square cross-section. 
