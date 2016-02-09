@@ -1,5 +1,5 @@
 \label{chapter_results}
-\section{Dielectric slab} \label{section_Dielectric slab}
+\section{Dielectric slab} \label{section_Dielectric slab}%{{{
 \paragraph{Dispersion curves of a one-dimensional photonic crystal}%{{{
 The one-dimensional photonic crystal (1-D PhC) has been investigated thoroughly in the previous century and found its major application in dielectric mirrors. It is the simplest representative of periodic structures, since  it exhibits only a subset of different phenomena that can be observed in other periodic structures. This is due to its continuous translational symmetry in the transverse direction that excludes all phenomena with a lower symmetry. 
 
@@ -95,9 +95,9 @@ Note that with the correct branch retrieval procedure, the index of refraction n
                %\caption{4vio.pdf}  \includegraphics[width=3cm]{img/multilay_4vio.pdf} \end{figure} 
 
 %}}}
-
 \FloatBarrier %====================================================================================================
-\section{Wire medium} \label{chap_wiremedium}
+%}}}
+\section{Wire medium} \label{chap_wiremedium}%{{{
 \paragraph{High-frequency behaviour}%{{{
 The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is discussed in another Section \ref{section_eot}.
 
@@ -172,9 +172,9 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 % nice refs  from 1950-1970: http://ece-research.unm.edu/summa/notes/SSN/note192.pdf
 
 %}}}
-
 \FloatBarrier %====================================================================================================
-\section{Cut wires} \label{section_cutwires}
+%}}}
+\section{Cut wires} \label{section_cutwires}%{{{
 \paragraph{Individual resonances}%{{{
 The low-frequency behaviour of the wire array is determined by the distributed inductance of the wires, which introduces negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell, a three-dimensional periodic lattice of antennas is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In an analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances} at some nonzero resonant frequency $0<f_r<f_p$. 
 
@@ -245,7 +245,6 @@ For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then star
 While the change of the cut-wire radius $\rho_w$ relatively weakly reflects in the resonance frequency, its major impact is in the \textit{strength} of the individual resonance. Thick wires lead to stronger reflection out of resonances, which also translates into a wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
 %}}}
-
 \paragraph{Experimental measurement of cut wire spectra}%{{{ 
 Although we did not fabricate any cut-wire metamaterial, we used the terahertz time-domain spectroscopy to characterise cut-wire-on-silicon structures, one representative of which is photographed and sketched in Fig. \ref{fg_bousek}. The metallic wires were deposited on a silicon substrate, and at their ends, the silicon was doped to form diode-like transitions. 
 \begin{figure}[ht] \caption{The sample of cut wires (pale yellow) on silicon (cyan) substrate. \textbf{(a)} Natural-colour photograph from an optical microscope,  \textbf{(b)} Geometry of the wires in micrometers. They were measured to be $6.5$ $\mu$m wide and $30$ $\mu$m long. The periodicity of cut-wires was $30\times 50$ $\mu$m.  } \label{fg_bousek} \centering 
@@ -259,7 +258,6 @@ This kind of structure was designed to operate as a switch for the terahertz rad
 
 The sample presented above in Fig. \ref{fg_bousek}, though not applicable as a modulator, exhibits a clear electric resonance around 1550 GHz. This resonance is substantially broadened and weakened by the losses of the structure (red line in Fig. \ref{fg_bousekspectra}). A FDTD simulation of thin metallic stripes 30 $\upmu$m long and 6.5 $\upmu$m wide on a silicon substrate did not match the experimental spectra very well (green line in Fig. \ref{fg_bousekspectra}). 
 %}}}
-
 \begin{figure}[ht]  % fg_bousekspectra%{{{
 	\caption{Comparison of experimental (red line) and simulated spectra (green and blue lines) for the cut-wire on silicon structure. The green line corresponds to the original geometry from Fig. \ref{fg_bousek}b; a better match with the experiment is obtained by changing the length of stripes from 30 to 40 $\mu$m (blue line).} \label{fg_bousekspectra} \centering 
 \begin{overpic}[width=.85\textwidth]{img-expe/bousek.pdf}\end{overpic}
@@ -267,10 +265,9 @@ The sample presented above in Fig. \ref{fg_bousek}, though not applicable as a m
 Much better match was obtained by simple elongation of the conductive stripes to 40 $\upmu$m (blue line in Fig. \ref{fg_bousekspectra}). This may reflect the fact that the wires were surrounded by a highly doped, conductive zones of silicon.
 Although not taking into account the dissipative losses, such a simulation correctly identifies the resonance freqeuncy of the stripes. It also, at least quantitatively, matches the asymmetric spectral shape, which is caused by the onset of diffraction into the silicon substrate at $f_c = c/(50\;$ $\upmu$m$)/N_{\text{Si}} \approx 1730$ GHz. 
 
-The presented simulations were not optimized for the dissipative losses in silicon, which could be modeled with more detailed knowledge of the structure preparation.
+The presented simulations were not optimized for the dissipative losses in silicon, which could be modeled with more detailed knowledge of the structure preparation. %TODO unduplicate rewrite?
 
 %}}}
-
 %     \FloatBarrier %====================================================================================================
 %     \section{Electric resonators} \label{section_esrr} % references to -> % note about plasmonic particles 
 %     OFF \paragraph{Comparison of spectra to the cut wires}%{{{
@@ -279,9 +276,9 @@ The presented simulations were not optimized for the dissipative losses in silic
 %     A viable way to shift the resonance frequency much lower, without changing the unit cell size nor resorting to submicrometre cut distances, is to replace straight wire antennas by \textit{electric split-ring resonators}, % TODO cite 
 %     depicted in Fig. \ref{fg_eSRR}.
 %}}}
-
 \FloatBarrier %====================================================================================================
-\section{Split-ring resonator} \label{section_srr} % references to -> 
+%}}}
+\section{Split-ring resonator} \label{section_srr} % references to -> %{{{
 \paragraph{Resonances with magnetic dipole moment}%{{{
 The fundamental resonance in a cut wire has the electric dipole moment only. The resonant magnetic field circulates around the wire and due to its rotational symmetry along the $x$-axis, the magnetic dipole moment is zero. Other structures can support resonances of lower symmetry with regards to the $x$-axis, thus having a magnetic dipole moment.
 
@@ -431,10 +428,9 @@ Comparison of the more familiar standard SRR (split width $d=4$ $\mu$m) with its
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
 %\end{figure}
 %}}}
-
-
 \FloatBarrier %====================================================================================================
-\section{Combined electric and magnetic resonator} \label{section_srr} % references to -> 
+%}}}
+\section{Combined electric and magnetic resonator} \label{section_srr} % references to -> %{{{
 \paragraph{Effect of the central bar in SRR}%{{{
 The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around its circumference. When one adds a central bar parallel to the electric field and the $x$-axis, as in Fig. \ref{fg_SRR_elmag}a, the frequency of the magnetic resonance does not change significantly. The reason comes from the symmetry thereof, which stipulates that that zero net current flows through the central bar. 
 
@@ -534,10 +530,10 @@ For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rang
 Provided the auxiliary boundary conditions are arranged to couple all energy exclusively to this additional wave, with the relatively high Bloch wavevector, the interface of the metamaterial with vacuum should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this kind of metamaterial -- even for propagation parallel to the optical axis.
 
 %}}}
-
-
 \FloatBarrier %====================================================================================================
-\section{Dielectric spheres} % references to ->			
+%}}}
+\section{Dielectric spheres} % references to ->			%{{{
+% \cite{prosvirnin2015planar} % todo read
 \paragraph{Mie resonances}%{{{
 Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
 
@@ -740,10 +736,9 @@ An experiment involving a similar sample was published previously \cite{yakiyama
 %   %Planar all-silicon metamaterial for terahertz applications \cite{prosvirnin2015planar}
 %   
 %   %}}}
-
-
 \FloatBarrier %====================================================================================================
-\section{Dielectric rods parallel to the magnetic field} % TODO review
+%}}}
+\section{Dielectric rods parallel to the magnetic field} % TODO review%{{{
 \paragraph{Resonances in a low-permittivity array}	\label{sect_diel_rods_mag}	%{{{
 Dielectric rods aligned parallel to the magnetic field exhibit spectra similar to the sphere arrays (see Fig. \ref{fg_rodsphere_comparison}), with clearly identifiable Mie resonances with magnetic and electric dipoles.
 Unlike sphere arrays, the computation of the rod array behaviour under near-perpendicular incidence is a two-dimensional problem. 
@@ -788,9 +783,8 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 %\textbf{(b)}\includegraphics[width=8cm]{img/old/HRods_eps100_radiusscan.pdf}
 %\end{figure}
 %}}}
-
-
 \FloatBarrier %====================================================================================================
+%}}}
 \section{Dielectric rods parallel to the electric field} \label{sect_diel_rods_el} % references to ->
 \begin{figure}[h!]  %{{{ erods_acomparison
 	\caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for a rod array with constant radius $\rho = 10$ $\mu$m, dielectric permittivity  and grid resolution of 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm} 
@@ -894,6 +888,8 @@ For illustration, we add a high-resolution continuous scan through the unit cell
 
 For easier interpretation, the interplay of the individual resonances and the band gaps is redrawn in Fig. \ref{fg_drawn100}, where each photonic band gap is represented as a coloured area and the individual resonances as thick black lines. The small black patch between the first and second band gaps covers the range conditions necessary for reaching $\Neff'<0$, provided that the dielectric is titanium dioxide with permittivity $\epsrl \approx 92$. 
 
+Related effects were described in the literature. Ref. \cite{shi2007} investigates the impact of Mie resonances to the band-gap structure, but the discussion thereof neglects the near-field effect on Mie resonance frequency. The paper unfortunately did not include refined scans of the $a/\rho$ ratio and thus did not correctly discuss the qualitative change in the structure behaviour. 
+
 In accordance with the previous discussion, the electric and magnetic Mie resonances approach each other when the unit cell size $a$ decreases from 120 to 90 $\upmu$m, and eventually they meet and vanish for $a \lesssim 85$ $\upmu$m, forming an "U"-shaped curve. Using $a$ as the scanning parameter enables to clearly illustrate the shift of individual resonances. With this choice, the frequencies of the band gaps roughly follow the $1/a$ curves, but they are strongly influenced by the individual resonances. Each individual resonance is always contained inside a band gap.
 
 In photonic bands, the real part of refractive index grows as a function of frequency; from the beginning to the end of each photonic band, it gains a difference of one Brillouin zone. The only way how $\Neff'$ can descend by one Brillouin-zone boundary is by means of an individual resonance. A simple arithmetic rule for reaching negative index of refraction $\Neff'(f_1)<0$, at a given frequency $f_1$, is therefore that the number of photonic band gaps counted from $f=0$ to $f_1$ must be strictly less than the number of individual resonances. 
@@ -979,21 +975,29 @@ both individual Mie resonances and Bragg-type band gaps shift to higher frequenc
 
 The dielectric permittivity contrast of at least 50 appears to be crucial for obtaining negative refractive index from any rod-array metamaterial. For lower values of $\epsrl$, no photonic band with $\Neff'<0$ can be found at any frequency, for any $\rho/a$ ratio.
 
-Construction of an optical or near-infrared metamaterial restricts the choice of permittivity of transparent dielectrics to roughly 12, typical for silicon in near-infrared. The particularly simple drawing of the resulting band structure (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array is always preceded by a Bragg band gap. 
+Construction of an optical or near-infrared metamaterial restricts the choice of permittivity compared to the terahertz range. 
+The permittivity of silicon, $\epsrl \approx 12$, is one of the highest available in the near infrared range. The band structure corresponding to $\epsrl=12$ (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array would  always be preceded by a Bragg band gap. 
 
+Figs. \ref{fg_drawn100} \ref{fg_drawn100} and \ref{fg_fxplot} show that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. This qualitative change occurs for a particularly low filling fraction in the array of rods parallel to the electric field, but it should occur in other kinds of structures, provided their unit cells are so small to promote strong near-field interaction of neigbouring resonant elements.
 %}}}
-\paragraph{Discussion}%{{{
-Figs. \ref{fg_drawn100} and \refs{fg_fxplot} shows that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. 
+\paragraph{Discussion} %{{{
 
 
-In the array of rods parallel to the electric field, this qualitative change occurs for a particularly low filling fraction.
+A very similar structure Ref. \cite{vynck2009all} is studied within the metamaterial paradigm. Each rod is viewed as a separate dielectric resonator, with analytical formula for the Mie resonance frequencies. The overlap of the electric and magnetic resonance is predicted even for a relatively low permittivity $\epsrl = 12$. Based on this, its authors conclude that a metamaterial with $\Neff'<0$ can be built of silicon rods -- which is in direct contradiction with our results presented above.
+
+Ref. \cite{peng2007} experimentally investigates a metamaterial made of square bars parallel to the electric field, with very high permittivity of $\epsrl=600$. The geometry of the bars is equivalent to the \textit{dense array} of cylindrical rods $a/\rho \sim 3$, which means it should classify as the \textit{dense} array, exhibiting no individual resonances and no negative index of refraction. However, as the major result of the paper \cite[Fig. 3bc]{peng2007} it is demonstrated that negative refraction occurs at the wedge, and it is more or less maintained upon randomization of the rod positions.
+
+Our results \cite{dominec2014transition} appear to be in contradiction with the predicted \cite{vynck2009all} and observed \cite{peng2007} negative refraction.
+
+
+\cite{rybin2014photonic}
+\cite{rybin2015phase}
+
 %% References:
-%% Ref. \cite{peng2007} uses $\epsrl=600$ and $a/\rho \sim 3$ (square bars)
-%% Ref. \cite{vynck2009all}
-%% Ref. \cite{shi2007}
+% 
+
 %% 
 , similar to 
-We conjecture it would be observed in many other kinds of dielectric, or even other, metamaterials, provided their unit cell size would be reduced sufficiently to bring the resonant elements into strong enough interaction with the near field of their neighbours. %% TODO rewrite
 
 \add{
 %which imposes strict limits on the geometry, 
@@ -1008,10 +1012,8 @@ We demonstrated that for $\Neff'<0$, not only the high permittivity contrast, bu
 This structure lies at the boundary between the criteria for MMs and PhCs described in the Introduction.  To determine its refraction angle, in general, it is not possible to use the concept of the effective refractive index and its iso-frequency contours have to be used instead (like in PhCs). At the same time, this structure was proved to partially retain negative refraction even under randomization of the positions of the dielectric bars \cite{peng2007}, implying that most of the resonant energy is concentrated inside the dielectric (which is characteristic of MMs).
 }
 %}}}
-
-
-
 \FloatBarrier %====================================================================================================
+
 \section{Metallic sheet with slits} \label{section_eot}
 Wood anomaly in hole arrays
 Standing SPP wave

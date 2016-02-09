@@ -83,12 +83,11 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be
 \paragraph{Local response definition} \label{subsection_local_resp} %{{{
 In the whole chapter, we expect the medium properties to be time-invariant, linear, and homogeneous (i.e. independent of time, field amplitude and position in space, respectively). 
 In this section, we focus on the special case when the response of the medium in point $\rr$ is not influenced by the electric field in any other point $\brho \neq \rr$. The medium is then said to be \textit{local}. 
-For most media found in nature, this approximation is very close to reality. Most electrodynamics textbooks seem omit the nonlocal effects. 
-However using this local theory to a wave propagating through periodic structures has a priori no justification and may lead to completely wrong results. The local theory presented here will serve as a basis for the nonlocal theory developed in following chapters.
+For most media found in nature, this approximation is very close to reality, except for optics on the nanometric scale \cite{wubs2013nonlocal}. Hence, most electrodynamics textbooks omit the discussion nonlocal effects. However, using the local theory to a Bloch wave propagating through periodic structures has a priori no justification and may lead to completely wrong results. The local theory presented here will serve as a basis for the nonlocal theory developed in following chapters.
 % Applying the more familiar local electrodynamics to these structures is a mistake common to many papers. While the local theory is mathematically consistent, it predicts unusual spectral shapes and does not allow their further physical interpretation.
 
 When an electric field $\E$ is applied, the medium responds by a change of the electric displacement $\D$ in a characteristic way. 
-The immediate response of vacuum from the right side of the constitutive equations (\ref{eq_ce}) remains unchanged, but the response of the matter adds a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{response function} $\chi_e$ with the values of electric field in the previous time $\tau$:
+The immediate linear relation between $\E$ and $\D$ observed in vacuum, appearing at the right side of the constitutive equations (\ref{eq_ce}), remains unchanged, but the response of the matter complements it with a new term called \textit{electric polarisation}. The polarisation is not instantaneous, so it is generally expressed as a convolution of the \textit{response function} $\chi_e$ with the values of electric field in the previous time $\tau$:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E(t,\rr) + \varepsilon_0 \int_{-\infty}^{t}\chi_e(t-\tau)\, \E(\tau,\rr)\,\mbox{d}\tau. \label{eq_loc_chi_convol}\end{equation}
 Let us assume that a harmonic plane wave propagates through the medium, so $\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}$, as given by Eq. (\ref{eq_pw}). This can be inserted in the above equation:
 \begin{equation} \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \varepsilon_0 \int_{-\infty}^{t} \chi_e(t-\tau) \, \E_0 \, e^{\ii\omega \tau - \ii\kk\cdot\rr} \,\mbox{d}\tau. \label{eq_chi_convol_harm}\end{equation}
@@ -970,7 +969,7 @@ In three-dimensional cubic lattice, these points maintain their meaning in the p
 %% \paragraph{Dispersion curves for the reduced Brillouin zone} %{{{ 
 %% %}}}
 \paragraph{Tight-binding model for the photonic band gaps} %{{{
-The notation of the high-symmetry points in the Brillouin zone can outline a different way of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
+The notation of the high-symmetry points in the Brillouin zone can outline a different way \cite{shi2007} of understanding the origin of the dispersion, which can be drawn in analogy with the \textit{tight-binding},   %% TODO cite?
 or also \textit{hopping},  %% TODO cite?
 model in solid-state physics. 
 
