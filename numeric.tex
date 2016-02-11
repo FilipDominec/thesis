@@ -454,14 +454,16 @@ From the \textit{Fourier-Plancherel theorem} %% TODO ref
 it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
 \label{convolringing}
-Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the sinc function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}, does not improve spectral resolution, but it suppresses the visually distracting artifacts. Therefore, all four time records were multiplied by the envelope function $g(t)$ before further processing:
+Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the $sin(f)/f$ function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}, does not improve spectral resolution, but it suppresses the visually distracting \textit{ringing artifacts}, which are apparent for the quadrupole resonances in Fig. \ref{fg_expe_fishnets}. 
+
+To this end, all four time records were multiplied by the envelope function $g(t)$ before further processing:
 \begin{equation} 
 \begin{split}
 	g(t) 	& = 1 \text{ for } t < 0.8 t_{sim} \\
 	g(t)    & = \frac{1 + \cos\left(\pi \frac{t/t_{sim}-0.8}{1-0.8}\right)}{2}  \text{ for } t > 0.8 t_{sim},
 \end{split}
 \label{eq_envelope}\end{equation}
-which ensured that after 80 \% of the overall simulation time $t_{sim}$ the field starts dropping smoothly to zero, similar to the \textit{Hann window} function often used in digital signal processing. 
+which ensured that after 80 \% of the overall simulation time $t_{sim}$ the field starts dropping smoothly to zero, introducing a temporal envelope similar to the \textit{Hann window} function often used in digital signal processing. 
 
 By means of the Fourier transform, the fields were converted to the frequency domain. This operation is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. 
 \begin{figure}[ht] \caption{An illustration of how the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) are oriented in the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
