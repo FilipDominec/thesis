@@ -842,7 +842,9 @@ Note that this strong coupling is specific for this particular rod orientation. 
 \paragraph{Medium-density rod array}%{{{
 Through moderate reduction of the unit cell size $a$ to 90 $\upmu$m, as represented by the green line in Fig. \ref{fg_erods_acomparison}, the electric and magnetic resonance frequencies approach each other, shifting to $f_E \approx$ 950 and $f_M \approx$ 1070 GHz, respectively. This eventually leads to an overlap of the $\eeff'(f)<0$ and $\meff'(f)<0$ regions, and a negative-index band is formed between 1130 and 1200~GHz.  
 
-At the upper-frequency edge of the band with $\Neff'<0$, either the effective permeability or permittivity becomes positive, for $a\lesssim 92$ $\upmu$m or  $a\gtrsim 92$ $\upmu$m, respectively. This is another subtle, but qualitative change in the structure behaviour. It manifests itself in the mode shapes resolved by PWEM, and the effective impedance $\Zeff=\sqrt{\meff/\eeff}$ reaching either very low or very high values at the band edge.
+At the upper-frequency edge of the band with $\Neff'<0$, either the effective permeability or permittivity becomes positive, for $a\lesssim 92$ $\upmu$m or  $a\gtrsim 92$ $\upmu$m, respectively. This is another subtle, but qualitative change in the structure behaviour. 
+%It manifests itself in the mode shapes resolved by PWEM, and the effective impedance $\Zeff=\sqrt{\meff/\eeff}$ reaching either very low or very high values at the band edge. 
+At the exact radius of cross-over, the effective permittivity and permeability change their sign at the same frequency, and a \textit{zero-width band gap} is obtained \cite{croenne2009_subwl_hole}. Unlike the Fabry-Pérot resonances in 1-D PhC, this band gap is located at $\Neff'=0$, which results in a peculiar regime of operation: In an idealized loss-less model, the wave does not exponentially decay nor acquires any phase advance in the metamaterial volume. Still, its group velocity is nonzero. Hence, a spatial modulation of the wave envelope can propagate over the wave, which oscillates in phase. This can be viewed as a complementary phenomenon to the narrow photonic bands, where, due to vanishing inter-cell coupling, the phase velocity is orders of magnitude higher than the group velocity (c.f. the second band in Fig. \ref{fg_cdh2}b).
 
 Both points of near-zero transmittance at $f_E$ and $f_M$, indicating individual resonances, come closer to each other with further reduction of $a$. The maximum transmittance between both resonances decreases approximately with the second power of the frequency difference:
 \begin{equation} \underset{f \in\,\langle f_E,f_M\rangle}{\text{max}} |t| \propto \frac{1}{(f_E-f_M)^{2}}, \label{eq_fEfM}\end{equation}
@@ -1006,12 +1008,45 @@ As mentioned earlier, thin metallic wires do not appreciably interact with the e
 Wood anomaly in hole arrays
 Standing SPP wave
 
+@article{croenne2009left,
+  title={Left handed dispersion of a stack of subwavelength hole metal arrays at terahertz frequencies},
+  author={Cro{\"e}nne, Charles and Garet, Fr{\'e}d{\'e}ric and Lheurette, {\'E}ric and Coutaz, Jean-Louis and Lippens, Didier},
+  journal={Applied Physics Letters},
+  volume={94},
+  number={13},
+  pages={133112},
+  year={2009},
+  publisher={AIP Publishing}
+}
 % TODO Croenne2009_subwl_hole.pdf
+% left-handed at 450 GHz (First in THz band)
+% negative phase advance requires at least two layers stacked? This would 
+% In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
+% Impedance matching by elliptic holes
+% benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
+% "zero transmission = antiresonance state"??
+% 250x180um elliptic holes in thin gold films, 30-44 um spacing only
+
 % TODO Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
+%
+%
+%
 % TODO Lalanne-Theory_of_fishnet_optical_NIM.pdf
+%
+%
+%
 % TODO Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
+%
+%
+%
 % TODO Tanemura2012_EOT_arbitrary_located.pdf
+%
+%
+%
 % TODO Valentine2011-Development_of_bulk_optical_Fishnet_NIMs.pdf
+%
+%
+%
 % TODO Wang2010b-exp_neg_refr_on_wedge_THz.pdf
 % TODO Wang2010-Composite_left-right_arrays_of_holes.pdf
 % TODO Weiner-Transmission_through_metallic_slits.pdf
