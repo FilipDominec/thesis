@@ -981,8 +981,9 @@ Construction of an optical or near-infrared metamaterial restricts the choice of
 The permittivity of silicon, $\epsrl \approx 12$, is one of the highest available in the near infrared range. The band structure corresponding to $\epsrl=12$ (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array would  always be preceded by a Bragg band gap. 
 
 Figs. \ref{fg_drawn100} \ref{fg_drawn100} and \ref{fg_fxplot} show that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. This qualitative change occurs for a particularly low filling fraction in the array of rods parallel to the electric field, but it should occur in other kinds of structures, provided their unit cells are so small to promote strong near-field interaction of neigbouring resonant elements.
+
 %}}}
-\paragraph{Discussion} %{{{
+\paragraph{Comparison to other publications} %{{{
 A very similar structure  is studied in Ref. \cite{vynck2009all} as a metamaterial; each rod is viewed as a separate dielectric resonator, with analytical formula used to establish the Mie resonance frequencies of an isolated rod. Since the inter-cell coupling is neglected in the paper, its authors predict that the electric and magnetic resonances would be found even for a relatively low permittivity $\epsrl = 12$. Based on this, its authors conclude that a metamaterial with $\Neff'<0$ can be built of silicon rods -- which is in direct contradiction with our results presented above, and in Ref. \cite{dominec2014transition}.
 
 A was studied recently in Ref. \cite{rybin2014photonic}; again the Mie resonance frequencies were deduced from the analytical formula, without taking into account the near-field coupling thereof. The paper correctly identifies that different choices of the rod parameters, $\epsrl$ and $a/\rho$, can exchange the order of Bragg and Mie resonances 
@@ -994,7 +995,11 @@ The clash can be explained by a relatively big angle of the wedge around 20$^\ci
 
 The relevant references (\ref{shi2007, peng2007, vynck2009all, rybin2014photonic, dominec2014transition}) come from the last ten years, although they are based on experimental and numerical methods that could be used already several decades ago. This confirms the author's view that the publications are incited by relatively recent merging of the \textit{metamaterial} and \textit{photonic crystal} paradigms (see Fig. \ref{fg_mm_phc_diagram}).
 
+%}}}
+\paragraph{Implications for all-dielectric negative-index metamaterials} %{{{
 In Refs.  \cite{rybin2014photonic} and \cite{dominec2014transition}, the structure behaviour is described as metamaterial-like, when the lowest band gap contains one or both Mie resonances. Otherwise, when the first band gap is of Bragg type, the structure is classified among photonic crystals. This is however a rather formal notation. The terminology difference has been discussed in the theoretical section, with the conclusion that one structure can be a representative of metamaterials and photonic crystals simulaneously, depending on the paradigm one prefers to use for its description. 
+ 
+%% TODO add:  the disappearance of resonances is an objective reality; the resonant skips in $\Neff'$ are required to fulfill the Kramers-Kronig relations of itts spectra
 
 A sufficiently high permittivity can be found in the microwave and terahertz ranges, in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.
 
@@ -1007,18 +1012,22 @@ As mentioned earlier, thin metallic wires do not appreciably interact with the e
 
 Wood anomaly in hole arrays
 Standing SPP wave
+% XXXXXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX  XXX 
 
-@article{croenne2009left,
-  title={Left handed dispersion of a stack of subwavelength hole metal arrays at terahertz frequencies},
-  author={Cro{\"e}nne, Charles and Garet, Fr{\'e}d{\'e}ric and Lheurette, {\'E}ric and Coutaz, Jean-Louis and Lippens, Didier},
-  journal={Applied Physics Letters},
-  volume={94},
-  number={13},
-  pages={133112},
-  year={2009},
-  publisher={AIP Publishing}
-}
-% TODO Croenne2009_subwl_hole.pdf
+% TODO \cite{lalanne2005theory} %Lalanne-Theory_of_fishnet_optical_NIM.pdf
+% SPP on surface impact the transmission through a nano-aperture; 
+% with shallow corrugation SPPs angularly confine the re-radiated field
+% when gold in optical range is used, a lot of energy is coupled to SPP: optimum 40% at w=0.23lambda
+% close to the slit, many evanescent modes overlap; can be uniquely decomposed
+% for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
+
+
+
+
+
+\FloatBarrier %====================================================================================================
+\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
+% TODO \cite{croenne2009left}
 % left-handed at 450 GHz (First in THz band)
 % negative phase advance requires at least two layers stacked? This would 
 % In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
@@ -1027,35 +1036,44 @@ Standing SPP wave
 % "zero transmission = antiresonance state"??
 % 250x180um elliptic holes in thin gold films, 30-44 um spacing only
 
-% TODO Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
-%
-%
-%
-% TODO Lalanne-Theory_of_fishnet_optical_NIM.pdf
-%
-%
-%
-% TODO Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
-%
-%
-%
-% TODO Tanemura2012_EOT_arbitrary_located.pdf
-%
-%
-%
-% TODO Valentine2011-Development_of_bulk_optical_Fishnet_NIMs.pdf
-%
-%
-%
-% TODO Wang2010b-exp_neg_refr_on_wedge_THz.pdf
+% TODO \cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
+% obviously fishnets are hyperbolic both in permittivity and permeability
+% study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
+% depending on the number of layers Neff spectra up-shift in frequency and converge 
+% the IFCs are complicated; for higher angle of incidence the structure Neff becomes positive (so it makes no sense)
+% they report Neff' switching its sign, but it is somewhat confused
+% angle-dependent scalar refractive index not meaningful
+% under oblique incidence, SPPS are supposed to be excited preventing Neff'<0 to occur
+% nonlocality with the transverse changes in wave vector is important
+
+
+\cite{navarro2011dual} % Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
+% "Neff<0 has a strong connection to SPP in fishnets", 
+% in microwave and THz, also known as "extraordinary transmission MMs"
+% the +1,0 "internal diffraction order" is the usual negative-index mode
+% the +1,+1 "internal diffraction order" can also result in negative index
+% experiment in microwave: 2.5x2.5 mm unit cell, stack periodicity 0.525 mm with 2.43 diel eps, hole radius 0.55 mm
+% alternating M-I-M-I... structure, but a "functional layer" is a M-I-M
+
+\cite{valentine2011development}
+% assume that Neff<0 is a result of "separate engineering" of  mu<0, eff<0
+% fishnet monolayer "does not" allow investigation of negative phase (?? in contradiction with my results!)
+% alternative explanation of Neff<0 is in coupling of spoof plasmons
+% show convergence of Neff for 2 (bad) to 5 (good) layers; geometry: 0.860x0.860 um, hole 0.2x0.6 um, stack 0.083 um
+% experimental negative refraction of a wedge, operated around 1.5 um
+% the metamaterial is anisotropic; under higher incidence angles Neff can not be used
+% electric field mostly confined to the hole, magnetic to the inter-sheet space
+% highest FOM at NIR (1.5 um) is 3.0 [Dolling 2006 Opt. Lett., vol. 31, pp. 1800–1802,]
+% scaled to yellow light (0.58 um), but with FOM of 0.3 oa [S. Xiao 2007 Opt. Lett., vol. 34, pp. 3478–3480, 2009.]
+
+\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
 % TODO Wang2010-Composite_left-right_arrays_of_holes.pdf
 % TODO Weiner-Transmission_through_metallic_slits.pdf
 % TODO Yahiaoui2012-Metallodielectric_structure_with_negative_N.pdf
 % TODO Zhang2005-Transmission_of_doped_silicon_hole_array.pdf
 
 
-\FloatBarrier %====================================================================================================
-\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
+
 %{{{ TODO notes
 \paragraph{Extraordinary transmission}
 \add{
@@ -1080,9 +1098,10 @@ Standing SPP wave
 	surface plasmons, standing/propagating
 	--> back reference to expe.tex:79
 
+	... cite ebbesen?
 	%Babinet principle
 
-	... appears hard to be homogenized by the s-parameters \cite{wang2010composite}
+	... appears hard to be homogenized by the s-parameters \cite{wang2010composite} -- establish why
 
 	% for nearly flat structures, where most of the fields are confined within a slab perpendicular to $\KK$, a
 
@@ -1152,4 +1171,5 @@ For simulation of the fishnet, the resolution in the FDTD simulation was deliber
 % \cite{croenne2009controle}
 % todo	* PhCs with metallic/metamaterial inclusions, [Monsoriu, Lina Shi and friends]
 	%electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
+% Aleian 2012 Plasmonic Au SiO2 nanoparticles
 
