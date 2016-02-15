@@ -332,7 +332,7 @@ and there is probably no need to seek for another explanation. %%TODO rewiew, re
 % when not failing due to chirality, s-param yields beautifully similar results to our simulations!
 % "CMM = Composite MetaMaterial"
 %}}}
-\paragraph{Comparison of the s-parameters method and CDH}%{{{
+\paragraph{Comparison of the s-parameters method and current-driven homogenisation}%{{{
 With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, a question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ is applicable. While the Bloch theorem in Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be determined for any periodic structure, the s-parameter method might return invalid values.
 
 Dispersion curves obtained by the s-parameters method and by the current-driven homogenisation (CDH) are compared in Fig. \ref{fg_cdh5}. Although these methods are fundamentally different, their results overlap, and thus one can assume that the array of symmetric split-ring resonators can be treated as homogeneous with well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances, where the Bloch wavelength is similar to the unit cell size. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
@@ -980,7 +980,9 @@ The dielectric permittivity contrast of at least 50 appears to be crucial for ob
 Construction of an optical or near-infrared metamaterial restricts the choice of permittivity compared to the terahertz range. 
 The permittivity of silicon, $\epsrl \approx 12$, is one of the highest available in the near infrared range. The band structure corresponding to $\epsrl=12$ (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array would  always be preceded by a Bragg band gap. 
 
-Figs. \ref{fg_drawn100} \ref{fg_drawn100} and \ref{fg_fxplot} show that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. Strong enough near-field interaction is sufficient, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. This qualitative change occurs for a particularly low filling fraction in the array of rods parallel to the electric field, but it should occur in other kinds of structures, provided their unit cells are so small to promote strong near-field interaction of neigbouring resonant elements.
+Figs. \ref{fg_drawn100} \ref{fg_drawn100} and \ref{fg_fxplot} show that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. This is in line with the observation that the scattering cross-section of sub-wavelength objects tends to be greater than their geometrical extent, in particular close to resonances.
+
+Strong enough near-field interaction is sufficient for a topological change of nodal planes, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. This qualitative change occurs for a particularly low filling fraction in the array of rods parallel to the electric field, but it should occur in other kinds of structures, provided their unit cells are so small to promote strong near-field interaction of neigbouring resonant elements.
 
 %}}}
 \paragraph{Comparison to other publications} %{{{
@@ -1007,27 +1009,89 @@ A sufficiently high permittivity can be found in the microwave and terahertz ran
 \FloatBarrier %====================================================================================================
 
 \section{Metallic sheet with slits} \label{section_eot}
-As mentioned earlier, thin metallic wires do not appreciably interact with the electromagnetic wave when oriented perpendicular to the electric field. The situation changes when they are broadened to form an array of conductive stripes.
+%\begin{figure}[h!]  %{{{ yslit_xcomparison
+	%\caption{Amplitude of \textbf{(a)}  reflectance and \textbf{(b)} transmittance of a single sheet of gold with different width of slits. Sheet thickness was $d_z = 12$ $\mu$m, unit cell size $a = 100$ $\mu$m and grid resolution was 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm} 
+%%% NOTE: if realistic materials are needed, erods_acomparison-loLoss_r.pdf can be substituted for  erods_acomparison_r.pdf etc.
+%\begin{tabular}{r}
+%\begin{overpic}[width=0.85\textwidth]{img-meep/yslit_xcomparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
+%\begin{overpic}[width=0.85\textwidth]{img-meep/yslit_xcomparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
+%\end{tabular}
+%\end{figure}
+%%}}}
+\paragraph{Low-frequency behaviour}%{{{
+When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes when the wires are widened into stripes, with their dimension along the $x$-axis not much smaller than their spacing $a$. They may be then better described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field.
 
+Scattering at 
 
-Wood anomaly in hole arrays
-Standing SPP wave
-% XXXXXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX  XXX 
+%}}}
+\paragraph{Standing surface plasmon resonance}%{{{
 
-% TODO \cite{lalanne2005theory} %Lalanne-Theory_of_fishnet_optical_NIM.pdf
+% todo ... counter-propagating surface plasmons, with their wavelength exactly matching the transverse unit cell dimension $a_x$.
+
+%}}}
+\paragraph{Effect of metallic slab thickness}%{{{
+
+%}}}
+\paragraph{Effective parameters of sheet-slit array}%{{{
+So far we discussed the properties of a single layer only, but when the unit cell size along the wave propagation axis is given, the effective parameters can be also computed for an infinite stack thereof.
+
+However, due attention must be paid to the validity of s-parameter method, since this is one of structures with strong coupling to the neigbouring cells.  A great portion  of the resonant energy is carried by the surface plasmons that are not localized inside the gap. On the contary, it was already shown that SPP easily couple with those on nearby metallic surfaces, forming slot-waveguide modes \cite{weiner2011electromagnetics}.
+
+The current-driven homogenisation setup simulates one unit cell in an exact periodic environment of other cells, and is fully  suitable even for structures with strong coupling of neighbouring cells.
+%}}}
+\paragraph{}%{{{
+
+%}}}
+\cite{lalanne2005theory} %Lalanne-Theory_of_fishnet_optical_NIM.pdf
 % SPP on surface impact the transmission through a nano-aperture; 
 % with shallow corrugation SPPs angularly confine the re-radiated field
 % when gold in optical range is used, a lot of energy is coupled to SPP: optimum 40% at w=0.23lambda
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
 % for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
 
+\cite{weiner2011electromagnetics} % Weiner-Transmission_through_metallic_slits.pdf
+% references to many papers on subwavelength slit and aperture transmission
+% study of 50x2000 um slit and double-slit transmission through a 200 nm Ag film embedded in glass 
+% show a snapshot of the E field on an aperture -- it is inverse on the rear side
+% for thicker slabs, higher-order Fabry-Pérot interferences occur inside the slit space
+%      the wave is the "lowest-order symmetric plasmon mode of a slot wave guide"
+%		(!! I know that even for thin sheets, multiple higher modes exist, just their manifestation in 
+%	    spectra is extremely narrow)
+% for double slits, clear interference of surface plasmons is visible with sinusoidal of slit pitch (lambdaSPP = 308nm)
+% (if the slits were periodic, a resonant coupling of the incident wave to surface plasmons would enable ~100% transmission)
+% experimental results 
+
+
+The points of low reflectance in Fig. \ref{fg_yslit_dscan}a correspond to the effective impedance of the structure $\Zeff \approx 1$, i.e. for the structure being matched to the surrounding air. The first set of such points starts very close to 3 THz (the diffraction limit)
+such a point in the spectra corresponds to a fundamental resonance of the slit.
+% todo for a slit in a  thicker metallic slab, the 
+
+\begin{figure}[htb] %{{{ fg_yslit_dscan
+	\caption{\textbf{(a)} Reflectance and \textbf{(d)} the imaginary part of the retrieved refractive index  %TODO 
+	% yslit_dscan_nr.pdf    yslit_dscan_t.pdf
+	} \label{fg_yslit_dscan}  \centering
+\begin{overpic}[width=0.48\textwidth]{img-meep/yslit_dscan_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
+\begin{overpic}[width=0.48\textwidth]{img-meep/yslit_dscan_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}\\
+\end{figure}
+%}}}
+As mentioned earlier, thin metallic wires do not appreciably interact with the electromagnetic wave when oriented perpendicular to the electric field. The situation changes when they are broadened to form an array of conductive stripes.
+
+
+Wood anomaly in hole arrays
+Standing SPP wave
 
 
 
 
 \FloatBarrier %====================================================================================================
 \section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
-% TODO \cite{croenne2009left}
+
+
+% TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf
+%xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
+%cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
+
+\cite{croenne2009left}
 % left-handed at 450 GHz (First in THz band)
 % negative phase advance requires at least two layers stacked? This would 
 % In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
@@ -1036,7 +1100,11 @@ Standing SPP wave
 % "zero transmission = antiresonance state"??
 % 250x180um elliptic holes in thin gold films, 30-44 um spacing only
 
-% TODO \cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
+\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
+% direct experimental verification of negative refraction
+% more elliptic holes 125x225, periodicity 
+
+\cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
 % obviously fishnets are hyperbolic both in permittivity and permeability
 % study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
 % depending on the number of layers Neff spectra up-shift in frequency and converge 
@@ -1060,17 +1128,19 @@ Standing SPP wave
 % fishnet monolayer "does not" allow investigation of negative phase (?? in contradiction with my results!)
 % alternative explanation of Neff<0 is in coupling of spoof plasmons
 % show convergence of Neff for 2 (bad) to 5 (good) layers; geometry: 0.860x0.860 um, hole 0.2x0.6 um, stack 0.083 um
-% experimental negative refraction of a wedge, operated around 1.5 um
+% experimental negative refraction of a wedge, dgedge.operated around 1.5 um
 % the metamaterial is anisotropic; under higher incidence angles Neff can not be used
 % electric field mostly confined to the hole, magnetic to the inter-sheet space
 % highest FOM at NIR (1.5 um) is 3.0 [Dolling 2006 Opt. Lett., vol. 31, pp. 1800–1802,]
 % scaled to yellow light (0.58 um), but with FOM of 0.3 oa [S. Xiao 2007 Opt. Lett., vol. 34, pp. 3478–3480, 2009.]
 
-\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
-% TODO Wang2010-Composite_left-right_arrays_of_holes.pdf
-% TODO Weiner-Transmission_through_metallic_slits.pdf
-% TODO Yahiaoui2012-Metallodielectric_structure_with_negative_N.pdf
-% TODO Zhang2005-Transmission_of_doped_silicon_hole_array.pdf
+\cite{yahiaoui2012metallo} % Yahiaoui2012-Metallodielectric_structure_with_negative_N.pdf
+% first metamaterial: S. Zhang, W, Fan, K. J. Malloy, S. R. Brueck, N. C. Panoiu and R. M.
+%Osgood, Near infrared double metamaterials, Optics Express, vol. 13,
+%pp. 4922-4930 (2005).
+%
+%
+%
 
 
 
