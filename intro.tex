@@ -91,7 +91,7 @@ At the end of the thesis, somewhat critical conclusions from the above results a
 \section{Conventions used}%{{{
 Throughout the thesis, a single or double apostrophe ($x', x''$) refers to the real and imaginary part of a complex number ($x$). Italic symbols represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
 
-The lists of symbols and abbreviations used are in Tables \ref{tb_symbols} and \ref{tb_shortcuts}, respectively.
+The lists of symbols and abbreviations used are in Tables \ref{tb_symbols} and \ref{tb_shortcuts}, respectively. 
 %The explicit time, space or frequency dependence of quantities are omitted when it can not cause confusion.
 
 An important note shall be made on the sign convention for the complex wave, as introduced in Eq. (\ref{eq_pw}).
@@ -109,6 +109,10 @@ thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. This is not th
 
 The unit system differs across the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimeter-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the meter-kilogram-second (SI) system.
 
+Having listed conventions we use, we should mention one convention we will avoid using. The term \textit{transverse-magnetic} (TM, or equivalently, \textit{p-polarized}) wave has its established meaning for oblique incidence on a homogeneous interface: it means that the magnetic field is perpendicular to the plane of incidence, and thus always parallel to the interface. The term \textit{transverse-electric} (TE, or, \textit{s-polarized}) denotes the opposite situation. 
+
+Unfortunately, the same notation is used by many papers also for a perpendicular incidence on a grating or other structure with 1-D periodicity. In majority of cases "TM" denotes that \textit{the magnetic field is transverse to the translation axis of the structure, the electric field parallel to it} \cite{joannopoulos2011photonic, rybin2014photonic}. Alas, in numerous other cases the same term "TM" denotes an opposite interpretation, i.e., that \textit{the magnetic field is perpendicular to the 2-D plane that represents the whole electromagnetic problem, and the electric field component lies in this plane} \cite{vynck2009all}. 
+Even greater complication arises under oblique illumination of a grating. These two different meanings of apparently identical terms can either come into a confusing discrepancy (TE+TM), an even more confusing agreement (TE+TE or TM+TM), or may also become inapplicable under general geometry of the wave or its polarisation.
 %% TODO definition between TM (or, "p") and TE (or, "s") conventions in quasi-two-dimensional structures
 %% ---- TM (or, "p") means: "electric field is along the translation axis of the structure, magnetic field along the grating vector"
 %% * \cite{rybin2014photonic} "modes with the magnetic component in the xy plane, i.e., TM (Hx, Hy, Ez)"
@@ -126,6 +130,7 @@ The unit system differs across the literature, too. Some of the references, e.g.
  \toprule
 Abbreviation & Meaning	\\
  \hline
+1-D, 2-D, 3-D & One-, two- and three-dimensional \\
 EDB			& (Formulation of Maxwell equations using the $\E$, $\D$ and $\B$ vectors)\\
 FDFD 		& Finite-difference frequency-domain (algorithm)\\
 FDM 		& Filter diagonalisation method (algorithm)\\
@@ -138,6 +143,7 @@ IFC			& Isofrequency contours\\
 LHM			& Left-Handed (Meta)Material\\ 
 MM			& Metamaterial\\
 NGV 		& Negative group velocity\\
+NRI 		& Negative refractive index\\
 NRW 		& Nicolson-Ross-Weir (algorithm)\\
 PBG			& Photonic band-gap\\
 PhC 		& Photonic crystal\\
