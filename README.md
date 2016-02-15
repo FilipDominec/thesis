@@ -20,14 +20,14 @@
  * [X] 6	Dielectric sphere: introduce Mie resonances
  * [X]		prepare THz-TDTS data for diffeernt size fractions
  * [X] 7	SRRs and spheres in a wire array or grid
- * [/] 8	Dielectric rods parallel to the magnetic field
- * [/] 9	Dielectric rods parallel to the electric field
+ * [X] 8	Dielectric rods parallel to the magnetic field
+ * [X] 9	Dielectric rods parallel to the electric field
  * [X]		compare the OpEx2014 results with CDH? 
- * [ ] 10	Metallic sheet with slits
- * [ ] 11	Fishnet - metallic sheet with holes
+ * [/] 10	Metallic sheet with slits
+ * [/] 11	Fishnet - metallic sheet with holes
  * [X]		prepare THz-TDTS data from the laser-machined sample
  * [-]		prepare THz-TDTS data from the drilled sample?
- * [ ] 12	Other structures
+ * [-] 12	Other structures
  * [/] Conclusion
  * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
  * [-] SKIP Write a correct definition of effective eps and mu??
@@ -40,7 +40,7 @@
  * [X] Spheres - permeability spectra convolution - replot 
  * [ ]	somewhere is the granulometry histogram, see the PNG figure /home/filip/PhD/Output_web/img
 				and ~/PhD/Publications/120912_Konference_Petrohrad_Poster
- * [ ] Au-Mylar-Au fishnet? Decide if reasonable.
+ * [-] Au-Mylar-Au fishnet? Decide if reasonable.
  * [-] SKIP drilled fishnet (
 		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
 
