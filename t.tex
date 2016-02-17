@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc} 
+%\usepackage[top=3.5cm, bottom=3cm, left=3.cm, right=3.cm]{geometry} % a bit wider margins
 %\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry} 
 \usepackage[top=3cm, bottom=3cm, left=.5cm, right=.5cm, paperwidth=17.0cm, paperheight=29.7cm]{geometry}  %% DEBUG
 \usepackage{mathrsfs} 
@@ -21,8 +22,8 @@
 
 
 %% DEBUGGING ONLY, comment out in production version:
-\setcounter{tocdepth}{4} 
-\setcounter{secnumdepth}{4} 
+%\setcounter{tocdepth}{4} 
+%\setcounter{secnumdepth}{4} 
 
 \addbibresource{fdphd.bib}
 
@@ -38,30 +39,29 @@
 
  
 \begin{document}
- %\input{title.tex}
- %\tableofcontents
- %
- %\chapter{Introduction}
- %\input{intro.tex}
- %
- %\chapter{Theory} 
- %{\hfill \textit{``There is nothing more practical than a good theory.''} --- probably K. Lewin}
- %\input{theory.tex}
- %
- %\chapter{Numerical methods} 
- %{\hfill \textit{``Computers are useless. They can only give you answers.''} --- P. Picasso (1968)}
- %\input{numeric.tex}
+%\input{title.tex}
+%\tableofcontents
 %
- %\chapter{Experimental methods}
- %\input{expe.tex}
+%\chapter{Introduction}
+%\input{intro.tex}
 %
-%\chapter{Results}
-%\hfill \textit{``The purpose of computing is insight, not numbers.''} --- R. W. Hamming
-%\input{result.tex}
+%\chapter{Theory} 
+%\begin{flushright}  \textit{``There is nothing more practical than a good theory.''} --- probably K. Lewin \end{flushright}
+%\input{theory.tex}
+%
+%\chapter{Numerical methods} 
+%\begin{flushright}  \textit{``Computers are useless. They can only give you answers.''} --- P. Picasso (1968) \end{flushright}
+%\input{numeric.tex}
+%
+%\chapter{Experimental methods}
+%\input{expe.tex}
+
+\chapter{Results}
+\begin{flushright} \textit{``The purpose of computing is insight, not numbers.''} --- R. W. Hamming \end{flushright}
+\input{result.tex}
 
 \chapter{Conclusion}
 \begin{flushright} \textit{``If you want to build a ship, don't drum up people to collect wood \\and don't assign them tasks and work, but rather teach them to long \\for the endless immensity of the sea.''} --- Antoine de Saint-Exup\'{e}ry \end{flushright}
-
 \input{conclusion.tex}
 
 \label{endtext} 
