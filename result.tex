@@ -99,7 +99,7 @@ Note that with the correct branch retrieval procedure, the index of refraction n
 %}}}
 \section{Wire medium} \label{chap_wiremedium}%{{{
 \paragraph{High-frequency behaviour}%{{{
-The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire thickness is of similar magnitude to their spacing; such a case is discussed in another Section \ref{section_eot}.
+The structure formed of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following. The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic wave, until the wire width is of similar magnitude to their spacing; such a case is discussed in Section \ref{section_eot}.
 
 In the high-frequency part of the spectrum above the first photonic band, where more than a half wave fits into the unit cell, the layers of metallic rods can be approximated by thin scattering slabs from the previous section, since the high-frequency interaction of the wave can be described of photonic bands alternating with Bragg band gaps. In contrast with the dielectric PhC described above, no Fabry-Pérot resonances are observed and the scattering strength of the wire layers reduces monotonously with growing frequency.
 
@@ -113,7 +113,7 @@ In the high-frequency part of the spectrum above the first photonic band, where 
 \end{figure}
 
 %}}}
-\paragraph{Inductive behaviour at low-frequencies}%{{{
+\paragraph{Inductive behaviour at low frequencies}%{{{
 At low frequencies, in contrast, the interaction of the conductive wires with the electromagnetic wave becomes very strong and leads to completely different behaviour than that described above. For a frequency range from zero up to the \textit{effective plasma frequency} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary and $k'\approx 0$. Therefore, in the low-frequency part of the spectrum, the local effective permittivity $\eeff$ is a physically meaningful quantity and follows the law typical of inductive media:
 \begin{equation} \eeff(f) = 1 - \frac{f^{2}}{f_p^{2}}\label{eq_eeff_plasma}\end{equation}
 Such a dependence of $\epsrl$ was already used in the Drude model in Eq. (\ref{eq_drude_eps}), and plotted in Fig. \ref{fg_Au_models}. Owing to this similarity to metals or plasma, wire arrays are denoted also as \textit{diluted metal} or \textit{artificial plasma} since 1950s \cite{merkel1973simulation, rotman1962plasma}, or as \textit{metallic delay dielectrics}, owing to the possibility to manipulate the phase and group velocities  \cite[p. 54]{brown1953artificial}.
@@ -1115,19 +1115,6 @@ The s-parameter method computes the same metallic structure, and only the phase 
 %xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
 %cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
 
-\cite{croenne2009left}
-% left-handed at 450 GHz (First in THz band)
-% negative phase advance requires at least two layers stacked? This would 
-% In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
-% Impedance matching by elliptic holes
-% benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
-% "zero transmission = antiresonance state"??
-% 250x180um elliptic holes in thin gold films, 30-44 um spacing only
-
-\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
-% direct experimental verification of negative refraction
-% more elliptic holes 125x225, periodicity 
-
 \cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
 % obviously fishnets are hyperbolic both in permittivity and permeability
 % study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
@@ -1138,6 +1125,17 @@ The s-parameter method computes the same metallic structure, and only the phase 
 % under oblique incidence, SPPS are supposed to be excited preventing Neff'<0 to occur
 % nonlocality with the transverse changes in wave vector is important
 
+
+\cite{croenne2009left}
+% 250x180um elliptic holes in thin gold films, 30-44 um spacing only, left-handed at 450 GHz (First in THz band)
+% negative phase advance requires at least two layers stacked? This would 
+% In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
+% Impedance matching by elliptic holes % benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
+% "zero transmission = antiresonance state"??
+
+\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
+% direct experimental verification of negative refraction
+% more elliptic holes 125x225, periodicity 
 
 \cite{navarro2011dual} % Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
 % "Neff<0 has a strong connection to SPP in fishnets", 
@@ -1173,11 +1171,12 @@ The s-parameter method computes the same metallic structure, and only the phase 
 
 %{{{ 
 \paragraph{Extraordinary transmission}
-\add{
-	Perforated plates: J. Rayleigh, “On the dynamical theory of gratings,” Proc. R. Soc. London A 79 , 399-416 (1907) 
-	... artificial dielectric theerof \cite[p. 58]{brown1953artificial} % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
-	... The resonance in the metallic mesh has been known for half a century \cite{vogel1964transmission}
-	... has been used as a filter \cite{ulrich1967effective,ulrich1967far}
+A natural modification of the above discussed structure is to add conductive connections between the metallic stripes. Transmission through perforated sheets was studied in 1907 by Rayleigh \cite{rayleigh1907dynamical} % todo with the main conclusion that.. 
+and half a century later, its resonant behaviour in the metallic mesh has been later used as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far}. 
+
+Already in 1950s the sheets were proposed to be periodically arranged into an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the field propagated parallel to the slabs, and the operation of the structure was different than what is employed nowadays.  % http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+	
+	has been known for half a century \cite{vogel1964transmission}
 	... cite ebbesen?  %Babinet principle?
 	... EOT transmission --- Aperture-array transmission --- Wood anomaly --- standing surface plasmons
 	... appears hard to be homogenized by the s-parameters \cite{wang2010composite} -- establish why
@@ -1187,8 +1186,11 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	Wood anomaly in hole arrays
 	}
 
+\paragraph{Negative index of refraction}
+Although fishnets appear to have nothing in common with other negative-index structures, their interaction with electromagnetic wave in fact bears a close resemblance to these: The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. 
 
-Although fishnets appear to have nothing in common with the negative-index structures presented above, their interaction with electromagnetic wave in fact bears a close resemblance, at least to some degree of approximation. The conventional explanation of the negative refractive index of fishnets is based on a combination of negative effective permittivity and permeability. The former should results from the inductive effect of the metallic connections, acting similar to the wires oriented along the $x-$axis. 
+The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, acting similar to the wires oriented along the $x-$axis.  
+The fishnet metamaterial is highly anisotropic, and the effective index of refraction is valid roughly within 0.1 rad from the axis, as was noted in the early study on artificial dielectrics \cite{brown1953artificial}. Under higher angles, jelaborated e.g.  index of refraction 
 
 The latter should be formed by individual resonances localised close to the fishnet holes, which exhibit a magnetic dipole moment.
 
