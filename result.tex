@@ -1214,6 +1214,20 @@ Periodically arranging the holes is equivalent to structuring of the surrounding
 
 % TODO \ref{fg_cdh_yslit}b -- add again about convergence of s-param method
 
+\begin{figure}[t] \caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs divided by slits of $d_x = 20$ $\mu$m and with  \textbf{(b)} $\rho_c = 8$.. Both simulations share the metallic slab thickness $d_z = 20$ $\mu$m and transverse unit cell size $a_x  = a_x = 100$ $\mu$m. } \label{fg_cdh_yslit} \centering %{{{
+	\vspace{.1\textwidth}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  
+	\put(1,96) {\textbf{(a)}} 
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 6$ $\upmu$m}
+	\end{overpic}
+	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  
+	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
+	\put(30,105){$\rho_c = 8$ $\upmu$m}
+	\put(1,96) {\textbf{(b)}} 
+\end{overpic}
+\end{figure}
+%}}}
 
 \paragraph{Negative index of refraction}
 An important difference  fishnet achieves relatively low losses, since it is optimised for thick and short conduction paths 
@@ -1223,8 +1237,7 @@ The magnetic response is formed by individual resonances localised close to the 
 
 This kind of metamaterial appears hard to be homogenized by the s-parameters \cite{wang2010composite}. The cause again appears to be in resonances 
 %... Improved cross-shaped pattern for better spectral selectivity %\cite{porterfield1994resonant}
-%TODO Bad convergence of s-paraemetr 
-\cite[Fig. ]{croenne2009controle}
+%TODO Bad convergence of s-paraemetr \cite{wang2010composite}, \cite[p. 102]{croenne2009controle}
 
 %TODO NOTE: Identifying the individual resonance with the |t|=0 point is confusing; what we observe is the Fano lineshape where |t|=0 frequency depends also on the background scattered wave. When the background is weak, the resonance frequency identifies with  |t|=0. When the background reflectance is close to 100%, the resonance identifies with |r|=0. And it goes more complicated when the background has intermediate values.
 
@@ -1245,7 +1258,7 @@ This kind of metamaterial appears hard to be homogenized by the s-parameters \ci
 \end{figure}
 %}}}
 \begin{figure}[t] %fg_expe_fishnets%{{{
-	\caption{Experimental and simulated amplitude of transmittance for fishnets \textbf{(a)} with 180$\times$200 $\mu$m holes and with \textbf{(a)} 
+	\caption{Experimental and simulated amplitude of transmittance for fishnets \textbf{(a)} with 180$\times$200 $\mu$m holes, and \textbf{(b)} with 230x255  $\mu$m holes.
 		%todo \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$
 	} 
 		\label{fg_expe_fishnets} 
@@ -1273,11 +1286,6 @@ The experimental transmittance spectra of these two samples are presented in Fig
 %}}}
 
 
-\paragraph{Quadrupole resonance}%{{{
-% TODO 
-For simulation of the fishnet, the resolution in the FDTD simulation was deliberately set to very coarse, with a voxel dimension of 10 $\mu$m. The discretisation error has broken the mirror symmetry of the fishnet hole (see Fig. \ref{fg_fnquadrup}), and introduced a slight electric dipole into the predominantly quadrupole mode, leading to its nonzero coupling of to the propagating wave. This resulted in narrow resonances emerging at 880 and 710 GHz in Fig. \ref{fg_expe_fishnets}, which explains the experimentally observed resonance notches close to these frequencies.  
-
-%}}}
 \begin{figure}[th] % fg_fnquadrup%{{{
   \begin{minipage}[b]{0.39\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
@@ -1291,6 +1299,14 @@ For simulation of the fishnet, the resolution in the FDTD simulation was deliber
   \vspace{20mm}} \label{fg_fnquadrup}
   \end{minipage}  
 \end{figure} 
+%}}}
+\paragraph{Quadrupole resonance in experimental data}%{{{
+For simulation of the fishnet, different grid resolutions were used. While usually 2 or 4 $\upmu$m voxel sizes were used throughout the thesis as a good tradeoff of simulation time and accuracy of results, in Fig.  \ref{fg_fnquadrup} the FDTD simulation was deliberately set to very coarse, with a voxel dimension of 10 $\mu$m. Still, the experimental and computed reflectance spectra yielded a very good match without any additional corrections.
+
+In most terahertz transmittance spectra of fishnets, a relatively sharp notch between 0.5 and 1.0 THz was observed. The discretisation error has helped to explain it, since it broke the twofold mirror symmetry of the fishnet hole. 
+
+This way, it also broke the symmetry of the first predominantly quadrupole mode, introducing a slight electric dipole into its field pattern  (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole started to coupling with the incident plane wave, and very narrow resonances emerged also in the simulated spectra in Fig. \ref{fg_expe_fishnets}, at 880 and 710 GHz, respectively. These values, still without any user intervention, the experimentally observed resonance notches close to these frequencies as a result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
+
 %}}}
 
 
