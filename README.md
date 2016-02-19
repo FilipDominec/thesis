@@ -26,9 +26,19 @@
  * [/] 10	Metallic sheet with slits
  * [/] 11	Fishnet - metallic sheet with holes
  * [X]		prepare THz-TDTS data from the laser-machined sample
- * [-]		prepare THz-TDTS data from the drilled sample?
- * [-] 12	Other structures
- * [/] Conclusion
+ * [o]		prepare THz-TDTS data from the drilled sample?
+ * [o] 12	Other structures
+ * [/] Conclusion: what should Conclusion contain:
+    *  [ ] overall analysis and integration of the research and conclusions of the thesis in
+    *      light of current research in the field
+    *  [ ] conclusions regarding goals or hypotheses of the thesis that were presented in
+    *      the Introduction, and the overall significance and contribution of the thesis
+    *      research
+    *  [ ] comments on strengths and limitations of the thesis research
+    *  [ ] discussion of any potential applications of the research findings
+    *  [ ] an analysis of possible future research directions in the field drawing on the work
+    *      of the thesis
+
  * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
  * [-] SKIP Write a correct definition of effective eps and mu??
 
