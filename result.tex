@@ -1019,14 +1019,14 @@ A sufficiently high permittivity can be found in the microwave and terahertz ran
 \end{figure}
 %}}}
 \paragraph{Low-frequency behaviour of a thin sheet}%{{{
-When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes when the wires are widened into stripes, with their dimension along the $x$-axis not much smaller than their spacing $a$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field.
+When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes when the wires are widened into stripes, with their dimension along the $x$-axis not much smaller than their periodicity $a_x$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field.
 
 When the wavelength is significantly longer than the slit distance, a single sheet partially reflects the incident radiation (Fig. \ref{fg_yslit_xcomparison_d20}). The reflection amplitude $|r|$ monotonously decreases with the slit width $d_x$. 
 It vanishes in the low-frequency limit for any $d_x>0$, since the macroscopic structure is not conductive in the direction of the electric field. 
 
-The low-pass filtering capability of this structure is shown in more detail in the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
+The low-pass filtering capability of this structure is illustrated in more detail by the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
 The unit cell size in the $x$-direction for both presented figures was $a_x = 100$ $\upmu$m. 
-The highest frequency in the plots was determined by the onset of the first diffraction order as $c/a_x = 3.0$ THz. 
+The upper frequency limit in the plots was determined by the onset of the first diffraction order as $c/a_x = 3.0$ THz. 
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_xscan 
@@ -1037,19 +1037,23 @@ The highest frequency in the plots was determined by the onset of the first diff
 \begin{overpic}[width=0.48\textwidth]{img-meep/yslit_xscan_d20_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}\\
 \end{figure}
 %}}}
-\paragraph{Standing surface plasmon resonance} %{{{
-At a frequency just below the onset of diffraction, a relatively narrow notch in the reflectance spectrum is observed. The frequency where $|r|$ drops close to zero depends on the slab thickness $d_z$ -- which will be shown later -- and on the slit width $d_x$. In the above figures where $d_z$ was fixed at $20$ $\upmu$m, the lowest frequency of the notch around $2.8$ THz is reached for $d_x/a_x \sim 0.3$ (see Fig. \ref{fg_yslit_xscan}a). 
+\paragraph{Wood's anomaly near the diffraction edge} %{{{
+At a frequency slightly below the onset of diffraction, a relatively narrow notch in the reflectance spectrum is observed. The frequency where $|r|$ drops close to zero depends on the slab thickness $d_z$ -- which will be shown later -- and on the slit width $d_x$. In the above figures where $d_z$ was fixed at $20$ $\upmu$m, the lowest frequency of the notch around $2.8$ THz is reached for $d_x/a_x \sim 0.3$ (see Fig. \ref{fg_yslit_xscan}a). 
 
 For a narrower or wider slit, the frequency of the notch increases and eventually approaches the diffraction limit of $3.0$ THz. 
 The notch also becomes narrower in spectrum, but does not appreciably reduce its depth. Some frequency can always be found at which nearly 100 \% of the energy is transmitted through the structure.
 
-The transmission is mediated by electromagnetic waves propagating along the metallic surface, i.e., parallel to the $x-$ axis. 
-The field distribution is similar to surface plasmons-polaritons (SPP), but particularly in the terahertz range and below it, it is bound to the structure also by means of its corrugation. Such a wave is known as \textit{spoof surface plasmons}.  % todo cite
-The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$, and has a direct connection with the \textit{Wood's anomaly} \cite{wood1902remarkable},  observed in 1902 as an abrupt drop in reflectance on a metallic grating.
+The transmission is mediated by electromagnetic waves propagating along the metallic surface, i.e., parallel to the $x$-axis.  %todo cite
+The field distribution is similar to surface plasmons-polaritons (SPP). In the terahertz range and below it should be more precisely referred to as \textit{spoof surface plasmons}, since it is bound to the structure predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the plasmons would propagate in the \textit{Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
+The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$.
 
-Since the structure and fields are symmetric with regards to the $x$-axis, an equal amplitude of plasmons propagating forward and backward is excited. They form a standing plasmonic wave, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on coupling of the incoming plane wave to SPP, coupling of SPP to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
+A closely related phenomenon  caused by surface plasmons, the \textit{Wood's anomaly}, was discovered in 1902 to cause a sharp drop of reflectance of metallic gratings \cite{wood1902remarkable}, and has incited many theoretical studies starting with that of Lord Rayleigh \cite{rayleigh1907dynamical} from 1907.  % todo with the main conclusion that.. 
 
-Surface-plasmon assisted transmission through a slit was studied earlier and optimum slit width for wave-plasmon coupling was found at $d_x \approx 0.23 \lambda$ \cite{lalanne2005theory}, which matches the lowest-frequency point of the zero-reflection curve in Fig. \ref{fg_yslit_xscan}a. The coupling strength is however not crucial for extraordinary transmission efficiency; since it is a resonant process, it can transmit high amplitude by weak coupling through arbitrarily narrow slits. 
+%}}}
+\paragraph{Standing surface plasmon resonance} %{{{
+Since the structure and incident fields are both symmetric, equal amplitudes of plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic wave, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on coupling of the incoming plane wave to SPP, coupling of SPP to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
+
+In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably matches the point of lowest frequency for the zero-reflection curve in Fig. \ref{fg_yslit_xscan}a. The coupling strength apparently down-tunes the frequency, however it is not crucial for the peak transmission efficiency; since it is a resonant process, it can transmit high amplitude even through arbitrarily narrow slits. 
 
 %Lalanne-Theory_of_fishnet_optical_NIM.pdf
 % SPP on surface impact the transmission through a nano-aperture; 
@@ -1058,7 +1062,7 @@ Surface-plasmon assisted transmission through a slit was studied earlier and opt
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
 % for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
 
-For this to happen, however, extraordinary transmission requires strict periodicity of the slits along the $x$-axis, and symmetry of the front and rear sides of the structure along the $z$-axis. A numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate approaches one side of the structure. The dielectric did not have to touch the metal directly; a distance similar the approximate decay length of the surface plasmons or similar to $a_x$, was sufficient. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored.
+For efficient coupling, however, extraordinary transmission requires strict periodicity of the slits along the $x$-axis, and symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on a single side of the structure. The dielectric does not have to touch the metal directly; a distance similar to the unit cell size, was sufficient to observe the effect. We thus conjecture the approximate decay length of the (spoof) surface plasmons, both in front and behind the structure, is not much smaller than $a_x$. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
@@ -1200,7 +1204,6 @@ A natural modification of the structure discussed  above is to add conductive co
 
 Already in 1950s the perforated sheets were proposed to be periodically arranged to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the field was supposed to propagate parallel to the slabs.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 The spectral selectivity of a metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  %% TODO rewrite historical, connect with slits?
-However,  Lord Rayleigh's studies on resonances in metallic gratings dates back to 1907 \cite{rayleigh1907dynamical}, when he focused on explaining the \textit{Wood's anomaly} discovered few years earlier to cause a sharp drop of grating reflectance caused by surface plasmons. % todo with the main conclusion that.. 
 
 Greater attention of scientific community returned to the perforated metallic sheets with the advent of plasmonics. Periodic patterning of the metallic surface near a sub-wavelength hole enables the incident light to couple to surface plasmons, transfer the energy through the hole, and finally re-radiate it again at the rear side in a similar way as described on the example of metallic slits. 
 The transmitted power can be orders of magnitude higher than predicted by Bethe's law of inverse fourth power of the hole dimensions. The  %todo re-invented?
@@ -1214,9 +1217,12 @@ Periodically arranging the holes is equivalent to structuring of the surrounding
 
 % TODO \ref{fg_cdh_yslit}b -- add again about convergence of s-param method
 
-\begin{figure}[t] \caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs divided by slits of $d_x = 20$ $\mu$m and with  \textbf{(b)} $\rho_c = 8$.. Both simulations share the metallic slab thickness $d_z = 20$ $\mu$m and transverse unit cell size $a_x  = a_x = 100$ $\mu$m. } \label{fg_cdh_yslit} \centering %{{{
+\begin{figure}[t] 
+	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs divided by slits of $d_x = 20$ $\mu$m and with  \textbf{(b)} $\rho_c = 8$.. Both simulations share the metallic slab thickness $d_z = 20$ $\mu$m and transverse unit cell size $a_x  = a_x = 100$ $\mu$m. } \label{fg_cdh_yslit} 
+	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
+	\centering %{{{
 	\vspace{.1\textwidth}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  
+	\begin{overpic}[width=.48\textwidth]{img-cdh/yslit_csz60u.pdf}  
 	\put(1,96) {\textbf{(a)}} 
 	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
 	\put(30,105){$\rho_c = 6$ $\upmu$m}
@@ -1228,8 +1234,7 @@ Periodically arranging the holes is equivalent to structuring of the surrounding
 \end{overpic}
 \end{figure}
 %}}}
-
-\paragraph{Negative index of refraction}
+\paragraph{Negative index of refraction}%{{{
 An important difference  fishnet achieves relatively low losses, since it is optimised for thick and short conduction paths 
 
 The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, forming an electric dipole opposite to the incident electric field in a way similar to the wires oriented along the $x-$axis.  
@@ -1247,7 +1252,9 @@ This kind of metamaterial appears hard to be homogenized by the s-parameters \ci
 
 	% for nearly flat structures, where most of the fields are confined within a slab perpendicular to $\KK$, a
 
+% \cite{dolling2006simultaneous} 
 
+%}}}
 \begin{figure}[ht] %{{{ fg_fishnet28_photo
 	\caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_fishnet28_photo} \centering 
 	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(a)}} 
@@ -1257,15 +1264,13 @@ This kind of metamaterial appears hard to be homogenized by the s-parameters \ci
 	\end{overpic}
 \end{figure}
 %}}}
-\begin{figure}[t] %fg_expe_fishnets%{{{
-	\caption{Experimental and simulated amplitude of transmittance for fishnets \textbf{(a)} with 180$\times$200 $\mu$m holes, and \textbf{(b)} with 230x255  $\mu$m holes.
-		%todo \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for the dielectric slab of 15\% fill fraction in a 300 $\upmu$m unit cell, and varied permittivity of the dielectric $\epsrl \in \{4,12,20\}$
-	} 
+\begin{figure}[t] %fg_expe_fishnets %{{{
+	\caption{Experimental and simulated amplitude of transmittance for fishnets \textbf{(a)} with 180$\times$200 $\mu$m holes, and \textbf{(b)} with 230x255  $\mu$m holes.  } 
 		\label{fg_expe_fishnets} 
 		\centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_ap.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cp.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cp.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
 %\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cs.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 %\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_as.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 \end{tabular}
@@ -1284,8 +1289,6 @@ The experimental transmittance spectra of these two samples are presented in Fig
 %\end{figure}
 
 %}}}
-
-
 \begin{figure}[th] % fg_fnquadrup%{{{
   \begin{minipage}[b]{0.39\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
@@ -1296,7 +1299,7 @@ The experimental transmittance spectra of these two samples are presented in Fig
   \begin{minipage}[b]{0.6\textwidth}
 	  \caption{
 	  Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero. The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.\\
-  \vspace{20mm}} \label{fg_fnquadrup}
+  \vspace{15mm}} \label{fg_fnquadrup}
   \end{minipage}  
 \end{figure} 
 %}}}
@@ -1310,11 +1313,8 @@ This way, it also broke the symmetry of the first predominantly quadrupole mode,
 %}}}
 
 
-%\FloatBarrier %====================================================================================================
-% \section{Other structures} % plasmonic spheres (note: resonance width determined by gamma of the metal?)
-% \cite{croenne2009controle}
-% todo	* PhCs with metallic/metamaterial inclusions, [Monsoriu, Lina Shi and friends]
-	%electric SRRs (eSRRs) [29], [30], pairs of rods [10], [12], [31], pair of crosses [32], fishnets [17], [33]”
+%electric SRRs (eSRRs) [29], [30], 
+% pairs of rods [10], [12], [31], pair of crosses [32]
 % Aleian 2012 Plasmonic Au SiO2 nanoparticles
 
 % TODO Ye2013 Negative Group Velocity in the Absence of Absorption Resonance
