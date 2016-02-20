@@ -1043,7 +1043,7 @@ At a frequency slightly below the onset of diffraction, a relatively narrow notc
 For a narrower or wider slit, the frequency of the notch increases and eventually approaches the diffraction limit of $3.0$ THz. 
 The notch also becomes narrower in spectrum, but does not appreciably reduce its depth. Some frequency can always be found at which nearly 100 \% of the energy is transmitted through the structure.
 
-The transmission is mediated by electromagnetic waves propagating along the metallic surface, i.e., parallel to the $x$-axis.  %todo cite
+The \textit{extraordinary transmission} is mediated by electromagnetic waves propagating along the metallic surface, i.e., parallel to the $x$-axis.  %todo cite
 The field distribution is similar to surface plasmons-polaritons (SPP). In the terahertz range and below it should be more precisely referred to as \textit{spoof surface plasmons}, since it is bound to the structure predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the plasmons would propagate in the \textit{Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
 The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$.
 
@@ -1051,9 +1051,9 @@ A closely related phenomenon  caused by surface plasmons, the \textit{Wood's ano
 
 %}}}
 \paragraph{Standing surface plasmon resonance} %{{{
-Since the structure and incident fields are both symmetric, equal amplitudes of plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic wave, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on coupling of the incoming plane wave to SPP, coupling of SPP to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
+Since the structure and incident fields are both symmetric, equal amplitudes of plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic wave, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on coupling of the incoming plane wave to SPP, transfer of energy of SPP to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
 
-In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably matches the point of lowest frequency for the zero-reflection curve in Fig. \ref{fg_yslit_xscan}a. The coupling strength apparently down-tunes the frequency, however it is not crucial for the peak transmission efficiency; since it is a resonant process, it can transmit high amplitude even through arbitrarily narrow slits. 
+In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably matches the point of lowest frequency for the zero-reflection curve in Fig. \ref{fg_yslit_xscan}a. Stronger coupling apparently down-tunes the frequency, however it is not crucial for the peak transmission efficiency; since it is a resonant process, it can transmit high amplitude even through arbitrarily narrow slits. 
 
 %Lalanne-Theory_of_fishnet_optical_NIM.pdf
 % SPP on surface impact the transmission through a nano-aperture; 
@@ -1062,7 +1062,7 @@ In a numerical study of SPP-assisted transmission through a single slit, Lalanne
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
 % for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
 
-For efficient coupling, however, extraordinary transmission requires strict periodicity of the slits along the $x$-axis, and symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on a single side of the structure. The dielectric does not have to touch the metal directly; a distance similar to the unit cell size, was sufficient to observe the effect. We thus conjecture the approximate decay length of the (spoof) surface plasmons, both in front and behind the structure, is not much smaller than $a_x$. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
+The extraordinary transmission requires strict periodicity of the slits along the $x$-axis, and also symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on a single side of the structure. The dielectric does not have to touch the metal directly; a distance similar to the unit cell size, was sufficient to observe the effect. We thus conjecture the approximate decay length of the (spoof) surface plasmons, both in front and behind the structure, is not much smaller than $a_x$. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
@@ -1094,14 +1094,15 @@ for slabs thick enough, the frequency of the zero-reflection notch approximately
 In the limit of thin sheets, this frequency approaches the diffraction limit of $c/a_x$, since surface plasmons in the terahertz range are only weakly bound to the metal surface and their phase velocity is similar to the speed of light in vacuum, $c$. Upon scaling the simulation into the optical range, the limiting frequency for thin metallic sheets was reduced below $c/a_x$ and moreover the exact behaviour of the structure has proven to depend on the choice of metal.
 
 In the upper right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found, corresponding to a second longitudinal waveguide mode. Not surprisingly, the shapes of both visible modes resemble the dispersion in slot metallic waveguides. We can thus also conjecture that the second and any higher mode does not exist for thin-enough slits; i.e. that each of them requires a minimum cut-off thickness $d_x$.
+% todo? draw the modes? or make a snapshot of the fields?
 
 %}}}
 \paragraph{Effective parameters of sheet-slit array}%{{{
-In the above discussion, elaborated the mechanism of plane wave transmission through a single metallic slab divided by slits of arbitrary width. When the unit cell size along the wave propagation axis is given, the effective parameters can be also computed for an infinite stack thereof.
+Previous paragraphs described the reflection and transmission of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed as with other metamaterials. However, due attention must be paid to whether the conventional scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is carried by the surface plasmons that were shown not to be well localized and can easily couple with those on nearby metallic surfaces, forming slot-waveguide modes \cite{weiner2011electromagnetics}.
 
-However, due attention must be paid to whether the conventional scattering parameter method gives correct results, since this obviously classifies among the structures with strong coupling between the neighbouring cells: A great portion of the resonant energy is carried by the surface plasmons that were shown not to be localized inside the gap. On the contary, SPP can easily couple with those on nearby metallic surfaces, forming slot-waveguide modes \cite{weiner2011electromagnetics}.
+On the contrary, the current-driven homogenisation setup simulates one unit cell in an exact periodic environment of other cells, and is fully  suitable even for structures with strong coupling of neighbouring cells. The representative comparison of results for a  is in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves. 
 
-The current-driven homogenisation setup simulates one unit cell in an exact periodic environment of other cells, and is fully  suitable even for structures with strong coupling of neighbouring cells. 
+The first 
 
 %TODO  discuss CDH results for Yslits of different cell spacing: 
 % TODO \ref{fg_cdh_yslit}a -- add about convergence of s-param method
@@ -1224,12 +1225,12 @@ Periodically arranging the holes is equivalent to structuring of the surrounding
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/yslit_csz60u.pdf}  
 	\put(1,96) {\textbf{(a)}} 
-	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
-	\put(30,105){$\rho_c = 6$ $\upmu$m}
+	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
+	%\put(30,105){$\rho_c = 6$ $\upmu$m}
 	\end{overpic}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  
-	\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}}
-	\put(30,105){$\rho_c = 8$ $\upmu$m}
+	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
+	%\put(30,105){$\rho_c = 8$ $\upmu$m}
 	\put(1,96) {\textbf{(b)}} 
 \end{overpic}
 \end{figure}
