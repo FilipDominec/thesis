@@ -899,7 +899,7 @@ In photonic bands, the real part of refractive index grows as a function of freq
 This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any higher-order Mie resonances, although they can be shown to persist for smaller unit cell sizes than $a=85$ $\upmu$.  (Figs. \ref{fg_spacingscan100}, \ref{fg_drawn100})
 
 %}}}
-\begin{figure}[h!] % fg_fxplot %{{{
+\begin{figure}[t] % fg_fxplot %{{{
 \begin{minipage}[c]{0.51\textwidth}
 	\hspace{-2mm}\begin{overpic}[width=.99\textwidth]{img-meep/erods_fxplot_cs120e-6.pdf} 
 		\put(117,8){\includegraphics[width=.5\textwidth]{img/ERods_sketch_recordedline.pdf}}
@@ -909,9 +909,9 @@ This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any hig
 \begin{minipage}[c]{0.49\textwidth}
 	\caption{Spatially resolved spectra of the electric field for the unit cell cell sizes \textbf{(a)} $a=120$ $\upmu$m and \textbf{(b)} $a=90$ $\upmu$m \textbf{(c)} $a=80$ $\upmu$m  }\vspace{3cm} \label{fg_fxplot}
 \end{minipage}  
-\vspace{-12mm}
-\end{figure} 
-\begin{figure}[h!] 
+%\vspace{-12mm}
+%\end{figure} 
+%\begin{figure}[h!] 
 \hspace{-2mm}\begin{overpic}[width=.51\textwidth]{img-meep/erods_fxplot_cs90e-6.pdf}  
 	\put(7,90) {\textbf{(b)}} 
 \end{overpic}
@@ -1115,13 +1115,14 @@ The s-parameter method computes the same metallic structure, and only the phase 
 
 
 \FloatBarrier %====================================================================================================
+\add{
 \section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
 
 % TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf
 %xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
 %cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
 
-\cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
+%\cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
 % obviously fishnets are hyperbolic both in permittivity and permeability
 % study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
 % depending on the number of layers Neff spectra up-shift in frequency and converge 
@@ -1132,18 +1133,18 @@ The s-parameter method computes the same metallic structure, and only the phase 
 % nonlocality with the transverse changes in wave vector is important
 
 
-\cite{croenne2009left}
+%\cite{croenne2009left}
 % 250x180um elliptic holes in thin gold films, 30-44 um spacing only, left-handed at 450 GHz (First in THz band)
 % negative phase advance requires at least two layers stacked? This would 
 % In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
 % Impedance matching by elliptic holes % benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
 % "zero transmission = antiresonance state"??
 
-\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
+%\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
 % direct experimental verification of negative refraction
 % more elliptic holes 125x225, periodicity 
 
-\cite{navarro2011dual} % Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
+%\cite{navarro2011dual} % Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
 % "Neff<0 has a strong connection to SPP in fishnets", 
 % in microwave and THz, also known as "extraordinary transmission MMs"
 % the +1,0 "internal diffraction order" is the usual negative-index mode
@@ -1169,73 +1170,54 @@ The s-parameter method computes the same metallic structure, and only the phase 
 %pp. 4922-4930 (2005).
 %
 
-@article{rockstuhl2008light,
-  title={Light propagation in a fishnet metamaterial},
-  author={Rockstuhl, Carsten and Menzel, Christoph and Paul, Thomas and Pertsch, Thomas and Lederer, Falk},
-  journal={Physical Review B},
-  volume={78},
-  number={15},
-  pages={155102},
-  year={2008},
-  publisher={APS}
-}
-%
-
-@article{zhang2005near,
-  title={Near-infrared double negative metamaterials},
-  author={Zhang, Shuang and Fan, Wenjun and Malloy, KJ and Brueck, SRJ and Panoiu, NC and Osgood, RM},
-  journal={Optics Express},
-  volume={13},
-  number={13},
-  pages={4922--4930},
-  year={2005},
-  publisher={Optical Society of America}
-}
 
 
 
+\cite{yahiaoui2012metallo}
+\cite{rockstuhl2008light}
+\cite{zhang2005near}
+\cite{jelinek2010fishnet}
+\cite{marquus2009analytical}
+\cite{freire2008experimental}
+\cite{jelinek2011metamaterial}
 
 
-% TODO \cite{jelinek2010fishnet}
-% TODO Jelineks
-% \cite{yahiaoui2012metallo,rockstuhl2008light}
-
-\paragraph{Extraordinary transmission}
-A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes, forming a perforated metallic sheet which is often denoted as a \textit{mesh} in the literature, or within the context of metamaterials, as a \textit{fishnet} or a \textit{sub-wavelength hole array}. 
-
-Already in 1950s the perforated sheets were proposed to be periodically arranged to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the field was supposed to propagate parallel to the slabs.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+\paragraph{Extraordinary transmission} %{{{
+A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes, forming a perforated metallic sheet which is often denoted as a \textit{mesh} in the literature, or within the context of metamaterials, as a \textit{fishnet} or a \textit{sub-wavelength hole array}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the electromagnetic wave was supposed to propagate parallel to the slabs and the operation was different.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 The spectral selectivity of a metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  %% TODO rewrite historical, connect with slits?
 
 Greater attention of scientific community returned to the perforated metallic sheets with the advent of plasmonics. Periodic patterning of the metallic surface near a sub-wavelength hole enables the incident light to couple to surface plasmons, transfer the energy through the hole, and finally re-radiate it again at the rear side in a similar way as described on the example of metallic slits. 
-The transmitted power can be orders of magnitude higher than predicted by Bethe's law of inverse fourth power of the hole dimensions. The  %todo re-invented?
-phenomenon was thus named as \textit{extraordinary transmission} \cite{ebbesen1998extraordinary}.
-Periodically arranging the holes is equivalent to structuring of the surroundings of a single hole.
+The transmitted power can be orders of magnitude higher than would be estimated from the hole dimensions.  % predicted by Bethe's law of inverse fourth power of 
+The phenomenon was thus named as \textit{extraordinary transmission} \cite{ebbesen1998extraordinary}.
 
-%Under a correct choice of parameters, the re-radiated wave has an opposite sign to the incoming one. In 2003, the 
+Periodical arrangement of the holes is equivalent to structuring of the surroundings of a single hole. In line with the already demonstrated resonance in a metallic sheet with infinite slits, the metallic sheet with holes exhibits a resonance slightly below the diffraction edge which leads to a great drop in reflection. The exact behaviour of the structure is determined by the  metal thickness, dimensions of the holes, their spacing in the $x$-$y$ plane and the spacing of the metallic sheets along the $z$-axis.
 
-%This phenomenon is similar to the transmission through narrow metallic slits, with the difference that the  structure exhibits 
-% TODO what is the enhancement of a single non-corrugated hole?
-
-% TODO \ref{fg_cdh_yslit}b -- add again about convergence of s-param method
-
-\begin{figure}[t] 
+%}}}
+\begin{figure}[t] % fg_cdh_yslit %{{{
 	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs divided by slits of $d_x = 20$ $\mu$m and with  \textbf{(b)} $\rho_c = 8$.. Both simulations share the metallic slab thickness $d_z = 20$ $\mu$m and transverse unit cell size $a_x  = a_x = 100$ $\mu$m. } \label{fg_cdh_yslit} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
-	\centering %{{{
+	\centering 
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/yslit_csz60u.pdf}  
 	\put(1,96) {\textbf{(a)}} 
 	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
 	%\put(30,105){$\rho_c = 6$ $\upmu$m}
 	\end{overpic}
-	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  
+	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap08.pdf}  
 	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
 	%\put(30,105){$\rho_c = 8$ $\upmu$m}
-	\put(1,96) {\textbf{(b)}} 
-\end{overpic}
+	%\put(1,96) {\textbf{(b)}} 
+	%\end{overpic}
 \end{figure}
 %}}}
 \paragraph{Negative index of refraction}%{{{
+Under a correct choice of parameters of the structure, the re-radiated wave has an opposite sign to the incoming one. In 2003, the % TODO
+
+%This phenomenon is similar to the transmission through narrow metallic slits, with the difference that the  structure exhibits 
+% TODO what is the enhancement of a single non-corrugated hole?
+
+% TODO \ref{fg_cdh_yslit}b -- add again about convergence of s-param method
+
 An important difference  fishnet achieves relatively low losses, since it is optimised for thick and short conduction paths 
 
 The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, forming an electric dipole opposite to the incident electric field in a way similar to the wires oriented along the $x-$axis.  
@@ -1319,3 +1301,5 @@ This way, it also broke the symmetry of the first predominantly quadrupole mode,
 % Aleian 2012 Plasmonic Au SiO2 nanoparticles
 
 % TODO Ye2013 Negative Group Velocity in the Absence of Absorption Resonance
+ 
+}

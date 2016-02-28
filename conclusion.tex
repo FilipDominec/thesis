@@ -1,36 +1,21 @@
-%.. key originalities with respect to the state of the art in this field
+\paragraph{Theoretical contributions}
+The theoretical section presents an accessible introduction to the electrodynamics of periodic structures. It starts from the fundamental Maxwell equations, develops the concept of waves propagating in vacuum and in resonant media. It shows how the local medium responds to oscillating electric field as a damped oscillator and how it influences the dispersion curves. Beyond this common approach, the nonlocal response is introduced, and it is shown that in homogeneous media it inevitably causes the material properties depend not only on the frequency, but also on the magnitude of the wave vector, which is known as spatial dispersion. The more general shapes of the dispersion curves in spatially-dispersive media are illustrated in several figures. 
 
+The spatial dispersion is a common phenomenon and it is particularly pronounced in the electrodynamics of periodic structures. The dispersion curves are shown to become periodic as a result of the fundamental Bloch theorem; the concepts of isofrequency contours, Brillouin zones and high-symmetry points in the reciprocal space are introduced.  % applicability of "group, phase and information velocity"
 
-%%% Hole : Conclusion - what to put here?
-%% NOTES: What WAS discussed in the thesis and is special:
-%  * THEORY aims to present an accessible introduction to the electrodynamics of periodic structures. 
-%		including spatial dispersion to account for the material properties depending not only on the frequency, but also on the magnitude of the wave vector.
-%  * historical notes 
-% 	(the base line is that many concepts are not as novel as they may appear, and that modern papers
-%	often fail to cite the author of the original idea,  questioning the supposed novelty and practical impact of MMs)
-%    the historical review suggests that the the unification
-%		of MM and PhC concepts is undergoing in the last two decades
-%	 in an attempt for clarification of these two terms further 
-%	 ... which is also illustrated by the numerous recent publications on the rod array, which lies at the boundary between MM and PhC
-%	* viability of the notion of "information velocity"   
+Nowadays, perhaps more than ever earlier, it is important to maintain an outlook over the history of the rapid scientific development. The following historical review traces back the origin of numerous concepts much earlier than the majority of metamaterial-related papers advertise. The analysis of how atomic lattices should be treated as homogeneous media puzzled physicists over a century ago, and the synthesis of inhomogeneous structures with desired macroscopic \textit{homogenized} behaviour is not much younger than the microwave technology on its own.
 
+The historical part promotes the author's view of related, but independently developed, paradigms of \textit{artificial dielectrics} and \textit{negative-index media} unifying in the middle of twentieth century. In a similar manner it is argued that the resulting paradigm of \textit{negative-index metamaterials} unified with the concept of \textit{photonic crystals} in the early 21th century. The process of unification always sheds new light on the physical interpretation and is beneficial for conceptual development of the field. The historical review is a basis for outlining the boundary between metamaterials and photonic crystals.
 
-%  * EXPERIMENTAL we developed an original apparatus for accurate sieving
-%	 for the fabrication of sieves, we constructed a laser micro-machining setup in the laboratory, 
-%	 including an original electrical and software design of the motor controller (published online)
-%    and the auto-collimating setup for accurate beam focusing
+\paragraph{Methodological contributions}
+Preparation of this thesis, which encompasses over 90 plots visualising the results from over 4000 separate computations, necessitated the development of an efficient and convenient platform for numerical simulations of electromagnetic waves in periodic structures.
+The computations are defined in the form of scripts in the Python language. At the expense of possibly slower learning curve than applications with a graphical user interface may offer, the great advantage of scripting is in seamless integration with pre- and post-processing of the simulation that would otherwise be prohibitively tedious. The scripts can also be modified for automated parametric scans, optimisation of the structure performance and to match experimental data.
 
-%  * NUMERICAL provide the simulation environment which facilitates correct computations,  
+All scripts, containing over 5000 lines of Python code in total, were published online free of charge \cite{dominec2014_meep_metamaterials} with the hope that they would be reused for future numerical research.
 
-%		% TODO comment on, give links, encourage one to use: The dissertation involved the development of a reliable platform for numerical simulations of photonic structures, based on freely available code. 
-%		A versatile numerical environment for simulations was prepared and tested in the last two years. All computation scripts, containing over 2000 lines of Python code, are open-source and they use freely-redistributable libraries only, which may be useful for the broader scientific community in the future. 
-%		The automated effective parameters retrieval from FDTD is especially suitable for parametric scans. It proves instrumental in optimisation of the structure performance, matching experimental data, as well as studying the tunability.
-%
-%		Broad range of physical phenomena may be included in the simulations. A library of realistic permittivity models is being built that allows to match TDTS experiments with a good accuracy. It is also possible to combine dispersive dielectrics with metals and doped semiconductors. 
-%		 The FDTD method is applicable also to non-periodic, lossy and time-changing structures, while PWEM enables e. g. studies of the magnetooptic phenomena.
+In the Numerical chapter, the internal operation of the finite-difference time-domain computation method is described in detail. Particular attention was given to realistic definition of Lorentz-Drude models for dielectrics and metals, including author's empirical rules ensuring the numerical stability of the simulation. 
+
 %		All referred numerical methods, FDTD, PWEM and TMM, were tested also to give compatible and plausible results under oblique incidence and both TE/TM polarisations. 
-%	  2) by mathematical means, the phase-ambiguity of the retrieved effective index by the s-parameter method 
-
 %  * We validated these FDTD computations against
 %     1) the H-bars spectra in the NumMet section
 %	  2) the Pendry's and Maslovski's models for f_p
@@ -38,7 +23,15 @@
 %  *  proposes a novel temporal shape for a wave source in FDTD that yields a flat-top spectrum in a well-defined 
 %		interval of frequencies
 
+The second part of the section describes how the same numerical algorithm can be used in different setups that provide physical information about the structure: the customary \textit{scattering-parameter method} is elaborated including its limitations and pitfalls, and finally it is compared to the less efficient, but more robust \textit{current-driven homogenisation} method. Both methods were extensively employed and compared in the results.
 
+The inherent ambiguity of the scattering-parameter method is often cited in the literature. We resolved in an original way, based on the purely mathematical consideration of the arccosine branch cuts in the complex plane. The correction algorithm was incorporated in the simulation post-processing scripts and its application on all presented results proves that it works reliably. The current-driven homogenisation also required 
+%	  2) by mathematical means, the phase-ambiguity of the retrieved effective index by the s-parameter method 
+
+
+
+
+\paragraph{Summary of results}
 %  * RESULTS filled the demand for some starting overview of the common structures.  in a level of detail and
 %    didactic approach that the author felt to be missing in the available literature. 
 %	- attempt to compare most metamaterial structures
@@ -68,12 +61,15 @@
 %		present a big issue compared to more fundamental limitations of the s-parameter method
 %	   (mention the limitations)
 
-%	- pointed out the conditions for observation of zero-width photonic bands (e.g. Fig. \ref{fg_cdh2}b) and zero-width photonic band gaps (e.g. Fig.)
+%	- the conditions for observation of zero-width photonic bands (e.g. Fig. \ref{fg_cdh2}b) and zero-width photonic band gaps (e.g. Fig.)
+
 %  * pointed out the fundamental problems: 
 %      1) losses in available materials,    % \cite{tassin2012comparison}
 %		all metamaterial application still suffer from fundamental issues as excessive losses and anisotropy
 %		on the example of dielectric rods, we have shown that the issue of losses in the optical range probably can not be overcome without a significant breakthrough in material science, since any low-loss material known 
 %		... probably no dielectric-only metamaterial can be built for permittivity contrast below 50
+%		\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
+
 
 %      2) excessive spatial dispersion in known structures, with regards to the longitudinal changes in the wavevector (i.e. in the wavenumber); i.e. the eff-param spectra often 'stick' to the BZ boundary
 %		  without this interpretation, various papers fail to explain the typical "antiresonance" in effective parameters, that seems to cause confusion 
@@ -83,6 +79,8 @@
 %			(papers sometimes claim that negative refraction may not occur at NIR/optical frequencies due to the lack of magnetic activity; however
 %			this relies on the local eff. param theory)
 %		2b) spatial dispersion with regards to the transverse changes in the wave vector seems to be better discussed in the literature 
+
+
 
 %      3) the s-parameter method, although widely used, does not always give correct results for diverse reasons
 %		  notice that e.g. 1-D PhC allows to determine Neff, but not eeff,meff, whereas
@@ -97,88 +95,39 @@
 %	  
 
 %% NOTES: What WAS NOT discussed in the thesis -- Things that could be pursued further on the basis of the presented work:
-%% * quasicrystals and disorder, 
-%  * other (photonic) crystal families than square/cubic
-%  * plasmonic nanoparticles (and related MMs at optical frequencies?)
-%% * chiral media, bianisotropy, circular dichroism
+%% * other (photonic) crystal families than square/cubic, quasicrystals and disorder, 
+%% * chiral media, bianisotropy, circular dichroism and temporal symmetry breaking, 
 %			"Further, also the effects of more general properties of the constituent materials could be investigated, but this would require expanding the source code of the FDTD simulation library used (i.e., MEEP). While anisotropy and optical activity would be welcome, the particularly interesting option is gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors  that breaks time-reversal symmetry. This would open the wide research possibilies of non-reciprocal metamaterial devices."
-%    these are "chiral gammadions" MMs etc.
-%% * temporal symmetry breaking, 
-%% * two-dimensional structures - metasurfaces
 %% * structures with nonlinearity or loss,    
-%% * tunable structures:		Where appropriate, we also investigated?? how this behaviour depends on some external parameter (such as electric field, temperature or illumination) -- in other words, how the \textit{tunability} of the structure can be achieved. 
-
-
-In line with the quote from  % TODO 
-
+%  * plasmonic nanoparticles (and related MMs at optical frequencies?)
+%% * two-dimensional structures - metasurfaces
 
 
 
+\paragraph{Closing words} % ... and future of metamaterials
 
+Many papers focused on metamaterials -- and maybe majority of them -- are dedicated to achieving negative index of refraction or a cloaking effect, with as high frequency and as low losses as possible.
+On the way to this tantalizing aim and to fast publication, too often they use an overly simplistic theoretical description or inadequate characterisation approach, or both. %Typically, the scattering parameter method is applied for structures with strong coupling
 
+The rapid growth of the metamaterial-related in the last two decades is certainly beneficial for the overall growth of knowledge. However, one should not forget about the downsides that the publication boom brings. Some of the concepts developed decades ago seem to be re-invented and published as novel. Significant portion of papers deals with the same class of structures, presenting a quantitative improvement over the previous results only, and fail to bring any conceptual progress. This way, the information density of even high-impacted journals is diluted. This is exacerbated by the fact that even the metamaterial monographs are mostly composed of ordinary papers, which are unrelated to each other and not covering all relevant theory.
 
-%		\add{
-%		\section{Metamaterials -- Critique and alternatives}
-%		Many different designs of photonic crystals, and in particular, of metamaterials were proposed in the last decades, part of them being aimed at the terahertz range. %They have been also summed by several books and reviews % TODO refs x5
-%		lacks:
+On the contrary, the genuinely tough issues seem to be rather underexposed. In the infrared and optical range, these are most importantly the ubiquitous dissipative losses. They are common for high-permitivity dielectrics and metals; the permittivity of any known low-loss material appears insufficient for metamaterial behaviour \cite{dominec2014transition}; contemporary superconductors lose their superconducting properties at terahertz frequencies. To the knowledge of author, all experimental demonstrations of metamaterials are restricted to unpractically small dimensions. 
+%		%% "First, reduction of losses by using crystalline metals and/or by introducing optically amplifying materials; developing three-dimensional isotropic designs rather than planar structures; and finding ways of mass producing large-area structures." -- Soukolis in http://eurekalert.org/pub_releases/2007-01/dl-mft010407.php?light
 %
-%		TODO TODO At the end, the author would like to express his concern about the efficiency and practical impact of the metamaterial research in the last years. 
-%		The number of papers related to metamaterials has rocketed in the last decade in almost unprecedented way % todo cite some MM scientometry here
-%
-%		, and 
-%		the hypertrophic number of publications dissolves the concentration of pertinent ideas in almost a homeopatic way.  
-%		Perhaps anybody interested in MM will soon notice there are many papers adding just a quantitative difference to what was already published, often without stating this important fact. This may give a superficial feeling of an exponential gathering of knowledge, but in fact it mostly contributes to the information noise. 
-%		In addition, the MM-related books available are often composed of ordinary papers, unrelated to each other and not covering all necessary theory, thus hardly preparing the reader to study the literature. % and instead of clear rigorous development of the theory, the books rather repeat nebulous phrases...
-%
-%		%The name of this chapter is borrowed from the same-named book by Ben Munk \cite{Munk2004}. The book presents several objections against MM that seem to be ill-argumented and some of them seem to be also utterly wrong. 
-%		%However, as another point it also touches a really deep problem: 
-%
-%		It is understandable that such a new (or at least newly recognized) scientific field exerts a great pressure to publish as much and as early as possible, which is exacerbated by the objective way of how the contemporary scientific work is evaluated. 
-%		That said, the situation is not as bad as it might seem and the author is also aware of several recent brilliant MM publications that give a deep insight into new physical phenomena.
-%
-%
-%		Another question is the practical benefit of metamaterials for the humankind. 
 %		Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
-%
-%		Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
-%
-%		To conclude this pessimistic, but well meant section, the author
-%		}
-%
-%		%% First, reduction of losses by using crystalline metals and/or by introducing optically amplifying materials; developing three-dimensional isotropic designs rather than planar structures; and finding ways of mass producing large-area structures. -- Soukolis in http://eurekalert.org/pub_releases/2007-01/dl-mft010407.php?light
-%
-%
-%		%% """ If a too-simplistic physical theory is forced to predict or explain data that are not within its scope,
-%		%%     it can often do so, but without giving any physical insight. Such a result is not a proof of the theory to be
-%		%%     applicable to the problem, and in some cases not even of the theory to make any sense whatsoever."""
-%
-%		%Fundamental issues have to be resolved in the MM and PhC field are
-%		%losses
-%
-%		The TiO$_{2}$ resonators, whose the manufacturing and sieving process, experimental characterisation and numerical computation was extensively discussed in this thesis, can be viewed as an example of such research.
-%		\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
-%
-%		\paragraph{Optimistic notes}
-%		That said, the author does not want the thesis to sound too sceptical about the future of electromagnetic structures. 
-%
-%		\add{
-%		Metamaterials do not bring new physical phenomena on their own, they only force one to conscientiously review the common electrodynamics. There
-%		are no novel phenomena, just a novel task of homogenisation and possibly enew values of constitutive parameters"
-%
-%		The research of Metamaterials is typical by taking a relatively novel phenomenon (wave propagation in periodic structure) and
+
+The sub-diffraction imaging faces another fundamental problem independent of the dissipative losses -- it requires to suppress the spatial dispersion, which arises from nonzero dimensions of the unit cells. If future progress in nanotechnology proves sufficient for this task, the question remains whether it would not be also more than sufficient to fabricate superior optical sensors eliminating the need for any metamaterial super- or hyper-lens. 
+%Writing these lines, the author is not aware of any readily realized application where a metamaterial would present a significant advantage over classical structure. Will metamaterials ever find their application in any field of technology? And if not, will at least some of the developed theory or methods be useful in the future?
+
+The obstacles which the metamaterial research faces nowadays may be overcome in the future. However, it appears much more likely to the author that tre related research will incite progress in an unexpected direction and possibly even in a different field.
+%		The research of metamaterials is typical by taking a relatively novel phenomenon (wave propagation in periodic structure) and
 %		interpreting it on the basis of a well-developed theory (electrodynamics of homogeneous media). In future, this trend may be opposite --
 %		that is, new theory motivated by the metamaterial research may find its application on other phenomena.
 %		One example may be the theory of strongly hyperbolic media, which turns out to be fundamental for electrodynamics in extremely strong magnetic fields \cite{smolyaninov2011vacuum}.
-%
-%		}
-%
-%		\section{Outcomes of the thesis}
-%
-%		We presented experimental and theoretical studies of simple periodic structures -- the periodic arrays of dielectric slabs, two orientations of rods, dielectric spheres, metallic wire mesh, as well as a composite of spheres and a mesh. An attempt was made to make an analysis of the modes that are responsible for the photonic bands, illustrating different electromagnetic phenomena and their dependence on a structure parameter. An analytic model for wire medium was proven to match our numerical results.
-%		The prospects for the future work are to broaden this catalogue to other structures in order to enable comparison and deeper physical interpretation of their behaviour. 
-%
+In line with the quotation from the start of this section, this thesis mainly aims to %promote prudent and proper theoretical description of electromagnetism of periodic structures to 
+% TODO 
+% contribute to the \textit{endless immensity} of the physics of a wave interacting with periodic structures.
 
-%%26. Y. Fu, L. Thyl ́n and H. Agren, “A Lossless Negative Dielectric Constant from Quantum e Dot Exciton Polaritons,” Nano Lett. 8, 1551 (2008).
-%%27. A. Bratkovsky, E. Ponizovskaya, S. Y Wang, P. Holmstr ̈m, L. Thyl ́n, Y. Fu, and o e H.  ̊gren, “A Metal-wire/Quantum-dot Composite Metamaterial with Negative ǫ and A Compensated Optical Loss,” Appl. Phys. Lett. 93, 193106 (2008).
-%%28. Y. Zeng, Q. Wu and D. H. Werner, “Electrostatic Theory for Designing Lossless Negative Permittivity Metamaterials,” Opt. Lett. 35, 1431 (2010).
 
+
+% --------------------------------------------------------------------------------
