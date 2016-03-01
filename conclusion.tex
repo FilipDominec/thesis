@@ -47,33 +47,18 @@ The Results chapter fills the demand for some starting overview of the electroma
 } 
 \item{The spectra of dielectric rods parallel to the magnetic field are compared to that of dielectric spheres, pointing out their similarity. The resonant modes for low- and high-permittivity dielectrics are compared to illustrate that continuous changes in the dielectric permittivity lead to a qualitative change -- a crossover of the Mie and Bragg resonances in the spectra.
 } 
-\item{The qualitative changes in behaviour are even more complex with the dielectric rods parallel to the electric field. Depending on the filling fraction and permittivity contrast, the structure can behave in different portions of spectra similar either to the one-dimensional photonic crystal, wire array, or exhibit negative index of refraction. By extensive parametric scans we demonstrate that, independent of geometry, the desirable latter operation can in no way be achieved when the dielectric contrast is less than roughly 50, which precludes the use of any low-loss material commonly used in photonics. 
+\item{Similar effect is even more pronounced in the dielectric rods parallel to the electric field. Depending on the filling fraction and permittivity contrast, the structure can behave in different portions of spectra similar either to the one-dimensional photonic crystal, wire array, or exhibit negative index of refraction. By extensive parametric scans we demonstrate that the desirable latter mode of operation  can not be achieved, for any geometry, when the dielectric contrast is less than roughly 50, which precludes the use of any low-loss material commonly used in photonics. 
 } 
-\item{
+\item{At the example of metallic sheet with slits parallel to the magnetic field we show the effect of extraordinary transmission. We argue that it is mediated by standing surface plasmons, whose frequency depends on the slit periodicity, but is almost independent of their width. Further we show that with increasing the metal thickness, the extraordinary transmission down-tunes with accordance to the dispersion of slot-waveguide modes.
 } 
-\item{
+\item{% TODO FISHNET
 }
 \end{enumerate}
-
-
-\begin{equation}
-\begin{array}{c} \text{negative}\\ \text{refraction} \end{array}
-\quad\not\Rightarrow\quad  \exists \Neff' < 0 
-\quad\not\Rightarrow\quad \begin{array}{c} \text{s-parameter}\\ \text{method}\\ \text{applicable}  \end{array}
-\quad\not\Rightarrow\quad \begin{array}{c} \exists \eeff'<0,\\ \exists\meff'<0  \end{array} 
-\label{eq_implications}\end{equation} % 
-
-
-
-%	- some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
-%		to regions of |Neff'|~0
 
 
 
 %     When a scientific method is used beyond its scope, sometimes it results in an obvious error like failure of convergence. The scattering parameter method is, unfortunately, more robust and it always assigns a finite slab of a metamaterial with some effective parameters. Due care must be paid to verify that the results make physical sense; we suggested that their compliance to Kramers-Kronig relations, absence of skips and independence of the number of simulated unit cells  %TODO 
 
-%   - implications opposite to these shown in relation (\ref{eq_implications}) may not hold, either. 
-%	- Some structures may have well-defined mechanisms electric and magnetic individual resonances, yet the index of refraction $\Neff$ is not applicable. This was shown at the example	the resonances are close enough in frequency, requiring the use of spatial-dispersive theory.
 
 %	- in general, Neff can only be used in isotropic media, or for propagation nearly parallel to the optical axis;
 %		a special exception is when approaching a Dirac point of isofrequency contours
@@ -82,6 +67,22 @@ The Results chapter fills the demand for some starting overview of the electroma
 %		although often mentioned as such \cite{mortensen2010unambiguous}, the ambiguity of retrieved refractive index does not 
 %		present a big issue compared to more fundamental limitations of the s-parameter method
 %	   (mention the limitations)
+
+
+%	- some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
+%		to regions of |Neff'|~0
+
+\begin{equation}
+\begin{array}{c} \text{negative}\\ \text{refraction} \end{array}
+\quad\not\Rightarrow\quad  \exists \Neff' < 0 
+\quad\not\Rightarrow\quad \begin{array}{c} \text{s-parameter}\\ \text{method}\\ \text{applicable}  \end{array}
+\quad\not\Rightarrow\quad \begin{array}{c} \exists \eeff'<0,\\ \exists\meff'<0  \end{array} 
+\label{eq_implications}\end{equation} % 
+
+Let us note that implications opposite to these shown in relation (\ref{eq_implications}) may not hold, either.  For instance, the array of the combined split-ring resonators may have well-defined electric and magnetic individual resonances, yet the index of refraction $\Neff$ is not applicable when they overlap  (Fig. \ref{fg_cdh1},\ref{fg_cdh2}).
+
+
+
 
 %	- the conditions for observation of zero-width photonic bands (e.g. Fig. \ref{fg_cdh2}b) and zero-width photonic band gaps (e.g. Fig.)
 
@@ -116,18 +117,11 @@ The Results chapter fills the demand for some starting overview of the electroma
 %  * the RESULTS section has shown that for the idealized lattice of resonant elements, denoted as a Bloch lattice in \ref{simovski2007bloch}, the spectra of effective index of refraction would have a form of alternating photonic bands, with always growing Neff(f), and photonic band gaps, where $Neff'(f)$ follows a Brillouin zone boundary, except for well-defined individual resonances of the electric or magnetic dipole. The results have, nonetheless, also proven that this interpretation is only approximate, due to evanescent inter-cell coupling and the resulting spatial dispersion. In particular, some structures made of metal preclude to use the $Neff'(f)$
 %	  
 
-%% NOTES: What WAS NOT discussed in the thesis -- Things that could be pursued further on the basis of the presented work:
-%% * other (photonic) crystal families than square/cubic, quasicrystals and disorder, 
-%% * chiral media, bianisotropy, circular dichroism and temporal symmetry breaking, 
-%			"Further, also the effects of more general properties of the constituent materials could be investigated, but this would require expanding the source code of the FDTD simulation library used (i.e., MEEP). While anisotropy and optical activity would be welcome, the particularly interesting option is gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors  that breaks time-reversal symmetry. This would open the wide research possibilies of non-reciprocal metamaterial devices."
-%% * structures with nonlinearity or loss,    
-%  * plasmonic nanoparticles (and related MMs at optical frequencies?)
-%% * two-dimensional structures - metasurfaces
+There remain many topics that are related to the focus of thesis, but were not discussed here, such as other crystal families than the square/cubic one, possibly including also quasicrystals or disorder. We restricted the discussion to structures sharing symmetries with the incoming fields; more general classes of structures would involve bianisotropy/chirality. Also the nonlinear response of all structures can be studied, but one has to be aware that the Bloch theorem and most of the presented theory assumes strictly linear response. However, direct numerical simulations of these phenomena can be presumably  achieved with a relatively easy adaptation of the simulation scripts.
 
+Another particularly interesting generalisation would be extension of the MEEP library for the support of gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors that breaks time-reversal symmetry. This would open the wide research possibilities of linear metamaterial devices with pronounced non-reciprocal effects.
 
-
-\paragraph{Closing words} % ... and future of metamaterials
-
+\paragraph{Closing words} 
 Many papers focused on metamaterials -- and maybe majority of them -- are dedicated to achieving negative index of refraction or a cloaking effect, with as high frequency and as low losses as possible.
 On the way to this tantalizing aim and to fast publication, too often they use an overly simplistic theoretical description or inadequate characterisation approach, or both. %Typically, the scattering parameter method is applied for structures with strong coupling
 
@@ -147,7 +141,7 @@ The obstacles which the metamaterial research faces nowadays may be overcome in 
 %		that is, new theory motivated by the metamaterial research may find its application on other phenomena.
 %		One example may be the theory of strongly hyperbolic media, which turns out to be fundamental for electrodynamics in extremely strong magnetic fields \cite{smolyaninov2011vacuum}.
 
-This thesis was written with the belief that the research of metamaterials and photonic crystals should not be restricted to the painstaking struggle for their notorious -- but maybe elusive -- applications. The interaction of electromagnetic waves with periodically structured matter deserves to be % TODO
+This thesis was written with the belief that the research of metamaterials and photonic crystals should not be restricted to the painstaking struggle for their notorious -- but so far elusive -- list of possible applications. The interaction of electromagnetic waves with periodically structured matter deserves to be % TODO
 described by a generic enough theory.
 
 In line with the quotation from the start of this section, we should be prepared, and even longing for, the \textit{endless immensity} of different 
