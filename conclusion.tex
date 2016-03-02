@@ -44,6 +44,7 @@ The Results chapter fills the demand for some starting overview of the electroma
 \item{On the contrary, the next chapter is included to illustrate a clash between these two homogenization setups. When a central shunt conductor is added to a symmetric split-ring resonator, the electric type resonance is found as the first one in the spectrum. By continuous changes in the geometry, we demonstrate that the electric and magnetic resonances can be tuned against each other, and it might be expected they would form a region of negative refractive index. Nonetheless, the narrow resonance line shape combined with moderate spatial dispersion cause the dispersion curves to bend into a concave shape and the scattering-parameter method eventually fails to determine effective index of refraction, as is illustrated by four detailed plots.
 } 
 \item{Dielectric spherical resonators are shown to exhibit individual resonances of Mie type, the first of which is analogous to the resonance in split-ring resonator. With the exactly defined model of titanium dioxide the sphere is made of, we can deduce minimum dissipative losses that can be achieved in experiment and show what impact they have on the resonance spectra. Further we accompany the computed spectra with our experimental results, arguing that the substantial deviation thereof arises from inhomogeneity of the resonators in the sample. Taking the size dispersion into account gives a reasonable match with experiment. Extended sieving of the spheres improves the resonance deeper, but no negative permeability is reached.
+%		\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
 } 
 \item{The spectra of dielectric rods parallel to the magnetic field are compared to that of dielectric spheres, pointing out their similarity. The resonant modes for low- and high-permittivity dielectrics are compared to illustrate that continuous changes in the dielectric permittivity lead to a qualitative change -- a crossover of the Mie and Bragg resonances in the spectra.
 } 
@@ -58,87 +59,50 @@ The Results chapter fills the demand for some starting overview of the electroma
 \paragraph{Conclusions for metamaterial homogenization}
 Throughout the thesis, we encountered some structures that can be easily homogenized, and we argued that our decision to view the structure as homogeneous may form a good criterion to define the notion of \textit{metamaterials}. Different kinds of obstacles may prevent the homogenization.
 
-Negative refraction at the interface of air and a given structure does not imply that it has negative effective index of refraction, $\Neff'<0$; this homogenized parameter may not even be defined. Anisotropic behaviour is present in all periodic structures; very often is strong enough to preclude the use of $\Neff'$. On page \pageref{indexofrefraction} we have argued that one exception is when the light propagates nearly parallel to an optical axis -- thanks to it, one can assign effective parameters to most metamaterials. An exception from this exception, we suggest on page \pageref{diracpoint}, may in the vicinity of the zero-width band gaps. 
+\textit{Negative refraction} at the interface of air and a given structure does not imply that it has \textit{negative effective index of refraction}, $\Neff'<0$; this homogenized parameter may not even be defined. Anisotropic behaviour is present in all periodic structures; very often is strong enough to preclude the use of $\Neff'$. On page \pageref{indexofrefraction} we have argued that one exception is when the light propagates nearly parallel to an optical axis -- thanks to it, one can assign effective parameters to most metamaterials. An exception from this exception, we suggest on page \pageref{diracpoint}, may in the vicinity of the zero-width band gaps. 
 Some metamaterials have such a strong spatial dispersion that their dispersion curves allow additional waves (Fig. \ref{fg_cdh3}, \ref{fg_dcllactivity}), and this is another reason that precludes to assign them with $\Neff$. 
 
-When a scientific method is used beyond its scope, sometimes it leads to mathematical error or returns obviously invalid results. The scattering parameter method, unfortunately, does not indicate its limits of applicability. By its means, a finite slab of a metamaterial can always be assigned with some effective parameters. 
-Even when the spatial dispersion does not introduce additional waves as is the case of Fig. \ref{fg_cdh_yslit}a, the inter-cell near field coupling may be strong enough to sense that the cell is not in periodic lattice, as elaborated on page \pageref{sparamweaknesses}. Then, the scattering-parameter method fails and $\Neff$ has to be determined by more robust approach, such as the current-driven homogenisation.
-Therefore, due care must be paid to verify that the results make physical sense; we suggested that their compliance to Kramers-Kronig relations, absence of skips and independence of the number of simulated unit cells give good estimation of this.
-
-
-%	- in general, Neff can only be used in isotropic media, or for propagation nearly parallel to the optical axis;
-%		a special exception is when approaching a Dirac point of isofrequency contours
+When a scientific method is used beyond its scope, sometimes it leads to mathematical error or returns obviously invalid results. The scattering parameter method, unfortunately, does not indicate its limits of applicability. By its means, a finite slab of a metamaterial can always be assigned with some effective parameters. Even when the spatial dispersion does not enable the excitation of additional waves as is the case of Fig. \ref{fg_cdh_yslit}a, the near-field coupling between neighbouring cells may be relatively strong. Then the scattering-parameter method fails to predict the behaviour of an infinite periodic lattice and $\Neff$ has to be determined by more robust approach, such as the current-driven homogenisation. This is elaborated on page \pageref{sparamweaknesses}. We propose that the absence of skips in the scattering-parameter method results, their compliance to Kramers-Kronig relations and their zero (or at most weak) dependence of the number of simulated unit cells are a good verification.
 %	- (the choice of branch for Neff is unambiguous by our retrieval procedure based on FDTD; yet it deserves
 %		proper physical interpretation in some structures)
 %		although often mentioned as such \cite{mortensen2010unambiguous}, the ambiguity of retrieved refractive index does not 
 %		present a big issue compared to more fundamental limitations of the s-parameter method
-%	   (mention the limitations)
 
-
+Finally, even when the scattering parameter method yields physically sound index of refraction, it does not guarantee that the retrieved effective impedance $\Zeff$ is valid nor that the medium may described by means of the effective local permittivity $\eeff$ and permeability $\meff$. These effective parameters require the unit cell be much smaller than the Bloch wavelength. In most metamaterials this condition is fulfilled in several narrow portions of the spectrum only, namely where $|\Neff'| \ll c/(2af)$. Otherwise the spectra of $\eeff$ or $\meff$ acquire typical antiresonance artifacts, which have incited disputes stretching over several papers (starting with Ref. \cite{koschny2003resonant}). Instead, the Landau-Lifshitz form of permittivity $\epsLL(\omega,\KK)$ is required to fully account for the spatial dispersion. 
 %	- some of them have Neff<0, but the regions of applicability for eeff nor meff is much more restricted 
 %		to regions of |Neff'|~0, since as argued earlier, the local effective parameters of $\eeff$ and $\meff$ do not have enough degrees of freedom to express the (longitudinal) spatial dispersion; i.e. the effect of the fields varying significantly within one unit cell.
 
+The described non-implications are summed by the following formula:
 \begin{equation}
 \begin{array}{c} \text{negative}\\ \text{refraction} \end{array}
 \quad\not\Rightarrow\quad  \exists \Neff' < 0 
 \quad\not\Rightarrow\quad \begin{array}{c} \text{s-parameter}\\ \text{method}\\ \text{applicable}  \end{array}
 \quad\not\Rightarrow\quad \begin{array}{c} \exists \eeff'<0\\ \exists\meff'<0  \end{array} 
 \label{eq_implications}\end{equation} % 
-
-Let us note that implications opposite to these shown in relation (\ref{eq_implications}) may not hold, either.  For instance, the array of the combined split-ring resonators may have well-defined electric and magnetic individual resonances, yet the index of refraction $\Neff$ is not applicable when they overlap  (Fig. \ref{fg_cdh1},\ref{fg_cdh2}).
-
-
-
+Let us note that implications opposite to these shown may not hold, either.  For instance, the array of the combined split-ring resonators may have clearly defined electric and magnetic individual resonances, yet the index of refraction $\Neff$ is not applicable when they overlap  (Fig. \ref{fg_cdh1},\ref{fg_cdh2}).
 
 %	- the conditions for observation of zero-width photonic bands (e.g. Fig. \ref{fg_cdh2}b) and zero-width photonic band gaps (e.g. Fig.)
-
 %  * pointed out the fundamental problems: 
-%      1) losses in available materials,    % \cite{tassin2012comparison}
-%		all metamaterial application still suffer from fundamental issues as excessive losses and anisotropy
-%		on the example of dielectric rods, we have shown that the issue of losses in the optical range probably can not be overcome without a significant breakthrough in material science, since any low-loss material known 
-%		... probably no dielectric-only metamaterial can be built for permittivity contrast below 50
-%		\add{Owing to the homogeneous broadening of the resonator resonance, caused by intrinsic losses of TiO$_{2}$, further sieving appears to lack any purpose. Not only this project broadens the numerous group of technically successful research projects pointed in utterly wrong direction, it also classifies into the lamentable subgroup of effort that could be entirely avoided if open and honest scientific discussion took place about the inherent problems. In this case, particularly, in all related papers it should be openly stated that the dielectric losses of TiO2 prevent building any applicable volume metamaterial, no matter how accurately the resonators are prepared.}
 
-
-%      2) excessive spatial dispersion in known structures, with regards to the longitudinal changes in the wavevector (i.e. in the wavenumber); i.e. the eff-param spectra often 'stick' to the BZ boundary
-%		  without this interpretation, various papers fail to explain the typical "antiresonance" in effective parameters, that seems to cause confusion 
-%		  (http://onlinelibrary.wiley.com/doi/10.1002/adma.201502298/full etc.)
-%         stress the importance of taking the spatial dispersion into account; omission thereof is in some case a fundamental misconception, rather 
-%			than a mere inaccuracy
-%			(papers sometimes claim that negative refraction may not occur at NIR/optical frequencies due to the lack of magnetic activity; however
-%			this relies on the local eff. param theory)
-%		2b) spatial dispersion with regards to the transverse changes in the wave vector seems to be better discussed in the literature 
-
-
-
-%      3) the s-parameter method, although widely used, does not always give correct results for diverse reasons
-%		  notice that e.g. 1-D PhC allows to determine Neff, but not eeff,meff, whereas
-%		  the electro-magnetic resonator exhibits independent el and mag resonances, but its Neff can not always 
-%		  be determined
-%		  ... we illustrated the difference of the s-parameter results against supposedly more reliable CDH
-%			+ Kramers-Kronig check of the RodArray spectrum (or some other?)
-
-% xxx      5) origin of antiresonance observed in effective $\eeff(f)$ or $\meff(f)$, and its persistence in random structures
+% Excessive spatial dispersion in known structures, with regards to the longitudinal changes in the wavevector (i.e. in the wavenumber); i.e. the eff-param spectra often 'stick' to the BZ boundary. Without this interpretation, various papers fail to explain the typical "antiresonance" in effective parameters, that seems to cause confusion. http://onlinelibrary.wiley.com/doi/10.1002/adma.201502298/full etc.)
 
 %  * the RESULTS section has shown that for the idealized lattice of resonant elements, denoted as a Bloch lattice in \ref{simovski2007bloch}, the spectra of effective index of refraction would have a form of alternating photonic bands, with always growing Neff(f), and photonic band gaps, where $Neff'(f)$ follows a Brillouin zone boundary, except for well-defined individual resonances of the electric or magnetic dipole. The results have, nonetheless, also proven that this interpretation is only approximate, due to evanescent inter-cell coupling and the resulting spatial dispersion. In particular, some structures made of metal preclude to use the $Neff'(f)$
-%	  
 
 \paragraph{What the thesis does not contain} 
 There remain many topics that are related to the focus of thesis, but were not discussed here, such as other crystal families than the square/cubic one, possibly including also quasicrystals or disorder. We restricted the discussion to structures sharing symmetries with the incoming fields; more general classes of structures would involve bianisotropy/chirality. Also the nonlinear response of all structures can be studied, but one has to be aware that the Bloch theorem and most of the presented theory assumes strictly linear response. However, direct numerical simulations of these phenomena can be presumably  achieved with a relatively easy adaptation of the simulation scripts.
 
 Another particularly interesting generalisation would be extension of the MEEP library for the support of gyrotropy, i.e. non-hermitian form of the permittivity or permeability tensors that breaks time-reversal symmetry. This would open the wide research possibilities of linear metamaterial devices with pronounced non-reciprocal effects.
 
-
-
 \paragraph{Closing words} 
 Many papers focused on metamaterials -- and maybe majority of them -- are dedicated to achieving negative index of refraction or a cloaking effect, with as high frequency and as low losses as possible.
 On the way to this tantalizing aim and to fast publication, too often they use an overly simplistic theoretical description or inadequate characterisation approach, or both. %Typically, the scattering parameter method is applied for structures with strong coupling
 
-The rapid growth of the metamaterial-related publication in the last two decades is certainly beneficial for the overall growth of knowledge. However, one should not forget about the downsides it brings. Some of the concepts developed decades ago seem to be re-invented and published as novel. Aside of it, a significant portion of papers deals with the same class of structures, presenting a quantitative improvement over the previous results only, and fail to bring any conceptual progress. This way they dilute the information density of even high-impacted journals. This is exacerbated by the fact that, in the author's experience, even the metamaterial monographs are mostly assembled of separate papers that are unrelated to each other and by far not covering all relevant theory.
+The rapid growth of the publications related to metamaterials of the last two decades is certainly beneficial for the overall growth of knowledge. However, one should not forget about the downsides it brings. Some of the concepts developed decades ago seem to be re-invented and published as novel. Aside of it, a significant portion of papers deals with the same class of structures, presenting a quantitative improvement over the previous results only, and fail to bring any conceptual progress. This way they dilute the information density of even high-impacted journals. This is exacerbated by the fact that, in the author's experience, even the metamaterial monographs are mostly assembled of separate papers that are unrelated to each other and by far not covering all relevant theory.
 
-On the contrary, the genuinely tough issues seem to be rather underexposed. In the infrared and optical range, these are most importantly the ubiquitous dissipative losses. They are common for high-permitivity dielectrics and metals; the permittivity of any known low-loss material appears insufficient for metamaterial behaviour \cite{dominec2014transition}; contemporary superconductors lose their superconducting properties at terahertz frequencies. To the knowledge of author, all experimental demonstrations of metamaterials are restricted to unpractically small dimensions. 
-%		%% "First, reduction of losses by using crystalline metals and/or by introducing optically amplifying materials; developing three-dimensional isotropic designs rather than planar structures; and finding ways of mass producing large-area structures." -- Soukolis in http://eurekalert.org/pub_releases/2007-01/dl-mft010407.php?light
-%		Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
+On the contrary, the genuinely tough issues seem to be rather underexposed. In the infrared and optical range, these are most importantly the ubiquitous dissipative losses. They are common for high-permitivity dielectrics and metals, where the permittivity of any known low-loss material appears insufficient for metamaterial behaviour \cite{dominec2014transition}; contemporary superconductors lose their superconducting properties above terahertz frequencies. To the knowledge of author, all experimental demonstrations of metamaterials are restricted to unpractically small dimensions. 
+% \cite{tassin2012comparison}
+% "First, reduction of losses by using crystalline metals and/or by introducing optically amplifying materials; developing three-dimensional isotropic designs rather than planar structures; and finding ways of mass producing large-area structures." -- Soukolis in http://eurekalert.org/pub_releases/2007-01/dl-mft010407.php?light
+%Compared to the publication boom and its optimistic aims, the metamaterials find their way to applications markedly slowly. The novel phenomena such as cloaking or sub-wavelength imaging are still confined to laboratory demonstrations, usually for structures not much bigger than the wavelength. The research of semiconductors in the first decades did not bring any notable applications, either, but even at that time it had to be clear that semiconductors present a wholly new field of basic material research. On the other hand, the recent progress in the field of metamaterials resembles the applied research: It is mostly a \textit{design} and \textit{optimisation} of already known structures towards some particular behaviour, rather than a search for new fundamental physics. 
 
 The sub-diffraction imaging has yet another fundamental issue aside of the dissipative losses. It requires to suppress the spatial dispersion, which arises from nonzero dimensions of the unit cells. If future progress in nanotechnology proves sufficient for this, the question remains whether it would not become also more than sufficient to fabricate superior optical sensors eliminating the need for any metamaterial super- or hyper-lens. 
 
