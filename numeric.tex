@@ -605,6 +605,7 @@ This is the only issue which arises from the described effective-index retrieval
 \paragraph{Summary of the scattering-parameter method}%{{{
 The scattering-parameter method is the most widely used setup for the effective parameter retrieval. It stands out among other setups by relying on the amplitudes of the reflected and transmitted waves only, without any inspection of the fields inside the unit cell. It is also efficient, since it requires single time-domain simulation to retrieve the full spectrum of effective parameters. The wave is let to freely propagate through the structure, and afterwards the retrieval algorithm determines the wavenumber at each frequency component of the incident wide-band pulse. The frequency $\omega$ represents the input, and the wavenumber $K(\omega)$ is one of the outputs.
 
+\label{sparamweaknesses}
 However, the scattering-parameter method also has its weaknesses. Perhaps its greatest weakness is that it does not explicitly fail in cases it is not supposed for; or, as stated in Ref. \cite{markel2013current}:
 \begin{cite} \textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.} \end{cite}
 Great care must be paid whether the retrieved values of effective parameters make any physical sense whatsoever, or are just a confusing output of an algorithm used outside its scope. The majority of the possible issues was mentioned above:
