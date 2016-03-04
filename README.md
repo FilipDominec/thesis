@@ -55,6 +55,7 @@
 		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
 
 ==== Finally ====
+ * [ ] Bloch -> Bloch's
  * [ ] "is depicted in Fig. xx" --->  <fact> (Fig. xx)
  * [ ] attach the list of own publications
  * [ ] Use correct citation style!
