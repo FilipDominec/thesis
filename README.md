@@ -55,6 +55,7 @@
 		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
 
 ==== Finally ====
+ * [ ] musí být z textu disertace zřejmé, kterých výsledků dosáhl osobně doktorand jako autor. Současně musí být přiloženo prohlášení spoluautorů tuto skutečnost potvrzující (vztažené přímo k textu práce či k původním publikacím, na nichž je založena). Úlevy z tohoto pravidla: a) v případě, že jediným spoluautorem je školitel, může být toto prohlášení obsaženo v posudku školitele, b) v případě, že kolektivní práce je dílem většího počtu autorů, postačuje vyjádření zodpovědného člena autorského týmu.
  * [ ] Bloch -> Bloch's
  * [ ] "is depicted in Fig. xx" --->  <fact> (Fig. xx)
  * [ ] attach the list of own publications
