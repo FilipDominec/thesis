@@ -607,7 +607,9 @@ The scattering-parameter method is the most widely used setup for the effective 
 
 \label{sparamweaknesses}
 However, the scattering-parameter method also has its weaknesses. Perhaps its greatest weakness is that it does not explicitly fail in cases it is not supposed for; or, as stated in Ref. \cite{markel2013current}:
-\begin{cite} \textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.} \end{cite}
+\begin{cite} 
+\textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.} 
+\end{cite}
 Great care must be paid whether the retrieved values of effective parameters make any physical sense whatsoever, or are just a confusing output of an algorithm used outside its scope. The majority of the possible issues was mentioned above:
 \begin{enumerate}
 		 \item{It is intrinsically imprecise, because the evanescent fields of most structures are influenced by the free space in front the unit cell and behind it. This issue can be neglected if nearly all of energy is transferred by the radiated wave, in which case the metamaterial is sometimes described as a \textit{Bloch lattice} \cite{simovski2007bloch, andryieuski2012bloch}. In other cases, usually in dense or metallic structures, a significant amount of energy is transferred by the near-field coupling, and it can be demonstrated that the effective parameters retrieved by this method strongly depend on the number of layers \cite{rockstuhl2008transition,andryieuski2010homogenization} which renders the approach invalid.
@@ -675,7 +677,7 @@ The artifacts can be very efficiently suppressed by multiplying the source by th
 			&+ 0.0106411\,\cos\frac{6\pi(t-t_c/2)}{t_c} \quad \text{for } t\in\langle0, t_c\rangle, \\
 	w_{BN}(t) :=\;& 0 \quad \text{otherwise.}
 \end{split} 
-\label{eq_wBN}\end{equation} %% TODO verify again
+\label{eq_wBN}\end{equation} 
 Since $w_{BN}(t)$ has finite support in time, but particularly fast decaying wings in its spectrum, it ensures relatively steep edges of the nearly rectangular spectrum of the source.
 
 %}}}
