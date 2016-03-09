@@ -1120,7 +1120,7 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} } \label{fg_cdh_yslit} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
-	\vspace{.1\textwidth}
+	%\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/yslit_csz60u.pdf}  
 	\put(1,96) {\textbf{(a)}} 
 	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
@@ -1134,11 +1134,92 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\end{overpic}
 \end{figure}
 %}}}
+
+\FloatBarrier %====================================================================================================
+\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
+% TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf%{{{
+%xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
+%cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
+
+%\cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
+%KRUK12 obviously fishnets are hyperbolic both in permittivity and permeability
+%KRUK12 study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
+%KRUK12 depending on the number of layers Neff spectra up-shift in frequency and converge 
+%KRUK12 the IFCs are complicated; for higher angle of incidence the structure Neff becomes positive (so it makes no sense)
+%KRUK12 they report Neff' switching its sign, but it is somewhat confused
+%KRUK12 angle-dependent scalar refractive index not meaningful
+%KRUK12 under oblique incidence, SPPS are supposed to be excited preventing Neff'<0 to occur
+%KRUK12  nonlocality with the transverse changes in wave vector is important
+
+
+%\cite{valentine2011development}
+%VALE11 assume that Neff<0 is a result of "separate engineering" of  mu<0, eff<0
+%VALE11 fishnet monolayer "does not" allow investigation of negative phase (?? in contradiction with my results!)
+%VALE11 Dual vs. single fishnets?
+%VALE11 alternative explanation of Neff<0 is in coupling of spoof plasmons
+%VALE11 show convergence of Neff for 2 (bad) to 5 (good) layers; geometry: 0.860x0.860 um, hole 0.2x0.6 um, stack 0.083 um
+%VALE11 experimental negative refraction of a wedge, operated around 1.5 um
+%VALE11 the metamaterial is anisotropic; under higher incidence angles Neff can not be used
+%VALE11 electric field mostly confined to the hole, magnetic to the inter-sheet space
+%VALE11 highest FOM at NIR (1.5 um) is 3.0 [Dolling 2006 Opt. Lett., vol. 31, pp. 1800–1802,]
+%VALE11 scaled to yellow light (0.58 um), but with FOM of 0.3 oa [S. Xiao 2007 Opt. Lett., vol. 34, pp. 3478–3480, 2009.]
+
+%\cite{yahiaoui2012metallo} % Yahiaoui2012-Metallodielectric_structure_with_negative_N.pdf
+%YAHI12 first metamaterial: S. Zhang, W, Fan, K. J. Malloy, S. R. Brueck, N. C. Panoiu and R. M.
+%YAHI12 Osgood, Near infrared double metamaterials, Optics Express, vol. 13,
+%YAHI12 pp. 4922-4930 (2005).
+
+
+% TODO
+%\cite{yahiaoui2012metallo}
+%\cite{rockstuhl2008light}
+%\cite{zhang2005near}
+%\cite{jelinek2010fishnet}
+%\cite{marquus2009analytical}
+%\cite{freire2008experimental}
+%\cite{jelinek2011metamaterial}
+%}}}
+\begin{figure}[ht] %{{{ fg_fishnet28_photo
+	\caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_fishnet28_photo} \centering 
+	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(a)}} 
+	\end{overpic}
+	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(b)}} 
+	\put(80,-0){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}}
+	\end{overpic}
+\end{figure}
+%}}}
+\paragraph{Extraordinary transmission} %{{{
+A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}, \textit{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the electromagnetic wave was supposed to propagate parallel to the slabs and the operation was different.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+The spectral selectivity of a metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  
+
+The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission} (EOT) which can be orders of magnitude higher than that estimated from the hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side in a similar way as described on the example of metallic slits. 
+%  % predicted by Bethe's law of inverse fourth power of 
+
+Periodical arrangement of the holes is equivalent to structuring of the surroundings of a single hole. In line with the already demonstrated resonance in a metallic sheet with infinite slits, the metallic sheet with holes exhibits a resonance slightly below the diffraction edge which leads to a great drop in reflection. The exact behaviour of the structure is determined by the  metal thickness, dimensions of the holes, their spacing in the $x$-$y$ plane and the spacing of the metallic sheets along the $z$-axis.
+
+%}}}
+\paragraph{Negative index of refraction}%{{{
+%In 2003, the % TODO
+Under a correct choice of parameters of the structure, the re-radiated wave from the opposite side of the sheet has an opposite sign to the incoming one, leading to negative phase advance along the unit cell, and to formation of a $\Neff'<0$ band. 
+
+The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, forming an electric dipole opposite to the incident electric field in a way similar to the wires oriented along the $x-$axis. The magnetic response is formed by individual resonances localised close to the fishnet holes, which exhibit a magnetic dipole moment.
+
+With this view, fishnets are analogous to the array of split-ring resonators embedded in a wire lattice. As an important difference, fishnet achieves relatively low losses, since its robust geometry is optimised for short conduction paths.
+The fishnet behaviour is determined mostly by the geometry, with too many independent parameters to be mapped in detail in this chapter. Compared, e.g., to the SRR array with wires, the occurrence of $\Neff'<0$ is less robust, and most notably depends on the following critical parameters:
+\begin{enumerate}
+\item{The transverse periodicity of the holes mostly influences the frequency of operation, by a similar mechanism as described in the previous chapter.} 
+\item{The relative size of the holes adjusts the coupling strength; small holes lead to weak coupling of the surface plasmons and to the photonic band with $\Neff'<0$ to be very narrow. In contrast, too large holes lead to broad photonic bands which however never reach $\Neff'<0$. 
+	
+If the holes are anisotropic, the described effect is more sensitive to the ellipse/rectangle dimensions parallel to the $y$-axis. Anisotropy of the holes can be beneficial for adjusting the impedance to reduce of reflectance \cite{croenne2009left}.} 
+\item{Finally, the spacing of the metallic sheets along the $z$-axis can be viewed as the factor determining the strength of the interaction. When the layers are overly sparse, the positive phase acquired between them overpowers the effect of plasmonic resonances and prevents the formation of $\Neff'< 0$ band. When they are very dense, the near-field coupling apparently becomes the dominant mechanism of energy transport. This is the case of numerous experimental samples. For instance, in Ref. \cite{valentine2011development}, the sheet distance ($a_z = 83$ nm) was less than 10 \% of the transverse hole periodicity ($a_x = a_y = 860$ nm). The scattering parameter method is obviously not applicable for this kind of structures.}
+\end{enumerate}
+
+%}}}
 \begin{figure}[t] % fg_cdh_comp %{{{
 	\caption{Current-driven homogenization results for two samples of fishnets shown in Fig. \ref{fg_fishnet28_photo};  \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m} \label{fg_cdh_fncomp} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
-	\vspace{.1\textwidth}
+	%\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/RealisticFn_180x200_cs75.pdf}  
 	\put(1,96) {\textbf{(a)}} 
 	% RealisticFn_180x200/CDH_Fishnet_xholesize\=1.800e-04_simtime\=2.000e-10_resolution\=1.000e-05_cellsize\=7.500e-05_cellsizexy\=3.000e-04_slabthick\=2.000e-05_yholesize\=2.000e-04
@@ -1153,121 +1234,40 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\end{overpic}
 \end{figure}
 %}}}
-
-\FloatBarrier %====================================================================================================
-\add{
-\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
-
-% TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf
-%xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
-%cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
-
-%\cite{kruk2012spatial}   %Kruk2012-Spatial_dispersion_of_multilayer_fishnet_MM.pdf
-% obviously fishnets are hyperbolic both in permittivity and permeability
-% study fn of Ag foils in MgF2, holes ca.100x400 nm in 500x500 cell, cell thickness  45 nm, metal thickness 30 nm ?
-% depending on the number of layers Neff spectra up-shift in frequency and converge 
-% the IFCs are complicated; for higher angle of incidence the structure Neff becomes positive (so it makes no sense)
-% they report Neff' switching its sign, but it is somewhat confused
-% angle-dependent scalar refractive index not meaningful
-% under oblique incidence, SPPS are supposed to be excited preventing Neff'<0 to occur
-% nonlocality with the transverse changes in wave vector is important
-
-
+\paragraph{Comparison of homogenization methods for fishnets} %{{{
 %\cite{croenne2009left}
-% 250x180um elliptic holes in thin gold films, 30-44 um spacing only, left-handed at 450 GHz (First in THz band)
-% negative phase advance requires at least two layers stacked? This would 
-% In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
-% Impedance matching by elliptic holes % benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
-% "zero transmission = antiresonance state"??
+%CROE09 250x180um elliptic holes in thin gold films, 30-44 um spacing only, left-handed at 450 GHz (First in THz band)
+%CROE09 negative phase advance requires at least two layers stacked? This would 
+%CROE09 In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
+%CROE09 Impedance matching by elliptic holes % benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
+%CROE09 "zero transmission = antiresonance state"??
 
 %\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
-% direct experimental verification of negative refraction
-% more elliptic holes 125x225, periodicity 
+%WANG10 direct experimental verification of negative refraction
+%WANG10 more elliptic holes 125x225, periodicity 
 
 %\cite{navarro2011dual} % Navarro-Cia-Dual-band_DNG_fishnet_MM_at_millimeter_wave.pdf
-% "Neff<0 has a strong connection to SPP in fishnets", 
-% in microwave and THz, also known as "extraordinary transmission MMs"
-% the +1,0 "internal diffraction order" is the usual negative-index mode
-% the +1,+1 "internal diffraction order" can also result in negative index
-% experiment in microwave: 2.5x2.5 mm unit cell, stack periodicity 0.525 mm with 2.43 diel eps, hole radius 0.55 mm
-% alternating M-I-M-I... structure, but a "functional layer" is a M-I-M
+%NAVA11 "Neff<0 has a strong connection to SPP in fishnets", 
+%NAVA11 in microwave and THz, also known as "extraordinary transmission MMs"
+%NAVA11 the +1,0 "internal diffraction order" is the usual negative-index mode
+%NAVA11 the +1,+1 "internal diffraction order" can also result in negative index
+%NAVA11 experiment in microwave: 2.5x2.5 mm unit cell, stack periodicity 0.525 mm with 2.43 diel eps, hole radius 0.55 mm
+%NAVA11 alternating M-I-M-I... structure, but a "functional layer" is a M-I-M
 
-\cite{valentine2011development}
-% assume that Neff<0 is a result of "separate engineering" of  mu<0, eff<0
-% fishnet monolayer "does not" allow investigation of negative phase (?? in contradiction with my results!)
-%% Dual vs. single fishnets?
-% alternative explanation of Neff<0 is in coupling of spoof plasmons
-% show convergence of Neff for 2 (bad) to 5 (good) layers; geometry: 0.860x0.860 um, hole 0.2x0.6 um, stack 0.083 um
-% experimental negative refraction of a wedge, operated around 1.5 um
-% the metamaterial is anisotropic; under higher incidence angles Neff can not be used
-% electric field mostly confined to the hole, magnetic to the inter-sheet space
-% highest FOM at NIR (1.5 um) is 3.0 [Dolling 2006 Opt. Lett., vol. 31, pp. 1800–1802,]
-% scaled to yellow light (0.58 um), but with FOM of 0.3 oa [S. Xiao 2007 Opt. Lett., vol. 34, pp. 3478–3480, 2009.]
+Also in the literature, it is noted that the s-parameter method may not be applicable to fishnets \cite{croenne2009left}\cite[p. 102]{croenne2009controle}, indicated by major difference in retrieved parameters depending on the number of layers. At the same time, this does not imply that the structure can not be assigned a negative index of refraction; a wedge formed  of a very similar fishnet metamaterial is demonstrated to refract terahertz ray under negative angles \cite{wang2010composite}. 
 
-\cite{yahiaoui2012metallo} % Yahiaoui2012-Metallodielectric_structure_with_negative_N.pdf
-% first metamaterial: S. Zhang, W, Fan, K. J. Malloy, S. R. Brueck, N. C. Panoiu and R. M.
-%Osgood, Near infrared double metamaterials, Optics Express, vol. 13,
-%pp. 4922-4930 (2005).
-%
+For an illustration, we computed the dispersion curves of the fishnet from Ref. \cite{navarro2011dual} in Fig. \ref{fg_cdh_yslit}b. To approximately match the frequency band of operation with other structures described, we up-scaled their structure ten times without any qualitative impact on the results. We set the hole periodicity $a_x=a_y = 250$ $\upmu$m and the slab periodicity $a_z = 52.5$ $\upmu$m, the circular holes had radius of 55 $\upmu$m. The points, retrieved current-driven homogenisation, are again believed to be relatively accurate, and show a narrow band between 980 and 1080 with a negative index of refraction. 
 
+As indicated by the dashed green curve, the scattering parameter method detects this $\Neff'<0$ band, too, but its frequency range is severely shifted up by roughly 100 GHz. Even more pronounced is the deviation in higher bands. The scattering-parameter method eventually fails to predict anything above the onset of diffraction at 1200 GHz.
+% % CDH Fishnet xholesize=1.100e-04 simtime=2.000e-10 resolution=5.000e-06 cellsize=5.250e-05 cellsizexy=2.500e-04 cornerradius=5.500e-05 slabthick=1.000e-05 yholesize=1.100e-04.pdf
 
-
-
-\cite{yahiaoui2012metallo}
-\cite{rockstuhl2008light}
-\cite{zhang2005near}
-\cite{jelinek2010fishnet}
-\cite{marquus2009analytical}
-\cite{freire2008experimental}
-\cite{jelinek2011metamaterial}
-
-
-\paragraph{Extraordinary transmission} %{{{
-A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}, \textit{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the electromagnetic wave was supposed to propagate parallel to the slabs and the operation was different.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
-The spectral selectivity of a metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  
-
-The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission} (EOT) which can be orders of magnitude higher than that estimated from the hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side in a similar way as described on the example of metallic slits. 
-%  % predicted by Bethe's law of inverse fourth power of 
-
-Periodical arrangement of the holes is equivalent to structuring of the surroundings of a single hole. In line with the already demonstrated resonance in a metallic sheet with infinite slits, the metallic sheet with holes exhibits a resonance slightly below the diffraction edge which leads to a great drop in reflection. The exact behaviour of the structure is determined by the  metal thickness, dimensions of the holes, their spacing in the $x$-$y$ plane and the spacing of the metallic sheets along the $z$-axis.
-
-%}}}
-\paragraph{Negative index of refraction}%{{{
-Under a correct choice of parameters of the structure, the re-radiated wave has an opposite sign to the incoming one. In 2003, the % TODO
-
-%This phenomenon is similar to the transmission through narrow metallic slits, with the difference that the  structure exhibits 
-% TODO what is the enhancement of a single non-corrugated hole?
-
-% TODO \ref{fg_cdh_yslit}b -- add again about convergence of s-param method
-
-An important difference  fishnet achieves relatively low losses, since it is optimised for thick and short conduction paths 
-
-The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, forming an electric dipole opposite to the incident electric field in a way similar to the wires oriented along the $x-$axis.  
-The magnetic response is formed by individual resonances localised close to the fishnet holes, which exhibit a magnetic dipole moment.
-
-This kind of metamaterial appears hard to be homogenized by the s-parameters \cite{wang2010composite}. The cause again appears to be in resonances 
 %... Improved cross-shaped pattern for better spectral selectivity %\cite{porterfield1994resonant}
-%TODO Bad convergence of s-paraemetr \cite{wang2010composite}, \cite[p. 102]{croenne2009controle}
+%TODO Bad convergence of s-paraemetr \cite{wang2010composite}, 
 
 %TODO NOTE: Identifying the individual resonance with the |t|=0 point is confusing; what we observe is the Fano lineshape where |t|=0 frequency depends also on the background scattered wave. When the background is weak, the resonance frequency identifies with  |t|=0. When the background reflectance is close to 100%, the resonance identifies with |r|=0. And it goes more complicated when the background has intermediate values.
 
-
-%Although fishnets appear to have nothing in common with other negative-index structures, their interaction with electromagnetic wave in fact bears a close resemblance to these: 
-	%... todo?  wave propagation can be also understood through the "hopping model"
-
-	% for nearly flat structures, where most of the fields are confined within a slab perpendicular to $\KK$, a
-
 % \cite{dolling2006simultaneous} 
 
-%}}}
-\begin{figure}[ht] %{{{ fg_fishnet28_photo
-	\caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_fishnet28_photo} \centering 
-	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(a)}} 
-	\end{overpic}
-	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(b)}} 
-	\put(80,-0){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}}
-	\end{overpic}
-\end{figure}
 %}}}
 \begin{figure}[t] %fg_expe_fishnets %{{{
 	\caption{Experimental and simulated amplitude of transmittance for fishnets \textbf{(a)} with 180$\times$200 $\mu$m holes, and \textbf{(b)} with 230x255  $\mu$m holes.  } 
@@ -1313,14 +1313,8 @@ For simulation of the fishnet, different grid resolutions were used. While usual
 
 In most terahertz transmittance spectra of fishnets, a relatively sharp notch between 0.5 and 1.0 THz was observed. The discretisation error has helped to explain it, since it broke the twofold mirror symmetry of the fishnet hole. 
 
-This way, it also broke the symmetry of the first predominantly quadrupole mode, introducing a slight electric dipole into its field pattern  (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole couples with the incident plane wave, and very narrow resonances emerged also in the simulated spectra in Fig. \ref{fg_expe_fishnets}, at 880 and 710 GHz, respectively. These values, still without any user intervention, the experimentally observed resonance notches close to these frequencies as a result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
+This way, it also broke the symmetry of the first predominantly quadrupole mode, introducing a slight electric dipole into its field pattern  (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole couples with the incident plane wave, and very narrow resonances emerged also in the simulated spectra in Fig. \ref{fg_expe_fishnets}, at 880 and 710 GHz, respectively. Without any manual postprocessing, the experimentally observed resonance notches are well matched by the simulation, and thus can be explained as the result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
 
 %}}}
-
-
-% pairs of rods [10], [12], [31], pair of crosses [32]
-% Aleian 2012 Plasmonic Au SiO2 nanoparticles
-
-% TODO Ye2013 Negative Group Velocity in the Absence of Absorption Resonance
  
-}
+
