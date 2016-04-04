@@ -1,18 +1,17 @@
 \input{thztech}
 \section{Terahertz time-domain spectroscopy} \label{sect_tdts} 
 \paragraph{Overview of the method}%{{{
-The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
+The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy}\index{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
 % Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
 
 The basic principle of the measurement was shared with the scattering-parameter retrieval in FDTD simulations presented later in Chapter \ref{chapter_sparam}.
  A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup, and processed to obtain the transmission amplitude and phase as functions of frequency.
 
 The reflectance could not be directly measured in the setup described, but at the end of this section an indirect method is described that allows to compute the equivalent sample properties from the subsequent echoes, that are introduced when the sample is surrounded by thick transparent slabs of sapphire. 
-In the following, we give details on the optical/terahertz setup.
-% TODO 
+In the following, we give details on the optical and terahertz experimental setup.
 %}}}
 \paragraph{Terahertz pulse generation}%{{{
-As the source of ultrashort optical pulses, we used commercial \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, repetition rate of 76 MHz and a pulse duration under 70 fs.  %TODO cite Pashkin?
+As the source of ultrashort optical pulses, we used commercial \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, repetition rate of 76 MHz and a pulse duration under 70 fs.  
 % \cite{pashkin2004phd} In our TDTS measurements femtosecond laser ”Mira Seed” by COHERENT has been used for generation of ultrashort light pulses with following characteristics:
 	%pulse length			50 - 80 fs
 	%spectral bandwidth		15 - 40 nm	
@@ -37,7 +36,7 @@ The whole terahertz wave path has to be confined in an environment free of water
 
 %}}}
 \paragraph{Terahertz detection setup}%{{{
-\begin{figure}[ht] \caption{\textit{Experimental setup for the terahertz time-domain spectroscopy}} \label{fg_exp} \centering 
+\begin{figure}[ht] \caption{Experimental setup for the terahertz time-domain spectroscopy} \label{fg_exp} \centering 
 	\includegraphics[width=\textwidth]{img/exp_THz_sampling.pdf}
 \end{figure}
 
@@ -98,7 +97,7 @@ provided us with high-permittivity TiO$_{2}$ spheres with the sizes from 30 to 1
 \includegraphics[height=5cm]{img/microscope_TiO2_particles.pdf}
 \end{figure}
 
-Compared to most metamaterial designs, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying} technique. In contrast with the expensive and time consuming \textit{top-down} processes such as laser cutting, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. 
+Compared to most metamaterial designs, the fabrication of the dielectric spheres can be extremely simplified by the \textit{spray-drying}\index{spray-drying technique} technique. In contrast with the expensive and time consuming \textit{top-down} processes such as laser cutting, litography or polishing, this is a typical \textit{bottom-up} process, where the particles are formed all within one procedure, though certain postprocessing is needed. 
 
 As a first step, rutile (TiO$_{2}$) was ground to a sub-microscopic powder \cite[pp. 91-93]{yahiaoui2011phd}. A suspension of this powder in ethanol was sprayed into flame. It immediately formed spherical droplets, which dried up and sintered in the hot air. Rutile concentration in the suspension, feed rate and gas flow in the flame determined the average size of the sintered particles.
 
@@ -122,7 +121,7 @@ Triple sieving on commercial sieves, weaved from stainless steel wire, did not p
 For clarity, some limiting-case examples of the ellipsoid projection and the equivalent position on the minor-major ellipse axis plot are drawn in blue, violet and red. } \label{fg_sieve_pass_notpass} \centering 
 \includegraphics[width=\textwidth]{img/technology/sieve_pass_notpass.pdf}
 \end{figure}
-In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$\rho_a \leq \rho_b \leq \rho_c.$$ For the purpose of sieving, only the values of the shortest two half-axes, $\rho_a$ and $\rho_b$, decide whether the particle can pass through the sieve. The longest ellipsoid half-axis $\rho_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each three-dimensional particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2\rho_a$, and by its \textit{major axis} $\equiv 2\rho_b$ (which is, in fact, the \textit{medium} axis of the ellipsoid). For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and major ellipse axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
+In the following, the dielectric particles are approximated by ellipsoids with three (generally different) half-axes $$\rho_a \leq \rho_b \leq \rho_c.$$ For the purpose of sieving, only the values of the shortest two half-axes, $\rho_a$ and $\rho_b$, decide whether the particle can pass through the sieve. The longest ellipsoid half-axis $\rho_c$ does not affect this, although it may influence the sieving speed. Therefore we can represent each three-dimensional particle with its projection on the smallest possible ellipse, which is described by its \textit{minor axis} $\equiv 2\rho_a$, and by its \textit{major axis} $\equiv 2\rho_b$ (which is, in fact, the \textit{medium axis} of the ellipsoid). For a given shape of a hole in a homogeneous flat sieve, it is easy to determine which values of minor and major ellipse axes allow a particle to pass through, and which not. For a square sieve such area in the parameter space forms a disk around the center of origin (Fig. \ref{fg_sieve_pass_notpass}a). It can be shown that when the sieve is diagonally stretched, forming a lozenge hole shape, the area of spheres allowed to pass changes into an ellipse (Fig. \ref{fg_sieve_pass_notpass}b). When the hole shape is circular or elliptical, it is obvious that the area forms a part of a square or of a rectangle, respectively  (Fig. \ref{fg_sieve_pass_notpass}c,d).
 
 The resonance frequency of a dielectric resonator depends on all three half-axes, $\rho_a \leq \rho_b \leq \rho_c$. In order to select as narrow size fraction as possible, one has to use double sieving: the above sieve not allowing the fraction of particles too big, the bottom sieve removing the fraction of particles too small. This is where the anisotropic hole shapes become useful -- the bottom sieve can exclude also all oblong particles with the difference of $\rho_a \leq \rho_b$ too big. This effect is illustrated in Fig. \ref{fg_double_sieving}, which also presents a comparison of using more usual sieves with square/lozenge holes to the effect of a couple of sieves with micromachined square/elliptical holes. Obviously, the latter approach better discriminates for the \textit{shape} of the ellipsoid. This advantage further gains on importance when the anisotropy of the sieve is low.
 
@@ -174,7 +173,7 @@ This problem could however be slightly mitigated by tilting the apparatus. With 
 \paragraph{Image preparation} %{{{
 Accurate characterisation of the particle statistics was necessary not only to assess the efficacy of sieving, but also to explain possible difference between the measured terahertz spectra and the computed ones on a quantitative basis. To obtain reliable statistics, thousands of particles needed to be evaluated, repeatedly for every sample. This, along with the small dimensions of particles, indicated that the most viable way to do so would be the optical microphotography with computer image processing automatically resolving each particle.
 
-Computer \textit{granulometry}, identification and measurement of photographed particles from a digital image,
+Computer \textit{granulometry}\index{granulometry}, identification and measurement of photographed particles from a digital image,
 is a well-established technique. It is implemented in several advanced image processing programs, of which \textit{ImageJ} was selected \cite{abramoff2004image} since it is free of charge and allows its use for large batches of images through the use of macros. 
 
 The transmission microphotographs were acquired either with the lowest magnification on a laboratory microscope, or with a portable microscopic digital camera on its highest magnification, yielding similar results.
@@ -231,7 +230,7 @@ A greater challenge arose from thermal expansion of the foil. In order to fully 
 
 %}}}
 \paragraph{Difference between the sieves and fishnets}%{{{
-The meshes were made two purposes -- either as sieves used in the second sieving apparatus described above, or as metamaterial samples known as \textit{fishnets}, which are predicted to exhibit a negative index of refraction (see Sect. \ref{section_fishnet}). The difference between these applications is subtle; the meshes intended as sieves would surely exhibit a resonance in the terahertz range. 
+The meshes were made two purposes -- either as sieves used in the second sieving apparatus described above, or as metamaterial samples known as \textit{fishnets}\index{metamaterial!fishnet!fabrication}, which are predicted to exhibit a negative index of refraction (see Sect. \ref{section_fishnet}). The difference between these applications is subtle; the meshes intended as sieves would surely exhibit a resonance in the terahertz range. 
 
 The optimum  size range of for the titanium dioxide spheres resonating around 1 THz is around 30--60 $\upmu$m, which determined the hole diameter of sieves. To maintain mechanical robustness, the periodicity in sieves was kept much larger than the hole diameter, usually $300\times 300$ $\upmu$m, and the thickness was chosen as 20 or 30 $\upmu$m.
 

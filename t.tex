@@ -6,7 +6,7 @@
 \usepackage{mathrsfs} 
 \usepackage{palatino} 
 \usepackage[font=it]{caption}
-\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,color,enumitem, tikz, csquotes, placeins, pdflscape}
+\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,color,enumitem, tikz, csquotes, placeins, pdflscape, makeidx}
 \usepackage[percent]{overpic}
 \usetikzlibrary{positioning, arrows}
 \usepackage{upgreek}
@@ -28,6 +28,8 @@
 \addbibresource{fdphd.bib}
 
 \input{defs.tex}
+
+\makeindex
 
 \usepackage{xcolor}
 %\usepackage[notref,notcite]{showkeys}
@@ -68,7 +70,9 @@
 
 \printbibliography
 
-%\chapter*{Index}
+\chapter*{Index}
+\printindex
+
 \chapter*{List of own publications}
 % \input{fd_publications.tex} % TODO
 
