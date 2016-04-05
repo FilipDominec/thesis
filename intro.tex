@@ -64,7 +64,7 @@ We point out the capabilities of each of them and we also briefly review multipl
 Defining numerically stable FDTD simulations with realistic materials, one encounters several pitfalls. They were painstakingly resolved during the preparation of the thesis, and are also presented here.
 
 The second part describes the setups of the "numerical experiments" that are built atop the algorithms. 
-The time-domain simulation is first used in conjunction with the \textit{s}-parameter retrieval setup, which is based on transmitting a broadband pulse towards a metamaterial unit cell and recovering its effective parameters from the reflected and transmitted fields. While this setup is shown to give mostly realistic results, however, it has its limitations which are also presented. Although the \textit{s}-parameter retrieval seems by far the most commonly used, different setups were described in the literature which are briefly noted.
+The time-domain simulation is first used in conjunction with the scattering-parameter retrieval setup, which is based on transmitting a broadband pulse towards a metamaterial unit cell and recovering its effective parameters from the reflected and transmitted fields. While this setup is shown to give mostly realistic results, however, it has its limitations which are also presented. Although the scattering-parameter retrieval seems by far the most commonly used, different setups were described in the literature which are briefly noted.
 One of such simulation setups of the current-driven homogenization is presented in details, and it is shown that its weaker prior assumptions on the structure behaviour lead to higher reliability.
 % TODO one should really devise an algorithm for the Landau-Lifshitz permittivity retrieval from CDH (i.e. calibrate the source first on vacuum?)
 %}}}
@@ -88,8 +88,7 @@ At the end of the thesis, somewhat critical conclusions from the above results a
 
 \section{Conventions used}%{{{
 Throughout the thesis, a single or double apostrophe ($x', x''$) refers to the real and imaginary part of a complex number ($x$). Italic symbols represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
-
-The lists of symbols and abbreviations used are in Tables \ref{tb_symbols} and \ref{tb_shortcuts}, respectively. 
+The index and lists of symbols and abbreviations are included at the end of the thesis.
 %The explicit time, space or frequency dependence of quantities are omitted when it can not cause confusion.
 
 An important note shall be made on the sign convention for the complex wave, as introduced in Eq. (\ref{eq_pw}).
