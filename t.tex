@@ -11,7 +11,19 @@
 \usetikzlibrary{positioning, arrows}
 \usepackage{upgreek}
 
-\usepackage[backend=biber]{biblatex} 
+\usepackage[
+  language=english,  % Ustawienie języka
+  %urldate=long,     % Wyświetlenie długiego formatu w datach
+  style=numeric,    % numeric, alphabetic, authoryear,
+  %sorting=nty,      % Sortowanie: nAME, tITLE, yEAR
+  isbn=true,        % zgodnie z nowym rozporządzeniem  pole obowiązkowe
+  firstinits=true,  % will render all first and middle names as initials.
+  abbreviate=false,
+  autolang=hyphen,
+  backend=biber,]{biblatex}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+%\usepackage[backend=biber]{biblatex} 
 
  
 
@@ -68,10 +80,9 @@
 
 \label{endtext} 
 
-\printbibliography
-
-\chapter*{Index}
 \printindex
+\input{tables.tex}
+\printbibliography
 
 \chapter*{List of own publications}
 % \input{fd_publications.tex} % TODO
