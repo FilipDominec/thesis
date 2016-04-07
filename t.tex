@@ -15,7 +15,7 @@
   language=english,  % Ustawienie języka
   %urldate=long,     % Wyświetlenie długiego formatu w datach
   style=numeric,    % numeric, alphabetic, authoryear,
-  %sorting=nty,      % Sortowanie: nAME, tITLE, yEAR
+  sorting=none,      % Sortowanie: nAME, tITLE, yEAR
   isbn=true,        % zgodnie z nowym rozporządzeniem  pole obowiązkowe
   doi=false,
   url=true,
@@ -27,7 +27,7 @@
 
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-\input{fixbibtex.tex}
+\input{fixbiblatex.tex}
 
 %\DeclareFieldFormat
   %[article,inbook,incollection,inproceedings,patent,thesis,unpublished]
