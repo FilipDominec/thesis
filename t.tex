@@ -17,13 +17,22 @@
   style=numeric,    % numeric, alphabetic, authoryear,
   %sorting=nty,      % Sortowanie: nAME, tITLE, yEAR
   isbn=true,        % zgodnie z nowym rozporządzeniem  pole obowiązkowe
+  doi=false,
+  url=true,
   firstinits=true,  % will render all first and middle names as initials.
   abbreviate=false,
   autolang=hyphen,
-  backend=biber,]{biblatex}
+  backend=biber,
+  maxbibnames=3]{biblatex}
+
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-%\usepackage[backend=biber]{biblatex} 
+\input{fixbibtex.tex}
+
+%\DeclareFieldFormat
+  %[article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  %{title}{#1\isdot}
+
 
  
 

@@ -1,0 +1,96 @@
+% Volume number must be typeset in bold
+\DeclareFieldFormat[article]{volume}{\textbf{#1}}% volume of a journal
+
+% Pages must not be leaded by any "Pages:" word
+\DeclareFieldFormat[article]{pages}{#1}% volume of a journal
+
+% Year must be in paretheses
+\DeclareFieldFormat[article]{date}{\mkbibparens{#1}}
+
+% Remove quotation of title
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {title}{#1\isdot}
+
+% Comma NOT before BUT after journal volume
+    \renewbibmacro*{volume+number+eid}{%
+      %\setunit*{\addcomma\space}% NEW
+      \printfield{volume}%
+    %  \setunit*{\adddot}% DELETED
+      %\setunit*{\addcomma\space}% NEW
+      %\printfield{number}%
+      %\setunit{\addcomma\space}%
+      \printfield{eid}
+}
+
+
+
+
+
+% Comma before date; date not in parentheses
+\renewbibmacro*{issue+date}{%
+  %\setunit*{\addcomma\space}% 	 DELETED comma
+%  \printtext[parens]{% DELETED
+    \iffieldundef{issue}
+      {\usebibmacro{date}}
+      {\printfield{issue}%
+       %\setunit*{\addspace}%
+%       \usebibmacro{date}}}% DELETED
+       \usebibmacro{date}}% NEW
+  \newunit}
+
+% Issue/date macros removed after journal number
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%	 RETURNED HERE, avoid dot or comma after journal name
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}%
+     %\setunit{\addspace}}%	 DELETED comma
+	}
+  \usebibmacro{volume+number+eid}%
+%  \setunit{\addspace}% DELETED
+  %\usebibmacro{issue+date}% DELETED
+%  \setunit{\addcolon\space}% DELETED
+%  \usebibmacro{issue}% DELETED
+  \newunit}
+
+% "In:" removed for articles; issue/date macros added after note+pages macro
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{bytranslator+others}%
+  \newunit\newblock
+  \printfield{version}%
+  \newunit\newblock
+%  \usebibmacro{in:}% DELETED
+  \usebibmacro{journal+issuetitle}%
+  \newunit
+  \usebibmacro{byeditor+others}%
+  \newunit
+  \usebibmacro{note+pages}%
+  \usebibmacro{pageref}% MOVED HERE
+  \setunit{\addspace}% NEW
+  \usebibmacro{issue+date}% NEW
+  \setunit{\addcolon\space}% NEW
+  \usebibmacro{issue}% NEW
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{issn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  %\usebibmacro{pageref}%
+  \usebibmacro{finentry}}
