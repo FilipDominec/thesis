@@ -1,17 +1,17 @@
 \input{thztech}
 \section{Terahertz time-domain spectroscopy} \label{sect_tdts} 
 \paragraph{Overview of the method}%{{{
-The numerical data could be in some cases corroborated by experimental measurement using the \textit{time-domain terahertz spectroscopy}\index{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
+The numerical data presented in this thesis could be in some cases corroborated by experimental measurements using the \textit{time-domain terahertz spectroscopy}\index{time-domain terahertz spectroscopy} (TDTS) in our laboratory. 
 % Note: it would be useful to find: Grüner - 1998 - Millimeter and Submillimeter Wave Spectroscopy of
 
-The basic principle of the measurement was shared with the scattering-parameter retrieval in FDTD simulations presented later in Chapter \ref{chapter_sparam}.
+The basic principle of the measurement is similar to the scattering-parameter retrieval in FDTD simulations presented in Chapter \ref{chapter_sparam}.
  A short, broadband pulse impinged the sample, one part of its energy was transmitted, another reflected and the rest was dissipated in the sample. The transmitted pulse was then recorded by the time-domain sampling setup, and processed to obtain the transmission amplitude and phase as functions of frequency.
 
-The reflectance could not be directly measured in the setup described, but at the end of this section an indirect method is described that allows to compute the equivalent sample properties from the subsequent echoes, that are introduced when the sample is surrounded by thick transparent slabs of sapphire. 
+The reflectance could not be directly measured in the setup described, but at the end of this section an indirect method is described that allows to compute the equivalent sample properties from the subsequent echoes that arise when the sample is surrounded by thick transparent slabs of sapphire. 
 In the following, we give details on the optical and terahertz experimental setup.
 %}}}
 \paragraph{Terahertz pulse generation}%{{{
-As the source of ultrashort optical pulses, we used commercial \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with mean power of 0.5 W, central wavelength 810 nm, repetition rate of 76 MHz and a pulse duration under 70 fs.  
+As the source of ultrashort optical pulses, we used the commercial \textit{Coherent Mira} titanium-sapphire femtosecond oscillator with a mean power of 0.5 W, central wavelength 810 nm, repetition rate of 76 MHz and a pulse duration not exceeding 70 fs.  
 % \cite{pashkin2004phd} In our TDTS measurements femtosecond laser ”Mira Seed” by COHERENT has been used for generation of ultrashort light pulses with following characteristics:
 	%pulse length			50 - 80 fs
 	%spectral bandwidth		15 - 40 nm	
@@ -20,31 +20,32 @@ As the source of ultrashort optical pulses, we used commercial \textit{Coherent 
 	%average power			650 mW
 	%pulse peak power		140 kW    	
 
-The laser output was split into two branches at the beamsplitter (BS1 in Fig. \ref{fg_exp}), one of which was used for the electrooptical sampling setup. The major part the energy passing through BS1 was converted to terahertz pulses using an interdigitated photoconductive emitter from TeraSED, whose principle of operation is described in the previous section. 
-The voltage at the emitter was 15-20 V, and its polarity was modulated at the frequency of 91-92 kHz. This enabled to use synchronous lock-in detection to increase the noise-resistance of the detection system. % as described below.
+The laser output was split into two branches at the beamsplitter (BS1 in Fig. \ref{fg_exp}), one of which was used for the electrooptical sampling setup. The major part of the energy passing through BS1 was converted to terahertz pulses using an interdigitated photoconductive emitter from TeraSED, whose principle of operation is described in the previous section. 
+The voltage at the emitter was 15-20 V, and its polarity was modulated at the frequency of 91-92 kHz. This enabled us to use synchronous lock-in detection to increase the signal-to-noise ratio of the detection system. % as described below.
 % TODO ADD figure of the pulse and the spectrum
 
 %}}}
 \paragraph{Vacuum chamber and sample holder}%{{{
-The active region of the TeraSED emitter was of comparable diameter as the longer-wavelength component of of the THz pulse, so the beam diffraction led to a broad angle of the terahertz emission, in the order of 0.5 radian. Therefore, the wave was reflected at an ellipsoidal % TODO check if it was not paraboloidal
- mirror and refocused at the sample. Upon passing through it, it diffracted again and was collected by an identical ellipsoidal mirror and focused at the detector. 
-To allow enough clearance for a bigger instrumentation surrounding sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
+The diameter of the active region on the TeraSED emitter was comparable with the longer-wavelength components of of the THz pulses, so the beam diffraction led to a broad angle of the terahertz emission, of the order of 0.5 radian. Therefore, the waves were reflected at an ellipsoidal % TODO check if it was not paraboloidal
+ mirror and refocused at the sample. Upon passing through it, they diffracted again and were collected by an identical ellipsoidal mirror and focused at the detector. 
+To allow enough clearance for a bigger instrumentation surrounding a sample, such as a liquid-helium cryostat or a heating furnace, the ellipsoidal mirrors were separated by 0.3 m and the whole beam path approached 0.6 m. % TODO check with a ruler
 
-Propagation of terahertz waves in air over such a distance is impeded by absorption of water vapour, which is the only polar molecule found in the air with significant concentration. The absorption forms clear notches in the terahertz transmission spectra, for instance around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In time domain, the absorption manifests as a exponentially decaying ringdown that has polarity opposite to the main THz peak.
+Propagation of terahertz waves in air over such a distance is impeded by absorption of water vapour, which is the only polar molecule found in the air in a significant concentration. The absorption forms clear notches in the terahertz transmission spectra, for instance around 0.62, 0.75, 1.07 and 1.41 THz, which can be traced down to discrete rotational levels of the water molecules \cite{exter1989}. In the time domain, the absorption manifests itself as a exponentially decaying ringdown. %that has polarity opposite to the main THz peak.
 % TODO figure from my web
-The whole terahertz wave path has to be confined in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, mirrors, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
+In order to avoid such a signal deformation,
+the whole terahertz wave path has to be in an environment free of water vapour, and the fastest way to reliably achieve this was to enclose the emitter, mirrors, sample and detector in a vacuum chamber evacuated by a two-stage rotary pump. 
 
 %}}}
 \paragraph{Terahertz detection setup}%{{{
-\begin{figure}[ht] \caption{Experimental setup for the terahertz time-domain spectroscopy} \label{fg_exp} \centering 
+\begin{figure}[ht] \caption{Experimental setup for the terahertz time-domain spectroscopy. BS1 is the beam splitter separating the pump and sampling bbranches, F1 a focusing lens, QWP a quarter-wave plate, PBS a pellicle beam splitter.  ZnTe denotes the optoelectric crystal, C is the Babinet compensator, WP is the Wollaston polarizer and are PD1-3 are the photodiodes.} \label{fg_exp} \centering 
 	\includegraphics[width=\textwidth]{img/exp_THz_sampling.pdf}
 \end{figure}
 
-Before the laser pulse entered the vacuum chamber to induce the photoexcitation of the THz emitter, a small part of its energy was separated by a reflection from a microscope glass BS1 in Fig. \ref{fg_exp}) into the \textit{sampling} branch. 
+Before the laser pulse entered the vacuum chamber to induce the photoexcitation of the THz emitter, a small part of its energy was separated by a reflection from a beam splitter (BS1 in Fig. \ref{fg_exp}) into the \textit{sampling} branch. 
 
-The pulse in the \textit{sampling} branch reflected from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the terahertz pulse. Then it was attenuated at a filter (F1) and its polarisation was converted from linear to a circular one on a quarter-wave plate (QWP). The pellicle beamsplitter (PBS) directed the optical beam along the axis of the terahertz beam. 
+The pulse in the \textit{sampling} branch reflected from a pair of mirrors on a delay line, acquiring a precisely controlled relative delay against the terahertz pulse. Then it was attenuated at a filter (F1) and its polarisation was converted from linear to the circular one on a quarter-wave plate (QWP). The pellicle beamsplitter (PBS) directed the optical beam along the axis of the terahertz beam. 
 
-We used the electrooptic sampling mentioned in the previous chapter: The electric field of the terahertz pulse induced a slight transient change in the permittivity tensor of the zinc telluride crystal (ZnTe). The much weaker and shorter optical pulse was modified by this change, acquiring diagonal ellipticity that could be fine tuned for zero signal with the Babinet compensator (C). The Wollaston prism (WP) was be used to separate the two diagonal components of the resulting elliptic-polarized light. The difference between these two signals, if small modulation is assumed, proportional to the amplitude of the electric field. This allows to sample electric field with a theoretical temporal resolution given by the duration of the optical pulse, but using a standard intensity detection using a pair of silicon diodes.   
+We used the electrooptic sampling mentioned in the previous chapter: The electric field of the terahertz pulse induced a slight transient change in the permittivity tensor of the zinc telluride crystal (ZnTe). The much weaker and shorter optical pulse was modified by this change, acquiring diagonal ellipticity that could be fine tuned for zero signal with the Babinet compensator (C). The Wollaston prism (WP) was used to separate the two diagonal components of the resulting elliptic-polarized light. The difference between these two signals, if a small modulation is assumed, is proportional to the amplitude of the electric field. This allowed us to sample the electric field with a theoretical temporal resolution given by the duration of the optical pulse, but using a standard intensity detection using a pair of silicon diodes.   
 %% TODO add references to other papers and theses from our group - one can not describe everything from Gouy shift to PKGraph ...
 
 %}}}
