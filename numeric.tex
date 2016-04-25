@@ -563,7 +563,7 @@ It is assumed that for any realistic structure with nonzero losses, the transmis
 \begin{equation} \upsilon(f) = \frac{1-r^2+t^2}{2t},   \label{eq_upsilon}\end{equation}
 is also a continuous complex function. Any discontinuities in the retrieved spectra of $\Neff'(f)$ may therefore arise exclusively from discontinuities of the arccosine function in the complex plane.
 
-To ensure an overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore necessary to identify the two \textit{branch cuts}\index{branch cuts} of arccosine in the complex plane, as illustrated in Figs. \ref{fg_arccos}a,b. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
+To ensure the  overall continuity of $\Neff$ in Eq. (\ref{eq_Neff}), it is therefore necessary to identify the two \textit{branch cuts}\index{branch cuts of arccosine} of arccosine in the complex plane, as illustrated in Figs. \ref{fg_arccos}a,b. Different measures must be taken for the sign and branch index $m(f)$ to ensure continuity:
 \begin{enumerate}
 \item{
 If, by increasing the frequency, the arccos argument $\upsilon$ passes through the right branch cut at $\upsilon' > 1, \upsilon'' = 0$ (point "R" in Fig. \ref{fg_arccos}c), the real part of arccos$(\upsilon)$ touches zero, whereas its imaginary part is non-zero and changes its sign. The direction given by the sign of $d\upsilon'/df$ does not play any role. The continuity is achieved if, from this frequency on, one reverses the sign of the arccos term . 
@@ -650,7 +650,7 @@ A similar field-copying procedure is repeated in each simulation step for all re
 %}}}
 \paragraph{Single-wavevector source}%{{{
 In order to excite the simulation volume with a single wavevector $\KK$ which complies to the Bloch-periodic boundary conditions imposed, the source volume must expand over the whole unit cell and acquire a correct harmonic modulation of its complex amplitude. While this task appears impossible by experimental techniques, it is straightforward in the FDTD simulation. The source is typically designed to be a complex-valued electric current with a given amplitude:
-\begin{equation} \mathbf{J}(\rr, t) := \mathbf{x} \, e^{-\ii \KK\cdot \rr} \,j(t), \label{eq_}\end{equation}
+\begin{equation} \mathbf{J}(\rr, t) := \mathbf{x} \, e^{-\ii \KK\cdot \rr} \,j(t), \label{eq_currentsource}\end{equation}
 	where $\mathbf{x}$ determines the default polarisation of the electric field and $j(t)$ is the temporal profile of the source.
 
 Excitation of the structure with this kind of the source gave the current-driven homogenisation its name. Unlike the scattering-parameters method, in CDH the source volume coincides with the entire unit cell volume. An attempt of visualisation of this minimalistic simulation setup is in Fig. \ref{fg_fdtd_cdh}. 
@@ -662,7 +662,7 @@ With the wavevector restricted to a single given value, it is necessary to excit
 Unlike the scattering-parameters method, CDH can not easily detect the spectral profile of the exciting field, and the retrieved fields can not be normalized against it. To maintain an approximately flat source amplitude over a wide part of the specturm, a nontrivial temporal shape of the source was designed, tested and submitted to the MEEP simulation developer site \cite{} online:
 \begin{equation} 
 	j(t) := w_{BN}(t)\, \left[\mathrm{Si}(2\pi f_1 t) - \mathrm{Si}(2\pi f_2 t) \right]
-\label{eq_}\end{equation}
+\label{eq_currentsourcetime}\end{equation}
 where the transcendent sine-integral function introduces the flat-top rectangular spectrum of the wave radiated from the source:
 \begin{equation} \mathrm{Si}(t) = \int_0^t \frac{\sin \tau}{\tau} d\tau, \label{eq_Si}\end{equation}
 	The electric field radiated by a source is proportional to the temporal derivative of the current $j(t)$ \cite{ab-initio}, therefore the sine-integral must be used to obtain the field shape of $E_x\propto \sin(t)/t$, which is known to have a rectangular flat-top spectrum.
@@ -804,7 +804,7 @@ Like in the s-parameters method, the function of $K(\omega)$ can be resolved in 
 %\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials
 %}}}
 \paragraph{Concluding remarks}%{{{
-Other homogenisation methods include the \textit{multipole expansion}\index{multipole expansion} \cite{vynck2009all, chipouline2012metamaterials, petschulat2008multipole}, \textit{quasimode theory}\index{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
+Other homogenisation methods include the \textit{multipole expansion}\index{multipole expansion} \cite{vynck2009all, petschulat2008multipole}, \textit{quasimode theory}\index{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
 Without much exaggeration it can be concluded that there are roughly as many homogenisation methods as authors involved in the research of periodic structures. All such methods work reliably in the easy cases:
 \begin{displayquote}
 \textit{Homogenization theories are typically valid when the unit-cell size is insignificant with respect to the wavelength (the zero-frequency limit) and thus might be expected to result in a poor description of metamaterials.}

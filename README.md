@@ -66,6 +66,7 @@
  * [ ] ...ize ---> ...ise 
  * [ ] go through all TODOs
  * [ ] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
+ * [ ] 
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [ ] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
