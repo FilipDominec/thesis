@@ -1064,9 +1064,9 @@ A closely related phenomenon  caused by surface plasmons, the \textit{Wood's ano
 
 %}}}
 \paragraph{Standing surface plasmon resonance} %{{{
-Since the structure and incident fields are both symmetric, equal amplitudes of plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic wave, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on coupling of the incoming plane wave to SPP, transfer of energy of SPP to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
+Since the structure and the incident fields are both symmetric, equal amplitudes of the surface plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic resonance, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on the incoming plane wave coupling of to (spoof) surface plasmons-polaritons (SPPs), transfer of energy of SPPs to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
 
-In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably matches the point of lowest frequency for the zero-reflection curve in Fig. \ref{fg_yslit_xscan}a. Stronger coupling apparently down-tunes the frequency, but it is not crucial for the peak transmission efficiency; since it is a resonant process, it can transmit high amplitude even through arbitrarily narrow slits. 
+In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which,  in Fig. \ref{fg_yslit_xscan}a, noticeably well matches the slit width $d_x$ corresponding to the lowest frequency of the zero-reflection curve. Stronger coupling thus apparently down-tunes the frequency, but it is not the main determining factor for the peak transmission efficiency; since EOT is a resonant process, it can achieve high amplitude of transmission even through arbitrarily narrow slits. 
 
 %Lalanne-Theory_of_fishnet_optical_NIM.pdf
 % SPP on surface impact the transmission through a nano-aperture; 
@@ -1075,7 +1075,9 @@ In a numerical study of SPP-assisted transmission through a single slit, Lalanne
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
 % for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
 
-The extraordinary transmission requires strict periodicity of the slits along the $x$-axis, and also symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on a single side of the structure. The dielectric does not have to touch the metal directly; a distance similar to the unit cell size, was sufficient to observe the effect. We thus conjecture the approximate decay length of the (spoof) surface plasmons, both in front and behind the structure, is not much smaller than $a_x$. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
+The extraordinary transmission in slit arrays requires strict periodicity of the slits along the $x$-axis, and also symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on one side of the structure. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
+
+Moreover, the dielectric does not have to touch the metal directly; a distance similar to the unit cell size was sufficient for the reflectance notch to be suppressed. We thus conjecture the approximate decay length of the surface plasmons along the $z$-axis, both in front of the structure and behind it, is not much smaller than $a_x$. 
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
@@ -1086,7 +1088,7 @@ The extraordinary transmission requires strict periodicity of the slits along th
 \begin{overpic}[width=0.48\textwidth]{img-meep/yslit_dscan_x20_HR_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}\\
 \end{figure}
 %}}}
-\paragraph{Effect of metallic slab thickness}%{{{
+\paragraph{Effect of the metallic slab thickness}%{{{
 % Weiner-Transmission_through_metallic_slits.pdf
 % references to many papers on subwavelength slit and aperture transmission
 % study of 50x2000 um slit and double-slit transmission through a 200 nm Ag film embedded in glass 
@@ -1099,21 +1101,21 @@ The extraordinary transmission requires strict periodicity of the slits along th
 % (if the slits were periodic, a resonant coupling of the incident wave to surface plasmons would enable ~100% transmission)
 % experimental results 
 
-The condition of surface plasmon wavelength $\lambda_{\text{SPP}}$ matching the unit cell size $a_x$ was only an approximation for a thin enough slit. For thicker sheets of metal, the surface plasmons acquire additional phase by propagating along the inner slit edges, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases, since a longer SPP wavelength is needed to compensate the increasing path around the metallic particle. 
-
-Roughly for $d_z \gtrsim a/2$, the phase acquired in the slit dominates over the phase acquired on the front surface. As a result, 
-for slabs thick enough, the frequency of the zero-reflection notch approximately follows the inverse of the thickness (see Fig. \ref{fg_yslit_dscan}a). 
-
+In the approximation for a thin enough slit, the highest transmittance was observed when the surface plasmon wavelength $\lambda_{\text{SPP}}$ matched the unit cell size $a_x$. 
 In the limit of thin sheets, this frequency approaches the diffraction limit of $c/a_x$, since surface plasmons in the terahertz range are only weakly bound to the metal surface and their phase velocity is similar to the speed of light in vacuum, $c$. Upon scaling the simulation into the optical range, the limiting frequency for thin metallic sheets was reduced below $c/a_x$ and moreover the exact behaviour of the structure has proven to depend on the choice of metal.
 
-In the upper right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found, corresponding to a second longitudinal waveguide mode. Not surprisingly, the shapes of both visible modes resemble the dispersion in slot metallic waveguides. We can thus also conjecture that the second and any higher mode does not exist for thin-enough slits; i.e., each of them requires a minimum cut-off thickness $d_x$.
+For thicker sheets of metal the effective length for surface plasmons travelling across one unit cell is increased by the length inner slit edges, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
+For thick enough slabs with $d_z \gtrsim a/2$, the frequency of the zero-reflection notch approximately follows the inverse of the thickness (see Fig. \ref{fg_yslit_dscan}a). 
+
+In the upper-right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found. It corresponds to a second longitudinal waveguide mode. The field shapes of both visible modes resemble the dispersion in slot metallic waveguides. From the theory of metallic waveguides, we can conjecture that the second and any higher mode does not exist for thin-enough slits; i.e., each of them requires a minimum cut-off thickness $d_x$.
 % todo? draw the modes? or make a snapshot of the fields?
 
 %}}}
-\paragraph{Effective parameters of sheet-slit array}%{{{
-Previous paragraphs described the reflection and transmission of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed as with other metamaterials. However, due attention must be paid to whether the conventional scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is transferred by the surface plasmons that were shown not to be well localized and can easily couple with those on nearby metallic surfaces, forming slot-waveguide modes \cite{weiner2011electromagnetics}.
+\paragraph{Effective parameters of the sheet-slit array}%{{{
+The previous paragraphs described the reflection and transmission of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed in the same way as with other metamaterials. 
 
-On the contrary, the current-driven homogenisation (CDH) setup simulates one unit cell in an exact periodic environment of other cells, and is fully  suitable even for structures with strong coupling of neighbouring cells. The representative comparison of the results is in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves. 
+However, one has to verify whether the scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is transferred by the surface plasmons that were shown not to be well localized in a single unit cell and can easily couple with those on nearby metallic surfaces, forming transversally propagating slot-waveguide modes \cite{weiner2011electromagnetics}.
+On the contrary, the current-driven homogenisation (CDH) setup exactly simulates one unit cell in its periodic environment, and is fully  suitable even for structures with strong coupling between neighbouring cells. An example comparison of the results is in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves.  %% XXX
 
 The first photonic band is obviously accurately matched by both simulation setups. In the second band, located close to the diffraction edge where the dispersion is determined by excitation of surface plasmons, the scattering parameter method completely fails to predict not only its exact shape, but even the sign of the group velocity. 
 
@@ -1199,10 +1201,10 @@ The s-parameter method computes the same metallic structure, and only the phase 
 \end{figure}
 %}}}
 \paragraph{Extraordinary transmission} %{{{
-A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}\index{mesh}, \textit{sub-wavelength hole array}\index{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}\index{fishnet}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction lower than 1, but the electromagnetic wave was supposed to propagate parallel to the slabs and the operation was different.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
-The spectral selectivity of a metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  
+A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}\index{mesh}, \textit{sub-wavelength hole array}\index{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}\index{fishnet}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction $0 < \Neff' < 1$, but the electromagnetic wave propagation was oriented parallel to the slabs and it was not mediated by a resonance.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+The spectral selectivity of a single metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  
 
-The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission}\index{extraordinary transmission} (EOT) which can be orders of magnitude higher than that estimated from the hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side in a similar way as described on the example of metallic slits. 
+The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission}\index{extraordinary transmission} (EOT) which can be orders of magnitude larger than the transmission estimated from the geometrical hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that one described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side in a similar way as described on the example of metallic slits. 
 %  % predicted by Bethe's law of inverse fourth power of 
 
 Periodical arrangement of the holes is equivalent to structuring of the surroundings of a single hole. In line with the already demonstrated resonance in a metallic sheet with infinite slits, the metallic sheet with holes exhibits a resonance slightly below the diffraction edge which leads to a great drop in reflection. The exact behaviour of the structure is determined by the  metal thickness, dimensions of the holes, their spacing in the $x$-$y$ plane and the spacing of the metallic sheets along the $z$-axis.
@@ -1319,12 +1321,11 @@ The corresponding experimental transmittance spectra of these two samples are pr
   \end{minipage}  
 \end{figure} 
 %}}}
-\paragraph{Quadrupole resonance in experimental data}%{{{
-For simulation of the fishnet, different grid resolutions were used. While usually 2 or 4 $\upmu$m voxel sizes were used throughout the thesis as a good tradeoff of simulation time and accuracy of results, in Fig.  \ref{fg_fnquadrup} the FDTD simulation was deliberately set to very coarse, with a voxel dimension of 10 $\mu$m. Still, the experimental and computed reflectance spectra yielded a very good match without any additional corrections.
+\paragraph{Quadrupole resonance in experimental spectra}%{{{
+For the simulation of a fishnet, different grid resolutions were used. While usually the voxel sizes of 2 or 4 $\upmu$m were used throughout the thesis as a good tradeoff of simulation time and accuracy of results, in Fig. \ref{fg_fnquadrup} the FDTD simulation was deliberately set to very coarse, with a voxel dimension of 10 $\mu$m. Still, the experimental and computed reflectance spectra yielded a very good match without any additional corrections.
 
 In most terahertz transmittance spectra of fishnets, a relatively sharp notch between 0.5 and 1.0 THz was observed. The discretisation error has helped to explain it, since it broke the twofold mirror symmetry of the fishnet hole. 
-
-This way, it also broke the symmetry of the first predominantly quadrupole mode, introducing a slight electric dipole into its field pattern  (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole couples with the incident plane wave, and very narrow resonances emerged also in the simulated spectra in Fig. \ref{fg_expe_fishnets}, at 880 and 710 GHz, respectively. Without any manual postprocessing, the experimentally observed resonance notches are well matched by the simulation, and thus can be explained as the result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
+This way, it also broke the mirror symmetry of the first quadrupole mode, introducing a slight electric dipole into its field pattern (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole started to couple with the incident plane wave, and very narrow resonances emerged also in the simulated spectra at 880 and 710 GHz, respectively (see green lines in Figs. \ref{fg_expe_fishnets}a,b). The resonance notches observed in the experiment are well matched by the simulation, and thus can be explained as the result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
 
 %}}}
  
