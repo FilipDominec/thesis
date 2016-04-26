@@ -122,7 +122,7 @@ Both these rules were observed to hold in media with $\murl = 1$ only; in media 
 The FDTD simulation will become unstable if one of these rules is broken. The instability error initially arises from an inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the early field snapshots. Later, the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
 
 \paragraph{Choice of the Courant factor}%{{{
-Provided that a part of the simulation volume is empty vacuum ($\varepsilon_r'=1$), Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of the Courant factor:}\index{simulation!Courant factor!maximum value of}
+Provided that a part of the simulation volume is empty vacuum ($\varepsilon_r'=1$), Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of the Courant factor:}\index{Courant factor!maximum value of}
 $$\cour_{max} = 3^{-1/2}\approx0.577.$$
 In practice, a slightly more conservative choice is made that provides a safe margin for the numerical imprecision: 
 \begin{equation} \cour:= 0.500 \quad \rightarrow \quad \varepsilon_r'(2\pi\,f)> 0.75, \quad \forall f \geq f_c. \label{eq_courant_choice}\end{equation}
@@ -357,7 +357,7 @@ Another algorithm used in this thesis is the \textit{plane-wave expansion method
 
 Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also provide the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. The algorithm is described in detail, e.g., in Ref. \cite[pp. 24-28]{pazoutova2011dp}.
 
-As a convenient implementation of PWEM, we used the freely available program \textit{MPB}\index{MPB} \cite{johnson2001mpb}, provided as open-source project by the same group \cite{ab-initio} as MEEP. The graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
+As a convenient implementation of PWEM, we used the freely available program \textit{MPB}r\cite{johnson2001mpb}, provided as open-source project by the same group \cite{ab-initio} as MEEP. The graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
 
 %}}}
 \paragraph{Comparison to FDTD and FDFD} %{{{
@@ -393,7 +393,7 @@ This section describes two different approaches to the homogenisation we have im
 %}}}
 \subsection{Retrieval of the scattering parameters} \label{chapter_sparam}
 \paragraph{Principle} %{{{
-The retrieval based on scattering parameters, also known as the \textit{s-parameter}\index{s-parameter}, \textit{distributed impedance}\index{distributed impedance} or \textit{Nicolson-Ross-Weir}\index{Nicolson-Ross-Weir} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
+The retrieval based on scattering parameters, also known as the \textit{s-parameter}\index{s-parameter method}, \textit{distributed impedance}\index{distributed impedance method|see {s-parameter method}} or \textit{Nicolson-Ross-Weir}\index{Nicolson-Ross-Weir method|see {s-parameter method}} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
 
 The first step to its derivation is that by means of the Fresnel-Airy formulas \cite[p. 329]{born1999book},
 one can easily compute the transmittance $t(f)$ and reflectance $r(f)$ spectra of a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material of the slab. The actual computation is therefore also denoted as \textit{Fresnel inversion}\index{Fresnel inversion}.
@@ -536,7 +536,7 @@ From Eqs. (\ref{eq_Neff}) and (\ref{eq_Zeff}) it follows that the correct soluti
 	\item{Passivity with regard to the wave propagating through the structure requires the \textit{imaginary}\index{imaginary} part of refractive index be non-positive: 
 		 \begin{equation} \Neff''(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Neff_pass}\end{equation}
 		 } 
-	 \item{Passivity with regard to the wave reflected from the structure interface requires the \textit{real}\index{real} part of refractive index be non-positive, too: 
+	 \item{Passivity with regard to the wave reflected from the structure interface requires the \textit{real} part of refractive index be non-positive, too: 
 		 \begin{equation} \Zeff'(f) \leq 0 \quad \forall f\in \mathbb{R} \label{eq_Zeff_pass}\end{equation}
 		 } 
 	 \item{A causal response of the sample requires a specific relationship between the real and imaginary parts of $r(f)$, $t(f)$ and of effective parameters $\Neff(f)$ and $\Zeff(f)$, when substituted for the function $F(\omega)$:
@@ -608,7 +608,7 @@ The scattering-parameter method is the most widely used one for the effective pa
 \label{sparamweaknesses}
 However, the scattering-parameter method also has its weaknesses. Perhaps the greatest one is that it does not explicitly fail in cases it is not supposed for; or, as stated in Ref. \cite{markel2013current}:
 \begin{displayquote} 
-\textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.}\index{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.} 
+\textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.}
 \end{displayquote}
 A great care must be taken to verify whether the retrieved values of effective parameters make any physical sense whatsoever, or are just a confusing output of an algorithm used outside its scope. The majority of the possible issues was mentioned above:
 \begin{enumerate}
@@ -804,7 +804,7 @@ Like in the s-parameters method, the function of $K(\omega)$ can be resolved in 
 %\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials
 %}}}
 \paragraph{Concluding remarks}%{{{
-Other homogenisation methods include the \textit{multipole expansion}\index{multipole expansion} \cite{vynck2009all, petschulat2008multipole}, \textit{quasimode theory}\index{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
+Other homogenisation methods include the \textit{multipole expansion} \cite{vynck2009all, petschulat2008multipole}, \textit{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
 Without much exaggeration it can be concluded that there are roughly as many homogenisation methods as authors involved in the research of periodic structures. All such methods work reliably in the easy cases:
 \begin{displayquote}
 \textit{Homogenization theories are typically valid when the unit-cell size is insignificant with respect to the wavelength (the zero-frequency limit) and thus might be expected to result in a poor description of metamaterials.}

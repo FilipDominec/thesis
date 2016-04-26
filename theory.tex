@@ -67,9 +67,9 @@ Rewriting it explicitly, in this thesis we define the \textit{wavefront projecti
 (\TT)_{ij} = - \frac{k_i k_j}{k^2} + \delta_{ij} .  \label{eq_transverse2}\end{equation}
 The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be divided into two groups: % TODO add reference that there is no other oslutino
 \begin{enumerate}
- \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $\TT\E = \E$. Therefore, the \textit{dispersion relation}\index{dispersion relation!in vacuum} for a transverse plane wave in vacuum is linear:
+ \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $\TT\E = \E$. Therefore, the \textit{dispersion relation}\index{dispersion!in vacuum} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-	where we defined the \textit{speed of light}\index{speed of light}\index{velocity!of light in vacuum} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular \textit{right-handed triplet}\index{right-handed triplet} $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed}\index{medium!right-handed} media.
+	where we defined the \textit{light velocity}\index{velocity!of light in vacuum} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular \textit{right-handed triplet}\index{right-handed triplet} $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed}\index{medium!right-handed} media.
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. (\ref{eq_wavek}) to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
@@ -119,7 +119,7 @@ The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
  \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonance frequency}\index{frequency!of oscillator resonance}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
- \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}\index{damping rate}. In time domain, it determines the time constant of exponential amplitude decay. } 
+ \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}\index{oscillator!damping rate}. In time domain, it determines the time constant of exponential amplitude decay. } 
  \item{$F = \alpha^{-1}$ is the \textit{oscillator strength}\index{oscillator!strength}, determining the amplitude of the response function.}
  \end{itemize}
 
@@ -141,7 +141,7 @@ A more detailed treatment of the permittivity spectra $\epsrl(\omega)$ may be fo
 %TODO add that putting two resonances of the same type near to each other annihilates their “wings”
 %TODO ==> hard to make a broadband-operating passive MM
 
-We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical simulations. The chapter also describes how a Debye relaxator (e.g. from overdamped molecular rotation) and the Drude term (from unbound motion of free charges) can be represented using correct parameters of an oscillator.
+We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_mat}, where it appears to be essential for realistic definition of materials for accurate numerical simulations. The chapter also describes how a \textit{Debye relaxator}\index{Debye relaxator} (e.g. from overdamped molecular rotation) and the \textit{Drude term}\textit{Drude term} (from unbound motion of free charges) can be represented using correct parameters of an oscillator.
 %}}}
 \paragraph{Permeability}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability}\index{permeability!local} can be introduced by means of a response of the medium to the magnetic field:
@@ -192,7 +192,7 @@ The multiplication in the time domain translates into a convolution in the frequ
 \begin{equation} 
 F'(\omega) = \int_{-\infty}^{+\infty}  \frac{-2\ii}{\omega - \Omega} F''(\omega) \,\mbox{d}\Omega  \equiv  \left[\frac{-2\ii}{\omega}\right]\,\ast\,F''(\omega),
 \label{eq_kkresult}\end{equation} 
-where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the \textit{Hilbert transform}\index{transform!Hilbert}. % tODO cite
+where we used the knowledge that the $-2\ii/\omega$ function is the Fourier transform of $\mbox{sign}(t)$. Convolution with this function is also known as the \textit{Hilbert transform}\index{Hilbert transform}. % tODO cite
 
 Obviously, Eq. (\ref{eq_kkfeven}) can also be converted to $f_{odd}(t) = \mbox{sign}(t)\,f_{even}(t)$, thus the relation between the real and imaginary parts of the response spectrum also holds when $F_{odd}(\omega)$ and $F_{even}(\omega)$ are exchanged in Eq. (\ref{eq_kkresult}). 
 
@@ -897,7 +897,7 @@ The inherent ambiguity of the description on the basis of the Bloch's wave can b
 
 The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or those breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
 
-In many papers on periodic structures, all dispersion curves are plotted as \textit{folded}\index{dispersion!curves,folding of } into the $K\in\langle -\pi/a, \pi/a\rangle$ region only \cite{obrien2002photonic, yannopapas2005negative, chakrabarti2012magnetic}, while some employ the symmetry to fold  all curves further into the $K\in\langle0, \pi/a\rangle$ range. % (e.g. \cite{}). 
+In many papers on periodic structures, all dispersion curves are plotted as \textit{folded}\index{dispersion!curves,folding of} into the $K\in\langle -\pi/a, \pi/a\rangle$ region only \cite{obrien2002photonic, yannopapas2005negative, chakrabarti2012magnetic}, while some employ the symmetry to fold  all curves further into the $K\in\langle0, \pi/a\rangle$ range. % (e.g. \cite{}). 
 In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
 
 The mathematical interpretation of folding the dispersion curves in vacuum can be found from Eq. (\ref{eq_blochvac2}): 
@@ -1125,7 +1125,7 @@ By \textit{negative parameters}\index{permittivity!negative}\index{permeability!
 or a negative index of refraction. In transparent media without spatial dispersion, negative index of refraction $\Neff'(\omega)$ requires $\epsrl(\omega)$ and $\murl(\omega)$ to be negative simultaneously, at least if its imaginary part is supposed to be small \cite{pazoutova2011dp}.  %% elaborate this a bit, using complex multiplication? Explain why negative branch is chosen, but this perhaps should be put above in the discussion of group velocity.
 Note that all theoretical papers cited in this subsection used the electrodynamics of a \textit{homogeneous} medium, without imposing its microscopic periodicity nor any other technical way how such a medium should be obtained. 
 
-Media with \textit{negative permittivity}\index{permittivity!negative, in natural media} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from lattice or electronic vibrations, forming the so called \textit{reststrahlen}\index{reststrahlen bands} bands. Reflection from metals has been explained  % when? by whom?
+Media with \textit{negative permittivity} are in fact very common in the nature, including metals, doped semiconductors and plasmas; additionally, negative permittivity also results from lattice or electronic vibrations, forming the so called \textit{reststrahlen}\index{reststrahlen bands} bands. Reflection from metals has been explained  % when? by whom?
 as the opposite signs of $\epsrl(\omega)$ and $\murl(\omega)$ causing the wave to become \textit{evanescent}\index{wave!evanescent} and to rapidly decaying under the surface. %A particular interest in the same phenomenon arose with 
 The same mechanism causing the radio wave reflection from the dilute plasma in the Earth's ionosphere was predicted as early as in 1839 by Gauss; its application for over-the-horizon communication was suggested in 1901-1902 by Heaviside and Kennelly.
 
@@ -1177,7 +1177,7 @@ Although e.g. the physics of the ionosphere involves regions where the permittiv
 after the merging of the paradigm with metamaterials, and therefore such media are often denoted syncretically as \textit{zero-index metamaterials}\index{zero-index metamaterials}. This is a somewhat confusing term, as the papers focusing on their peculiar macroscopic properties \cite{basharin2013epsilon} 
 usually do not discuss any structuration and are thus also applicable to fully homogeneous media of such properties.
 
-A feature typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering from air into a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than a small critical angle, the wave undergoes the \textit{total external reflection}\index{reflection!total external} \cite{schwartz2003total}. 
+A feature typical of this class of media is a very small wavevector $K\sim 0$, which can be approximated as the whole $N\sim 0$ region oscillating in phase. The wave entering from air into a $N\sim 0$ medium at near-normal incidence refracts under large angles from the normal; for angles higher than a small critical angle, the wave undergoes the \textit{total external reflection} \cite{schwartz2003total}. 
 % note: this has been observed in thinned waveguides, too
 % Epsilon-near-zero metamaterials and electromagnetic sources: Tailoring the radiation phase pattern
 
@@ -1246,7 +1246,7 @@ The literature is somewhat ambiguous, but a thorough search shows that the term 
 It remains unclear whether there was an objective cause, or a semantic bias from the term \textit{artificial dielectrics} only, that the periodic structures with magnetic effects received less attention than those with electric ones. Apparently the first theoretical study thereof  by Lewin \cite{lewin1947electrical} dates back to 1947, but the first realisations of split-ring resonator arrays and other magnetically resonant structures seem to have been published no earlier than in 1980s. Further details can be found in the Results chapter on pp. \pageref{negn_srr} and \pageref{negn_diel}.
 
 % TODO add about history from SRRs and diel-spheres
-The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators}\index{resonator!split-ring} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
+The research of artificial dielectrics, or newly, metamaterials, gained on significant popularity after the papers from 1999 by Pendry \cite{pendry1999magnetism} and from 2000 by Smith \cite{smith2000composite}. The former outlined how a negative index of refraction can be obtained in a structure composed of metallic wires introducing $\eeff<0$ and of small metallic loops, known as \textit{split-ring resonators}\index{split-ring resonator!history} (SRR), introducing $\meff<0$. The latter paper described the experimental verification of negative refraction in the microwave range. Thousands of papers followed suite which covered different spectral ranges, demonstrated other MM designs, discussed theoretically when and how the metamaterial can be viewed as homogeneous, and sought for new applications. 
 
 %}}}
 \paragraph{Imaging beyond diffraction limit with metamaterials} %{{{ ===================== cite fn
