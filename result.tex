@@ -23,8 +23,8 @@ Side plots show the electric field in $2\times 2$ unit cells, with dielectric ou
 \begin{figure}[ht] %{{{ fg_Slab_fillfraction015_epsilon_comparison
 	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff$ (real part solid, imaginary part dashed) for a dielectric slab with a 15\% filling fraction in a 300 $\upmu$m unit cell, and various values of permittivity of the dielectric $\epsrl \in \{4,12,20\}$. The dashed black lines in panel (c) denote the boundaries between the first, second and further Brillouin zones.} \label{fg_Slab_fillfraction015_epsilon_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
-\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_r.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.065\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_t.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.058\textwidth}\\
 \begin{overpic}[width=0.96\textwidth]{img-meep/Slab_fillfraction015_epsilon_comparison_n.pdf} \put (-1,37) {\textbf{(c)}} \end{overpic}\vspace{-0.\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -106,10 +106,10 @@ In the high-frequency part of the spectrum above the first photonic band, where 
 
 \begin{figure}[ht] \caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for an array of wires made of gold, depending on the wire radius $\rho_w \in \{1, 2, 4, 8, 16\}$ $\mu$m with a fixed unit cell size $a = 100$ $\mu$m. The results were obtained by FDTD simulations with a grid resolution of 1 $\mu$m. } \label{fg_Slab_fillfraction015_wireradius_scan} \centering \vspace{-3mm}
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
-\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/Wires_wireradiusscan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/Wires_wireradiusscan_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.061\textwidth}\\ 
+\begin{overpic}[width=0.85\textwidth]{img-meep/Wires_wireradiusscan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.056\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/Wires_wireradiusscan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.053\textwidth}\\
+\begin{overpic}[width=0.858\textwidth]{img-meep/Wires_wireradiusscan_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
 
@@ -151,7 +151,7 @@ Notice that for a single cell, the transition from negative to positive permitti
 \begin{overpic}[width=\textwidth]{img/EWire_plasmaF_radiusscan.pdf}  \put (-1,58) {\textbf{(b)}} \end{overpic}\\
   \end{minipage}
   \begin{minipage}[c]{0.3\textwidth}
-	  \caption{Comparison of numerical results (dots) and two analytical models (solid and dotted lines) for plasma frequency $f_p$ of a wire medium: \textbf{(a)} $f_p$ as a function of wire spacing for two different wire radii of 16 $\mu$m and 8 $\mu$m (red and blue curves/dots, respectively). The empty symbols correspond to a significantly reduced FDTD resolution, added for comparison. \textbf{(b)} $f_p$ as a function of wire radius $\rho_w$.}\vfill \label{fg_omegap_a}
+	  \caption{Comparison of numerical results (dots) and two analytical models (solid and dotted lines) for plasma frequency $f_p$ of a wire medium: \textbf{(a)} $f_p$ as a function of wire spacing for two different wire radii of 16 $\mu$m and 8 $\mu$m (red and blue curves/dots, respectively). The empty symbols correspond to a significantly reduced FDTD resolution, added for comparison. \textbf{(b)} $f_p$ as a function of wire radius $\rho_w$. }\vfill \label{fg_omegap_a}
   \end{minipage}  
 \end{figure} 
 
@@ -202,9 +202,9 @@ The spectra of cut-wire structures for different cut distances $d_c$ are depicte
 In plot  \textbf{(d)}, the effective permittivity is illustrated for the thinnest cut distance $d_c = 2$ $\mu$m. Although retrieved for the entire spectrum, the local effective parameters have physical meaning only when the wavelength is much larger than $a$, i.e. roughly from 0 to 500 GHz and from 1220 to 1280 GHz.} \label{fg_CutWires_wireradius1u_cutwidth_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.059\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.056\textwidth}\\
-\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.056\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.0565\textwidth}\\
+\begin{overpic}[width=0.846\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 %\begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_ni.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-9.5mm}\\ \begin{overpic}[width=0.85\textwidth]{img-meep/CutWires_wireradius1u_cutwidth_comparison_eps_r2.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -409,10 +409,10 @@ Such typical spectral features, observed whenever a narrower resonance overlaps 
 In all cases, the outer ring radius was $\rho = 30$ $\mu$m, conductor cross-section $\Delta\rho = 6$ $\mu$m and unit cell size $a=100$ $\mu$m. \\
 } \label{fg_SRR_principles} \centering \vspace{-3mm} 
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.058\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_n.pdf}\put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.053\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.053\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -468,8 +468,8 @@ The spectra of the cut wires (Fig. \ref{fg_CutWires_wireradius1u_cutwidth_compar
 The frequency of the electric resonance is influenced by the radius $\rho_c$ of the capacitor on the central spoke.
 } \label{fg_emSRR_icr} \centering \vspace{-3mm} 
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.056\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.053\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/emSRR_inner_capacitor_radius_scan_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -572,13 +572,13 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 
 %}}}
 \begin{figure}[h!] %fg_Spheres_lossscan %{{{
-	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $\rho = 30$ $\mu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.0\textwidth} 
+	\caption{\textbf{(a)} Amplitude of reflectance, \textbf{(b)} amplitude of transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $\rho = 30$ $\mu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_Spheres_lossscan} \centering \vspace{-0.0\textwidth} 
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
-\begin{overpic}[width=0.87\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.87\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/Spheres_lossscan_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.055\textwidth}\\ 
+\begin{overpic}[width=0.858\textwidth]{img-meep/Spheres_lossscan_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.858\textwidth]{img-meep/Spheres_lossscan_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-8mm}\\
 \end{tabular}
 \end{figure}
 %}}}
@@ -603,10 +603,10 @@ At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the str
 \begin{figure}[h!] %% SphereWire_principles %{{{
 	\caption{Amplitude of \textbf{(a)} reflectance, \textbf{(b)} transmittance and \textbf{(c)} effective index of refraction $\Neff = \Neff' + \ii \Neff''$ of TiO$_{2}$ spheres, wire grid array, a combined negative-index structure and its modification  with varied loss compared to the natural one from Ref. \cite{baumard1977_epsilon_TiO2}; sphere radius $\rho = 30 \upmu$m, unit cell size $a=100$ $\upmu$m.} \label{fg_SphereWire_principles} \centering \vspace{-3mm} %% TODO
 \begin{tabular}{r}
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.050\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.050\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_r.pdf}  \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.058\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_t.pdf}  \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.058\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_n.pdf}  \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.053\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_eps.pdf}\put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.053\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/SphereWire_principles_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.050\textwidth}\\
 \end{tabular}
 \end{figure}
@@ -641,7 +641,7 @@ both frequencies can be approximated as
 \begin{equation}  f_{\text{E1}} \propto \rho_x^{-0.15}  \rho_y^{-0.15} \rho_z^{-0.7}. \label{eq_freqE1_rhoxyz}\end{equation}
 Obviously,  in both Eqs. (\ref{eq_freqM1_rhoxyz}) and (\ref{eq_freqE1_rhoxyz}), all three exponents must sum exactly to -1 so that they are compatible with the scaling rule for a sphere in Eq. (\ref{eq_freq_rho}). Their values are approximate only, as they were interpolated from batches of simulations which scanned through the ellipsoid parameters.
 
-When the ellipsoid axes have a general orientation, the resonance frequencies remain almost the same; also the resonant modes are  preserved with respect to the ellipsoid orientation. An incident wave in such a case can excite multiple magnetic or electric Mie resonances of the same topology but different orientation, which differ slightly by their frequencies. The structure then may change the polarisation state of the wave, which is beyond the scope of this analysis.
+When the ellipsoid axes have a general orientation with regard to their cubic lattice, the resonance frequencies remain almost the same. In such a case, an incident wave polarized along the $x$-axis can  excite multiple magnetic or electric Mie resonances of the same topology but different orientation, which differ slightly by their frequencies. The structure then may change the polarisation state of the wave, which is beyond the scope of this analysis.
 
 %}}}
 \begin{figure}[t]  % fg_spherewire_sketch%{{{
@@ -718,7 +718,7 @@ However, the truly fundamental limitation are the dissipative losses in TiO$_{2}
 \begin{figure}[h!] %{{{  fg_sphere_sieving
 	\caption{Comparison of retrieved effective parameters for three fractions of a microspheres sample: \textbf{(a)} effective index of refraction, \textbf{(b)} permittivity and \textbf{(c)} permeability. } \label{fg_sphere_sieving} \centering \vspace{-3mm}
 \begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_n.pdf}\put(-1,38){\textbf{(a)}} \end{overpic}\vspace{-0.046\textwidth}\\
-\hspace{1.7mm}\begin{overpic}[width=0.85\textwidth]{img-expe/sphere_sieving/sphere_sieving_eps.pdf}\put(-1,38){\textbf{(b)}} \end{overpic}\vspace{-0.046\textwidth}\\
+\hspace{1.7mm}\begin{overpic}[width=0.85\textwidth]{img-expe/sphere_sieving/sphere_sieving_eps.pdf}\put(-1,38){\textbf{(b)}} \end{overpic}\vspace{-0.047\textwidth}\\
 \begin{overpic}[width=0.86\textwidth]{img-expe/sphere_sieving/sphere_sieving_mu.pdf}\put(-1,38){\textbf{(c)}} \end{overpic}\vspace{-0.036\textwidth}\\
 \end{figure}
 %}}}
@@ -762,8 +762,8 @@ In the left panel of Fig. \ref{fg_rodh}, the relatively low permittivity in the 
 \begin{figure}[ht] %{{{ rodsphere_comparison
 	\caption{Comparison of \textbf{(a)} transmittance and \textbf{(b)}  effective index of refraction $\Neff$ for arrays of dielectric spheres (with radius $\rho_s=30$ $\mu$m) and of dielectric rods (with radius $\rho_r=19$ $\mu$m) in a 100 $\upmu$m unit cell, both made of TiO$_2$. The choice of radii used ensures the same volume filling fraction. } \label{fg_rodsphere_comparison} \centering \vspace{-3mm}
 \begin{tabular}{r}
-\begin{overpic}[width=0.95\textwidth]{img-meep/rodsphere_comparison_t.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.96\textwidth]{img-meep/rodsphere_comparison_n.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-meep/rodsphere_comparison_t.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.96\textwidth]{img-meep/rodsphere_comparison_n.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
 \end{tabular}
 \end{figure}
 %}}}
@@ -803,10 +803,10 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 %% NOTE: if realistic materials are needed, erods_acomparison-loLoss_r.pdf can be substituted for  erods_acomparison_r.pdf etc.
 \begin{tabular}{r}
 \begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_r.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\ 
-\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.057\textwidth}\\
+\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_t.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.058\textwidth}\\
 \begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_n.pdf} \put (-1,28) {\textbf{(c)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.030\textwidth}\\
-\begin{overpic}[width=0.85\textwidth]{img-meep/erods_acomparison-loLoss_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/erods_acomparison-loLoss_eps.pdf} \put (-1,28) {\textbf{(d)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.86\textwidth]{img-meep/erods_acomparison-loLoss_mu.pdf} \put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
 %}}}
@@ -1080,7 +1080,7 @@ The extraordinary transmission requires strict periodicity of the slits along th
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
-	\caption{\textbf{(a)} Reflectance of a metallic sheet with slits of periodicity $a_x = 100$ $\mu$m and of  $d_x = 20$ $\mu$m, with variable thickness $d_z$. \textbf{(b)} The imaginary part of the refractive index for a metamaterial built by stacking the same slits with periodicity $a_z = 100$ $\mu$m. The values were again retrieved by the scattering parameter method. }
+	\caption{\textbf{(a)} Reflectance of a metallic sheet with slits of periodicity $a_x = 100$ $\mu$m and of  $d_x = 20$ $\mu$m, with variable thickness $d_z$. \textbf{(b)} The imaginary part of the refractive index for a metamaterial built by stacking the same slits with periodicity $a_z = 100$ $\mu$m. The values were retrieved by the scattering parameter method, so the upper part of the panel (b) is probably not reliable. }
 	% todo  Fishnet xholesize=2.000e-05 resolution=2.000e-06 cellsize=1.000e-04 cellsizexy=1.000e-04 yholesize=inf.dat slabthick=*
 	\label{fg_yslit_dscan}  \centering
 \begin{overpic}[width=0.48\textwidth]{img-meep/yslit_dscan_x20_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
@@ -1193,7 +1193,7 @@ The s-parameter method computes the same metallic structure, and only the phase 
 \begin{figure}[ht] %{{{ fg_fishnet28_photo
 	\caption{Microscopic photographs of fishnets cut from a 5 $\mu$m thick stainless steel foil, \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m, cut by a "z"-shaped movement of the beam. Periodicity of both fishnets is $300\times 300$ $\mu$m, real size of both images is $1.2\times 0.9$ mm.  } \label{fg_fishnet28_photo} \centering 
 	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28a-180x200hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(a)}} 
-	\end{overpic}
+	\end{overpic}\quad\quad
 	\begin{overpic}[height=.40\textwidth]{img/fishnet-sample28c-230x255hole-300x300pitch_vert.pdf}  \put(0,94) {\textbf{(b)}} 
 	\put(80,-0){\includegraphics[width=.12\textwidth]{img/tripletEKH.pdf}}
 	\end{overpic}
@@ -1286,7 +1286,7 @@ As indicated by the dashed green curve, the scattering parameter method detects 
 		\centering \vspace{-3mm}
 \begin{tabular}{r}
 \begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_ap.pdf} \put (-1,28) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
-\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cp.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.055\textwidth}\\
+\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cp.pdf} \put (-1,28) {\textbf{(b)}} \end{overpic}\vspace{-0.03\textwidth}\\
 %\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_cs.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 %\begin{overpic}[width=0.95\textwidth]{img-expe/expe_laserfishnets_t_as.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.055\textwidth}\\
 \end{tabular}
@@ -1306,13 +1306,13 @@ The corresponding experimental transmittance spectra of these two samples are pr
 %\end{figure}
 
 %}}}
-\begin{figure}[th] % fg_fnquadrup%{{{
+\begin{figure}[bh] % fg_fnquadrup%{{{
   \begin{minipage}[b]{0.39\textwidth}
 \begin{overpic}[width=.98\textwidth]{img/fishnet_quadrupole_modeE.pdf} 
 \put(105,-0){\includegraphics[width=.27\textwidth]{img/tripletEKH.pdf}}
 \end{overpic}\\
   \end{minipage}
-	  \vspace{1cm}
+	  \vspace{.1cm}
   \begin{minipage}[b]{0.6\textwidth}
 	  \caption{
 	  Electric field of the quadrupole mode in a fishnet with 180$\times$200 $\mu$m hole sizes. Field vectors are represented by black arrows in the $x$-$y$ plane of the fishnet; due to symmetry, the $E_z$ component in this plane is zero. The color map shows the magnitude of the $\E$ vector, the brighter values correspond to more intensive field. Surrounding light-gray structure is the metal of the fishnet.\\
