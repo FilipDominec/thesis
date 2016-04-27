@@ -97,7 +97,7 @@ Note that with the correct branch retrieval procedure, the index of refraction n
 
 %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Wire medium} \label{chap_wiremedium}%{{{
 \paragraph{High-frequency behaviour}%{{{
 The structure consisting of a regular square lattice of conductive wires exhibits more interesting properties when the electric field is parallel to the wires, and this polarisation will be assumed in the following (Fig. \ref{fg_wire_drawing}a). The lattice of wires perpendicular to the electric field does not appreciably interact with the electromagnetic waves, until the wire width is of similar magnitude to their spacing; such a case is discussed in Section \ref{section_eot}.
@@ -114,13 +114,13 @@ In the high-frequency part of the spectrum above the first photonic band, where 
 \end{figure}
 
 %}}}
-\begin{figure}[h] \caption{Drawings of one unit cell of \textbf{(a)} the wire array, \textbf{(b)} of the cut wire array. The unit cell is outlined by a dashed line.} \label{fg_wire_drawing} \centering 
+\begin{figure}[h]  %fg_wire_drawing%{{{
+	\caption{Drawings of one unit cell of \textbf{(a)} the wire array, \textbf{(b)} of the cut wire array. The unit cell is outlined by a dashed line.} \label{fg_wire_drawing} \centering 
 \begin{overpic}[width=0.22\textwidth]{img/drawing_wire.pdf}\put (-14,93) {\textbf{(a)}}\end{overpic}\qquad
 \begin{overpic}[width=0.22\textwidth]{img/drawing_cutwire.pdf}\put (-15,93) {\textbf{(b)}}
 		\put(110,30){\includegraphics[width=.12\textwidth]{img/tripletEHK.pdf}}
 \end{overpic}\qquad
 \end{figure}
-
 %}}}
 \paragraph{Inductive behaviour at low frequencies}%{{{
 At low frequencies, in contrast, the interaction of the conductive wires with the electromagnetic wave becomes very strong and leads to a behaviour completely different from that described above. For a frequency range from zero up to the \textit{effective plasma frequency}\index{frequency!effective plasma f.} $f_p$, the array exhibits a band gap where $\Neff$ is pure imaginary. Therefore, in the low-frequency part of the spectrum, the local effective permittivity $\eeff$ is a physically meaningful quantity and it follows the law typical for inductive media:
@@ -183,7 +183,7 @@ In the second series of simulations plotted in Fig.  \ref{fg_omegap_a}b, we kept
 
 %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Cut wires} \label{section_cutwires}%{{{
 \paragraph{Individual resonances}%{{{
 The low-frequency behaviour of a wire array is determined by the distributed inductance of the wires, which introduces a negative effective permittivity up to the plasma frequency $f_p$. When the wires are cut in each unit cell as shown in Fig. \ref{fg_wire_drawing}b, a three-dimensional periodic lattice of wire segments is formed. Its important parameters are not only the inductance along each antenna, but also the capacitance across the gap between wires. In a direct analogy with a series LC (coil-capacitor) circuit, such antennas exhibit \textit{individual resonances}\index{resonances!individual in cut wires} at some nonzero resonant frequency $0<f_r<f_p$ when the cut distance  $d_c$ is small compared to the unit cell size $a$. 
@@ -287,7 +287,7 @@ The presented simulations were not optimized for the dissipative losses in silic
 %     depicted in Fig. \ref{fg_eSRR}.
 %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Split-ring resonator} \label{section_srr} % %{{{
 \paragraph{Resonances with magnetic dipole moment}%{{{
 The fundamental resonance in a cut wire has an electric dipole moment only. The resonant magnetic field circulates around the wire and due to its rotational symmetry along the $x$-axis, the magnetic dipole moment is zero. Other structures can support resonances without symmetry with regard to the $x$-axis, thus having a magnetic dipole moment.
@@ -306,7 +306,7 @@ As described in the historical review of Ref. \cite[pp. 120--126]{solymar2009wav
 \end{figure}
 
 %}}}
-\paragraph{Symmetry of the split-ring}%{{{
+\paragraph{Symmetry of the split ring resonator}%{{{
 The orientation of the splitting in the SRR determines the possible coupling between its electric and magnetic dipoles. In particular, when the splitting is on the front or rear side of the ring relative to the  direction of wave propagation, the predominantly magnetic resonance creates also a weak electric dipole, leading to optical activity. %% todo cite
 
 Simultaneously, it breaks the homogenisation, since the scattering parameters retrieval method assumes that the structure is symmetric along the axis of wave propagation, i.e., that its reflectance is equal from both sides. Asymmetric structures therefore have properties that can not be matched by any (reciprocal) homogeneous medium. 
@@ -439,10 +439,10 @@ In all cases, the outer ring radius was $\rho = 30$ $\mu$m, conductor cross-sect
 %\end{figure}
 %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Combined electric and magnetic resonator} \label{section_emsrr} %{{{
 \paragraph{Effect of the central bar in SRR}%{{{
-The fundamental resonance of a split-ring resonator (SRR) is the magnetic one, where the current circulates around its circumference. When one adds a central bar parallel to the electric field and the $x$-axis, as in Fig. \ref{fg_SRR_elmag}a, the frequency of the magnetic resonance does not change significantly. The reason comes from the symmetry thereof, which stipulates that that zero net current flows through the central bar. 
+In contrast to all previously discussed structures, the fundamental resonance of a split-ring resonator (SRR) couples to the field through a magnetic dipole and the electric current flows around the circumference of the SRR. Therefore, the frequency of the magnetic resonance does not change significantly even when central bar parallel to the electric field and the $x$-axis is added (see Fig. \ref{fg_SRR_elmag}a). From the symmetry of the resonant fields it follows that zero current flows through the central bar. 
 
 However, a new electric resonance (Fig. \ref{fg_emcSRR_resonances}b) is introduced by adding the bar, characteristic by that the current conducted by the central bar is antiparallel to the current conducted by both SRR arms. The corresponding frequency is lower compared to the original parallel electric resonance (Fig. \ref{fg_emcSRR_resonances}c), and similar to the frequency of the magnetic resonance (Fig. \ref{fg_emcSRR_resonances}a).  
 \begin{figure}[h] \caption{\textbf{(a)} A modification of a split-ring resonator with a central bar, \textbf{(b)} a similar structure where the central bar was split by a capacitor with pad radius $\rho_c$, allowing to tune the antiparallel electric resonance} \label{fg_SRR_elmag} \centering 
@@ -541,32 +541,31 @@ Provided the auxiliary boundary conditions are arranged to couple all energy exc
 
 %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Dielectric spheres} %{{{
 % \cite{prosvirnin2015planar} % todo read
 \paragraph{Mie resonances}%{{{
-Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating along the circumference of a dielectric particle. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and in general, decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
+Already in Eqs. (\ref{eq_rho_n1},\ref{eq_rho_n2}) it was assumed that at higher frequencies, there is no difference in the effect of conduction and polarisation currents. The current conducted around a split-ring resonator has a direct analogy in the polarisation current circulating in a dielectric particle. The capacitor of the SRR is then replaced by the distributed capacitance of the whole dielectric. For the first resonance in spherical dielectric particles, the magnetic dipole moment induced by the polarisation current goes through the sphere axis. The resonance frequency is inversely proportional to the radius $\rho$ of the sphere, and it decreases monotonously with the growth of the dielectric permittivity $\epsrl$.
 
-The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. Although the topology of both resonances is the same, the resonance frequency of the magnetic one is lower, since the electric field is then almost entirely confined to the dielectric volume, whereas for the electric resonance, most of the streamlines of the electric field have to pass through the surrounding air.
-%merlin2009metamaterials
+The second resonance has an electric dipole moment. It is similar to the magnetic one, but the electric and magnetic fields exchange their topology: The magnetic field circulates around the axis of the sphere, and the polarisation current forms the electric dipole. In spite of the similarity of both resonances, the frequency of the magnetic resonance is lower, since it allows the electric field to be more localized in the dielectric volume. In contrast, for the electric resonance, most of the streamlines of the electric field have to pass through the surrounding air (see Fig \ref{fg_Mie}a,b).  %merlin2009metamaterials
 
 \begin{figure}[h]  %% fg_Spheres_lossscan
-	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y$-$z$ plane of mirror symmetry, so the fields have no other nonzero components than shown here. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}  \centering 
+	\caption{The electric field component $E_x$ (shaded in blue-white-red) and magnetic field components $H_y,H_z$ (plotted as vectors) for \textbf{(a)} the magnetic and \textbf{(b)} electric Mie resonance in a dielectric sphere. The figure is in the $y$-$z$ plane of mirror symmetry, so the fields have no other nonzero components than shown here. On the right side, the vectors depict right-hand field triplet of the incident plane wave.}\label{fg_Mie}  \centering 
 	\begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_magnetic.pdf}  \put(1,93) {\textbf{(a)}} \end{overpic}
     \begin{overpic}[width=.35\textwidth]{img/sphere_Mie_mode_electric.pdf}  \put(1,93) {\textbf{(b)}} 
 		\put(100,30){\includegraphics[width=.12\textwidth]{img/tripletHEK.pdf}}
 	\end{overpic}
-\label{fg_Mie}  \end{figure}
+  \end{figure}
 
 An analytical theory of electromagnetic resonances in dielectric spheres (or rods) was developed by Mie in 1908 \cite{mie1908beitrage}, and correspondingly they are denoted as \textit{Mie resonances}\index{Mie resonances}. 
-Dielectric resonators operate in a similar way to a series L-C circuit, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. Few decades later, the dielectric resonator found its use in the developing microwave technology; usually it takes the form of a millimeter-sized ceramics disc glued to the microstrip circuits. 
-The Mie theory describes the scattering from a single particle surrounded by vacuum, but for high enough dielectric permittivity $\epsrl \gtrsim 50$, the resonant fields are well confined in the dielectric volume and are not much affected by the presence of the neighbouring cells.
+Dielectric resonators operate in a similar way to a series L-C circuit, as was noticed by Richtmyer in 1939 \cite{richtmyer1939dielectric}. Few decades later, the dielectric resonator found its use in the developing microwave technology; usually it takes the form of a millimeter-sized ceramic disc glued to a microstrip circuits. 
+The Mie theory describes the scattering from a single particle surrounded by vacuum, but for  high-permittivity dielectrics, the resonant fields are well confined in the dielectric volume and are not appreciably affected by the presence of the neighbouring cells.
+
 An artificial dielectric consisting of dielectric particles with effective permeability differing from unity was considered by Lewin in 1947 \cite{lewin1947electrical}; apparently it was not until 2002 when O'Brien et al. computed \cite{obrien2002photonic} that the effective permeability of such a structure may be negative.
 \label{negn_diel}
 
 
-Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908beitrage}, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments. Dipole moments of many others exist, but are not oriented parallel to the fields of the incident wave, and do not couple to the electromagnetic wave. In the spectrum of an array of dielectric spheres, one can clearly identify the remaining resonances as the most prominent magnetic one, electric one, the second magnetic, second electric etc. The first three resonances from this alternating series are shown in Fig. \ref{fg_Spheres_lossscan}, each manifesting as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance in $\meff(f)$, or vice versa.
-
+Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908beitrage}, resembling the set of single-electron orbitals around an atomic nucleus. Many of these, e.g. most \textit{d}-type orbitals, have zero electric or magnetic dipole moments. Dipole moments of many others are nonzero, but are not oriented parallel to the fields of the incident wave, and do not couple to the electromagnetic wave. In the spectrum of an array of dielectric spheres, one can clearly identify an alternating series of electric and magnetic resonances, of which the first three are easy to identify in Fig. \ref{fg_Spheres_lossscan}. Each of them manifests itself as a peak in reflectance, and as a pair of resonance in $\meff(f)$ and antiresonance \index{antiresonance}  in $\eeff(f)$, or vice versa.
 %% todo cite vendik, Zhao etc. from the directory
 
 %}}}
@@ -582,18 +581,17 @@ Infinite number of the higher-order resonances exist \cite[pp. 407-408]{mie1908b
 \end{figure}
 %}}}
 \paragraph{Dielectric losses}%{{{
-Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the eddy currents and details in the geometry, the losses in dielectric resonators are well defined and their effect can be reliably computed by the FDTD simulation. 
+Unlike split-ring resonators, where the high-frequency dissipative losses depend on many factors such as the metal surface, eddy currents and fine details in the geometry, the losses in dielectric resonators can be more accurately modeled and their effect can be reliably computed by the FDTD simulation. 
 
-We used a realistic model \cite{baumard1977_epsilon_TiO2} of polycrystalline rutile (TiO$_{2}$). The relative permittivity of rutile was already plotted in Fig. \ref{fg_tio2eps}; in the terahertz range it classifies as a high-permittivity dielectric with a relatively low losses, compared to other similar materials:
-
+We used a realistic model \cite{baumard1977_epsilon_TiO2} of permittivit of polycrystalline rutile (TiO$_{2}$), which was already plotted in Fig. \ref{fg_tio2eps}. In the terahertz range it counts among high-permittivity dielectrics with relatively low losses compared to similar materials:
 \begin{equation}\epsrl(f=1\text{ THz}) = 94.2-2.43\text{i}. \label{eq_tio2}\end{equation}
-The actual permittivity of the experimentally measured samples depended on their preparation, in particular the volume fraction of microscopic voids. For such composites, Ref. \cite{baumard1977_epsilon_TiO2} gives only the ratio of $\epsrl''/\epsrl'$, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
+The actual permittivity of the experimentally measured samples depends on their preparation, in particular the volume fraction of microscopic voids. For such composites, Ref. \cite{baumard1977_epsilon_TiO2} gives only the ratio of $\epsrl''/\epsrl'$, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
 
-The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered, with the realistic value represented as 100 \%, and accompanied with a hypothetic low-loss dielectric with the same real part $\epsrl'$, but the imaginary part $\epsrl''$ artificially reduced to  10 \% and 1 \%. 
+The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered. The realistic value was denoted as 100 \%, and it was accompanied with hypothetic low-loss dielectrics with the same real part of $\epsrl'$, but the imaginary part $\epsrl''$ artificially reduced to  10 \% and 1 \%. 
 
-The magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmission grows with losses.
+In all three cases, magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmission grows with losses.
 
-Taking realistic losses into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}\index{figure of merit}
+When the realistic losses are taken into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses can even prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}\index{figure of merit}
 \begin{equation} \text{FOM} := \frac{\Neff'(f)}{\Neff''(f)} \lesssim 10. \label{eq_fom}\end{equation}
 
 At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the structure reaches a Bragg band gap. This kind of resonance is not appreciably affected by the losses, since most of the field energy in the Bragg resonance is concentrated in free space between the particles.
@@ -612,18 +610,17 @@ At the right hand side of the plot, for $f \sim a/(2c) \approx 1.5$ THz, the str
 
 %}}}
 \paragraph{Negative-index metamaterial based on dielectric spheres} %{{{
-An important property of the periodic sphere array is its nearly \textit{isotropic}\index{isotropic} electromagnetic behaviour, i.e. independence of its behaviour on the wave polarisation. Its roots are in high symmetry of the dielectric sphere, and it is approximately maintained even when the spheres are arranged into a periodic lattice, provided that low frequencies are considered and that the spheres are too close. 
+An important property of the periodic sphere array is its nearly \textit{isotropic}\index{isotropic} electromagnetic behaviour, i.e. independence of its behaviour on the wave polarisation, which is approximately maintained at low frequencies even when the spheres are arranged into a periodic lattice, provided that the spheres are too close. 
 % todo Cai_Zhu2008-Diel_resonators_wires.pdf
 
-Following the approach used to build a metamaterial with a negative refractive index from SRRs, it is possible to interlace the sphere array with the lattice of wires, which introduce negative permittivity. In order to maintain the approximate isotropy of the resulting structure, the wires may be parallel to the $x$- and $y$-axes to form a two-dimensional square mesh. This modification does not make any appreciable change in the low-frequency behaviour. % todo link to the wire mesh simulation
+Following the approach used to build a metamaterial with a negative refractive index from SRRs, it is possible to combine the sphere array with an array of wires to introduce negative permittivity and permeability simultaneously. In order to maintain the approximate isotropy of the resulting structure, the wires may form a two- or three-dimensional mesh. This modification does not make any appreciable change in the low-frequency behaviour. % todo link to the wire mesh simulation
 
 Fig. \ref{fg_SphereWire_principles} compares the already commented spectra for the sphere lattice (red line), and wire grid (blue line) with the spectra for the compound structure, which is sketched in Fig. \ref{fg_spherewire_sketch}a,c. At $f>0$, the wire grid does not reflect all energy, leading again to formation of the Fano resonance profile. 
 
 Notice in \ref{fg_SphereWire_principles} that the Fano resonances of structures with and without the wire mesh have a peculiar complementary shape. The wave reflected from the electric dipole of the wire mesh has an opposite sign than that reflected from the electric dipole of dielectric particles. Its sign determines whether the interference with the second component, scattered by the Mie resonances, would be constructive, or destructive. 
 
 A band of negative index of refraction is formed above the magnetic Mie resonance, between 510 and 550 GHz. When the realistic model of losses in TiO$_2$ is used, the maximum figure of merit $\Neff'/\Neff'' \approx 6$ around the centre of the photonic band. This means that the metamaterial, in the optimum of the negative-index band, reduces the wave amplitude to $e^{1/6} \approx 0.84$ within one wavelength $\lambda$. 
-
-After propagating over a distance of ca. $40\lambda$ in the metamaterial, the amplitude drops to $10^{-3}$ and the wave energy to $10^{-6}$ of the incident value. The applicability of such a metamaterial for building a macroscopic optical device is questionable. % todo \cite{zhao2009mie}
+When a wave propagates over a distance of ca. $40\lambda$ in the metamaterial, the amplitude drops to $10^{-3}$ and the wave energy to $10^{-6}$ of the incident value. The applicability of such a metamaterial for building a macroscopic optical device is questionable. % todo \cite{zhao2009mie}
 
 %Another way of achieving negative refractive index is in overlapping the electric and magnetic resonances \cite{holloway2003double} - similar to the el mag resonator above, has low spatial dispersion - but: tight requirements, double losses \cite{zhao2009mie}
 
@@ -668,9 +665,9 @@ We performed series of terahertz time-domain spectroscopy measurements with the 
 
 The first magnetic Mie resonance was prominent and all retrieved experimental spectra qualitatively conformed to the spectra predicted by FDTD simulations. The quantitative comparison of the results was also possible, but of lesser physical meaning, since two most important quantities, the resonance frequency and the oscillator strength (i.e. amplitude of the resonant waveform) could not be characterised reliably. 
 
-In particular, the exact dielectric permittivity of the polycrystalline rutile was not known, and over the previous years our group established a consensus of $\epsrl' \approx 95$ as in Eq. \ref{eq_tio2}), which provided the best match with most experimental data, and was used and for all related simulations.
+In particular, the exact dielectric permittivity of the polycrystalline rutile samples was not known, and over multiple measurements, our group established a consensus of $\epsrl' \approx 94$ as in Eq. \ref{eq_tio2}), which provided the best match with most experimental data.
 
-Neither the oscillator strength of the first Mie resonance allows for a direct comparison; while it could be determined reliably in the simulations with a given unit-cell size $a$, the exact density of the microspheres was very hard to determine exactly. They were attached to one of the sapphires by static electricity, and their position was random. During any manipulation with such a sample, part of the spheres fell off the sapphire surface. Moreover, we had no reliable way of determining through which part of the sample the probing THz beam passed.
+Second, the oscillator strength of the first Mie resonance does not allow for a direct comparison with the experiment. While it could be determined reliably in the simulations with a given unit-cell size $a$, the exact density of the microspheres was very hard to determine exactly. They were attached to one of the sapphires by static electricity, and their position was random. During any manipulation with such a sample, part of the spheres fell off the sapphire surface. Moreover, we had no reliable way of determining through which part of the sample the probing THz beam passed.
 
 The effective permeability for two samples of different average sphere sizes is represented by dots in Fig. \ref{fg_mm2012_convolution}. The FDTD simulations for an array of identical TiO$_{2}$ spheres yielded much narrower resonant spectra of $\meff(f)$, which are represented by dashed red lines. 
 
@@ -747,7 +744,7 @@ An experiment involving a similar sample was published previously \cite{yakiyama
 %   
 %   %}}}
 \FloatBarrier %====================================================================================================
-%}}}
+%}}} /section
 \section{Dielectric rods parallel to the magnetic field} % TODO review%{{{
 \paragraph{Resonances in a low-permittivity array}	\label{sect_diel_rods_mag}	%{{{
 Dielectric rods aligned parallel to the magnetic field exhibit spectra similar to the sphere arrays (see Fig. \ref{fg_rodsphere_comparison}), with clearly identifiable Mie resonances with magnetic and electric dipoles.
@@ -795,7 +792,6 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 %}}}
 \FloatBarrier %====================================================================================================
 %}}}
-
 \section{Dielectric rods parallel to the electric field} \label{sect_diel_rods_el} %{{{
 \begin{figure}[h!]  %{{{ erods_acomparison
 	\caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for a rod array with constant radius $\rho = 10$ $\mu$m, dielectric permittivity  and grid resolution of 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm} 
@@ -1031,13 +1027,19 @@ A sufficiently high permittivity can be found in the microwave and terahertz ran
 \end{tabular}
 \end{figure}
 %}}}
+\begin{figure}[t] % fg_slitarray%{{{
+	\caption{Side view of one unit cell of the slit array: \textbf{(a)} geometry, \textbf{(b)} sketch of the electric and magnetic fields of the first resonance, \textbf{(c)} second resonance for a thicker structure (c.f. upper right corner of Fig. \ref{fg_yslit_dscan}a)} \label{fg_slitarray} \centering 
+\begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray.pdf}         \put (-12,83) {\textbf{(a)}}\end{overpic}\quad\quad
+\begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray_resE1.pdf}   \put (-15,90) {\textbf{(b)}}\end{overpic}\quad\quad
+\begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray_resM1.pdf}   \put (-13,90) {\textbf{(c)}}\quad\quad
+\put(90,30){\includegraphics[width=.12\textwidth]{img/tripletEHK.pdf}}
+\end{overpic}\quad
+\end{figure}
+%}}}
 \paragraph{Low-frequency behaviour of a thin sheet}%{{{
-When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes if the wires are widened into stripes, with their transverse dimension, parallel to the electric field, not much smaller than their periodicity $a_x$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field.
+When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes if the wires are widened into stripes, with their transverse dimension parallel to the electric field  not much smaller than their periodicity $a_x$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field, as sketched in Fig. \ref{fg_slitarray}a.
 
-When the wavelength is significantly longer than the slit distance, a single sheet partially reflects the incident radiation (Fig. \ref{fg_yslit_xcomparison_d20}). The reflectance amplitude $|r|$ monotonously decreases with the slit width $d_x$. 
-It also vanishes in the low-frequency limit for any $d_x>0$, since the macroscopic structure is not conductive in the direction of the electric field. 
-
-The low-pass filtering capability of this structure is illustrated in more detail in the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
+When the wavelength is significantly longer than the slit width $d_x$, a single sheet partially reflects the incident radiation (Fig. \ref{fg_yslit_xcomparison_d20}). The reflectance amplitude $|r|$ monotonously decreases with the slit width $d_x$.  It also vanishes in the low-frequency limit for any $d_x>0$, since the macroscopic structure is not conductive in the direction of the electric field.  The low-pass filtering capability of this structure is illustrated in more detail in the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
 The unit cell size in the $x$-direction for both presented figures was $a_x = 100$ $\upmu$m. 
 The upper frequency limit in the plots was determined by the onset of the first diffraction order, at $c/a_x = 3.0$ THz. 
 
@@ -1056,8 +1058,8 @@ At a frequency slightly below the onset of diffraction, a relatively narrow notc
 For a narrower or wider slit, the frequency of the notch increases and eventually approaches the diffraction limit of $3.0$ THz. 
 The notch also becomes narrower in spectrum, but does not appreciably reduce its depth. Some frequency can always be found at which nearly 100 \% of the energy is transmitted through the structure.
 
-The \textit{extraordinary transmission}\index{extraordinary transmission} is mediated by electromagnetic waves propagating along the metallic surface, i.e., parallel to the $x$-axis.  %todo cite
-The field distribution is similar to surface plasmons-polaritons (SPP). In the terahertz range and below it should be more precisely referred to as \textit{spoof surface plasmons}\index{spoof surface plasmons}, since it is bound to the structure predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the plasmons would propagate in the \textit{Zenneck regime}\index{surface plasmons!Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
+The \textit{extraordinary transmission}\index{extraordinary transmission} is mediated by excitation of resonant fields on the metallic surface. 
+The field distribution is similar to surface plasmons-polaritons (SPP) propagating parallel to the $x$-axis as sketched in Fig. \ref{fg_slitarray}b. In the terahertz range and below it should be more precisely referred to as \textit{spoof surface plasmons}\index{spoof surface plasmons}, since the wave is bound to the metallic sheet predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the plasmons would propagate in the \textit{Zenneck regime}\index{surface plasmons!Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
 The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$.
 
 A closely related phenomenon  caused by surface plasmons, the \textit{Wood's anomaly}\index{Wood's anomaly}, was discovered in 1902 to cause a sharp drop of reflectance of metallic gratings \cite{wood1902remarkable}, and has incited many theoretical studies starting with that of Lord Rayleigh \cite{rayleigh1907dynamical} from 1907.  % todo with the main conclusion that.. 
@@ -1081,7 +1083,7 @@ Moreover, the dielectric does not have to touch the metal directly; a distance s
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
-	\caption{\textbf{(a)} Reflectance of a metallic sheet with slits of periodicity $a_x = 100$ $\mu$m and of  $d_x = 20$ $\mu$m, with variable thickness $d_z$. \textbf{(b)} The imaginary part of the refractive index for a metamaterial built by stacking the same slits with periodicity $a_z = 100$ $\mu$m. The values were retrieved by the scattering parameter method, so the upper part of the panel (b) is probably not reliable. }
+	\caption{\textbf{(a)} Reflectance of a metallic sheet with slits of periodicity $a_x = 100$ $\mu$m and of  $d_x = 20$ $\mu$m, with variable thickness $d_z$. \textbf{(b)} The imaginary part of the refractive index for a metamaterial built by stacking the same slits with periodicity $a_z = 100$ $\mu$m. The values were retrieved by the scattering parameter method, so the upper part of the panel (b) is probably not reliable as commented in the text. }
 	% todo  Fishnet xholesize=2.000e-05 resolution=2.000e-06 cellsize=1.000e-04 cellsizexy=1.000e-04 yholesize=inf.dat slabthick=*
 	\label{fg_yslit_dscan}  \centering
 \begin{overpic}[width=0.48\textwidth]{img-meep/yslit_dscan_x20_HR_r.pdf}\put(-1,80){\textbf{(a)}}\end{overpic}
@@ -1104,10 +1106,9 @@ Moreover, the dielectric does not have to touch the metal directly; a distance s
 In the approximation for a thin enough slit, the highest transmittance was observed when the surface plasmon wavelength $\lambda_{\text{SPP}}$ matched the unit cell size $a_x$. 
 In the limit of thin sheets, this frequency approaches the diffraction limit of $c/a_x$, since surface plasmons in the terahertz range are only weakly bound to the metal surface and their phase velocity is similar to the speed of light in vacuum, $c$. Upon scaling the simulation into the optical range, the limiting frequency for thin metallic sheets was reduced below $c/a_x$ and moreover the exact behaviour of the structure has proven to depend on the choice of metal.
 
-For thicker sheets of metal the effective length for surface plasmons travelling across one unit cell is increased by the length inner slit edges, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
+For thicker sheets of metal, the effective optical path of surface plasmons travelling across one unit cell is increased by its portion in the inner slit surface, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
 For thick enough slabs with $d_z \gtrsim a/2$, the frequency of the zero-reflection notch approximately follows the inverse of the thickness (see Fig. \ref{fg_yslit_dscan}a). 
-
-In the upper-right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found. It corresponds to a second longitudinal waveguide mode. The field shapes of both visible modes resemble the dispersion in slot metallic waveguides. From the theory of metallic waveguides, we can conjecture that the second and any higher mode does not exist for thin-enough slits; i.e., each of them requires a minimum cut-off thickness $d_x$.
+In the upper-right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found. It corresponds to a second longitudinal waveguide mode (see Fig. \ref{fg_slitarray}c). % The field shapes of both visible modes resemble the dispersion in slot metallic waveguides. %From the theory of metallic waveguides, we can conjecture that the second and any higher mode does not exist for thin-enough slits; i.e., each of them requires a minimum cut-off thickness $d_x$.
 % todo? draw the modes? or make a snapshot of the fields?
 
 %}}}
@@ -1126,10 +1127,8 @@ The s-parameter method computes the same metallic structure, and only the phase 
 %% TODO we found out that the first two bands are exactly matched between s-parameter and CDH method; however close to the diffraction limit the SPPs hinder the use of s-parameters TODO
 
 %}}}
-
-%}}}
 \begin{figure}[t] % fg_cdh_yslit %{{{
-	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} } \label{fg_cdh_yslit} 
+	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} The same for a fishnet with the same proportions as in Ref. \cite{navarro2011dual}, where CDH predicts a band of negative index of refraction (points), whereas the s-parameter gives unrealistic values (green line). } \label{fg_cdh_yslit} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
 	%\vspace{.1\textwidth}
@@ -1146,9 +1145,9 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\end{overpic}
 \end{figure}
 %}}}
-
 \FloatBarrier %====================================================================================================
-\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}
+%}}} /section
+\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}%{{{
 % TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf%{{{
 %xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
 %cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
@@ -1268,7 +1267,7 @@ If the holes are anisotropic, the described effect is more sensitive to the elli
 
 Also in the literature, it is noted that the s-parameter method may not be applicable to fishnets \cite{croenne2009left}\cite[p. 102]{croenne2009controle}, indicated by major difference in retrieved parameters depending on the number of layers. At the same time, this does not imply that the structure can not be assigned a negative index of refraction; a wedge formed  of a very similar fishnet metamaterial is demonstrated to refract terahertz rays under negative angles \cite{wang2010composite}. 
 
-For an illustration, we computed the dispersion curves of the fishnet from Ref. \cite{navarro2011dual} in Fig. \ref{fg_cdh_yslit}b. To approximately match the frequency band of operation with other structures described, we up-scaled their structure ten times without any qualitative impact on the results. We set the hole periodicity $a_x=a_y = 250$ $\upmu$m and the slab periodicity $a_z = 52.5$ $\upmu$m, the circular holes had radius of 55 $\upmu$m. The points, retrieved current-driven homogenisation, are again believed to be relatively accurate, and show a narrow band between 980 and 1080 with a negative index of refraction. 
+For an illustration, we computed the dispersion curves of the fishnet from Ref. \cite{navarro2011dual} in Fig. \ref{fg_cdh_yslit}b. To approximately match the frequency band of operation with other structures described, we up-scaled their structure ten times without any qualitative impact on the results. We set the hole periodicity $a_x=a_y = 250$ $\upmu$m and the slab periodicity $a_z = 52.5$ $\upmu$m, the circular holes had radius of 55 $\upmu$m. The points retrieved current-driven homogenisation, are again believed to be relatively accurate, and show a narrow band between 980 and 1080 with a negative index of refraction. 
 
 As indicated by the dashed green curve, the scattering parameter method detects this $\Neff'<0$ band, too, but its frequency range is severely shifted up by roughly 100 GHz. Even more pronounced is the deviation in higher bands. The scattering-parameter method eventually fails to predict anything above the onset of diffraction at 1200 GHz.
 % % CDH Fishnet xholesize=1.100e-04 simtime=2.000e-10 resolution=5.000e-06 cellsize=5.250e-05 cellsizexy=2.500e-04 cornerradius=5.500e-05 slabthick=1.000e-05 yholesize=1.100e-04.pdf
@@ -1328,5 +1327,5 @@ In most terahertz transmittance spectra of fishnets, a relatively sharp notch be
 This way, it also broke the mirror symmetry of the first quadrupole mode, introducing a slight electric dipole into its field pattern (see Fig. \ref{fg_fnquadrup}). As a result, the quadrupole started to couple with the incident plane wave, and very narrow resonances emerged also in the simulated spectra at 880 and 710 GHz, respectively (see green lines in Figs. \ref{fg_expe_fishnets}a,b). The resonance notches observed in the experiment are well matched by the simulation, and thus can be explained as the result of excitation of a quadrupole resonance.   % todo these resonances can be also observed in the CDH plots in Fig. \ref{fg_fishnet_cdh}a,b
 
 %}}}
- 
+%}}} /section
 
