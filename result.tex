@@ -380,7 +380,7 @@ The analysis of the wire arrays has shown that at low frequencies, their effecti
 
 A combination of these two structures yields a region of negative index of refraction, probably the first \cite{pendry2000negative} and most prominent metamaterial design to achieve this. The effect of combining structures that interact exclusively with magnetic and electric field is discussed in Ref. \cite{koschny2004effective} in more detail.
 
-The resulting effective parameters are represented by the blue line in Fig. \ref{fg_SRR_principles}. Its spectrum of the effective index of refraction resembles that of the wire array up to 630 GHz, where it drops by one Brillouin zone down at the resonant frequency.
+The resulting effective parameters are represented by the blue line in Fig. \ref{fg_SRR_principles}. Its spectrum of the effective index of refraction resembles that of the wire array up to 630 GHz, where it drops by one Brillouin zone down at the resonance frequency.
 As a rule, a single individual resonance always causes $\Neff'(f)$ to drop from one Brillouin zone boundary to another, which should be observed in all correctly retrieved spectra. 
 
 Notice that the magnetic resonances cause a drop in $\Neff'(f)$ even without the wire array (green curve in Fig. \ref{fg_SRR_principles}c), but in such a case it happens between the first Brillouin zone boundary and zero. Without wires, $\Neff'$ does not reach negative values.
@@ -661,30 +661,29 @@ When the ellipsoid axes have a general orientation with regard to their cubic la
 \end{figure}
 %}}}
 \paragraph{Experimental spectra of spheres} %{{{
-We performed series of terahertz time-domain spectroscopy measurements with the titanium microsphere samples. We used the scheme described on pages \pageref{srtm}--\pageref{srtm2} to retrieve not only the transmission of the single-layered sample, but also the effective parameters of a metamaterial the spheres would possibly form when arranged into a lattice. 
+We measured series of spectra of titanium microsphere samples usingn the terahertz time-domain spectroscopy. We used the scheme described on pages \pageref{srtm}--\pageref{srtm2} to retrieve not only the transmittance of the single-layered sample, but also the reflectance, which enabled us to approximately compute the effective parameters of a metamaterial which would be made by arranging the spheres into a lattice. 
 
-The first magnetic Mie resonance was prominent and all retrieved experimental spectra qualitatively conformed to the spectra predicted by FDTD simulations. The quantitative comparison of the results was also possible, but of lesser physical meaning, since two most important quantities, the resonance frequency and the oscillator strength (i.e. amplitude of the resonant waveform) could not be characterised reliably. 
+The first magnetic Mie resonance was easy to identify in the spectra. The exact quantitative comparison of the results was also possible, but of lesser physical meaning, since two most important quantities, the resonance frequency and the oscillator strength (i.e. amplitude of the resonant waveform) could not be characterised reliably. 
 
-In particular, the exact dielectric permittivity of the polycrystalline rutile samples was not known, and over multiple measurements, our group established a consensus of $\epsrl' \approx 94$ as in Eq. \ref{eq_tio2}), which provided the best match with most experimental data.
+In particular, the exact dielectric permittivity of the polycrystalline rutile samples was not known, and over multiple measurements, our group established a consensus of $\epsrl' \approx 94$ as in Eq. (\ref{eq_tio2}), which provided the best match with most experimental data.
 
-Second, the oscillator strength of the first Mie resonance does not allow for a direct comparison with the experiment. While it could be determined reliably in the simulations with a given unit-cell size $a$, the exact density of the microspheres was very hard to determine exactly. They were attached to one of the sapphires by static electricity, and their position was random. During any manipulation with such a sample, part of the spheres fell off the sapphire surface. Moreover, we had no reliable way of determining through which part of the sample the probing THz beam passed.
-
-The effective permeability for two samples of different average sphere sizes is represented by dots in Fig. \ref{fg_mm2012_convolution}. The FDTD simulations for an array of identical TiO$_{2}$ spheres yielded much narrower resonant spectra of $\meff(f)$, which are represented by dashed red lines. 
+Second, the oscillator strength of the first Mie resonance does not allow for a direct comparison with the experiment. While it could be determined reliably in the simulations with a given unit-cell size $a$, the exact density of the microspheres was very hard to determine exactly. They were attached to one of the sapphires by static electricity, and their position was random. Upon manipulation with the samples, part of the spheres fell off the sapphire surface. Moreover, we had no reliable way of determining through which part of the sample the probing THz beam passed.
 
 %}}}
 \paragraph{Comparison of experimental and simulated spectra}%{{{
-To enable a direct comparison, we used the granulometric data obtained by digital processing of the microscopic images. For each sphere, its effective radius $\rho_{\text{eff}}$ was estimated from the major $\rho_1$ and minor axes $\rho_2$ retrieved from the granulometric data for the $m$-th particle: 
+The effective permeability of two samples having different average sphere sizes is represented by dots in Fig. \ref{fg_mm2012_convolution}. The FDTD simulations for an array of identical TiO$_{2}$ spheres yielded much narrower resonant spectra of $\meff(f)$, which are represented by dashed red lines. 
+To enable a direct comparison, we used the granulometric data obtained by digital processing of the microscopic images. Using the granulometric data,, the effective radius of a sphere $\rho_{\text{eff}}$ was estimated for each particle from the minor $\rho_a$ and major axes $\rho_b$: 
 \begin{equation} \rho_{\text{eff}}^{(m)} := \left[\frac{1}{3\left(\rho_1^{(m)}\right)^2} + \frac{2}{3\left(\rho_2^{(m)}\right)^2}\right]^{-0.5} \label{eq_rhoconvol}\end{equation}
             %bin_particle_size = (1./3*bin_major**-2 + 1./3*bin_minor**-2 + 1./3*bin_minor**-2)**-.5 
 This expression is based on the expectation that the ellipsoids will orient horizontally when sprinkled on the microscope slide, thus making the shortest axis vertical and hidden from the statistical processing. Obviously, it is arbitrary to assume the shortest and medium ellipsoid axis will be both equal to $\rho_2$. 
-The correct procedure would be to determine all three axes of the three-dimensional particle and express $\rho_{\text{eff}}$ using Eqs. (\ref{eq_freqM1_rhoxyz}), (\ref{eq_freqE1_rhoxyz}), and similar for higher resonances. It would however require to know all three ellipsoid axes. Changes in these coefficients did not cause a substantial change in the results.
+The most accurate procedure would be to determine all three axes of the particle and predict its resonance spectra by means of Eqs. (\ref{eq_freqM1_rhoxyz}), (\ref{eq_freqE1_rhoxyz}). Without the knowledge of all three ellipsoid axes, the spherical approximation using Eq. (\ref{eq_rhoconvol}) however appears as an acceptable approach.
 
-We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$ sphere is inversely proportional to its effective radius $\rho_{\text{eff}}^{(m)}$, and its scattering cross-section to the square thereof. Once a reference permeability spectrum $\meff^{\text{(ref)}}(f)$ was computed for a reference radius $\rho^{\text{ref}}$, the experimental spectra could be estimated as the following sum over all $M$ photographed particles:
-\begin{equation} \meff^{\text{(simulated)}}(f) := 1 + \frac{\sum\limits_{m=0}^{M} \left[(\rho_{\text{eff}}^{(m)})^{-2} \meff^{\text{(ref)}}\left(\frac{f \rho_{\text{eff}}^{(m)}}{\rho^{\text{ref}} }\right) - 1 \right]}{\sum\limits_{m=0}^{M} (\rho_{\text{eff}}^{(m)})^{-2}}. \label{eq_sumconvol}\end{equation}
+From the FDTD simulations, we deduced that the resonance frequency of a TiO$_{2}$ sphere is inversely proportional to its effective radius $\rho_{\text{eff}}^{(m)}$, and its scattering cross-section to the square thereof. Once a reference permeability spectrum $\meff^{\text{(ref)}}(f)$ was computed for a reference radius $\rho^{\text{ref}}$, the experimental spectra could be estimated as the following weighted sum over all $M$ particles processed:
+\begin{equation} \meff^{\text{(simulated)}}(f) := 1 + \frac{\sum\limits_{m=0}^{M} \left(\rho_{\text{eff}}^{(m)}\right)^{2} \left[ \meff^{\text{(ref)}}\left(\frac{f \rho_{\text{eff}}^{(m)}}{\rho^{\text{ref}} }\right) - 1 \right]}{\sum\limits_{m=0}^{M} \left(\rho_{\text{eff}}^{(m)}\right)^{2}}. \label{eq_sumconvol}\end{equation}
 
 	The result, plotted by thick black curves in Fig. \ref{fg_mm2012_convolution}, corresponds to a weighted average through the particle statistics, with the weight proportional to the scattering cross-section of each particle. The averaged simulation results are relatively close to the experimental data at frequencies around the first magnetic Mie resonance (around 600 and 480 GHz, respectively). 
 	
-	At higher frequencies, the experimental data deviate substantially from the predictions. This can be attributed to one or more sources of imprecision in the experimental setup for effective-parameter retrieval.
+	At higher frequencies, the experimental data deviate substantially from the predictions. This can be attributed to one or more sources of error in the experimental setup for effective-parameter retrieval.
 
 			%bin_weight_coef = (bin_particle_size/sim_particle_size)**filling_factor_power 
             %bin_weight = bin_particle_count[n] * bin_weight_coef
@@ -701,12 +700,12 @@ We deduced from the FDTD simulations that the resonance frequency of a TiO$_{2}$
             %average_particle_totalweight += bin_weight
 %}}}
 \paragraph{Narrowing the resonance by sieving} %{{{
-The broad dispersion of the microsphere sizes leads to broadening of the Mie resonance, in particular it precludes $\meff'(f)$ from reaching negative values, and also it distributes the very strong dissipative losses into all frequencies close to the resonance, including the region where the FDTD simulations in Fig. \ref{fg_Spheres_lossscan} would predict relatively low losses and $\meff'(f) < 0$.
+The broad dispersion of the microsphere sizes leads to a broadening of the Mie resonance, which is detrimental to the metamaterial performance. In the samples measured, it precludes $\meff'(f)$ from reaching negative values. It also spreads the very strong dissipative losses, introduced by a resonance, over a broader spectral range, including the region where the FDTD simulations in Fig. \ref{fg_Spheres_lossscan} would otherwise predict relatively low losses and $\meff'(f) < 0$.
 
-With the aim to resolve this issue which affected all microsphere samples, we developed the novel sieving technique described in the experimental section of this thesis. Fig. \ref{fg_sphere_sieving} compares the independently measured spectra of $\Neff(f)$, $\eeff(f)$ and $\meff(f)$ for three different fractions of one sample. The blue line corresponds to the oversized fraction that remained above the first sieve, the red line to the correctly sized fraction that passed the first sieve but remained above the second one, and the green line to the remaining fraction that passed both sieves.
+With the aim to resolve this issue which affected all microsphere samples, we developed the novel sieving technique described in the experimental section of this thesis. Fig. \ref{fg_sphere_sieving} compares the independently measured spectra of $\Neff(f)$, $\eeff(f)$ and $\meff(f)$ for three different fractions of one sample. The green line corresponds to the oversized fraction that remained above the first sieve, the red line to the correctly sized fraction that passed the first sieve but remained above the second one, and the blue line to the remaining fraction that passed both sieves.
 
 Moderate narrowing of the resonance spectral shape can be observed for the correctly sized fraction, with the remaining fractions being shifted in the frequency as predicted. The intermediate fraction consistently exhibits more pronounced resonance in the permeability. %The results of the sieving, however, remain inconclusive.
-Simultaneously all spectra measured are burdened with one or more severe errors of the characterisation method. Namely in Fig. \ref{fg_sphere_sieving}, the Mie theory can not explain the pronounced resonance in retrieved effective permittivity, which appears as an artifact coming from the asymmetry of the sample between two sapphire plates. This may be also the cause of the spectra of $\eeff(f)$ and $\meff$ usually deviating from the expected values at higher frequencies.
+Simultaneously all spectra measured are burdened with one or more severe errors of the characterisation method. Namely in Fig. \ref{fg_sphere_sieving}, the simulations can not explain the pronounced resonance in retrieved effective permittivity, which appears to be an artifact from the asymmetry of the sample between two sapphire plates. This may be also the cause of the spectra of $\eeff(f)$ and $\meff$ usually deviating from the expected values at higher frequencies.
 
 However, the truly fundamental limitation are the dissipative losses in TiO$_{2}$, already shown in Fig. \ref{fg_SphereWire_principles}.  They impose a tight upper bound for the figure of merit of any terahetrz metamaterial based on TiO$_{2}$ resonators. 
 
@@ -719,11 +718,11 @@ However, the truly fundamental limitation are the dissipative losses in TiO$_{2}
 \end{figure}
 %}}}
 \paragraph{Spheres in a metallic mesh} %{{{
-We attempted to fabricate one layer of a metamaterial by embedding resonant particles into the holes of a metallic sieve. This kind of structures is predicted to have a negative index of refraction above the first Mie resonance of the spheres (see the green curve in Fig. \ref{fg_SphereWire_principles}). 
+We attempted to fabricate one layer of a negative-index metamaterial by embedding resonant particles into the holes of a metallic sieve. This kind of structures is predicted to have a negative index of refraction above the first Mie resonance of the spheres (see the green curve in Fig. \ref{fg_SphereWire_principles}). 
 
-The issues in our case were mostly of geometrical and mechanical origin. Although it was possible to manufacture a sieve with proper size of holes which would hold microspheres during sieving, the spheres randomly fell out of it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, possibly dramatically increasing losses in the terahertz range.
+The issues in our case were mostly of geometrical and mechanical origin. Although it was possible to manufacture a sieve with proper size of holes which would hold microspheres during sieving, the spheres randomly fell out of it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, increasing losses in the terahertz range.
 
-An experiment involving a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmission, with inconclusive result as regards to the negative phase advance through the structure. This structure is asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m from geometrical reasons, and thus the effective parameter retrieval yields unphysical values.
+An experiment involving a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmission, with inconclusive result as regards to the negative phase advance through the structure. The published structure was asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m, and thus our simulation of it yielded unphysical values.
 
 % todo add some links to Zhao etc.?
 %}}}
@@ -750,18 +749,10 @@ An experiment involving a similar sample was published previously \cite{yakiyama
 Dielectric rods aligned parallel to the magnetic field exhibit spectra similar to the sphere arrays (see Fig. \ref{fg_rodsphere_comparison}), with clearly identifiable Mie resonances with magnetic and electric dipoles.
 Unlike sphere arrays, the computation of the rod array behaviour under near-perpendicular incidence is a two-dimensional problem. 
 
-Photonic crystals composed of dielectric rods in a square lattice have been examined thoroughly since early 1990s \cite{plihal1991two, pendry1992_transfer_matrix}. The permittivity of the constituent materials was usually rather low, typically up to the permittivity of silicon $\varepsilon \leq 12$, assuming the structure would operate at optical or near-infrared frequencies. 
+Photonic crystals composed of dielectric rods in a square lattice have been examined thoroughly since early 1990s \cite{plihal1991two, pendry1992_transfer_matrix}. For structures intended to operate at optical or near-infrared frequencies, the permittivity of the constituent materials was usually relatively low, typically up to the permittivity of silicon $\epsrl \leq 12$. . 
 
-In the left panel of Fig. \ref{fg_rodh}, the relatively low permittivity in the structure causes its low-frequency behaviour to be similar to the one-dimensional photonic crystal. At the lower edge of the Bragg band gap ($X1$ subplot of \ref{fg_rodh}a), the electromagnetic wave concentrates the electric field in the layer of dielectric rods, as indicated by tiny arrows. The magnetic field energy is roughly complementary, located predominantly in the air between them. As already described on the example of 1-D PhC, the upper edge of the band reverts the situation. The number of nodal planes of the electric or magnetic field does not change between the lower and upper edges of a Bragg band gap.
+In the left panel of Fig. \ref{fg_rodh}, the low permittivity in the structure causes its low-frequency behaviour to be similar to the one-dimensional photonic crystal. At the lower edge of the Bragg band gap ($X1$ subplot of \ref{fg_rodh}a), the electromagnetic wave concentrates the electric field in the layer of dielectric rods, as indicated by tiny arrows. The magnetic field energy is roughly complementary, located predominantly in the air between them. As already described on the example of 1-D PhC, at the upper edge of the band the situation is opposite, with most of the magnetic-field energy localized around the dielectric. The number of nodal planes of the electric or magnetic field does not change between the lower and upper edges of a Bragg band gap.
 
-%}}}
-\begin{figure}[ht] %{{{ rodsphere_comparison
-	\caption{Comparison of \textbf{(a)} transmittance and \textbf{(b)}  effective index of refraction $\Neff$ for arrays of dielectric spheres (with radius $\rho_s=30$ $\mu$m) and of dielectric rods (with radius $\rho_r=19$ $\mu$m) in a 100 $\upmu$m unit cell, both made of TiO$_2$. The choice of radii used ensures the same volume filling fraction. } \label{fg_rodsphere_comparison} \centering \vspace{-3mm}
-\begin{tabular}{r}
-\begin{overpic}[width=0.95\textwidth]{img-meep/rodsphere_comparison_t.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\begin{overpic}[width=0.96\textwidth]{img-meep/rodsphere_comparison_n.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
-\end{tabular}
-\end{figure}
 %}}}
 \paragraph{Resonances in the high-permittivity array} %{{{
 In the microwave and terahertz ranges, the permittivity of many materials turns out to be much higher than 12. This fact gives rise to the main difference between the panels in Fig. \ref{fg_rodh}. In the right panel, the dielectric permittivity $\epsrl=100$ moves the first Mie resonance \cite{obrien2002photonic} in the first band gap. 
@@ -785,6 +776,14 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 %\includegraphics[width=4.5cm]{img/HRods_sketch.pdf}
 %\end{figure}
 %}}}
+\begin{figure}[ht] %{{{ rodsphere_comparison
+	\caption{Comparison of \textbf{(a)} transmittance and \textbf{(b)}  effective index of refraction $\Neff$ for arrays of dielectric spheres (with radius $\rho_s=30$ $\mu$m) and of dielectric rods (with radius $\rho_r=19$ $\mu$m) in a 100 $\upmu$m unit cell, both made of TiO$_2$. The choice of radii used ensures the same volume filling fraction. } \label{fg_rodsphere_comparison} \centering \vspace{-3mm}
+\begin{tabular}{r}
+\begin{overpic}[width=0.95\textwidth]{img-meep/rodsphere_comparison_t.pdf} \put (-1,27) {\textbf{(a)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\begin{overpic}[width=0.96\textwidth]{img-meep/rodsphere_comparison_n.pdf} \put (-1,27) {\textbf{(b)}} \end{overpic}\vspace{-0.060\textwidth}\\
+\end{tabular}
+\end{figure}
+%}}}
 %\begin{figure}[ht] \caption{The spectra of the wavenumber $K$ for different rod radii and two different rod permittivities. The wavenumber plot is folded so it ranges from 0 to 0.5, where $K\approx 0$ and $K\approx 0.5$ correspond to band gaps. \textbf{(a)} Medium-permittivity rods with $\varepsilon = 12$, \textbf{(b)} high-permittivity rods with $\varepsilon = 100$.  } \label{fg_hbar_radiusscan} \centering %{{{
 %\textbf{(a)}\includegraphics[width=8cm]{img/old/HRods_eps012_radiusscan.pdf}
 %\textbf{(b)}\includegraphics[width=8cm]{img/old/HRods_eps100_radiusscan.pdf}
@@ -793,6 +792,19 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 \FloatBarrier %====================================================================================================
 %}}}
 \section{Dielectric rods parallel to the electric field} \label{sect_diel_rods_el} %{{{
+\paragraph{Sparse rod array} %{{{
+The discussion of the previous structure has proven that the choice of permittivity and geometry obviously leads to a qualitative change in the structure behaviour. Similar changes are also observed for dielectric rods parallel to the electric field. 
+
+Fig. \ref{fg_erods_acomparison} compares the spectra of effective parameters for three rod arrays of equal radius $\rho=10$ $\upmu$m and dielectric permittivity $\epsrl(f=1\text{ THz}) = 89.5+0.23\ii$. The latter was chosen to be close to that of porous polycrystalline rutile, but the losses were artificially reduced for better readability of the spectral features. The three structures differ only by the unit cell size $a \in \{80, 90, 120\}$ $\upmu$m. % , yet such a structure obviously behaves in several different ways depending on $a$. Moreover, the differences are not obvious if PWEM results are plotted, as was the case in Fig. \ref{fg_rodh}.  
+
+% TODO refereence  also to \cite{valdivia2012} and \cite{shi2007}
+%low-loss dielectrics discussed in http://www.nature.com/nnano/journal/v11/n1/full/nnano.2015.304.html??
+%\cite{yang2015}
+Starting with the blue curves in Fig. \ref{fg_erods_acomparison} representing a sparse array with $a=12\rho = 120$ $\upmu$m, one can identify two points of near-zero transmittance around 745 and 1170 GHz with two individual resonances. Each of them introduces a familiar shape in the spectrum of $\Neff(f)$. From the effective permittivity $\eeff(f)$ and permeability $\meff(f)$, the first resonance can be identified as an electric one, and the second as a magnetic one. The electric resonance has a strong dipole moment and introduces a broader band gap than any of the resonances shown in Fig. \ref{fg_rodsphere_comparison}. %; the fundamental asymmetry arises from the fact that the spheres and rods are made of a dielectric that primarily interacts with the electric field, while its permeability $\murl=1$. 
+
+In spite of the strength of the first resonance, the corresponding region of $\eeff'(f)<0$ does not overlap with that of $\meff'(f)<0$ and no negative index of refraction is obtained  for the sparse rod array with $a=120$ $\upmu$m. The resulting spectra of all parameters are qualitatively similar to that of the electro-magnetic resonator with the capacitor radius $\rho_c\gtrsim 18$ $\upmu$m  (c.f. Figs. \ref{fg_emSRR_icr} and \ref{fg_cdh2}b).
+
+%}}}
 \begin{figure}[h!]  %{{{ erods_acomparison
 	\caption{Amplitude of \textbf{(a)}  reflectance, \textbf{(b)} transmittance \textbf{(c)} effective index of refraction $\Neff$ and \textbf{(d)} effective permittivity $\eeff$ for a rod array with constant radius $\rho = 10$ $\mu$m, dielectric permittivity  and grid resolution of 1 $\mu$m. } \label{fg_erods_acomparison} \centering \vspace{-3mm} 
 %% NOTE: if realistic materials are needed, erods_acomparison-loLoss_r.pdf can be substituted for  erods_acomparison_r.pdf etc.
@@ -805,28 +817,14 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 \end{tabular}
 \end{figure}
 %}}}
-\paragraph{Sparse rod array} %{{{
-The discussion of the previous structure has proven that the choice of permittivity and geometry obviously leads to a qualitative change in the structure behaviour. This becomes even more important in the case of dielectric rods parallel to the electric field. 
-
-Fig. \ref{fg_erods_acomparison} shows the spectra of effective parameters for three rod arrays of the same permittivity $\epsrl(f=1\text{ THz}) = 89.5+0.23\ii$ and diameter $\rho=10$ $\upmu$m. They only differ by the unit cell size $a \in \{80, 90, 120\}$ $\upmu$m, yet such a structure obviously behaves in several different ways depending on $a$. Moreover, the differences are not obvious if PWEM results are plotted, as was the case in Fig. \ref{fg_rodh}.  
-
-% TODO refereence  also to \cite{valdivia2012} and \cite{shi2007}
-%low-loss dielectrics discussed in http://www.nature.com/nnano/journal/v11/n1/full/nnano.2015.304.html??
-%\cite{yang2015}
-Starting with the blue curves in Fig. \ref{fg_erods_acomparison} representing a sparse array with $a=12\rho = 120$ $\upmu$m, one can clearly identify two individual resonances around 745 and 1170 GHz, each introducing a familiar shape in the spectra of $\Neff(f)$. From the effective permittivity $\eeff(f)$ and permeability $\meff(f)$, the first resonance can be identified as an electric one, and the second as a magnetic one. The electric resonance has a strong dipole moment and introduces a broader band gap than any of resonances shown in Fig. \ref{fg_rodsphere_comparison}. %; the fundamental asymmetry arises from the fact that the spheres and rods are made of a dielectric that primarily interacts with the electric field, while its permeability $\murl=1$. 
-
-In spite of the strength of the first resonance, the corresponding region of $\eeff'(f)<0$ does not overlap with that of $\meff'(f)<0$ for the sparse rod array with $a=120$ $\upmu$m and no negative index of refraction is obtained. The resulting spectra of all parameters are qualitatively similar to that of the electro-magnetic resonator with the capacitor radius $\rho_c\gtrsim 18$ $\upmu$m  (c.f. Figs. \ref{fg_emSRR_icr} and \ref{fg_cdh2}b).
-
-%}}}
 \paragraph{Effect of inter-cell coupling}%{{{
-By increasing the filling fraction of the dielectric rod, the electric and magnetic resonances can be efficiently tuned upwards and downwards in the frequency, respectively. 
-The reason can be traced down to the symmetry of the magnetic field shapes. 
+By increasing the filling fraction of the dielectric rod, the electric and magnetic resonances can be efficiently tuned upwards and downwards in the frequency, respectively. The reason can be deduced from the symmetry of the magnetic field shapes for $\KK\sim 0$. 
 
-The electric resonance (Fig. \ref{fg_sketchfield}a), with the electric dipole pointing parallel to the rod, and the magnetic field circulating around it, introduce opposite orientation of the magnetic field at the cell boundaries. An increase of the cell size $a$ also increases the effective inductance of the rod per unit length, thus shifting the electric resonance to lower frequency.
+The electric resonance (Fig. \ref{fg_sketchfield}a), with the electric field pointing parallel to the rod, and the magnetic field circulating around it, introduce opposite orientation of the magnetic field at the cell boundaries. A reduction of the cell size $a$ also reduces the effective inductance of the rod per unit length, thus shifting the electric resonance to a higher frequency.
 
-On the contrary, the magnetic field surrounding the rod near the magnetic Mie resonance (Fig. \ref{fg_sketchfield}b) has the same orientation at the cell boundaries as that of the neighbouring cell. Thus the increase of $a$ increases the frequency of the magnetic resonance.
+On the contrary, the magnetic field surrounding the rod near at the magnetic Mie resonance (Fig. \ref{fg_sketchfield}b) is oriented parallel with the field of the neighbouring cell. Thus the reduction of $a$ decreases the frequency of the magnetic resonance.
 
-Note that this strong coupling is specific for this particular rod orientation. In the previous chapter we discussed similar high-permittivity rods oriented parallel to the magnetic field. In the first resonance, the electric field also circulated around the rod axis, but the majority of its energy was confined to the dielectric volume (cf. Fig.  \ref{fg_rodh}b-$\text{X}1$).  The inter-cell coupling of the magnetic resonance was thus much weaker, and similar argument applies to all higher resonances. As a result, the resonance frequencies of dielectric rods parallel to the magnetic field can not be tuned against each other as in the case of rods parallel to the electric field.
+Note that this strong coupling is specific for this particular rod orientation. In the previous chapter we discussed similar high-permittivity rods oriented parallel to the magnetic field. In the first resonance, the electric field also circulated around the rod axis, but the majority of its energy was confined to the dielectric volume (cf. Fig.  \ref{fg_rodh}b-$\text{X}1$).  The inter-cell coupling of the magnetic resonance was thus much weaker, and similar argument applied also to higher resonances. As a result, the resonance frequencies of dielectric rods parallel to the \textit{magnetic} field can not be efficiently tuned against each other.
 
 %}}}
 \begin{figure}  %fg_sketchfield%{{{
@@ -851,12 +849,13 @@ Through moderate reduction of the unit cell size $a$ to 90 $\upmu$m, as represen
 
 At the upper-frequency edge of the band with $\Neff'<0$, either the effective permeability or permittivity becomes positive, for $a\lesssim 92$ $\upmu$m or  $a\gtrsim 92$ $\upmu$m, respectively. This is another subtle, but qualitative change in the structure behaviour. 
 %It manifests itself in the mode shapes resolved by PWEM, and the effective impedance $\Zeff=\sqrt{\meff/\eeff}$ reaching either very low or very high values at the band edge. 
-At the exact radius of cross-over, the effective permittivity and permeability change their sign at the same frequency, and a \textit{zero-width band gap}\index{zero-width band gap} is obtained. Unlike the Fabry-Pérot resonances in 1-D PhC, this band gap is located at $\Neff'=0$, which results in a peculiar regime of operation: In an idealized loss-less model, the wave does not exponentially decay nor acquires any phase advance in the metamaterial volume. Still, its group velocity is nonzero. Hence, a spatial modulation of the wave envelope can propagate over the wave, which oscillates in phase. This can be viewed as a complementary phenomenon to the narrow photonic bands, where, due to vanishing inter-cell coupling, the phase velocity is orders of magnitude higher than the group velocity (c.f. the second band in Fig. \ref{fg_cdh2}b).
 
-Both points of near-zero transmittance at $f_E$ and $f_M$, indicating individual resonances, come closer to each other with further reduction of $a$. The maximum transmittance between both resonances decreases approximately with the second power of the frequency difference:
+At the exact parameter $a$ for the cross-over, the effective permittivity and permeability change their sign at the same frequency, and a \textit{zero-width band gap}\index{zero-width band gap} is obtained. Unlike the Fabry-Pérot resonances in 1-D PhC, this band gap is located at $\Neff'=0$, which results in a peculiar regime of operation -- in the idealized loss-less model, the wave would not exponentially decay nor acquire any phase advance in the metamaterial volume; all unit cells would oscillate in phase. Still, its group velocity would be nonzero, and any spatial modulation of the wave envelope would propagate through the cells. This can be viewed as a complementary phenomenon to the extremely narrow photonic bands where, due to the vanishing inter-cell coupling, the phase velocity is orders of magnitude higher than the group velocity (c.f. the second band in Fig. \ref{fg_cdh2}b).
+
+Both points of near-zero transmittance at $f_E$ and $f_M$, indicating individual resonances, come closer to each other with further reduction of $a$. The maximum amplitude of transmittance $|t|$ between both resonances decreases approximately with the second power of the frequency difference:
 \begin{equation} \underset{f \in\,\langle f_E,f_M\rangle}{\text{max}} |t| \propto \frac{1}{(f_E-f_M)^{2}}, \label{eq_fEfM}\end{equation}
-hence the transmitted energy drops with the fourth power of the resonance frequency difference, $f_E-f_M$, and reaches extremely low values. Simultaneously, the transmittance grows above $f_M$ and reaches almost 100 \% relatively close to this low-transmittance region. 
-We proposed \cite{dominec2014transition} that with the aforementioned geometry, a single layer of unit cells could find its application as a \textit{dielectric-rod array filter}\index{dielectric-rod array filter}. It would possess better extinction ratio than a dielectric slab of similar material can achieve through Fabry-Pérot resonances.
+hence the transmitted spectral intensity drops with the fourth power of the resonance frequency difference, $f_E-f_M$, and reach extremely low values in this spectral region. Simultaneously, the transmittance rapidly grows above $f_M$ and reaches almost 100 \% relatively close to this low-transmittance region. 
+We proposed \cite{dominec2014transition} that with the aforementioned geometry, a single layer of unit cells could find its application as a \textit{dielectric-rod array filter}\index{dielectric-rod array filter}. It would possess a better extinction ratio, and a better-defined stop-band than a dielectric slab of similar material can achieve through Fabry-Pérot resonances.
 % (see Fig. \ref{fg_Slab_fillfraction015_epsilon_comparison})
 
 %}}}
@@ -869,12 +868,12 @@ We proposed \cite{dominec2014transition} that with the aforementioned geometry, 
 \end{figure}
 %}}}
 \paragraph{Dense rod array} %{{{
-Further reduction of the unit cell size $a$ to 80 $\upmu$m does not lead to a cross-over of the resonance frequencies, as might be expected. Instead, the individual resonances disappear, and an ordinary Bragg band gap remains, spanning from 480 to 1150~GHz. The corresponding transmittance curve  (plot in red in Fig. \ref{fg_erods_acomparison}b) does not touch zero anywhere in the spectrum. 
+Further reduction of the unit cell size $a$ to 80 $\upmu$m does not lead to a cross-over of the resonance frequencies, as might be expected. Instead, the individual resonances disappear, and an ordinary Bragg band gap remains, spanning from 480 to 1150~GHz. The corresponding transmittance curve  (plotted in red in Fig. \ref{fg_erods_acomparison}b) does not touch zero anywhere in the spectrum. 
 
-Consequently, there is no fast drop of $\Neff'(f)$ (see Fig. \ref{fg_erods_acomparison}c). The effective index of refraction $\Neff'$ maintains high values over the whole spectrum, which precludes to describe the structure as a homogeneous one. Thence, the local effective parameters of permittivity and permeability cease to have physically useful values anywhere above the middle of the first photonic band.
+Consequently, there is no individual resonance, nor any fast drop in the spectrum of $\Neff'(f)$ (see Fig. \ref{fg_erods_acomparison}c). The effective index of refraction $\Neff'$ maintains high values over the whole spectrum, which precludes to describe the structure by means of local effective parameters of permittivity and permeability anywhere above the middle of the first photonic band.
 This kind of behaviour was already encountered in the spectra of one-dimensional photonic crystal (Figs. \ref{fg_Slab_fillfraction015_epsilon_comparison}, \ref{fg_Slab_fillfraction015_epsilon_comparison}). 
 
-However, the effective index of refraction $\Neff(f)$ is still valid, and its spectrum for $a=80$ $\upmu$m still maintains the shape that $\Neff'$ had for $a=90$ $\upmu$m and even $a=120$ $\upmu$m: Most notably, the negative-index band around 1200 GHz, spanning between the -1th and the 0th Brillouin-zone boundaries) on the green curve has its analogy in a similarly narrow band on the red curve (between the 1th to the 2nd Brillouin-zone boundaries). Also the higher frequency features tend to be similar. This suggests that the only qualitative change between $a=90$ $\upmu$m and $a=80$ $\upmu$m is in \textit{the wave phase}\index{the wave phase} per unit cell.
+However, the effective index of refraction $\Neff(f)$ is still valid, and its spectrum for $a=80$ $\upmu$m approximately maintains the shape that $\Neff'$ had for $a=90$ $\upmu$m and even $a=120$ $\upmu$m. Most notably, the negative-index band around 1200 GHz (spanning between the -1th and the 0th Brillouin-zone boundaries) on the green curve has its analogy in a similarly narrow band on the red curve (between the 1th to the 2nd Brillouin-zone boundaries). Also the higher frequency features tend to be similar. This suggests that the only change between $a=90$ $\upmu$m and $a=80$ $\upmu$m that can be observed without an inspection of the internal fields is in the \textit{phase} that the wave acquires per one unit cell.
 
 %}}}
 \begin{figure}%{{{ fg_drawn100
@@ -895,26 +894,26 @@ The colours and numbering from 1 to 6 denote the band gaps. Mie resonances are o
 \paragraph{Continuous scan through the unit cell sizes}%{{{
 For illustration, we add a high-resolution continuous scan through the unit cell size $a$ in Fig. \ref{fg_spacingscan100}, with other parameters shared with the previous plots in Fig. \ref{fg_erods_acomparison}. The individual Mie resonances can be identified as the sets of points where transmittance $|t|$ comes close to zero, real part of effective index of refraction $\Neff'$ drops and its imaginary part $\Neff''$ has a sharp peak. The photonic band gaps are all areas where $\Neff'' \not\approx 0$ in Fig. \ref{fg_spacingscan100}d.
 
-For easier interpretation, the interplay of the individual resonances and the band gaps is redrawn in Fig. \ref{fg_drawn100}, where each photonic band gap is represented as a coloured area and the individual resonances as thick black lines. The small black patch between the first and second band gaps covers the range conditions necessary for reaching $\Neff'<0$, provided that the dielectric is titanium dioxide with permittivity $\epsrl \approx 92$. 
-
-Related effects were described in the literature. Ref. \cite{shi2007} investigates the impact of Mie resonances to the band-gap structure, but the discussion thereof neglects the near-field effect on Mie resonance frequency. The paper unfortunately did not include refined scans of the $a/\rho$ ratio and thus did not correctly discuss the qualitative change in the structure behaviour. 
+For easier interpretation, the interplay of the individual resonances and the band gaps is redrawn in Fig. \ref{fg_drawn100}, where each photonic band gap is represented as a coloured area and the individual resonances as thick black lines. The small black patch between the first and second band gaps covers all $(a,f)$ combinations   necessary for reaching $\Neff'<0$, provided that the dielectric is titanium dioxide with permittivity $\epsrl \approx 92$. 
 
 In accordance with the previous discussion, the electric and magnetic Mie resonances approach each other when the unit cell size $a$ decreases from 120 to 90 $\upmu$m, and eventually they meet and vanish for $a \lesssim 85$ $\upmu$m, forming an "U"-shaped curve. Using $a$ as the scanning parameter enables to clearly illustrate the shift of individual resonances. With this choice, the frequencies of the band gaps roughly follow the $1/a$ curves, but they are strongly influenced by the individual resonances. Each individual resonance is always contained inside a band gap.
 
-In photonic bands, the real part of refractive index grows as a function of frequency; from the beginning to the end of each photonic band, it gains a difference of one Brillouin zone. The only way how $\Neff'$ can descend by one Brillouin-zone boundary is by means of an individual resonance. A simple arithmetic rule for reaching negative index of refraction $\Neff'(f_1)<0$, at a given frequency $f_1$, is therefore that the number of photonic band gaps counted from $f=0$ to $f_1$ must be strictly less than the number of individual resonances. 
-%(Author conjectures that the presence of two Mie resonances in the \textit{first}\index{first} band gap in the spectrum is a necessary and sufficient condition for $\Neff'<0$ to occur.)
-This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any higher-order Mie resonances, although they can be shown to persist for smaller unit cell sizes than $a=85$ $\upmu$.  (Figs. \ref{fg_spacingscan100}, \ref{fg_drawn100})
+In photonic bands, the real part of refractive index grows as a function of frequency; from the beginning to the end of each photonic band, it gains a difference of one Brillouin zone. The only way how $\Neff'$ can descend by one Brillouin-zone boundary is by means of an individual resonance. A simple arithmetic condition for reaching negative index of refraction $\Neff'(f_1)<0$, at a given frequency $f_1$, is therefore that the number of photonic band gaps counted from $f=0$ to $f_1$ must be strictly less than the number of individual resonances. 
+
+This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any higher-order Mie resonances, although from Figs. \ref{fg_spacingscan100} and \ref{fg_drawn100} it can be seen that these persist even for smaller unit cell sizes than $a=85$ $\upmu$ 
+The author further conjectures that the presence of two Mie resonances in the \textit{first} band gap in the spectrum is a necessary and sufficient condition for $\Neff'<0$ to occur in any known metamaterial that can be described by local parameters.
 
 %}}}
 \begin{figure}[t] % fg_fxplot %{{{
 \begin{minipage}[c]{0.51\textwidth}
 	\hspace{-2mm}\begin{overpic}[width=.99\textwidth]{img-meep/erods_fxplot_cs120e-6.pdf} 
-		\put(117,8){\includegraphics[width=.5\textwidth]{img/ERods_sketch_recordedline.pdf}}
+		\put(140,3){\includegraphics[width=.63\textwidth]{img/ERods_sketch_recordedline.pdf}}
 		\put(7,90) {\textbf{(a)}} 
 	\end{overpic}\\
 \end{minipage}
 \begin{minipage}[c]{0.49\textwidth}
-	\caption{Spatially resolved spectra of the electric field for the unit cell cell sizes \textbf{(a)} $a=120$ $\upmu$m and \textbf{(b)} $a=90$ $\upmu$m \textbf{(c)} $a=80$ $\upmu$m  }\vspace{3cm} \label{fg_fxplot}
+	\caption{Spatially resolved spectra of the electric field $|E_x(z, f)|$ for the unit cell cell sizes \textbf{(a)} $a=120$ $\upmu$m, \textbf{(b)} $a=90$ $\upmu$m  and \textbf{(c)} $a=80$ $\upmu$m.
+Dark blue represents the lowest field magnitude and white the highest one, logarithmic color map of the field amplitude is used.\\For easier comparison, the effective index of refraction was added below each plot of the fields, with a shared frequency axis.	}\vspace{3cm} \label{fg_fxplot}
 \end{minipage}  
 %\vspace{-12mm}
 %\end{figure} 
@@ -928,39 +927,33 @@ This simple rule eliminates the possibility of obtaining $\Neff'<0$ from any hig
 \end{figure} 
 %}}}
 \paragraph{Inspection of the frequency-dependent shape of the field}%{{{
-While the PWEM plot gives full information about the field at the band edges (Fig. \ref{fg_erod_radius11}), it does not compute the field shape at frequencies lying in the band gap, which is exactly what we need to explain the physical reason behind the peculiar disappearance of Mie resonances. Inspection the fields within a band gap requires a new kind of plots based on time-domain simulations, which show how the electric field amplitude depends simultaneously on the position along the wave vector, i.e., the $z$-axis, and on the frequency (Fig. \ref{fg_fxplot}). 
+While the PWEM plot gives all information about the field shapes at the band edges (Fig. \ref{fg_erod_radius11}), it does not tell anything for frequencies lying in the band gap. Inspection the fields within a band gap  is needed to explain the physical reason behind the peculiar disappearance of Mie resonances. It requires a new kind of plots based on time-domain simulations which show how the electric field amplitude depends simultaneously on the position on the  $z$-axis, along which the wave propagates, and on the frequency.
 %, since the wave amplitude decays exponentially and the field is not eigenfunction of the  
 
-A structure of dielectric rods arranged in three layers was used as a sufficiently thick sample to illustrate the metamaterial behaviour. Since the discussion is based on the phase advance of the wave across a cell, it is sufficient to observe the fields at the central line between the rods only (see drawing in \ref{fg_fxplot}).
+A structure of dielectric rods arranged in three layers was used as a  sample sufficiently thick to illustrate the behaviour of the field in the metamaterial cells. Since the above discussion is based on the phase advance of the wave across a cell, it is sufficient to observe the fields at the central line between the rods only, as drawn in the inset drawing in Fig. \ref{fg_fxplot}.
+During the simulation, the electric field amplitude was stored in each FDTD step and for each point along the line.
 
-The electric field amplitude was stored in each simulation step for each point along the line.
-At the end of the simulation, the temporal spectra of the record were computed and the magnitude of $|E_x(z, f)|$ was plotted. A logarithmic color map spanning over 5 orders of magnitude was used, with dark blue representing lowest field magnitude and white highest. For easier comparison, the effective index of refraction was added below each plot of the fields, with a shared frequency axis.
-To the author's knowledge, such kind of plots has not been published in any paper yet. 
+At the end of the simulation, the Fourier transform of the recorded field was computed in each point and the magnitude of the temporal spectra $|E_x(z, f)|$ was plotted in Figs. \ref{fg_fxplot}a,b,c. To the author's knowledge, such kind of plots has not been published in any paper yet. 
 
-The case of sparse rods (Fig. \ref{fg_fxplot}a) clearly illustrates that beginning from the lower edge of the first band gap, at 0.42 THz, up to the electric resonance at 0.745 THz, one nodal plane per unit cell crosses the line where field is recorded. The nodal plane can be detected as sets of points where the field intensity drops to very low values, and it introduces a $+\pi$ shift of the field phase between adjacent cells. 
+In Fig. \ref{fg_fxplot}a, the case of sparse rods clearly illustrates that beginning from the lower edge of the first band gap, at 0.42 THz, up to the electric resonance at 0.745 THz, one nodal plane per unit cell crosses the line where field is recorded. The nodal plane can be identified as sets of points where the field intensity drops to very low values, and it introduces a $+\pi$ shift of the field phase between adjacent cells. 
+Unfortunately, the field pattern close to the resonant frequency is hard to interpret due to boundary effects on the finite structure, but above the resonance one can clearly see that no nodal planes are present. This is in accordance with the predicted exponential decay of evanescent waves when $\Neff' = 0$ and $\Neff'' < 0$. The electric dipole of the rods is opposite to the surrounding field in this region, but the nodal planes form closed surfaces around each rod, and the phase difference recorded along the line between the unit cells is zero. From 970 GHz onwards, the second photonic band starts which allows the electromagnetic energy propagate through the structure.
 
-Unfortunately, the field pattern close to the resonant frequency is hard to interpret due to boundary effects on the structure, but above the resonance one can clearly see that no nodal planes are present. This is in accordance with the predicted exponential decay of the evanescent wave whenever $\Neff' = 0$ and $\Neff'' < 0$. The electric dipole of the rods is opposite to the surrounding field in this region, but the nodal planes form closed surfaces around each rod, and the phase difference between the unit cells is zero. From 0.97 THz on, the second photonic band starts which allows the electromagnetic energy propagate through the structure.
+In the second case of the medium-density rod array (Fig. \ref{fg_fxplot}b), both resonances are located in the first band gap. At the frequency of the first resonance, one nodal plane per each unit cell is removed and the phase advance across the unit cell is reduced from $+\pi$ to $0$. The second resonance further reduces this phase difference, from $0$ to $-\pi$, which introduces one nodal plane per unit cell again. Accordingly, faint nodal planes can be observed again in the first band gap between 1100 and 1150 GHz. 
 
-The second case of the medium-density rod array (Fig. \ref{fg_fxplot}b) is known to bring both resonances into the first band gap. At the frequency of the first resonance, one nodal plane in each unit cell is removed and the phase advance across a cell is reduced from $+\pi$ to $0$. The second resonance further reduces this phase difference, from $0$ to $-\pi$, which involves formation of one nodal plane per unit cell. Accordingly, faint nodal planes can be observed again in the upper part of the first band gap. 
-
-Finally, upon reduction of the unit cell size to $80$ $\upmu_m$ (Fig. \ref{fg_fxplot}c), two nodal planes obviously intersect the inter-cell axis at any the first photonic band gap. % This means that .. ?
+Finally, upon reduction of the unit cell size to $80$ $\upmu$m (Fig. \ref{fg_fxplot}c), the number of nodal planes becomes a constant over the whole band gap, with one nodal plane dividing each unit cell. 
 
 %}}}
 \paragraph{The cause of the Mie resonances vanishing}%{{{
-It can be deduced that the reason why two Mie resonances can no longer be observed for $a\lesssim 85$ $\upmu$m is in the change of the nodal surface topology. When the rods are far from each other ($a\gtrsim 88$~$\upmu$m), the individual Mie resonances create closed regions dominated by the near field of the resonance, which are delimited by roughly elliptical nodal surface. Thus in Fig.  \ref{fg_fxplot}b, between 930 and 1100 GHz,  %% todo verify freqs
-no nodal plane is intersected by the inter-cell axis, where the electric field is recorded.
+Fig. \ref{fg_fxplot} shows that the  disappearance of Mie resonances for $a\lesssim 85$ $\upmu$m is caused by a change in the nodal surface topology. When the rods are far from each other ($a\gtrsim 85$~$\upmu$m), the individual Mie resonances create closed regions dominated by the near field of the resonance, which are delimited by roughly elliptical nodal surface. Thus in Fig.  \ref{fg_fxplot}b, between 930 and 1100 GHz,  %% todo verify freqs
+no nodal plane is intersected by the line where the electric field is recorded.
 
-Upon reducing the unit-cell size ($a\lesssim 85$~$\upmu$m) at the same frequency, the regions of opposite fields start to overlap with those from the neighboring cells and the nodal surfaces interconnect with each other. The wave propagating through an unit cell then twice changes its sign, which manifests itself as a $2\pi$ phase change compared to the $a=90$ $\upmu$m case. 
-
-This pair of open nodal surfaces dividing the unit cell manifests itself by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
-
+Upon reducing the unit-cell size ($a\lesssim 85$~$\upmu$m) at the same frequency, the regions of opposite fields start to overlap with those from the neighboring cells and the nodal surfaces interconnect with each other. The wave propagating through an unit cell then changes its sign twice. This manifests itself as a $2\pi$ phase change compared to the $a=90$ $\upmu$m case, and by a qualitative change of the $\Neff'$ spectrum towards a shape typical for one-dimensional photonic crystals.
 
 % The Kramers-Kronig relations require that for any structure studied, $\Neff'(f)$ [or, equivalently, $k(f)$] attains and finally crosses the Brillouin-zone boundaries when the frequency is sufficiently increased. While usually the convention is used that the corresponding curves are folded back into the first Brillouin zone, in this paper we plot $\Neff'(f)$ in the original (unfolded) Brillouin zones resulting from the retrieval algorithm. This can be clearly observed on the dispersion of the refractive index in Fig.\ \ref{fg_spec}. In this way we retain the information about the number of the nodal planes intersecting the unit cell, which is important for our discussion.
 
 % todo \cite{peng2007, vynck2009all}
 
 %todo discuss from short.pdf: "...confirmed by the FDTD results and by their compliance to Kramers-Kronig relations. To illustrate this, the Hilbert transform of the refractive index is plotted as the thin pink line and it nearly perfectly follows the green curve over the whole spectrum, except for an additive constant. There is  only one acceptable physical solution that is compatible with the Kramers-Kronig relations."
-
 
 %}}}
 \begin{figure}%{{{ fg_drawn50_12
@@ -979,40 +972,38 @@ The Mie resonances shift to higher frequencies relative to the band gaps and no 
 
 %}}}
 \paragraph{Lower dielectric permittivity}%{{{
-When the dielectric permittivity contrast is reduced, 
-both individual Mie resonances and Bragg-type band gaps shift to higher frequencies. Mie resonances are more sensitive to $\epsrl$, and when it is reduced from that of titanium dioxide in the terahertz range ($\epsrl = 92$) to a lower value $\epsrl = 50$, the point of the first and second Mie resonances merging shifts to the upper edge of the first gap (Fig. \ref{fg_drawn50_12}a). 
+Both individual Mie resonances and Bragg-type band gaps depend on the dielectric permittivity $\epsrl$. However, the frequency of Mie resonances are more sensitive, and consequently the critical point where the first and second Mie resonances merge shifts to the upper edge of the first gap (see Fig. \ref{fg_drawn50_12}a)  when $\epsrl$ is reduced from that of titanium dioxide in the terahertz range ($\epsrl = 92$) to a lower value $\epsrl = 50$,.  
+As a result, the negative-index band then can not be found for any unit cell size. Thus, the dielectric permittivity contrast of at least 50 appears to be essential for obtaining a negative refractive index from any dielectric metamaterial.
 
-The dielectric permittivity contrast of at least 50 appears to be crucial for obtaining negative refractive index from any rod-array metamaterial. For lower values of $\epsrl$, no photonic band with $\Neff'<0$ can be found at any frequency, for any $\rho/a$ ratio.
+Construction of an optical or near-infrared metamaterial restricts the choice of dielectric permittivity compared to the terahertz range. 
+The permittivity of silicon, $\epsrl \approx 12$, is one of the highest available in the near infrared range. The band structure corresponding to $\epsrl=12$ in Fig. \ref{fg_drawn50_12}b shows that for any unit cell size, the first Mie resonance in silicon rod array would always be preceded by at least one band gap of the Bragg type. 
 
-Construction of an optical or near-infrared metamaterial restricts the choice of permittivity compared to the terahertz range. 
-The permittivity of silicon, $\epsrl \approx 12$, is one of the highest available in the near infrared range. The band structure corresponding to $\epsrl=12$ (Fig. \ref{fg_drawn50_12}b) shows that for any unit cell size, the Mie resonance in silicon rod array would  always be preceded by a Bragg band gap. 
-
-Figs. \ref{fg_drawn100}, \ref{fg_drawn100} and \ref{fg_fxplot} show that dielectric rods do not have to be geometrically touching to start behaving like a 1-D PhC. This is in line with the observation that the scattering cross-section of sub-wavelength objects tends to be greater than their geometrical extent, in particular close to resonances.
-
-Strong enough near-field interaction is sufficient for a topological change of nodal planes, and the exact critical ratio of the radius to the unit cell size $\rho/a > 0.5$ depends on the dielectric permittivity. This qualitative change occurs for a particularly low filling fraction in the array of rods parallel to the electric field, but it should occur in other kinds of structures, provided their unit cells are so small to promote strong near-field interaction of neigbouring resonant elements.
+The above discussion also shows that the dielectric rods do not have to be geometrically touching to start behaving like a dielectric slab in a 1-D PhC. This is in line with the observation that the scattering cross-section of sub-wavelength objects tends to be greater than their geometrical extent.
+Strong enough near-field interaction is sufficient for a topological change of nodal planes. The exact critical ratio of the radius to the unit cell size $\rho/a$ depends on the dielectric permittivity. In the array of rods parallel to the electric field, this qualitative change occurs for a particularly low filling fraction, but it should occur in other kinds of structures as well, provided their unit cells are small enough to promote strong near-field interaction of neighbouring resonant elements.
 
 %}}}
-\paragraph{Comparison to other publications} %{{{
-A very similar structure  is studied in Ref. \cite{vynck2009all} as a metamaterial; each rod is viewed as a separate dielectric resonator, with analytical formula used to establish the Mie resonance frequencies of an isolated rod. Since the inter-cell coupling is neglected in the paper, its authors predict that the electric and magnetic resonances would be found even for a relatively low permittivity $\epsrl = 12$. Based on this, its authors conclude that a metamaterial with $\Neff'<0$ can be built of silicon rods -- which is in direct contradiction with our results presented above, and in Ref. \cite{dominec2014transition}.
+\paragraph{Rod-array metamaterial in the literature} %{{{
+A very similar structure is studied in Ref. \cite{vynck2009all} purely as a metamaterial; each rod is viewed as a separate dielectric resonator, with analytical formula used to establish the Mie resonance frequencies as if it was isolated in space. Since the inter-cell coupling is neglected in the paper, its authors predicted that the electric and magnetic resonances would be found even for a relatively low permittivity $\epsrl = 12$. Based on this, its authors conclude that a metamaterial with $\Neff'<0$ can be built of silicon rods -- which is in direct contradiction with our results presented above, and in Ref. \cite{dominec2014transition}.
 
-A was studied recently in Ref. \cite{rybin2014photonic}; again the Mie resonance frequencies were deduced from the analytical formula, without taking into account the near-field coupling thereof. The paper correctly identifies that different choices of the rod parameters, $\epsrl$ and $a/\rho$, can exchange the order of Bragg and Mie resonances 
-
-%\cite{rybin2015phase}
-
-Ref. \cite{peng2007} presents a wedge-refraction experiment with a similar metamaterial, made of square bars parallel to the electric field. The bars have a very high permittivity of $\epsrl=600$, but still the geometry of the bars is equivalent to the \textit{dense array} of cylindrical rods $a/\rho \sim 4.5$. Thus it should exhibit no individual resonances and no negative index of refraction. However, as the major result of the paper \cite[Fig. 3bc]{peng2007} it is demonstrated that negative refraction occurs at the wedge, and moreover it is more or less maintained upon randomization of the rod positions.
+Ref. \cite{peng2007} presents a wedge-refraction experiment with a similar metamaterial, made of square bars parallel to the electric field. The bars have a very high permittivity of $\epsrl=600$, but still the geometry of the bars is equivalent to the \textit{dense array} of cylindrical rods $a/\rho \sim 4.5$. Thus, it should exhibit no individual resonances and no negative index of refraction. In this paper it is demonstrated  \cite[Fig. 3bc]{peng2007} that negative refraction occurs at the wedge, and moreover it is more or less maintained upon randomization of the rod positions.
 The clash can be explained by a relatively big angle of the wedge around 20$^\circ$, which actually prevents the use of effective index of refraction. % write why the randomization does not cancel the negative refraction
 
-The relevant papers (Refs. \cite{shi2007, peng2007, vynck2009all, rybin2014photonic, dominec2014transition}) come from the last ten years, although they are based on experimental and numerical methods that could be used already several decades ago. This confirms the author's view that the publications are incited by relatively recent merging of the \textit{metamaterial}\index{metamaterial} and \textit{photonic crystal}\index{photonic crystal} paradigms (see Fig. \ref{fg_mm_phc_diagram}).
+The impact of Mie resonances to the band-gap structure was studied earlier in Ref. \cite{shi2007}, but the discussion thereof neglected the near-field effect on Mie resonance frequency. The somewhat coarse simulations in the paper unfortunately did not include sufficiently detailed scans of the $a/\rho$ ratio and thus could not correctly discuss the qualitative change in the structure behaviour. 
+
+Finally, a similar structure was studied recently in Ref. \cite{rybin2014photonic}; again the Mie resonance frequencies were deduced from the analytical formula, without taking into account the near-field coupling thereof. This paper correctly points out that different choices of the rod parameters, $\epsrl$ and $a/\rho$, can exchange the position of the Bragg and Mie resonances in the spectrum.
+%\cite{rybin2015phase}
+
+The relevant papers (Refs. \cite{shi2007, peng2007, vynck2009all, rybin2014photonic, dominec2014transition}) come from the last ten years, although they are based on experimental and numerical methods that could be used already several decades ago. This confirms the author's view that the publications are incited by relatively recent merging of the \textit{metamaterial}\index{metamaterial} and \textit{photonic crystal}\index{photonic crystal} paradigms as sketched in Fig. \ref{fg_mm_phc_diagram}.
 
 %}}}
 \paragraph{Implications for all-dielectric negative-index metamaterials} %{{{
-In Refs.  \cite{rybin2014photonic} and \cite{dominec2014transition}, the structure behaviour is described as metamaterial-like, when the lowest band gap contains one or both Mie resonances. Otherwise, when the first band gap is of Bragg type, the structure is classified among photonic crystals. 
-This is a rather formal notation, based on the \textit{phase criterion} introduced on page \pageref{phasecriterion}. 
-The disappearance of resonances in the spectra is however an objective reality; the resonant skips in $\Neff'$ are required to fulfill the Kramers-Kronig relations. 
+In Refs.  \cite{rybin2014photonic} and \cite{dominec2014transition}, the structure is regarded as a \textit{metamaterial} when the lowest band gap contains one or both Mie resonances. Otherwise, when the first band gap is of Bragg type, the structure ranges among \textit{photonic crystals}. 
 The terminology difference has been discussed in the theoretical section, with the conclusion that one structure can be a representative of metamaterials and photonic crystals simulaneously, depending on the paradigm one prefers to use for its description. 
 
+This notation is rather formal, since it is based on the \textit{phase criterion} introduced on page \pageref{phasecriterion} and it does not affect the flow of energy. 
+The disappearance of resonances in the spectra is however an objective reality; the fast resonant chages in $\Neff'$ are moreover required for the spectra to conform to the Kramers-Kronig relations. 
 
-A sufficiently high permittivity can be found in the microwave and terahertz ranges, in a variety of materials, for example in titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.
+A sufficiently high permittivity for the \textit{metamaterial} regime can be found in the microwave and terahertz ranges in a variety of materials, such as titanium dioxide with $\varepsilon_r \approx 92$ \cite{nemec2009tunable} or in various ferroelectrics like strontium titanate \cite{skoromets2011tuning}. However, practical applications of the high-permittivity dielectrics in the THz range can be restricted by high dielectric losses due to low-frequency phonon absorption tails. To our knowledge, there is no material providing such a high permittivity in the near-infrared or optical ranges. This eliminates the possibility to build a MM at these frequencies with $\Neff'<0$ based on dielectric rods.
 
 %}}}
 \FloatBarrier %====================================================================================================
@@ -1031,15 +1022,15 @@ A sufficiently high permittivity can be found in the microwave and terahertz ran
 	\caption{Side view of one unit cell of the slit array: \textbf{(a)} geometry, \textbf{(b)} sketch of the electric and magnetic fields of the first resonance, \textbf{(c)} second resonance for a thicker structure (c.f. upper right corner of Fig. \ref{fg_yslit_dscan}a)} \label{fg_slitarray} \centering 
 \begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray.pdf}         \put (-12,83) {\textbf{(a)}}\end{overpic}\quad\quad
 \begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray_resE1.pdf}   \put (-15,90) {\textbf{(b)}}\end{overpic}\quad\quad
-\begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray_resM1.pdf}   \put (-13,90) {\textbf{(c)}}\quad\quad
+	\begin{overpic}[height=0.25\textwidth]{img/drawing_slitarray_resM1.pdf}   \put (-13,90) {\textbf{(c)}}
 \put(90,30){\includegraphics[width=.12\textwidth]{img/tripletEHK.pdf}}
-\end{overpic}\quad
+\end{overpic}\quad\hspace{15mm}
 \end{figure}
 %}}}
 \paragraph{Low-frequency behaviour of a thin sheet}%{{{
-When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with opposite orientation -- parallel to the magnetic field -- do not appreciably interact with the wave. The situation changes if the wires are widened into stripes, with their transverse dimension parallel to the electric field  not much smaller than their periodicity $a_x$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field, as sketched in Fig. \ref{fg_slitarray}a.
+When discussing the electromagnetic behaviour of metallic wires parallel to the electric field, we mentioned that wires with the opposite orientation -- parallel to the magnetic field -- would not appreciably interact with the wave. The situation changes if the wires are widened into stripes, with their transverse dimension (i.e., parallel to the electric field) not much smaller than their periodicity $a_x$. They may be then equivalently described as a thin metallic sheet divided by slits that have uniform width $d_x$ and are oriented parallel to the magnetic field, as sketched in Fig. \ref{fg_slitarray}a.
 
-When the wavelength is significantly longer than the slit width $d_x$, a single sheet partially reflects the incident radiation (Fig. \ref{fg_yslit_xcomparison_d20}). The reflectance amplitude $|r|$ monotonously decreases with the slit width $d_x$.  It also vanishes in the low-frequency limit for any $d_x>0$, since the macroscopic structure is not conductive in the direction of the electric field.  The low-pass filtering capability of this structure is illustrated in more detail in the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
+When the wavelength is significantly longer than the slit width $d_x$, a single sheet partially reflects the incident radiation (Fig. \ref{fg_yslit_xcomparison_d20}). The reflectance amplitude $|r|$ mono\-to\-nously decreases with the slit width $d_x$.  It also vanishes in the low-frequency limit for any $d_x>0$, since the macroscopic structure is not conductive in the direction of the electric field.  The low-pass filtering capability of this structure is illustrated in more detail in the continuous scan through $d_x$ in Fig. \ref{fg_yslit_xscan}a. 
 The unit cell size in the $x$-direction for both presented figures was $a_x = 100$ $\upmu$m. 
 The upper frequency limit in the plots was determined by the onset of the first diffraction order, at $c/a_x = 3.0$ THz. 
 
@@ -1052,23 +1043,23 @@ The upper frequency limit in the plots was determined by the onset of the first 
 \begin{overpic}[width=0.48\textwidth]{img-meep/yslit_xscan_d20_ni.pdf}\put(-1,80){\textbf{(b)}}\end{overpic}\\
 \end{figure}
 %}}}
-\paragraph{Wood's anomaly near the diffraction edge} %{{{
-At a frequency slightly below the onset of diffraction, a relatively narrow notch in the reflectance spectrum is observed, corresponding to an individual resonance. The frequency where $|r|$ drops near zero depends on  the slit width $d_x$, and on the slab thickness $d_z$ as discussed later. In the above figures where $d_z$ was fixed at $20$ $\upmu$m, the lowest frequency of the notch around $2.8$ THz is reached for $d_x/a_x \sim 0.3$ (see Fig. \ref{fg_yslit_xscan}a). 
+%\paragraph{Wood's anomaly near the diffraction edge} %{{{
+At a frequency slightly below the onset of diffraction, a relatively narrow notch in the reflectance spectrum is observed, which corresponds to an individual resonance. The frequency where $|r|$ drops near zero depends on  the slit width $d_x$, and on the slab thickness $d_z$ as discussed later. In the above figures where $d_z$ was fixed at $20$ $\upmu$m, the lowest frequency of the notch around $2.8$ THz is reached for $d_x/a_x \sim 0.3$ (see Fig. \ref{fg_yslit_xscan}a). 
 
 For a narrower or wider slit, the frequency of the notch increases and eventually approaches the diffraction limit of $3.0$ THz. 
-The notch also becomes narrower in spectrum, but does not appreciably reduce its depth. Some frequency can always be found at which nearly 100 \% of the energy is transmitted through the structure.
-
-The \textit{extraordinary transmission}\index{extraordinary transmission} is mediated by excitation of resonant fields on the metallic surface. 
-The field distribution is similar to surface plasmons-polaritons (SPP) propagating parallel to the $x$-axis as sketched in Fig. \ref{fg_slitarray}b. In the terahertz range and below it should be more precisely referred to as \textit{spoof surface plasmons}\index{spoof surface plasmons}, since the wave is bound to the metallic sheet predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the plasmons would propagate in the \textit{Zenneck regime}\index{surface plasmons!Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
-The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$.
-
-A closely related phenomenon  caused by surface plasmons, the \textit{Wood's anomaly}\index{Wood's anomaly}, was discovered in 1902 to cause a sharp drop of reflectance of metallic gratings \cite{wood1902remarkable}, and has incited many theoretical studies starting with that of Lord Rayleigh \cite{rayleigh1907dynamical} from 1907.  % todo with the main conclusion that.. 
+The notch also becomes narrower in spectrum, but in simulations with high spectral resolution, it does not appreciably reduce its depth - some frequency can always be found at which nearly 100 \% of the energy is transmitted through the structure.
 
 %}}}
 \paragraph{Standing surface plasmon resonance} %{{{
-Since the structure and the incident fields are both symmetric, equal amplitudes of the surface plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic resonance, with points of zero oscillating current (nodes) centered at the slit centers. The extraordinary transmission relies on the incoming plane wave coupling of to (spoof) surface plasmons-polaritons (SPPs), transfer of energy of SPPs to their mirror counterpart on the rear side of the structure, and re-radiation of the plane wave. 
+The effect, known as \textit{extraordinary transmission}\index{extraordinary transmission}, is mediated by excitation of resonant fields on the metallic surface. 
+The field distribution is similar to surface plasmons-polaritons (SPP) propagating parallel to the $x$-axis as sketched in Fig. \ref{fg_slitarray}b. It should be more precisely referred to as \textit{spoof surface plasmons}\index{spoof surface plasmons}, since the wave is bound to the metallic sheet predominantly because of its corrugation rather than inductive response of the metal. If there was no corrugation, the surface plasmons at terahertz frequencies would propagate in the \textit{Zenneck regime}\index{surface plasmons!Zenneck regime} \cite{navarro-cia2013terahertz} and their decay length above a flat metallic surface would be much larger than their wavelength. 
+The notch in reflectance is always observed at the exact frequency that stipulates that the plasmon wavelength is equal to the unit cell size $a_x$.
 
-In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which,  in Fig. \ref{fg_yslit_xscan}a, noticeably well matches the slit width $d_x$ corresponding to the lowest frequency of the zero-reflection curve. Stronger coupling thus apparently down-tunes the frequency, but it is not the main determining factor for the peak transmission efficiency; since EOT is a resonant process, it can achieve high amplitude of transmission even through arbitrarily narrow slits. 
+A closely related phenomenon  on corrugated surfaces of metallic diffraction gratings, the \textit{Wood's anomaly}\index{Wood's anomaly}, is also caused by surface plasmons. It was discovered in 1902 as a sharp drop of reflectance of metallic gratings \cite{wood1902remarkable} under incidence angles that enable the incident wave to couple to surface plasmons. It has incited many theoretical studies starting with that of Lord Rayleigh \cite{rayleigh1907dynamical} from 1907.  % todo with the main conclusion that.. 
+
+Since the structure and the incident fields are both symmetric, equal amplitudes of the surface plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic resonance, with points of maximum oscillating current (antinodes) located in the centers metallic bars. The extraordinary transmission relies on the incoming plane wave coupling of to the spoof surface plasmons, transfer of energy of SPPs to the spoof surface plasmons on the rear side of the structure, and re-radiation of the plane wave. 
+
+In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which,  in Fig. \ref{fg_yslit_xscan}a, noticeably well matches the slit width $d_x$ corresponding to the lowest frequency of the zero-reflection curve. Stronger coupling thus apparently down-tunes the frequency, but it is not the main determining factor for the peak transmission efficiency; since the extraordinary transmission is a resonant process, it can achieve high amplitude of transmission even through arbitrarily narrow slits. 
 
 %Lalanne-Theory_of_fishnet_optical_NIM.pdf
 % SPP on surface impact the transmission through a nano-aperture; 
@@ -1077,9 +1068,9 @@ In a numerical study of SPP-assisted transmission through a single slit, Lalanne
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
 % for slits in thick slabs: theory of waveguide	Ph. Lalanne et al., J. Opt. A Pure Appl. Opt. 2, 48 (2000).
 
-The extraordinary transmission in slit arrays requires strict periodicity of the slits along the $x$-axis, and also symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the $|r| \sim 0$ notch disappears when a dielectric substrate is added on one side of the structure. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored at a lower frequency.
+The extraordinary transmission in slit arrays requires strict periodicity of the slits along the $x$-axis, and also symmetry of the front and rear sides of the structure along the $z$-axis. Our numerical experiment (not shown here) has proven that the energy transfer is suppressed when a dielectric substrate is added on one side of the structure. When the dielectric substrate was added symmetrically from both sides, the extraordinary transmission was restored and its resonance frequency was lower than without the dielectric.
 
-Moreover, the dielectric does not have to touch the metal directly; a distance similar to the unit cell size was sufficient for the reflectance notch to be suppressed. We thus conjecture the approximate decay length of the surface plasmons along the $z$-axis, both in front of the structure and behind it, is not much smaller than $a_x$. 
+We also observed that the dielectric does not have to touch the metal directly; a distance similar to the unit cell size was sufficient for the reflectance notch to be suppressed. We thus conjecture the approximate decay length of the surface plasmons along the $z$-axis, both in front of the structure and behind it, is not much smaller than $a_x$. 
 
 %}}}
 \begin{figure}[htb] %{{{ fg_yslit_dscan
@@ -1103,7 +1094,7 @@ Moreover, the dielectric does not have to touch the metal directly; a distance s
 % (if the slits were periodic, a resonant coupling of the incident wave to surface plasmons would enable ~100% transmission)
 % experimental results 
 
-In the approximation for a thin enough slit, the highest transmittance was observed when the surface plasmon wavelength $\lambda_{\text{SPP}}$ matched the unit cell size $a_x$. 
+In the approximation of a thin slit with $d_z \ll a_x$, the highest transmittance was observed when the surface plasmon wavelength $\lambda_{\text{SPP}}$ matched the unit cell size $a_x$. 
 In the limit of thin sheets, this frequency approaches the diffraction limit of $c/a_x$, since surface plasmons in the terahertz range are only weakly bound to the metal surface and their phase velocity is similar to the speed of light in vacuum, $c$. Upon scaling the simulation into the optical range, the limiting frequency for thin metallic sheets was reduced below $c/a_x$ and moreover the exact behaviour of the structure has proven to depend on the choice of metal.
 
 For thicker sheets of metal, the effective optical path of surface plasmons travelling across one unit cell is increased by its portion in the inner slit surface, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
@@ -1115,15 +1106,14 @@ In the upper-right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectan
 \paragraph{Effective parameters of the sheet-slit array}%{{{
 The previous paragraphs described the reflection and transmission of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed in the same way as with other metamaterials. 
 
-However, one has to verify whether the scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is transferred by the surface plasmons that were shown not to be well localized in a single unit cell and can easily couple with those on nearby metallic surfaces, forming transversally propagating slot-waveguide modes \cite{weiner2011electromagnetics}.
-On the contrary, the current-driven homogenisation (CDH) setup exactly simulates one unit cell in its periodic environment, and is fully  suitable even for structures with strong coupling between neighbouring cells. An example comparison of the results is in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves.  %% XXX
+However, one has to verify whether the scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is transferred by the surface plasmons that were shown not to be well localized in a single unit cell. On the contrary, they couple strongly with those on nearby metallic surfaces, forming transversally propagating slot-waveguide modes \cite{weiner2011electromagnetics}.
+The current-driven homogenisation (CDH) setup is more suitable for simulations of such structures  with strong coupling between neighbouring cells, since it exactly simulates one unit cell in its periodic environment. The results of the two methods are compared in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves.  %% XXX
 
 The first photonic band is obviously accurately matched by both simulation setups. In the second band, located close to the diffraction edge where the dispersion is determined by excitation of surface plasmons, the scattering parameter method completely fails to predict not only its exact shape, but even the sign of the group velocity. 
 
 %TODO  discuss CDH results for Yslits of different cell spacing: 
 % TODO \ref{fg_cdh_yslit}a -- add about convergence of s-param method
-
-The s-parameter method computes the same metallic structure, and only the phase of $r$ and $t$ differs at the monitor points. The spectra of $\Neff$ obtained by the s-parameter method are thus relatively weakly influenced by changes in the unit cell spacing $a_x$. For unit cells close to each other, CDH shows that the correctly retrieved dispersion curves start to substantially deviate from the (wrong) predictions of the s-parameter method.
+%The s-parameter method computes the same metallic structure, and only the phase of $r$ and $t$ differs at the monitor points. The spectra of $\Neff$ obtained by the s-parameter method are thus relatively weakly influenced by changes in the unit cell spacing $a_x$. For unit cells close to each other, CDH shows that the correctly retrieved dispersion curves start to substantially deviate from the (wrong) predictions of the s-parameter method.
 %% TODO we found out that the first two bands are exactly matched between s-parameter and CDH method; however close to the diffraction limit the SPPs hinder the use of s-parameters TODO
 
 %}}}
@@ -1131,7 +1121,7 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} The same for a fishnet with the same proportions as in Ref. \cite{navarro2011dual}, where CDH predicts a band of negative index of refraction (points), whereas the s-parameter gives unrealistic values (green line). } \label{fg_cdh_yslit} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
-	%\vspace{.1\textwidth}
+	\vspace{-5mm}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/yslit_csz60u.pdf}  
 	\put(1,96) {\textbf{(a)}} 
 	%\put(18,100){\includegraphics[width=.1\textwidth]{img/drawing_emcSRRpad.pdf}} todo sketch
@@ -1143,11 +1133,12 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	%\put(30,105){$\rho_c = 8$ $\upmu$m}
 	\put(1,96) {\textbf{(b)}} 
 	\end{overpic}
+	\vspace{-5mm}
 \end{figure}
 %}}}
 \FloatBarrier %====================================================================================================
 %}}} /section
-\section{Fishnet -- metallic sheet with holes} \label{section_fishnet}%{{{
+\section{Fishnet} \label{section_fishnet}%{{{
 % TODO IMG img-meep/CDH-Fn_NavarroCia_div10.pdf%{{{
 %xholesize=1.100e-04  simtime=2.000e-10  resolution=5.000e-06  cellsize=5.250e-05  
 %cellsizexy=2.500e-04  cornerradius=5.500e-05  slabthick=1.000e-05  yholesize=1.100e-04
@@ -1199,11 +1190,11 @@ The s-parameter method computes the same metallic structure, and only the phase 
 	\end{overpic}
 \end{figure}
 %}}}
-\paragraph{Extraordinary transmission} %{{{
-A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}\index{mesh}, \textit{sub-wavelength hole array}\index{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}\index{fishnet}. Already in 1950s the perforated sheets were proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with index of refraction $0 < \Neff' < 1$, but the electromagnetic wave propagation was oriented parallel to the slabs and it was not mediated by a resonance.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
+\paragraph{Extraordinary transmission in fishnets} %{{{
+A natural modification of the structure discussed  above is to add conductive connections between the metallic stripes to form a perforated metallic sheet which is also denoted as a \textit{mesh}\index{mesh}, \textit{sub-wavelength hole array}\index{sub-wavelength hole array}, or within the context of metamaterials, as a \textit{fishnet}\index{fishnet}. Already in 1950s, a perforated metallic sheet was proposed to form an artificial dielectric \cite[p. 58]{brown1953artificial} with an index of refraction $0 < \Neff' < 1$, but the electromagnetic wave propagation was oriented parallel to the slabs and it was not mediated by a resonance.  % thus not exhibiting the resonant phenomena http://photonics.inescporto.pt/links/fct2013-1/metap14.pdf
 The spectral selectivity of a single metallic mesh perpendicular to the wave vector was employed in 1960s as a microwave and far-infrared filter \cite{ulrich1967effective,ulrich1967far, vogel1964transmission}.  
 
-The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission}\index{extraordinary transmission} (EOT) which can be orders of magnitude larger than the transmission estimated from the geometrical hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that one described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side in a similar way as described on the example of metallic slits. 
+The research into sub-wavelength hole arrays was revived with the advent of plasmonics, since periodic patterning of the metallic surface near a sub-wavelength hole was shown to enable the \textit{extraordinary optical transmission}\index{extraordinary transmission} (EOT) which can be orders of magnitude larger than the transmission estimated from the geometrical hole dimensions \cite{ebbesen1998extraordinary}. The mechanism of EOT is similar to that one described above; the incident light couples to surface plasmons, the energy is efficiently transferred through the hole, and finally re-radiated again at the rear side. 
 %  % predicted by Bethe's law of inverse fourth power of 
 
 Periodical arrangement of the holes is equivalent to structuring of the surroundings of a single hole. In line with the already demonstrated resonance in a metallic sheet with infinite slits, the metallic sheet with holes exhibits a resonance slightly below the diffraction edge which leads to a great drop in reflection. The exact behaviour of the structure is determined by the  metal thickness, dimensions of the holes, their spacing in the $x$-$y$ plane and the spacing of the metallic sheets along the $z$-axis.
@@ -1211,18 +1202,18 @@ Periodical arrangement of the holes is equivalent to structuring of the surround
 %}}}
 \paragraph{Negative index of refraction}%{{{
 %In 2003, the % TODO
-Under a correct choice of parameters of the structure, the re-radiated wave from the opposite side of the sheet has an opposite sign to the incoming one, leading to negative phase advance along the unit cell, and to formation of a $\Neff'<0$ band. 
+Under a correct choice of parameters of the structure, the wave radiated from the opposite side of the sheet has an opposite sign to the incoming one, leading to negative phase advance along the unit cell, and to formation of a $\Neff'<0$ band. 
 
 The conventional explanation of the negative refractive index of fishnets is based on the combination of negative effective permittivity and permeability. The former, $\eeff'<0$ should result from the inductive effect of the metallic connections, forming an electric dipole opposite to the incident electric field in a way similar to the wires oriented along the $x-$axis. The magnetic response is formed by individual resonances localised close to the fishnet holes, which exhibit a magnetic dipole moment.
 
-With this view, fishnets are analogous to the array of split-ring resonators embedded in a wire lattice. As an important difference, fishnet achieves relatively low losses, since its robust geometry is optimised for short conduction paths.
-The fishnet behaviour is determined mostly by the geometry, with too many independent parameters to be mapped in detail in this chapter. Compared, e.g., to the SRR array with wires, the occurrence of $\Neff'<0$ is less robust, and most notably depends on the following critical parameters:
+An important difference from previous designs of negative-index metamaterials, fishnets achieve relatively low losses even in the near-infrared and optical ranges, since its simple geometry is optimised for short conduction paths.
+Compared, e.g., to the SRR array with wires, the occurrence of $\Neff'<0$ is less robust, and most notably depends on the following critical parameters:
 \begin{enumerate}
 \item{The transverse periodicity of the holes mostly influences the frequency of operation, by a similar mechanism as described in the previous chapter.} 
-\item{The relative size of the holes adjusts the coupling strength; small holes lead to weak coupling of the surface plasmons and to the photonic band with $\Neff'<0$ to be very narrow. In contrast, too large holes lead to broad photonic bands which however never reach $\Neff'<0$. 
+\item{The relative size of the holes influences the coupling strength, but the resonance frequency is virtually independent of it. Small holes lead to weak coupling of the surface plasmons and to the photonic band with $\Neff'<0$ to be very narrow. In contrast, too large holes lead to broad photonic bands which however never reach $\Neff'<0$. 
 	
-If the holes are anisotropic, the described effect is more sensitive to the ellipse/rectangle dimensions parallel to the $y$-axis. Anisotropy of the holes can be beneficial for adjusting the impedance to reduce of reflectance \cite{croenne2009left}.} 
-\item{Finally, the spacing of the metallic sheets along the $z$-axis can be viewed as the factor determining the strength of the interaction. When the layers are overly sparse, the positive phase acquired between them overpowers the effect of plasmonic resonances and prevents the formation of $\Neff'< 0$ band. When they are very dense, the near-field coupling apparently becomes the dominant mechanism of energy transport. This is the case of numerous experimental samples. For instance, in Ref. \cite{valentine2011development}, the sheet distance ($a_z = 83$ nm) was less than 10 \% of the transverse hole periodicity ($a_x = a_y = 860$ nm). The scattering parameter method is obviously not applicable for this kind of structures.}
+If the holes are anisotropic, the described effect is more sensitive to the hole dimensions parallel to the $y$-axis. Anisotropic shape of the holes  was shown to influence the impedance, allowing to suppress reflections \cite{croenne2009left}.} 
+\item{Finally, the spacing of the metallic sheets along the $z$-axis determines the strength of the interaction. When the layers are overly sparse, the positive phase acquired between them overpowers the effect of plasmonic resonances and prevents the formation of $\Neff'< 0$ band. When they are very dense, the near-field coupling apparently becomes the dominant mechanism of energy transport. This is the case of numerous experimental samples. For instance, in Ref. \cite{valentine2011development}, the sheet distance ($a_z = 83$ nm) was less than 10 \% of the transverse hole periodicity ($a_x = a_y = 860$ nm). The scattering parameter method is obviously not applicable for this kind of structures.}
 \end{enumerate}
 
 %}}}
