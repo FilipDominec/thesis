@@ -29,14 +29,14 @@
  * [o]		prepare THz-TDTS data from the drilled sample?
  * [o] 12	Other structures
  * [/] Conclusion: what should Conclusion contain:
-    *  [ ] overall analysis and integration of the research and conclusions of the thesis in
+    *  [x] overall analysis and integration of the research and conclusions of the thesis in
     *      light of current research in the field
-    *  [ ] conclusions regarding goals or hypotheses of the thesis that were presented in
+    *  [x] conclusions regarding goals or hypotheses of the thesis that were presented in
     *      the Introduction, and the overall significance and contribution of the thesis
     *      research
-    *  [ ] comments on strengths and limitations of the thesis research
-    *  [ ] discussion of any potential applications of the research findings
-    *  [ ] an analysis of possible future research directions in the field drawing on the work
+    *  [x] comments on strengths and limitations of the thesis research
+    *  [x] discussion of any potential applications of the research findings
+    *  [x] an analysis of possible future research directions in the field drawing on the work
     *      of the thesis
 
  * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
@@ -56,15 +56,15 @@
 
 ==== Finally ====
  * [ ] musí být z textu disertace zřejmé, kterých výsledků dosáhl osobně doktorand jako autor. Současně musí být přiloženo prohlášení spoluautorů tuto skutečnost potvrzující (vztažené přímo k textu práce či k původním publikacím, na nichž je založena). Úlevy z tohoto pravidla: a) v případě, že jediným spoluautorem je školitel, může být toto prohlášení obsaženo v posudku školitele, b) v případě, že kolektivní práce je dílem většího počtu autorů, postačuje vyjádření zodpovědného člena autorského týmu.
- * [ ] Bloch -> Bloch's
- * [ ] "is depicted in Fig. xx" --->  <fact> (Fig. xx)
- * [ ] attach the list of own publications
- * [ ] Use correct citation style!
- * [ ] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
+ * [x] Bloch -> Bloch's
+ * [x] "is depicted in Fig. xx" --->  <fact> (Fig. xx)
+ * [x] attach the list of own publications
+ * [x] Use correct citation style!
+ * [x] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
  * [ ] make list of figures, adding short caption to each of them? -- and link to the simulation directory
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
  * [ ] ...ize ---> ...ise 
- * [ ] go through all TODOs
+ * [x] go through all TODOs
  * [ ] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
  * [ ] 
  * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)

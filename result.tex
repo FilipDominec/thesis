@@ -228,9 +228,11 @@ The spectral width of the transition and peak is inversely proportional to the q
 } 
 \end{enumerate}
 
-The most important observation is that the resonance curves of $\Neff(f)$ in periodic structures are constrained between the closest two Brillouin zone boundaries, which can be understood as the "floor" and "ceiling" for the dispersion curve. Apparently a single individual resonance can not shift the transmittance phase by more than $\pi$ per each layer of unit cells. It can therefore introduce a band of imaginary $\Neff$, but importantly for $\Neff$ to reach negative values, two resonances must be combined.
+The most important observation is that the resonance curves of $\Neff(f)$ in periodic structures are constrained between the closest two Brillouin zone boundaries, which can be understood as the "floor" and "ceiling" for the dispersion curve. Apparently a single individual resonance can not shift the transmittance phase by more than $\pi$ per each layer of unit cells. It can therefore introduce a band of imaginary $\Neff$, but this is not sufficient for $\Neff$ to reach negative values. For this, elements with both electric and magnetic dipoles opposite to the driving field have to be combined.
 
-The impact of the individual resonances on the effective parameters $\eeff(f)$ and $\meff(f)$ will be discussed in a later section focused on the dielectric resonators. % TODO verify that I have done this
+Another observation is that two resonances of the same type, i.e. either both with an electric dipole, or both with a magnetic dipole, can not be combined into a single wide region of negative effective parameter. This is due to the dipole changing its sign below and above resonance frequency. Combination of multiple elements of different resonant frequencies thus leads either to multiple separate bands, or to a wide spectral region of high losses.
+
+%The impact of the individual resonances on the effective parameters $\eeff(f)$ and $\meff(f)$ will be discussed in a later section focused on the dielectric resonators. % TODO verify that I have done this
 
 %}}}
 \paragraph{Effects of the cut distance $d_c$}%{{{
@@ -343,9 +345,9 @@ and there is probably no need to seek for another explanation. %%TODO rewiew, re
 % "CMM = Composite MetaMaterial"
 %}}}
 \paragraph{Comparison of the s-parameters method and current-driven homogenisation}%{{{
-With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, the question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ are applicable. While the Bloch theorem in Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch wavevector $\KK$ can be determined for any periodic structure, the s-parameter method might return invalid values.
+With local effective parameters $\eeff(f)$ and $\meff(f)$ appearing to lose their physical meaning in a frequency range near a resonance, the question remains to what extent the dispersion curves, or equivalently, the spectrum of effective index of refraction $\Neff(f)$ are applicable. While the Bloch's theorem in Eq. (\ref{eq_bloch}) suggests that the dispersion curves for the Bloch's wavevector $\KK$ can be determined for any periodic structure, the s-parameter method might return invalid values.
 
-Dispersion curves obtained by the s-parameters method and by the current-driven homogenisation (CDH) are compared in Fig. \ref{fg_cdh5}. Although these methods are fundamentally different, their results overlap, and thus one can assume that the array of symmetric split-ring resonators can be treated as homogeneous with a well-defined index of refraction $\Neff(f)$ for the Bloch wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances, where the Bloch wavelength is similar to the unit cell size. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
+Dispersion curves obtained by the s-parameters method and by the current-driven homogenisation (CDH) are compared in Fig. \ref{fg_cdh5}. Although these methods are fundamentally different, their results overlap, and thus one can assume that the array of symmetric split-ring resonators can be treated as homogeneous with a well-defined index of refraction $\Neff(f)$ for the Bloch's wave over the whole spectrum. Its local effective parameters $\eeff(f)$ and $\meff(f)$, however, seem to have no useful physical interpretation near the resonances, where the Bloch's wavelength is similar to the unit cell size. They remain useful farther from the resonance, though. % todo perhaps add some particular frequency ranges from the Fig.
 
 %}}}
 \paragraph{Variants of split-ring resonators}%{{{
@@ -370,9 +372,9 @@ The \textit{omega structure}\index{metamaterial!omega structure} was designed to
 
 All SRR structures in Fig. \ref{fg_SRRothers} can be made flat in the plane perpendicular to the magnetic field, which facilitates their fabrication. At terahertz and higher frequencies, using a thin metal film should not be much detrimental to the SRR conductivity, since the skin depth caused by eddy currents is often submicroscopic \cite{gibbons2010scalable}.
 
-A similar way of operation is achieved by structures infinite in the direction of the magnetic field of the incident wave. This allows one to fabricate magnetic resonators by rolling stripes of a semi-metallised plastic foil, producing a \textit{swiss-roll}\index{metamaterial!swiss-roll} metamaterial \cite{gibbons2010scalable}, or by partially sputter-coating a polymer fibre by a metal \cite{wang2011fiber}. Such structures however seem to exhibit relatively high losses when applied above the microwave range.
+A similar way of operation is achieved by structures which extend infinitely in the direction of the magnetic field of the incident wave. This allows one to fabricate magnetic resonators by rolling stripes of a semi-metallised plastic foil, producing a \textit{swiss-roll}\index{metamaterial!swiss-roll} metamaterial \cite{gibbons2010scalable}, or by partially sputter-coating a polymer fibre by a metal \cite{wang2011fiber}. Such structures however seem to exhibit relatively high losses when applied above the microwave range.
 
-Metallic \textit{cut-wire pair}\index{metamaterial!cut-wire pair}, or also \textit{strip pair}\index{metamaterial!strip pair}, metamaterial depicted in Fig. \ref{fg_SRRothers}f, was designed for operation in the infrared or optical range. It can be understood as a split-ring resonator flattened along the direction of the wave vector. The geometry is tuned so that the electric and magnetic resonances overlap.	
+The metallic \textit{cut-wire pair}\index{metamaterial!cut-wire pair}, or also \textit{strip pair}\index{metamaterial!strip pair}, metamaterial depicted in Fig. \ref{fg_SRRothers}f, was designed for operation in the infrared or optical range. It can be understood as a split-ring resonator flattened along the direction of the wave vector. The geometry is tuned so that the electric and magnetic resonances overlap.	
 
 %}}}
 \paragraph{SRR in a wire array} %{{{
@@ -537,7 +539,7 @@ Similar failure of the s-parameters method in homogenization of an array of SRRs
 
 For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rangle$ $\upmu$m, the second photonic band supports simultaneously a wave of group velocity collinear with the phase velocity, and an \textit{additional wave}\index{additional wave} with higher wavenumber and opposite direction of these velocities. 
 
-Provided the auxiliary boundary conditions are arranged to couple all energy exclusively to this additional wave, with the relatively high Bloch wavevector, the interface of the metamaterial with vacuum should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this kind of metamaterial -- even for propagation parallel to the optical axis.
+Provided the auxiliary boundary conditions are arranged to couple all energy exclusively to this additional wave, with the relatively high Bloch's wavevector, the interface of the metamaterial with vacuum should indeed exhibit negative refraction. The index of refraction, however, is not sufficient for description of this kind of metamaterial -- even for propagation parallel to the optical axis.
 
 %}}}
 \FloatBarrier %====================================================================================================
@@ -587,9 +589,9 @@ We used a realistic model \cite{baumard1977_epsilon_TiO2} of permittivit of poly
 \begin{equation}\epsrl(f=1\text{ THz}) = 94.2-2.43\text{i}. \label{eq_tio2}\end{equation}
 The actual permittivity of the experimentally measured samples depends on their preparation, in particular the volume fraction of microscopic voids. For such composites, Ref. \cite{baumard1977_epsilon_TiO2} gives only the ratio of $\epsrl''/\epsrl'$, but since $\epsrl'$ could be determined from the resonance frequencies in the experimental spectra, also the imaginary part could be easily computed.
 
-The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are shown in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered. The realistic value was denoted as 100 \%, and it was accompanied with hypothetic low-loss dielectrics with the same real part of $\epsrl'$, but the imaginary part $\epsrl''$ artificially reduced to  10 \% and 1 \%. 
+The reflectance, transmittance and effective parameters of rutile spheres with radius $\rho=15\;\upmu$m are compared in Fig. \ref{fg_Spheres_lossscan}. Three different levels of losses were considered. The realistic value was denoted as 100 \%, and it was accompanied with hypothetic low-loss dielectrics with the same real part of $\epsrl'$, but the imaginary part $\epsrl''$ artificially reduced to  10 \% and 1 \%. 
 
-In all three cases, magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmission grows with losses.
+In all three cases, the magnetic resonance is located at 530 GHz and the electric one at 790 GHz, the second magnetic resonance follows at 1040 GHz. As a natural result of the Lorentzian model, the dielectric losses grow proportional to the frequency. Notice that around the resonance frequencies, the transmittance is higher in the case with high losses.
 
 When the realistic losses are taken into account, the curves of the effective parameters in Figs. \ref{fg_Spheres_lossscan}c,d,e become smoother and approach the familiar curve of the damped oscillator in Fig. \ref{fg_oscillator_spectrum}. Strong enough losses can even prevent the formation of regions with negative effective parameters. Note, however, that formally $\Neff'$ can become negative \cite[pp. 12--15]{pazoutova2011dp} even when either $\eeff'>0$ or $\meff'>0$. Such a negative-index medium is however inevitably extremely lossy, which is represented by its \textit{figure of merit}\index{figure of merit}
 \begin{equation} \text{FOM} := \frac{\Neff'(f)}{\Neff''(f)} \lesssim 10. \label{eq_fom}\end{equation}

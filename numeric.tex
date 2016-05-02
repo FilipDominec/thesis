@@ -330,7 +330,7 @@ Free	    & Negligible				& Resistive medium						& \shortstack{doped semiconduct
 When the procedure for one time-step in FDTD is defined, it can play the role of the linear operator $\mathcal L$ in the generic formulation the eigenfunction problem:
 $$\mathcal{L} \psi = e^{\ii \omega t} \psi,$$
 where the function $\psi$ represents either of the electric or magnetic fields. 
-%The particular form for the linear operator $\mathcal{L}$ is  as has already been developed for the proof of the Bloch theorem in Eq. (\ref{eq_eigen_e}).
+%The particular form for the linear operator $\mathcal{L}$ is  as has already been developed for the proof of the Bloch's theorem in Eq. (\ref{eq_eigen_e}).
 % TODO maybe not! The Hamiltonian might be SQUARE of the "Maxwellian"!
 
 Both time- and frequency-domain simulations used in this thesis use complex numbers to represent all field components.
@@ -355,7 +355,7 @@ It was observed by the author that the FDFD solver in the MEEP program often fai
 \paragraph{Description} %{{{
 Another algorithm used in this thesis is the \textit{plane-wave expansion method}\index{plane-wave expansion method} (PWEM). Whereas FDTD and FDFD are very general algorithms that can be applied with different choices of simulation setups and for virtually any structure, PWEM is specialised for periodic structures only. 
 
-Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch wave $\omega(\KK)$. For each of them, it can also provide the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. The algorithm is described in detail, e.g., in Ref. \cite[pp. 24-28]{pazoutova2011dp}.
+Each PWEM computation is always performed for one given value of the wavevector $\KK$. PWEM resolves one or more frequencies which lie on the dispersion curve of the Bloch's wave $\omega(\KK)$. For each of them, it can also provide the shape of the mode function $\mathbf{u_{e,m}}(\rr)$. The algorithm is described in detail, e.g., in Ref. \cite[pp. 24-28]{pazoutova2011dp}.
 
 As a convenient implementation of PWEM, we used the freely available program \textit{MPB}r\cite{johnson2001mpb}, provided as open-source project by the same group \cite{ab-initio} as MEEP. The graphical presentation of the results was prepared using a custom script published online \cite{dominec2015_mpb}.
 
@@ -583,7 +583,7 @@ A particular implementation of this algorithm for  continuous arccosine and squa
 
 %}}}
 \paragraph{Initial branch and sign choices}%{{{
-Next, it is necessary to establish the sign and branch index of $\Neff$ and the sign of $\Zeff$ at the starting point of the spectrum. One can assume that for very low frequencies below any individual resonance, also the Bloch wave vector tends to zero, $K\rightarrow 0$. In case of conductive structures, the spectrum starts with a plasma-like band gap at low frequencies, leading to an evanescent wave with vanishing wavenumber as well.
+Next, it is necessary to establish the sign and branch index of $\Neff$ and the sign of $\Zeff$ at the starting point of the spectrum. One can assume that for very low frequencies below any individual resonance, also the Bloch's wave vector tends to zero, $K\rightarrow 0$. In case of conductive structures, the spectrum starts with a plasma-like band gap at low frequencies, leading to an evanescent wave with vanishing wavenumber as well.
 
 Whenever the spectra of $r(f)$ and $t(f)$ are computed using the Fourier transform, they are known also for very low frequencies and the selection of the initial branch is thus easy.
 
@@ -608,7 +608,7 @@ The scattering-parameter method is the most widely used one for the effective pa
 \label{sparamweaknesses}
 However, the scattering-parameter method also has its weaknesses. Perhaps the greatest one is that it does not explicitly fail in cases it is not supposed for; or, as stated in Ref. \cite{markel2013current}:
 \begin{displayquote} 
-\textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch wave vector) can always be formally introduced for a Bloch wave.}
+\textit{Of course, a refractive index per se (generally, tensorial and dependent on the direction of the Bloch's wave vector) can always be formally introduced for a Bloch's wave.}
 \end{displayquote}
 A great care must be taken to verify whether the retrieved values of effective parameters make any physical sense whatsoever, or are just a confusing output of an algorithm used outside its scope. The majority of the possible issues was mentioned above:
 \begin{enumerate}
@@ -639,7 +639,7 @@ In this thesis, the method is described in its simplest form. More elaborate imp
 \paragraph{Bloch-periodic boundaries for arbitrary wave vector} %{{{
 In CDH, the unit cell is simulated as being placed in an infinite lattice, neighbouring with the same cells of size $a$ in all three dimensions. To emulate such a lattice in a simulation of a single cell, all the faces of the unit cell have to be set Bloch-periodic, i.e., set to copy the field from the opposite face.
 
-Exact copying of the fields from one side to another would require the wavevector of the Bloch wave to be strictly $K_{xyz} \in 2\pi m/a_{xyz}$, which is, however, the known condition for a photonic band gap. Since we are mostly interested in computing the wavenumber inside photonic bands, the periodic boundaries have to allow for an arbitrary phase shift before the fields are copied:
+Exact copying of the fields from one side to another would require the wavevector of the Bloch's wave to be strictly $K_{xyz} \in 2\pi m/a_{xyz}$, which is, however, the known condition for a photonic band gap. Since we are mostly interested in computing the wavenumber inside photonic bands, the periodic boundaries have to allow for an arbitrary phase shift before the fields are copied:
 \begin{equation} E(\rr + a_x\mathbf{x}/2) \quad\rightarrow\quad  e^{-\ii K_x a_x}\; E( \rr - a_x\mathbf{x}/2), \label{eq_phaseshiftp}\end{equation}
 	where $\mathbf{x}$ is the unit vector along the x-axis, and $a_x$ are the unit cell size along this axis. The unit cell is assumed to be centered around the $x=0$ point, thus $x=\pm a_x/2$ denotes the point at the boundary, and similarly for other axes.
 
@@ -740,7 +740,7 @@ the scattering parameter method was extended also to the bianisotropic behaviour
 
 %}}}
 \paragraph{Averaging of the fields} %{{{
-With the scattering parameters method, $\Neff(f)$ and $\Zeff(f)$ are retrieved first using the amplitudes of the reflectance and transmittance.  were computed later. The  local effective permittivity $\eeff(f)$ and permeability $\meff(f)$ can be  computed using  Eqs. (\ref{eq_dispeqN}) and (\ref{eq_Z}), but are considered valid only when $|\Neff'| \ll 2\pi/a$, i.e., when the unit cell size $a$ is much less than the Bloch wavelength.
+With the scattering parameters method, $\Neff(f)$ and $\Zeff(f)$ are retrieved first using the amplitudes of the reflectance and transmittance.  were computed later. The  local effective permittivity $\eeff(f)$ and permeability $\meff(f)$ can be  computed using  Eqs. (\ref{eq_dispeqN}) and (\ref{eq_Z}), but are considered valid only when $|\Neff'| \ll 2\pi/a$, i.e., when the unit cell size $a$ is much less than the Bloch's wavelength.
 
 The effective parameters $\eeff(f)$ and $\meff(f)$ can however be computed directly by exciting a unit cell of the structure, averaging both the fields ($\E$, $\HH$) and the displacements ($\D$ and $\B$), and dividing the respective displacement by the field. The method is described in Ref. \cite{smith2006homogenization}, where also numerical examples are given. 
 
@@ -758,8 +758,8 @@ The effective parameters $\eeff(f)$ and $\meff(f)$ can however be computed direc
 \paragraph{Bloch-mode analysis} %{{{
 A \textit{single-interface}\index{single-interface} method has been proposed \cite{yang2010retrieving} %Retrieving the effective parameters of metamaterials from the single interface scattering problem
 that analyzes only the field behaviour at the interface of a semi-infinite structure.  
-The fields in the structure are computed and decomposed into discrete modes of the Bloch wave. The method attempts to recognize a dominant Bloch mode for which the wavevector $\KK(\omega)$ is deduced.
-%\cite{yang2010retrieving}LISTS: "various numerical techniques have been developed, including field averaging, 7 Bloch mode approaches, 8–10 multipole
+The fields in the structure are computed and decomposed into discrete modes of the Bloch's wave. The method attempts to recognize a dominant Bloch's mode for which the wavevector $\KK(\omega)$ is deduced.
+%\cite{yang2010retrieving}LISTS: "various numerical techniques have been developed, including field averaging, 7 Bloch's mode approaches, 8–10 multipole
 %expansion, 11,12 and inversion of scattering parameters."
 \cite{zhang2006optical} % Optical negative-index bulk metamaterials consisting of 2D perforated metal-dielectric stacks
 \cite{rockstuhl2008light} %Light propagation in a fishnet metamaterial
@@ -794,13 +794,13 @@ Like in the s-parameters method, the function of $K(\omega)$ can be resolved in 
 %    %%% Andriy2010: Quasimode theory ...  is based on the maximization of optical density of states for a metamaterial while changing İ and μ of the ambient medium. The method is computationally demanding as it requires 4-parameters optimization for each frequency.
 %    \cite{sun2009effective} % Effective-medium properties of metamaterials: a quasimode theory
 
-%\cite{simovski2007bloch} Bloch material parameters of magneto-dielectric metamaterials and the concept of Bloch lattices
+%\cite{simovski2007bloch} Bloch's material parameters of magneto-dielectric metamaterials and the concept of Bloch's lattices
 %\cite{simovski2009material}Material parameters of metamaterials (a review)
 %\cite{simovski2011electromagnetic} On electromagnetic characterization and homogenization of nanostructured metamaterials
 
 %\cite{sjoberg2005floquet}
 % Elaborate mathematical treatise on this topic: 
-% A Floquet-Bloch decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
+% A Floquet-Bloch's decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
 %\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials
 %}}}
 \paragraph{Concluding remarks}%{{{
