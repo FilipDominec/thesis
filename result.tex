@@ -8,7 +8,7 @@ Most importantly, no \textit{individual resonances} can occur in a 1-D PhC; all 
 Dispersion curves for two examples of one-dimensional photonic crystals computed using PWEM are shown in Fig. \ref{fg_1dbd}. 
 Its left panel shows the folded dispersion curves for a plane wave propagating in vacuum on which we imposed virtual periodicity. To save space, the dispersion curves were plotted as \textit{folded}\index{dispersion!curves,folding of}, but one can easily imagine how the curve unfolds into a linear dispersion of vacuum, known as the \textit{light line}\index{light line|see {dispersion relation!in vacuum}}. No scattering occurs for homogeneous vacuum, hence for any frequency $f$, there exists a real wavenumber $k$ corresponding to a propagating wave and there are no band gaps of nonzero width. 
 
-The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic layers of a dielectric with a permittivity of 12\% and a 15\% filling fraction. In the field plots, the dielectric is outlined by thin black lines. The band gaps of nonzero width corespond to frequency ranges where the waves can not propagate through the structure. %TODO The first photonic band gap starts at the frequency, TODO at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1}\index{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2}\index{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
+The right panel, Fig. \ref{fg_1dbd}b, is obtained by introducing periodic layers of a dielectric with a permittivity of 12\% and a 15\% filling fraction. In the field plots, the dielectric is outlined by thin black lines. The band gaps of nonzero width correspond to frequency ranges where the waves can not propagate through the structure. %TODO The first photonic band gap starts at the frequency, TODO at which exactly half wavelength matches the cell spacing, i.e. when $2\pi / K= a/2$ as is depicted in the subplot \textit{X1}\index{X1} of Fig. \ref{fg_1dbd}b. The next band starts at the same wavenumber $K$, but the wave now has higher frequency because in the subplot \textit{X2}\index{X2} of Fig. \ref{fg_1dbd}b it is shifted by half its period so that it maximizes the electric field energy that is localized in the areas of lower permittivity. Higher Bragg band gaps are formed by the same mechanism.
 
 %}}}
 \begin{figure}[h] %{{{ fg_1dbd
@@ -142,7 +142,7 @@ vanishes, being proportional to $(f-f_p)^{+1/2}$. Hence the product of the phase
 
 Exactly at $f=f_p$, the wire array medium can support the longitudinal oscillations of the charges, oriented parallel to the wires. They bear a close resemblance to plasmons in bulk media \cite{pendry1996extremely}.
 
-Notice that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflection/transmission plot. Except for the zero frequency, a layer of wires has always a nonzero transmittance that increases with frequency. Independent of the wire conductivity, it is not possible to build a 100\% efficient wire polarizer.
+Notice that for a single cell, the transition from negative to positive permittivity is not accompanied by any obvious spectral feature on the reflectance/transmittance plot. Except for the zero frequency, a layer of wires has always a nonzero transmittance that increases with frequency. Independent of the wire conductivity, it is not possible to build a 100\% efficient wire polarizer.
 
 %}}}
 \begin{figure}[th]%{{{ fg_omegap_a
@@ -254,7 +254,7 @@ For $d_c \gtrsim 32$  $\upmu$m on, the individual resonances are similar to thos
 The dependence of the resonance frequency $f_c$ on the wire radius, Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}, is somewhat more complicated: For thin enough wires in the $a=100$ $\upmu$m unit cell, the resonance frequency decreases with growing $\rho_w$, since the inter-wire capacity increases. 
 For high enough $\rho_w$ an opposite mechanism prevails; $f_c(\rho_w)$ then starts growing as a result of reduction of the wire inductance.
 
-While the changes in the cut-wire radius $\rho_w$ relatively weakly influence the resonance frequency, they have a  major impact on the \textit{strength}\index{resonance!strength of} of the individual resonances. Thick wires lead to a stronger reflection out of resonances, which also reflects itself in the wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
+While the changes in the cut-wire radius $\rho_w$ relatively weakly influence the resonance frequency, they have a  major impact on the \textit{strength}\index{resonance!strength of} of the individual resonances. Thick wires lead to a stronger reflectance out of resonances, which also reflects itself in the wider band gap in Fig. \ref{fg_CutWires_wirecut2um_wireradiusscan}c.
 
 %}}}
 \paragraph{Experimental measurement of cut wire spectra}%{{{ 
@@ -337,7 +337,7 @@ The true origin of antiresonances and other deviations of $\eeff(f)$ and $\meff(
 and there is probably no need to seek for another explanation. %%TODO rewiew, rewrite?
 % \cite{alu2010} "Restoring the physical meaning of MM constitutive parameters"
 
-%An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmission spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
+%An elaborate comparison of resonant metallic structures, with clear effect of adding the wire to the transmittance spectra, can be found e.g. in Ref. \cite{koschny2004effective}.
 
 %Ref. \cite{li2009determination} contains typical complex-valued spectra of $\eeff$ and $\meff$ for a SRR and SRR-Wire
 % different orientations - some leading to chirality i.e. linear dependence of f(K)
@@ -400,7 +400,7 @@ The reason is in that with the sSRR-wire structure, $|r(f)|$ is a linear superpo
 Both scattered components, $r_1(f)$ and $r_2(f)$, are complex functions. The phase of the wave scattered by a resonant element differs almost by $\pi$ when $f$ is below and above the resonance. The impact on the plot of the overall reflectance is in a change from a constructive to destructive interference between the two components. 
 
 Such typical spectral features, observed whenever a narrower resonance overlaps with another broader one, are known as \textit{Fano resonances}\index{resonance!Fano resonance}, and can be found on most following plots of $|r(f)|$ or $|t(f)|$. The Fano spectral profile comes from a natural interference between waves scattered by different mechanisms: whenever the spectrum of a structure close to a magnetic dipole resonance does not fall into the class of possible Fano resonance profiles, it suggests the homogenization has failed. For an example of such an error, see the spectra of the asymmetric SRR in Fig. \ref{fg_SRR_principles}.  
-%Complementary observations can be made with the transmission spectrum, as both kinds of structures have negligible losses.
+%Complementary observations can be made with the transmittance spectrum, as both kinds of structures have negligible losses.
 
 %}}}
 \begin{figure}[t]  % fg_SRR_principles %{{{
@@ -477,7 +477,7 @@ The frequency of the electric resonance is influenced by the radius $\rho_c$ of 
 
 By optimizing the structure geometry, the resonances can be tuned against each other so that the regions of $\eeff(f) < 0$ and $\meff(f) < 0$ overlap. This is the conventional approach to design a metamaterial with a negative index of refraction; applying it to the electro-magnetic resonator leads to an array of independent, nonconnected elements, which may be an advantage over embedding SRRs in a wire array. One of the means of tuning the antiparallel electric resonance frequency is to divide the central bar by an \textit{inner}\index{inner} capacitor as shown in Fig. \ref{fg_SRR_elmag}b. 
 
-For the inner capacitor being relatively small, with radius $\rho_c = 6$ $\upmu$m, the electric resonance is located around 1150 GHz, and it shifts down to 940 GHz when $\rho_c$ is increased to 8 $\upmu$m. On the contrary, the magnetic resonance is virtually independent of $\rho_c$ and remains close to 800 GHz. Both individual resonances can be clearly identified as points of zero transmission and as corresponding steep, but still continuous, drops in the refractive index (red and light green curves in Fig. \ref{fg_emSRR_icr}).  For $\rho_c \leq 8$ $\upmu$m, the resonances are separated by a photonic band, indicating that the regions of  $\eeff(f) < 0$ and $\meff(f) < 0$ do not overlap. 
+For the inner capacitor being relatively small, with radius $\rho_c = 6$ $\upmu$m, the electric resonance is located around 1150 GHz, and it shifts down to 940 GHz when $\rho_c$ is increased to 8 $\upmu$m. On the contrary, the magnetic resonance is virtually independent of $\rho_c$ and remains close to 800 GHz. Both individual resonances can be clearly identified as points of zero transmittance and as corresponding steep, but still continuous, drops in the refractive index (red and light green curves in Fig. \ref{fg_emSRR_icr}).  For $\rho_c \leq 8$ $\upmu$m, the resonances are separated by a photonic band, indicating that the regions of  $\eeff(f) < 0$ and $\meff(f) < 0$ do not overlap. 
 
 An attempt to further reduce the frequency of the electric resonance to obtain negative index of refraction $\Neff'<0$ in the region of overlap, however, leads to confusing results (cyan curves in Fig. \ref{fg_emSRR_icr}). 
 For $\rho_c \in \langle10, 16\rangle$ $\upmu$m, the scattering parameters method retrieves apparently erroneous spectra with two disticnct band gaps, but without any individual resonance.
@@ -724,7 +724,7 @@ We attempted to fabricate one layer of a negative-index metamaterial by embeddin
 
 The issues in our case were mostly of geometrical and mechanical origin. Although it was possible to manufacture a sieve with proper size of holes which would hold microspheres during sieving, the spheres randomly fell out of it upon manipulation. We decided not to use any glue, since even a relatively thin layer thereof would substantially alter the spectra, increasing losses in the terahertz range.
 
-An experiment involving a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmission, with inconclusive result as regards to the negative phase advance through the structure. The published structure was asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m, and thus our simulation of it yielded unphysical values.
+An experiment involving a similar sample was published previously \cite{yakiyama2012terahertz}, with TiO$_{2}$ spheres sprinkled over a commercial mesh woven of steel wire, as sketched and accurately measured in Fig. \ref{fg_spherewire_sketch}b,d. The original publication reported very low transmittance, with inconclusive results as regards to the negative phase advance through the structure. The published structure was asymmetric, with $\Delta z$ estimated to $15$ $\upmu$m, and thus our simulation of it yielded unphysical values.
 
 % todo add some links to Zhao etc.?
 %}}}
@@ -772,7 +772,7 @@ This band gap starts in the $X1$ point, where each unit cell is divided by one n
 \begin{overpic}[width=.48\textwidth]{img/HRods_eps100_R12_PWEM.pdf}\put(1,96) {\textbf{(b)}} \end{overpic}
 \end{figure}
 %}}}
-%SKIP \begin{figure}[ht]  \caption{Effective parameters of an array of dielectric rods $||\mathbf H$ with same parameters as in Fig. \ref{fg_rodh}b (i.e. radius of  12 \% of the period and permittivity $\varepsilon = 100$). Complex reflection $r$ and transmission $t$ spectra allow to compute the effective index of refraction, impedance (not shown), permittivity and permeability. Thin black lines indicate the Brillouin zone boundaries.}%{{{
+%SKIP \begin{figure}[ht]  \caption{Effective parameters of an array of dielectric rods $||\mathbf H$ with same parameters as in Fig. \ref{fg_rodh}b (i.e. radius of  12 \% of the period and permittivity $\varepsilon = 100$). Complex reflectance $r$ and transmittance $t$ spectra allow to compute the effective index of refraction, impedance (not shown), permittivity and permeability. Thin black lines indicate the Brillouin zone boundaries.}%{{{
 %\label{fg_rodh_fdtd} \centering 
 %\includegraphics[width=8cm]{img/old/HRods_eps100_radiusscan.pdf}
 %\includegraphics[width=4.5cm]{img/HRods_sketch.pdf}
@@ -1061,10 +1061,10 @@ A closely related phenomenon  on corrugated surfaces of metallic diffraction gra
 
 Since the structure and the incident fields are both symmetric, equal amplitudes of the surface plasmons propagating in the $+x$ and $-x$ directions are excited. They form a standing plasmonic resonance, with points of maximum oscillating current (antinodes) located in the centers metallic bars. The extraordinary transmission relies on the incoming plane wave coupling of to the spoof surface plasmons, transfer of energy of SPPs to the spoof surface plasmons on the rear side of the structure, and re-radiation of the plane wave. 
 
-In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably well matches the slit width $d_x$ corresponding to the lowest frequency of the zero-reflection curve  (see Fig. \ref{fg_yslit_xscan}a). Stronger coupling thus appears to down-tune the frequency, but it is not the main determining factor for the peak transmission efficiency; since the extraordinary transmission is a resonant process, it can achieve high amplitude of transmission even through arbitrarily narrow slits. 
+In a numerical study of SPP-assisted transmission through a single slit, Lalanne \textit{et al.} have determined \cite{lalanne2005theory} the optimum slit width for wave-plasmon coupling as $d_x \approx 0.23 \lambda$, which noticeably well matches the slit width $d_x$ corresponding to the lowest frequency of the zero-reflectance condition  (see Fig. \ref{fg_yslit_xscan}a). Stronger coupling thus appears to down-tune the frequency, but it is not the main determining factor for the peak transmittance efficiency; since the extraordinary transmission is a resonant process, it can achieve high amplitude of transmittance even through arbitrarily narrow slits. 
 
 %Lalanne-Theory_of_fishnet_optical_NIM.pdf
-% SPP on surface impact the transmission through a nano-aperture; 
+% SPP on surface impact the transmittance through a nano-aperture; 
 % with shallow corrugation SPPs angularly confine the re-radiated field
 % when gold in optical range is used, a lot of energy is coupled to SPP: optimum 40% at w=0.23lambda
 % close to the slit, many evanescent modes overlap; can be uniquely decomposed
@@ -1085,7 +1085,7 @@ We also observed that the dielectric does not have to touch the metal directly; 
 %}}}
 \paragraph{Effect of the metallic slab thickness}%{{{
 % Weiner-Transmission_through_metallic_slits.pdf
-% references to many papers on subwavelength slit and aperture transmission
+% references to many papers on subwavelength slit and aperture transmittance
 % study of 50x2000 um slit and double-slit transmission through a 200 nm Ag film embedded in glass 
 % show a snapshot of the E field on an aperture -- it is inverse on the rear side
 % for thicker slabs, higher-order Fabry-Pérot interferences occur inside the slit space
@@ -1093,20 +1093,20 @@ We also observed that the dielectric does not have to touch the metal directly; 
 %		(!! I know that even for thin sheets, multiple higher modes exist, just their manifestation in 
 %	    spectra is extremely narrow)
 % for double slits, clear interference of surface plasmons is visible with sinusoidal of slit pitch (lambdaSPP = 308nm)
-% (if the slits were periodic, a resonant coupling of the incident wave to surface plasmons would enable ~100% transmission)
+% (if the slits were periodic, a resonant coupling of the incident wave to surface plasmons would enable ~100% transmittance)
 % experimental results 
 
 In the approximation of a thin slit with $d_z \ll a_x$, the highest transmittance was observed when the surface plasmon wavelength $\lambda_{\text{SPP}}$ matched the unit cell size $a_x$. 
 In the limit of thin sheets, this frequency approaches the diffraction limit of $c/a_x$, since surface plasmons in the terahertz range are only weakly bound to the metal surface and their phase velocity is similar to the speed of light in vacuum, $c$. Upon scaling the simulation into the optical range, the limiting frequency for thin metallic sheets was reduced below $c/a_x$ and moreover the exact behaviour of the structure has proven to depend on the choice of metal.
 
-For thicker sheets of metal, the effective optical path of surface plasmons travelling across one unit cell is increased by its portion in the inner slit surface, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflection notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
-For thick enough slabs with $d_z \gtrsim a/2$, the frequency of the zero-reflection notch approximately follows the inverse of the thickness (see Fig. \ref{fg_yslit_dscan}a). 
+For thicker sheets of metal, the effective optical path of surface plasmons travelling across one unit cell is increased by its portion in the inner slit surface, as was shown with experimental results in Ref. \cite{weiner2011electromagnetics}. The frequency of the zero-reflectance notch thus decreases when the sheet thickness is enhanced, since a longer SPP wavelength is needed to compensate for the increased circumference of the cross-section of the metallic bar. 
+For thick enough slabs with $d_z \gtrsim a/2$, the frequency of the zero-reflectance notch approximately follows the inverse of the thickness (see Fig. \ref{fg_yslit_dscan}a). 
 In the upper-right corner of Fig. \ref{fg_yslit_dscan}a, a second zero-reflectance region can be found. It corresponds to a second longitudinal waveguide mode (see Fig. \ref{fg_slitarray}c). % The field shapes of both visible modes resemble the dispersion in slot metallic waveguides. %From the theory of metallic waveguides, we can conjecture that the second and any higher mode does not exist for thin-enough slits; i.e., each of them requires a minimum cut-off thickness $d_x$.
 % todo? draw the modes? or make a snapshot of the fields?
 
 %}}}
 \paragraph{Effective parameters of the sheet-slit array}%{{{
-The previous paragraphs described the reflection and transmission of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed in the same way as with other metamaterials. 
+The previous paragraphs described the reflectance and transmittance of a single layer. Multiple layers can be arranged into an infinite stack with a given unit cell size $a_z$ along the wave propagation, and their effective parameters can be computed in the same way as with other metamaterials. 
 
 However, one has to verify whether the scattering parameter method gives correct results, since the structure has strong coupling between the neighbouring cells. A great portion of the resonant energy is transferred by the surface plasmons that were shown not to be well localized in a single unit cell. On the contrary, they couple strongly with those on nearby metallic surfaces, forming transversally propagating slot-waveguide modes \cite{weiner2011electromagnetics}.
 The current-driven homogenisation (CDH) setup is more suitable for simulations of such structures  with strong coupling between neighbouring cells, since it exactly simulates one unit cell in its periodic environment. The results of the two methods are compared in Fig. \ref{fg_cdh_yslit}a, with the accurate CDH dispersion curves indicated by points, and the s-parameter results overlaid as green curves.  %% XXX
@@ -1244,7 +1244,7 @@ If the holes are anisotropic, the described effect is more sensitive to the hole
 %CROE09 negative phase advance requires at least two layers stacked? This would 
 %CROE09 In infrared, wave transfer is mediated by surface plasmons and no N<0 observed, contrary to THz range.
 %CROE09 Impedance matching by elliptic holes % benzocyclobutene BCB permittivity constant: 2.6, loss tangent 0.005 to 0.01 at 1 THz.
-%CROE09 "zero transmission = antiresonance state"??
+%CROE09 "zero transmittance = antiresonance state"??
 
 %\cite{wang2010experimental} % Wang2010b-exp_neg_refr_on_wedge_THz.pdf
 %WANG10 direct experimental verification of negative refraction

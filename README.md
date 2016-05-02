@@ -65,10 +65,9 @@
  * [ ] resolve that `t' denotes transmittance and time simultaneously?
  * [ ] ...ize ---> ...ise 
  * [x] go through all TODOs
- * [ ] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
- * [ ] 
- * [ ] aa 'of this' -->   'its' or  'thereof'  (and similar)
- * [ ] aa [a-z]-[a-z] *tex
+ * [x] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
+ * [x] aa 'of this' -->   'its' or  'thereof'  (and similar)
+ * [x] aa [a-z]-[a-z] *tex
  * [ ] aa transmi[^t]
  * [ ] [0-9] GHz -> [0-9]~GHz
  * [ ] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
