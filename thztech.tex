@@ -1,5 +1,5 @@
 \section{Short review of the terahertz technology}
-The terahertz range of the electromagnetic spectrum, spanning roughly from 100 GHz to 10 THz, has met as yet a relatively small application potential in science and technology, compared to the development in the microwave ($<$ 100 GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. The technology and science, however, develop fast in this field, and the number of terahertz-related papers has doubled every 3.2 years \cite{lewis2014review} between 1975 and 2010.  
+The terahertz range of the electromagnetic spectrum, spanning roughly from 100~GHz to 10~THz, has met as yet a relatively small application potential in science and technology, compared to the development in the microwave ($<$ 100~GHz) and near-infrared ($>$ 100 THz) or optical ranges. The reason can be traced down both to the limited choice and high cost of suitable terahertz sources and detectors, and to their usually small efficiency or sensitivity, respectively. The technology and science, however, develop fast in this field, and the number of terahertz-related papers has doubled every 3.2 years \cite{lewis2014review} between 1975 and 2010.  
 
 There is a great number of books and papers that describe different terahertz sources and detectors in detail \cite[pp. 155-158]{lee2008book}\cite{sullivan2012field,lewis2014review}
 and many of them are also, with more or less detail, discussed in previous doctoral theses written in our group (\cite[pp. 2-30]{pashkin2004phd}, \cite[pp. 19-25]{nemec2006phd}, \cite[pp. 7-26]{fekete2008phd}, \cite[pp. 11-21]{sibik2010dp}, \cite[pp. 31-45]{yahiaoui2011phd}, \cite[pp. 33-38]{mics2012phd}, \cite[pp. 25-33]{skoromets2013phd}, etc.).
@@ -8,7 +8,7 @@ Electromagnetic waves in the terahertz range are radiated whenever charged parti
 
 Firstly, let us remind why thermal sources are rarely used in the THz range, although they are widely used at higher frequencies. The black body radiation is governed by the Planck law \cite[p. 23]{klingshirn2007semiconductor}
 \begin{equation}I(f, T) = \frac{2 h}{\pi^2 c^2}\frac{f^3}{e^{\frac{h f}{kT}}-1} \mathrm{\,W\,sr^{-1}\,Hz^{-1}\,m^{-2}}, \label{eq_planck}\end{equation}
-from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300 GHz to 3 THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=$ 300~K).  Furthermore, all Planck oscillators at the frequency of e.g. $f =$ 1~THz are already fully saturated:
+from which it follows that the luminosity $I$ in the terahertz range is always very small: Integrating over frequencies from 300~GHz to 3~THz, one obtains roughly 0.6 W sr$^{-1}$ m$^{-2}$ at the room temperature ($T=$ 300~K).  Furthermore, all Planck oscillators at the frequency of e.g. $f =$ 1~THz are already fully saturated:
 %  although the thermal energy at room temperature $T$ is significantly higher than the photon energy $hf$ at 1 THz
 $$k_B T \approx 1.38\cdot 10^{-26} \text{ J K}^{-1} \cdot 300 \text{ K~} \approx 25.8 \text{ meV } \quad\gg\quad h f \approx 4.13 \text{ meV}, $$
 and therefore the power radiated in the THz range can not be significantly improved by increasing the black body temperature. Thus, it can be shown that in this part of the spectrum the luminosity scales only linearly with the temperature $T$; in contrast, the total power scales as $T^{4}$ as follows from the Stefan-Bolzmann law. Therefore, sources other than thermal are preferred for measurements in the THz range.
@@ -23,7 +23,7 @@ Both types of devices provide an excellent brightness and tunability, but they a
 
 Tabletop sources of radiation covering a part of the THz range are the microwave vacuum tubes: \textit{gyrotron}, travelling-wave and backward wave oscillators (BWO, also known as \textit{carcinotrons}, of the O- and M-types), and \textit{klystron}. The unifying principle of these devices is that the electron beam speed, position or density can be modulated by the electric field, and the modulation in turn radiates amplified electromagnetic waves. Backward-wave oscillators are tunable monochromatic sources
 used for continuous-wave spectroscopy, but the tunability of one device is typically limited to tens of percent and the power drops with the frequency \cite{lewis2014review}.
-% M-type, the most powerful, (M-BWO) and the O-type (O-BWO). The O-type delivers typically power in the range of 1 mW at 1000 GHz to 50 mW at 200 GHz. 
+% M-type, the most powerful, (M-BWO) and the O-type (O-BWO). The O-type delivers typically power in the range of 1 mW at 1000~GHz to 50 mW at 200~GHz. 
 
 %}}}
 \paragraph{Terahertz solid-state oscillators}%{{{================================================================================
@@ -35,7 +35,7 @@ As a solution, either substantial changes in the device geometry, constituent ma
  %devices where the wavelength is not determined by quantum phenomena, or by physical quantity other than dimension (such as the magnetic field strength in a magnetron tube).
 
 If a relatively low power is required, principles used in microwave engineering can be extended to the lower part of the terahertz spectrum.  %% TODO stylistics
-The frequency range of operation of high electron mobility transistors (HEMT) has been extended in this way up to 1 THz. %Sometimes all accompanying components are integrated to a MMIC.
+The frequency range of operation of high electron mobility transistors (HEMT) has been extended in this way up to 1~THz. %Sometimes all accompanying components are integrated to a MMIC.
 
 An oscillator may be formed by placing an element with a negative differential resistance (NDR) into a resonant cavity or circuit. 
 In \textit{Gunn diodes}, widely used in microwave technology, the NDR is due to the electron's effective mass abruptly increasing with their velocity in certain direct-gap semiconductors.
@@ -45,9 +45,9 @@ Yet another principle is employed in the \textit{impact ionization avalanche tra
 In contrast, in the \textit{tunneling transit-time} (TUNNETT) diodes, the NDR is achieved by changing the transit time of carriers through the semiconductor volume.
 %}}}
 \paragraph{Nonlinear up-conversion of microwaves}%{{{ ================================================================================
-A nonlinear response of semiconductor devices to microwaves can be used for up-conversion into the terahertz range. Starting from a relatively powerful and widely available semiconductor source operating in the 100 GHz range, frequency multiplying stages are often cascaded to reach frequencies several times higher \cite{thomas2012first}. 
+A nonlinear response of semiconductor devices to microwaves can be used for up-conversion into the terahertz range. Starting from a relatively powerful and widely available semiconductor source operating in the 100~GHz range, frequency multiplying stages are often cascaded to reach frequencies several times higher \cite{thomas2012first}. 
 
-Harmonic frequency multipliers and mixers often employ varactor diodes or Schottky diodes embedded in a waveguide. They, however, still suffer from a significant power drop above 1 THz.
+Harmonic frequency multipliers and mixers often employ varactor diodes or Schottky diodes embedded in a waveguide. They, however, still suffer from a significant power drop above 1~THz.
 
 %}}}
 \paragraph{Nonlinear down-conversion of optical waves}%{{{ ================================================================================
@@ -55,7 +55,7 @@ The opposite approach, also known as \textit{optical rectification}, generates T
 The radiation may come from two lasers or laser modes, % [CCap7], 
 mutually detuned by a frequency that is to be generated. %% TODO The lasers may be classical solid state, diodes or e.g. two modes in one infrared QCL. %% TODO cite one classical, and the QCL
 Other possibility is to use the \textit{terahertz parametric generation} where a single wave enters the nonlinear crystal as the \textit{pump} and the second wave, \textit{idler}, is generated during the nonlinear process. The \textit{idler} wave is kept in an optical resonator; the terahertz output can be tuned by changing parameters of the resonator. 
-For nonlinear generation of pulses in the THz range, usually a mode-locked laser is used that emits pulses that intrinsically cover a broad spectrum of frequencies (e.g. typically over 360-390 THz for a titanium-sapphire laser). The difference frequencies are generated from all optical frequency components simultaneously, which results in a terahertz pulse with a very broad spectrum given by the type of nonlinear medium. 
+For nonlinear generation of pulses in the THz range, usually a mode-locked laser is used that emits pulses that intrinsically cover a broad spectrum of frequencies (e.g. typically over 360--390~THz for a titanium-sapphire laser). The difference frequencies are generated from all optical frequency components simultaneously, which results in a terahertz pulse with a very broad spectrum given by the type of nonlinear medium. 
 
 The classical process of nonlinear optical conversion involves transparent electro-optic crystals, where some measures are taken to account for the generally different velocity of all interacting waves.
 \begin{itemize}
