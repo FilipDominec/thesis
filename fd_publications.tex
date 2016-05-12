@@ -1,0 +1,99 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc} 
+%\usepackage[top=3.5cm, bottom=3cm, left=3.cm, right=3.cm]{geometry} % a bit wider margins
+\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry} 
+%\usepackage[top=3cm, bottom=3cm, left=.5cm, right=.5cm, paperwidth=17.0cm, paperheight=29.7cm]{geometry}  %% DEBUG
+%\usepackage{mathrsfs} 
+\usepackage{palatino} 
+%\usepackage[font=it]{caption}
+%\usepackage{graphicx,amsmath,amssymb,rotating,booktabs,color,enumitem, tikz, csquotes, placeins, pdflscape, makeidx}
+%\usepackage[percent]{overpic}
+%\usetikzlibrary{positioning, arrows}
+%\usepackage{upgreek}
+
+\usepackage[
+  language=english,
+  %urldate=long,
+  style=numeric,
+  sorting=none,
+  isbn=true,
+  doi=false,
+  url=true,
+  firstinits=true,  % will render all first and middle names as initials.
+  abbreviate=false,
+  autolang=hyphen,
+  backend=biber,
+  maxbibnames=16]{biblatex}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\input{fixbiblatex.tex}
+\addbibresource{fdphd.bib}
+
+
+
+
+\begin{document}
+
+
+\chapter*{List of own publications related to the dissertation}
+%\chapter*{Filip Dominec -- List of own publications related to the dissertation}
+
+%\begin{refsection}
+%\nocite{dominec2014transition}
+\subsection*{Peer-reviewed papers}
+F. Dominec, C. Kadlec, H. N\v{e}mec, P. Ku\v{z}el, and F. Kadlec. Transition between metamaterial and photonic-crystal behavior in arrays of dielectric rods. \textit{Opt. Express} \textbf{22}, 30492–30503 (2014).\\
+(cited 5 times)
+%\printbibliography[title={Peer-reviewed papers}, heading=subbibliography]
+%\end{refsection}
+
+
+
+
+%\begin{refsection}
+\subsection*{Co-authored peer-reviewed papers}
+%\nocite{navarro-cia2013terahertz}
+M. Navarro-C\'{i}a, M. Natrella, F. Dominec, J. C. Delagnes, P. Ku\v{z}el, P. Mounaix, C. Graham, C. C. Renaud, A. J. Seeds, and O. Mitrofanov. 
+Terahertz imaging of sub-wavelength particles with Zenneck surface waves. \textit{Appl. Phys. Lett.} \textbf{103} (2013). \\
+(cited 11 times)
+
+%\nocite{mitrofanov2014near} 
+\vspace{3mm}\noindent 
+O. Mitrofanov, F. Dominec, P. Ku\v{z}el, J. L. Reno, I. Brener, U. Chung, C. Elissalde, M. Maglione, and P. Mounaix. 
+Near-field probing of Mie resonances in single TiO$_2$ microspheres at terahertz frequencies. \textit{Opt. Express} \textbf{22}, 23034–23042 (2014). \\
+(cited 9 times)
+
+%\printbibliography[title={Co-authored peer-reviewed papers}, heading=subbibliography]
+%\end{refsection}
+
+
+
+
+
+
+%\begin{refsection}
+\subsection*{Conference posters}
+F. Dominec, C. Kadlec, H. N\v{e}mec, P. Ku\v{z}el, and F. Kadlec. Can negative-index all-dielectric metamaterials be ever made? In: \textit{Photonica2015, the fifth international school and conference on photonics, Belgrade (Serbia).} Poster. 2015, page 215.
+
+\vspace{3mm}\noindent 
+F. Dominec, C. Kadlec, H. N\v{e}mec, P. Ku\v{z}el, and F. Kadlec. Transition between metamaterial and photonic-crystal behavior in arrays of dielectric rods. In: \textit{Nanometa 2015, Seefeld (Austria).} Poster. 2015.
+
+\vspace{3mm}\noindent 
+F. Dominec, C. Kadlec, H. N\v{e}mec, F. Kadlec, R. Yahiaoui, U.-C. Chung, C. Elissalde, M. Maglione, P. Mounaix, and P. Ku\v{z}el. Resonant terahertz response of TiO$_2$ mi-crospheres. In: \textit{SPIE Conference on Metamaterials, Prague (Czech Republic).} Poster.
+2013.
+
+\vspace{3mm}\noindent 
+F. Dominec, C. Kadlec, H. N\v{e}mec, F. Kadlec, R. Yahiaoui, P. Mounaix, U.-C. Chung, and P. Ku\v{z}el. Terahertz metamaterials based on resonance in TiO$_2$ microspheres.  In: \textit{The 6th International Congress on Advanced Electromagnetic Materials in Microwaves and Optics, St. Petersburg (Russia).} Poster. 2012.
+%\nocite{dominec2015can}
+%\nocite{dominec2015poster}
+% %  \nocite{navarro-cia2014zenneck} 
+%\nocite{dominec2013spie}
+%\nocite{dominec2012terahertz}
+%\printbibliography[title={Conference posters}, heading=subbibliography]
+%\end{refsection}
+
+
+
+
+\thispagestyle{empty} 
+
+\end{document}
