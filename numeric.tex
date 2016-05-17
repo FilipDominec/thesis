@@ -134,7 +134,7 @@ In practice, a slightly more conservative choice is made that provides a safe ma
 %%% $$\Delta t = \cour\,\frac{\Delta x}{c}  <  \frac{\sqrt{\varepsilon_r}}{\sqrt{3}}   \frac{\Delta x}{c}$$, as $\cour < n_{min}/\sqrt{\text{dim}}$ % TODO
 %%% i.e.
 %%% $$c \Delta t / n_{min} < \Delta x / \sqrt{\text{dim}} $$
-%%% which can be reformulated that   %TODO TODO
+%%% which can be reformulated that   %TODO
 
 %  /* Return true if the discretized Lorentzian ODE is intrinsically unstable,
 %     i.e. if it corresponds to a filter with a pole z~outside the unit circle.
@@ -192,7 +192,6 @@ where $\omega_p$ and $\gamma$ are two independent parameters that describe the m
 %The quasiparticle associated with the oscillation of the charge in bulk conductive medium, a \textit{plasmon}\index{plasmon}, has given the name to $\omega_p$. % TODO add a relation to the chapter on "dispersion in local media"
  } 
  \item{$\gamma$ is the momentum \textit{scattering frequency}\index{frequency!scattering f. in metals}, which can be understood as the \textit{rate of exponential decay} of the medium response to an impulse, similar to the Lorentz model. The Drude model was conceived in the early 20th century, with the simplified hypothesis that electrons are freely propagating particles that undergo 
-mutual
 collisions 
 	with the atoms %% -FD?
 at an average frequency $\gamma$. Upon the colisions, their 
@@ -633,7 +632,7 @@ When more than one wavevector $\KK$ corresponds to a given frequency,
 a different approach to the effective-parameter retrieval must be used, for which the wavevector $\KK$ becomes the input, and the corresponding frequencies $\omega_{1\ldots\infty}(K)$  at the dispersion curves are returned as the output. 
 This section describes the \textit{current-driven homogenisation}\index{current-driven homogenisation} (CDH), in which the whole simulation is computed exclusively with a single wavevector $\KK$, and the dispersion curves are reconstructed from multiple simulations differing by the wavevector. 
 
-In this thesis, the method is described in its simplest form. More elaborate implementation is discussed in Refs. \cite{silveirinha2007metamaterial}, \cite{fietz2010current} and \cite{fietz2011homogenization} and enables to recover all 36 parameters that describe the influence of the fields ($E_x$, $E_y$, $E_z$, $H_x$, $H_y$, $H_z$) to the displacements ($D_x$, $D_y$, $D_z$, $B_x$, $B_y$, $B_z$), taking into account also possible anisotropy and bianisotropy.
+In this thesis, the method is described in its simplest form. More elaborate implementation is discussed in Refs. \cite{silveirinha2007metamaterial}, \cite{fietz2010current} and \cite{fietz2011homogenization}, which would enable to recover all 36 parameters that describe the influence of the fields ($E_x$, $E_y$, $E_z$, $H_x$, $H_y$, $H_z$) to the displacements ($D_x$, $D_y$, $D_z$, $B_x$, $B_y$, $B_z$), taking into account also possible anisotropy and bianisotropy.
 
 %}}}
 \paragraph{Bloch-periodic boundaries for arbitrary wave vector} %{{{

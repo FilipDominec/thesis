@@ -61,18 +61,18 @@
  * [x] attach the list of own publications
  * [x] Use correct citation style!
  * [x] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
- * [ ] make list of figures, adding short caption to each of them? -- and link to the simulation directory
- * [ ] resolve that `t' denotes transmittance and time simultaneously?
- * [ ] ...ize ---> ...ise 
+ * [o] make list of figures, adding short caption to each of them? -- and link to the simulation directory
+ * [o] resolve that `t' denotes transmittance and time simultaneously?
+ * [o] ...ize ---> ...ise 
  * [x] go through all TODOs
  * [x] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
  * [x] aa 'of this' -->   'its' or  'thereof'  (and similar)
  * [x] aa [a-z]-[a-z] *tex
- * [ ] aa transmi[^t]
- * [ ] [0-9] GHz -> [0-9]~GHz
- * [ ] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
- * [ ] some figures should change from a)  to  (a) etc.
- * [ ] generate nice polar plots (Smith charts) for normal and Fano resonances?
+ * [x] aa transmi[^t]
+ * [x] [0-9] GHz -> [0-9]~GHz
+ * [x] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
+ * [x] some figures should change from a)  to  (a) etc.
+ * [o] generate nice polar plots (Smith charts) for normal and Fano resonances?
  * [ ] review the abstract
 
 ==== Ideas =====
