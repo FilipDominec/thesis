@@ -118,14 +118,14 @@ The physical meaning of $\alpha$, $\beta$ and $\zeta$ is of little importance in
 \begin{equation} \chi(\omega) = \frac{F}{\omega_0^{2}-\omega^{2} + \ii\omega\gamma}, \label{eq_harm_osc_rewritten}\end{equation}
 where the physical interpretation of the three (real and positive) parameters is as follows:
 \begin{itemize}
- \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonance frequency}\index{frequency!of oscillator resonance}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
+ \item{$\omega_0 = \sqrt{\zeta/\alpha}$ is the angular \textit{resonant frequency}\index{frequency!of oscillator resonance}, at which the response is purely imaginary and usually its modulus $|\chi(\omega=\omega_0)|$ is near its maximum.} 
  \item{$\gamma = \beta/\alpha$ is the \textit{damping rate}\index{oscillator!damping rate}. In time domain, it determines the time constant of exponential amplitude decay. } 
  \item{$F = \alpha^{-1}$ is the \textit{oscillator strength}\index{oscillator!strength}, determining the amplitude of the response function.}
  \end{itemize}
 
 
 \paragraph{Permittivity of Lorentz media} Within the approximation of relatively weak fields, the oscillators act independently of each other.
-The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the angular resonance frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
+The response of usual media in frequency domain can thus be decomposed with acceptable precision into a sum of $Q$ independent harmonic oscillators, each $q$-th oscillator having the angular resonant frequency $\omega_{0q}$, damping rate $\gamma_q$ and strength $F_q$.
 The permittivity function of the material is a solution of the differential equation of a damped harmonic oscillator, driven by a harmonic source:
 \begin{equation} \epsrl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 + \ii\omega\gamma_q}. \label{eq_lorentz_eps}\end{equation} 
 Advancing from the general formulation in Eq. (\ref{eq_eps_loc}) to the Lorentz oscillator model in Eq. (\ref{eq_lorentz_eps}) is of great importance for theoretical interpretation of the material response, and it has also become a framework for description of periodic structures even in the presence of spatial dispersion.  %% clumsy - remove this sentence?
@@ -134,7 +134,7 @@ A sample time- and frequency-domain response of a medium with one harmonic oscil
 
 One can see that each oscillator increases the real part of the low-frequency permittivity, but in the high-frequency limit the contribution of the oscillator vanishes. This can be understood intuitively as that at low frequencies $\omega \ll \omega_0$, the system reacts fast enough to simultaneously follow the driving force, whereas at very high frequencies $\omega \gg \omega_0$, the system can not respond to the driving force.
 
-The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonance frequency:
+The contribution of one oscillator to the low-frequency permittivity $\Delta\epsrl(0)$, is inversely proportional to the oscillator restoring force, which links it to the inverse square of the resonant frequency:
 \begin{equation} \Delta \epsrl'(\omega\rightarrow0) = \frac{F}{\omega_0^{2}}.  \label{eq_delta_eps} \end{equation}
 A more detailed treatment of the permittivity spectra $\epsrl(\omega)$ may be found in many textbooks, e.g. \cite[p. 454]{klingshirn2007semiconductor}, \cite{dresselhaus1966optical}. 
 
@@ -211,7 +211,7 @@ The wave equation (\ref{eq_wavek}) then changes to
 \begin{equation} k(\omega) = \sqrt{\varepsilon_0 \mu_0} \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\;\omega = \sqrt{\epsrl(\omega) \mu_{r}(\omega)}\; \frac{\omega}{c}, \label{eq_dispeq_loc}\end{equation}
 with the added frequency-dispersive term responsible for the deviation of the curve in Fig. \ref{fg_dcsimpleel} from the original straight light line in Fig. \ref{fg_dcvac}. 
 
-In the simplest example of a single electric resonance with negligible losses, as shown in Fig. \ref{fg_dcsimpleel}, the curve is divided into two separate branches. The \textit{lower polariton branch}\index{polariton branches} is below the resonance frequency $\omega_0$ and it is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and point in the opposite direction. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$ where the \textit{upper polariton branch} starts. In case of a single (or well-isolated) Lorentz oscillator, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation) \cite{klingshirn2007semiconductor}.
+In the simplest example of a single electric resonance with negligible losses, as shown in Fig. \ref{fg_dcsimpleel}, the curve is divided into two separate branches. The \textit{lower polariton branch}\index{polariton branches} is below the angular resonant frequency $\omega_0$ and it is characterized by the Lorentz oscillator being in phase with the electric field. Above $\omega_0$, the dipoles of the Lorentz oscillator can no more follow the electric field and point in the opposite direction. With further increase of the frequency, the permittivity crosses zero at the frequency $\omega_{\text{L}}$ where the \textit{upper polariton branch} starts. In case of a single (or well-isolated) Lorentz oscillator, the difference $\omega_{\text{L}} - \omega_0$ can be computed from the magnitude of the oscillator (using the Lydanne-Sachs-Teller relation) \cite{klingshirn2007semiconductor}.
 
 The same behaviour is observed for a single resonance in the permeability $\mu_r(\omega)$, and will be typical also of the spectra of resonances of macroscopic structures described later.
 
@@ -606,10 +606,10 @@ However, the magnetic resonance increases $\epsLL(\omega, k)$ by a term proporti
 \textbf{(b)}\\	\includegraphics[width=1\textwidth]{img/dispersion_landau_lifshitz/dispersion_ll_quadrupn.pdf}
 \end{figure}
 Further terms in the permittivity $\epsLL(\omega,\kk)$ expansion in Eq. (\ref{eq_epsmusd3}) make the dispersion curves deviate from those predicted for local media. This corresponds to the black contours deviating from the green lines in Fig. \ref{fg_dcll_nl}.
-As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonance frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
+As the simplest example we add one scalar term $\alpha(\omega) k^4$ to $\epsLL(\omega,\kk)$ in Eq. (\ref{eq_epsmusd1}). The shape of $\alpha(\omega)$  was chosen as a weak Lorentz oscillator at the resonant frequency of the ordinary electric response $\chi_e(\omega)$. This term is shown by adding a thin blue line in the left column of Fig. \ref{fg_dcll_nl}.
 
 \label{chap_sd}
-The choice of the same resonance frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole.  The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
+The choice of the same resonant frequency for $\chi_e(\omega)$ and $\alpha(\omega)$ is not arbitrary; it is assumed that both terms arise from the same resonance mode that has a field shape different from that of a simple dipole.  The relation of higher-order expansion terms of the Landau-Lifshitz permittivity  to the multipole expansion of the field shape is developed e.g. in Refs. \cite{agranovich2006spatial}, \cite{vinogradov2002form} and \cite{fietz2011homogenization}.
 
 The choices of a positive amplitude (Fig. \ref{fg_dcll_nl}a) and a negative one (Fig. \ref{fg_dcll_nl}b) have typical impacts on the dispersion curves. In the former case, both polariton branches deviate one from another with growing frequency. In the latter case, they come closer to each other with growing $k$. Eventually, in the upper right corner of the right plot in Fig. \ref{fg_dcll_nl}b, they merge into one loop. The author, however, believes this merging may not be observed in nature, and that its occurrence is only due to unrealistic values of the $\alpha(\omega)$ coefficient or the absence of higher-order expansion terms.
 
@@ -619,7 +619,7 @@ For both cases shown in Fig. \ref{fg_dcll_nl}, it follows that the dispersion eq
 
 The waves propagating with the higher wavenumber $k$ are denoted as \textit{additional}\index{wave!additional} \cite{agranovich2006spatial, agranovich2004linear, krowne2007book, agranovich1962crystal}, were predicted by the works of Pekar et al. and also suggested by experimental data of dispersion near exciton levels, e.g. in cadmium sulphide \cite{pekar1975spatial}. 
 
-The dispersion curves suggest the existence additional waves around $\omega \sim 0.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}a and $\omega \sim 1.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}b. In both cases, one of the two solutions depicted has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), predicting a negative refraction also in natural homogeneous media.
+The dispersion curves suggest the existence of additional waves around $\omega \sim 0.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}a and $\omega \sim 1.75 \omega_0$ in  Fig. \ref{fg_dcll_nl}b. In both cases, one of the two solutions depicted has opposite signs of the wavevector and the group velocity ($|\vg| = \mathrm{d}\omega/\mathrm{d}k < 0$), predicting a negative refraction also in natural homogeneous media.
 
 %}}}
 \paragraph{Odd-power expansion terms and optical activity }   %{{{ 
@@ -686,7 +686,7 @@ which is also known as \textit{anomalous dispersion}\index{dispersion!anomalous}
 
 It follows from this that the group velocity $\vg$ can also point in a direction opposite to the Poynting vector that represents propagation of the light beam energy, $\mathbf{S}$. 
 % This fact can not be easily deduced from the dispersion curves or IFCs. %% TODO  Or can it?
-This can be observed in narrow parts of the spectrum only, around the resonance frequencies where the media have high losses, and also a strong group velocity dispersion.
+This can be observed in narrow parts of the spectrum only, around the resonant frequencies where the media have high losses, and also a strong group velocity dispersion.
 Assuming passivity and absence of sources in the second medium, it is obviously the Poynting vector that has to conserve its perpendicular component and that the group velocity has inevitably to point towards the interface also in the second medium, which seems contradictory to causality.
 This result 
 %of the light envelope propagating with the group velocity \textit{from}\index{from} the second medium \textit{towards}\index{towards} the interface may seem unphysical, 
@@ -966,7 +966,7 @@ or also \textit{hopping},  %% TODO cite?
 model in solid-state physics. 
 
 \label{tight-binding}
-Analyzing one unit cell isolated in free space, one obtains its natural resonance frequency.  When the cell is surrounded by other cells in the periodic lattice, their mutual coupling alters the resonance frequency \cite[p. 75]{klingshirn2007semiconductor}; the actual sign of the coupling effect does not seem to be determined by any simple general rule, however.	
+Analyzing one unit cell isolated in free space, one obtains its natural resonant frequency.  When the cell is surrounded by other cells in the periodic lattice, their mutual coupling alters the resonant frequency \cite[p. 75]{klingshirn2007semiconductor}; the actual sign of the coupling effect does not seem to be determined by any simple general rule, however.	
 
 For a steady oscillatory solution to be obtained, the electromagnetic fields in the surrounding cells must have the same modulus of oscillation amplitude, but they do not need to share the phase. This is equivalent to a single Bloch's wave propagating in the structure. 
 
@@ -980,7 +980,7 @@ Other special cases are observed when $\KK$ corresponds to some of the high-symm
 The $\mathbf{X}$ and $\mathbf{Y}$ points are combination of the Dirichlet and Neumann boundary conditions for two different directions.
 As a generalization of the above mentioned criteria, the boundary conditions can be found for any point in the Brillouin zone, provided that a correct phase difference between all opposite faces is conserved.
 
-The stronger the coupling between the neighbouring cells, the bigger the difference between the resonance frequencies for the $\mathbf{\Gamma}$ and $\mathbf{X}$ points. Returning to the definition of the group velocity in Eq. (\ref{eq_vg}), one comes to the already expected fact that the energy transfer is proportional to the strength of the inter-cell coupling.
+The stronger the coupling between the neighbouring cells, the bigger the difference between the resonant frequencies for the $\mathbf{\Gamma}$ and $\mathbf{X}$ points. Returning to the definition of the group velocity in Eq. (\ref{eq_vg}), one comes to the already expected fact that the energy transfer is proportional to the strength of the inter-cell coupling.
 
 %}}}
 %%% \paragraph{Spatial dispersion in photonic structures} %{{{  TODO develop
@@ -1027,7 +1027,7 @@ characterized by a relatively high localisation of energy close to the structure
 Arranging such resonant elements with a translational symmetry is a fundamental step in building a periodic structure with resonant behaviour. When such a structure is viewed as a homogeneous medium, its dispersion for the Bloch's wave follows a resonance curve similar (but not exactly the same) to that in Fig. \ref{fg_oscillator_spectrum}. Sometimes the behaviour of the Bloch's wave is described as \textit{macroscopic}, while the fields localized in the resonant elements as \textit{mesoscopic} \cite{felbacq2005theory} and finally the word \textit{microscopic} is left for the much finer field in the constituent atoms or molecules.
 
 Another important characteristic of individual resonances consists in a \textit{qualitative} change in the field shape between the lower and upper edge of the band gap. This is true for natural media as well as for lattices of individual resonators. Stipulated by Eq. \ref{eq_harm_osc_result} for a harmonic oscillator, the dipoles are in phase with the wave at the lower band-gap edge, whereas they are in opposite phase at the upper edge.  % TODO note also that these indiv resonances are typical by a resonance shape in the permitivity
-The actual resonance frequency is located at some point inside the bandgap, as will be shown on the examples of simple individual resonators, e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c.
+The actual resonant frequency is located at some point inside the bandgap, as will be shown on the examples of simple individual resonators, e.g. in Fig. \ref{fg_CutWires_wireradius1u_cutwidth_comparison}c.
 
 Yet another characteristic is whether the resonant-field shape in the structure unit cell can be approximated as a point dipole or multipole, or their combination. Further, the dipole moment may be electric, magnetic, zero or both simultaneously, as given by symmetry of the field. Most types of structures exhibit multiple resonances at different frequencies, each of them having usually either an electric or a magnetic dipole. In structures of lower symmetry, one resonant mode may have both nonzero dipole moments simultaneously; this leads to optical activity. 
 
@@ -1183,7 +1183,7 @@ A feature typical of this class of media is a very small wavevector $K\sim 0$, w
 Slow spatial changes in the refractive index cause the electromagnetic wave to follow a curved path, which can be alternatively viewed as propagation through a particularly curved (transformed) space filled with homogeneous medium. This is the basis of \textit{transformation optics}\index{transformation optics}.
 
 The \textit{electromagnetic cloak}\index{electromagnetic cloak} is a hollow structure that guides the electromagnetic waves around its core and reconstructs the wavefront behind it, so that it casts no shadow, independent of the wave direction and of the obstacle present inside the cloak. 
-The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuous $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations \cite{eleftheriades2012transforming}.
+The curved path used to evade the obstacle is always longer than a line segment, however, so typically a medium with continuously varying $\Neff\in \langle0,1\rangle$ must be properly designed by transformation-optics calculations \cite{eleftheriades2012transforming}.
 %todo \cite{alitalo2009electromagnetic}
 Electromagnetic cloaking % by homogeneous media ???
 was considered in the early 1960s by Dollin \cite{dollin1961possibility} and later by Kerker \cite{kerker1975invisible}.
@@ -1214,10 +1214,10 @@ Their common assumption is that the wavelength is much larger than the particles
 
 %}}}
 \paragraph{Synthesis of nonresonant sub-wavelength structures} %{{{ ====================== OK
-\begin{figure}[h] \caption{Three examples of artificial dielectrics designs patented half a century ago: \textbf{(a)} sheets containing cut wires of alternating orientation and resonance frequency, enabling one to manipulate microwave polarisation, \textbf{(b)} cross-section through a lightweight lens of 3 m diameter designed for 50-500 MHz radio waves, made of partially metallized plastic layers, \textbf{(c)} artificial dielectric made of non-resonant cut wires arranged into a nearly isotropic 3-D lattice. Drawings adapted from patent applications \cite{wickersham1960artificial},  \cite{anderson1967artificial} and \cite{hannan1966artificial}, respectively.} \label{fg_mm_patents} \centering \includegraphics[width=\textwidth]{img/patents/mm_patents.pdf} \end{figure}
+\begin{figure}[h] \caption{Three examples of artificial dielectrics designs patented half a century ago: \textbf{(a)} sheets containing cut wires of alternating orientation and resonant frequency, enabling one to manipulate microwave polarisation, \textbf{(b)} cross-section through a lightweight lens of 3 m diameter designed for 50-500 MHz radio waves, made of partially metallized plastic layers, \textbf{(c)} artificial dielectric made of non-resonant cut wires arranged into a nearly isotropic 3-D lattice. Drawings adapted from patent applications \cite{wickersham1960artificial},  \cite{anderson1967artificial} and \cite{hannan1966artificial}, respectively.} \label{fg_mm_patents} \centering \includegraphics[width=\textwidth]{img/patents/mm_patents.pdf} \end{figure}
 
 The design of inhomogeneous structures that could be treated as homogeneous with some desired properties has also a surprisingly long history. 
-Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit}\index{limit!static} of frequencies well below any resonance frequency of the particle, and to the \textit{long-wavelength limit}\index{limit!long-wavelength } well below the first photonic band gap. 
+Inspired by the Lorentz-Lorenz formula, Lord Rayleigh theoretically elaborated the wave propagation through a rectangular lattice of cylindrical or spherical particles in 1892. He also noted the analogy between electromagnetic and acoustic waves \cite[p. 498]{rayleigh1892}. His thoughtful analysis was however still limited to the \textit{static limit}\index{limit!static} of frequencies well below any resonant frequency of the particle, and to the \textit{long-wavelength limit}\index{limit!long-wavelength } well below the first photonic band gap. 
 
 Subwavelength wire arrays have been experimentally used at least since 1898 as microwave polarisers. The concept of assembling a microwave polarisation rotator from organic or metallic helices comes from that era, too \cite{bose1898rotation, emerson}.
 
@@ -1300,7 +1300,7 @@ Realized metamaterial structures can no more be viewed as deeply subwavelength \
 %}}}
 \paragraph{Theoretical investigation of the structures on the MM-PhC boundary}%{{{
 Along with experiments, the interplay between the individual and Bragg-type resonances was also studied on a theoretical basis. The former type of resonances is typical for metamaterials, while the latter for photonic crystals. Typically, one either scans the relative cell spacing (this can be done in simulations \cite{shi2007, dominec2014transition} as well as in experiments \cite{rybin2015phase}),  % and \cite{antonoyiannakis1997mie}?
-or tunes the individual resonance frequency keeping the lattice parameters unchanged (e.g. \cite{chakrabarti2012magnetic}). The frequencies of the individual and Bragg resonances have different sensitivities to these parameters, and can thus be identified in the spectra. One such study of a typical structure, the array of dielectric rods, is elaborated in the Results section of this thesis.
+or tunes the individual resonant frequency keeping the lattice parameters unchanged (e.g. \cite{chakrabarti2012magnetic}). The frequencies of the individual and Bragg resonances have different sensitivities to these parameters, and can thus be identified in the spectra. One such study of a typical structure, the array of dielectric rods, is elaborated in the Results section of this thesis.
 
 %PhCs with metallic/metamaterial inclusions
 %Antonnoyiannakis1997-Mie_resonances_and_bonding_in_PhC.pdf
@@ -1375,7 +1375,7 @@ By contrast, the high concentration of the energy within a small part of the str
 %}}}
 \paragraph{The phase criterion} %{{{
 \label{phasecriterion}
-The above criteria are somewhat vague, but there exists a well-defined, rigorous criterion dividing the periodic structures clearly into two groups at a given frequency: When a metamaterial is excited above its resonance frequency, and the resonant energy is well localized, the part of the unit cell volume contains field with the sign opposite to that in the excitation wave. This is similar to the behaviour of the Lorentz oscillator illustrated in Fig. \ref{fg_oscillator_spectrum}. %% TODO check Fig 2.2 
+The above criteria are somewhat vague, but there exists a well-defined, rigorous criterion dividing the periodic structures clearly into two groups at a given frequency: When a metamaterial is excited above its resonant frequency, and the resonant energy is well localized, the part of the unit cell volume contains field with the sign opposite to that in the excitation wave. This is similar to the behaviour of the Lorentz oscillator illustrated in Fig. \ref{fg_oscillator_spectrum}. %% TODO check Fig 2.2 
 This opposite-field domain is delimited by a surface where either the electric or magnetic field is constantly zero, which will be denoted as the \textit{nodal plane}\index{nodal plane}. For the individual resonance, the nodal plane is closed and there exists some path through the unit cell which does not cross it. The Bragg band gap leads to open nodal surfaces delimiting the opposite-field domain which traverse the unit cell boundaries. % A limiting case is the band gap in a plane-parallel dielectric mirror.
 
 The difference between the topologies of localized and delocalized pair of nodal planes can be interpreted as the boundary between MMs and PhCs. In practice, this well-defined difference manifests itself in the change of the phase along each unit cell, without any obvious impact on the propagation of energy. In more details this is demonstrated in the Chapter \ref{sect_diel_rods_el}  %TODO point to the diel array
