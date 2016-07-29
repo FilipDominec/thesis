@@ -364,7 +364,7 @@ The shapes of the electric and magnetic field at the edges of each photonic band
 
 Scaling of the computational time with the resolution may present a disadvantage compared with FDTD/FDFD, since in a simple implementation it scales with the second power of the resolution for one-dimensional problems, fourth power in 2-D problems and ninth power for 3-D problems. Application of more sophisticated algebra of sparse matrices can, however, partially remedy this.
 
-Perhaps the greatest limitation of the MPB program is that it can not cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
+Perhaps the greatest limitation of the MPB program is that it cannot cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
 
 %}}}
 
@@ -433,7 +433,7 @@ The impact of the evanescent waves partially reaching the unit cell boundaries i
 
 This issue is inherent to the simulation setup, but its impact can be assessed by simulating more than one unit cell, since the retrieved values will change slightly with the number of layers being simulated: a single-cell simulation suffers the most from the absence of adjacent layers, whereas in a two-cell simulation the effect should be halved. Simulations of three (or more) cells suffer from different behaviours of the cells at the surface and inside, which possibly broadens the resonance frequency and can yield confusing results unsuitable to the retrieval method.
  } 
- \item{Second, the monitor planes can not distinguish between the evanescent or radiated electromagnetic field, but only the radiated waves are relevant for the s-parameter computations. At very low frequencies or at frequencies close to resonances, it was observed that the near field can significantly distort the retrieved parameters.
+ \item{Second, the monitor planes cannot distinguish between the evanescent or radiated electromagnetic field, but only the radiated waves are relevant for the s-parameter computations. At very low frequencies or at frequencies close to resonances, it was observed that the near field can significantly distort the retrieved parameters.
 
 This can be resolved by shifting both monitor planes away from the metamaterial cell by a distance denoted as \textit{padding}\index{padding}. As the evanescent field decays exponentially, padding of less than half of the unit cell size is often sufficient to suppress all artifacts due to near-field components. In contrast, propagating waves only gain an additional phase offset that can be easily compensated after the simulation. } 
  \end{enumerate}
@@ -446,7 +446,7 @@ The averaged electric and magnetic fields recorded at the first monitor plane wi
 		The excitation pulse (ca. 2 ps long) excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as outlined by the thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation duration  was $t_{sim} =$ 150 ps. \\
 After 80 \% of the time record length, the field is multiplied by the smooth envelope function described by Eq. (\ref{eq_envelope}).} \includegraphics[width=.7\textwidth]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
-The spectral resolution is determined by the length of the time record. The higher quality of resonance, the sharper its spectral features. %is equivalent to coarse sampling on the frequency axis, which can not fully resolve the shape of the resonance. 
+The spectral resolution is determined by the length of the time record. The higher quality of resonance, the sharper its spectral features. %is equivalent to coarse sampling on the frequency axis, which cannot fully resolve the shape of the resonance. 
 From the \textit{Fourier-Plancherel theorem}\index{Fourier-Plancherel theorem} %% TODO ref
 it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
@@ -658,7 +658,7 @@ Excitation of the structure with this kind of the source gave the current-driven
 \paragraph{Temporal profile of the source}%{{{
 With the wavevector restricted to a single given value, it is necessary to excite and detect as many corresponding modes of the structure as possible. Therefore, a short and broadband temporal source profile could be reused from the scattering parameter method. 
 
-Unlike the scattering-parameters method, CDH can not easily detect the spectral profile of the exciting field, and the retrieved fields can not be normalized against it. To maintain an approximately flat source amplitude over a wide part of the specturm, a nontrivial temporal shape of the source was designed, tested and submitted to the MEEP simulation developer site \cite{} online:
+Unlike the scattering-parameters method, CDH cannot easily detect the spectral profile of the exciting field, and the retrieved fields cannot be normalized against it. To maintain an approximately flat source amplitude over a wide part of the specturm, a nontrivial temporal shape of the source was designed, tested and submitted to the MEEP simulation developer site \cite{} online:
 \begin{equation} 
 	j(t) := w_{BN}(t)\, \left[\mathrm{Si}(2\pi f_1 t) - \mathrm{Si}(2\pi f_2 t) \right]
 \label{eq_currentsourcetime}\end{equation}
@@ -763,7 +763,7 @@ The fields in the structure are computed and decomposed into discrete modes of t
 \cite{zhang2006optical} % Optical negative-index bulk metamaterials consisting of 2D perforated metal-dielectric stacks
 \cite{rockstuhl2008light} %Light propagation in a fishnet metamaterial
 
-When no mode is clearly dominant, this method naturally can not be used. In such a case, even the scattering parameter method fails, but its limitations of applicability are less obvious than with the \textit{single-interface}\index{single-interface} method. Failure of the scattering parameter method can be observed as contradictory results \cite{rockstuhl2008transition} from simulations of different numbers of unit cells.
+When no mode is clearly dominant, this method naturally cannot be used. In such a case, even the scattering parameter method fails, but its limitations of applicability are less obvious than with the \textit{single-interface}\index{single-interface} method. Failure of the scattering parameter method can be observed as contradictory results \cite{rockstuhl2008transition} from simulations of different numbers of unit cells.
 In Ref. \cite{paul2011reflection} %Reflection and transmission of light at periodic layered metamaterial films
 it is argued that the existence of one dominant mode is the prerequisite necessary for the structure to be viewed as homogeneous. Refs. \cite{paul2011reflection,andryieuski2012bloch} apply the Bloch-mode analysis approach is applied to particular structures. A direct numeric evaluation of amplitudes of the different modes in 1-D photonic crystals can be found in 
 \cite{mortensen2010unambiguous}. % On the unambiguous determination of effective optical properties of periodic metamaterials: a one-dimensional case study

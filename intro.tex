@@ -4,7 +4,7 @@
 The peculiar behaviour of light in periodic structures has attracted human attention for ages, long before anybody perceived that light is an \textit{electromagnetic wave} or that it is the \textit{periodicity} which is responsible for the brilliant and irreproducible colours of opal gemstones and many living creatures, such as various beetles, butterflies or peacocks. 
 
 The scientific community started to rigorously study the underlying phenomena in the late 19th century.
-Simultaneous theoretical and technological progress through the 20th century allowed to design custom structures that interact with electromagnetic waves in a desired way. In analogy with the rapidly growing field of \textit{electronics}, the term of \textit{photonics} was coined for the design of optical fibers and other waveguides, sources, filters, detectors etc. The rapid development in this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers used for numerical simulations. Nowadays, photonics-based devices play a vital role in the high-bandwidth telecommunication, science and industry.
+Simultaneous theoretical and technological progress through the 20th century allowed to design custom structures that interact with electromagnetic waves in a desired way. In analogy with the rapidly growing field of \textit{electronics}, the term of \textit{photonics} was coined for the design of optical fibres and other waveguides, sources, filters, detectors etc. The rapid development in this field was enabled by the modern technology of microfabrication, along with the unprecedented power of computers used for numerical simulations. Nowadays, photonics-based devices play a vital role in the high-bandwidth telecommunication, science and industry.
 
 %Electromagnetic phenomena in periodic structures were studied in analogy with the physical theories established previously % outside optics. 
 Out of all structures studied in photonics, particularly detailed theoretical studies were devoted to structures that are periodic. Three paradigms related to the physics of periodic structures developed independently. While \textit{photonic crystals} were inspired by the electron waves, \textit{metamaterials} were inspired by the electromagnetic waves in crystals. Early treatises on electrodynamics of \textit{media with negative or unusual parameters} did not assume any structuring or other way of how these parameters should be achieved. As a result of a natural development, the paradigms unified into one, and this thesis tries to describe them in an unified manner.  % todo style
@@ -71,8 +71,8 @@ One of such simulation setups of the current-driven homogenization is presented 
 \paragraph{Results, conclusion and appendices} %{{{				%% TODO
 %The perhaps most important section follows, 
 %in which a systematic overview of the most important periodic structures is provided
-The Results section puts the common metamaterial types into a perspective, pointing out what they have in common, and how they differ.  % TODO write which structures are discussed
-While the space of all imaginable structures can never be covered, most typical classes  another aim of this section is to demonstrate the capabilities of the simulation scripts used. 
+The Results section puts the common metamaterial types into a perspective, pointing out what they have in common and how they differ.  % TODO write which structures are discussed
+While the space of all imaginable structures can never be covered, most metamaterials fall into one of several classes, of which each can be demonstrated by few examples. Another aim of this section is to demonstrate the capabilities of the simulation scripts used. 
 %for metamaterial simulation
 
 The scale of the simulated structures is chosen for the structures to operate in the terahertz range. 
@@ -89,7 +89,7 @@ At the end of the thesis, somewhat critical conclusions from the above results a
 \section{Conventions used}%{{{
 Throughout the thesis, a single or double apostrophe ($x', x''$) refers to the real and imaginary part of a complex number ($x$). Italic symbols represent the magnitudes of vectors, which are denoted by respective bold symbols (e.g. $k = |\kk|$). Components of vectors are denoted by small indices, such as $k_x, k_y, k_z$. 
 The index and lists of symbols and abbreviations are included at the end of the thesis.
-%The explicit time, space or frequency dependence of quantities are omitted when it can not cause confusion.
+%The explicit time, space or frequency dependence of quantities are omitted when it cannot cause confusion.
 
 An important note shall be made on the sign convention for the complex wave, as introduced in Eq. (\ref{eq_pw}).
 The `engineering' convention of time dependence of the complex exponential $e^{+\ii \omega t}$ is used, but this is only due to the author's feeling that it is more natural when the wave phase grows in time. Such a convention is shared with roughly a half of the literature, e.g. \cite[p. 9]{engheta2006book}, \cite[pp. 21 and 99]{krowne2007book}, \cite[Chapters 1-4, 6, 9 and 10]{eleftheriades2005book}.  In the remaining part, e.g. \cite[chapters 5, 7, 8]{eleftheriades2005book}, \cite{klingshirn2007semiconductor}, \cite{jackson1962book}, \cite{veselago1968}, \cite{born1999book}, \cite[p. 5]{noginov2011book}, the opposite, `optical', convention is used with time dependence of $e^{-\ii \omega t}$. The choice of $e^{+\ii\omega t}$ or $e^{-\ii\omega t}$ determines the sign of the imaginary part in virtually all complex quantities discussed in this thesis, but with correct interpretation it makes no difference in the physical conclusions.
@@ -101,7 +101,7 @@ In the real world, observable fields do not have any imaginary component so the 
 %% Panofsky & Phillips 1962, p 200 ??
 %% ---- "OPTICS" in favor of -iwt, then using the simpler eps = (eps' + i eps'')
 
-In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have \textit{negative imaginary part}. An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention still wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
+In the $e^{+\ii\omega t}$ convention, many parameters of a passive (lossy) system are restricted to have a \textit{negative imaginary part}. An additional complication arises from that a part of the authors using $e^{+\ii\omega t}$ convention still wish to represent the imaginary part as \textit{positive}, and they define complex quantities as, e.g., $\varepsilon = \varepsilon' - \ii \varepsilon''$, % TODO verify if this is e.g. "Wallen2011-Anti-resonant response of ..."
 thus in their case $\varepsilon''\equiv -\text{Im}(\varepsilon)$. This is not the case of this thesis, and the real and imaginary parts are represented naturally as $\varepsilon := \varepsilon' + \ii \varepsilon''$.
 
 The unit system differs across the literature, too. Some of the references, e.g. \cite{landau1984electrodynamics, agranovich2006spatial, krowne2007book_agran} use the older centimetre-gram-second (CGS) system, which for instance leaves out the dimension constants of $\varepsilon_0, \mu_0$. The whole thesis uses consistently the metre-kilogram-second (SI) system.
