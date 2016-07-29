@@ -60,7 +60,7 @@ Note that this frequency is only $1/\pi$ of the frequency of time-stepping cycle
 \paragraph{Definition of materials for the FDTD method} %{{{
 \label{def_of_mat}
 
-\begin{figure}[t] \caption{Plots of complex permittivity ${\epsrl}_o(\omega)$ of titanium dioxide (rutile), for an ordinary ray, as defined in the simulation scripts \cite{dominec2014_meep_metamaterials}. The above plot has a linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-10<\varepsilon_r<10$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach better shows different orders of magnitude in the permittivity function.} \label{fg_tio2eps} \centering 
+\begin{figure}[t] \caption{Plots of complex permittivity ${\epsrl}_o(\omega)$ of titanium dioxide (rutile), for an ordinary ray, as defined in the simulation scripts \cite{dominec2014_meep_metamaterials}. The above plot has a linear vertical scale, while the bottom plot displays the same quantity using the scale that is $-\log(-\varepsilon_r)$ for $\varepsilon_r<-1$; linear for $-10<\varepsilon_r<10$ and $\log(\varepsilon_r)$ for $\varepsilon_r > 1$. The second approach better shows different orders of magnitude in the permittivity function. Similarly to other figures in this thesis, the solid line denotes the real component, while the dashed line denotes the imaginary one.} \label{fg_tio2eps} \centering 
 	\includegraphics[width=14cm]{img/epsilon_TiO2_linear.pdf}
 	\includegraphics[width=14cm]{img/epsilon_TiO2_symlog.pdf}
 \end{figure}
@@ -110,16 +110,16 @@ The author has observed that $f_c$ determines the constraints for the simulation
  \item{The resonant frequencies of all Lorentzians must be lower than the critical frequency,  %% TODO get a proof, or some citation, or cite MEEP sources where S.G.Johnson wrote a routine about this
 \begin{equation} \frac{\omega_{0m}}{2\pi} < f_c, \text{ for all oscillators, } % \forall m \in \{1,2 \ldots M\}, \label{eq_fdtd_stability}
 \end{equation}
-regardless of the strength $F_m$ or damping rate $\gamma_m$ of the oscillator. 
+regardless of the strength $F_m$ of the oscillator or its damping rate $\gamma_m$. 
 %This relates to the above note about expressing all high-frequency oscillators in the form of the high-frequency (static) permittivity. . 
 } 
- \item{\label{fdtdrules}For all frequencies higher than the critical one $f_c$, the real part of the permittivity, given by Eq. (\ref{eq_lorentz_eps_fdtd}), must exceed a minimum value given by the Courant factor $\cour$,
+ \item{\label{fdtdrules}For all frequencies higher than the critical frequency $f_c$, the real part of the permittivity given by Eq. (\ref{eq_lorentz_eps_fdtd}) must exceed a minimum value given by the Courant factor $\cour$,
 \begin{equation} \varepsilon_r'(2\pi\,f) > 3 \cour^{2} \equiv 3 \left( \frac{c \Delta t}{\Delta x} \right)^{2} \text{ for } \forall f \geq f_c. \label{eq_fdtd_stability_realp}\end{equation}  } % TODO verify whether the limit is eps>0 or e.g. eps>0.5 or whatever 
 A geometrical interpretation of this rule is that an instability is introduced when any wave with a frequency above $f_c$ can travel more than $1/\sqrt{3}$ of one FDTD voxel distance within one time step. 
-Note that in a nonmagnetic medium, the traveled distance is $$\frac{c\Delta t}{\sqrt{\varepsilon_r'}}.$$
+Note that in a nonmagnetic medium, the travelled distance is $$\frac{c\Delta t}{\sqrt{\varepsilon_r'}}.$$
 \end{enumerate}
 Both these rules were observed to hold in media with $\murl = 1$ only; in media with magnetic response they would probably become more complex.
-The FDTD simulation will become unstable if one of these rules is broken. The instability error initially arises from an inevitable numerical noise at the boundary of the problematic material and grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the early field snapshots. Later, the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
+The FDTD simulation will become unstable if one of these rules is broken. The instability error initially arises from inevitable numerical noise at the boundary of the problematic material and it grows exponentially. It can be identified as a pixel-wise checkerboard pattern on the early field snapshots. Later, the field visualisation usually returns black images as the numerical infinity is reached within several tens of FDTD steps. 
 
 \paragraph{Choice of the Courant factor}%{{{
 Provided that a part of the simulation volume is empty vacuum ($\varepsilon_r'=1$), Eq. (\ref{eq_fdtd_stability_realp}) clearly determines the \textit{maximum value of the Courant factor:}\index{Courant factor!maximum value of}
@@ -163,7 +163,7 @@ The region forbidden by the stability rules is yellow shaded (above $f_c = 95$ T
 \end{figure}
 
 First of all, high-frequency oscillators would make the simulation unstable.
-Aside from this, adding overly many oscillators is also inefficient, because each oscillator term increases the computing difficulty of FDTD computations. 
+Aside from this, adding unduly many oscillators is also inefficient, because each oscillator term increases the computing difficulty of FDTD computations. 
 It is therefore advisable to keep the oscillator number to an acceptable necessary minimum, and to describe the material within some frequency range of interest (FRoI) % TODO  define range of interest
 only:
 \begin{enumerate}
@@ -176,7 +176,7 @@ $$(\Delta \varepsilon_r)_m = \frac{F_m}{\omega_{0m}^2}.$$
 If some of the high-frequency oscillators introduces significant dispersion or losses in the FRoI, it should not be eliminated in this way. This usually concerns the oscillator that is the closest to the FRoI, and it usually can be kept without causing instability.
 } 
  \item{
-Very low frequencies, corresponding to wavelengths much greater than the whole simulation volume, are theoretically accessible with a long-enough FDTD simulation, but it would not be practical to extend the FRoI close to the zero frequency. If needed, the low-frequency phenomena can often be computed more efficiently in a separate simulation with a lower resolution or even with different numerical methods.
+Very low frequencies, corresponding to wavelengths much larger than the whole simulation volume, are theoretically accessible with a long-enough FDTD simulation, but it would not be practical to extend the FRoI close to the zero frequency. If needed, the low-frequency phenomena can often be computed more efficiently in a separate simulation with a lower resolution or even with different numerical methods.
 
 The oscillators at too low frequencies can therefore be omitted without any change to the behaviour within the FRoI. One important exception is the low-frequency oscillator that stands for the Drude term and defines the conductive behaviour, as described below.
 } 
@@ -255,7 +255,7 @@ We may now express the low- and high-frequency limits also for conductivity:
 Let us note again that in the literature that uses the negative phase convention $e^{-\ii \omega t}$, the resulting $\varepsilon_r(\omega)$ and $\sigma(\omega)$ are complex conjugated to the above results. 
 %}}}
 \paragraph{Defining resistive metals for stable low-resolution simulations} %{{{
-Simulations in the optical range are relatively safe in terms of numerical stability. From Eq. (\ref{eq_fc}) it follows that the resolution of $\Delta x = 50$ nm, suitable for the near infrared or visible spectrum, yields a critical frequency of $f_c = 3.82\cdot 10^{15}$ Hz ($\lambda = c/f_c \approx 78$ nm), which is far above the plasma frequency of metals or other conductors. Accordingly, no changes to the Drude model are usually required, although the simulation may run faster if one or more Lorentz terms outside the FRoI can be omitted.
+Simulations in the optical range are relatively safe in terms of numerical stability. From Eq. (\ref{eq_fc}) it follows that the resolution of $\Delta x = 50$ nm, suitable for the near infrared or visible spectrum, yields a critical frequency of $f_c = 3.82\cdot 10^{15}$ Hz ($\lambda = c/f_c \approx 78$ nm), which is far above the plasma frequency of metals and other conductors. Accordingly, no changes to the Drude model are usually required, although the simulation may run faster if one or more Lorentz terms outside the FRoI can be omitted.
 %If high precision of the metal model is needed, one is also free to add one or more Lorentz oscillators in the optical/UV range to refine the shape of permittivity.
  
 Realistic simulations of metals at lower resolutions, however, require taking measures to ensure stability, as the critical frequency $f_c$ is reduced below the plasma frequency of most metals when $\Delta x \gtrsim 200$ nm. % TODO check this
@@ -335,13 +335,13 @@ where the function $\psi$ represents either of the electric or magnetic fields.
 Both time- and frequency-domain simulations used in this thesis use complex numbers to represent all field components.
 The whole frequency-domain problem can thus be expressed as a simultaneous optimization of the $\E(\rr), \HH(\rr)$ fields, so that one time-step of FDTD is as similar as possible to the phase rotation of the functions. The angle of the phase rotation is given by the user-defined angular frequency $\omega$. For the optimization to be as efficient as possible, the \textit{stabilized biconjugate gradient}\index{stabilized biconjugate gradient} algorithm \cite{oskooi2010meep} is used. More information on the frequency-domain solver is on the project's website \cite{ab-initio}. 
 
-The modes obtained by frequency-domain simulation can be output with an arbitrary phase offset; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives a sufficient amplitude to be plotted accurately.
+The modes obtained by a frequency-domain simulation can be retrieved with an unknown phase offset; sometimes the real part of either electric or magnetic field can be nearly zero. In such a case, the imaginary part thereof always gives a sufficient amplitude to be plotted accurately.
 
 %}}}
 \paragraph{Comparison to the time-domain computation} %{{{
-To verify their reliability, the results of the finite-difference frequency domain simulation with frequency scanned were compared against the results from the time-domain simulation. 
+To verify their reliability, the results of the finite-difference frequency domain (FDFD) simulation with frequency being scanned over a desired range of values were compared against the results from the time-domain simulation. 
 
-The advantage of the frequency-domain (FDFD) method over the time-domain (FDTD) is a greater efficiency of the field shape at a single frequency, where the computational time of the time-domain methods grows proportionally to the desired spectral resolution. Having both algorithms packed in one library enables extremely easy switching between them. 
+The advantage of the frequency-domain (FDFD) method over the time-domain (FDTD) is a better efficiency of the field shape computation at a single frequency, where the computational time of the time-domain methods grows proportionally to the desired spectral resolution. Having both algorithms packed in one library enables extremely easy switching between them. 
 
 While the spectra of all material properties in FDTD have to conform to the Kramers-Kronig relations, in FDFD the permittivity and conductivity of each medium can be chosen without any limitations.
 A frequency scan of multiple FDFD simulations can thus be more efficient for simulation of materials with unusually complex spectral response, such as superconductors.  
@@ -360,11 +360,11 @@ As a convenient implementation of PWEM, we used the freely available program \te
 
 %}}}
 \paragraph{Comparison to FDTD and FDFD} %{{{
-The shapes of the electric and magnetic field at the edges of each photonic band are important for understanding the physics of periodic structures. Note that the fields inside a photonic band do not usually share the periodicity with the lattice, which makes them harder to interpret. Finding the band edges is an intrinsic feature of PWEM, whereas the same task is only approximate in FDTD and requires a previous search for the band edge frequencies. 
+	The shapes of the electric and magnetic field at the edges of each photonic band are important for understanding the physics of periodic structures. Note that in accordance with the Bloch's theorem, when $\KK$ does not lie in any high-symmetry point of the Brillouin zone, the electric and magnetic field differ by their phase between adjacent unit cells. Thus, their shapes do not share the periodicity with the lattice, which makes them harder to be interpreted from a field visualisation. Finding the band edges is an intrinsic feature of PWEM, whereas the same task is only approximate in FDTD and requires a previous search for the band edge frequencies. 
 
 Scaling of the computational time with the resolution may present a disadvantage compared with FDTD/FDFD, since in a simple implementation it scales with the second power of the resolution for one-dimensional problems, fourth power in 2-D problems and ninth power for 3-D problems. Application of more sophisticated algebra of sparse matrices can, however, partially remedy this.
 
-Perhaps the greatest limitation of the MPB program is that it cannot cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
+Perhaps the most important limitation of the MPB program is that it cannot cope with negative permittivity values. Its applicability is thus restricted to fully dielectric structures only.	
 
 %}}}
 
@@ -392,7 +392,7 @@ This section describes two different approaches to the homogenisation we have im
 %}}}
 \subsection{Retrieval of the scattering parameters} \label{chapter_sparam}
 \paragraph{Principle} %{{{
-The retrieval based on scattering parameters, also known as the \textit{s-parameter}\index{s-parameter method}, \textit{distributed impedance}\index{distributed impedance|see {s-parameter method}} or \textit{Nicolson-Ross-Weir}\index{Nicolson-Ross-Weir method|see {s-parameter method}} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since 1970s to experimentally retrieve the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
+The retrieval based on scattering parameters, also known as the \textit{s-parameter}\index{s-parameter method}, \textit{distributed impedance}\index{distributed impedance|see {s-parameter method}} or \textit{Nicolson-Ross-Weir}\index{Nicolson-Ross-Weir method|see {s-parameter method}} (NRW) method \cite{nicolson1970measurement, weir1974automatic}, has been used since the 1970s to retrieve experimentally the index of refraction $N$ and wave impedance $Z$ of a homogeneous material sample.
 
 The first step to its derivation is that by means of the Fresnel-Airy formulas \cite[p. 329]{born1999book},
 one can easily compute the transmittance $t(f)$ and reflectance $r(f)$ spectra of a slab of any material, provided its thickness $d$, index of refraction $N$ and wave impedance $Z$ are known.  If $r,t$ are known instead, the Fresnel-Airy formulas can be inverted to yield $N$ and $Z$ of the material of the slab. The actual computation is therefore also denoted as \textit{Fresnel inversion}\index{Fresnel inversion}.
@@ -409,7 +409,7 @@ Aside from yielding multiple branches, the physical interpretation of the data c
 \begin{figure}[ht] \centering \caption{The simulation setup for the scattering parameter method. All simulation elements are described in the text.
 % TODO REWRITE, and add the X-Y-Z arrows to the figure}
 } \includegraphics[width=.8\textwidth]{img/meep_geometry.pdf}  \label{fg_fdtd_sparam} \end{figure} %% 
-The setup for the scattering parameter methon is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) with a direction parallel to the $z$-axis. The temporal shape of the waves was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
+The setup for the scattering parameter method is depicted in Fig. \ref{fg_fdtd_sparam}. The wave is emitted from the source plane (green rectangle) in a direction parallel to the $z$-axis. The temporal shape of the waves was not critical for the simulation; a very short pulse, with a spectrum spanning from the GHz range to ca. 5 THz was used. 
 
 Periodic boundary conditions along the $x$- and $y$-axes were set, so that effectively an infinite metamaterial slab was simulated. On both faces perpendicular to the $z$ axis we added regions denoted as \textit{perfectly matched layers}\index{perfectly matched layers} \cite{oskooi2011distinguishing} to absorb all radiation (pink areas in Fig. \ref{fg_fdtd_sparam}). The implementation is based on gradually introducing imaginary part into the voxel dimensions \cite{oskooi2010meep} to prevent reflections with an arbitrary incidence angle, polarisation or frequency of the wave.
 The average electric and magnetic fields in each of the monitor planes (blue rectangles) were recorded  in each simulation step.  
@@ -443,15 +443,15 @@ To the knowledge of the author, such a shift of monitor planes has not been empl
 \paragraph{Scattering-parameter retrieval procedure} %{{{
 The averaged electric and magnetic fields recorded at the first monitor plane will be denoted as $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$. Likewise, those at the second monitor plane will be denoted as $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$. The amplitudes of typical time records are shown and commented in Fig. \ref{fg_sparam_timedomain}.  
 \begin{figure}[ht] \centering \caption{Time-domain records of the fields in the s-parameter-based retrieval method; absolute values of the complex recorded fields at the first $E_{x}^{(1)}(t), H_{y}^{(1)}(t)$ and second $E_{x}^{(2)}(t), H_{y}^{(2)}(t)$ monitor plane.\\
-		The excitation pulse (ca. 2 ps long) excited in the structure two distinct resonances that both decayed exponentially in time with different decay rate, as outlined by the thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation duration  was $t_{sim} =$ 150 ps. \\
+		The excitation pulse (ca. 2 ps long) excited two distinct resonances  in the structure, that both decayed exponentially in time with different decay rates, as outlined by the thin line segments. About 35 ps after the source was switched off, the stronger resonance reduces its intensity below that of the higher quality resonance, which can be clearly seen as a change of the decaying amplitude slope. The simulation duration  was $t_{sim} =$ 150 ps. \\
 After 80 \% of the time record length, the field is multiplied by the smooth envelope function described by Eq. (\ref{eq_envelope}).} \includegraphics[width=.7\textwidth]{img/sim_timedomain_debug.pdf} \label{fg_sparam_timedomain} \end{figure}
 
 The spectral resolution is determined by the length of the time record. The higher quality of resonance, the sharper its spectral features. %is equivalent to coarse sampling on the frequency axis, which cannot fully resolve the shape of the resonance. 
 From the \textit{Fourier-Plancherel theorem}\index{Fourier-Plancherel theorem} %% TODO ref
-it follows that the part of the electromagnetic energy which was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
+it follows that the part of the electromagnetic energy that was coupled to the structure, but was not radiated back until the end of the time record, will be also missing in the spectra in the frequency domain. When the time record is too short and significantly truncates a resonance ring-down, characteristic artifacts in the spectra occur which are very detrimental to further visual and numerical evaluation. 
 
 \label{convolringing}
-Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to a convolution with the $sin(f)/f$ function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}\index{apodization}, does not improve spectral resolution, but it suppresses the visually distracting \textit{ringing artifacts}\index{ringing artifacts}, which are apparent for the quadrupole resonances (see, e.g., Fig. \ref{fg_expe_fishnets}). 
+Using the convolution theorem (see Sect. \ref{subsection_local_resp}), it can be deduced that clipping the recorded fields by a rectangular window in time domain introduces artifacts equivalent to convolution with the $sin(f)/f$ function in the frequency domain. Multiplication of the records with a smooth window function, known also as \textit{apodization}\index{apodization}, does not improve spectral resolution, but it suppresses the visually distracting \textit{ringing artifacts}\index{ringing artifacts}, which are apparent for the quadrupole resonances (see, e.g., Fig. \ref{fg_expe_fishnets}). 
 
 To this end, all four time records were multiplied by the envelope function $g(t)$ before further processing:
 \begin{equation} 
@@ -465,8 +465,8 @@ which ensured that after 80 \% of the overall simulation duration $t_{sim}$ the 
 By means of the Fourier transform, the fields were converted to the frequency domain. This operation is simply denoted as $E_{x}^{(1)}(t) \rightarrow E_{x}^{(1)}(f)$, and so on. 
 \begin{figure}[ht] \caption{An illustration of orientations of the electric field $\E$ (blue), magnetic field $\HH$ (light brown) and wave vector $\kk$ (thick arrow) for the waves registered in the simulation.}  \centering \includegraphics[width=8cm]{img/sim_separating_wave.pdf} \label{fg_separating_wave}\end{figure}
 
-The monitor planes are assumed to be located in vacuum, and at a distance sufficient to eliminate the evanescent waves of the simulated structure. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and the wave vector $\kk$ must a form right-handed triplet. %% TODO reference the M. E. solution
-At both monitor planes, the forward and backward wave are linearly superposed as illustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by using the following relations: 
+The monitor planes are assumed to be located in vacuum, and at a distance sufficient to eliminate the evanescent waves of the simulated structure. It follows that the vectors of the electric field $\E$, magnetic field $\HH$ and the wave vector $\kk$ must form a right-handed triplet. %% TODO reference the M. E. solution
+At both monitor planes, the forward and backward waves are linearly superposed as illustrated in Fig. \ref{fg_separating_wave}. Therefore they can be separated by using the following relations: 
 \begin{equation} 
 	\begin{split}
 		A^{\text{(in1)}}(f)  := \frac{E_{x}^{(1)}(f) + Z_0 H_{y}^{(1)}(f)}{2}, \quad \quad \quad & A^{\text{(out1)}}(f) := \frac{E_{x}^{(1)}(f) - Z_0 H_{y}^{(1)}(f)}{2}\\
@@ -476,8 +476,8 @@ At both monitor planes, the forward and backward wave are linearly superposed as
 The constant $Z_0$ stands for the \textit{vacuum impedance}\index{vacuum impedance}, i.e. the ratio of the electric and magnetic fields of a freely propagating wave. Its universal value in SI units is $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 4\pi c \cdot 10^{-7} \approx 376.7$ $\Upomega$, but in the actual FDTD simulations, the built-in convention of $Z_0 = 1$ was used.
 An example of the wave separation result is plotted in Fig. \ref{fg_ampli}.  
 \begin{figure}[ht] \caption{Separated amplitudes of the forward and backward waves at the first and second monitor planes 
-allow to assess the validity of the results.\\
-The incident wave $A^{\text{(in1)}}(f)$ should have a smooth spectrum (blue curve), as it is directly generated by a broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green curve) and the transmitted one $A^{\text{(out2)}}(f)$ (cyan curve) appear to be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. \\
+allow to assess the validity of the simulation results.\\
+The incident wave $A^{\text{(in1)}}(f)$ should have a smooth spectrum (blue curve), as it is directly generated by a broadband source. The reflected wave $A^{\text{(out1)}}(f)$ (green curve) and the transmitted one $A^{\text{(out2)}}(f)$ (light-blue curve) appear to be somewhat complementary to each other, since squares of their amplitudes should approximately sum up to the square of the incident wave amplitude, or less in case of losses. \\
 The fourth wave $A^{\text{(in2)}}(f)$ should be negligible, as almost all the wave energy is expected to be absorbed by the perfectly matched layers at the $z$-faces of the simulation volume. In practice it is nonzero, also due to numerical imprecision and remaining near-field components of the structure. This relative error in amplitude is usually less than $10^{-3}$.}  \centering \includegraphics[width=10cm]{img/sim_ampli_debug_band.pdf}\label{fg_ampli} \end{figure} 
 
 Finally, one can easily compute the complex scattering parameters $r(f)$ and $t(f)$ as the ratios of the reflected and transmitted wave amplitudes to that of the incident wave, respectively:
@@ -505,7 +505,7 @@ from a 26 $\upmu$m thick strontium titanate (STO) slab \cite{nemec2009tunable}. 
 The permittivity of STO strongly depends on the temperature, and was not known a priori, so it was chosen as $\varepsilon_r(1\text{ THz}) = 365 + 62\ii$ for the simulation to match the experimental spectra.
 \begin{figure} \caption{Experimental transmission $t_{exp}(f)$, compared with numerical reflectance $r(f)$ and transmittance $t(f)$ for strontium titanate bars with a rectangular cross-section $26 \times 66$ $\mu$m$^2$, oriented parallel with the electric field. }  \centering \includegraphics[width=12cm]{img/STObar_rt.pdf} \label{fg_STO_bar_rt} \end{figure} 
 
-In Fig. \ref{fg_STO_bar_rt}, the curves computed using the FDTD simulations are compared with the experimental ones, showing a very good match in three well-resolved resonance peaks, and a high reflectance ($|r| > 0.9$) in most of the spectrum which is caused by a strong impedance mismatch between the dielectric and the surrounding air.
+In Fig. \ref{fg_STO_bar_rt}, the curves computed using the FDTD simulations are compared with the experimental ones, showing very good match in three well-resolved resonance peaks, and high reflectance ($|r| > 0.9$) in most of the spectrum which is caused by a strong impedance mismatch between the dielectric and the surrounding air.
 
 \begin{figure}[ht] \centering \caption{
 Set of simulated absorption spectra, computed as $1-|r^2|-|t^2|$, for different widths of the strontium titanate bar (in micrometers).
