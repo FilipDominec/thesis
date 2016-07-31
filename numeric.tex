@@ -378,7 +378,7 @@ Perhaps the most important limitation of the MPB program is that it cannot cope 
 %\end{enumerate}
 %}}}
 
-\section{Simulation setups for metamaterial homogenization} 
+\section{Simulation setups for metamaterial homogenisation} 
 The general electromagnetic algorithms, %{{{
 such as FDTD, FDFD or FEM, can be employed to find the electromagnetic field behaviour in a wide variety of problems. These algorithms, however, tell nothing about the effective parameters of a metamaterial, unless they are employed in a particular simulation setup. 
 
@@ -743,10 +743,10 @@ With the scattering parameters method, $\Neff(f)$ and $\Zeff(f)$ are retrieved f
 
 The effective parameters $\eeff(f)$ and $\meff(f)$ can however be computed directly by exciting a unit cell of the structure, averaging both the fields ($\E$, $\HH$) and the displacements ($\D$ and $\B$), and dividing the respective displacement by the field. The method is described in Ref. \cite{smith2006homogenization}, where also numerical examples are given. 
 
-%As expected, when $|\Neff'| \not\ll 2\pi/a$ the value of $\eeff$ for wire array retrieved by this averaging method deviates from that one retrieved by the s-parameters method \cite[Fig. 5]{smith2006homogenization}. The author believes that none of methods attempting to homogenize the structure by the local parameters, $\eeff(f)$ and $\meff(f)$, can be exact.
+%As expected, when $|\Neff'| \not\ll 2\pi/a$ the value of $\eeff$ for wire array retrieved by this averaging method deviates from that one retrieved by the s-parameters method \cite[Fig. 5]{smith2006homogenisation}. The author believes that none of methods attempting to homogenise the structure by the local parameters, $\eeff(f)$ and $\meff(f)$, can be exact.
 
 %%% Andriy2010: "Field averaging [15-16]. In this case the fields (E, D, H, B) in a unit cell are averaged on some surfaces and lines and the effective properties are found according to material relations D = İ 0 İE and B = μ 0 μH.  Determining appropriate surfaces and contours is a non-trivial problem especially when optimizing 3D MTM structures."
-%D.R. Smith and J.B. Pendry, Homogenization of metamaterials by field averaging (invited paper), Journal
+%D.R. Smith and J.B. Pendry, Homogenisation of metamaterials by field averaging (invited paper), Journal
 %of the Optical Society of America B, vol. 23, pp. 391-403, Mar. 2006.
 %J. Lerat, N. Malléjac, and O. Acher, Determination of the effective parameters of a metamaterial by field
 %summation method, Journal of Applied Physics, vol. 100, p. 084908, 2006.
@@ -795,18 +795,18 @@ Like in the s-parameters method, the function of $K(\omega)$ can be resolved in 
 
 %\cite{simovski2007bloch} Bloch's material parameters of magneto-dielectric metamaterials and the concept of Bloch's lattices
 %\cite{simovski2009material}Material parameters of metamaterials (a review)
-%\cite{simovski2011electromagnetic} On electromagnetic characterization and homogenization of nanostructured metamaterials
+%\cite{simovski2011electromagnetic} On electromagnetic characterization and homogenisation of nanostructured metamaterials
 
 %\cite{sjoberg2005floquet}
 % Elaborate mathematical treatise on this topic: 
-% A Floquet-Bloch's decomposition of Maxwell's equations, applied to homogenization " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenization is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
+% A Floquet-Bloch's decomposition of Maxwell's equations, applied to homogenisation " The behavior of the solutions of a PDE with rapidly oscillating coefficients, considered over distances large compared to the oscillations, is in several respects similar to the solutions of a PDE with slowly varying coefficients.   The problem of homogenisation is to find these slowly varying coefficients by an ap- propriate limit process of the rapidly oscillating ones"
 %\cite{hasar2011retrieval}  Retrieval approach for determination of forward and backward wave impedances of bianisotropic metamaterials
 %}}}
 \paragraph{Concluding remarks}%{{{
 Other homogenisation methods include the \textit{multipole expansion} \cite{vynck2009all, petschulat2008multipole}, \textit{quasimode theory} \cite{sun2009effective}, or other advanced approaches as discussed by Simovski \cite{simovski2007bloch, simovski2009material, simovski2011electromagnetic, tsukerman2011nonlocal}.
 Without much exaggeration it can be concluded that there are roughly as many homogenisation methods as authors involved in the research of periodic structures. All such methods work reliably in the easy cases:
 \begin{displayquote}
-\textit{Homogenization theories are typically valid when the unit-cell size is insignificant with respect to the wavelength (the zero-frequency limit) and thus might be expected to result in a poor description of metamaterials.}
+\textit{Homogenisation theories are typically valid when the unit-cell size is insignificant with respect to the wavelength (the zero-frequency limit) and thus might be expected to result in a poor description of metamaterials.}
 \cite{smith2006homogenization} 
 \end{displayquote}
 Indeed, in most practically encountered metamaterials today, the wavelength is not more than an order of magnitude smaller than the unit cell. %so the homogenisation results deviate from each other. Moreover, the choices for one particular method among other is usually not justified by any rigorous basis in the literature. 
@@ -819,7 +819,7 @@ As a matter of fact, the mistake might have been made already during the \textit
 From the literature available, the author of this thesis conjectures that systematic homogenisation in terms of the spatially dispersive (Landau-Lifshitz) permittivity $\epsLL(\omega,\KK)$ should prevent most striking quirks arising in the local homogenisation methods. All problems involving an interface then also need to be complemented by the additional boundary conditions \cite{agranovich2006spatial}.
 However, computations and the application are more complex for the medium described by the spatially-dispersive effective parameter, than for a medium described by local parameters. This is the price that would have to be paid for its more general validity.
 
-In this thesis, we restrict the discussion to the scattering parameters method, pointing out where it is applicable, and where its result cease to make any sense. The current-driven homogenization then remains as a good reference to compare the results with.
+In this thesis, we restrict the discussion to the scattering parameters method, pointing out where it is applicable, and where its result cease to make any sense. The current-driven homogenisation then remains as a good reference to compare the results with.
 
 %}}}
 

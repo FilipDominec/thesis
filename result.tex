@@ -410,7 +410,7 @@ The reason is in that with the sSRR-wire structure, $|r(f)|$ is a linear superpo
 
 Both scattered components, $r_1(f)$ and $r_2(f)$, are complex functions. The phase of the wave scattered by a resonant element differs almost by $\pi$ when $f$ is below and above the resonance. The impact on the plot of the overall reflectance is in a change from a constructive to destructive interference between the two components. 
 
-Such typical spectral features, observed whenever a narrower resonance overlaps with another broader one, are known as \textit{Fano resonances}\index{resonance!Fano resonance}, and can be found on most following plots of $|r(f)|$ or $|t(f)|$. The Fano spectral profile comes from a natural interference between waves scattered by different mechanisms: whenever the spectrum of a structure close to a magnetic dipole resonance does not fall into the class of possible Fano resonance profiles, it suggests the homogenization has failed. For an example of such an error, see the spectra of the asymmetric SRR in Fig. \ref{fg_SRR_principles}.  
+Such typical spectral features, observed whenever a narrower resonance overlaps with another broader one, are known as \textit{Fano resonances}\index{resonance!Fano resonance}, and can be found on most following plots of $|r(f)|$ or $|t(f)|$. The Fano spectral profile comes from a natural interference between waves scattered by different mechanisms: whenever the spectrum of a structure close to a magnetic dipole resonance does not fall into the class of possible Fano resonance profiles, it suggests the homogenisation has failed. For an example of such an error, see the spectra of the asymmetric SRR in Fig. \ref{fg_SRR_principles}.  
 %Complementary observations can be made with the transmittance spectrum, as both kinds of structures have negligible losses.
 
 %}}}
@@ -428,7 +428,7 @@ In all cases, the outer ring radius was $\rho = 30$ $\mu$m, conductor cross-sect
 \begin{overpic}[width=0.85\textwidth]{img-meep/SRR_principles_mu.pdf}\put (-1,28) {\textbf{(e)}} \end{overpic}\vspace{-0.030\textwidth}\\
 \end{tabular}
 \end{figure}
-\begin{figure}[h] \caption[Dispersion curves for split-ring resonator with and without a wire mesh (comparison of the CDH and s-parameter results)]{Current-driven homogenization results, shown as bubbles,  indicating the dispersion curves 
+\begin{figure}[h] \caption[Dispersion curves for split-ring resonator with and without a wire mesh (comparison of the CDH and s-parameter results)]{Current-driven homogenisation results, shown as bubbles,  indicating the dispersion curves 
 	for \textbf{(a)} a symmetric split-ring resonator and \textbf{(b)} the same with a wire mesh. The area of each bubble corresponds to the relative amplitude of the respective harmonic component at the given frequency. The results of the scattering-parameters method are overlayed as green lines; these show the same data as the green and blue solid lines from Fig. \ref{fg_SRR_principles}c. In the right panel, the negative-index range of frequencies between 630 and 670~GHz was mirrored against the $K=0$ vertical axis and plotted by a dashed green line.} \label{fg_cdh5} \centering  % todo add params SRRArray_comment=symmetric SRR_simtime=2.000e-10_wirethick=0.000e+00_splitting2=1.600e-05_radius=3.000e-05_model=SRRArray.pdf
 	% TODO recalculate and update
 	\vspace{.1\textwidth}
@@ -445,7 +445,7 @@ In all cases, the outer ring radius was $\rho = 30$ $\mu$m, conductor cross-sect
 \end{figure}
 
 % todo possibly recalculate CDH for the SRR as in \ref{fg_SRR_principles}
-%\begin{figure}[h] \caption{Current-driven homogenization results for the split-ring resonator \textbf{(a)} without the wire mesh and \textbf{(b)} with the wire mesh. 
+%\begin{figure}[h] \caption{Current-driven homogenisation results for the split-ring resonator \textbf{(a)} without the wire mesh and \textbf{(b)} with the wire mesh. 
 	%} \label{fg_cdh4} \centering 
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRR.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 	%\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SRRWire.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
@@ -502,7 +502,7 @@ A more detailed parametric scan through these problematic values of $\rho_c$ can
 The effective parameters retrieved by the s-parameters method become easy to interpret for $\rho_c \geq 18$ $\upmu$m. The antiparallel resonance at 690~GHz is again well separated from the magnetic one, which remains near its original frequency (dark blue curves in Fig. \ref{fg_emSRR_icr}). Further explanation of these results is beyond the capabilities of the scattering parameters method, and necessitate the more expensive computational approach using the current-driven homogenisation (CDH) method.
 
 %}}}
-\begin{figure}[t] \caption[Dispersion curves for the electro-magnetic resonator for $\rho_c\in{6,8}$ $\upmu$m (comparison of the CDH and s-parameter results)]{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering %{{{
+\begin{figure}[t] \caption[Dispersion curves for the electro-magnetic resonator for $\rho_c\in{6,8}$ $\upmu$m (comparison of the CDH and s-parameter results)]{Current-driven homogenisation results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 6$ $\mu$m, \textbf{(b)} $\rho_c = 8$ $\mu$m.} \label{fg_cdh1} \centering %{{{
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap06.pdf}  
 	\put(1,96) {\textbf{(a)}} 
@@ -516,7 +516,7 @@ The effective parameters retrieved by the s-parameters method become easy to int
 \end{overpic}
 \end{figure}
 %}}}
-\paragraph{Current-driven homogenization and spatial dispersion}%{{{
+\paragraph{Current-driven homogenisation and spatial dispersion}%{{{
 CDH results for the same structure parameters, $\rho_c\in\{6,8,10,18\}$ $\upmu$m are presented in Figs. \ref{fg_cdh1} and \ref{fg_cdh2}. For comparison, the dispersion curves corresponding to the $\Neff'(f)$ retrieved by the scattering parameters method are shown by green lines.
 
 For $\rho_c=6$ $\upmu$m, both retrieval methods yield relatively similar results, and they correctly identify two indirect band gaps corresponding to the magnetic and antiparallel electric resonances, respectively. The match is not as good as in Fig. \ref{fg_cdh5}, though. Namely the magnetic resonance around 800~GHz appears somewhat wider when retrieved by the s-parameters method, compared to CDH. The deviation can be attributed to the structure being surrounded by vacuum instead of sensing the near fields of the surrounding cells (c.f. page \pageref{cdhadvantages}).
@@ -528,7 +528,7 @@ The spatial dispersion is even more evident in Fig. \ref{fg_cdh2}, where the fre
 These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic band becomes a relatively flat function of the wavenumber $K$. Both resonances are then retrieved correctly again, except for a systematic error in the frequency determination which may arise from the already discussed difference in the simulation geometry used by the s-parameters method.
 
 %}}}
-\begin{figure}[t] \caption[Dispersion curves for the electro-magnetic resonator for $\rho_c\in{10,18}$ $\upmu$m (comparison of the CDH and s-parameter results)]{Current-driven homogenization results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering %{{{
+\begin{figure}[t] \caption[Dispersion curves for the electro-magnetic resonator for $\rho_c\in{10,18}$ $\upmu$m (comparison of the CDH and s-parameter results)]{Current-driven homogenisation results for the combined electric-magnetic resonator, differing by the inner capacitor radius \textbf{(a)} $\rho_c = 10$ $\mu$m, \textbf{(b)} $\rho_c = 18$ $\mu$m.} \label{fg_cdh2} \centering %{{{
 	\vspace{.1\textwidth}
 	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_emcSRRcap10.pdf}  
 	\put(1,96) {\textbf{(a)}} 
@@ -544,10 +544,10 @@ These issues persist until $\rho_c \geq 18$ $\upmu$m, when the second photonic b
 %}}}
 \paragraph{Is this a negative-refraction structure?}%{{{
 The electro-magnetic resonator was examined as an example structure which, particularly in its magnetic resonance, exhibits a strong electric quadrupole moment, leading to a prominent spatial dispersion. Figures \ref{fg_cdh1} and \ref{fg_cdh2} illustrated that not only the s-parameters retrieval algorithm fails, but also the very idea of describing the structure behaviour in terms of refractive index $\Neff(f)$ cannot describe all dispersion curves observed the physical reality.
-A similar failure of the s-parameters method in homogenization of an array of SRRs in a wire lattice was reported previously, \cite{rockstuhl2008transition}, showing that $\Neff(f)$ can be determined only for a relatively big spacing between the metallic  elements.
+A similar failure of the s-parameters method in homogenisation of an array of SRRs in a wire lattice was reported previously, \cite{rockstuhl2008transition}, showing that $\Neff(f)$ can be determined only for a relatively big spacing between the metallic  elements.
 % TODO \cite{marques2011bulk} Magneto-Inductive Waves -- at frequencies near the ring resonance and come from the inductive coupling between rings
 % ... and maybe this was noted by Silveirinha2009
-% Nonlocal homogenization of an array of cubic particles made of resonant rings
+% Nonlocal homogenisation of an array of cubic particles made of resonant rings
 
 For particular values of the inner capacitor radius $\rho_c \in \langle8,16\rangle$ $\upmu$m, the second photonic band supports simultaneously a wave of group velocity collinear with the phase velocity, and an \textit{additional wave}\index{additional wave} with a higher wavenumber and opposite direction of these velocities. 
 
@@ -740,7 +740,7 @@ An experiment involving a similar sample was published previously \cite{yakiyama
 
 % todo add some links to Zhao etc.?
 %}}}
-%   SKIP  \begin{figure}[h] \caption{Current-driven homogenization results for TiO$_2$ spheres %{{{
+%   SKIP  \begin{figure}[h] \caption{Current-driven homogenisation results for TiO$_2$ spheres %{{{
 %    \textbf{(a)} without wires and  \textbf{(b)} embedded in a wire mesh.} \label{fg_cdh3} \centering 
 %    	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresTiO2.pdf}  \put(1,96) {\textbf{(a)}} \end{overpic}
 %    	\begin{overpic}[width=.48\textwidth]{img-cdh/cdh_SpheresLossLess.pdf}  \put(1,96) {\textbf{(b)}} \end{overpic}
@@ -1132,7 +1132,7 @@ The first photonic band is obviously accurately matched by both simulation setup
 
 %}}}
 \begin{figure}[t] % fg_cdh_yslit %{{{
-	\caption{Current-driven homogenization results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} The same for a fishnet with the hole periodicity was $a_x=a_y =$ 250 $\upmu$m, the slab periodicity $a_z =$ 52 $\upmu$m and the circular holes had radius of 55 $\upmu$m (the same proportions as in Ref. \cite{navarro2011dual}). The CDH approach predicts a negative index of refraction (points), whereas the s-parameter approach gives unrealistic values (green line). } \label{fg_cdh_yslit} 
+	\caption{Current-driven homogenisation results for \textbf{(a)} an infinite array of metallic slabs $20$ $\mu$m thick of periodicity $a_z = 60$ $\mu$m, divided by slits of $d_x = 20$ $\mu$m with the periodicity $a_x = 100$ $\mu$m. \textbf{(b)} The same for a fishnet with the hole periodicity was $a_x=a_y =$ 250 $\upmu$m, the slab periodicity $a_z =$ 52 $\upmu$m and the circular holes had radius of 55 $\upmu$m (the same proportions as in Ref. \cite{navarro2011dual}). The CDH approach predicts a negative index of refraction (points), whereas the s-parameter approach gives unrealistic values (green line). } \label{fg_cdh_yslit} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
 	\vspace{-5mm}
@@ -1232,7 +1232,7 @@ If the holes are anisotropic, the described effect is more sensitive to the hole
 
 %}}}
 \begin{figure}[t] % fg_cdh_comp %{{{
-	\caption{Current-driven homogenization results for two samples of fishnets shown in Fig. \ref{fg_fishnet28_photo};  \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m} \label{fg_cdh_fncomp} 
+	\caption{Current-driven homogenisation results for two samples of fishnets shown in Fig. \ref{fg_fishnet28_photo};  \textbf{(a)} holes of $180\times 200$ $\mu$m,  \textbf{(b)} holes of $230\times 255$ $\mu$m} \label{fg_cdh_fncomp} 
 	% CDH_Fishnet_xholesize\=2.000e-05_simtime\=2.000e-10_resolution\=4.000e-06_cellsize\=6.000e-05_cellsizexy\=1.000e-04_slabthick\=2.000e-05_yholesize\=inf.pdf
 	\centering 
 	%\vspace{.1\textwidth}
@@ -1250,7 +1250,7 @@ If the holes are anisotropic, the described effect is more sensitive to the hole
 	\end{overpic}
 \end{figure}
 %}}}
-\paragraph{Comparison of homogenization methods for fishnets} %{{{
+\paragraph{Comparison of homogenisation methods for fishnets} %{{{
 %\cite{croenne2009left}
 %CROE09 250x180um elliptic holes in thin gold films, 30-44 um spacing only, left-handed at 450~GHz (First in THz band)
 %CROE09 negative phase advance requires at least two layers stacked? This would 
