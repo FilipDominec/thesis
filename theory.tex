@@ -541,7 +541,7 @@ where we make use of the wavefront projection tensor defined as
 
 %}}}
 \paragraph{Other formulations}%{{{
-Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium-related effects in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible gauge transformations of medium parameters under which the Maxwell equations are invariant. 
+Let us note that the classical approach using symmetric parameters $\epsrl(\omega,\kk),\murl(\omega,\kk)$, and the Landau-Lifshitz approach of gathering all medium properties in the permittivity $\epsLL(\omega,\kk)$ are only two examples of all possible gauge transformations of medium parameters under which the Maxwell equations are invariant. 
 Formally, one can distribute the medium electric and magnetic responses between these parameters arbitrarily -- the distribution weight may be even frequency dependent, leading to a physically realistic pair of parameters with custom spectral shape \cite{skaar2014diamagnetism}.
 %}}}
 
@@ -926,12 +926,12 @@ Note this does not contradict the ambiguity of choice of the Bloch's wavevector 
 %}}}
 \paragraph{Brillouin zones in the reciprocal space} %{{{ 
 
-The periodically repeating one-dimensional interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}\index{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}\index{Brillouin zone}. 
+The periodically repeating interval of $K\in\langle-\pi/a, \pi/a\rangle$ can be viewed as the unit cell in the space of wave vectors, i.e. in the \textit{reciprocal space}\index{reciprocal space}. This unit cell is then denoted as the first \textit{Brillouin zone}\index{Brillouin zone}. 
 
 In two or three dimensions, any $m$-th Brillouin zone is defined as the set of all points for which the center point $K=0$ is the $m$-th closest point from the regular lattice of all points where $\KK = (2\pi m_1/a, 2\pi m_2/a, \ldots)$ for $m_1, n_2, \ldots \in \mathbb{Z}$.
 All Brillouin zones have equal measure (i.e. length, area or volume), and moreover, they can be transformed into the first one by simple translation. %% TODO specify what this re-arrangement means
 
-In the one-dimensional case the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $$K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$$ for the second one etc. 
+In the 1-D case, the definition of higher Brillouin zones trivially consists in dividing the axis symetrically into equal intervals, such as $$K\in\langle-2\pi/a, -\pi/a\rangle \cup \langle \pi/a, 2\pi/a\rangle$$ for the second one etc. 
 
 In two or three dimensions the shapes of higher Brillouin zones become much more complex, and are unlike to each other \cite[pp. 134--135]{klingshirn2007semiconductor}: in two dimensions, all Brillouin zones are composed of polygons that are connected in their vertices to enclose the previous Brillouin zone \cite[p. 126]{brillouin2003wave}. Similarly, in three dimensions, they are composed of polyhedra connected by their edges, and their shape roughly resembles sphere shells. 
 
@@ -946,7 +946,7 @@ A more detailed listing and comparison of Brillouin zone shapes is beyond the sc
 \begin{figure}[t] \caption{High-symmetry points in the reciprocal $\KK$-space and the Brillouin zones for \textbf{(a)} a two-dimensional square lattice and \textbf{(b)} a three-dimensional cubic lattice. For these lattices, the first Brillouin zones have square and cubic shapes, respectively. In each figure, one of the irreducible Brillouin zones is highlighted.  } \label{fg_phcbrillouin} \centering 
 	\includegraphics[width=.9\textwidth]{img/PhC_high_symmetry_points.pdf}
 \end{figure}
-The fundamental difference between plotting one dispersion curve and the isofrequency contours (IFCs) is that IFCs provide information about the dispersion for a two-dimensional subspace of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (cf. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
+The fundamental difference between plotting one dispersion curve and the isofrequency contours (IFCs) is that IFCs provide information about the dispersion for a two-dimensional subspace of the wave vector $\KK$, whereas the dispersion curve is limited to a 1-D scan along some line in the $\KK$-space (cf. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
 
 A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out its inner surface.
 
@@ -1356,7 +1356,7 @@ Even some recent papers \cite{tsukerman2011nonlocal} define MMs as
 
 Studies of MMs and PhCs were both inspired by a wave propagating through the lattice of a natural crystal. The difference was however that in the case of MMs, it was an \textit{optical} wave, whereas in the case of PhCs the inspiration came from the \textit{electron wavefunction}. The wavelength of the valence-band electrons is similar to the inter-atomic distance ($\approx 10^{-10}$ m), always requiring the description by the Bloch's theorem, whereas the wavelength of light is roughly four orders of magnitude larger, enabling one to approximate the crystal as a homogeneous medium.
 
-Analogously, the earlier metamaterials (or, artificial dielectrics) were mostly thought of as deeply subwavelength, which provided a clear and easy distinction from all PhCs. It also allowed to neglect spatial dispersion for the wave. The situation however appears to change with realistic MMs scaling to the optical range, since the wavelength becomes of the same order of magnitude as the unit cell size and both regions start to overlap as illustrated in Fig. \ref{fg_mm_phc_diagram}. Besides, the PhC-MM boundary then becomes also frequency dependent.
+Analogously, the earlier metamaterials (or, artificial dielectrics) were mostly view\-ed as deeply subwavelength, which provided a clear and easy distinction from all PhCs. It also allowed to neglect spatial dispersion for the wave. The situation however appears to change with realistic MMs scaling to the optical range, since the wavelength becomes of the same order of magnitude as the unit cell size and both regions start to overlap as illustrated in Fig. \ref{fg_mm_phc_diagram}. Besides, the PhC-MM boundary then becomes also frequency dependent.
 
 \begin{figure}[h] \caption{Rough illustration of the ratio of the Bloch's wavelength ($2\pi/K$) to the unit cell size $a$ in metamaterials and photonic crystals} \label{fg_mm_phc_diagram} \centering \includegraphics[width=.4\textwidth]{img/mm-phc-diagram.pdf} \end{figure}
 %}}}
@@ -1389,7 +1389,7 @@ Also the demand for "artificiality" in some other definitions appears to be some
 	\textit{Metamaterial is an arrangement of artificial structural elements, designed to achieve advantageous and unusual electromagnetic properties} \cite{metamorphose-web} 
 \end{displayquote}
 
-Some confusion may arise from the fact that some authors seem to overly broaden the applicability of the popular term of metamaterials. For example, two-dimensionally periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and in the author's view should be denoted as \textit{metasurfaces}.
+Some confusion may arise from the fact that some authors seem to overly broaden the applicability of the popular term of metamaterials. For example, two-dimension\-al\-ly periodic structures, in which a wave interacts with a single layer of unit cells only, have substantially different behaviour and applications, and in the author's view should be denoted as \textit{metasurfaces}.
 
 It is even more unfortunate to associate the concept of MMs with one iconic design of a unit cell. Under no thinkable definition can a metamaterial be made by attaching a single split-ring resonator to a microwave transmission line. 
 %As one other of many lamentable examples, it also does not seem appropriate to focus a whole chapter of a metamaterial textbook % TODO CITE PAGES
