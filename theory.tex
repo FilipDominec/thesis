@@ -69,7 +69,7 @@ The solutions of Eq. (\ref{eq_wavek}) for a harmonic plane wave in vacuum can be
 \begin{enumerate}
  \item{\textit{Transverse electromagnetic waves}, with the electric field and wave vector being perpendicular, i.e. $(\kk \cdot \E) = 0$ and thus $\TT\E = \E$. Therefore, the \textit{dispersion relation}\index{dispersion!in vacuum} for a transverse plane wave in vacuum is linear:
 \begin{equation} k~= \sqrt{\mu_0 \varepsilon_0}\; \omega = \frac{\omega}{c}, \label{eq_dispeq_vac}\end{equation}
-	where we defined the \textit{light velocity}\index{velocity!of light in vacuum} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular \textit{right-handed triplet}\index{right-handed triplet} $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (c.f. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed}\index{medium!right-handed} media.
+	where we defined the \textit{light velocity}\index{velocity!of light in vacuum} $c := \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$. The corresponding solution is plotted in Fig. \ref{fg_dcvac}, independent of the orientation of the wavevector $\kk$. As an unanimously accepted convention, the pseudovector $\HH$ is chosen to be oriented so that the perpendicular \textit{right-handed triplet}\index{right-handed triplet} $\E,\HH,\kk$ can be easily indicated with the thumb, index and middle finger of the right hand (cf. Fig. \ref{fg_separating_wave}). Vacuum is thus an example of the broad group of \textit{right-handed}\index{medium!right-handed} media.
 } 
  \item{\textit{Longitudinal electromagnetic waves}, with $\kk\,|| \pm \E$ and $\TT\E = 0$, require the right side of Eq. (\ref{eq_wavek}) to be zero. In vacuum, there is no such a solution, except for a homogeneous static electric field ($k = 0, \omega = 0$), but they will be shown to exist in dispersive media.} 
  \end{enumerate}
@@ -400,7 +400,7 @@ this is also known as the spatial \textit{walk-off}\index{spatial walk-off}.
 Fig. \ref{fg_ifc2}c shows again the special case of the anisotropic medium, where the wave propagates near an optical axis, and thus where the Snell law can still be used to determine the refraction of a plane wave, based the generalized notion of the index of refraction.
 However, there is a pitfall if one tries to apply the Snell law for prediction of how the beam will refract. The problem originates from the differential nature of the group velocity definition in Eq. (\ref{eq_vg}). 
 %While the magnitude of the wavevector changes only negligibly, with the square of a 
-While the phase velocity of a monochromatic wave at the frequency $\omega_0$ does not appreciably change upon a small deviation of the angle $\alpha$ from the optical axis  [c.f.  Eq. (\ref{eq_osculating})], the group velocity direction does, because it has a nonzero linear component in its dependence on the wavevector:
+While the phase velocity of a monochromatic wave at the frequency $\omega_0$ does not appreciably change upon a small deviation of the angle $\alpha$ from the optical axis  [cf.  Eq. (\ref{eq_osculating})], the group velocity direction does, because it has a nonzero linear component in its dependence on the wavevector:
 $$ \frac{\partial \vg(\kk)}{\partial \alpha} \neq 0.$$
 As a result, the group velocity in anisotropic media is always much more sensitive to the angle than the phase velocity, and Snell law does not predict it correctly. It can be regarded as a spatially-dependent manifestation of the group velocity dispersion.
 
@@ -506,7 +506,7 @@ because for reasonably shaped functions the temporal and spatial derivatives com
 
 %% todo how this transform is denoted?
 With the \textit{gauge freedom}\index{gauge freedom in electrodynamics} of choice of $\mathbf{X}$, we impose the above mentioned requirement that whole magnetic response of the matter is expressed by the constitutive equation for permittivity. Therefore in the spatially dispersive theory, the constitutive equation 
-for magnetic induction is defined as the same as in vacuum, c.f. Eq. (\ref{eq_ce}):
+for magnetic induction is defined as the same as in vacuum, cf. Eq. (\ref{eq_ce}):
 \begin{equation} \mu_0 \HHsd := \mu_0 \murl(\omega) \HH = \B. \label{eq_mu_sd}\end{equation}
 When this equation is rearranged into the form similar to \ref{eq_HHsd}, we obtain a prescription for the sought $\mathbf{X}$: 
 $$ \HHsd = \HH + (\murl(\omega) -1)\HH = \HH + \underbrace{\left(\frac{\murl(\omega)-1}{\mu_0\murl(\omega)}\right)\B}_{=:\,\partial\mathbf{X}/\partial t}$$
@@ -516,7 +516,7 @@ The new electric displacement $\Dsd$ in the  Landau-Lifshitz model, that also ac
 \begin{equation} \Dsd := \D - \ii\kk\times \mathbf{X} =  \D - \ii  \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times \B  \label{eq_Dsd2}\end{equation}
 By means of the other Maxwell equation (\ref{eq_me3}), the magnetic induction $\B$ can be substituted by $\kk\times\E / \omega$ to obtain an expression that contains the electric quantities only.
 \begin{equation} \Dsd = \D - \frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \kk\times(\kk\times \E).  \label{eq_Dsd3}\end{equation} 
-Double vector multiplication on the right hand side can be identified with the wavefront projection tensor $\TT$, c.f. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
+Double vector multiplication on the right hand side can be identified with the wavefront projection tensor $\TT$, cf. Eqs. (\ref{eq_rotrot}, \ref{eq_transverse1}):
 \begin{equation} \Dsd = \D + \frac{k^2}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right) \, \TT \E,  \label{eq_Dsd4}\end{equation} 
 
 %}}}
@@ -886,7 +886,7 @@ Note that the actual physical shape of the fields in space,  $\E(\rr)$ and $\HH(
 \label{par_disp_curv_per}
 The inherent ambiguity of the description on the basis of the Bloch's wave can be used to save space in the plot by showing the dispersion curves only for $K\in\langle-\pi/a, \pi/a\rangle$, as shown in Fig. \ref{fg_phcfolding}c. Plotting any other interval of equal width would be equivalent \cite[p. 177]{brillouin2003wave}. 
 
-The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (c.f. Fig. \ref{fg_dcllactivity}) or those breaking the time-reversal symmetry (c.f. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
+The space of the plot can be further halved, since all forward and backward propagating solutions are symmetrical with respect to the vertical $K=0$ axis, except for structures with optical activity (cf. Fig. \ref{fg_dcllactivity}) or those breaking the time-reversal symmetry (cf. Ref. \cite{vanwolleghem2009unidirectional}), which are not discussed in this thesis. 
 
 In many papers on periodic structures, all dispersion curves are plotted as \textit{folded}\index{dispersion!curves,folding of} into the $K\in\langle -\pi/a, \pi/a\rangle$ region only \cite{obrien2002photonic, yannopapas2005negative, chakrabarti2012magnetic}, while some employ the symmetry to fold  all curves further into the $K\in\langle0, \pi/a\rangle$ range. % (e.g. \cite{}). 
 In some other references, such as \cite{mortensen2010unambiguous} or \cite{yeh1977electromagnetic}, unfolded dispersion curves are used.
@@ -946,7 +946,7 @@ A more detailed listing and comparison of Brillouin zone shapes is beyond the sc
 \begin{figure}[t] \caption{High-symmetry points in the reciprocal $\KK$-space and the Brillouin zones for \textbf{(a)} a two-dimensional square lattice and \textbf{(b)} a three-dimensional cubic lattice. For these lattices, the first Brillouin zones have square and cubic shapes, respectively. In each figure, one of the irreducible Brillouin zones is highlighted.  } \label{fg_phcbrillouin} \centering 
 	\includegraphics[width=.9\textwidth]{img/PhC_high_symmetry_points.pdf}
 \end{figure}
-The fundamental difference between plotting one dispersion curve and the isofrequency contours (IFCs) is that IFCs provide information about the dispersion for a two-dimensional subspace of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (c.f. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
+The fundamental difference between plotting one dispersion curve and the isofrequency contours (IFCs) is that IFCs provide information about the dispersion for a two-dimensional subspace of the wave vector $\KK$, whereas the dispersion curve is limited to only a one-dimensional scan along some line in the $\KK$-space (cf. Fig. \ref{fg_ifc_dc}). The limitation is even more significant in the case of three dimensions, where it is virtually impossible to visualize the frequency $\omega(\KK)$ as a function of three components of $\KK$.
 
 A hybrid approach can be taken, however, that maintains most of the physical information about the dispersion in the two- or three-dimensional structures. It consists in plotting the  dispersion curves around the boundary or edges of one selected irreducible Brillouin zone. It is expected that no important information is lost by leaving out its inner surface.
 
@@ -1122,7 +1122,7 @@ The same mechanism causing the radio wave reflection from the dilute plasma in t
 
 \textit{Negative permeability}\index{permeability!negative} manifests itself similarly to the electrodynamic point of view, but is observed much less often, typically above magnetic resonances, \textit{magnons}\index{magnons!bulk}.
 
-Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}\index{index of refraction!negative, history of}, or slightly more generally, those with antiparallel group and phase velocities (c.f. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in the 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1957 by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
+Theoretical investigation of electrodynamics in media with a \textit{negative index of refraction}\index{index of refraction!negative, history of}, or slightly more generally, those with antiparallel group and phase velocities (cf. Chapter \ref{chap_vfvg}), can be traced back \cite{agranovich2006spatial} to early discussions of anomalous dispersion near resonances by Lamb or in a 1904 book from Schuster \cite{schuster1904introduction, boardman2005negative}. Mandelshtam's lectures on optics illustrated negative refraction of light in the 1940s \cite{mandelstam1971lectures} and were further complemented, among others, in 1957 by Sivukhin's discussion of energy concerns \cite{sivukhin1957energy} and Pafomov's notes about reversed \v{C}erenkov radiation \cite{pafomov1956cerenkov}. 
 
 It was Veselago's review of the negative-index homogeneous media from 1968 that received later significantly wider attention in the literature \cite{veselago1968}. Veselago used % is he first?
 the term of \textit{left-handed media}\index{media!left-handed} and speculated to what extent they might exist in the nature, but he did not discuss the way of realizing such media, nor the more general theory of the spatial dispersion which may also lead to natural negative refraction.
