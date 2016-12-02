@@ -1,0 +1,106 @@
+== Introduction ==
+
+Light in MMs vs. light in PhCs    <-inspired by->   PHOTONS a crystal vs ELECTRONS in a crystal [fig.]
+
+[figure of 1940's artificial diel] early metamaterials (known as Artificial dielectrics) used to enhance or reduce eff. permittivity 
+
+[figure of 1980's Yablonovite]    Engineering of the photonic band gap (c.f. electrons in crystal)
+
+these two notions existed separately for a long time 
+The fundamental difference was in the ratio of periodicity compared to the wavelength (λ = 2π/k); for PhC a~λ, for MM a<<λ
+
+However, as the metamaterial research approaches the optical region, a ceases to be *much* smaller than λ
+This is not only technological issue, since it is determined by available materials 
+
+Since 2000s, the research is getting into the boundary region between PhCs and MMs. [citations of NIR/optical MMs] 
+We must carefully review the simple approaches to MMs that worked in the a<<λ limit!
+
+
+
+== Dielectric rods ==
+The structure under investigation
+Dielectric-rod photonic crystal (with ε=100)  [TODO - citations]
+Dielectric-rod metamaterial (with ε=100) [TODO - citations again]
+
+PhC with r/a=0.1
+
+negative-index MM r/a=0.12
+
+Changing the radius-to-period parameter - continuous
+
+Changing the radius-to-period parameter - user plot [cite our paper]
+
+Do effective ε and μ make any sense? [TODO citations & screens from 'Antiresonance discussion']
+We arrived to a metamaterial where N makes physical sense, but we get no physical understanding when we transform it into effective ε and μ.
+
+
+
+
+== Dispersion relations in spatially dispersive media == 
+The trouble in using ε and μ is that they only describe the local response
+but the medium may be nonlocal, i.e., spatially dispersive
+We need additional degrees of freedom, ε(k) and μ(k)
+
+Using nonlocal effective parameters brings much complexity, but it can be simplified a little:
+By a gauge transform, H->H', D->D' as such (TODO EQs.)
+and thus μ(k)= 1 and ε(k)=...
+Thus the metamaterial optical properties can be contained in this single nonlocal parameter (without any change of M. E.)
+
+How does the new description compare to the old one in terms of dispersion curves?  [Fig 2.10b] (+ keep equation of  ε(k)=... )
+
+What about spectrally overlapping magnetic and electric dipole  resonances? [Fig 2.10c]  (+ keep equation of  ε(k)=... )
+
+Additional degrees of freedom to describe inter-cell coupling due to quadrupoles [FIG]
+
+
+== Electro-magnetic split-ring resonators == 
+the exact dimensions of structures in Fig. 5.16, especially the dimensions of capacitive pads
+
+
+% TODO extracted spatially dispersive material parameters?
+
+== Conclusions == 
+
+The project containing scripts facilitating numerical simulations of metamaterials was made publicly available [TODO Fig. github]
+
+The array of dielectric cylinders illustrates the transition between 
+
+With the up-to-date metamaterials approaching the photonic-crystal regime, spatial dispersion must be considered
+Careless seek for local parameters of such metamaterials has lead to puzzling, nonphysical results in numerous papers
+
+
+
+
+% should explicitly state what are the novel results achieved
+
+
+== (separate numbering) Dr. Jelinek's questions
+S01) "A Ph.D. thesis is not a textbook." - True, but still the author believes that each of the "textbook-like" sections presents a needed context for small, but original contributions. E.g., the documentation of the simulation scripts usage, the custom implementation of homogenisation, of the "hopping model" in MMs, observation of FDTD stability rules, historical review including old patents that are often neglected in papers. 
+S02) "Where can I find the presentation of the extracted spatially dispersive material parameters?" - I did not do it. TODO!!
+S03)
+S04)
+S05)
+
+T01) "Use dimensionless numbers such as ka instead of frequency" - OK, TODO!
+T02) "Division of two vectors in (2.17) is invalid" - TODO
+T03) (Mathematical notation - OK)
+T04) "The green dashed and full black curves in Fig. 2.10 are not identical although they should be. Why?"
+T05) "What is the meaning of group velocity in a lossy medium used in Sec. 2.24? Either omega or k must be complex." - yes, and as such it was used e.g. in ref. [35], G. Dolling et al. Simultaneous negative phase and group velocity of light in a metamaterial. Science 312, 892–894 (2006).
+T06) Explain "Both time- and frequency-domain simulations used in this thesis use complex numbers to represent all field components": With a moderate computational cost, linear FDTD can treat Re(E) and Im(E) as two independent solutions of field evolution, which differ by their wave phase only. This allows to retrieve the phase-related results from a single simulation run.
+T07) "From which source the permittivity data in Fig. 3.2. comes from?" Ref. [207], J.-F. Baumard and F. Gervais. Plasmon and polar optical phonons in reduced rutile TiO(2-x). Phys. Review B 15, 2316 (1977)
+T08) "the author is claiming that the advantage of FDFD is a possibility to use materials with arbitrary permittivity and permeability" -- In fact, FDFD offers its benefits as well as limitations compared to FDTD. The permittivity can take any spectral shape as long as it remains positive.
+T09) "Why not use a commercial solver package such as CST?" - I needed a semi-automated scripting environment for tens of thousands simulation runs, and I also wanted all scripts to be independent of commercial packages to maintain their widest possible availability.
+T10) "Signs in (3.20) and (3.21) are not independent." - This is true, but the initial signs of one (or both) spectral functions may be flipped by low-frequency numerical artifacts.     % TODO add eqs. 
+T11) "The problems accompanying Nicolson-Ross-Weir" - While there are numerous papers treating the ambiguity of NRW method, I felt compelled to implement a robust algorithm.
+T12) "In my opinion, the source driven 3D periodic system simulation used in Sec. 3.2.2. is very problematic from a numerical point of view when the source excites one of the eigen-modes of the structure. Why not to directly use eigen-mode solver to retrieve dispersion diagrams?" - We encounter no singularity since the source is broadband and limited in time, and no numerical problems were observed so far. Moreover, eigen-mode solver (plane-wave expansion implemented in MPB) could not cope with metals and realistic Lorentz-Drude models.
+T13)
+T14)
+T15)
+T16)
+T17)
+T18)
+T19)
+T20)
+T21)
+T22)
+T23)
