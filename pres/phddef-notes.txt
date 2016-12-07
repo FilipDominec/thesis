@@ -10,7 +10,7 @@ these two notions existed separately for a long time
 The fundamental difference was in the ratio of periodicity compared to the wavelength (λ = 2π/k); for PhC a~λ, for MM a<<λ
 
 However, as the metamaterial research approaches the optical region, a ceases to be *much* smaller than λ
-This is not only technological issue, since it is determined by available materials 
+This  issue is not only technological, since it is also determined by available materials 
 
 Since 2000s, the research is getting into the boundary region between PhCs and MMs. [citations of NIR/optical MMs] 
 We must carefully review the simple approaches to MMs that worked in the a<<λ limit!
@@ -93,14 +93,14 @@ T09) "Why not use a commercial solver package such as CST?" - I needed a semi-au
 T10) "Signs in (3.20) and (3.21) are not independent." - This is true, but the initial signs of one (or both) spectral functions may be flipped by low-frequency numerical artifacts.     % TODO add eqs. 
 T11) "The problems accompanying Nicolson-Ross-Weir" - While there are numerous papers treating the ambiguity of NRW method, I felt compelled to implement a robust algorithm.
 T12) "In my opinion, the source driven 3D periodic system simulation used in Sec. 3.2.2. is very problematic from a numerical point of view when the source excites one of the eigen-modes of the structure. Why not to directly use eigen-mode solver to retrieve dispersion diagrams?" - We encounter no singularity since the source is broadband and limited in time, and no numerical problems were observed so far. Moreover, eigen-mode solver (plane-wave expansion implemented in MPB) could not cope with metals and realistic Lorentz-Drude models.
-T13)
-T14)
-T15)
-T16)
-T17)
-T18)
-T19)
-T20)
-T21)
-T22)
-T23)
+T13) "how dispersion diagrams evaluated by (CDH) are transformed into the effective medium parameters" - Effective parameters retrieved using the current-driven homogenisation are not presented anywhere in the thesis.  #TODO cite Merkel?
+T14) "an ellipsoid with minor axis equal to the radius of the first sieve will remain in the middle" - No; if it is short enough, it will eventually orient diagonally and fall through both sieves.
+T15) "Do the waves refract on the boundary with (1-D PhC) according to Snell’s law" - Since the phase velocity is a smooth function of angle, the Snell's law should be applicable also for small deviations from the normal incidence. Thus, according to p. 28, it should be applicable.
+T16) "The permittivity of a wire medium described in Sec. 5.2. is anisotropic" - True, and it should have been stressed.
+T17) "An effective permeability is not extracted (for cut wires) in Sec. 5.3" - It was not considered important; note it is relevant only at low frequencies and then above the 1st resonance. #TODO 
+T18) "the physical meaning of the extracted permittivity (for cut wires)"  - The local effective permittivity has its meaning only when ka<<1. Up to 500 GHz, the electric field concentrates in the inter-wire gaps and ε is enhanced. Above the resonance, between 1220 and 1260 GHz, the wires induce an opposite dipole moment and ε goes negative. 
+T19) "The comparison of simulation and experiment in Fig. 5.11 went rather bad" - We do not know the doping profile exactly; nor do we know the properties of the underlying silicon substrate. Most importantly, the structure should be re-computed with higher conductive loss. [Fig. 5.11 repeated] (#TODO)
+T20) "How could (an asymmetric structure) be possibly non-reciprocal?" - I did not imply asymmetry would imply non-reciprocity; it will however introduce different reflectance of both its sides. To match this behaviour with a homogeneous slab, it would either have to break temporal symmetry, or would better have different auxiliary boundary conditions on its surfaces.
+T21) "How is the effective permittivity defined that (it is also affected by the magnetic dipole resonance (Fig. 5.14d)?" - Author actually does not imply that eps could simultaneously be affected by a magnetic dipole and would have a physical meaning. In fact, it is an artifact.
+T22) "We believe that the influence of a magnetic resonance on ε eff (f ), or conversely, of an electric resonance of μ eff (f ), is a mere artifact of approximating a strongly nonlocal structure with a concept of local effective parameters." - While the homogenisation does not skip to wrong arccosine branch, nor can be introduced such a numerical error, it might indeed appear as an artifact of the finite dimensions of the slab in the NRW method.  #TODO compare with CDH; or  also recalculate for smaller SRR with the same resonance freq.
+T23) "Is it possible to modify the dimensions of the resonator from Fig. 5.20a so that the left-handed band will appear for ka < 0.5?" #TODO Recalculate for full fine scan of inner-capacitor radii. Possibly recalculate with split-square resonators?
