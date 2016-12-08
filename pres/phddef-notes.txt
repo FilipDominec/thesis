@@ -74,7 +74,7 @@ Careless seek for local parameters of such metamaterials has lead to puzzling, n
 % should explicitly state what are the novel results achieved
 
 
-== (separate numbering) Dr. Jelinek's questions
+== (separate numbering) Dr. Jelinek's questions ==
 S01) "A Ph.D. thesis is not a textbook." - True, but still the author believes that each of the "textbook-like" sections presents a needed context for small, but original contributions. E.g., the documentation of the simulation scripts usage, the custom implementation of homogenisation, of the "hopping model" in MMs, observation of FDTD stability rules, historical review including old patents that are often neglected in papers. 
 S02) "Where can I find the presentation of the extracted spatially dispersive material parameters?" - I did not do it. TODO!!
 S03)
@@ -104,3 +104,11 @@ T20) "How could (an asymmetric structure) be possibly non-reciprocal?" - I did n
 T21) "How is the effective permittivity defined that (it is also affected by the magnetic dipole resonance (Fig. 5.14d)?" - Author actually does not imply that eps could simultaneously be affected by a magnetic dipole and would have a physical meaning. In fact, it is an artifact.
 T22) "We believe that the influence of a magnetic resonance on ε eff (f ), or conversely, of an electric resonance of μ eff (f ), is a mere artifact of approximating a strongly nonlocal structure with a concept of local effective parameters." - While the homogenisation does not skip to wrong arccosine branch, nor can be introduced such a numerical error, it might indeed appear as an artifact of the finite dimensions of the slab in the NRW method.  #TODO compare with CDH; or  also recalculate for smaller SRR with the same resonance freq.
 T23) "Is it possible to modify the dimensions of the resonator from Fig. 5.20a so that the left-handed band will appear for ka < 0.5?" #TODO Recalculate for full fine scan of inner-capacitor radii. Possibly recalculate with split-square resonators?
+
+== (separate numbering) Dr. Postava's questions ==
+P01a) "What is the origin of the nonlocal response in homogeneous and periodic systems?"
+P01b) "What is the origin of frequency dependence of the nonlocal parameters used in the models in Section 2.2?"
+P02) "Most of the modelled structures are anisotropic, therefore I would expect their effective parameters to be also anisotropic. Was this anisotropy observed in the experiment, or modelled numerically?"
+P03) "In the retrieval of effective parameters, the Kramers-Kronig relations are taken into account. However, the effective medium theory is valid for an appropriate frequency range, limiting the applicability of K-K relations. How can this restriction influence the stability of homogenization?" - When seeking for the spectra of reflectance and transmittance, all frequency points are valid and K-K relations can be used quite generally. Also the effective index of refraction was shown to retain its meaning even deep in the photonic-crystal regime. This is not the case of effective permittivity and permeability, where the K-K relations do not have to hold. I did not succeed understanding the K-K restrictions to nonlocal media; some interesting hints can be found in the work of D. A. Kirzhnitz. 
+
+
