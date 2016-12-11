@@ -97,7 +97,7 @@ $$				 \D(t,\rr) = \varepsilon_0 \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr} + \var
 This can be viewed as an application of the convolution theorem: convolution in the time domain is equivalent to multiplication in the frequency domain.  %% FIXME normalisation by 2pi?
 Consequently, we may introduce the local \textit{relative permittivity}\index{permittivity!relative of a dielectric}, or also \textit{dielectric function}, $\epsrl(\omega)$ as a function of frequency. It is a property of the medium that determines how strongly it develops the electric displacement $\D$ in response to the electric field $\E$ of a harmonic wave.
 From Eq. (\ref{eq_ce}) it is clear that in vacuum,  $\epsrl = 1$. In the medium, the permittivity may be obtained as % \E(t, \rr) ??=  1 + \chi_e(\omega) = 
-\begin{equation}  \epsrl(\omega) = \left.\frac{\D(t,\rr)}{\varepsilon_0 \E(t,\rr)} \right|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T. \label{eq_eps_loc}\end{equation}
+\begin{equation}  \epsrl(\omega) = \left.\frac{D(t,\rr)}{\varepsilon_0 E(t,\rr)} \right|_{\E(t, \rr) := \E_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_e(T) \,\mbox{d}T. \label{eq_eps_loc}\end{equation}
 
 In general, the function $\epsrl(\omega)$ is complex to account for possible phase delay between the harmonic driving field and the medium response. Phase delay different than $0$ (or integer multiple of $\pi$) corresponds to energy being dissipated in the medium.
 Let us note that the definition of the Fourier transform is never subject to the sign change, even when the convention of $e^{\ii \omega t}$ is exchanged for $e^{-\ii \omega t}$.
@@ -142,7 +142,7 @@ We will return to the Lorentz oscillator model also in the Chapter \ref{def_of_m
 %}}}
 \paragraph{Permeability}  %{{{ 
 In a manner very similar to the above derivation of the local permittivity, the \textit{local permeability}\index{permeability!local} can be introduced by means of a response of the medium to the magnetic field:
-\begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{\B(t,\rr)}{\mu_0\HH(t,\rr)} \right|_{\HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
+\begin{equation} \murl(\omega) = 1 + \chi_m(\omega) = \left.\frac{B(t,\rr)}{\mu_0 H(t,\rr)} \right|_{HH(t, \rr) := \HH_0 \, e^{\ii\omega t - \ii\kk\cdot\rr}} = 1 + \int_{-\infty}^{0} e^{-\ii\omega T} \,\chi_m(T) \,\mbox{d}T, \label{eq_mu_loc}\end{equation}
 where $\chi_m(T)$ is the \textit{magnetic response function}\index{response function!magnetic} of the medium and $\HH_0$ is the amplitude of the magnetic field. This obviously results in an analogous expression for the local permeability in the frequency domain:
 \begin{equation} \murl(\omega) = 1 + \sum_{q=1}^Q \frac{F_q}{\omega_{0q}^2 - \omega^2 + i\omega\gamma_q}, \label{eq_lorentz_mu}\end{equation} 
 where formally the same notation was used as in  Eq. (\ref{eq_lorentz_eps}): $\omega_{0q}$, $\gamma_q$ and $F_q$ are here the magnetic oscillator's angular frequency, damping frequency and strength. Unlike the electric response, most ordinary media have either almost no response to the magnetic field or their response is limited to low frequencies.
