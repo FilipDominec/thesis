@@ -1,7 +1,7 @@
 \documentclass[t]{beamer} \usepackage[english]{babel} \usepackage[utf8]{inputenc} \usetheme{Frankfurt} %{{{
 \usefonttheme{serif} \usepackage{palatino}
 \let\OLDsection\section \renewcommand{\section}[1]{\OLDsection{#1} \subsection{}} % each slide has a bullet even when no subsections used
-\usepackage{booktabs,amsmath,amsfonts,graphicx,sidecap}
+\usepackage{booktabs,amsmath,amsfonts,graphicx,sidecap,upgreek}
 \usepackage{tikz} \tikzstyle{every picture}+=[remember picture] \everymath{\displaystyle}
 \usepackage{textpos} 
 
@@ -38,7 +38,7 @@
 
 
 
-\title[THz MMs]{Metamaterials for the Terahertz Spectral Range\\ Ph. D. dissertation defence}
+\title[THz MMs]{Metamaterials for the Terahertz Spectral Range\\ Ph. D. Dissertation Defence}
 \author{Ing. Filip Dominec} 
 \institute{Advisor: Dr. Mgr. Filip Kadlec (Fyzikální ústav AVČR)\\ Consultant: doc. Dr. Ing. Ivan Richter (FJFI ČVUT)\vspace{2mm}\\ Opponents: doc. Ing. Lukáš Jelínek, Ph.D.,\\
 and doc. Dr. Mgr. Kamil Postava (VŠB-TU Ostrava) } 
@@ -70,18 +70,19 @@ Usually, metamaterials are periodic structures artificially designed to achieve 
 A metamaterial is any inhomogeneous structure that we attempt to describe as a homogeneous one
 \end{exampleblock}
 
-Then, the task of finding the effective parameters (homogenisation) is more fundamental than just a means of characterisation: It \textit{defines} that the structure \textit{is} a metamaterial.
+Large part of MM research is aimed at achieving \textit{negative effective index of refraction} $\Neff'<0$, which is expected to occur if simultaneously the effective permittivity $\eeff' <0$ and permeability $\meff'<0$ are negative.
+%Then, the task of finding the effective parameters (homogenisation) is more fundamental than just a means of characterisation: It \textit{defines} that the structure \textit{is} a metamaterial.
 \end{frame} 		%}}}
 
-\begin{frame}[plain]{\tiny{\vspace{-1em}{Early metamaterials -- artificial dielectrics}\vspace{-.5em}}} 		%{{{
-\includegraphics[width=\textwidth]{img/patents/mm_patents.pdf} 
+\begin{frame}[plain]{\tiny{\vspace{-1em}{Early metamaterials -- artificial dielectrics}\vspace{-.5em}}} %{{{
+\includegraphics[width=\textwidth]{../img/patents/mm_patents.pdf} 
 
 %\textbf{(a)} sheets containing cut wires of alternating orientation and resonant frequency, enabling one to manipulate the microwave polarisation, \textbf{(b)} cross-section through a lightweight lens of 3 m diameter designed for 50-500 MHz radio waves, made of partially metallized plastic layers, \textbf{(c)} artificial dielectric made of non-resonant cut wires arranged into a nearly isotropic 3-D lattice. 
 \vfill
 \tiny{J. A. F. Wickersham. Artificial dielectric polarizer. US Patent 2,921,312. 1960. URL : http://www.google.com/patents/US2921312.\\
 D. L. Anderson. Artificial dielectric lens structure. US Patent 3,329,958. 1967. URL : http://google.ru/patents/US3329958.\\
 P. W. Hannan. Artificial dielectric using interspersed rods. US Patent 3,254,345. 1966. URL : http://www.google.com.py/patents/US3254345.}
-\end{frame} 		%}}}
+\end{frame}%}}}
 
 
 	\begin{frame}{Early photonic crystals} 		%{{{
@@ -99,10 +100,8 @@ K. Ho, C. Chan, and C. Soukoulis. Periodic dielectric structure for production o
 W. Sweatt and T. Christenson. Method for the fabrication of three-dimensional microstructures by deep X-ray lithography. US Patent 6,875,544. 2005. URL : https://www.google.com.ar/patents/US6875544.  }
 \end{frame} 		%}}}
 
-\begin{frame}{2000's: Merging of MM and PhC paradigms?} 		%}}}
-Two paradigms metamaterials (earlier denoted as artificial dielectrics) and photonic crystals developed separately over few decades.
-
-They differed in the ratio of periodicity $a$ compared to the wavelength $\lambda$. 
+\begin{frame}{2000's: Merging of MM and PhC paradigms?} 		%{{{
+Two paradigms of \textit{metamaterials} (MM), which were earlier denoted as \textit{artificial dielectrics}, and \textit{photonic crystals} (PhC) developed separately over few decades.
 
 \begin{exampleblock}{Waves in periodic structures vs. in natural media}
 \centering \begin{tabular}{lcccr}
@@ -111,64 +110,18 @@ Light in PhCs   &$\leftrightarrow$  &$\lambda \sim a$ &$\leftrightarrow$ 	& Elec
 \end{tabular}
 \end{exampleblock}
 
-\end{frame} 		%}}}
+However, as the metamaterial research approaches the optical frequencies,  the $\lambda \gg a$ limit can not be held.
+\vspace{.5em}
 
+We must carefully review all approaches to MMs that assume the unit cell $a$ to be \textit{just small}; in practice, they are not.
+\vspace{.5em}
 
-
-\begin{frame}{2000's: Merging of MM and PhC paradigms?} 		%}}}
-However, as the metamaterial research approaches the optical frequencies,  the $\lambda \gg a$ limit can not be held
-Since 2000s, the research is getting into the boundary region between PhCs and MMs. [citations of NIR/optical MMs] 
-
-Note that this is determined by available materials (not a mere issue of today's technology)
-
-We must carefully review all approaches to MMs that assumed the unit cell $a$ to be \textit{just small}
-\end{frame} 		%}}}
-
-
-\section{Dielectric-rod array}
-
-\begin{frame}{The structure under investigation}	%{{{
-
-Dielectric-rod photonic crystal (with $\varepsilon_r$ = 100)  [TODO - citations]
-
-Dielectric-rod metamaterial (with $\varepsilon_r$ = 100) [TODO - citations again]
+(Note that this is determined by available materials, not a mere issue of today's technology)
 
 \end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-PhC with r/a=0.1
-\end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-negative-index MM r/a=0.12
-
-\end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-Changing the radius-to-period parameter - continuous
-
-\end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-Changing the radius-to-period parameter - user plot [cite our paper]
-
-\includegraphics[width=1.\framewidth]{../img/ERods_sketch_of_separate_spectra_to_continuous_scan.pdf}
-
-\end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-Do effective local $\eeff$ and $\meff$ make any sense? [TODO citations and screens from 'Antiresonance discussion']
-
-We arrived to a metamaterial where N makes physical sense, but it makes no physical sense to transform N into effective $\eeff$ and $\meff$.
-\end{frame} 		%}}}
-
-\begin{frame}{}	%{{{
-\includegraphics[width=1.\framewidth]{../img/ERods_sketch_of_separate_spectra_to_continuous_scan.pdf}
-\end{frame} 		%}}}
-
 
 \begin{frame}{The metamaterial assumption $\lambda_0 \gg a$ is unsustainable}	%{{{
-	{\vspace{-.1em}\hfill \ldots for majority of realistic metamaterials}
+	{\vspace{-.1em}\hfill \ldots for majority of realistic NIR/optical metamaterials}
 
 \vspace{-1em}
 \begin{table}[ht]   \caption{Short survey for the ratio of free-space wavelength $\lambda_0$ to the unit-cell size (parallel and perpendicular to $\kk$) in selected publications}  \label{tb_} \centering 
@@ -177,11 +130,11 @@ We arrived to a metamaterial where N makes physical sense, but it makes no physi
 	Source		 & $\lambda_0$ (nm)	& $\lambda_0/a_{||}$  & $\lambda_0/a_{\perp}$ & type \\
 \hline
 Šindler et al. 2016  & 350000		&  6--10	& 6--10 & Mie \\
-Zhang et al. 2005    & 1300			&  7.5      & \textbf{2.2}  & SRR \\
+Zhang et al. 2005    & 1300			&  7        & \textbf{2.2}  & SRR \\
 Dolling et al. 2007  & 780			&  8		& \textbf{2.6}  & fishnet \\
-Gong et al. 2014     & 565			&  8.0		& \textbf{2.4}  & fishnet \\
+Gong et al. 2014     & 565			&  8		& \textbf{2.4}  & fishnet \\
 Aslam et al. 2012    & 510			&  14		& \textbf{2.1}  & fishnet \\
-Xu et al. 2013	     & 365		    & \textbf{2.4}		& N/A	& 2-D layers \\
+Xu et al. 2013	     & 365		    & \textbf{2.4}		& --	& 2-D layers \\
 \bottomrule
 \end{tabular} \end{table}
 
@@ -196,14 +149,64 @@ Xu, T., et al.. All-angle negative refraction and active flat lensing of ultravi
 \end{frame} 		%}}}
 
 
+\section{Dielectric-rod array}
+\begin{frame}{Dielectric rod array}	%{{{
 
+Dielectric-rod photonic crystal (with $\varepsilon_r$ = 100)  [TODO - citations]
 
+Dielectric-rod metamaterial (with $\varepsilon_r$ = 100) [TODO - citations again]
 
+Sketch of the unit-cell cross-sections with the resonant modes excited by a plane wave with:
 
+\centering \includegraphics[width=1\textwidth]{../img/ERods_1st_and_2nd_Mie_resonance_sketch.pdf}
 
-\section{Nonlocal response}
+The first Mie resonance has an electric dipole moment only, while the second one has a magnetic dipole moment instead. 
+
+Effective parameters $\Neff, \Zeff, \eeff$ and $\meff$ were computed using the \textit{scattering-parameters} method
+
+\begin{footnotesize}W. B. Weir. Automatic measurement of complex dielectric constant and permeability at microwave frequencies. Proceedings of the IEEE 62, 33–36 (1974).\\
+A. Nicolson and G. Ross. Measurement of the intrinsic properties of materials by time-domain techniques. Instrumentation and Measurement, IEEE Transactions on 19, 377–382 (1970).
+\end{footnotesize}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}	%{{{
+\hspace{6mm} \includegraphics[height=.97\paperheight]{../img/ERods_eps100_single_a120_FDTD.pdf}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}	%{{{
+\hspace{6mm} \includegraphics[width=1.12\paperheight]{../img/ERods_eps100_double_a100a080_FDTD.pdf}
+\end{frame} 		%}}}
+
+\begin{frame}{Color coding of refractive index}	%{{{
+\includegraphics[width=1.\framewidth]{../img/ERods_sketch_of_separate_spectra_to_continuous_scan.pdf}
+\end{frame} 		%}}}
+
+\begin{frame}{Spacing scan: $\Neff', \Neff''$  for $\pmb\rho=10\;\upmu$m, $\pmb\varepsilon_r=100$}	%{{{
+Real ($\Neff'$, left panel) and imaginary ($\Neff''$, right panel) parts of refractive indices 
+% TODO rm Rods_eps100_spacingscan_Nim.pdf% TODO rm Rods_eps100_spacingscan_Nim.pdf
+
+{\centering
+\mbox{\includegraphics[width=62mm]{../img/ERods_eps100_spacingscan_Nre.pdf}\includegraphics[width=62mm]{../img/ERods_eps100_spacingscan_Nim.pdf}} \vspace{-5mm} }
+\end{frame} 		%}}}
+
+\begin{frame}{Dielectric rod array -- sketch of spacing scan}	%{{{
+
+\hfill
+\includegraphics[width=\textwidth]{../img/ERods_forSeefeld_sparserN_denserN_DrawnBands.pdf}
+\hfill
+\footnotesize{F. Dominec et al. Transition between metamaterial and photonic-crystal behavior in arrays of dielectric rods. Opt. Express 22, 30492--30503 (2014).\\
+M. V. Rybin et al. Phase diagram for the transition from photonic crystals to dielectric metamaterials. arXiv preprint arXiv:1507.08901 (2015).}
+\end{frame} 		%}}}
+
+\begin{frame}{When do effective local $\eeff$ and $\meff$ make any sense?}	%{{{
+ [TODO citations and screens from 'Antiresonance discussion']
+
+We arrived to a metamaterial where N makes physical sense, but this can no more be said about effective $\eeff$ and $\meff$.
+\end{frame} 		%}}}
+
+\section{Spatial dispersion}
 \begin{frame}{Nonlocal response}%{{{
-	The trouble with using $\eeff(\omega)$ and $\meff(\omega)$ is that they only describe the local response. \vspace{.5em}
+The trouble with using $\eeff(\omega)$ and $\meff(\omega)$ is that they only describe the local response. \vspace{.5em}
 
 The medium may be \textit{nonlocal}, i.e., elecric field in point $\rr$ makes it develop polarisation also in surrounding points $\rr\neq\rr'$.
 	
@@ -216,110 +219,169 @@ Light in PhCs   &$\leftrightarrow$  &$\lambda \sim a$ &$\leftrightarrow$ 	& Elec
 \end{exampleblock}
 
 For a harmonic wave, nonlocality translates into \textit{spatial dispersion}, and the effective parameters explicitly depend on the wave vector $\kk$: 
-$$\epsrn(\omega,\kk), \murn(\omega,\kk)$$
+$$\epsrl(\omega), \murl(\omega) \rightarrow  \epsrn(\omega,\kk), \murn(\omega,\kk)$$
 \end{frame} %}}}
 
-\begin{frame}{Transforming $\epsrn(\omega,\kk), \murn(\omega,\kk)$ into the EBD form}%{{{
-Using nonlocal effective parameters brings much complexity, but it can be simplified by the following gauge transform:\vspace{.5em}
-
-For any (differentiable) vector field $\mathbf{X}$, one can re-define the magnetic field and electric displacement as
-\begin{equation*} \HHsd := \HH + \frac{\partial\mathbf{X}}{\partial t}, \label{eq_HHsd}\end{equation*}
-\begin{equation*} \Dsd  := \D  + \nabla\times \mathbf{X}, \label{eq_Dsd}\end{equation*}
-While $\HH \neq \HHsd$ and , 
-the form of the corresponding Maxwell equation is maintained:
-\begin{equation*} \nabla \times \HH =  \frac{\partial \D} {\partial t} \end{equation*}
-\begin{equation*} \nabla \times \HHsd = \nabla \times \HH + \left(\nabla\times \frac{\partial\mathbf{X}}{\partial t}\right) = \frac{\partial \D}{\partial t}+ \frac{\partial(\nabla\times \mathbf{X})}{\partial t} =  \frac{\partial \Dsd} {\partial t} \end{equation*}
-
-
-\end{frame} %}}}
-
-
-\begin{frame}[plain]{\tiny{\vspace{-1em}Transforming $\epsrn(\omega,\kk), \murn(\omega,\kk)$ into the EBD form\vspace{-.5em}}}%{{{
-
-Landau and Lifshitz have shown that, with a clever choice of 
-\begin{equation*} \mathbf{X} = \frac{1}{\ii\omega\mu_0}\left(1 - \frac{1}{\murl(\omega)}\right)\B, \label{eq_Xsd}\end{equation*}
-
-the magnetic behaviour of the medium can be fully and unambiguously described by the permittivity $\epsLL(\omega,\kk)$.
-\vfill
-
-For any transverse harmonic wave defined by its angular frequency $\omega$ and wavevector $\kk$, the metamaterial optical properties can be contained in one nonlocal parameter $\epsLL(\omega,\kk)$ (and all laws of electrodynamics still apply):
-	\begin{exampleblock}
-		\;\vspace{-1em}
-	\begin{equation*}
- \left.  \begin{array}{c}
-\epsLL(\omega,\kk) = \epsrl(\omega)+\frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right), \\
-\muLL(\omega,\kk) = 1, 
-\end{array} \quad \right\} \quad \text{(in local media)} 
-	\end{equation*}
-	\end{exampleblock}
-
-\begin{scriptsize}L. D. Landau et al. Electrodynamics of continuous media. Elsevier, 1984, page 359. \end{scriptsize}
-\end{frame} %}}}
-
-\section{Spatial dispersion}
-\begin{frame}{Landau-Lifshitz form of nonlocal $\epsLL$ for electric resonance}%{{{
-How does the new description compare to the old one in terms of dispersion curves?  [Fig 2.10b] (+ keep equation of epsll(k)=... )
-
-\vfill
-	\begin{exampleblock}
-		\;\vspace{-1em}
-	\begin{equation*}
- \left.  \begin{array}{c}
-\epsLL(\omega,\kk) = \epsrl(\omega)+\frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right), \\
-\muLL(\omega,\kk) = 1, 
-\end{array} \quad \right\} \quad \text{(in local media)} 
-	\end{equation*}
-	\end{exampleblock}
-\end{frame} %}}}
-
-\begin{frame}{}%{{{
-
-%Additional degrees of freedom to describe inter-cell coupling due to quadrupoles [FIG]
-\end{frame} %}}}
-
-\begin{frame}{Landau-Lifshitz form of nonlocal $\epsLL$ for el+mag resonance}%{{{
-What about spectrally overlapping magnetic and electric dipole  resonances? [Fig 2.10c]  (+ keep equation of  epsll(k)=... )
-\vfill
-	\begin{exampleblock}
-		\;\vspace{-1em}
-	\begin{equation*}
- \left.  \begin{array}{c}
-\epsLL(\omega,\kk) = \epsrl(\omega)+\frac{1}{\omega^2 \mu_0}\left(1 - \frac{1}{\murl(\omega)}\right), \\
-\muLL(\omega,\kk) = 1, 
-\end{array} \quad \right\} \quad \text{(in local media)} 
-	\end{equation*}
-	\end{exampleblock}
-\end{frame} %}}}
-
-\begin{frame}{}%{{{
-\end{frame} %}}}
-
-\section{CDH}
 \begin{frame}{Current-driven homogenization}%{{{
+The customary approach involved selecting a frequency, measuring the scattering parameters (reflectance and transmittance) and computing the allowed wavenumbers.
+ \vspace{.2em}
 
-\end{frame} 		%}}}
-
-
-\section{Combined SRR}
-\begin{frame}{The structure studied}%{{{
-%the exact dimensions of structures in Fig. 5.16, especially the dimensions of capacitive pads
-% TODO extracted spatially dispersive material parameters?
-\end{frame} %}}}
-
-\begin{frame}{Exact dispersion of electro-magnetic split-ring resonator}	%{{{
 \begin{columns}[T] % align columns
 	\begin{column}{.5\textwidth}
-	\vspace{3mm}
-	\noindent  Comparison of current-driven homogenisation (bubbles) and the customary scattering-parameters method
-	\end{column}%
+		\hfill\includegraphics[width=.9\textwidth]{../img/cdh_geometry.pdf}
+	\end{column}
 	\begin{column}{.5\textwidth}
-	\begin{figure}[h] \label{fg_} \centering 
-	\includegraphics[width=5cm]{../img-cdh/cdh_emcSRRcap10.pdf}
-	\end{figure}
+	\vspace{3mm}
+	\noindent Instead, in the \textit{current-driven homogenization}, the volumetric source imparts a given wavenumber in whole unit cell, and looks for all corresponding resonance frequencies.
+\end{column}%
+\end{columns}
+ \vspace{.2em}
+
+
+\vfill 
+\begin{footnotesize}
+M. G. Silveirinha. Metamaterial homogenization approach with application to the characterization of microstructured composites with negative parameters. Phys. Rev. B 75, 115104 (2007). \\
+C. Fietz and G. Shvets. Current-driven metamaterial homogenization. Physica B 405, 2930–2934 (2010).
+\end{footnotesize}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Testing current-driven homogenization (CDH) on the rod array with $a=$ 100 $\upmu$m, $\rho=10\;\upmu$m, $\varepsilon_r=100$ 	$\rightarrow$
+	\vspace{3mm}
+
+	\noindent Bubbles are computed using CDH; the green dispersion curve shows the effective index of refraction from the scattering-parameters method as $$K = \frac{2\pi \Neff' \;f}{c}.$$ Dashed part denotes negative values of $\Neff$
+	\vspace{3mm}
+	\begin{exampleblock}{Result}
+	\noindent This confirms that the use of scattering parameter method was appropriate for this rod array
+	\end{exampleblock}
+
 	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_RodArray.pdf} 
+	\end{column}
 \end{columns}
 \end{frame} 		%}}}
 
+\section{Combined SRR}
+\begin{frame}{Electro-magnetic split-ring resonator}%{{{
+%\noindent We will examine the dispersion of a metamaterial composed of a combined electro-magnetic split-ring resonator:
+
+\hfill\includegraphics[width=.85\textwidth]{../img-cdh-new/emSRR_snapshot.pdf} \hfill\;
+\end{frame} %}}}
+
+\begin{frame}{Electro-magnetic split-ring resonances}%{{{
+The structure exhibits two resonances; one with a magnetic dipole (left) the second with an electric one (right).
+
+\hfill\includegraphics[height=0.22\textwidth]{../img/drawing_emcSRRpad_resM.pdf}\hfill
+\includegraphics[height=0.22\textwidth]{../img/drawing_emcSRRpad_resE2.pdf}\hfill\;
+
+By changing the inner capacitor radius, we can tune the electric resonance frequency.
+\end{frame} %}}}
+
+	%\noindent  Comparison of current-driven homogenisation (bubbles) and the customary scattering-parameters method
+	%\includegraphics[height=3cm]{../img/drawing_emcSRRpad_sizes.pdf}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Current-driven homogenization (CDH) of an electro-magnetic split-ring resonator with inner capacitor radius of $\pmb\rho_c=\pmb 6\;\upmu$m $\rightarrow$
+	\vspace{3mm}
+	\noindent Bubbles are computed using CDH; the green dispersion curve comes from the scattering-parameters method. Note that $$k = \frac{2\pi n f}{c}$$
+	\vspace{5mm}
+	%\begin{exampleblock}{Result} ## TODO 
+	%\noindent This confirms that the use of scattering parameter method was appropriate  for this structure
+	%\end{exampleblock}
+
+	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_SRRArray_06.pdf} 
+	\end{column}
+\end{columns}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Current-driven homogenization (CDH) of an electro-magnetic split-ring resonator with inner capacitor radius of $\pmb\rho_c=\pmb 8\;\upmu$m $\rightarrow$
+	\vspace{3mm}
+
+	\noindent Bubbles are computed using CDH; the green dispersion curve comes from the scattering-parameters method. Note that $$k = \frac{2\pi n f}{c}$$
+	\vspace{5mm}
+	%\begin{exampleblock}{Result} ## TODO 
+	%\noindent This confirms that the use of scattering parameter method was appropriate  for this structure
+	%\end{exampleblock}
+
+	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_SRRArray_08.pdf} 
+	\end{column}
+\end{columns}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Current-driven homogenization (CDH) of an electro-magnetic split-ring resonator with inner capacitor radius of $\pmb\rho_c=\pmb 10\;\upmu$m $\rightarrow$
+	\vspace{3mm}
+
+	\noindent Bubbles are computed using CDH; the green dispersion curve comes from the scattering-parameters method. Note that $$k = \frac{2\pi n f}{c}$$
+	\vspace{5mm}
+	%\begin{exampleblock}{Result} ## TODO 
+	%\noindent This confirms that the use of scattering parameter method was appropriate  for this structure
+	%\end{exampleblock}
+
+	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_SRRArray_10.pdf} 
+	\end{column}
+\end{columns}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Current-driven homogenization (CDH) of an electro-magnetic split-ring resonator with inner capacitor radius of $\pmb\rho_c=\pmb 14\;\upmu$m $\rightarrow$
+	\vspace{3mm}
+
+	\noindent Bubbles are computed using CDH; the green dispersion curve comes from the scattering-parameters method. Note that $$k = \frac{2\pi n f}{c}$$
+	\vspace{5mm}
+	%\begin{exampleblock}{Result} ## TODO 
+	%\noindent This confirms that the use of scattering parameter method was appropriate  for this structure
+	%\end{exampleblock}
+
+	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_SRRArray_14.pdf} 
+	\end{column}
+\end{columns}
+\end{frame} 		%}}}
+
+\begin{frame}[plain]{}%{{{
+\begin{columns}[T] % align columns
+	\begin{column}{.55\textwidth}
+	\vspace{3mm}
+	\noindent Current-driven homogenization (CDH) of an electro-magnetic split-ring resonator with inner capacitor radius of $\pmb\rho_c=\pmb 18\;\upmu$m $\rightarrow$
+	\vspace{3mm}
+
+	\noindent Bubbles are computed using CDH; the green dispersion curve comes from the scattering-parameters method. Note that $$k = \frac{2\pi n f}{c}$$
+	\vspace{5mm}
+	%\begin{exampleblock}{Result} ## TODO 
+	%\noindent This confirms that the use of scattering parameter method was appropriate  for this structure
+	%\end{exampleblock}
+
+	\end{column}%
+	\begin{column}{.45\textwidth}
+		\vspace{-1mm}\includegraphics[height=\paperheight]{../img-cdh-new/CDH_SRRArray_18.pdf} 
+	\end{column}
+\end{columns}
+\end{frame} 		%}}}
 
 \section{Conclusions}
 
@@ -327,9 +389,9 @@ What about spectrally overlapping magnetic and electric dipole  resonances? [Fig
 
 \begin{frame}{Conclusions}%{{{
 \begin{itemize}
-\item The array of dielectric cylinders illustrates the transition between the regimes typical for metamaterials and photonic crystals
+\item Today's metamaterials approach the boundary between regimes typical metamaterials and photonic crystals (as illustrated on the array of dielectric cylinders)
 
-\item Our simulations also suggest that this structure requires high permittivity to provide negative index of refraction, not available above terahertz range
+\item We prove that this metamaterial does \textit{not} yield negative index of refraction $\Neff'<0$ unless a very high high dielectric permittivity $\varepsilon_r>70$ is used (not available in the optical range?)
 
 \item With the up-to-date metamaterials approaching the photonic-crystal regime, spatial dispersion must be always taken into account.
 If not, one often gets puzzling nonphysical results.
