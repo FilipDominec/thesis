@@ -1,0 +1,114 @@
+== Introduction ==
+
+Light in MMs vs. light in PhCs    <-inspired by->   PHOTONS a crystal vs ELECTRONS in a crystal [fig.]
+
+[figure of 1940's artificial diel] early metamaterials (known as Artificial dielectrics) used to enhance or reduce eff. permittivity 
+
+[figure of 1980's Yablonovite]    Engineering of the photonic band gap (c.f. electrons in crystal)
+
+these two notions existed separately for a long time 
+The fundamental difference was in the ratio of periodicity compared to the wavelength (λ = 2π/k); for PhC a~λ, for MM a<<λ
+
+However, as the metamaterial research approaches the optical region, a ceases to be *much* smaller than λ
+This  issue is not only technological, since it is also determined by available materials 
+
+Since 2000s, the research is getting into the boundary region between PhCs and MMs. [citations of NIR/optical MMs] 
+We must carefully review the simple approaches to MMs that worked in the a<<λ limit!
+
+
+
+== Dielectric rods ==
+The structure under investigation
+Dielectric-rod photonic crystal (with ε=100)  [TODO - citations]
+Dielectric-rod metamaterial (with ε=100) [TODO - citations again]
+
+PhC with r/a=0.1
+
+negative-index MM r/a=0.12
+
+Changing the radius-to-period parameter - continuous
+
+Changing the radius-to-period parameter - user plot [cite our paper]
+
+Do effective ε and μ make any sense? [TODO citations & screens from 'Antiresonance discussion']
+We arrived to a metamaterial where N makes physical sense, but we get no physical understanding when we transform it into effective ε and μ.
+
+
+
+
+== Dispersion relations in spatially dispersive media == 
+The trouble in using ε and μ is that they only describe the local response
+but the medium may be nonlocal, i.e., spatially dispersive
+We need additional degrees of freedom, ε(k) and μ(k)
+
+Using nonlocal effective parameters brings much complexity, but it can be simplified a little:
+By a gauge transform, H->H', D->D' as such (TODO EQs.)
+and thus μ(k)= 1 and ε(k)=...
+Thus the metamaterial optical properties can be contained in this single nonlocal parameter (without any change of M. E.)
+
+How does the new description compare to the old one in terms of dispersion curves?  [Fig 2.10b] (+ keep equation of  ε(k)=... )
+
+What about spectrally overlapping magnetic and electric dipole  resonances? [Fig 2.10c]  (+ keep equation of  ε(k)=... )
+
+Additional degrees of freedom to describe inter-cell coupling due to quadrupoles [FIG]
+
+
+== Electro-magnetic split-ring resonators == 
+the exact dimensions of structures in Fig. 5.16, especially the dimensions of capacitive pads
+
+
+% TODO extracted spatially dispersive material parameters?
+
+== Conclusions == 
+
+The project containing scripts facilitating numerical simulations of metamaterials was made publicly available [TODO Fig. github]
+
+The array of dielectric cylinders illustrates the transition between 
+
+With the up-to-date metamaterials approaching the photonic-crystal regime, spatial dispersion must be considered
+Careless seek for local parameters of such metamaterials has lead to puzzling, nonphysical results in numerous papers
+
+
+
+
+% should explicitly state what are the novel results achieved
+
+
+== (separate numbering) Dr. Jelinek's questions ==
+S01) "A Ph.D. thesis is not a textbook." - True, but still the author believes that each of the "textbook-like" sections presents a needed context for small, but original contributions. E.g., the documentation of the simulation scripts usage, the custom implementation of homogenisation, of the "hopping model" in MMs, observation of FDTD stability rules, historical review including old patents that are often neglected in papers. 
+S02) "Where can I find the presentation of the extracted spatially dispersive material parameters?" - I did not do it. TODO!!
+S03)
+S04)
+S05)
+
+T01) "Use dimensionless numbers such as ka instead of frequency" - OK, TODO!
+T02) "Division of two vectors in (2.17) is invalid" - TODO
+T03) (Mathematical notation - OK)
+T04) "The green dashed and full black curves in Fig. 2.10 are not identical although they should be. Why?"
+T05) "What is the meaning of group velocity in a lossy medium used in Sec. 2.24? Either omega or k must be complex." - yes, and as such it was used e.g. in ref. [35], G. Dolling et al. Simultaneous negative phase and group velocity of light in a metamaterial. Science 312, 892–894 (2006).
+T06) Explain "Both time- and frequency-domain simulations used in this thesis use complex numbers to represent all field components": With a moderate computational cost, linear FDTD can treat Re(E) and Im(E) as two independent solutions of field evolution, which differ by their wave phase only. This allows to retrieve the phase-related results from a single simulation run.
+T07) "From which source the permittivity data in Fig. 3.2. comes from?" Ref. [207], J.-F. Baumard and F. Gervais. Plasmon and polar optical phonons in reduced rutile TiO(2-x). Phys. Review B 15, 2316 (1977)
+T08) "the author is claiming that the advantage of FDFD is a possibility to use materials with arbitrary permittivity and permeability" -- In fact, FDFD offers its benefits as well as limitations compared to FDTD. The permittivity can take any spectral shape as long as it remains positive.
+T09) "Why not use a commercial solver package such as CST?" - I needed a semi-automated scripting environment for tens of thousands simulation runs, and I also wanted all scripts to be independent of commercial packages to maintain their widest possible availability.
+T10) "Signs in (3.20) and (3.21) are not independent." - This is true, but the initial signs of one (or both) spectral functions may be flipped by low-frequency numerical artifacts.     % TODO add eqs. 
+T11) "The problems accompanying Nicolson-Ross-Weir" - While there are numerous papers treating the ambiguity of NRW method, I felt compelled to implement a robust algorithm.
+T12) "In my opinion, the source driven 3D periodic system simulation used in Sec. 3.2.2. is very problematic from a numerical point of view when the source excites one of the eigen-modes of the structure. Why not to directly use eigen-mode solver to retrieve dispersion diagrams?" - We encounter no singularity since the source is broadband and limited in time, and no numerical problems were observed so far. Moreover, eigen-mode solver (plane-wave expansion implemented in MPB) could not cope with metals and realistic Lorentz-Drude models.
+T13) "how dispersion diagrams evaluated by (CDH) are transformed into the effective medium parameters" - Effective parameters retrieved using the current-driven homogenisation are not presented anywhere in the thesis.  #TODO cite Merkel?
+T14) "an ellipsoid with minor axis equal to the radius of the first sieve will remain in the middle" - No; if it is short enough, it will eventually orient diagonally and fall through both sieves.
+T15) "Do the waves refract on the boundary with (1-D PhC) according to Snell’s law" - Since the phase velocity is a smooth function of angle, the Snell's law should be applicable also for small deviations from the normal incidence. Thus, according to p. 28, it should be applicable.
+T16) "The permittivity of a wire medium described in Sec. 5.2. is anisotropic" - True, and it should have been stressed.
+T17) "An effective permeability is not extracted (for cut wires) in Sec. 5.3" - It was not considered important; note it is relevant only at low frequencies and then above the 1st resonance. #TODO 
+T18) "the physical meaning of the extracted permittivity (for cut wires)"  - The local effective permittivity has its meaning only when ka<<1. Up to 500 GHz, the electric field concentrates in the inter-wire gaps and ε is enhanced. Above the resonance, between 1220 and 1260 GHz, the wires induce an opposite dipole moment and ε goes negative. 
+T19) "The comparison of simulation and experiment in Fig. 5.11 went rather bad" - We do not know the doping profile exactly; nor do we know the properties of the underlying silicon substrate. Most importantly, the structure should be re-computed with higher conductive loss. [Fig. 5.11 repeated] (#TODO)
+T20) "How could (an asymmetric structure) be possibly non-reciprocal?" - I did not imply asymmetry would imply non-reciprocity; it will however introduce different reflectance of both its sides. To match this behaviour with a homogeneous slab, it would either have to break temporal symmetry, or would better have different auxiliary boundary conditions on its surfaces.
+T21) "How is the effective permittivity defined that (it is also affected by the magnetic dipole resonance (Fig. 5.14d)?" - Author actually does not imply that eps could simultaneously be affected by a magnetic dipole and would have a physical meaning. In fact, it is an artifact.
+T22) "We believe that the influence of a magnetic resonance on ε eff (f ), or conversely, of an electric resonance of μ eff (f ), is a mere artifact of approximating a strongly nonlocal structure with a concept of local effective parameters." - While the homogenisation does not skip to wrong arccosine branch, nor can be introduced such a numerical error, it might indeed appear as an artifact of the finite dimensions of the slab in the NRW method.  #TODO compare with CDH; or  also recalculate for smaller SRR with the same resonance freq.
+T23) "Is it possible to modify the dimensions of the resonator from Fig. 5.20a so that the left-handed band will appear for ka < 0.5?" #TODO Recalculate for full fine scan of inner-capacitor radii. Possibly recalculate with split-square resonators?
+
+== (separate numbering) Dr. Postava's questions ==
+P01a) "What is the origin of the nonlocal response in homogeneous and periodic systems?"
+P01b) "What is the origin of frequency dependence of the nonlocal parameters used in the models in Section 2.2?"
+P02) "Most of the modelled structures are anisotropic, therefore I would expect their effective parameters to be also anisotropic. Was this anisotropy observed in the experiment, or modelled numerically?"
+P03) "In the retrieval of effective parameters, the Kramers-Kronig relations are taken into account. However, the effective medium theory is valid for an appropriate frequency range, limiting the applicability of K-K relations. How can this restriction influence the stability of homogenization?" - When seeking for the spectra of reflectance and transmittance, all frequency points are valid and K-K relations can be used quite generally. Also the effective index of refraction was shown to retain its meaning even deep in the photonic-crystal regime. This is not the case of effective permittivity and permeability, where the K-K relations do not have to hold. I did not succeed understanding the K-K restrictions to nonlocal media; some interesting hints can be found in the work of D. A. Kirzhnitz. 
+
+
