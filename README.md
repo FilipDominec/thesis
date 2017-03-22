@@ -1,174 +1,18 @@
-===== BIG LIST OF all TODOs as of 2015-11-23 =====
- * [X] acknowledgements
- * [X] ... abstract + its translation
- * [ ] mm-phc boundary add refs, add some quotations from papers, (and review again)
- * [X] metamaterial homogenization
- * [X] "negative-index", "left-handed" or "doubly-negative" media?
- * [X] FDFD
- * [-] SKIPPED - PWEM principle
- * [X] initial effparam branch, weaknesses of the method
- * [X] CDH: full
- * [X] other effparam retrieval methods (TODO review)
- * [X] 'Mechanical drilling of fishnets'
- * [X] 1	Dielectric slab
- * [X] 2	Wire medium
- * [X] 3	Cut wires: rev
- * [X]		prepare THz-TDTS data for Bousek samples?
- * [X]		compare them with a FDTD simulation
- * [X] 4	Electric-magnetic resonators
- * [X] 5	Split-ring resonator: comment double-strip
- * [X] 6	Dielectric sphere: introduce Mie resonances
- * [X]		prepare THz-TDTS data for diffeernt size fractions
- * [X] 7	SRRs and spheres in a wire array or grid
- * [X] 8	Dielectric rods parallel to the magnetic field
- * [X] 9	Dielectric rods parallel to the electric field
- * [X]		compare the OpEx2014 results with CDH? 
- * [/] 10	Metallic sheet with slits
- * [/] 11	Fishnet - metallic sheet with holes
- * [X]		prepare THz-TDTS data from the laser-machined sample
- * [o]		prepare THz-TDTS data from the drilled sample?
- * [o] 12	Other structures
- * [/] Conclusion: what should Conclusion contain:
-    *  [x] overall analysis and integration of the research and conclusions of the thesis in
-    *      light of current research in the field
-    *  [x] conclusions regarding goals or hypotheses of the thesis that were presented in
-    *      the Introduction, and the overall significance and contribution of the thesis
-    *      research
-    *  [x] comments on strengths and limitations of the thesis research
-    *  [x] discussion of any potential applications of the research findings
-    *  [x] an analysis of possible future research directions in the field drawing on the work
-    *      of the thesis
+# My dissertation thesis on metamaterial simulation
 
- * [-] SKIP comment on the tunability of various structures - parametric scans of results etc.
- * [-] SKIP Write a correct definition of effective eps and mu??
+The thesis was successfully defended in 2016, although if I were back at the start of my PhD project, I would have done many things in a completely different way -- I would care much more about focusing on a topic with a real scientific impact, and perhaps the project would not involve any metamaterials whatsoever.
+However, now it is finished and while not overly proud about its form, I believe it may still be useful for someone. 
 
-==== Experimental data ====
- * [X] Experimental data: fishnet 28a, 28c
- * [X] Spheres: compare N for three sieved samples, (do they have granulometry?)
-		(source /home/filip/PhD/Granulometry/120531_mikrofoto_trepacka/2012.05.31.ts1)
- * [X] Cut-wires: Bousek "blue" sample (from 2014.09.10_MMonSi.ts1)
- * [X] Spheres - permeability spectra convolution - replot 
- * [ ]	somewhere is the granulometry histogram, see the PNG figure /home/filip/PhD/Output_web/img
-				and ~/PhD/Publications/120912_Konference_Petrohrad_Poster
- * [-] Au-Mylar-Au fishnet? Decide if reasonable.
- * [-] SKIP drilled fishnet (
-		(note it is first measured in 2012-03-14_TiO2_powder.ts1 between sapphire slabs, but not used?)
+In a nutshell, the text 
+ 1) covers the optics of periodic structures, 
+ 1) demonstrates the importance of taking the spatial dispersion into account, although it is often neglected,
+ 1) reviews some historical papers showing that the notion of metamaterials are not as novel as is sometimes advertised,
+ 1) describes [the numerical computation technique used](https://github.com/FilipDominec/python-meep-utils) and  
+ 1) in the Results section, it demonstrates the characteristic behaviour of periodic structures that are most often used. 
 
-==== Finally ====
- * [ ] musí být z textu disertace zřejmé, kterých výsledků dosáhl osobně doktorand jako autor. Současně musí být přiloženo prohlášení spoluautorů tuto skutečnost potvrzující (vztažené přímo k textu práce či k původním publikacím, na nichž je založena). Úlevy z tohoto pravidla: a) v případě, že jediným spoluautorem je školitel, může být toto prohlášení obsaženo v posudku školitele, b) v případě, že kolektivní práce je dílem většího počtu autorů, postačuje vyjádření zodpovědného člena autorského týmu.
- * [x] Bloch -> Bloch's
- * [x] "is depicted in Fig. xx" --->  <fact> (Fig. xx)
- * [x] attach the list of own publications
- * [x] Use correct citation style!
- * [x] results: make sure that |r| are |t| denoted correctly as modulus, not the actual complex value
- * [o] make list of figures, adding short caption to each of them? -- and link to the simulation directory
- * [o] resolve that `t' denotes transmittance and time simultaneously?
- * [o] ...ize ---> ...ise 
- * [x] go through all TODOs
- * [x] make index of kwords  %s/\\textit{\(.\{-\}\)}/\\textit{\1}\\index{\1}/g
- * [x] aa 'of this' -->   'its' or  'thereof'  (and similar)
- * [x] aa [a-z]-[a-z] *tex
- * [x] aa transmi[^t]
- * [x] [0-9] GHz -> [0-9]~GHz
- * [x] check for dupli words /\(\<\S\+\>\)\(\_\s\+\<\1\>\)\+
- * [x] some figures should change from a)  to  (a) etc.
- * [o] generate nice polar plots (Smith charts) for normal and Fano resonances?
- * [ ] review the abstract
+You may either clone whole LaTeX project, or ''[directly download the thesis PDF here](t.pdf)'' (25 MB). The [defence presentation](pres/dominec-defence.beamer.pdf) is also available (3.5 MB) along with its LaTeX-beamer sources.
 
-==== Ideas =====
-%Two oscillators with nearly the same frequency:
-%electric+electric or magnetic+magnetic → strong coupling, leads to twice curled curve in polar plot
-%electric+magnetic → weak or no coupling (magnetic dipole: H field even, Efield odd; electric dipole: H field odd, E field even → may be regarded as zero inner product of the field functions)
-%interpreting resonance (and Fano-resonance) curves
-	%wave in free space → s12 ampli constant, phase constantly growing; (s11 zero)
-	%→  in polar plot: a clockwise rotating unit vector
-	%reflective surface → s11 ampli constant, phase constantly growing; (s12 zero)
-	%simple resonance (in SRR?) 
-	%→  reflectance peak
-	%if fres1 < fres2 → …
-% discuss why this is not true: each lorentzian introduces delta mu -> so the low-frequency permeability of rod array should be > 1? Attracted to a magnet?
+-- F. Dominec
 
 
-
-
-
-A serious applicant will lists the following items separately, when applying for a job or applying for promotion:
-
-*    List of refereed papers. With *all* the authors and also in the order in which they appear in the journal. In case of an extreme long list (more than ten), say at least how many co-authors there are . In addition report the number of published pages each article entails.
-*    List of conference proceedings, if  they cannot be classified as peer-reviewed. Again with all the authors. And again state the number of published pages for each item.
-*    List of popular papers. With all the authors and with the number of published pages.
-*    List of invited talks at international conferences, with the names of co-authors if applicable.
-*    List of invited individual talks delivered at scientific institutes.
-*    List of contributed talks to international conferences, with the names of all other co-authors and in the correct order.
-*    List of posters, with the names of all other co-authors in the correct order.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%\paragraph{Principles of PWEM for one-dimensional nonmagnetic PhC} 
-%Unlike FDFD, PWEM is based on direct and more efficient solution of a linear algebraic problem:
-%\begin{equation} 
-	%{\epsrl}^{-1}(\omega,\rr) \nabla\times \left[{\murl}^{-1 }(\omega,\rr) \nabla\times \E(\rr) \right] = \frac{\omega^2}{c^2}\E(\rr),  \tag{\ref{eq_eigen_e} \again}
-%\end{equation}
-%where ${\epsrl}^{-1}(\omega,\rr)$ and ${\murl}^{-1 }(\omega,\rr)$ are user-defined with a known periodicity, but $\omega$ nor $\E(\rr)$ are not known.
-%
-%In one dimension and without magnetic effects, Eq. (\ref{eq_eigen_e}) simplifies to 
-%\begin{equation} 
-%{\epsrl}^{-1}(\omega,x) \frac{-\mathrm{d}^{2}}{\mathrm{d}x^{2}} \E(x) = \frac{\omega^2}{c^2}\E(x),  \label{eq_eigen_e1d}
-%\end{equation}
-%
-%Thanks to periodicity, the structure permittivity can be expanded to a Fourier series with complex coefficients: 
-%\begin{equation} \epsrl(x) = \sum_{q=-\infty}^{+\infty} \epsrl_q e^{-i 2\pi q x/a},  \label{eq_}\end{equation}
-%where the zeroth coefficient $\epsrl_0$ denotes the zero spatial frequency, i.e. it is given by the average permittivity in the unit cell.  Likewise, the field $\E(x)$ can also be expanded as
-%\begin{equation} \E(x) =  \sum_{q=-\infty}^{+\infty} \epsrl_q e^{-i 2\pi q x/a - i k x},  \label{eq_}\end{equation}
-%where the zeroth coefficient $E_0$ has again the lowest spatial frequency, but it accounts for possibly nonzero wavenumber $k$ in the exponent.
-%
-%Importantly, the components
-%
-%\paragraph{Principles of PWEM for one-dimensional nonmagnetic PhC} 
-
-%% \subsection{Transfer-matrix method} % TODO??
-
-%% \paragraph{Principles of TMM} 
-%% \add{
-%% The \textit{transfer-matrix method} (TMM, or also \textit{Abelès formalism} %% ref Abeles1950: recherche sur la propagation des ondes electromagnetiques...
-%% ) provides an analytically exact and notably simple computation of the transmission of one-dimensional, layered structures. It has been applied e.g. for the design of antireflective layers, dielectric mirrors, defect-mode filters etc. It shall be noted that extensions of TMM for two- or three-dimensional computation also exist \cite{pendry1992_transfer_matrix}, \cite[pp. 71--77]{nemec2006phd}, enabling to compute,  in frequency-domain, e.g. the reflection and transmission of structures discretized in a grid. For simplicity, we describe the one-dimensional method.
-%% 
-%% The method is on dividing the structure into a sequence of homogeneous layers. For each layer, a $2\times 2$ \textit{transfer} matrix is prepared that relates the $\mathbf E$ and $\mathbf H$ of the forward and backward propagating waves. If the $m$-th layer has a wave impedance $Z_m$, refractive index $N_m$ and thickness $d_m$, the transfer matrix $\mathbb M^{(m)}$ is given as
-%% \begin{equation} \mathbb M^{(m)} := \left(\begin{array}{cc} \cos\delta & (i/\gamma)\sin\delta \\ i\gamma\sin\delta & \cos\delta \end{array}\right), \quad\text{ where }\gamma:=1/Z_m\text{ and }\delta := k~N_m d_m.\label{eq_tmm1}\end{equation}
-%% Multiplication of such matrices gives the overall transfer matrix of the layered structure, 
-%% \begin{equation} \mathbb M^{(tot)} \equiv \left(\begin{array}{cc} m_{11} & m_{12} \\ m_{21} & m_{22} \end{array}\right) = \ldots \cdot \mathbb M^{(2)} \cdot \mathbb M^{(1)}. \label{eq_tmm2}\end{equation}
-%% The overall reflection $r^{(tot)}$ and transmission $t^{(tot)}$ are then 
-%% \begin{equation} r^{(tot)} = \frac{m_{11} + m_{12} - m_{21} - m_{22}}{m_{11} + m_{12} + m_{21} + m_{22}}, \quad\quad t^{(tot)}= \frac{2}{m_{11} + m_{12} + m_{21} + m_{22}}, \label{eq_rt_tmm}\end{equation}
-%% if perpendicular only incidence is assumed and if the surrounding medium consists of air.
-%% 
-%% The TMM is instrumental not only for its obvious simplicity, but also for providing mathematical interpretation of observed phenomena and allowing to define arbitrary properties of the layers (whereas both FDTD and PWEM restrict e.g. the constituent permittivity to be positive).
-%% }
-%% %}}}
-
-
-%% \subsection{Simulation of refraction on a wedge} % ... shall I write this?
-%% \mdf{
-%% \paragraph{Simulation setup}
-%% \paragraph{Derivation of the beam deflection angle}
-%% \paragraph{Why the beam deflection angle depends on beam direction}
-%% \paragraph{Analysis of spatio-temporal spectrum}
-%% \paragraph{Limitations of this method}
-%% }
 
