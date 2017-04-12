@@ -11,7 +11,7 @@ In a nutshell, the text
  1) describes [the numerical computation technique used](https://github.com/FilipDominec/python-meep-utils) and  
  1) in the Results section, it demonstrates the characteristic behaviour of periodic structures that are most often used. 
 
-You may either clone whole LaTeX project, or ***[directly download the thesis PDF here](t.pdf)*** (25 MB). The ***[defence presentation](pres/dominec-defence.beamer.pdf)*** is also available (3.5 MB) along with its LaTeX/beamer sources.
+You may either clone whole LaTeX project, or ***[directly download the thesis PDF here](t.pdf)*** (25 MB). The ***[defence presentation](presentation/dominec-defence.beamer.pdf)*** is also available (3.5 MB) along with its LaTeX/beamer sources.
 
 
 <img src="img/ERods_forSeefeld_sparserN_denserN_DrawnBands.png" width="600px" align="center" alt="comparison of effective index of refraction for two similar geometries of a dielectric metamaterial">
